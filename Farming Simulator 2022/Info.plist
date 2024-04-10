@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PW_APP_GROUPS_NAME</key>
+	<string>farm.simulator.rpo.20240201</string>
+	<key>Pushwoosh_APPID</key>
+	<string>D820C-308FB</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Montserrat-Bold.ttf</string>
+		<string>FontsFree-Net-SFProDisplay-Regular.ttf</string>
+		<string>Poppins-Medium.ttf</string>
+		<string>SFProText-Bold.ttf</string>
+		<string>Bitter-Regular.ttf</string>
+		<string>SF-Pro-Display-Medium.otf</string>
+		<string>Caveat-Bold.ttf</string>
+		<string>DMSans-Bold.ttf</string>
+		<string>DMSans-Medium.ttf</string>
+		<string>Montserrat-BoldItalic.ttf</string>
+		<string>Montserrat.ttf</string>
+		<string>Montserrat-SemiBold.ttf</string>
+		<string>Montserrat-Medium.ttf</string>
+	</array>
+	<key>UIFileSharingEnabled</key>
+	<true/>
+	<key>LSSupportsOpeningDocumentsInPlace</key>
+	<true/>
+</dict>
+</plist>
