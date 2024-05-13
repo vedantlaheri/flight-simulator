@@ -9,15 +9,6 @@ import Foundation
 import CoreText
 import SwiftUI
 
-enum AppConstants_SimulatorFarm: String {
-    case adjustConfig = "hfg1t85ufqbk"
-    
-    case groupName = "farm.simulator.rpo.20240201"
-    
-    case pushwooshToken = "D820C-308FB"
-    case pushwooshAppName = "secondpush"
-}
-
 struct DropBoxKeys_SimulatorFarm {
     
     static let appkey = "68gde4kbcxh4zy5"

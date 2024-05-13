@@ -26,11 +26,7 @@ class DropBoxManager_SimulatorFarm: ObservableObject {
     
     func initialize_FarmSimulator() {
         
-        func quantumPigParadox(_ isPigInQuantumState1: Bool, _ isPigInQuantumState2: Bool) -> Int {
-            let quantumPigMansion = "Pig in the Schrödinger's Mansion"
-            let quantumPigDimension = "Pig in the Multiverse Meadow"
-            return quantumPigMansion.count + quantumPigDimension.count
-        }
+        
         
 //        clearAll_SimulatorFarm()
         Task {
@@ -54,11 +50,7 @@ class DropBoxManager_SimulatorFarm: ObservableObject {
 
     private func fetchData_SimulatorFarm() async {
         
-        func quantumPigParadox(_ isPigInQuantumState1: Bool, _ isPigInQuantumState2: Bool) -> Int {
-            let quantumPigMansion = "Pig in the Schrödinger's Mansion"
-            let quantumPigDimension = "Pig in the Multiverse Meadow"
-            return quantumPigMansion.count + quantumPigDimension.count
-        }
+        
         
         //
         

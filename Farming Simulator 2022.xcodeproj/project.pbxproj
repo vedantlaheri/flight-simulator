@@ -24,9 +24,6 @@
 		7285F6572AE5DD56005C8E8E /* FarmModel_SimulatorFarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7285F6562AE5DD56005C8E8E /* FarmModel_SimulatorFarm.swift */; };
 		7287ACB62AF0533A00657FD8 /* CategoryIndicatorView_SimulatorFarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7287ACB52AF0533A00657FD8 /* CategoryIndicatorView_SimulatorFarm.swift */; };
 		7287ACB82AF0F20700657FD8 /* Constants_SimulatorFarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7287ACB72AF0F20700657FD8 /* Constants_SimulatorFarm.swift */; };
-		7287ACBC2AF120C900657FD8 /* Adjust in Frameworks */ = {isa = PBXBuildFile; productRef = 7287ACBB2AF120C900657FD8 /* Adjust */; };
-		7287ACBF2AF122AF00657FD8 /* Pushwoosh in Frameworks */ = {isa = PBXBuildFile; productRef = 7287ACBE2AF122AF00657FD8 /* Pushwoosh */; };
-		7287AD0B2AF1315600657FD8 /* RequestManager_SimulatorFarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7287ACF22AF1315300657FD8 /* RequestManager_SimulatorFarm.swift */; };
 		7287AD112AF1315600657FD8 /* AppConstants_SimulatorFarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7287ACF92AF1315400657FD8 /* AppConstants_SimulatorFarm.swift */; };
 		7287AD122AF1315600657FD8 /* DMSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7287ACFB2AF1315600657FD8 /* DMSans-Medium.ttf */; };
 		7287AD132AF1315600657FD8 /* DMSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7287ACFC2AF1315600657FD8 /* DMSans-Bold.ttf */; };
@@ -36,8 +33,6 @@
 		7287AD192AF1315600657FD8 /* Bitter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7287AD022AF1315600657FD8 /* Bitter-Regular.ttf */; };
 		7287AD1A2AF1315600657FD8 /* FontsFree-Net-SFProDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7287AD032AF1315600657FD8 /* FontsFree-Net-SFProDisplay-Regular.ttf */; };
 		7287AD1B2AF1315600657FD8 /* SFProText-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7287AD042AF1315600657FD8 /* SFProText-Bold.ttf */; };
-		728A1D502AF438BB00577F5D /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728A1D4F2AF438BB00577F5D /* NotificationService.swift */; };
-		728A1D542AF438BB00577F5D /* NotifService.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 728A1D4D2AF438BB00577F5D /* NotifService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		728AA3F72AF53399001B3FCA /* Montserrat-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 728AA3F62AF53399001B3FCA /* Montserrat-BoldItalic.ttf */; };
 		72926CC52ADD5EC300F4B4E3 /* ModsView_SimulatorFarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72926CC42ADD5EC300F4B4E3 /* ModsView_SimulatorFarm.swift */; };
 		72926CC72ADD5EEB00F4B4E3 /* ModsModel_SimulatorFarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72926CC62ADD5EEB00F4B4E3 /* ModsModel_SimulatorFarm.swift */; };
@@ -65,16 +60,6 @@
 		72FC3A202AFD051B00046985 /* NetworkManager_SimulatorFarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FC3A1F2AFD051B00046985 /* NetworkManager_SimulatorFarm.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		728A1D522AF438BB00577F5D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 72F3817D2ADD3D80005549F1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 728A1D4C2AF438BB00577F5D;
-			remoteInfo = NotifService;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		72DC452A2AF134C200669060 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -82,7 +67,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				728A1D542AF438BB00577F5D /* NotifService.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -107,7 +91,6 @@
 		7285F6562AE5DD56005C8E8E /* FarmModel_SimulatorFarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarmModel_SimulatorFarm.swift; sourceTree = "<group>"; };
 		7287ACB52AF0533A00657FD8 /* CategoryIndicatorView_SimulatorFarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryIndicatorView_SimulatorFarm.swift; sourceTree = "<group>"; };
 		7287ACB72AF0F20700657FD8 /* Constants_SimulatorFarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants_SimulatorFarm.swift; sourceTree = "<group>"; };
-		7287ACF22AF1315300657FD8 /* RequestManager_SimulatorFarm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestManager_SimulatorFarm.swift; sourceTree = "<group>"; };
 		7287ACF92AF1315400657FD8 /* AppConstants_SimulatorFarm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants_SimulatorFarm.swift; sourceTree = "<group>"; };
 		7287ACFB2AF1315600657FD8 /* DMSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Medium.ttf"; sourceTree = "<group>"; };
 		7287ACFC2AF1315600657FD8 /* DMSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Bold.ttf"; sourceTree = "<group>"; };
@@ -117,10 +100,6 @@
 		7287AD022AF1315600657FD8 /* Bitter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bitter-Regular.ttf"; sourceTree = "<group>"; };
 		7287AD032AF1315600657FD8 /* FontsFree-Net-SFProDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FontsFree-Net-SFProDisplay-Regular.ttf"; sourceTree = "<group>"; };
 		7287AD042AF1315600657FD8 /* SFProText-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProText-Bold.ttf"; sourceTree = "<group>"; };
-		728A1D4D2AF438BB00577F5D /* NotifService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotifService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		728A1D4F2AF438BB00577F5D /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
-		728A1D512AF438BB00577F5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		728A1D582AF438C800577F5D /* NotifService.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NotifService.entitlements; sourceTree = "<group>"; };
 		728AA3F62AF53399001B3FCA /* Montserrat-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-BoldItalic.ttf"; sourceTree = "<group>"; };
 		72926CC42ADD5EC300F4B4E3 /* ModsView_SimulatorFarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModsView_SimulatorFarm.swift; sourceTree = "<group>"; };
 		72926CC62ADD5EEB00F4B4E3 /* ModsModel_SimulatorFarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModsModel_SimulatorFarm.swift; sourceTree = "<group>"; };
@@ -151,20 +130,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		728A1D4A2AF438BB00577F5D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		72F381822ADD3D80005549F1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				72AD4A102AEBDCB300784D8A /* SwiftyDropbox in Frameworks */,
-				7287ACBC2AF120C900657FD8 /* Adjust in Frameworks */,
-				7287ACBF2AF122AF00657FD8 /* Pushwoosh in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,16 +169,6 @@
 				7287AD042AF1315600657FD8 /* SFProText-Bold.ttf */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		728A1D4E2AF438BB00577F5D /* NotifService */ = {
-			isa = PBXGroup;
-			children = (
-				728A1D582AF438C800577F5D /* NotifService.entitlements */,
-				728A1D4F2AF438BB00577F5D /* NotificationService.swift */,
-				728A1D512AF438BB00577F5D /* Info.plist */,
-			);
-			path = NotifService;
 			sourceTree = "<group>";
 		};
 		72AD4A092AEAAA7500784D8A /* Mod */ = {
@@ -252,7 +212,6 @@
 			isa = PBXGroup;
 			children = (
 				72F381872ADD3D80005549F1 /* Farming Simulator 2022 */,
-				728A1D4E2AF438BB00577F5D /* NotifService */,
 				72F381862ADD3D80005549F1 /* Products */,
 				72DC45182AF1348300669060 /* Frameworks */,
 			);
@@ -262,7 +221,6 @@
 			isa = PBXGroup;
 			children = (
 				72F381852ADD3D80005549F1 /* Farming Simulator 2022.app */,
-				728A1D4D2AF438BB00577F5D /* NotifService.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -273,7 +231,6 @@
 				72B113362AF44672005B803C /* Info.plist */,
 				72DC45172AF1345000669060 /* Farming Simulator 2022.entitlements */,
 				7287ACF92AF1315400657FD8 /* AppConstants_SimulatorFarm.swift */,
-				7287ACF22AF1315300657FD8 /* RequestManager_SimulatorFarm.swift */,
 				7287ACFA2AF1315600657FD8 /* Resources */,
 				72F3819B2ADD3DDA005549F1 /* Models */,
 				72F3819C2ADD3DEA005549F1 /* Views */,
@@ -350,23 +307,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		728A1D4C2AF438BB00577F5D /* NotifService */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 728A1D552AF438BB00577F5D /* Build configuration list for PBXNativeTarget "NotifService" */;
-			buildPhases = (
-				728A1D492AF438BB00577F5D /* Sources */,
-				728A1D4A2AF438BB00577F5D /* Frameworks */,
-				728A1D4B2AF438BB00577F5D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = NotifService;
-			productName = NotifService;
-			productReference = 728A1D4D2AF438BB00577F5D /* NotifService.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		72F381842ADD3D80005549F1 /* Farming Simulator 2022 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 72F381982ADD3D86005549F1 /* Build configuration list for PBXNativeTarget "Farming Simulator 2022" */;
@@ -379,13 +319,10 @@
 			buildRules = (
 			);
 			dependencies = (
-				728A1D532AF438BB00577F5D /* PBXTargetDependency */,
 			);
 			name = "Farming Simulator 2022";
 			packageProductDependencies = (
 				72AD4A0F2AEBDCB300784D8A /* SwiftyDropbox */,
-				7287ACBB2AF120C900657FD8 /* Adjust */,
-				7287ACBE2AF122AF00657FD8 /* Pushwoosh */,
 			);
 			productName = "Farming Simulator 2022";
 			productReference = 72F381852ADD3D80005549F1 /* Farming Simulator 2022.app */;
@@ -401,9 +338,6 @@
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
-					728A1D4C2AF438BB00577F5D = {
-						CreatedOnToolsVersion = 14.3;
-					};
 					72F381842ADD3D80005549F1 = {
 						CreatedOnToolsVersion = 14.3;
 					};
@@ -462,27 +396,17 @@
 			mainGroup = 72F3817C2ADD3D80005549F1;
 			packageReferences = (
 				72AD4A0E2AEBDCB300784D8A /* XCRemoteSwiftPackageReference "SwiftyDropbox" */,
-				7287ACBA2AF120C800657FD8 /* XCRemoteSwiftPackageReference "ios_sdk" */,
-				7287ACBD2AF122AF00657FD8 /* XCRemoteSwiftPackageReference "Pushwoosh-XCFramework" */,
 			);
 			productRefGroup = 72F381862ADD3D80005549F1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				72F381842ADD3D80005549F1 /* Farming Simulator 2022 */,
-				728A1D4C2AF438BB00577F5D /* NotifService */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		728A1D4B2AF438BB00577F5D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		72F381832ADD3D80005549F1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -508,14 +432,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		728A1D492AF438BB00577F5D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				728A1D502AF438BB00577F5D /* NotificationService.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		72F381812ADD3D80005549F1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -554,76 +470,13 @@
 				720ED1DB2AF279E300FEA01C /* Persistence_SimulatorFarm.swift in Sources */,
 				7285F64F2AE2A785005C8E8E /* FarmDetailView_SimulatorFarm.swift in Sources */,
 				72567C5D2ADD64D2008C324B /* FarmsView_SimulatorFarm.swift in Sources */,
-				7287AD0B2AF1315600657FD8 /* RequestManager_SimulatorFarm.swift in Sources */,
 				721F7CF92B0CE923006E1397 /* LoadingView_SimulatorFarm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		728A1D532AF438BB00577F5D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 728A1D4C2AF438BB00577F5D /* NotifService */;
-			targetProxy = 728A1D522AF438BB00577F5D /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		728A1D562AF438BB00577F5D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = NotifService/NotifService.entitlements;
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = NotifService/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = NotifService;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = farm.simulator.rpo.20240201.NotifService;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		728A1D572AF438BB00577F5D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = NotifService/NotifService.entitlements;
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = NotifService/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = NotifService;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = farm.simulator.rpo.20240201.NotifService;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		72F381962ADD3D86005549F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -741,7 +594,6 @@
 		72F381992ADD3D86005549F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Farming Simulator 2022/Farming Simulator 2022.entitlements";
@@ -776,7 +628,6 @@
 		72F3819A2ADD3D86005549F1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Farming Simulator 2022/Farming Simulator 2022.entitlements";
@@ -810,15 +661,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		728A1D552AF438BB00577F5D /* Build configuration list for PBXNativeTarget "NotifService" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				728A1D562AF438BB00577F5D /* Debug */,
-				728A1D572AF438BB00577F5D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		72F381802ADD3D80005549F1 /* Build configuration list for PBXProject "Farming Simulator 2022" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -840,22 +682,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		7287ACBA2AF120C800657FD8 /* XCRemoteSwiftPackageReference "ios_sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/adjust/ios_sdk";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-		7287ACBD2AF122AF00657FD8 /* XCRemoteSwiftPackageReference "Pushwoosh-XCFramework" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Pushwoosh/Pushwoosh-XCFramework";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.5.4;
-			};
-		};
 		72AD4A0E2AEBDCB300784D8A /* XCRemoteSwiftPackageReference "SwiftyDropbox" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/dropbox/SwiftyDropbox.git";
@@ -867,16 +693,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		7287ACBB2AF120C900657FD8 /* Adjust */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7287ACBA2AF120C800657FD8 /* XCRemoteSwiftPackageReference "ios_sdk" */;
-			productName = Adjust;
-		};
-		7287ACBE2AF122AF00657FD8 /* Pushwoosh */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7287ACBD2AF122AF00657FD8 /* XCRemoteSwiftPackageReference "Pushwoosh-XCFramework" */;
-			productName = Pushwoosh;
-		};
 		72AD4A0F2AEBDCB300784D8A /* SwiftyDropbox */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 72AD4A0E2AEBDCB300784D8A /* XCRemoteSwiftPackageReference "SwiftyDropbox" */;

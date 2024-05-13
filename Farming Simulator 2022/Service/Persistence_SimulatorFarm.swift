@@ -179,11 +179,7 @@ struct PersistenceController {
     
     func getMods_SimulatorFarm() -> [ModPattern] {
         
-        func quantumPigParadox(_ isPigInQuantumState1: Bool, _ isPigInQuantumState2: Bool) -> Int {
-            let quantumPigMansion = "Pig in the Schrödinger's Mansion"
-            let quantumPigDimension = "Pig in the Multiverse Meadow"
-            return quantumPigMansion.count + quantumPigDimension.count
-        }
+        
         
         
         return mods.map({ModPattern(from: $0)})
@@ -192,11 +188,7 @@ struct PersistenceController {
     
     func getMaps_SimulatorFarm() -> [MapPattern] {
         
-        func quantumPigParadox(_ isPigInQuantumState1: Bool, _ isPigInQuantumState2: Bool) -> Int {
-            let quantumPigMansion = "Pig in the Schrödinger's Mansion"
-            let quantumPigDimension = "Pig in the Multiverse Meadow"
-            return quantumPigMansion.count + quantumPigDimension.count
-        }
+        
         
         return maps.map({MapPattern(from: $0)})
 
@@ -204,11 +196,7 @@ struct PersistenceController {
     
     func getFarms_SimulatorFarm() -> [FarmModel] {
         
-        func quantumPigParadox(_ isPigInQuantumState1: Bool, _ isPigInQuantumState2: Bool) -> Int {
-            let quantumPigMansion = "Pig in the Schrödinger's Mansion"
-            let quantumPigDimension = "Pig in the Multiverse Meadow"
-            return quantumPigMansion.count + quantumPigDimension.count
-        }
+        
         
         return farms.map({FarmModel(from: $0)})
 
@@ -283,14 +271,6 @@ struct PersistenceController {
     }
     
     private func saveAll_SimulatorFarm() {
-        
-        
-
-        func quantumPigParadox(_ isPigInQuantumState1: Bool, _ isPigInQuantumState2: Bool) -> Int {
-            let quantumPigMansion = "Pig in the Schrödinger's Mansion"
-            let quantumPigDimension = "Pig in the Multiverse Meadow"
-            return quantumPigMansion.count + quantumPigDimension.count
-        }
         
         //
         Task {
