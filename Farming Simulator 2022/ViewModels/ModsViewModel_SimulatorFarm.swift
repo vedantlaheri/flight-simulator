@@ -15,6 +15,7 @@ class ModViewModel: ObservableObject {
     @Published var filteredMods: [ModPattern] = []
     @Published var modsSelectedFilter: FilterType_SimulatorFarm = .all 
     @Published var filterFavoriteMods: [ModPattern] = []
+    var tempArrayToFilterSearch: [ModPattern] = []
 
     init() {
         
@@ -33,15 +34,19 @@ class ModViewModel: ObservableObject {
         switch modsSelectedFilter {
         case .all:
             filteredMods = mods
+            tempArrayToFilterSearch = filteredMods
         case .favorite:
             filteredMods = filterFavoriteMods
+            tempArrayToFilterSearch = filteredMods
         case .new:
             filteredMods = mods.filter { $0.new! }
+            tempArrayToFilterSearch = filteredMods
         case .top:
             filteredMods = mods.filter { $0.top! }
+            tempArrayToFilterSearch = filteredMods
         }
         if !searchText.isEmpty {
-            filteredMods = mods.filter { mod in
+            filteredMods = tempArrayToFilterSearch.filter { mod in
                 return mod.title.lowercased().contains(searchText.lowercased())
                 
             }
@@ -77,13 +82,19 @@ class ModViewModel: ObservableObject {
             NotificationCenter.default.post(name: NSNotification.Name("ModPatternChanged"), object: self)
         }
     }
+    
+    func addDataToImage(data: Data, updatedItemModel: ModPattern) {
+        if let index = mods.firstIndex(where: { $0.id == updatedItemModel.id }) {
+            mods[index].imageData = data
+            NotificationCenter.default.post(name: NSNotification.Name("ModPatternChanged"), object: self)
+        }
+    }
 
     private func listenForModPatternChanges() {
         NotificationCenter.default.addObserver(forName: NSNotification.Name("ModPatternChanged"), object: nil, queue: nil) { notification in
             if let updatedMod = notification.object as? ModPattern {
                 if let index = self.mods.firstIndex(where: { $0.id == updatedMod.id }) {
                     self.mods[index] = updatedMod
-//                    self.pressingfilterMods()
                     self.generateFavoriteMods()
                     
                 }

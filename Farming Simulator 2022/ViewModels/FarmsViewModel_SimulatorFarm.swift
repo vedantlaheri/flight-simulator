@@ -43,7 +43,7 @@ class FarmsViewModel: ObservableObject {
         
         if !searchText.isEmpty {
             filteredFarms = farms.filter { farm in
-                return farm.title.lowercased().contains(searchText.lowercased())
+                return farm.image.lowercased().contains(searchText.lowercased())
             }
         }
     }
@@ -80,13 +80,18 @@ class FarmsViewModel: ObservableObject {
         }
     }
     
+    func addDataToImage(data: Data, updatedItemModel: FarmModel) {
+        if let index = farms.firstIndex(where: { $0.id == updatedItemModel.id }) {
+            farms[index].imageData = data
+            NotificationCenter.default.post(name: NSNotification.Name("FarmModelChanged"), object: self)
+        }
+    }
 
     private func listenForFarmModelChanges() {
         NotificationCenter.default.addObserver(forName: NSNotification.Name("FarmModelChanged"), object: nil, queue: nil) { notification in
             if let updatedFarm = notification.object as? FarmModel {
                 if let index = self.farms.firstIndex(where: { $0.id == updatedFarm.id }) {
                     self.farms[index] = updatedFarm
-//                    self.pressingFilterFarms()
                     self.generateFavoriteFarms()
                 }
             }

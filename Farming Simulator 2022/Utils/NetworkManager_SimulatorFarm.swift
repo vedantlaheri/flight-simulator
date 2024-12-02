@@ -35,8 +35,6 @@ class NetworkManager_SimulatorFarm: ObservableObject {
         let needsConnection = flags.contains(.connectionRequired)
 
         if isReachable && !needsConnection {
-            // Connected to the internet
-            // Do your network-related tasks here
             if !error.isEmpty {
                 error = ""
             }
@@ -45,7 +43,6 @@ class NetworkManager_SimulatorFarm: ObservableObject {
             if error != "" {
                 error = ""
             }
-            // Not connected to the internet
             return false
         }
     }

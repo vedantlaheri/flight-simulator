@@ -3,57 +3,29 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		236133352CAD331F009B49C3 /* BodyEditorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236133342CAD331F009B49C3 /* BodyEditorModel.swift */; };
+		2363B9EC2CA99D08000111BA /* SkinsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2363B9EB2CA99D08000111BA /* SkinsModel.swift */; };
+		2363B9EE2CA9A2E1000111BA /* SkinsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2363B9ED2CA9A2E1000111BA /* SkinsViewModel.swift */; };
 		720ED1DB2AF279E300FEA01C /* Persistence_SimulatorFarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720ED1DA2AF279E300FEA01C /* Persistence_SimulatorFarm.swift */; };
-		721F7CF72B0CE004006E1397 /* CircleLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721F7CF62B0CE004006E1397 /* CircleLoader.swift */; };
-		721F7CF92B0CE923006E1397 /* LoadingView_SimulatorFarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721F7CF82B0CE922006E1397 /* LoadingView_SimulatorFarm.swift */; };
-		721F7CFB2B0CFF19006E1397 /* CustomAlertsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721F7CFA2B0CFF19006E1397 /* CustomAlertsView.swift */; };
-		72567C5D2ADD64D2008C324B /* FarmsView_SimulatorFarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72567C5C2ADD64D2008C324B /* FarmsView_SimulatorFarm.swift */; };
-		72567C5F2ADD64F0008C324B /* MapsView_SimulatorFarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72567C5E2ADD64F0008C324B /* MapsView_SimulatorFarm.swift */; };
-		72567C612ADD650E008C324B /* SettingsView_SimulatorFarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72567C602ADD650E008C324B /* SettingsView_SimulatorFarm.swift */; };
-		7285F6472ADEAE21005C8E8E /* ModsDetailView_SimulatorFarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7285F6462ADEAE21005C8E8E /* ModsDetailView_SimulatorFarm.swift */; };
 		7285F64B2ADF2FD4005C8E8E /* FilterType_SimulatorFarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7285F64A2ADF2FD4005C8E8E /* FilterType_SimulatorFarm.swift */; };
-		7285F64D2AE1539D005C8E8E /* FilterView_SimulatorFarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7285F64C2AE1539D005C8E8E /* FilterView_SimulatorFarm.swift */; };
-		7285F64F2AE2A785005C8E8E /* FarmDetailView_SimulatorFarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7285F64E2AE2A785005C8E8E /* FarmDetailView_SimulatorFarm.swift */; };
-		7285F6512AE2E618005C8E8E /* SplashScreenView_SimulatorFarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7285F6502AE2E618005C8E8E /* SplashScreenView_SimulatorFarm.swift */; };
-		7285F6532AE5C837005C8E8E /* SearchView_SimulatorFarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7285F6522AE5C837005C8E8E /* SearchView_SimulatorFarm.swift */; };
-		7285F6552AE5DB08005C8E8E /* FarmItemView_SimulatorFarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7285F6542AE5DB08005C8E8E /* FarmItemView_SimulatorFarm.swift */; };
 		7285F6572AE5DD56005C8E8E /* FarmModel_SimulatorFarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7285F6562AE5DD56005C8E8E /* FarmModel_SimulatorFarm.swift */; };
-		7287ACB62AF0533A00657FD8 /* CategoryIndicatorView_SimulatorFarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7287ACB52AF0533A00657FD8 /* CategoryIndicatorView_SimulatorFarm.swift */; };
-		7287ACB82AF0F20700657FD8 /* Constants_SimulatorFarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7287ACB72AF0F20700657FD8 /* Constants_SimulatorFarm.swift */; };
 		7287AD112AF1315600657FD8 /* AppConstants_SimulatorFarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7287ACF92AF1315400657FD8 /* AppConstants_SimulatorFarm.swift */; };
-		7287AD122AF1315600657FD8 /* DMSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7287ACFB2AF1315600657FD8 /* DMSans-Medium.ttf */; };
-		7287AD132AF1315600657FD8 /* DMSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7287ACFC2AF1315600657FD8 /* DMSans-Bold.ttf */; };
-		7287AD142AF1315600657FD8 /* Caveat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7287ACFD2AF1315600657FD8 /* Caveat-Bold.ttf */; };
-		7287AD152AF1315600657FD8 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7287ACFE2AF1315600657FD8 /* Poppins-Medium.ttf */; };
-		7287AD162AF1315600657FD8 /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7287ACFF2AF1315600657FD8 /* SF-Pro-Display-Medium.otf */; };
-		7287AD192AF1315600657FD8 /* Bitter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7287AD022AF1315600657FD8 /* Bitter-Regular.ttf */; };
-		7287AD1A2AF1315600657FD8 /* FontsFree-Net-SFProDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7287AD032AF1315600657FD8 /* FontsFree-Net-SFProDisplay-Regular.ttf */; };
-		7287AD1B2AF1315600657FD8 /* SFProText-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7287AD042AF1315600657FD8 /* SFProText-Bold.ttf */; };
-		728AA3F72AF53399001B3FCA /* Montserrat-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 728AA3F62AF53399001B3FCA /* Montserrat-BoldItalic.ttf */; };
-		72926CC52ADD5EC300F4B4E3 /* ModsView_SimulatorFarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72926CC42ADD5EC300F4B4E3 /* ModsView_SimulatorFarm.swift */; };
 		72926CC72ADD5EEB00F4B4E3 /* ModsModel_SimulatorFarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72926CC62ADD5EEB00F4B4E3 /* ModsModel_SimulatorFarm.swift */; };
 		729DA3C42AFE509E00D8190E /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 729DA3C32AFE509D00D8190E /* Montserrat-Bold.ttf */; };
 		729DA3C62AFE511E00D8190E /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 729DA3C52AFE511D00D8190E /* Montserrat-SemiBold.ttf */; };
 		729DA3C82AFE513C00D8190E /* Montserrat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 729DA3C72AFE513C00D8190E /* Montserrat.ttf */; };
 		729DA3CA2AFE55F600D8190E /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 729DA3C92AFE55F600D8190E /* Montserrat-Medium.ttf */; };
-		72AD4A002AEA4E2400784D8A /* FarmItemViewModel_SimulatorFarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AD49FF2AEA4E2400784D8A /* FarmItemViewModel_SimulatorFarm.swift */; };
 		72AD4A042AEA714E00784D8A /* FarmsViewModel_SimulatorFarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AD4A032AEA714E00784D8A /* FarmsViewModel_SimulatorFarm.swift */; };
 		72AD4A062AEAA5CD00784D8A /* ModsViewModel_SimulatorFarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AD4A052AEAA5CC00784D8A /* ModsViewModel_SimulatorFarm.swift */; };
-		72AD4A082AEAA5FA00784D8A /* ModItemViewModel_SimulatorFarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AD4A072AEAA5FA00784D8A /* ModItemViewModel_SimulatorFarm.swift */; };
 		72AD4A0B2AEABCEB00784D8A /* MapsViewModel_SimulatorFarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AD4A0A2AEABCEB00784D8A /* MapsViewModel_SimulatorFarm.swift */; };
-		72AD4A0D2AEABD0700784D8A /* MapItemViewModel_SimulatorFarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AD4A0C2AEABD0700784D8A /* MapItemViewModel_SimulatorFarm.swift */; };
 		72AD4A102AEBDCB300784D8A /* SwiftyDropbox in Frameworks */ = {isa = PBXBuildFile; productRef = 72AD4A0F2AEBDCB300784D8A /* SwiftyDropbox */; };
 		72AD4A122AEFB88100784D8A /* DropBoxManager_SimulatorFarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AD4A112AEFB88100784D8A /* DropBoxManager_SimulatorFarm.swift */; };
 		72B7BB6E2AE7DC7C00086D7C /* MapsModel_SimulatorFarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B7BB6D2AE7DC7C00086D7C /* MapsModel_SimulatorFarm.swift */; };
-		72B7BB7B2AE7E3F600086D7C /* MapItemView_SimulatorFarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B7BB7A2AE7E3F600086D7C /* MapItemView_SimulatorFarm.swift */; };
-		72B7BB7D2AE7E4FD00086D7C /* MapsDetailView_SimulatorFarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B7BB7C2AE7E4FD00086D7C /* MapsDetailView_SimulatorFarm.swift */; };
-		72B7BB802AE7EDE600086D7C /* ModItemView_SimulatorFarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B7BB7F2AE7EDE600086D7C /* ModItemView_SimulatorFarm.swift */; };
-		72F381892ADD3D80005549F1 /* mods_farming_simulator22App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F381882ADD3D80005549F1 /* mods_farming_simulator22App.swift */; };
-		72F3818B2ADD3D80005549F1 /* FarmSimulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F3818A2ADD3D80005549F1 /* FarmSimulation.swift */; };
+		72F381892ADD3D80005549F1 /* FlightSimulatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F381882ADD3D80005549F1 /* FlightSimulatorApp.swift */; };
 		72F3818D2ADD3D86005549F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72F3818C2ADD3D86005549F1 /* Assets.xcassets */; };
 		72F381902ADD3D86005549F1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72F3818F2ADD3D86005549F1 /* Preview Assets.xcassets */; };
 		72F381952ADD3D86005549F1 /* mods_farming_simulator22.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 72F381932ADD3D86005549F1 /* mods_farming_simulator22.xcdatamodeld */; };
@@ -74,60 +46,36 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		236133342CAD331F009B49C3 /* BodyEditorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyEditorModel.swift; sourceTree = "<group>"; };
+		2363B9EB2CA99D08000111BA /* SkinsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinsModel.swift; sourceTree = "<group>"; };
+		2363B9ED2CA9A2E1000111BA /* SkinsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinsViewModel.swift; sourceTree = "<group>"; };
 		720ED1DA2AF279E300FEA01C /* Persistence_SimulatorFarm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence_SimulatorFarm.swift; sourceTree = "<group>"; };
-		721F7CF62B0CE004006E1397 /* CircleLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleLoader.swift; sourceTree = "<group>"; };
-		721F7CF82B0CE922006E1397 /* LoadingView_SimulatorFarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView_SimulatorFarm.swift; sourceTree = "<group>"; };
-		721F7CFA2B0CFF19006E1397 /* CustomAlertsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertsView.swift; sourceTree = "<group>"; };
-		72567C5C2ADD64D2008C324B /* FarmsView_SimulatorFarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarmsView_SimulatorFarm.swift; sourceTree = "<group>"; };
-		72567C5E2ADD64F0008C324B /* MapsView_SimulatorFarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsView_SimulatorFarm.swift; sourceTree = "<group>"; };
-		72567C602ADD650E008C324B /* SettingsView_SimulatorFarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView_SimulatorFarm.swift; sourceTree = "<group>"; };
-		7285F6462ADEAE21005C8E8E /* ModsDetailView_SimulatorFarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModsDetailView_SimulatorFarm.swift; sourceTree = "<group>"; };
 		7285F64A2ADF2FD4005C8E8E /* FilterType_SimulatorFarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterType_SimulatorFarm.swift; sourceTree = "<group>"; };
-		7285F64C2AE1539D005C8E8E /* FilterView_SimulatorFarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView_SimulatorFarm.swift; sourceTree = "<group>"; };
-		7285F64E2AE2A785005C8E8E /* FarmDetailView_SimulatorFarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarmDetailView_SimulatorFarm.swift; sourceTree = "<group>"; };
-		7285F6502AE2E618005C8E8E /* SplashScreenView_SimulatorFarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView_SimulatorFarm.swift; sourceTree = "<group>"; };
-		7285F6522AE5C837005C8E8E /* SearchView_SimulatorFarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView_SimulatorFarm.swift; sourceTree = "<group>"; };
-		7285F6542AE5DB08005C8E8E /* FarmItemView_SimulatorFarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarmItemView_SimulatorFarm.swift; sourceTree = "<group>"; };
 		7285F6562AE5DD56005C8E8E /* FarmModel_SimulatorFarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarmModel_SimulatorFarm.swift; sourceTree = "<group>"; };
-		7287ACB52AF0533A00657FD8 /* CategoryIndicatorView_SimulatorFarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryIndicatorView_SimulatorFarm.swift; sourceTree = "<group>"; };
-		7287ACB72AF0F20700657FD8 /* Constants_SimulatorFarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants_SimulatorFarm.swift; sourceTree = "<group>"; };
 		7287ACF92AF1315400657FD8 /* AppConstants_SimulatorFarm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants_SimulatorFarm.swift; sourceTree = "<group>"; };
-		7287ACFB2AF1315600657FD8 /* DMSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Medium.ttf"; sourceTree = "<group>"; };
-		7287ACFC2AF1315600657FD8 /* DMSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Bold.ttf"; sourceTree = "<group>"; };
-		7287ACFD2AF1315600657FD8 /* Caveat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Caveat-Bold.ttf"; sourceTree = "<group>"; };
-		7287ACFE2AF1315600657FD8 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
-		7287ACFF2AF1315600657FD8 /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
-		7287AD022AF1315600657FD8 /* Bitter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bitter-Regular.ttf"; sourceTree = "<group>"; };
-		7287AD032AF1315600657FD8 /* FontsFree-Net-SFProDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FontsFree-Net-SFProDisplay-Regular.ttf"; sourceTree = "<group>"; };
-		7287AD042AF1315600657FD8 /* SFProText-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProText-Bold.ttf"; sourceTree = "<group>"; };
-		728AA3F62AF53399001B3FCA /* Montserrat-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-BoldItalic.ttf"; sourceTree = "<group>"; };
-		72926CC42ADD5EC300F4B4E3 /* ModsView_SimulatorFarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModsView_SimulatorFarm.swift; sourceTree = "<group>"; };
 		72926CC62ADD5EEB00F4B4E3 /* ModsModel_SimulatorFarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModsModel_SimulatorFarm.swift; sourceTree = "<group>"; };
 		729DA3C32AFE509D00D8190E /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		729DA3C52AFE511D00D8190E /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		729DA3C72AFE513C00D8190E /* Montserrat.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Montserrat.ttf; sourceTree = "<group>"; };
 		729DA3C92AFE55F600D8190E /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
-		72AD49FF2AEA4E2400784D8A /* FarmItemViewModel_SimulatorFarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarmItemViewModel_SimulatorFarm.swift; sourceTree = "<group>"; };
 		72AD4A032AEA714E00784D8A /* FarmsViewModel_SimulatorFarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarmsViewModel_SimulatorFarm.swift; sourceTree = "<group>"; };
 		72AD4A052AEAA5CC00784D8A /* ModsViewModel_SimulatorFarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModsViewModel_SimulatorFarm.swift; sourceTree = "<group>"; };
-		72AD4A072AEAA5FA00784D8A /* ModItemViewModel_SimulatorFarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModItemViewModel_SimulatorFarm.swift; sourceTree = "<group>"; };
 		72AD4A0A2AEABCEB00784D8A /* MapsViewModel_SimulatorFarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsViewModel_SimulatorFarm.swift; sourceTree = "<group>"; };
-		72AD4A0C2AEABD0700784D8A /* MapItemViewModel_SimulatorFarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapItemViewModel_SimulatorFarm.swift; sourceTree = "<group>"; };
 		72AD4A112AEFB88100784D8A /* DropBoxManager_SimulatorFarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropBoxManager_SimulatorFarm.swift; sourceTree = "<group>"; };
 		72B113362AF44672005B803C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		72B7BB6D2AE7DC7C00086D7C /* MapsModel_SimulatorFarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsModel_SimulatorFarm.swift; sourceTree = "<group>"; };
-		72B7BB7A2AE7E3F600086D7C /* MapItemView_SimulatorFarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapItemView_SimulatorFarm.swift; sourceTree = "<group>"; };
-		72B7BB7C2AE7E4FD00086D7C /* MapsDetailView_SimulatorFarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsDetailView_SimulatorFarm.swift; sourceTree = "<group>"; };
-		72B7BB7F2AE7EDE600086D7C /* ModItemView_SimulatorFarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModItemView_SimulatorFarm.swift; sourceTree = "<group>"; };
 		72DC45172AF1345000669060 /* Farming Simulator 2022.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Farming Simulator 2022.entitlements"; sourceTree = "<group>"; };
 		72F381852ADD3D80005549F1 /* Farming Simulator 2022.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Farming Simulator 2022.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		72F381882ADD3D80005549F1 /* mods_farming_simulator22App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mods_farming_simulator22App.swift; sourceTree = "<group>"; };
-		72F3818A2ADD3D80005549F1 /* FarmSimulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarmSimulation.swift; sourceTree = "<group>"; };
+		72F381882ADD3D80005549F1 /* FlightSimulatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSimulatorApp.swift; sourceTree = "<group>"; };
 		72F3818C2ADD3D86005549F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		72F3818F2ADD3D86005549F1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		72F381942ADD3D86005549F1 /* mods_farming_simulator22.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = mods_farming_simulator22.xcdatamodel; sourceTree = "<group>"; };
 		72FC3A1F2AFD051B00046985 /* NetworkManager_SimulatorFarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager_SimulatorFarm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		235B4CD42CA169A000F23714 /* AirEmulateDesign */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = AirEmulateDesign; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		72F381822ADD3D80005549F1 /* Frameworks */ = {
@@ -145,7 +93,6 @@
 			isa = PBXGroup;
 			children = (
 				7285F64A2ADF2FD4005C8E8E /* FilterType_SimulatorFarm.swift */,
-				7287ACB72AF0F20700657FD8 /* Constants_SimulatorFarm.swift */,
 				72FC3A1F2AFD051B00046985 /* NetworkManager_SimulatorFarm.swift */,
 			);
 			path = Utils;
@@ -158,47 +105,8 @@
 				729DA3C72AFE513C00D8190E /* Montserrat.ttf */,
 				729DA3C52AFE511D00D8190E /* Montserrat-SemiBold.ttf */,
 				729DA3C32AFE509D00D8190E /* Montserrat-Bold.ttf */,
-				728AA3F62AF53399001B3FCA /* Montserrat-BoldItalic.ttf */,
-				7287ACFB2AF1315600657FD8 /* DMSans-Medium.ttf */,
-				7287ACFC2AF1315600657FD8 /* DMSans-Bold.ttf */,
-				7287ACFD2AF1315600657FD8 /* Caveat-Bold.ttf */,
-				7287ACFE2AF1315600657FD8 /* Poppins-Medium.ttf */,
-				7287ACFF2AF1315600657FD8 /* SF-Pro-Display-Medium.otf */,
-				7287AD022AF1315600657FD8 /* Bitter-Regular.ttf */,
-				7287AD032AF1315600657FD8 /* FontsFree-Net-SFProDisplay-Regular.ttf */,
-				7287AD042AF1315600657FD8 /* SFProText-Bold.ttf */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		72AD4A092AEAAA7500784D8A /* Mod */ = {
-			isa = PBXGroup;
-			children = (
-				72B7BB7F2AE7EDE600086D7C /* ModItemView_SimulatorFarm.swift */,
-				7285F6462ADEAE21005C8E8E /* ModsDetailView_SimulatorFarm.swift */,
-				72926CC42ADD5EC300F4B4E3 /* ModsView_SimulatorFarm.swift */,
-			);
-			path = Mod;
-			sourceTree = "<group>";
-		};
-		72B7BB6C2AE7CA1500086D7C /* Farms */ = {
-			isa = PBXGroup;
-			children = (
-				7285F6542AE5DB08005C8E8E /* FarmItemView_SimulatorFarm.swift */,
-				7285F64E2AE2A785005C8E8E /* FarmDetailView_SimulatorFarm.swift */,
-				72567C5C2ADD64D2008C324B /* FarmsView_SimulatorFarm.swift */,
-			);
-			path = Farms;
-			sourceTree = "<group>";
-		};
-		72B7BB7E2AE7ED7200086D7C /* Maps */ = {
-			isa = PBXGroup;
-			children = (
-				72567C5E2ADD64F0008C324B /* MapsView_SimulatorFarm.swift */,
-				72B7BB7A2AE7E3F600086D7C /* MapItemView_SimulatorFarm.swift */,
-				72B7BB7C2AE7E4FD00086D7C /* MapsDetailView_SimulatorFarm.swift */,
-			);
-			path = Maps;
 			sourceTree = "<group>";
 		};
 		72DC45182AF1348300669060 /* Frameworks */ = {
@@ -228,17 +136,16 @@
 		72F381872ADD3D80005549F1 /* Farming Simulator 2022 */ = {
 			isa = PBXGroup;
 			children = (
+				235B4CD42CA169A000F23714 /* AirEmulateDesign */,
 				72B113362AF44672005B803C /* Info.plist */,
 				72DC45172AF1345000669060 /* Farming Simulator 2022.entitlements */,
 				7287ACF92AF1315400657FD8 /* AppConstants_SimulatorFarm.swift */,
 				7287ACFA2AF1315600657FD8 /* Resources */,
 				72F3819B2ADD3DDA005549F1 /* Models */,
-				72F3819C2ADD3DEA005549F1 /* Views */,
 				72F3819D2ADD3DF2005549F1 /* ViewModels */,
 				72F3819E2ADD3E04005549F1 /* Service */,
 				7285F6482ADF2FB0005C8E8E /* Utils */,
-				72F3818A2ADD3D80005549F1 /* FarmSimulation.swift */,
-				72F381882ADD3D80005549F1 /* mods_farming_simulator22App.swift */,
+				72F381882ADD3D80005549F1 /* FlightSimulatorApp.swift */,
 				72F3818C2ADD3D86005549F1 /* Assets.xcassets */,
 				72F3818E2ADD3D86005549F1 /* Preview Content */,
 			);
@@ -259,38 +166,20 @@
 				72926CC62ADD5EEB00F4B4E3 /* ModsModel_SimulatorFarm.swift */,
 				7285F6562AE5DD56005C8E8E /* FarmModel_SimulatorFarm.swift */,
 				72B7BB6D2AE7DC7C00086D7C /* MapsModel_SimulatorFarm.swift */,
+				2363B9EB2CA99D08000111BA /* SkinsModel.swift */,
+				236133342CAD331F009B49C3 /* BodyEditorModel.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		72F3819C2ADD3DEA005549F1 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				72AD4A092AEAAA7500784D8A /* Mod */,
-				72B7BB7E2AE7ED7200086D7C /* Maps */,
-				72B7BB6C2AE7CA1500086D7C /* Farms */,
-				72567C602ADD650E008C324B /* SettingsView_SimulatorFarm.swift */,
-				7285F64C2AE1539D005C8E8E /* FilterView_SimulatorFarm.swift */,
-				7285F6502AE2E618005C8E8E /* SplashScreenView_SimulatorFarm.swift */,
-				7285F6522AE5C837005C8E8E /* SearchView_SimulatorFarm.swift */,
-				7287ACB52AF0533A00657FD8 /* CategoryIndicatorView_SimulatorFarm.swift */,
-				721F7CF62B0CE004006E1397 /* CircleLoader.swift */,
-				721F7CF82B0CE922006E1397 /* LoadingView_SimulatorFarm.swift */,
-				721F7CFA2B0CFF19006E1397 /* CustomAlertsView.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		72F3819D2ADD3DF2005549F1 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				72AD49FF2AEA4E2400784D8A /* FarmItemViewModel_SimulatorFarm.swift */,
 				72AD4A032AEA714E00784D8A /* FarmsViewModel_SimulatorFarm.swift */,
 				72AD4A052AEAA5CC00784D8A /* ModsViewModel_SimulatorFarm.swift */,
-				72AD4A072AEAA5FA00784D8A /* ModItemViewModel_SimulatorFarm.swift */,
 				72AD4A0A2AEABCEB00784D8A /* MapsViewModel_SimulatorFarm.swift */,
-				72AD4A0C2AEABD0700784D8A /* MapItemViewModel_SimulatorFarm.swift */,
 				72AD4A112AEFB88100784D8A /* DropBoxManager_SimulatorFarm.swift */,
+				2363B9ED2CA9A2E1000111BA /* SkinsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -319,6 +208,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				235B4CD42CA169A000F23714 /* AirEmulateDesign */,
 			);
 			name = "Farming Simulator 2022";
 			packageProductDependencies = (
@@ -412,20 +304,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				72F381902ADD3D86005549F1 /* Preview Assets.xcassets in Resources */,
-				7287AD1A2AF1315600657FD8 /* FontsFree-Net-SFProDisplay-Regular.ttf in Resources */,
 				729DA3CA2AFE55F600D8190E /* Montserrat-Medium.ttf in Resources */,
 				729DA3C62AFE511E00D8190E /* Montserrat-SemiBold.ttf in Resources */,
 				729DA3C82AFE513C00D8190E /* Montserrat.ttf in Resources */,
-				7287AD1B2AF1315600657FD8 /* SFProText-Bold.ttf in Resources */,
-				728AA3F72AF53399001B3FCA /* Montserrat-BoldItalic.ttf in Resources */,
-				7287AD162AF1315600657FD8 /* SF-Pro-Display-Medium.otf in Resources */,
 				729DA3C42AFE509E00D8190E /* Montserrat-Bold.ttf in Resources */,
 				72F3818D2ADD3D86005549F1 /* Assets.xcassets in Resources */,
-				7287AD142AF1315600657FD8 /* Caveat-Bold.ttf in Resources */,
-				7287AD192AF1315600657FD8 /* Bitter-Regular.ttf in Resources */,
-				7287AD152AF1315600657FD8 /* Poppins-Medium.ttf in Resources */,
-				7287AD132AF1315600657FD8 /* DMSans-Bold.ttf in Resources */,
-				7287AD122AF1315600657FD8 /* DMSans-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,40 +320,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				72B7BB6E2AE7DC7C00086D7C /* MapsModel_SimulatorFarm.swift in Sources */,
-				72AD4A002AEA4E2400784D8A /* FarmItemViewModel_SimulatorFarm.swift in Sources */,
-				721F7CFB2B0CFF19006E1397 /* CustomAlertsView.swift in Sources */,
 				72FC3A202AFD051B00046985 /* NetworkManager_SimulatorFarm.swift in Sources */,
-				72AD4A082AEAA5FA00784D8A /* ModItemViewModel_SimulatorFarm.swift in Sources */,
-				7285F64D2AE1539D005C8E8E /* FilterView_SimulatorFarm.swift in Sources */,
+				236133352CAD331F009B49C3 /* BodyEditorModel.swift in Sources */,
 				7285F6572AE5DD56005C8E8E /* FarmModel_SimulatorFarm.swift in Sources */,
 				72926CC72ADD5EEB00F4B4E3 /* ModsModel_SimulatorFarm.swift in Sources */,
-				72AD4A0D2AEABD0700784D8A /* MapItemViewModel_SimulatorFarm.swift in Sources */,
+				2363B9EC2CA99D08000111BA /* SkinsModel.swift in Sources */,
 				7285F64B2ADF2FD4005C8E8E /* FilterType_SimulatorFarm.swift in Sources */,
-				721F7CF72B0CE004006E1397 /* CircleLoader.swift in Sources */,
 				72AD4A062AEAA5CD00784D8A /* ModsViewModel_SimulatorFarm.swift in Sources */,
-				7287ACB62AF0533A00657FD8 /* CategoryIndicatorView_SimulatorFarm.swift in Sources */,
-				7285F6532AE5C837005C8E8E /* SearchView_SimulatorFarm.swift in Sources */,
-				7285F6472ADEAE21005C8E8E /* ModsDetailView_SimulatorFarm.swift in Sources */,
-				7285F6512AE2E618005C8E8E /* SplashScreenView_SimulatorFarm.swift in Sources */,
-				72B7BB7D2AE7E4FD00086D7C /* MapsDetailView_SimulatorFarm.swift in Sources */,
-				72F3818B2ADD3D80005549F1 /* FarmSimulation.swift in Sources */,
 				72AD4A0B2AEABCEB00784D8A /* MapsViewModel_SimulatorFarm.swift in Sources */,
-				72567C612ADD650E008C324B /* SettingsView_SimulatorFarm.swift in Sources */,
-				7285F6552AE5DB08005C8E8E /* FarmItemView_SimulatorFarm.swift in Sources */,
-				72926CC52ADD5EC300F4B4E3 /* ModsView_SimulatorFarm.swift in Sources */,
-				72B7BB802AE7EDE600086D7C /* ModItemView_SimulatorFarm.swift in Sources */,
-				7287ACB82AF0F20700657FD8 /* Constants_SimulatorFarm.swift in Sources */,
 				7287AD112AF1315600657FD8 /* AppConstants_SimulatorFarm.swift in Sources */,
 				72AD4A042AEA714E00784D8A /* FarmsViewModel_SimulatorFarm.swift in Sources */,
 				72F381952ADD3D86005549F1 /* mods_farming_simulator22.xcdatamodeld in Sources */,
 				72AD4A122AEFB88100784D8A /* DropBoxManager_SimulatorFarm.swift in Sources */,
-				72567C5F2ADD64F0008C324B /* MapsView_SimulatorFarm.swift in Sources */,
-				72B7BB7B2AE7E3F600086D7C /* MapItemView_SimulatorFarm.swift in Sources */,
-				72F381892ADD3D80005549F1 /* mods_farming_simulator22App.swift in Sources */,
+				72F381892ADD3D80005549F1 /* FlightSimulatorApp.swift in Sources */,
 				720ED1DB2AF279E300FEA01C /* Persistence_SimulatorFarm.swift in Sources */,
-				7285F64F2AE2A785005C8E8E /* FarmDetailView_SimulatorFarm.swift in Sources */,
-				72567C5D2ADD64D2008C324B /* FarmsView_SimulatorFarm.swift in Sources */,
-				721F7CF92B0CE923006E1397 /* LoadingView_SimulatorFarm.swift in Sources */,
+				2363B9EE2CA9A2E1000111BA /* SkinsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -597,15 +461,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Farming Simulator 2022/Farming Simulator 2022.entitlements";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"Farming Simulator 2022/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = K3CFA8U38L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Farming Simulator 2022/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Aircraft Temp Name";
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "The app wants to save an image to your gallery.";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = tracking;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -617,8 +484,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = farm.simulator.rpo.20240201;
+				PRODUCT_BUNDLE_IDENTIFIER = farm.simulator.rpo.22092024;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -631,14 +499,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Farming Simulator 2022/Farming Simulator 2022.entitlements";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Farming Simulator 2022/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = K3CFA8U38L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Farming Simulator 2022/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Aircraft Temp Name";
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "The app wants to save an image to your gallery.";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = tracking;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -650,8 +521,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = farm.simulator.rpo.20240201;
+				PRODUCT_BUNDLE_IDENTIFIER = farm.simulator.rpo.22092024;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

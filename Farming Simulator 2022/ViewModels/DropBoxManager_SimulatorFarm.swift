@@ -16,22 +16,24 @@ class DropBoxManager_SimulatorFarm: ObservableObject {
     private var coreDataHelper = PersistenceController.shared
     private var client: DropboxClient?
     
+    @AppStorage("skinsDataCount") private var skinsDataCount = 0
     @AppStorage("mapsDataCount") private var mapsDataCount = 0
     @AppStorage("modsDataCount") private var modsDataCount = 0
     @AppStorage("farmsDataCount") private var farmsDataCount = 0
+    @AppStorage("nicknameDataCount") private var nicknameDataCount = 0
+    @AppStorage("bodyEditorDataCount") private var bodyEditorDataCount = 0
+    var validateDropToken: Bool = false
     
     @Published private(set) var progress = 0
+    
+    private var firstInternetConnection: Bool = true
     
     private init() { }
     
     func initialize_FarmSimulator() {
-        
-        
-        
 //        clearAll_SimulatorFarm()
         Task {
             do {
-//                let token = try await getRefreshToken(code: DropBoxKeys_SimulatorFarm.token)
                 try await validateAccessToken(DropBoxKeys_SimulatorFarm.refresh_token)
                 await fetchData_SimulatorFarm()
             } catch {
@@ -41,22 +43,50 @@ class DropBoxManager_SimulatorFarm: ObservableObject {
     }
     
     
+    
     private func clearAll_SimulatorFarm() {
+        skinsDataCount = 0
         mapsDataCount = 0
         modsDataCount = 0
         farmsDataCount = 0
+        nicknameDataCount = 0
+        bodyEditorDataCount = 0
         coreDataHelper.deleteAll_FarmsAndModsAndMaps()
     }
 
     private func fetchData_SimulatorFarm() async {
-        
-        
-        
-        //
-        
+        fetchSkins_SimulatorFarm()
         fetchMaps_SimulatorFarm()
         fetchMods_SimulatorFarm()
         fetchFarms_SimulatorFarm()
+
+        fetchBodyEditor_SimulatorFarm()
+    }
+    
+    func validateAccesToken() {
+        Task {
+            do {
+                try await validateAccessToken(DropBoxKeys_SimulatorFarm.refresh_token)
+                await fetchDataLocal()
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    func fetchDataLocal() async {
+        if mapsDataCount == 0 || modsDataCount == 0 || farmsDataCount == 0 || skinsDataCount == 0 || nicknameDataCount == 0 || bodyEditorDataCount == 0 {
+            firstInternetConnection = true
+        }
+        if firstInternetConnection {
+            fetchSkins_SimulatorFarm()
+            fetchMaps_SimulatorFarm()
+            fetchMods_SimulatorFarm()
+            fetchFarms_SimulatorFarm()
+            
+            fetchBodyEditor_SimulatorFarm()
+            
+            firstInternetConnection = false
+        }
     }
     
     func downloadFile_SimulatorFarm(fileName: String, progressHandler: @escaping (Progress) -> Void, completion: @escaping (Data?) -> Void) {
@@ -76,8 +106,100 @@ class DropBoxManager_SimulatorFarm: ObservableObject {
                 }
             }
     }
-
     
+    private func fetchBodyEditor_SimulatorFarm() {
+        client?.files.download(path: DropBoxKeys_SimulatorFarm.bodyEditorFilePath)
+            .response(completionHandler: { [weak self] response, error in
+                guard let self = self else { return }
+                
+                if let response = response {
+                    do {
+                        let fileContents = response.1
+                        if fileContents.count != self.bodyEditorDataCount {
+                            self.bodyEditorDataCount = fileContents.count
+                            self.coreDataHelper.clearBodyPartCompletely()
+                            print("New data detected. Clearing old data.")
+                        } else {
+                            print("No new data detected. Skipping processing.")
+                            self.progress += 25
+                            return
+                        }
+                        
+                        let itemInfo = try JSONDecoder().decode(BeforoBodyEditorModel.self, from: fileContents)
+                        
+                        var topElement = [BodyEditorPattern]()
+                        topElement.append(contentsOf: itemInfo.allObjects.top.values)
+                        var pantsElement = [BodyEditorPattern]()
+                        pantsElement.append(contentsOf: itemInfo.allObjects.pants.values)
+                        var accessoriesElement = [BodyEditorPattern]()
+                        accessoriesElement.append(contentsOf: itemInfo.allObjects.accessories.values)
+                        var bodyElement = [BodyEditorPattern]()
+                        bodyElement.append(contentsOf: itemInfo.allObjects.body.values)
+                        var shoesElement = [BodyEditorPattern]()
+                        shoesElement.append(contentsOf: itemInfo.allObjects.shoes.values)
+                        var hairElement = [BodyEditorPattern]()
+                        hairElement.append(contentsOf: itemInfo.allObjects.hair.values)
+                        
+                        coreDataHelper.addBodyElements(topElement, type: .top)
+                        coreDataHelper.addBodyElements(accessoriesElement, type: .accessories)
+                        coreDataHelper.addBodyElements(bodyElement, type: .body)
+                        coreDataHelper.addBodyElements(hairElement, type: .hair)
+                        coreDataHelper.addBodyElements(pantsElement, type: .trousers)
+                        coreDataHelper.addBodyElements(shoesElement, type: .shoes)
+                        
+                        self.progress += 25
+                    } catch {
+                        print("Error decoding or processing JSON: \(error)")
+                    }
+                } else if let error = error {
+                    print("Error downloading file from Dropbox: \(error)")
+                }
+            })
+            .progress({ progress in
+                print("Downloading: ", progress)
+            })
+    }
+
+    private func fetchSkins_SimulatorFarm() {
+        
+        client?.files.download(path: DropBoxKeys_SimulatorFarm.skinsFilePath)
+            .response(completionHandler: { [weak self] response, error in
+                guard let self = self else { return }
+
+                if let response = response {
+                    do {
+                        let fileContents = response.1
+                        if fileContents.count != self.skinsDataCount {
+                            self.skinsDataCount = fileContents.count
+                            self.coreDataHelper.clearSkinsCompletely()
+                            print("New data detected. Clearing old data.")
+                        } else {
+                            print("No new data detected. Skipping processing.")
+                            self.progress += 25
+                            return
+                        }
+
+                        let skinsInfo = try JSONDecoder().decode(BeforeSkinsArray.self, from: fileContents)
+                        var skins = [SkinsPattern]()
+                        
+                        skins.append(contentsOf: skinsInfo.vmq9.o2F0T7.values)
+                       
+                        self.coreDataHelper.addSkins_SimulatorFarm(skins)
+
+                        self.progress += 25
+                    } catch {
+                        print("Error decoding or processing JSON: \(error)")
+                    }
+                } else if let error = error {
+                    print("Error downloading file from Dropbox: \(error)")
+                }
+            })
+            .progress({ progress in
+                print("Downloading: ", progress)
+            })
+
+
+    }
     
     private func fetchMaps_SimulatorFarm() {
         
@@ -98,11 +220,10 @@ class DropBoxManager_SimulatorFarm: ObservableObject {
                             return
                         }
 
-                        let mapInfo = try JSONDecoder().decode(MapInfo.self, from: fileContents)
+                        let mapInfo = try JSONDecoder().decode(BeforeMapInfo.self, from: fileContents)
                         var maps = [MapPattern]()
-
-                        maps.append(contentsOf: mapInfo.maps)
-
+                        
+                        maps.append(contentsOf: mapInfo.ryiz0Alp.ovlcz2U1Cy.values)
                        
                         self.coreDataHelper.addMaps_SimulatorFarm(maps)
 
@@ -141,11 +262,7 @@ class DropBoxManager_SimulatorFarm: ObservableObject {
 
                         let modsCollection = try JSONDecoder().decode(ModCollection.self, from: fileContents)
                         var mods = [ModPattern]()
-
-                        mods.append(contentsOf: modsCollection.mods.cars)
-                        mods.append(contentsOf: modsCollection.mods.combines)
-                        mods.append(contentsOf: modsCollection.mods.implementsAndTools)
-
+                        mods.append(contentsOf: modsCollection.tdz5E.w2Mgywzn.values)
                        
                         self.coreDataHelper.addMods_SimulatorFarm(mods)
 
@@ -181,10 +298,10 @@ class DropBoxManager_SimulatorFarm: ObservableObject {
                             return
                         }
 
-                        let farmData = try JSONDecoder().decode(FarmData.self, from: fileContents)
+                        let farmData = try JSONDecoder().decode(BeforeFarmData.self, from: fileContents)
                         var farms = [FarmModel]()
                         
-                        farms.append(contentsOf: farmData.buildings)
+                        farms.append(contentsOf: farmData.zq9I1B1Fcy.the8F8Nad4.values)
 
                        
                         self.coreDataHelper.addFarms_SimulatorFarm(farms)
@@ -218,6 +335,7 @@ class DropBoxManager_SimulatorFarm: ObservableObject {
         if let accessToken = responseJSON[DropBoxKeys_SimulatorFarm.accessTokenName] as? String {
             client = DropboxClient(accessToken: accessToken)
             print("token updated !!! \(accessToken),\(String(describing: self.client))")
+            validateDropToken = true
         } else {
             throw NetworkError_SimulatorFarm.noData
         }
@@ -262,6 +380,7 @@ class DropBoxManager_SimulatorFarm: ObservableObject {
                                 self.coreDataHelper.updateMods_SimulatorFarm_SimulatorFarm(with: path, and: data)
                                 self.coreDataHelper.updateMaps(with: path, and: data)
                                 self.coreDataHelper.updateFarms(with: path, and: data)
+                                self.coreDataHelper.updateSkins(with: path, and: data)
                             }
                             completion(data)
                         } else {

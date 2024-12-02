@@ -15,7 +15,7 @@ class MapsViewModel_SimulatorFarm: ObservableObject {
     @Published var filteredMaps: [MapPattern] = []
     @Published var mapsSelectedFilter: FilterType_SimulatorFarm = .all
     @Published var filterFavoriteMaps: [MapPattern] = []
-
+    var tempArrayToFilterSearch: [MapPattern] = []
     init() {
         
 
@@ -34,17 +34,20 @@ class MapsViewModel_SimulatorFarm: ObservableObject {
         switch mapsSelectedFilter {
         case .all:
             filteredMaps = maps
+            tempArrayToFilterSearch = filteredMaps
         case .favorite:
             filteredMaps = filterFavoriteMaps
+            tempArrayToFilterSearch = filteredMaps
         case .new:
             filteredMaps = maps.filter { $0.new! }
+            tempArrayToFilterSearch = filteredMaps
         case .top:
             filteredMaps = maps.filter { $0.top! }
-           
+            tempArrayToFilterSearch = filteredMaps
         }
         
         if !searchText.isEmpty {
-            filteredMaps = maps.filter { map in
+            filteredMaps = tempArrayToFilterSearch.filter { map in
                 return map.title.lowercased().contains(searchText.lowercased())
             }
         }
@@ -69,6 +72,7 @@ class MapsViewModel_SimulatorFarm: ObservableObject {
         let fetchRequest: NSFetchRequest<Map> = Map.fetchRequest()
         do {
             let fetchedMaps = try viewContext.fetch(fetchRequest)
+            print("++ maps fetched \(fetchedMaps.count)")
             maps = fetchedMaps.map { mapEntity in
                 return MapPattern(from: mapEntity)
             }
@@ -82,6 +86,13 @@ class MapsViewModel_SimulatorFarm: ObservableObject {
         if let index = maps.firstIndex(where: { $0.id == updatedMapModel.id }) {
             maps[index] = updatedMapModel
 
+            NotificationCenter.default.post(name: NSNotification.Name("MapPatternChanged"), object: self)
+        }
+    }
+    
+    func addDataToImage(data: Data, updatedItemModel: MapPattern) {
+        if let index = maps.firstIndex(where: { $0.id == updatedItemModel.id }) {
+            maps[index].imageData = data
             NotificationCenter.default.post(name: NSNotification.Name("MapPatternChanged"), object: self)
         }
     }
