@@ -16,7 +16,7 @@ struct AvatarDataGeneration: View {
     @State var choosedPart: BestTypePartOfBody?
     @State var genderType: GenderTypBestModel = .man
     @State var showList: Bool = false
-    
+    @State var deleteAlert: Bool = false
     @State var showSaveAlert: Bool = false
     @State var showSaveState: Bool = false
     @State var showSaveStateToGallery: Bool = false
@@ -221,6 +221,24 @@ struct AvatarDataGeneration: View {
             }
             .ignoresSafeArea(.all, edges: .top)
             .frame(maxHeight: .infinity, alignment: .top)
+            
+            if deleteAlert {
+                FixDeleteItemAlertCompletion { state in
+                    if state {
+                        if let choosedData{
+                            viewContext.delete(choosedData)
+                            try? viewContext.save()
+                            DispatchQueue.main.async {
+                                deleteAlert.toggle()
+                            }
+                        }
+                    } else {
+                        DispatchQueue.main.async {
+                            deleteAlert.toggle()
+                        }
+                    }
+                }
+            }
             if showList {
                 ZStack {
                     Color.white.opacity(0.3)
@@ -310,9 +328,12 @@ struct AvatarDataGeneration: View {
                         }
 
                         ForEach(allData, id: \.idPeople) { item in
-                            CollectionItems(image: item.smallPreviewImage, completionSave: {
+                            CollectionItems(item: item, completionSave: {
                                 choosedData = item
                                 showSaveStateToGallery.toggle()
+                            }, completionDelete: {
+                                choosedData = item
+                                deleteAlert.toggle()
                             }, completionAbout: {
                                 choosedData = item
                                 openPreview.toggle()
@@ -329,27 +350,83 @@ struct AvatarDataGeneration: View {
         }
     }
 
-    private func CollectionItems(image: Data?, completionSave: @escaping () -> Void, completionAbout: @escaping () -> Void) -> some View {
-        RoundedRectangle(cornerRadius: bigSize ? 30:25)
+//    private func CollectionItems(image: Data?, completionSave: @escaping () -> Void, completionAbout: @escaping () -> Void) -> some View {
+//        RoundedRectangle(cornerRadius: bigSize ? 30:25)
+//            .fill(Color.white)
+//            .frame(width: bigSize ? 300 : 175, height:bigSize ? 445 :300)
+//            .shadow(radius: 10)
+//            .overlay {
+//                VStack {
+//                    Image(uiImage: UIImage(data: image ?? Data()) ?? UIImage())
+//                        .resizable()
+//                        .scaledToFit()
+//                        .padding(.top, 10)
+//                    
+//                    Spacer()
+//
+//                    Button(action: completionSave) {
+//                        Text("DOWNLOAD")
+//                            .font(Font.custom("Gilroy-Bold", size: bigSize ? 24 : 12).weight(.bold))
+//                            .foregroundColor(.white)
+//                            .frame(width: bigSize ? 200 :138, height: bigSize ? 50 :30)
+//                            .background(Color.blue)
+//                            .clipShape(RoundedRectangle(cornerRadius: bigSize ? 30 :25))
+//                    }
+//                    .padding(.bottom, 10)
+//                }
+//            }
+//            .onTapGesture {
+//                completionAbout()
+//            }
+//    }
+    
+    
+    private func CollectionItems(item: BodyEditor, completionSave: @escaping () -> Void, completionDelete: @escaping () -> Void, completionAbout: @escaping () -> Void) -> some View {
+        RoundedRectangle(cornerRadius: bigSize ? 30 : 25)
             .fill(Color.white)
-            .frame(width: bigSize ? 300 : 175, height:bigSize ? 445 :300)
+            .frame(width: bigSize ? 300 : 175, height: bigSize ? 445 : 300)
             .shadow(radius: 10)
             .overlay {
                 VStack {
-                    Image(uiImage: UIImage(data: image ?? Data()) ?? UIImage())
-                        .resizable()
-                        .scaledToFit()
-                        .padding(.top, 10)
-                    
+                    // DELETE BUTTON (Top-Left Corner)
+                    HStack {
+                        Button(action: {
+                            choosedData = item
+                            deleteAlert.toggle()
+                        }) {
+                            Image(systemName: "trash")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: bigSize ? 30 : 20, height: bigSize ? 30 : 20)
+                                .foregroundColor(.red)
+                                .padding(8)
+                                .background(Color.white.opacity(0.8))
+                                .clipShape(Circle())
+                                .shadow(radius: 5)
+                        }
+                        .padding([.top, .leading], 10) // Align to top-left corner
+
+                        Spacer()
+                    }
+
                     Spacer()
 
+                    // IMAGE
+                    Image(uiImage: UIImage(data: item.smallPreviewImage ?? Data()) ?? UIImage())
+                        .resizable()
+                        .scaledToFit()
+                        .padding(.horizontal, 10)
+
+                    Spacer()
+
+                    // DOWNLOAD BUTTON (Bottom)
                     Button(action: completionSave) {
                         Text("DOWNLOAD")
                             .font(Font.custom("Gilroy-Bold", size: bigSize ? 24 : 12).weight(.bold))
                             .foregroundColor(.white)
-                            .frame(width: bigSize ? 200 :138, height: bigSize ? 50 :30)
+                            .frame(width: bigSize ? 200 : 138, height: bigSize ? 50 : 30)
                             .background(Color.blue)
-                            .clipShape(RoundedRectangle(cornerRadius: bigSize ? 30 :25))
+                            .clipShape(RoundedRectangle(cornerRadius: bigSize ? 30 : 25))
                     }
                     .padding(.bottom, 10)
                 }
@@ -358,6 +435,7 @@ struct AvatarDataGeneration: View {
                 completionAbout()
             }
     }
+
 
     private func saveStateToData() async {
         if viewHotel.updateData {

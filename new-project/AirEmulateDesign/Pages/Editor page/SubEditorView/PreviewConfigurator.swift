@@ -45,6 +45,7 @@ struct PreviewConfigurator: View {
                                     .frame(height: 55)
                             }
                         }
+
                     }
                     .overlay {
                         nextAndPreviesButtons

@@ -24,22 +24,19 @@ class SpeedViewModel: ObservableObject {
         filterFavoriteSpeed = Speed.filter { $0.isFavorited == true  }
     }
     
+     func pressingFilterSpeed() {
+        DispatchQueue.main.async {
+            self.filteredSpeed = self.Speed.filter {
+                self.speedSelectedFilter == .all ||
+                (self.speedSelectedFilter == .favorite && $0.isFavorited == true) ||
+                (self.speedSelectedFilter == .new && $0.new == true) ||
+                (self.speedSelectedFilter == .top && $0.top == true)
+            }
 
-    func pressingFilterSpeed() {
-        switch speedSelectedFilter {
-        case .all:
-            filteredSpeed = Speed
-        case .favorite:
-            filteredSpeed = Speed.filter { $0.isFavorited == true }
-        case .new:
-            filteredSpeed = Speed.filter { $0.new ?? false }
-        case .top:
-            filteredSpeed = Speed.filter { $0.top ?? false }
+            if !self.searchText.isEmpty {
+                self.filteredSpeed = self.filteredSpeed.filter { $0.title!.lowercased().contains(self.searchText.lowercased()) }
+            }
         }
-
-        tempArrayToFilterSearch = filteredSpeed
-
-        fetchDataForSpeed()
     }
 
     func fetchDataForSpeed() {

@@ -20,27 +20,20 @@ class RidesViewModel: ObservableObject {
     func generateFavoriteRide() {
         filterFavoriteRides = rides.filter { $0.isFavorited == true  }
     }
-        func pressingfilterRide() {
-        switch skinsSelectedRides {
-        case .all:
-            filteredRides = rides
-        case .favorite:
-            filteredRides = rides.filter { $0.isFavorited == true }
-        case .new:
-            filteredRides = rides.filter { $0.new ?? false }
-        case .top:
-            filteredRides = rides.filter { $0.top ?? false }
-        }
+    
+    func pressingfilterRide() {
+        DispatchQueue.main.async {
+            self.filteredRides = self.rides.filter {
+                self.skinsSelectedRides == .all ||
+                (self.skinsSelectedRides == .favorite && $0.isFavorited == true) ||
+                (self.skinsSelectedRides == .new && $0.new == true) ||
+                (self.skinsSelectedRides == .top && $0.top == true)
+            }
 
-        tempArrayToFilterSearch = filteredRides
-
-        if !searchText.isEmpty {
-            filteredRides = tempArrayToFilterSearch.filter { skins in
-                skins.title.lowercased().contains(searchText.lowercased())
+            if !self.searchText.isEmpty {
+                self.filteredRides = self.filteredRides.filter { $0.title.lowercased().contains(self.searchText.lowercased()) }
             }
         }
-            
-        fetchDataForRides()
     }
     
     

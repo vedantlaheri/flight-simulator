@@ -111,10 +111,16 @@ struct SpeedViewViolent: View {
                         voteSection(isLargeDevice: isLargeDevice)
                     }
                 }
+
                 .onAppear {
-                    SpeedRun.speedSelectedFilter = .all
-                    SpeedRun.pressingFilterSpeed()
+                    DispatchQueue.main.async {
+                        SpeedRun.fetchSpeedFromCoreData()
+                        SpeedRun.speedSelectedFilter = .all
+                        SpeedRun.pressingFilterSpeed()
+                    }
                 }
+                
+                
                 .navigationBarHidden(true)
             }
             .navigationViewStyle(StackNavigationViewStyle())

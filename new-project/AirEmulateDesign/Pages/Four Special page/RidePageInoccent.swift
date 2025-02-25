@@ -124,8 +124,11 @@ struct RidePageInnocent: View {
                 }
             }
             .onAppear {
-                ridingTier.skinsSelectedRides = .all
-                ridingTier.pressingfilterRide()
+                DispatchQueue.main.async {
+                    ridingTier.fetchRidesFromCoreData()
+                    ridingTier.skinsSelectedRides = .all
+                    ridingTier.pressingfilterRide()
+                }
             }
             .navigationBarHidden(true)
         }

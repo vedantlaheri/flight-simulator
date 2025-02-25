@@ -122,10 +122,17 @@ struct TrackPublishedData: View {
                     skying
                 }
             }
+
             .onAppear {
-                TrackTurn.tracksSelectedFilter = .all
-                TrackTurn.pressingfilterTracks()
+                DispatchQueue.main.async {
+                    TrackTurn.fetchTracksFromCoreData {
+                        TrackTurn.tracksSelectedFilter = .all
+                        TrackTurn.pressingfilterTracks()
+                    }
+                }
             }
+
+            
             .navigationBarHidden(true)
         }
         .navigationViewStyle(StackNavigationViewStyle())

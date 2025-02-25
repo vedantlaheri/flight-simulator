@@ -125,9 +125,13 @@ struct GearedTopFinishing: View {
                 }
             }
             .onAppear {
-                gearingWheel.gearsSelectedFilter = .all
-                gearingWheel.pressingfilterGear()
+                DispatchQueue.main.async {
+                    gearingWheel.fetchGearsFromCoreData()
+                    gearingWheel.gearsSelectedFilter = .all
+                    gearingWheel.pressingfilterGear()
+                }
             }
+
             .navigationBarHidden(true)
         }
         .navigationViewStyle(StackNavigationViewStyle())

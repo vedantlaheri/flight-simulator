@@ -1,123 +1,3 @@
-//import Foundation
-//import SwiftUI
-//import CoreData
-//
-//class GearViewModel: ObservableObject {
-//    @Published var gears: [GearPattern] = []
-//    @Published var searchText = ""
-//    @Published var filteredGears: [GearPattern] = []
-//    @Published var gearsSelectedFilter: FilterTypeAll = .all
-//    @Published var filterFavoriteGears: [GearPattern] = []
-//    var tempArrayToFilterSearch: [GearPattern] = []
-//    init() {
-//        
-//
-//        fetchGearsFromCoreData()
-//        listenForGearPatternChanges()
-//        pressingfilterGear()
-//        generateFavoriteGears()
-//        
-//    }
-//    
-//    func generateFavoriteGears() {
-//        filterFavoriteGears = gears.filter { $0.isFavorited == true }
-//    }
-//
-//    
-//    func pressingfilterGear() {
-//        switch gearsSelectedFilter {
-//        case .all:
-//            filteredGears = gears
-//        case .favorite:
-//            filteredGears = gears.filter { $0.isFavorited == true }
-//        case .new:
-//            filteredGears = gears.filter { $0.new ?? false }
-//        case .top:
-//            filteredGears = gears.filter { $0.top ?? false }
-//        }
-//
-//        tempArrayToFilterSearch = filteredGears
-//
-//        if !searchText.isEmpty {
-//            filteredGears = tempArrayToFilterSearch.filter { gears in
-//                gears.title.lowercased().contains(searchText.lowercased())
-//            }
-//        }
-//
-//        fetchDataForGears()
-//    }
-//
-//    func fetchDataForGears() {
-//        for index in filteredGears.indices {
-//            if filteredGears[index].imageData == nil {
-//                guard let url = URL(string: filteredGears[index].image) else { continue }
-//
-//                URLSession.shared.dataTask(with: url) { data, response, error in
-//                    if let data = data, error == nil {
-//                        DispatchQueue.main.async {
-//                            if let gearIndex = self.filteredGears.firstIndex(where: { $0.id == self.filteredGears[index].id }) {
-//                                self.filteredGears[gearIndex].imageData = data
-//                                self.objectWillChange.send()
-//                            }
-//                        }
-//                    }
-//                }.resume()
-//            }
-//        }
-//    }
-//
-//
-//    func removeIsFavoriteGear(with id: String) {
-//        if gearsSelectedFilter == .favorite {
-//            if let removeIndex = filteredGears.firstIndex(where: { $0.id == id }) {
-//                filteredGears.remove(at: removeIndex)
-//            }
-//        }
-//    }
-//    
-//     func fetchGearsFromCoreData() {
-//        let viewContext = PersistenceController.shared.container.viewContext
-//        let fetchRequest: NSFetchRequest<Map> = Map.fetchRequest()
-//        do {
-//            let fetchedGears = try viewContext.fetch(fetchRequest)
-//            print("++ Gears fetched \(fetchedGears.count)")
-//            gears = fetchedGears.map { GearEntity in
-//                return GearPattern(from: GearEntity)
-//            }
-//            
-//        } catch {
-//            print("Error fetching Gears: \(error)")
-//        }
-//    }
-//
-//    func updateGearModel(updatedMapModel: GearPattern) {
-//        if let index = gears.firstIndex(where: { $0.id == updatedMapModel.id }) {
-//            gears[index] = updatedMapModel
-//
-//            NotificationCenter.default.post(name: NSNotification.Name("GearsPatternChanged"), object: self)
-//        }
-//    }
-//    
-//    func addDataToImage(data: Data, updatedItemModel: GearPattern) {
-//        if let index = gears.firstIndex(where: { $0.id == updatedItemModel.id }) {
-//            gears[index].imageData = data
-//            NotificationCenter.default.post(name: NSNotification.Name("GearsPatternChanged"), object: self)
-//        }
-//    }
-//    
-//    private func listenForGearPatternChanges() {
-//        NotificationCenter.default.addObserver(forName: NSNotification.Name("GearsPatternChanged"), object: nil, queue: nil) { notification in
-//            if let updatedMap = notification.object as? GearPattern {
-//                if let index = self.gears.firstIndex(where: { $0.id == updatedMap.id }) {
-//                    self.gears[index] = updatedMap
-//                    self.pressingfilterGear()
-//                    self.generateFavoriteGears()
-//                }
-//            }
-//        }
-//    }
-//}
-//
 import Foundation
 import SwiftUI
 import CoreData
@@ -142,28 +22,20 @@ class GearViewModel: ObservableObject {
     }
     
     func pressingfilterGear() {
-        switch gearsSelectedFilter {
-        case .all:
-            filteredGears = gears
-        case .favorite:
-            filteredGears = gears.filter { $0.isFavorited == true }
-        case .new:
-            filteredGears = gears.filter { $0.new ?? false }
-        case .top:
-            filteredGears = gears.filter { $0.top ?? false }
-        }
+        DispatchQueue.main.async {
+            self.filteredGears = self.gears.filter {
+                self.gearsSelectedFilter == .all ||
+                (self.gearsSelectedFilter == .favorite && $0.isFavorited == true) ||
+                (self.gearsSelectedFilter == .new && $0.new == true) ||
+                (self.gearsSelectedFilter == .top && $0.top == true)
+            }
 
-        tempArrayToFilterSearch = filteredGears
-
-        if !searchText.isEmpty {
-            filteredGears = tempArrayToFilterSearch.filter { gear in
-                gear.title.lowercased().contains(searchText.lowercased())
+            if !self.searchText.isEmpty {
+                self.filteredGears = self.filteredGears.filter { $0.title.lowercased().contains(self.searchText.lowercased()) }
             }
         }
-
-        fetchDataForGears()
     }
-    
+
     func fetchDataForGears() {
         for index in filteredGears.indices {
             if filteredGears[index].imageData == nil {
@@ -192,19 +64,16 @@ class GearViewModel: ObservableObject {
     }
     
     func fetchGearsFromCoreData() {
-        let viewContext = PersistenceController.shared.container.viewContext
-        let fetchRequest: NSFetchRequest<Map> = Map.fetchRequest()
-        do {
-            let fetchedGears = try viewContext.fetch(fetchRequest)
-            print("++ Gears fetched \(fetchedGears.count)")
-            gears = fetchedGears.map { gearEntity in
-                return GearPattern(from: gearEntity)
-            }
-            
-        } catch {
-            print("Error fetching Gears: \(error)")
-        }
-    }
+           let viewContext = PersistenceController.shared.container.viewContext
+           let fetchRequest: NSFetchRequest<Map> = Map.fetchRequest()
+           do {
+               let fetchedGears = try viewContext.fetch(fetchRequest)
+               gears = fetchedGears.map { GearPattern(from: $0) }
+           } catch {
+               print("Error fetching Gears: \(error)")
+           }
+       }
+   
 
     func updateGearModel(updatedGearModel: GearPattern) {
         if let index = gears.firstIndex(where: { $0.id == updatedGearModel.id }) {
@@ -226,10 +95,8 @@ class GearViewModel: ObservableObject {
             gears[index].isFavorited = isFavorited
         }
 
-        // Persist changes in CoreData
         let viewContext = PersistenceController.shared.container.viewContext
 
-        // Assuming 'id' is a String in your model, we'll perform a fetch to get the object by its unique id.
         let fetchRequest: NSFetchRequest<Map> = Map.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id == %@", gear.id)
 

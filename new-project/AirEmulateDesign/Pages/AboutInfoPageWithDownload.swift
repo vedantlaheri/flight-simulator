@@ -245,27 +245,10 @@ private var MainBodySection : some View {
                }
                .clipShape(RoundedRectangle(cornerRadius: 20))
                .zIndex(1)
-             
-//             Button(action: {
-//                            updateFavoriteState()
-//                        }) {
-//                            Image(systemName: favoriteState ? "bookmark.fill" : "bookmark")
-//                                .resizable()
-//                                .scaledToFit()
-//                                .frame(width: 18, height: 36)
-//                                .offset(x: calculateRibbonOffsetX(), y: calculateRibbonOffsetY())
-//                                .foregroundColor(favoriteState ? .blue : .gray)
-//                                .zIndex(2)
-//                        }
-             
+                          
              Button(action: {
                  // Toggle the favorite state
                  updateFavoriteState()
-                 // Persist the updated favorite state in Core Data
-//                 gearingWheel.updateFavoriteGearStatus(for: wheel, isFavorited: isFavorited)
-//                 // Update the filtered list
-//                 gearingWheel.pressingfilterGear()
-            
              }) {
                  if favoriteState {
              
@@ -273,16 +256,12 @@ private var MainBodySection : some View {
                  .resizable()
                  .scaledToFit()
                  .frame(width: 18, height: 23)
-                 //.padding(10)
-                 //.background(Color.white.opacity(0.6))
                  .foregroundColor(Color.black)
          } else {
-             // Use custom ribbon image when not favorited
-             Image("Ribbon") // Make sure the ribbon image exists in your assets
+             Image("Ribbon")
                  .resizable()
                  .scaledToFit()
                  .frame(width: 18, height: 23)
-                // .padding(10)
                  
                
          }
@@ -315,6 +294,7 @@ private var MainBodySection : some View {
                        .fontWeight(.bold)
                        .foregroundColor(.blue)
                        .padding(.top, -4)
+                       .padding(.vertical, 2)
                }
            }
            .frame(maxWidth: .infinity)

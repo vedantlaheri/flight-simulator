@@ -51,7 +51,7 @@ struct LoadignPreviewPage: View {
     private func startLoading() {
         timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
             if progress < 100 {
-                progress += 10
+                progress += 3
             } else {
                 isLoadingComplete = true
                 timer?.invalidate()
