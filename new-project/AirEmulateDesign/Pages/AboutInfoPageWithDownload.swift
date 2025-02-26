@@ -21,6 +21,7 @@ struct AboutInfoPageWithDownload: View {
     @State var clearItemName: String
     @State var disableButton: Bool = false
     @State var isnew:Bool?
+    @EnvironmentObject private var dropBoxManager: CloudManagerFarm
     @Environment(\.presentationMode) var presentationMode
     @State var workInternetState: Bool = true
     
@@ -178,7 +179,7 @@ private var SectionOfHeader : some View {
                     .foregroundColor(.white)
                                                 
             }
-            .padding(.leading, 45)
+            .padding(.leading, 50)
             
             Spacer()
             
@@ -233,9 +234,11 @@ private var MainBodySection : some View {
               .frame(maxHeight: bigSize ? (linkDownloadItem == nil ? 700 : 578) : (linkDownloadItem == nil ? 500 : 318))
                .overlay {
                   ZStack {
-                      Image(uiImage: UIImage(data: imageData ?? Data()) ?? UIImage())
-                          .resizable()
-                          .scaledToFill()
+                      if let uiImage = UIImage(data: imageData ?? Data()) {
+                                              Image(uiImage: uiImage)
+                                                  .resizable()
+                                                  .scaledToFill()
+                                          }
                       if imageData == nil {
                            ColorRide.colorPicker(.darkGray)
                            LoaderBlueWhite()

@@ -98,10 +98,13 @@ struct TrackViews: View {
             Task {
                 await MainActor.run {
                     self.rodData = data
+                    TrackTurn.imageCache[trackURL] = data
                 }
             }
         }
     }
+    
+    
 }
 
 struct TrackPublishedData: View {
@@ -240,36 +243,36 @@ struct TrackPublishedData: View {
         TrackTurn.pressingfilterTracks()
     }
 
- 
 
-    
     private var modsList: some View {
         ScrollView {
             LazyVStack(spacing: 15) {
-                if TrackTurn.filteredTracks.isEmpty {
+                if TrackTurn.filteredTracks.isEmpty  {
                     noResultsView
-                } else {
+                }
+                else {
                     ForEach(TrackTurn.filteredTracks.indices, id: \.self) { index in
                         let track = TrackTurn.filteredTracks[index]
                         
                         if TrackTurn.tracksSelectedFilter == .favorite && track.isFavorited == false {
                             EmptyView()
-                        }
-                        
-                            else {
-                                NavigationLink(
-                                    destination: aboutItemPage(for: track)
-                                ) {
-                                    TrackViews(rod: $TrackTurn.filteredTracks[index] )
-                                }
+                        } else {
+                            let cachedImageData: Data? = TrackTurn.imageCache["\(DropBoxKeys_SimulatorFarm.modsImagePartPath)\(track.image)"]
+                         
+                            NavigationLink(destination: aboutItemPage(for: track, imageData: cachedImageData)
+                                .background(Color.white)
+                            ) {
+                                TrackViews(rod: $TrackTurn.filteredTracks[index] )
                             }
-                        
+                            .buttonStyle(PlainButtonStyle())
+                        }
                     }
                 }
             }
             .padding(.horizontal, 10)
         }
     }
+    
     
     private var noResultsView: some View {
         Text("No Result Found")
@@ -282,11 +285,11 @@ struct TrackPublishedData: View {
             .padding(.top, 150)
     }
 
-    private func aboutItemPage(for item: TrackPattern) -> some View {
+    private func aboutItemPage(for item: TrackPattern,imageData: Data?) -> some View {
         AboutInfoPageWithDownload(
             titleItemName: item.title,
             favoriteState: item.isFavorited ?? false,
-            imageData: item.imageData,
+            imageData: imageData ?? item.imageData,
             linkDownloadItem: "\(DropBoxKeys_SimulatorFarm.modsFilePartPath)\(item.file)",
             textItem: item.description,
             idItemToLike: { newState in

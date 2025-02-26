@@ -8,6 +8,7 @@ class RidesViewModel: ObservableObject {
     @Published var filteredRides: [RidesPattern] = []
     @Published var skinsSelectedRides: FilterTypeAll = .all
     @Published var filterFavoriteRides: [RidesPattern] = []
+    @Published var imageCache: [String: Data] = [:]
     var tempArrayToFilterSearch: [RidesPattern] = []
     
     init() {

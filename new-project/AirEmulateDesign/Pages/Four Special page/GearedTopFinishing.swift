@@ -99,6 +99,7 @@ struct WheelView: View {
             Task {
                 await MainActor.run {
                     self.WheelData = data
+                    gearingWheel.imageCache[GearURL] = data
                 }
             }
         }
@@ -113,7 +114,7 @@ struct GearedTopFinishing: View {
     @Binding var isDrawerOpen: Bool
     @State private var isFavorited: Bool = false
     @EnvironmentObject private var networkManager: CloudManagerFarm
-
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -131,12 +132,12 @@ struct GearedTopFinishing: View {
                     gearingWheel.pressingfilterGear()
                 }
             }
-
+            
             .navigationBarHidden(true)
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }
-
+    
     private var headerOfWheel: some View {
         ZStack {
             Color.blue
@@ -151,7 +152,7 @@ struct GearedTopFinishing: View {
         .padding(.top, -30)
         .padding(.bottom, 20)
     }
-
+    
     private var menuGear: some View {
         Button(action: {
             withAnimation(.easeInOut) {
@@ -164,7 +165,7 @@ struct GearedTopFinishing: View {
         }
         .padding(.leading, 30)
     }
-
+    
     private var titleText: some View {
         Text("MAPS")
             .font(.custom("Gilroy-Heavy", size: 24).weight(.heavy))
@@ -173,7 +174,7 @@ struct GearedTopFinishing: View {
             .frame(maxWidth: .infinity, alignment: .center)
             .padding(.trailing, 60)
     }
-
+    
     private var contentOfGearSection: some View {
         ZStack {
             Color.white
@@ -187,7 +188,7 @@ struct GearedTopFinishing: View {
             }
         }
     }
-
+    
     private var searchWheel: some View {
         HStack {
             SearchPanelGray(
@@ -213,7 +214,7 @@ struct GearedTopFinishing: View {
         }
         .padding(.vertical, 10)
     }
-
+    
     private var filterGear: some View {
         FilterLightComponentElementDark(
             isFilterVisible: $isFilterVisible,
@@ -222,11 +223,11 @@ struct GearedTopFinishing: View {
             updateFilter(selectedFilter)
         }
     }
-
+    
     private func updateFilter(_ selectedFilter: String) {
         // Clear filtered gears before updating filter
         gearingWheel.filteredGears = []
-
+        
         switch selectedFilter {
         case "All":
             gearingWheel.gearsSelectedFilter = .all
@@ -241,7 +242,7 @@ struct GearedTopFinishing: View {
         }
         gearingWheel.pressingfilterGear()
     }
-
+    
     private var WheelsList: some View {
         ScrollView {
             LazyVStack(spacing: 15) {
@@ -254,11 +255,14 @@ struct GearedTopFinishing: View {
                         if gearingWheel.gearsSelectedFilter == .favorite && gear.isFavorited == false {
                             EmptyView()
                         } else {
-                            NavigationLink(
-                                destination: aboutDictPage(for: gear)
+                            let cachedImageData: Data? = gearingWheel.imageCache["\(DropBoxKeys_SimulatorFarm.mapsImagePartPath)\(gear.image)"]
+
+                            NavigationLink(destination: aboutDictPage(for: gear, imageData: cachedImageData)
+                                .background(Color.white)
                             ) {
-                                WheelView(wheel: $gearingWheel.filteredGears[index]) // Pass a Binding to the GearPattern
+                                WheelView(wheel: $gearingWheel.filteredGears[index])
                             }
+                            .buttonStyle(PlainButtonStyle())
                         }
                     }
                 }
@@ -266,8 +270,9 @@ struct GearedTopFinishing: View {
             .padding()
         }
     }
-
-
+    
+    
+    
     private var noResultsView: some View {
         Text("No Result Found")
             .font(.custom("Gilroy-Heavy", size: 24))
@@ -278,23 +283,23 @@ struct GearedTopFinishing: View {
             .cornerRadius(10)
             .padding(.top, 150)
     }
-
-    private func aboutDictPage(for item: GearPattern) -> some View {
+    
+    private func aboutDictPage(for item: GearPattern, imageData: Data?) -> some View {
         AboutInfoPageWithDownload(
             titleItemName: item.title,
             favoriteState: item.isFavorited ?? false,
-            imageData: item.imageData,
+            imageData: imageData ?? item.imageData, 
             linkDownloadItem: "\(DropBoxKeys_SimulatorFarm.mapsFilePartPath)\(item.file)",
             textItem: item.description,
             idItemToLike: { newState in
-                      // Update the isFavorited property in GearViewModel
-                      if let index = gearingWheel.filteredGears.firstIndex(where: { $0.id == item.id }) {
-                          gearingWheel.filteredGears[index].isFavorited = newState
-                          gearingWheel.updateFavoriteGearStatus(for: item, isFavorited: newState)
-                          gearingWheel.pressingfilterGear() // Refresh the list
-                      }
-                  },            clearItemName: item.file,
-            isnew:item.new ?? false
+                if let index = gearingWheel.filteredGears.firstIndex(where: { $0.id == item.id }) {
+                    gearingWheel.filteredGears[index].isFavorited = newState
+                    gearingWheel.updateFavoriteGearStatus(for: item, isFavorited: newState)
+                    gearingWheel.pressingfilterGear() 
+                }
+            },
+            clearItemName: item.file,
+            isnew: item.new ?? false
         )
     }
 }

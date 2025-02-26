@@ -84,6 +84,7 @@ struct paperboatview: View {
             Task {
                 await MainActor.run {
                     self.paperData = data
+                    SpeedRun.imageCache[grassPath] = data
                 }
             }
         }
@@ -229,34 +230,35 @@ struct SpeedViewViolent: View {
         SpeedRun.pressingFilterSpeed()
     }
 
-   
     private func LimitList(isLargeDevice: Bool) -> some View {
         ScrollView {
-            LazyVStack(spacing: isLargeDevice ? 25 : 15) {
+            LazyVStack(spacing: 15) {
                 if SpeedRun.filteredSpeed.isEmpty {
                     noResultsView
-                } else {
+                }
+                else {
                     ForEach(SpeedRun.filteredSpeed.indices, id: \.self) { index in
                         let speed = SpeedRun.filteredSpeed[index]
                         
                         if SpeedRun.speedSelectedFilter == .favorite && speed.isFavorited == false {
                             EmptyView()
-                        }
-                        
-                            else {
-                                NavigationLink(
-                                    destination: aboutSky(for: speed)
-                                ) {
-                                    paperboatview(boat: $SpeedRun.filteredSpeed[index] )
-                                }
+                        } else {
+                            let cachedImageData: Data? = SpeedRun.imageCache["\(DropBoxKeys_SimulatorFarm.farmsImagePartPath)\(speed.image)"]
+                          
+                            NavigationLink(destination: aboutSky(for: speed, imageData: cachedImageData)
+                                .background(Color.white)
+                            ) {
+                                paperboatview(boat: $SpeedRun.filteredSpeed[index] )
                             }
-                        
+                            .buttonStyle(PlainButtonStyle())
+                        }
                     }
                 }
             }
             .padding(.horizontal, 10)
         }
     }
+    
 
 
     private var noResultsView: some View {
@@ -270,11 +272,11 @@ struct SpeedViewViolent: View {
             .padding(.top, 150)
     }
     
-    private func aboutSky(for item: SpeedModel) -> some View {
+    private func aboutSky(for item: SpeedModel,imageData: Data?) -> some View {
         AboutInfoPageWithDownload(
             titleItemName:"",
             favoriteState: item.isFavorited ?? false,
-            imageData: item.imageData,
+            imageData: imageData ?? item.imageData,
             linkDownloadItem: "\(DropBoxKeys_SimulatorFarm.farmsImagePartPath)\(item.image)",
             textItem: " ",
             idItemToLike: { newState in

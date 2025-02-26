@@ -9,6 +9,7 @@ class GearViewModel: ObservableObject {
     @Published var gearsSelectedFilter: FilterTypeAll = .all
     @Published var filterFavoriteGears: [GearPattern] = []
     var tempArrayToFilterSearch: [GearPattern] = []
+    @Published var imageCache: [String: Data] = [:]
     
     init() {
         fetchGearsFromCoreData()

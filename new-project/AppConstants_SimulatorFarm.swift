@@ -16,7 +16,7 @@ struct DropBoxKeys_SimulatorFarm {
     //New drop settings
     static let appkey = "tdiwelegf4bu6eg"
     static let appSecret = "enr9kptsjfzhvy8"
-    static let refresh_token = "c-fGAWZCxG8AAAAAAAAAAS9p_adRnCBL4Vyu5rIJWFnf5Q7X2Rkw6nFk0akvPFz5"
+    static let refresh_token = "TOadIgW3ONcAAAAAAAAAAZ8SDzMmHtKWoQ3BsA-6Zdn1alLhrIr3OYH7tnRFFlWh"
     
     //path to json file
     static let modsFilePath = "/content/66d875713ba66/content.json"

@@ -98,6 +98,7 @@ struct TierRide: View {
             Task {
                 await MainActor.run {
                     self.tieData = data
+                    ridingTier.imageCache[tiepath] = data
                 }
             }
         }
@@ -240,6 +241,7 @@ struct RidePageInnocent: View {
         ridingTier.pressingfilterRide()
     }
 
+
     private var TierList: some View {
         ScrollView {
             LazyVStack(spacing: 15) {
@@ -251,22 +253,23 @@ struct RidePageInnocent: View {
                         
                         if ridingTier.skinsSelectedRides == .favorite && ride.isFavorited == false {
                             EmptyView()
-                        }
-                        
-                            else {
-                                NavigationLink(
-                                    destination: aboutFire(for: ride)
-                                ) {
-                                    TierRide(tier: $ridingTier.filteredRides[index] )
-                                }
+                        } else {
+                            let cachedImageData: Data? = ridingTier.imageCache["\(DropBoxKeys_SimulatorFarm.skinsImagePartPath)\(ride.image)"]
+                            
+                            NavigationLink(destination: aboutFire(for: ride, imageData: cachedImageData)
+                                .background(Color.white)
+                            ) {
+                                TierRide(tier: $ridingTier.filteredRides[index])
                             }
-                        
+                            .buttonStyle(PlainButtonStyle())
+                        }
                     }
                 }
             }
             .padding(.horizontal, 10)
         }
     }
+    
     
     
 
@@ -281,18 +284,18 @@ struct RidePageInnocent: View {
             .padding(.top, 150)
     }
 
-    private func aboutFire(for item: RidesPattern) -> some View {
+    private func aboutFire(for item: RidesPattern,imageData: Data?) -> some View {
         AboutInfoPageWithDownload(
             titleItemName: item.title,
             favoriteState: item.isFavorited ?? false,
-            imageData: item.imageData,
+            imageData: imageData ?? item.imageData,
             linkDownloadItem: "\(DropBoxKeys_SimulatorFarm.skinFilePartPath)\(item.file)",
             textItem: item.description,
             idItemToLike: { newState in
                 if let index = ridingTier.filteredRides.firstIndex(where: { $0.id == item.id }) {
                     ridingTier.filteredRides[index].isFavorited = newState
                     ridingTier.updateFavoriteRideStatus(for: item, isFavorited: newState)
-                    ridingTier.pressingfilterRide() // Refresh the list
+                    ridingTier.pressingfilterRide() 
                 }
             },
             clearItemName: item.file,

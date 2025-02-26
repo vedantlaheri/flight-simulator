@@ -8,6 +8,7 @@ class TrackViewModel: ObservableObject {
     @Published var filteredTracks: [TrackPattern] = []
     @Published var tracksSelectedFilter: FilterTypeAll = .all
     @Published var filterFavoriteTracks: [TrackPattern] = []
+    @Published var imageCache: [String: Data] = [:]
     private var tempArrayToFilterSearch: [TrackPattern] = []
     
     init() {
