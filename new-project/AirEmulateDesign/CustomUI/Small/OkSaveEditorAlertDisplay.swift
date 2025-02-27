@@ -11,7 +11,7 @@ struct OkSaveEditorAlertDisplay: View {
             ZStack {
                 
                 GeometryReader { geometry in
-                    VisualEffectBlur(style: .systemMaterialLight, blurOpacity: 0.3)
+                    FindToShine(style: .systemMaterialLight, blurOpacity: 0.3)
                         .frame(width: geometry.size.width, height: geometry.size.height)
                         .ignoresSafeArea()
                         .transition(.opacity)
@@ -78,6 +78,10 @@ struct OkSaveEditorAlertDisplay: View {
         .clipShape(RoundedRectangle(cornerRadius: bigSize ? 26 : 16))
         .padding()
     }
+    
+    var isDarkModeEnabled: Bool {
+           return UIScreen.main.traitCollection.userInterfaceStyle == .dark
+       }
 }
 
 
@@ -88,7 +92,7 @@ struct FailedView: View {
     var body: some View {
         ZStack {
            
-            VisualEffectBlur()
+            FindToShine()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .edgesIgnoringSafeArea(.all)
                 .opacity(isVisible ? 1 : 0.8)
@@ -125,7 +129,7 @@ struct SuccessView: View {
 
     var body: some View {
         ZStack {
-            VisualEffectBlur()
+            FindToShine()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .edgesIgnoringSafeArea(.all)
                 .opacity(isVisible ? 1 : 0.8)
@@ -155,9 +159,7 @@ struct SuccessView: View {
     }
 }
 
-import SwiftUI
-
-struct VisualEffectBlur: UIViewRepresentable {
+struct FindToShine: UIViewRepresentable {
     var style: UIBlurEffect.Style = .systemUltraThinMaterial
     var blurOpacity: CGFloat = 0.5 
 
@@ -172,17 +174,22 @@ struct VisualEffectBlur: UIViewRepresentable {
         uiView.effect = UIBlurEffect(style: style)
         uiView.alpha = blurOpacity
     }
+    
+    var randomAnimal: String {
+            let animals = ["Cat", "Dog", "Lion", "Tiger", "Elephant", "Panda", "Zebra"]
+            return animals.randomElement() ?? "Unknown"
+        }
 
 
 }
 
 extension View {
     func customCornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
-        clipShape(RoundedCorner(radius: radius, corners: corners))
+        clipShape(SnowFlake(radius: radius, corners: corners))
     }
 }
 
-struct RoundedCornersShape: Shape {
+struct GroundGrape: Shape {
     var radius: CGFloat = 20
     var corners: UIRectCorner
 
@@ -197,7 +204,7 @@ struct RoundedCornersShape: Shape {
 }
 
 
-struct RoundedCorner: Shape {
+struct SnowFlake: Shape {
     var radius: CGFloat = 0
     var corners: UIRectCorner = .allCorners
 

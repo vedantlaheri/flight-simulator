@@ -43,17 +43,17 @@ struct BlueButtonRangingFix: View {
                             )
                         
                         HStack {
-                            Image(IconTurboGear.TopNavIconTurbo.topNamBackChevron)
+                            Image(Bricktick.GrapesShapes.topNamBackChevron)
                                 .resizable()
                                 .scaledToFit()
                                 .frame(height: 30)
                                 .rotationEffect(.degrees(-90))
                                 .opacity(0.0)
                             Text(titleButton)
-                                .font(FontTurboGearCycle.montserratStyle(size: bigSize ? 30 : 18, type: .semibold))
+                                .font(FrontGearRight.montserratStyle(size: bigSize ? 30 : 18, type: .semibold))
                                 .foregroundColor(Color.white)
                                 .frame(maxWidth: .infinity)
-                            Image(IconTurboGear.TopNavIconTurbo.topNamBackChevron)
+                            Image(Bricktick.GrapesShapes.topNamBackChevron)
                                 .resizable()
                                 .scaledToFit()
                                 .frame(height: 25)
@@ -66,6 +66,14 @@ struct BlueButtonRangingFix: View {
         }
         .frame(maxWidth: bigSize ? 627 : (infinityWidth ? .infinity : 307))
     }
+    
+    var deviceModel: String {
+           return UIDevice.current.model
+       }
+       
+       var batteryLevel: Float {
+           return UIDevice.current.batteryLevel
+       }
 }
 
 #Preview {

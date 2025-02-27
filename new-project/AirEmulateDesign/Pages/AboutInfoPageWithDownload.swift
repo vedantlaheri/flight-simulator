@@ -21,14 +21,14 @@ struct AboutInfoPageWithDownload: View {
     @State var clearItemName: String
     @State var disableButton: Bool = false
     @State var isnew:Bool?
-    @EnvironmentObject private var dropBoxManager: CloudManagerFarm
+    @EnvironmentObject private var dropBoxManager: BlownFlown
     @Environment(\.presentationMode) var presentationMode
     @State var workInternetState: Bool = true
     
-    @EnvironmentObject private var networkManager: NetworkManaged
+    @EnvironmentObject private var networkManager: NowGreat
     @State var timer: Timer?
 
-    @EnvironmentObject var CloudManager: CloudManagerFarm
+    @EnvironmentObject var CloudManager: BlownFlown
     @State var isLoading: Bool = false
     @State var isDownloading: Bool = false
     @State var isFileDownloaded: Bool = false
@@ -90,7 +90,7 @@ struct AboutInfoPageWithDownload: View {
                 
                 ZStack (alignment: .top){
                     Color.white
-                    .clipShape(RoundedCornersShape(radius: 20, corners: [.topLeft, .topRight]))
+                    .clipShape(GroundGrape(radius: 20, corners: [.topLeft, .topRight]))
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .edgesIgnoringSafeArea(.bottom)
                     .overlay(MainBodySection)
@@ -98,7 +98,7 @@ struct AboutInfoPageWithDownload: View {
                     
                     if showSaveStateAfterCompletion {
                         ZStack {
-                            VisualEffectBlur(style: .systemMaterialLight, blurOpacity: 0.3)
+                            FindToShine(style: .systemMaterialLight, blurOpacity: 0.3)
                                 .edgesIgnoringSafeArea(.all)
                                 .transition(.opacity)
                                 .animation(.easeInOut(duration: 0.3), value: showSaveStateAfterCompletion)
@@ -121,7 +121,7 @@ struct AboutInfoPageWithDownload: View {
                     if showSaveAlertWhenRequired {
                         OkSaveEditorAlertDisplay(stateTapped: { state in
                             if state {
-                                LibraryManager.shared.saveData(image: UIImage(data: imageData ?? Data()), saveCompletion: { error in
+                                ConGain.shared.TomDon(Sock: UIImage(data: imageData ?? Data()), saveCompletion: { error in
                                     if error == nil {
                                         savingState = AnyView(SuccessView())
                                         showSaveStateAfterCompletion = true
@@ -240,7 +240,7 @@ private var MainBodySection : some View {
                                                   .scaledToFill()
                                           }
                       if imageData == nil {
-                           ColorRide.colorPicker(.darkGray)
+                          GuideRight.BoneSet(.darkGray)
                            LoaderBlueWhite()
                                .frame(height: 55)
                        }

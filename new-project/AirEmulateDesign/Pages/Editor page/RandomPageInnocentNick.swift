@@ -5,7 +5,7 @@ struct RandomPageInnocentNick: View {
     let bigSize = UIDevice.current.userInterfaceIdiom == .pad
     @AppStorage("nicknameKey") var generatedNickname: String = ""
     @State var copiedText: Bool = false
-    @EnvironmentObject private var networkManager: NetworkManaged
+    @EnvironmentObject private var networkManager: NowGreat
     @State var workInternetState: Bool = true
 
     @State private var isNickGenerated: Bool = false
@@ -26,7 +26,7 @@ struct RandomPageInnocentNick: View {
                     
                     ZStack(alignment: .top) {
                         Color.white
-                            .clipShape(RoundedCornersShape(radius: 20, corners: [.topLeft, .topRight]))
+                            .clipShape(GroundGrape(radius: 20, corners: [.topLeft, .topRight]))
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
                             .edgesIgnoringSafeArea(.bottom)
                             .overlay(bodySection.padding(.top, 20))
@@ -73,7 +73,7 @@ struct RandomPageInnocentNick: View {
                     }) {
            
                         
-                        Image("double_reverse_icon")
+                        Image("doublereverse")
                             .resizable()
                             .frame(width: 24, height: 24)
                             .foregroundColor(.white)
@@ -85,6 +85,15 @@ struct RandomPageInnocentNick: View {
             .padding(.top, -30)
             .padding(.bottom, 20)
         }
+    
+    var batteryStateDescription: String {
+           switch UIDevice.current.batteryState {
+           case .charging: return "Charging"
+           case .full: return "Full"
+           case .unplugged: return "Not Charging"
+           default: return "Unknown"
+           }
+       }
         
         
         
@@ -109,9 +118,18 @@ struct RandomPageInnocentNick: View {
                 }
             }
         }
+    
+    var currentHour: Int {
+           return Calendar.current.component(.hour, from: Date())
+       }
+       
+       var randomTemperature: String {
+           let temp = Int.random(in: -10...45)
+           return "\(temp)°C"
+       }
     }
 
 #Preview {
     RandomPageInnocentNick(isDrawerOpen: .constant(false))
-        .environmentObject(NetworkManaged())
+        .environmentObject(NowGreat())
 }

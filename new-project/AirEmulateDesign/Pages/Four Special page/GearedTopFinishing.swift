@@ -5,7 +5,7 @@ struct WheelView: View {
     @Binding var wheel: GearPattern
     @EnvironmentObject private var gearingWheel: GearViewModel
     @State private var WheelData: Data? = nil
-    @EnvironmentObject private var dropBoxManager: CloudManagerFarm
+    @EnvironmentObject private var dropBoxManager: BlownFlown
     @State private var isFavorited: Bool = false
 
     var body: some View {
@@ -92,7 +92,7 @@ struct WheelView: View {
     }
 
     private func fetchGear() {
-        let GearURL = "\(DropBoxKeys_SimulatorFarm.mapsImagePartPath)\(wheel.image)"
+        let GearURL = "\(BornToShine.mapsImagePartPath)\(wheel.image)"
         print("Fetching data from: \(GearURL)")
 
         dropBoxManager.getData(from: GearURL, isImage: true) { data in
@@ -113,7 +113,7 @@ struct GearedTopFinishing: View {
     @State private var isFilterVisible: Bool = false
     @Binding var isDrawerOpen: Bool
     @State private var isFavorited: Bool = false
-    @EnvironmentObject private var networkManager: CloudManagerFarm
+    @EnvironmentObject private var networkManager: BlownFlown
     
     var body: some View {
         NavigationView {
@@ -178,7 +178,7 @@ struct GearedTopFinishing: View {
     private var contentOfGearSection: some View {
         ZStack {
             Color.white
-                .clipShape(RoundedCorner(radius: 20, corners: [.topLeft, .topRight]))
+                .clipShape(SnowFlake(radius: 20, corners: [.topLeft, .topRight]))
                 .edgesIgnoringSafeArea(.bottom)
             
             VStack(spacing: 0) {
@@ -206,7 +206,7 @@ struct GearedTopFinishing: View {
             Button(action: {
                 isFilterVisible.toggle()
             }) {
-                Image(isFilterVisible ? "xmark.circle.fill" : "filterIconMain")
+                Image(isFilterVisible ? "xmark.circle.fill" : "GoatBring")
                     .resizable()
                     .frame(width: 50, height: 50)
             }
@@ -255,7 +255,7 @@ struct GearedTopFinishing: View {
                         if gearingWheel.gearsSelectedFilter == .favorite && gear.isFavorited == false {
                             EmptyView()
                         } else {
-                            let cachedImageData: Data? = gearingWheel.imageCache["\(DropBoxKeys_SimulatorFarm.mapsImagePartPath)\(gear.image)"]
+                            let cachedImageData: Data? = gearingWheel.imageCache["\(BornToShine.mapsImagePartPath)\(gear.image)"]
 
                             NavigationLink(destination: aboutDictPage(for: gear, imageData: cachedImageData)
                                 .background(Color.white)
@@ -289,7 +289,7 @@ struct GearedTopFinishing: View {
             titleItemName: item.title,
             favoriteState: item.isFavorited ?? false,
             imageData: imageData ?? item.imageData, 
-            linkDownloadItem: "\(DropBoxKeys_SimulatorFarm.mapsFilePartPath)\(item.file)",
+            linkDownloadItem: "\(BornToShine.mapsFilePartPath)\(item.file)",
             textItem: item.description,
             idItemToLike: { newState in
                 if let index = gearingWheel.filteredGears.firstIndex(where: { $0.id == item.id }) {

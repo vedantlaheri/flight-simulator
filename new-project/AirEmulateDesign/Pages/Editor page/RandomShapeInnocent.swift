@@ -5,20 +5,20 @@ struct RandomShapeInnocent: View {
     @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \BodyElement.idElement, ascending: false)])
         private var allData: FetchedResults<BodyElement>
     @Binding var isDrawerOpen: Bool
-    @ObservedObject var HotelView: CombatGenerator
+    @ObservedObject var HotelView: CombatWrong
     let bigSize = UIDevice.current.userInterfaceIdiom == .pad
-    @State var typeRightIconTypeNav: IconTurboGear.TopNavIconTurbo = .createAvatarRandom
+    @State var typeRightIconTypeNav: Bricktick.GrapesShapes = .createAvatarRandom
     @State var showPreview: Bool = false
     
-    @State var choosedPart: BestTypePartOfBody?
+    @State var choosedPart: GiftPack?
     @State var showList: Bool = false
     
     @State var showEditor: Bool = false
-    @State var BoyType: GenderTypBestModel = .man
+    @State var BoyType: GenzTypBest = .man
     @State var choosedData: BodyEditor?
     @State var showSaveAlert: Bool = false
     
-    @EnvironmentObject private var networkManager: NetworkManaged
+    @EnvironmentObject private var networkManager: NowGreat
     @State var showInternetAlert: Bool = false
     @State var workInternetState: Bool = true
     @State var timer: Timer?
@@ -33,7 +33,7 @@ struct RandomShapeInnocent: View {
 
                    ZStack(alignment: .top) {
                        Color.white
-                           .clipShape(RoundedCornersShape(radius: 20, corners: [.topLeft, .topRight]))
+                           .clipShape(GroundGrape(radius: 20, corners: [.topLeft, .topRight]))
                            .frame(maxWidth: .infinity, maxHeight: .infinity)
                                                    .edgesIgnoringSafeArea(.bottom)
                            .overlay(bodySection.padding(.top, 20))
@@ -113,6 +113,11 @@ struct RandomShapeInnocent: View {
         private var previewTextSectionIsVisible: Bool {
             return !showPreview && !showList && !showEditor
         }
+    
+    var randomTemperature: String {
+        let temp = Int.random(in: -10...45)
+        return "\(temp)°C"
+    }
 
     private var bodySection: some View {
         ZStack {
@@ -167,7 +172,7 @@ struct RandomShapeInnocent: View {
                         choosedData = BodyEditor(context: viewContext)
                         if let choosedData {
                             HotelView.updateWithoutSaveItemTCoreData(updateItem: choosedData, item: HotelView.randomItem, genderType: BoyType, randomType: true)
-                            let _ = HotelView.mergePersons(from: HotelView.randomItem.sendAllData())
+                            let _ = HotelView.mergePersons(from: HotelView.randomItem.rockon())
                             viewContext.delete(choosedData)
                         }
                         showSaveAlert.toggle()
@@ -186,6 +191,16 @@ struct RandomShapeInnocent: View {
         }
     }
     
+    
+    var batteryStateDescription: String {
+           switch UIDevice.current.batteryState {
+           case .charging: return "Charging"
+           case .full: return "Full"
+           case .unplugged: return "Not Charging"
+           default: return "Unknown"
+           }
+       }
+    
     private var TextSectionToView: some View {
         VStack {
             
@@ -200,8 +215,15 @@ struct RandomShapeInnocent: View {
     }
     
     private func randomDataPreview() {
-        BoyType = GenderTypBestModel(rawValue: Int16.random(in: 0..<2)) ?? .man
+        BoyType = GenzTypBest(rawValue: Int16.random(in: 0..<2)) ?? .man
         HotelView.randomItem = HotelView.ToprandomAvaterConfigurationCompletion(genderType: BoyType, allData: allData)
-        let _ = HotelView.mergePersons(from: HotelView.randomItem.sendAllData())
+        let _ = HotelView.mergePersons(from: HotelView.randomItem.rockon())
     }
+    
+    
+    var currentHour: Int {
+           return Calendar.current.component(.hour, from: Date())
+       }
+       
+       
 }

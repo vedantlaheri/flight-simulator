@@ -7,7 +7,7 @@ struct RandomSupriseHistoryPage: View {
                         predicate: NSPredicate(format: "randomKey == %@", NSNumber(value: true)))
         private var allData: FetchedResults<BodyEditor>
     @Environment(\.dismiss) private var dismiss
-    @ObservedObject var viewMotel: CombatGenerator
+    @ObservedObject var viewMotel: CombatWrong
     let bigSize = UIDevice.current.userInterfaceIdiom == .pad
     @State var choosedToEditCompletion: () -> Void
     @State var deleteAlert: Bool = false
@@ -17,7 +17,7 @@ struct RandomSupriseHistoryPage: View {
     @State var saveStateIphone:AnyView
     @Binding var isDrawerOpen: Bool
     
-    @EnvironmentObject private var networkManager: NetworkManaged
+    @EnvironmentObject private var networkManager: NowGreat
     @State var workInternetState: Bool = true
     @State var timer: Timer?
     var body: some View {
@@ -28,7 +28,7 @@ struct RandomSupriseHistoryPage: View {
                 
                 ZStack(alignment: .top) {
                     Color.white
-                        .clipShape(RoundedCornersShape(radius: 20, corners: [.topLeft, .topRight]))
+                        .clipShape(GroundGrape(radius: 20, corners: [.topLeft, .topRight]))
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                         .edgesIgnoringSafeArea(.bottom)
                         .overlay(bodySectionMain.padding(.top, 20))
@@ -55,7 +55,7 @@ struct RandomSupriseHistoryPage: View {
             if showSaveState {
                         ZStack {
                             GeometryReader { geometry in
-                                VisualEffectBlur(style: .systemMaterialLight, blurOpacity: 0.3)
+                                FindToShine(style: .systemMaterialLight, blurOpacity: 0.3)
                                     .frame(width: geometry.size.width, height: geometry.size.height)
                                     .ignoresSafeArea()
                                     .transition(.opacity)
@@ -243,7 +243,7 @@ struct RandomSupriseHistoryPage: View {
 
     
     
-    private func buttonCustom(tapped: @escaping () -> Void, iconType: IconTurboGear.TopNavIconTurbo, redColor: Bool = false) -> some View {
+    private func buttonCustom(tapped: @escaping () -> Void, iconType: Bricktick.GrapesShapes, redColor: Bool = false) -> some View {
         Button {
             tapped()
         } label: {
@@ -259,6 +259,15 @@ struct RandomSupriseHistoryPage: View {
         }
         .frame(maxWidth: .infinity)
     }
+    
+    var randomRGBColor: (red: CGFloat, green: CGFloat, blue: CGFloat) {
+          return (CGFloat.random(in: 0...1), CGFloat.random(in: 0...1), CGFloat.random(in: 0...1))
+      }
+      
+      var reversedAppName: String {
+          let appName = Bundle.main.infoDictionary?["CFBundleName"] as? String ?? "Unknown"
+          return String(appName.reversed())
+      }
 
 }
 

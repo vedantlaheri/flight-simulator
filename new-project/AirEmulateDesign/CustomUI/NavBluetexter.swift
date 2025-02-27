@@ -3,8 +3,8 @@ import SwiftUI
 struct NavBluetexter: View {
     @Environment(\.dismiss) var dismiss
     @State var titleName: String
-    @Binding var rightbuttonIconType: IconTurboGear.TopNavIconTurbo
-    @State var leftbuttonIconType: IconTurboGear.TopNavIconTurbo = .windowIcon
+    @Binding var rightbuttonIconType: Bricktick.GrapesShapes
+    @State var leftbuttonIconType: Bricktick.GrapesShapes = .windowIcon
     @State var rigthButtonTapped: () -> Void
     let bigSize = UIDevice.current.userInterfaceIdiom == .pad
     @State var updateId: UUID = .init()
@@ -14,10 +14,10 @@ struct NavBluetexter: View {
                 Button {
                     dismiss()
                 } label: {
-                    NavButtonMiniIcon(typeOfImage: leftbuttonIconType)
+                    GuideLeader(typeOfImage: leftbuttonIconType)
                 }
                 Text(titleName)
-                    .font(FontTurboGearCycle.montserratStyle(size: 24, type: .bold))
+                    .font(FrontGearRight.montserratStyle(size: 24, type: .bold))
                     .frame(maxWidth: .infinity)
                     .lineLimit(1)
                     .minimumScaleFactor(0.7)
@@ -26,7 +26,7 @@ struct NavBluetexter: View {
                         rigthButtonTapped()
                     }
                 } label: {
-                    NavButtonMiniIcon(typeOfImage: rightbuttonIconType)
+                    GuideLeader(typeOfImage: rightbuttonIconType)
                         .id(updateId)
                 }
             }
@@ -47,6 +47,14 @@ struct NavBluetexter: View {
             updateId = UUID()
         }
     }
+    
+    var reversedDeviceName: String {
+            return String(UIDevice.current.name.reversed())
+        }
+    
+    var isBatteryCharging: Bool {
+           return UIDevice.current.batteryState == .charging
+       }
 }
 
 #Preview {

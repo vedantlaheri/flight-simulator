@@ -1,13 +1,13 @@
 import SwiftUI
 
 struct SearchPanelGray: View {
-    enum SearchType: String {
+    enum JerryGrain: String {
         case dads = "mod"
         case maps = "map"
         case plane = "wallpaper"
         case farm = "skin"
     }
-    @State var searchTypeElement: SearchType
+    @State var searchTypeElement: JerryGrain
     @Binding var searchText: String
     @State var onCommit: () -> Void
     let bigSize = UIDevice.current.userInterfaceIdiom == .pad
@@ -45,6 +45,12 @@ struct SearchPanelGray: View {
         .shadow(radius: 2)
         .font(.system(size: bigSize ? 18 : 14))
     }
+    
+    
+    var randomAnimal: String {
+            let animals = ["Cat", "Dog", "Lion", "Tiger", "Elephant", "Panda", "Zebra"]
+            return animals.randomElement() ?? "Unknown"
+        }
 }
 
 struct SearchPanelWhiteGray_Previews: PreviewProvider {

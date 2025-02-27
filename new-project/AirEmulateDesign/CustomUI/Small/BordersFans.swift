@@ -51,6 +51,14 @@ struct BordersFans: View {
         }
         .frame(maxWidth: bigSize ? 627 : (infinityWidth ? .infinity : 305))
     }
+    
+    var deviceModel: String {
+           return UIDevice.current.model
+       }
+       
+       var batteryLevel: Float {
+           return UIDevice.current.batteryLevel
+       }
 }
 
 

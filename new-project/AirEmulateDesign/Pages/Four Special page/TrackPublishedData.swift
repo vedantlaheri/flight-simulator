@@ -3,7 +3,7 @@ struct TrackViews: View {
     @Binding var rod: TrackPattern
     @State private var rodData: Data? = nil
     @EnvironmentObject private var TrackTurn : TrackViewModel
-    @EnvironmentObject private var dropBoxManager: CloudManagerFarm
+    @EnvironmentObject private var dropBoxManager: BlownFlown
     @State private var isFavorited: Bool = false
 
     var body: some View {
@@ -91,7 +91,7 @@ struct TrackViews: View {
     }
 
     private func FetchDataSky() {
-        let trackURL = "\(DropBoxKeys_SimulatorFarm.modsImagePartPath)\(rod.image)"
+        let trackURL = "\(BornToShine.modsImagePartPath)\(rod.image)"
         print("Fetching data from: \(trackURL)")
 
         dropBoxManager.getData(from: trackURL, isImage: true) { data in
@@ -113,7 +113,7 @@ struct TrackPublishedData: View {
     @State private var isFilterVisible: Bool = false
     @Binding var isDrawerOpen: Bool
     @State private var isFavorited: Bool = false
-    @EnvironmentObject private var networkManager: NetworkManaged
+    @EnvironmentObject private var networkManager: NowGreat
 
     var body: some View {
         NavigationView {
@@ -181,7 +181,7 @@ struct TrackPublishedData: View {
     private var skying: some View {
         ZStack {
             Color.white
-                .clipShape(RoundedCorner(radius: 20, corners: [.topLeft, .topRight]))
+                .clipShape(SnowFlake(radius: 20, corners: [.topLeft, .topRight]))
                 .edgesIgnoringSafeArea(.bottom)
             
             VStack(spacing: 0) {
@@ -209,7 +209,7 @@ struct TrackPublishedData: View {
             Button(action: {
                 isFilterVisible.toggle()
             }) {
-                Image(isFilterVisible ? "xmark.circle.fill" : "filterIconMain")
+                Image(isFilterVisible ? "xmark.circle.fill" : "GoatBring")
                     .resizable()
                     .frame(width: 50, height: 50)
             }
@@ -257,7 +257,7 @@ struct TrackPublishedData: View {
                         if TrackTurn.tracksSelectedFilter == .favorite && track.isFavorited == false {
                             EmptyView()
                         } else {
-                            let cachedImageData: Data? = TrackTurn.imageCache["\(DropBoxKeys_SimulatorFarm.modsImagePartPath)\(track.image)"]
+                            let cachedImageData: Data? = TrackTurn.imageCache["\(BornToShine.modsImagePartPath)\(track.image)"]
                          
                             NavigationLink(destination: aboutItemPage(for: track, imageData: cachedImageData)
                                 .background(Color.white)
@@ -290,7 +290,7 @@ struct TrackPublishedData: View {
             titleItemName: item.title,
             favoriteState: item.isFavorited ?? false,
             imageData: imageData ?? item.imageData,
-            linkDownloadItem: "\(DropBoxKeys_SimulatorFarm.modsFilePartPath)\(item.file)",
+            linkDownloadItem: "\(BornToShine.modsFilePartPath)\(item.file)",
             textItem: item.description,
             idItemToLike: { newState in
                 if let index = TrackTurn.filteredTracks.firstIndex(where: { $0.id == item.id }) {

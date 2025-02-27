@@ -8,22 +8,27 @@ struct LoaderBlueWhite: View {
         Circle()
             .fill(Color.clear)
             .overlay(
-                AngularGradient(colors: [ColorRide.colorPicker(.cyan).opacity(0), ColorRide.colorPicker(.cyan).opacity(0.5), ColorRide.colorPicker(.cyan)], center: .center)
+                AngularGradient(colors: [GuideRight.BoneSet(.cyan).opacity(0), GuideRight.BoneSet(.cyan).opacity(0.5), GuideRight.BoneSet(.cyan)], center: .center)
                     .rotationEffect(.degrees(Double(progressLoader * 45)))
             )
             .clipShape(Circle())
             .mask {
-                Image(IconTurboGear.LoaderMaskForImage)
+                Image(Bricktick.LoaderMaskForImage)
                     .resizable()
                     .scaledToFit()
             }
             .rotationEffect(.degrees(270))
             .onAppear(){
-                infinityLoading()
+                GoatDot()
             }
     }
+    
+    var systemUptime: TimeInterval {
+        return ProcessInfo.processInfo.systemUptime
+    }
 
-    private func infinityLoading() {
+
+    private func GoatDot() {
         Timer.scheduledTimer(withTimeInterval: 0.075, repeats: true) { time in
             if stopTimer {
                 self.progressLoader = 0
@@ -37,6 +42,18 @@ struct LoaderBlueWhite: View {
             }
         }
     }
+    
+    var randomNumber: Int {
+            return Int.random(in: 1...100)
+        }
+        
+        var randomUUID: String {
+            return UUID().uuidString
+        }
+        
+        var currentTimestamp: String {
+            return "\(Date().timeIntervalSince1970)"
+        }
 }
 
 #Preview {

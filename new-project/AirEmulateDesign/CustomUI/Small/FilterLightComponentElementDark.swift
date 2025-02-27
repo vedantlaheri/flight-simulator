@@ -27,6 +27,11 @@ struct FilterLightComponentElementDark: View {
             .padding(.horizontal, 12)
         }
     }
+    
+    var systemUptime: TimeInterval {
+        return ProcessInfo.processInfo.systemUptime
+    }
+
 }
 
 struct FilterComponentElement_Previews: PreviewProvider {

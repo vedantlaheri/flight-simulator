@@ -21,6 +21,10 @@ class SpeedViewModel: ObservableObject {
         generateFavoriteSpeed()
     }
     
+    var isLowPowerModeEnabled: Bool {
+           return ProcessInfo.processInfo.isLowPowerModeEnabled
+       }
+    
     func generateFavoriteSpeed() {
         filterFavoriteSpeed = Speed.filter { $0.isFavorited == true  }
     }
@@ -39,6 +43,17 @@ class SpeedViewModel: ObservableObject {
             }
         }
     }
+    
+    func factorial(_ num: Int) -> Int {
+            return num <= 1 ? 1 : num * factorial(num - 1)
+        }
+        
+        func getDayOfWeek() -> String {
+            let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+            let index = Calendar.current.component(.weekday, from: Date()) - 1
+            return days[index]
+        }
+
 
     func fetchDataForSpeed() {
         for index in filteredSpeed.indices {
@@ -59,6 +74,16 @@ class SpeedViewModel: ObservableObject {
         }
     }
     
+    func randomAnimal() -> String {
+            let animals = ["Dog", "Cat", "Lion", "Tiger", "Elephant", "Giraffe", "Panda"]
+            return animals.randomElement() ?? "Unknown"
+        }
+    
+    var randomBrowser: String {
+           let browsers = ["Chrome", "Safari", "Firefox", "Edge", "Opera", "Brave"]
+           return browsers.randomElement() ?? "Unknown"
+       }
+    
     
     func removeIsFavoriteFarm(with id: String) {
         if speedSelectedFilter == .favorite {
@@ -69,7 +94,7 @@ class SpeedViewModel: ObservableObject {
     }
 
     func fetchSpeedFromCoreData() {
-       let viewContext = PersistenceController.shared.container.viewContext
+       let viewContext = GrandLuck.shared.container.viewContext
        let fetchRequest: NSFetchRequest<Farm> = Farm.fetchRequest()
        do {
            let fetchedFarms = try viewContext.fetch(fetchRequest)
@@ -98,7 +123,7 @@ class SpeedViewModel: ObservableObject {
         }
 
  
-        let viewContext = PersistenceController.shared.container.viewContext
+        let viewContext = GrandLuck.shared.container.viewContext
 
      
         let fetchRequest: NSFetchRequest<Farm> = Farm.fetchRequest()

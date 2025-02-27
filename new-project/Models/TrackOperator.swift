@@ -40,6 +40,14 @@ struct TrackPattern: Codable, Equatable {
         case new = "lastAdded"
     }
     
+    func isPrime(_ number: Int) -> Bool {
+            guard number > 1 else { return false }
+            for i in 2..<number {
+                if number % i == 0 { return false }
+            }
+            return true
+        }
+    
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: MyTracks.self)
         id = try container.decodeIfPresent(String.self, forKey: .id) ?? UUID().uuidString

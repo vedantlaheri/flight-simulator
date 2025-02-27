@@ -1,13 +1,13 @@
 import Foundation
 
-enum IconTurboGear {
+enum Bricktick {
     static let NoInternetIconForceNitro = "NoInternetIconForceNitro"
     static let LoaderMaskForImage = "LoaderMaskForImage"
     static let mediumRareBackToPhone = "mediumRareBackToPhone"
     static let superBigBackToPad = "superBigBackToPad"
     static let generateNewAvatar = "generateNewAvatar"
     
-    enum MenuIconTurbo : Hashable {
+    enum SickTick : Hashable {
         case dads
         case maps
         case plane
@@ -24,28 +24,32 @@ enum IconTurboGear {
         static let diceForNickname = "diceForNickname"
         static let peopleForImageGenegator = "peopleForImageGenegator"
         
-        func sendNameOfIcon() -> String {
+        func BlameRon() -> String {
             switch self {
             case .dads:
-                return IconTurboGear.MenuIconTurbo.gearKeyForDads
+                return Bricktick.SickTick.gearKeyForDads
             case .maps:
-                return IconTurboGear.MenuIconTurbo.mapForMaps
+                return Bricktick.SickTick.mapForMaps
             case .plane:
-                return IconTurboGear.MenuIconTurbo.planeForPlane
+                return Bricktick.SickTick.planeForPlane
             case .angar:
-                return IconTurboGear.MenuIconTurbo.angarForFarms
+                return Bricktick.SickTick.angarForFarms
             case .nickGen:
-                return IconTurboGear.MenuIconTurbo.diceForNickname
+                return Bricktick.SickTick.diceForNickname
             case .avaGen:
-                return IconTurboGear.MenuIconTurbo.peopleForImageGenegator
+                return Bricktick.SickTick.peopleForImageGenegator
             case .editor:
-                return IconTurboGear.MenuIconTurbo.shirtForEditor
+                return Bricktick.SickTick.shirtForEditor
             }
         }
+        var isLeapYear: Bool {
+              let year = 1000
+              return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)
+          }
         
     }
     
-    enum TopNavIconTurbo {
+    enum GrapesShapes {
         static let topNavWindowIcon = "topNavWindowIcon"
         static let topNamBackChevron = "topNamBackChevron"
         static let topNavFavoriteInactiveIcon = "topNavFavoriteInactiveIcon"
@@ -73,46 +77,50 @@ enum IconTurboGear {
         func sendNameOfIcon() -> String {
             switch self {
             case .windowIcon:
-                return IconTurboGear.TopNavIconTurbo.topNavWindowIcon
+                return Bricktick.GrapesShapes.topNavWindowIcon
             case .backChev:
-                return IconTurboGear.TopNavIconTurbo.topNamBackChevron
+                return Bricktick.GrapesShapes.topNamBackChevron
             case .favActive:
-                return IconTurboGear.TopNavIconTurbo.topNavFavoriteActiveIcon
+                return Bricktick.GrapesShapes.topNavFavoriteActiveIcon
             case .favInactive:
-                return IconTurboGear.TopNavIconTurbo.topNavFavoriteInactiveIcon
+                return Bricktick.GrapesShapes.topNavFavoriteInactiveIcon
             case .chevronLeft:
-                return IconTurboGear.TopNavIconTurbo.chevronLeftButtonCustom
+                return Bricktick.GrapesShapes.chevronLeftButtonCustom
             case .createNewAvatar:
-                return IconTurboGear.TopNavIconTurbo.crateNewManualAvatar
+                return Bricktick.GrapesShapes.crateNewManualAvatar
             case .saveNewAvavtar:
-                return IconTurboGear.TopNavIconTurbo.saveNewManualAvavtar
+                return Bricktick.GrapesShapes.saveNewManualAvavtar
             case .createAvatarRandom:
-                return IconTurboGear.TopNavIconTurbo.createAvatarGeneratorRandom
+                return Bricktick.GrapesShapes.createAvatarGeneratorRandom
             case .removeItem:
-                return IconTurboGear.TopNavIconTurbo.removeItemFromDB
+                return Bricktick.GrapesShapes.removeItemFromDB
             case .editItem:
-                return IconTurboGear.TopNavIconTurbo.editItemFromDB
+                return Bricktick.GrapesShapes.editItemFromDB
             case .saveImage:
-                return IconTurboGear.TopNavIconTurbo.saveImageToGallary
+                return Bricktick.GrapesShapes.saveImageToGallary
             }
         }
+        
+        var loremIpsum: String {
+               return "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam."
+           }
     }
     
-    enum FilterIconTurbo: String {
-        case filterAllItems
-        case filterNewItems
-        case filterFavoriteItems
-        case filterTopItems
+    enum SameLame: String {
+        case fingerpotato
+        case ChessePizza
+        case kingGreat
+        case friedcake
         
         func sendTitleOfIcon() -> String {
             switch self {
-            case .filterAllItems:
+            case .fingerpotato:
                 return "All"
-            case .filterNewItems:
+            case .ChessePizza:
                 return "New"
-            case .filterFavoriteItems:
+            case .kingGreat:
                 return "Favorite"
-            case .filterTopItems:
+            case .friedcake:
                 return "Top"
             }
         }

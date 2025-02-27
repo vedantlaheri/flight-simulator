@@ -1,8 +1,8 @@
 import SwiftUI
 
-struct ElementCellForEditor: View {
-    @EnvironmentObject var dropBoxManager: CloudManagerFarm
-    @ObservedObject var networkManager = NetworkManaged()
+struct ThiefSaleGreat: View {
+    @EnvironmentObject var dropBoxManager: BlownFlown
+    @ObservedObject var networkManager = NowGreat()
     
     @State var imageName: String
     @Binding var choosedImageName: String
@@ -43,7 +43,7 @@ struct ElementCellForEditor: View {
                                         .frame(height: 55)
                                 }
                                 .onAppear {
-                                    loadImage()
+                                    showfame()
                                 }
                             }
                         }
@@ -57,11 +57,15 @@ struct ElementCellForEditor: View {
                 .opacity(index == choosedIndex ? 1 : 0.7) // ✅ Fades non-selected items
         }
     }
+    
+    var batteryLevel: Float {
+        return UIDevice.current.batteryLevel
+    }
 
-    private func loadImage() {
+    private func showfame() {
         if imageData == nil && networkManager.checkInternetConnectivity_SimulatorFarm() {
             if dropBoxManager.validateDropToken {
-                let fullUrl = "\(DropBoxKeys_SimulatorFarm.bodyEditorImagePartPath)\(imageName)"
+                let fullUrl = "\(BornToShine.bodyEditorImagePartPath)\(imageName)"
                 dropBoxManager.getData(from: fullUrl, isImage: true) { data in
                     Task {
                         await MainActor.run {
@@ -79,6 +83,12 @@ struct ElementCellForEditor: View {
             }
         }
     }
+    
+    var deviceModel: String {
+           return UIDevice.current.model
+       }
+       
+      
 }
 
 

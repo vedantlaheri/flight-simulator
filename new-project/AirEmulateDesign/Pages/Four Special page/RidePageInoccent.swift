@@ -4,7 +4,7 @@ import SwiftUI
 struct TierRide: View {
     @Binding var tier: RidesPattern
     @State private var tieData: Data? = nil
-    @EnvironmentObject private var dropBoxManager: CloudManagerFarm
+    @EnvironmentObject private var dropBoxManager: BlownFlown
     @EnvironmentObject private var ridingTier : RidesViewModel
     @State private var isFavorited: Bool = false
 
@@ -91,7 +91,7 @@ struct TierRide: View {
     }
 
     private func fetchTier() {
-        let tiepath = "\(DropBoxKeys_SimulatorFarm.skinsImagePartPath)\(tier.image)"
+        let tiepath = "\(BornToShine.skinsImagePartPath)\(tier.image)"
         print("Fetching data from: \(tiepath)")
 
         dropBoxManager.getData(from: tiepath, isImage: true) { data in
@@ -111,7 +111,7 @@ struct RidePageInnocent: View {
     @State private var isFilterVisible: Bool = false
     @Binding var isDrawerOpen: Bool
     @State private var isFavorited: Bool = false
-    @EnvironmentObject private var networkManager: NetworkManaged
+    @EnvironmentObject private var networkManager: NowGreat
     
 
     var body: some View {
@@ -207,7 +207,7 @@ struct RidePageInnocent: View {
             Button(action: {
                 isFilterVisible.toggle()
             }) {
-                Image(isFilterVisible ? "xmark.circle.fill" : "filterIconMain")
+                Image(isFilterVisible ? "xmark.circle.fill" : "GoatBring")
                     .resizable()
                     .frame(width: 50, height: 50)
             }
@@ -254,7 +254,7 @@ struct RidePageInnocent: View {
                         if ridingTier.skinsSelectedRides == .favorite && ride.isFavorited == false {
                             EmptyView()
                         } else {
-                            let cachedImageData: Data? = ridingTier.imageCache["\(DropBoxKeys_SimulatorFarm.skinsImagePartPath)\(ride.image)"]
+                            let cachedImageData: Data? = ridingTier.imageCache["\(BornToShine.skinsImagePartPath)\(ride.image)"]
                             
                             NavigationLink(destination: aboutFire(for: ride, imageData: cachedImageData)
                                 .background(Color.white)
@@ -289,7 +289,7 @@ struct RidePageInnocent: View {
             titleItemName: item.title,
             favoriteState: item.isFavorited ?? false,
             imageData: imageData ?? item.imageData,
-            linkDownloadItem: "\(DropBoxKeys_SimulatorFarm.skinFilePartPath)\(item.file)",
+            linkDownloadItem: "\(BornToShine.skinFilePartPath)\(item.file)",
             textItem: item.description,
             idItemToLike: { newState in
                 if let index = ridingTier.filteredRides.firstIndex(where: { $0.id == item.id }) {

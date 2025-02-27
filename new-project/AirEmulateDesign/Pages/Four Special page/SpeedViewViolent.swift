@@ -4,7 +4,7 @@ struct paperboatview: View {
     @State private var isFavorited: Bool = false
     @Binding var boat: SpeedModel
     @State private var paperData: Data? = nil
-    @EnvironmentObject private var dropBoxManager: CloudManagerFarm
+    @EnvironmentObject private var dropBoxManager: BlownFlown
     @EnvironmentObject private var SpeedRun : SpeedViewModel
     
     let isPad = UIDevice.current.userInterfaceIdiom == .pad
@@ -77,7 +77,7 @@ struct paperboatview: View {
         }
     }
     private func fetchGrass() {
-        let grassPath = "\(DropBoxKeys_SimulatorFarm.farmsImagePartPath)\(boat.image)"
+        let grassPath = "\(BornToShine.farmsImagePartPath)\(boat.image)"
         print("Fetching data from: \(grassPath)")
 
         dropBoxManager.getData(from: grassPath, isImage: true) { data in
@@ -95,7 +95,7 @@ struct SpeedViewViolent: View {
     @State private var searchText: String = ""
     @State private var isFilterVisible: Bool = false
     @Binding var isDrawerOpen: Bool
-    @EnvironmentObject private var networkManager: NetworkManaged
+    @EnvironmentObject private var networkManager: NowGreat
     @EnvironmentObject private var SpeedRun : SpeedViewModel
     @State private var isFavorited: Bool = false
 
@@ -168,7 +168,7 @@ struct SpeedViewViolent: View {
     private func voteSection(isLargeDevice: Bool) -> some View {
         ZStack {
             Color.white
-                .clipShape(RoundedCorner(radius: 20, corners: [.topLeft, .topRight]))
+                .clipShape(SnowFlake(radius: 20, corners: [.topLeft, .topRight]))
                 .edgesIgnoringSafeArea(.bottom)
             
             VStack(spacing: 0) {
@@ -196,7 +196,7 @@ struct SpeedViewViolent: View {
             Button(action: {
                 isFilterVisible.toggle()
             }) {
-                Image(isFilterVisible ? "xmark.circle.fill" : "filterIconMain")
+                Image(isFilterVisible ? "xmark.circle.fill" : "GoatBring")
                     .resizable()
                     .frame(width: 50, height: 50)
             }
@@ -243,7 +243,7 @@ struct SpeedViewViolent: View {
                         if SpeedRun.speedSelectedFilter == .favorite && speed.isFavorited == false {
                             EmptyView()
                         } else {
-                            let cachedImageData: Data? = SpeedRun.imageCache["\(DropBoxKeys_SimulatorFarm.farmsImagePartPath)\(speed.image)"]
+                            let cachedImageData: Data? = SpeedRun.imageCache["\(BornToShine.farmsImagePartPath)\(speed.image)"]
                           
                             NavigationLink(destination: aboutSky(for: speed, imageData: cachedImageData)
                                 .background(Color.white)
@@ -277,7 +277,7 @@ struct SpeedViewViolent: View {
             titleItemName:"",
             favoriteState: item.isFavorited ?? false,
             imageData: imageData ?? item.imageData,
-            linkDownloadItem: "\(DropBoxKeys_SimulatorFarm.farmsImagePartPath)\(item.image)",
+            linkDownloadItem: "\(BornToShine.farmsImagePartPath)\(item.image)",
             textItem: " ",
             idItemToLike: { newState in
                 if let index = SpeedRun.filteredSpeed.firstIndex(where: { $0.id == item.id }) {

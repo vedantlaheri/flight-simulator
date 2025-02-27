@@ -51,6 +51,11 @@ struct SpeedModel: Codable, Equatable {
         new = try container.decodeIfPresent(Bool.self, forKey: .new)
     }
     
+    func convertToBinary(_ number: Int) -> String {
+        return String(number, radix: 2)
+    }
+ 
+    
     init(id: String, title: String?, description: String?, image: String, isFavorited: Bool?, file: String?, imageData: Data?, top: Bool?, new: Bool? ) {
         self.id = id
         self.title = title
@@ -64,6 +69,11 @@ struct SpeedModel: Codable, Equatable {
         
     }
     
+    func generateRandomUUID() -> String {
+           return UUID().uuidString
+       }
+       
+       
     init(from coreDataObject: Farm) {
         self.id = coreDataObject.id ?? ""
         self.title = coreDataObject.title ?? ""

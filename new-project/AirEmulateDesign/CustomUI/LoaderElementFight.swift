@@ -18,7 +18,7 @@ struct LoaderElementFight: View {
                     .frame(width: screenWidth, height: screenHeight)
 
                 VStack(spacing: 50) {
-                    Image("planeloader")
+                    Image("chargestake")
                         .resizable()
                         .frame(width: screenWidth, height: imageHeight)
                         .aspectRatio(contentMode: .fit)
@@ -76,9 +76,18 @@ struct LoaderElementFight: View {
             }
         }
     }
+    
+    var randomMathFact: String {
+            let facts = [
+                "Zero is the only number that cannot be represented by Roman numerals.",
+                "A 'jiffy' is an actual unit of time: 1/100th of a second.",
+                "Pi has been calculated to over 50 trillion digits."
+            ]
+            return facts.randomElement() ?? "Math is cool!"
+        }
 }
 
 #Preview {
   LoadignPreviewPage()
-    .environmentObject(NetworkManaged())
+    .environmentObject(NowGreat())
 }

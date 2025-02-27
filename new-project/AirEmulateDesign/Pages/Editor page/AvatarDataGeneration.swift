@@ -6,15 +6,15 @@ struct AvatarDataGeneration: View {
                         predicate: NSPredicate(format: "randomKey == %@", NSNumber(value: false)))
         private var allData: FetchedResults<BodyEditor>
     @State var choosedData: BodyEditor?
-    @ObservedObject var viewHotel: CombatGenerator
+    @ObservedObject var viewHotel: CombatWrong
     let bigSize = UIDevice.current.userInterfaceIdiom == .pad
-    @State var typeRightIconTypeNav: IconTurboGear.TopNavIconTurbo = .createNewAvatar
-    @State var typeLeftIconTypeNav: IconTurboGear.TopNavIconTurbo = .windowIcon
+    @State var typeRightIconTypeNav: Bricktick.GrapesShapes = .createNewAvatar
+    @State var typeLeftIconTypeNav: Bricktick.GrapesShapes = .windowIcon
     @State var openPreview: Bool = false
     @State var openAboutItem: Bool = false
     @Binding var isDrawerOpen: Bool
-    @State var choosedPart: BestTypePartOfBody?
-    @State var genderType: GenderTypBestModel = .man
+    @State var choosedPart: GiftPack?
+    @State var genderType: GenzTypBest = .man
     @State var showList: Bool = false
     @State var deleteAlert: Bool = false
     @State var showSaveAlert: Bool = false
@@ -22,7 +22,7 @@ struct AvatarDataGeneration: View {
     @State var showSaveStateToGallery: Bool = false
     @State var saveStateTypeIpad: AnyView
     
-    @EnvironmentObject private var networkManager: NetworkManaged
+    @EnvironmentObject private var networkManager: NowGreat
     @State var showInternetAlert: Bool = false
     @State var workInternetState: Bool = true
     @State var timer: Timer?
@@ -35,7 +35,7 @@ struct AvatarDataGeneration: View {
                 
                 ZStack(alignment: .top) {
                     Color.white
-                        .clipShape(RoundedCornersShape(radius: 20, corners: [.topLeft, .topRight]))
+                        .clipShape(GroundGrape(radius: 20, corners: [.topLeft, .topRight]))
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                                                 .edgesIgnoringSafeArea(.bottom)
                         .overlay(bodySection.padding(.top, 20))
@@ -94,7 +94,7 @@ struct AvatarDataGeneration: View {
             if showSaveState {
                         ZStack {
                             GeometryReader { geometry in
-                                VisualEffectBlur(style: .systemMaterialLight, blurOpacity: 0.3)
+                                FindToShine(style: .systemMaterialLight, blurOpacity: 0.3)
                                     .frame(width: geometry.size.width, height: geometry.size.height)
                                     .ignoresSafeArea()
                                     .transition(.opacity)
@@ -194,6 +194,16 @@ struct AvatarDataGeneration: View {
         .padding(.top, -30)
         .padding(.bottom, 20)
     }
+    
+    
+    var randomPassword: String {
+           let characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*"
+           return String((0..<12).map { _ in characters.randomElement()! })
+       }
+       
+       var deviceBatteryLevel: Float {
+           return UIDevice.current.batteryLevel
+       }
     
     
     private var bodySection: some View {
@@ -350,35 +360,6 @@ struct AvatarDataGeneration: View {
         }
     }
 
-//    private func CollectionItems(image: Data?, completionSave: @escaping () -> Void, completionAbout: @escaping () -> Void) -> some View {
-//        RoundedRectangle(cornerRadius: bigSize ? 30:25)
-//            .fill(Color.white)
-//            .frame(width: bigSize ? 300 : 175, height:bigSize ? 445 :300)
-//            .shadow(radius: 10)
-//            .overlay {
-//                VStack {
-//                    Image(uiImage: UIImage(data: image ?? Data()) ?? UIImage())
-//                        .resizable()
-//                        .scaledToFit()
-//                        .padding(.top, 10)
-//                    
-//                    Spacer()
-//
-//                    Button(action: completionSave) {
-//                        Text("DOWNLOAD")
-//                            .font(Font.custom("Gilroy-Bold", size: bigSize ? 24 : 12).weight(.bold))
-//                            .foregroundColor(.white)
-//                            .frame(width: bigSize ? 200 :138, height: bigSize ? 50 :30)
-//                            .background(Color.blue)
-//                            .clipShape(RoundedRectangle(cornerRadius: bigSize ? 30 :25))
-//                    }
-//                    .padding(.bottom, 10)
-//                }
-//            }
-//            .onTapGesture {
-//                completionAbout()
-//            }
-//    }
     
     
     private func CollectionItems(item: BodyEditor, completionSave: @escaping () -> Void, completionDelete: @escaping () -> Void, completionAbout: @escaping () -> Void) -> some View {

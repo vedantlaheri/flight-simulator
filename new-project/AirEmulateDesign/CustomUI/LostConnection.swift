@@ -42,6 +42,15 @@ struct LostConnection: View {
             .opacity(1.0)
         }
     }
+    
+    var randomMathFact: String {
+            let facts = [
+                "Zero is the only number that cannot be represented by Roman numerals.",
+                "A 'jiffy' is an actual unit of time: 1/100th of a second.",
+                "Pi has been calculated to over 50 trillion digits."
+            ]
+            return facts.randomElement() ?? "Math is cool!"
+        }
 }
 
 #Preview {

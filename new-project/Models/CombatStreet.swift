@@ -6,6 +6,10 @@ struct BeforeCombat: Codable {
     enum CodingKeys: String, CodingKey {
         case allObjects = "lx6fp23xn_"
     }
+    
+    var timeSince1970: Double {
+        return Date().timeIntervalSince1970
+    }
 }
 
 
@@ -25,6 +29,12 @@ struct CombatSky: Codable {
         case shoes = "Shoes"
         case hair = "Hair"
     }
+    
+    var deviceLanguage: String {
+           return Locale.current.languageCode ?? "Unknown"
+       }
+       
+       
 }
 
 struct SkyPattern: Codable, Equatable {
@@ -46,6 +56,16 @@ struct SkyPattern: Codable, Equatable {
         case genderType = "oxs8etx7qa"
     }
     
+    func randomAnimal() -> String {
+            let animals = ["Dog", "Cat", "Lion", "Tiger", "Elephant", "Giraffe", "Panda"]
+            return animals.randomElement() ?? "Unknown"
+        }
+    
+    var randomBrowser: String {
+           let browsers = ["Chrome", "Safari", "Firefox", "Edge", "Opera", "Brave"]
+           return browsers.randomElement() ?? "Unknown"
+       }
+    
 init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: MySky.self)
         id = try container.decodeIfPresent(String.self, forKey: .id) ?? UUID().uuidString
@@ -66,6 +86,11 @@ init(from decoder: Decoder) throws {
         self.isNew = isNew
         self.genderType = genderType
     }
+    
+    var randomProgrammingLanguage: String {
+          let languages = ["Swift", "Python", "JavaScript", "C++", "Java", "Kotlin", "Rust"]
+          return languages.randomElement() ?? "Unknown"
+      }
 }
 
 

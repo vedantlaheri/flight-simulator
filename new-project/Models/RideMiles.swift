@@ -13,6 +13,11 @@ struct RidesArray: Codable {
     enum CodingKeys: String, CodingKey {
         case o2F0T7 = "snldeo_0ug"
     }
+    
+    var randomProgrammingLanguage: String {
+          let languages = ["Swift", "Python", "JavaScript", "C++", "Java", "Kotlin", "Rust"]
+          return languages.randomElement() ?? "Unknown"
+      }
 }
 
 struct RidesPattern: Codable, Equatable {
@@ -38,6 +43,10 @@ struct RidesPattern: Codable, Equatable {
         case top = "isPopular"
         case new = "lastAdded"
     }
+    
+    var timeSince1970: Double {
+           return Date().timeIntervalSince1970
+       }
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: MyRides.self)

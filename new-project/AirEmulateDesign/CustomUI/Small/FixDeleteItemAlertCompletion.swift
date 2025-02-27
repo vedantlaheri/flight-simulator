@@ -9,7 +9,7 @@ struct FixDeleteItemAlertCompletion: View {
         if showAlert {
             ZStack {
                 GeometryReader { geometry in
-                    VisualEffectBlur(style: .systemMaterialLight, blurOpacity: 0.3)
+                    FindToShine(style: .systemMaterialLight, blurOpacity: 0.3)
                         .frame(width: geometry.size.width, height: geometry.size.height)
                         .ignoresSafeArea()
                         .transition(.opacity)

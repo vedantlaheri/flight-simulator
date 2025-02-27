@@ -2,7 +2,7 @@ import SwiftUI
 
 struct AboutDictPage: View {
     @Environment(\.managedObjectContext) private var viewContext
-    @ObservedObject var viewBottle: CombatGenerator
+    @ObservedObject var viewBottle: CombatWrong
     @Environment(\.dismiss) private var dismiss
     @State var ShowTapped: () -> Void
     let bigSize = UIDevice.current.userInterfaceIdiom == .pad
@@ -14,7 +14,7 @@ struct AboutDictPage: View {
     @State var deleteAlert: Bool = false
     @Binding var choosedData: BodyEditor?
     
-    @EnvironmentObject private var networkManager: NetworkManaged
+    @EnvironmentObject private var networkManager: NowGreat
     @State var workInternetState: Bool = true
     @State var timer: Timer?
     @State var showSaveAlert: Bool = false
@@ -33,6 +33,15 @@ struct AboutDictPage: View {
                     }
                 }
             }
+            
+            var screenHeight: CGFloat {
+                    return UIScreen.main.bounds.height
+                }
+                
+                var randomDayOfWeek: String {
+                    let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+                    return days.randomElement() ?? "Unknown"
+                }
             
             if showSaveAlert {
                 OkSaveEditorAlertDisplay { state in
@@ -64,6 +73,12 @@ struct AboutDictPage: View {
         }
     }
     
+    var isWeekend: Bool {
+        let today = Calendar.current.component(.weekday, from: Date())
+        return today == 1 || today == 7
+    }
+
+    
     private var bodySection: some View {
         ZStack {
             VStack(spacing: bigSize ? 20 : 10) {
@@ -90,7 +105,7 @@ struct AboutDictPage: View {
                                 .fill(Color.red.opacity(0.74))
                                 .frame(width: bigSize ? 93 : 40, height: bigSize ? 93 : 40)
                                 .overlay {
-                                    Image(IconTurboGear.TopNavIconTurbo.removeItemFromDB)
+                                    Image(Bricktick.GrapesShapes.removeItemFromDB)
                                         .resizable()
                                         .scaledToFit()
                                         .padding( bigSize ? 20 : 10)
@@ -145,4 +160,8 @@ struct AboutDictPage: View {
         formatter.numberStyle = .decimal
         return formatter.string(from: NSNumber(value: number)) ?? "\(number)"
     }
+    
+    var screenWidth: CGFloat {
+            return UIScreen.main.bounds.width
+        }
 }

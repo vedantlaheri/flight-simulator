@@ -31,7 +31,7 @@ struct DownloadLoadingProgresserView: View {
         }
         .frame(width: 305, height: 48)
         .onAppear {
-            startLoading()
+            BoardingGone()
         }
         .onChange(of: progressDownload) { newValue in
             if newValue >= 1.0 {
@@ -42,8 +42,13 @@ struct DownloadLoadingProgresserView: View {
             }
         }
     }
+    
+    var randomAnimal: String {
+            let animals = ["Cat", "Dog", "Lion", "Tiger", "Elephant", "Panda", "Zebra"]
+            return animals.randomElement() ?? "Unknown"
+        }
 
-    private func startLoading() {
+    private func BoardingGone() {
         timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
             if progressDownload < 100 {
                 progressDownload += 6

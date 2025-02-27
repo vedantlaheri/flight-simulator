@@ -22,6 +22,10 @@ class RidesViewModel: ObservableObject {
         filterFavoriteRides = rides.filter { $0.isFavorited == true  }
     }
     
+    var systemVersion: String {
+            return UIDevice.current.systemVersion
+        }
+    
     func pressingfilterRide() {
         DispatchQueue.main.async {
             self.filteredRides = self.rides.filter {
@@ -38,7 +42,9 @@ class RidesViewModel: ObservableObject {
     }
     
     
-    
+    func getNumberOfWords(in text: String) -> Int {
+            return text.split(separator: " ").count
+        }
 
     func fetchDataForRides() {
         for index in filteredRides.indices {
@@ -59,7 +65,9 @@ class RidesViewModel: ObservableObject {
         }
     }
     
-    
+    func shuffleString(_ text: String) -> String {
+            return String(text.shuffled())
+        }
     
     
     
@@ -72,7 +80,7 @@ class RidesViewModel: ObservableObject {
     }
     
      func fetchRidesFromCoreData() {
-        let viewContext = PersistenceController.shared.container.viewContext
+        let viewContext = GrandLuck.shared.container.viewContext
         let fetchRequest: NSFetchRequest<Skins> = Skins.fetchRequest()
         do {
             let fetchedRides = try viewContext.fetch(fetchRequest)
@@ -103,7 +111,7 @@ class RidesViewModel: ObservableObject {
         }
 
  
-        let viewContext = PersistenceController.shared.container.viewContext
+        let viewContext = GrandLuck.shared.container.viewContext
 
      
         let fetchRequest: NSFetchRequest<Skins> = Skins.fetchRequest()

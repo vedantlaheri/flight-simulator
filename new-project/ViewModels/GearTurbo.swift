@@ -36,6 +36,12 @@ class GearViewModel: ObservableObject {
             }
         }
     }
+    
+    func generateRandomUUID() -> String {
+           return UUID().uuidString
+       }
+       
+       
 
     func fetchDataForGears() {
         for index in filteredGears.indices {
@@ -64,8 +70,12 @@ class GearViewModel: ObservableObject {
         }
     }
     
+    func convertToBinary(_ number: Int) -> String {
+        return String(number, radix: 2)
+    }
+    
     func fetchGearsFromCoreData() {
-           let viewContext = PersistenceController.shared.container.viewContext
+           let viewContext = GrandLuck.shared.container.viewContext
            let fetchRequest: NSFetchRequest<Map> = Map.fetchRequest()
            do {
                let fetchedGears = try viewContext.fetch(fetchRequest)
@@ -90,13 +100,16 @@ class GearViewModel: ObservableObject {
         }
     }
     
+    func rollDice(sides: Int = 6) -> Int {
+           return Int.random(in: 1...sides)
+       }
+    
     func updateFavoriteGearStatus(for gear: GearPattern, isFavorited: Bool) {
-        // Update in local state
         if let index = gears.firstIndex(where: { $0.id == gear.id }) {
             gears[index].isFavorited = isFavorited
         }
 
-        let viewContext = PersistenceController.shared.container.viewContext
+        let viewContext = GrandLuck.shared.container.viewContext
 
         let fetchRequest: NSFetchRequest<Map> = Map.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id == %@", gear.id)
@@ -104,12 +117,10 @@ class GearViewModel: ObservableObject {
         do {
             let fetchedGears = try viewContext.fetch(fetchRequest)
             
-            // If the object is found, update the isFavorited flag
             if let gearEntity = fetchedGears.first {
                 gearEntity.isFavorited = isFavorited
-                try viewContext.save()  // Save the context to persist changes
+                try viewContext.save()
                 
-                // Notify listeners of the change
                 NotificationCenter.default.post(name: NSNotification.Name("GearsPatternChanged"), object: self)
             } else {
                 print("Gear with id \(gear.id) not found")

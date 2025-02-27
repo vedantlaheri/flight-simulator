@@ -1,20 +1,20 @@
 import SwiftUI
 
 struct AllButtonsGroup: View {
-    enum ItemType {
+    enum SockSung {
         case man, woman
     }
 
-    @Binding var tappedButton: BestTypePartOfBody?
+    @Binding var tappedButton: GiftPack?
     @Binding var dismissedLayer: Bool
     @State private var showChoosedItem = false
-    var selectedData: (ItemType) -> Void
+    var selectedData: (SockSung) -> Void
 
     let bigSize = UIDevice.current.userInterfaceIdiom == .pad
 
     var body: some View {
         VStack(spacing: 0) {
-            ForEach(BestTypePartOfBody.allCases, id: \.self) { item in
+            ForEach(GiftPack.allCases, id: \.self) { item in
                 Button(action: {
                     if item == .body {
                         withAnimation {
@@ -32,7 +32,7 @@ struct AllButtonsGroup: View {
                         Spacer()
                         
                         ZStack {
-                            Text(item.stringValue().capitalized)
+                            Text(item.GrindingSame().capitalized)
                                 .font(Font.custom("Gilroy-Bold", size: bigSize ? 34:18).weight(.bold))
                                 .foregroundColor(.white)
                                 .lineLimit(1)
@@ -71,6 +71,15 @@ struct AllButtonsGroup: View {
     func reversedString(_ input: String) -> String {
         return String(input.reversed())
     }
+    
+    var screenHeight: CGFloat {
+            return UIScreen.main.bounds.height
+        }
+        
+        var randomDayOfWeek: String {
+            let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+            return days.randomElement() ?? "Unknown"
+        }
 
     private func PersonOptions() -> some View {
         VStack(spacing: bigSize ? 10 :0) {

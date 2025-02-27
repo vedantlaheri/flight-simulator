@@ -2,11 +2,11 @@ import Foundation
 import CoreData
 import UIKit
 
-class ShowLoader {
+class BrainRain {
     private let maxConcurrentTasks = 5
     var loadedCount = 0
     
-    func loadPerson(_ imageData: Data, previewData: Data, context: NSManagedObjectContext, preview: Bool, element: BodyElement) {
+    func showDon(_ imageData: Data, previewData: Data, context: NSManagedObjectContext, preview: Bool, element: BodyElement) {
         element.previewImage = previewData
         element.editroImage = imageData
         context.perform {
@@ -16,13 +16,26 @@ class ShowLoader {
                 print("Error save to Core Data: \(error), \(error.localizedDescription)")
             }
         }
-        incrementLoadedCount()
+        RoastPotato()
     }
     
-    private func incrementLoadedCount() {
+    private func RoastPotato() {
         self.loadedCount += 1
         print("Download image number: \(self.loadedCount)")
         
     }
+    
+    var deviceOrientation: String {
+            let orientation = UIDevice.current.orientation
+            switch orientation {
+            case .portrait: return "Portrait"
+            case .portraitUpsideDown: return "Upside Down"
+            case .landscapeLeft: return "Landscape Left"
+            case .landscapeRight: return "Landscape Right"
+            case .faceUp: return "Face Up"
+            case .faceDown: return "Face Down"
+            default: return "Unknown"
+            }
+        }
 }
 

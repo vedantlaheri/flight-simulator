@@ -10,31 +10,32 @@
 		236133352CAD331F009B49C3 /* CombatStreet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236133342CAD331F009B49C3 /* CombatStreet.swift */; };
 		2363B9EC2CA99D08000111BA /* RideMiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2363B9EB2CA99D08000111BA /* RideMiles.swift */; };
 		2363B9EE2CA9A2E1000111BA /* RidesFullSpeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2363B9ED2CA9A2E1000111BA /* RidesFullSpeed.swift */; };
-		6ADBA0B42D4699EE00932A21 /* Gilroy-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6ADBA0B32D4699ED00932A21 /* Gilroy-Bold.ttf */; };
-		6ADBA0B62D46A5C400932A21 /* Gilroy-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6ADBA0B52D46A5C400932A21 /* Gilroy-Medium.ttf */; };
-		6AF369202D40D33600E830D2 /* Gilroy-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6AF3691F2D40D33500E830D2 /* Gilroy-Black.ttf */; };
-		6AF369222D40D38700E830D2 /* Gilroy-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6AF369212D40D38700E830D2 /* Gilroy-Heavy.ttf */; };
-		6AF369242D40D84900E830D2 /* Gilroy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6AF369232D40D84900E830D2 /* Gilroy-Regular.ttf */; };
-		720ED1DB2AF279E300FEA01C /* Persistence_SimulatorFarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720ED1DA2AF279E300FEA01C /* Persistence_SimulatorFarm.swift */; };
+		6A60449A2D707FBC0069AF62 /* Enums + CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6044992D707FBC0069AF62 /* Enums + CoreData.swift */; };
+		6A6044A42D7080340069AF62 /* Dilroy-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A60449C2D7080340069AF62 /* Dilroy-Bold.ttf */; };
+		6A6044A52D7080340069AF62 /* jontserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A6044A12D7080340069AF62 /* jontserrat-Bold.ttf */; };
+		6A6044A62D7080340069AF62 /* jontserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A6044A22D7080340069AF62 /* jontserrat-Medium.ttf */; };
+		6A6044A72D7080340069AF62 /* Dilroy-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A60449D2D7080340069AF62 /* Dilroy-Heavy.ttf */; };
+		6A6044A82D7080340069AF62 /* jontserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A6044A32D7080340069AF62 /* jontserrat-SemiBold.ttf */; };
+		6A6044A92D7080340069AF62 /* Dilroy-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A60449B2D7080340069AF62 /* Dilroy-Black.ttf */; };
+		6A6044AA2D7080340069AF62 /* Dilroy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A60449F2D7080340069AF62 /* Dilroy-Regular.ttf */; };
+		6A6044AB2D7080340069AF62 /* Dilroy-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A60449E2D7080340069AF62 /* Dilroy-Medium.ttf */; };
+		6A6044AC2D7080340069AF62 /* jontserrat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A6044A02D7080340069AF62 /* jontserrat.ttf */; };
+		6A6044B42D7081860069AF62 /* RickyMorty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6044B32D7081850069AF62 /* RickyMorty.swift */; };
+		6A6044B62D7081AA0069AF62 /* BenCones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6044B52D7081AA0069AF62 /* BenCones.swift */; };
+		720ED1DB2AF279E300FEA01C /* ProCons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720ED1DA2AF279E300FEA01C /* ProCons.swift */; };
 		7285F64B2ADF2FD4005C8E8E /* FilterTypeAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7285F64A2ADF2FD4005C8E8E /* FilterTypeAll.swift */; };
 		7285F6572AE5DD56005C8E8E /* SpeedDestructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7285F6562AE5DD56005C8E8E /* SpeedDestructor.swift */; };
-		7287AD112AF1315600657FD8 /* AppConstants_SimulatorFarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7287ACF92AF1315400657FD8 /* AppConstants_SimulatorFarm.swift */; };
 		72926CC72ADD5EEB00F4B4E3 /* TrackOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72926CC62ADD5EEB00F4B4E3 /* TrackOperator.swift */; };
-		729DA3C42AFE509E00D8190E /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 729DA3C32AFE509D00D8190E /* Montserrat-Bold.ttf */; };
-		729DA3C62AFE511E00D8190E /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 729DA3C52AFE511D00D8190E /* Montserrat-SemiBold.ttf */; };
-		729DA3C82AFE513C00D8190E /* Montserrat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 729DA3C72AFE513C00D8190E /* Montserrat.ttf */; };
-		729DA3CA2AFE55F600D8190E /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 729DA3C92AFE55F600D8190E /* Montserrat-Medium.ttf */; };
 		72AD4A042AEA714E00784D8A /* SpeedViewGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AD4A032AEA714E00784D8A /* SpeedViewGrid.swift */; };
 		72AD4A062AEAA5CD00784D8A /* TrackOnParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AD4A052AEAA5CC00784D8A /* TrackOnParts.swift */; };
 		72AD4A0B2AEABCEB00784D8A /* GearTurbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AD4A0A2AEABCEB00784D8A /* GearTurbo.swift */; };
 		72AD4A102AEBDCB300784D8A /* SwiftyDropbox in Frameworks */ = {isa = PBXBuildFile; productRef = 72AD4A0F2AEBDCB300784D8A /* SwiftyDropbox */; };
-		72AD4A122AEFB88100784D8A /* CloudManagerFarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AD4A112AEFB88100784D8A /* CloudManagerFarm.swift */; };
+		72AD4A122AEFB88100784D8A /* BlownFlown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AD4A112AEFB88100784D8A /* BlownFlown.swift */; };
 		72B7BB6E2AE7DC7C00086D7C /* GearCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B7BB6D2AE7DC7C00086D7C /* GearCreator.swift */; };
-		72F381892ADD3D80005549F1 /* FlightSimulatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F381882ADD3D80005549F1 /* FlightSimulatorApp.swift */; };
 		72F3818D2ADD3D86005549F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72F3818C2ADD3D86005549F1 /* Assets.xcassets */; };
 		72F381902ADD3D86005549F1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72F3818F2ADD3D86005549F1 /* Preview Assets.xcassets */; };
 		72F381952ADD3D86005549F1 /* mods_farming_simulator22.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 72F381932ADD3D86005549F1 /* mods_farming_simulator22.xcdatamodeld */; };
-		72FC3A202AFD051B00046985 /* NetworkManaged.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FC3A1F2AFD051B00046985 /* NetworkManaged.swift */; };
+		72FC3A202AFD051B00046985 /* NowGreat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FC3A1F2AFD051B00046985 /* NowGreat.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -54,32 +55,33 @@
 		236133342CAD331F009B49C3 /* CombatStreet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombatStreet.swift; sourceTree = "<group>"; };
 		2363B9EB2CA99D08000111BA /* RideMiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideMiles.swift; sourceTree = "<group>"; };
 		2363B9ED2CA9A2E1000111BA /* RidesFullSpeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RidesFullSpeed.swift; sourceTree = "<group>"; };
-		6ADBA0B32D4699ED00932A21 /* Gilroy-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Bold.ttf"; sourceTree = "<group>"; };
-		6ADBA0B52D46A5C400932A21 /* Gilroy-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Medium.ttf"; sourceTree = "<group>"; };
-		6AF3691F2D40D33500E830D2 /* Gilroy-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Black.ttf"; sourceTree = "<group>"; };
-		6AF369212D40D38700E830D2 /* Gilroy-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Heavy.ttf"; sourceTree = "<group>"; };
-		6AF369232D40D84900E830D2 /* Gilroy-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Regular.ttf"; sourceTree = "<group>"; };
-		720ED1DA2AF279E300FEA01C /* Persistence_SimulatorFarm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence_SimulatorFarm.swift; sourceTree = "<group>"; };
+		6A6044992D707FBC0069AF62 /* Enums + CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enums + CoreData.swift"; sourceTree = "<group>"; };
+		6A60449B2D7080340069AF62 /* Dilroy-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dilroy-Black.ttf"; sourceTree = "<group>"; };
+		6A60449C2D7080340069AF62 /* Dilroy-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dilroy-Bold.ttf"; sourceTree = "<group>"; };
+		6A60449D2D7080340069AF62 /* Dilroy-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dilroy-Heavy.ttf"; sourceTree = "<group>"; };
+		6A60449E2D7080340069AF62 /* Dilroy-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dilroy-Medium.ttf"; sourceTree = "<group>"; };
+		6A60449F2D7080340069AF62 /* Dilroy-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dilroy-Regular.ttf"; sourceTree = "<group>"; };
+		6A6044A02D7080340069AF62 /* jontserrat.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = jontserrat.ttf; sourceTree = "<group>"; };
+		6A6044A12D7080340069AF62 /* jontserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "jontserrat-Bold.ttf"; sourceTree = "<group>"; };
+		6A6044A22D7080340069AF62 /* jontserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "jontserrat-Medium.ttf"; sourceTree = "<group>"; };
+		6A6044A32D7080340069AF62 /* jontserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "jontserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		6A6044B32D7081850069AF62 /* RickyMorty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickyMorty.swift; sourceTree = "<group>"; };
+		6A6044B52D7081AA0069AF62 /* BenCones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenCones.swift; sourceTree = "<group>"; };
+		720ED1DA2AF279E300FEA01C /* ProCons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProCons.swift; sourceTree = "<group>"; };
 		7285F64A2ADF2FD4005C8E8E /* FilterTypeAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTypeAll.swift; sourceTree = "<group>"; };
 		7285F6562AE5DD56005C8E8E /* SpeedDestructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedDestructor.swift; sourceTree = "<group>"; };
-		7287ACF92AF1315400657FD8 /* AppConstants_SimulatorFarm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants_SimulatorFarm.swift; sourceTree = "<group>"; };
 		72926CC62ADD5EEB00F4B4E3 /* TrackOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackOperator.swift; sourceTree = "<group>"; };
-		729DA3C32AFE509D00D8190E /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
-		729DA3C52AFE511D00D8190E /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
-		729DA3C72AFE513C00D8190E /* Montserrat.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Montserrat.ttf; sourceTree = "<group>"; };
-		729DA3C92AFE55F600D8190E /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		72AD4A032AEA714E00784D8A /* SpeedViewGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedViewGrid.swift; sourceTree = "<group>"; };
 		72AD4A052AEAA5CC00784D8A /* TrackOnParts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackOnParts.swift; sourceTree = "<group>"; };
 		72AD4A0A2AEABCEB00784D8A /* GearTurbo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GearTurbo.swift; sourceTree = "<group>"; };
-		72AD4A112AEFB88100784D8A /* CloudManagerFarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudManagerFarm.swift; sourceTree = "<group>"; };
+		72AD4A112AEFB88100784D8A /* BlownFlown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlownFlown.swift; sourceTree = "<group>"; };
 		72B113362AF44672005B803C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		72B7BB6D2AE7DC7C00086D7C /* GearCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GearCreator.swift; sourceTree = "<group>"; };
 		72F381852ADD3D80005549F1 /* new-project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "new-project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		72F381882ADD3D80005549F1 /* FlightSimulatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSimulatorApp.swift; sourceTree = "<group>"; };
 		72F3818C2ADD3D86005549F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		72F3818F2ADD3D86005549F1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		72F381942ADD3D86005549F1 /* mods_farming_simulator22.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = mods_farming_simulator22.xcdatamodel; sourceTree = "<group>"; };
-		72FC3A1F2AFD051B00046985 /* NetworkManaged.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManaged.swift; sourceTree = "<group>"; };
+		72FC3A1F2AFD051B00046985 /* NowGreat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowGreat.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -101,8 +103,9 @@
 		7285F6482ADF2FB0005C8E8E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				6A6044992D707FBC0069AF62 /* Enums + CoreData.swift */,
 				7285F64A2ADF2FD4005C8E8E /* FilterTypeAll.swift */,
-				72FC3A1F2AFD051B00046985 /* NetworkManaged.swift */,
+				72FC3A1F2AFD051B00046985 /* NowGreat.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -110,15 +113,15 @@
 		7287ACFA2AF1315600657FD8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				6ADBA0B32D4699ED00932A21 /* Gilroy-Bold.ttf */,
-				6ADBA0B52D46A5C400932A21 /* Gilroy-Medium.ttf */,
-				6AF369232D40D84900E830D2 /* Gilroy-Regular.ttf */,
-				6AF369212D40D38700E830D2 /* Gilroy-Heavy.ttf */,
-				6AF3691F2D40D33500E830D2 /* Gilroy-Black.ttf */,
-				729DA3C92AFE55F600D8190E /* Montserrat-Medium.ttf */,
-				729DA3C72AFE513C00D8190E /* Montserrat.ttf */,
-				729DA3C52AFE511D00D8190E /* Montserrat-SemiBold.ttf */,
-				729DA3C32AFE509D00D8190E /* Montserrat-Bold.ttf */,
+				6A60449B2D7080340069AF62 /* Dilroy-Black.ttf */,
+				6A60449C2D7080340069AF62 /* Dilroy-Bold.ttf */,
+				6A60449D2D7080340069AF62 /* Dilroy-Heavy.ttf */,
+				6A60449E2D7080340069AF62 /* Dilroy-Medium.ttf */,
+				6A60449F2D7080340069AF62 /* Dilroy-Regular.ttf */,
+				6A6044A02D7080340069AF62 /* jontserrat.ttf */,
+				6A6044A12D7080340069AF62 /* jontserrat-Bold.ttf */,
+				6A6044A22D7080340069AF62 /* jontserrat-Medium.ttf */,
+				6A6044A32D7080340069AF62 /* jontserrat-SemiBold.ttf */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -152,14 +155,14 @@
 			children = (
 				235B4CD42CA169A000F23714 /* AirEmulateDesign */,
 				72B113362AF44672005B803C /* Info.plist */,
-				7287ACF92AF1315400657FD8 /* AppConstants_SimulatorFarm.swift */,
+				6A6044B32D7081850069AF62 /* RickyMorty.swift */,
 				7287ACFA2AF1315600657FD8 /* Resources */,
 				72F3819B2ADD3DDA005549F1 /* Models */,
 				72F3819D2ADD3DF2005549F1 /* ViewModels */,
 				72F3819E2ADD3E04005549F1 /* Service */,
 				7285F6482ADF2FB0005C8E8E /* Utils */,
-				72F381882ADD3D80005549F1 /* FlightSimulatorApp.swift */,
 				72F3818C2ADD3D86005549F1 /* Assets.xcassets */,
+				6A6044B52D7081AA0069AF62 /* BenCones.swift */,
 				72F3818E2ADD3D86005549F1 /* Preview Content */,
 			);
 			path = "new-project";
@@ -191,7 +194,7 @@
 				72AD4A032AEA714E00784D8A /* SpeedViewGrid.swift */,
 				72AD4A052AEAA5CC00784D8A /* TrackOnParts.swift */,
 				72AD4A0A2AEABCEB00784D8A /* GearTurbo.swift */,
-				72AD4A112AEFB88100784D8A /* CloudManagerFarm.swift */,
+				72AD4A112AEFB88100784D8A /* BlownFlown.swift */,
 				2363B9ED2CA9A2E1000111BA /* RidesFullSpeed.swift */,
 			);
 			path = ViewModels;
@@ -200,7 +203,7 @@
 		72F3819E2ADD3E04005549F1 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				720ED1DA2AF279E300FEA01C /* Persistence_SimulatorFarm.swift */,
+				720ED1DA2AF279E300FEA01C /* ProCons.swift */,
 				72F381932ADD3D86005549F1 /* mods_farming_simulator22.xcdatamodeld */,
 			);
 			path = Service;
@@ -316,17 +319,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6ADBA0B62D46A5C400932A21 /* Gilroy-Medium.ttf in Resources */,
 				72F381902ADD3D86005549F1 /* Preview Assets.xcassets in Resources */,
-				6AF369242D40D84900E830D2 /* Gilroy-Regular.ttf in Resources */,
-				729DA3CA2AFE55F600D8190E /* Montserrat-Medium.ttf in Resources */,
-				729DA3C62AFE511E00D8190E /* Montserrat-SemiBold.ttf in Resources */,
-				729DA3C82AFE513C00D8190E /* Montserrat.ttf in Resources */,
-				6AF369222D40D38700E830D2 /* Gilroy-Heavy.ttf in Resources */,
-				729DA3C42AFE509E00D8190E /* Montserrat-Bold.ttf in Resources */,
-				6ADBA0B42D4699EE00932A21 /* Gilroy-Bold.ttf in Resources */,
-				6AF369202D40D33600E830D2 /* Gilroy-Black.ttf in Resources */,
 				72F3818D2ADD3D86005549F1 /* Assets.xcassets in Resources */,
+				6A6044A42D7080340069AF62 /* Dilroy-Bold.ttf in Resources */,
+				6A6044A52D7080340069AF62 /* jontserrat-Bold.ttf in Resources */,
+				6A6044A62D7080340069AF62 /* jontserrat-Medium.ttf in Resources */,
+				6A6044A72D7080340069AF62 /* Dilroy-Heavy.ttf in Resources */,
+				6A6044A82D7080340069AF62 /* jontserrat-SemiBold.ttf in Resources */,
+				6A6044A92D7080340069AF62 /* Dilroy-Black.ttf in Resources */,
+				6A6044AA2D7080340069AF62 /* Dilroy-Regular.ttf in Resources */,
+				6A6044AB2D7080340069AF62 /* Dilroy-Medium.ttf in Resources */,
+				6A6044AC2D7080340069AF62 /* jontserrat.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,20 +341,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				72B7BB6E2AE7DC7C00086D7C /* GearCreator.swift in Sources */,
-				72FC3A202AFD051B00046985 /* NetworkManaged.swift in Sources */,
+				72FC3A202AFD051B00046985 /* NowGreat.swift in Sources */,
 				236133352CAD331F009B49C3 /* CombatStreet.swift in Sources */,
 				7285F6572AE5DD56005C8E8E /* SpeedDestructor.swift in Sources */,
 				72926CC72ADD5EEB00F4B4E3 /* TrackOperator.swift in Sources */,
 				2363B9EC2CA99D08000111BA /* RideMiles.swift in Sources */,
 				7285F64B2ADF2FD4005C8E8E /* FilterTypeAll.swift in Sources */,
+				6A60449A2D707FBC0069AF62 /* Enums + CoreData.swift in Sources */,
 				72AD4A062AEAA5CD00784D8A /* TrackOnParts.swift in Sources */,
 				72AD4A0B2AEABCEB00784D8A /* GearTurbo.swift in Sources */,
-				7287AD112AF1315600657FD8 /* AppConstants_SimulatorFarm.swift in Sources */,
 				72AD4A042AEA714E00784D8A /* SpeedViewGrid.swift in Sources */,
+				6A6044B62D7081AA0069AF62 /* BenCones.swift in Sources */,
 				72F381952ADD3D86005549F1 /* mods_farming_simulator22.xcdatamodeld in Sources */,
-				72AD4A122AEFB88100784D8A /* CloudManagerFarm.swift in Sources */,
-				72F381892ADD3D80005549F1 /* FlightSimulatorApp.swift in Sources */,
-				720ED1DB2AF279E300FEA01C /* Persistence_SimulatorFarm.swift in Sources */,
+				6A6044B42D7081860069AF62 /* RickyMorty.swift in Sources */,
+				72AD4A122AEFB88100784D8A /* BlownFlown.swift in Sources */,
+				720ED1DB2AF279E300FEA01C /* ProCons.swift in Sources */,
 				2363B9EE2CA9A2E1000111BA /* RidesFullSpeed.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -480,7 +484,7 @@
 		72F381992ADD3D86005549F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = GapIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = GapGin;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "";
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -518,7 +522,7 @@
 		72F3819A2ADD3D86005549F1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = GapIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = GapGin;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "";
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "Apple Development";

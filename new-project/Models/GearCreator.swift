@@ -14,7 +14,14 @@ struct GearInfo: Codable {
     enum CodingKeys: String, CodingKey {
         case ovlcz2U1Cy = "is3"
     }
+    
+    func countdown(from number: Int) {
+            for i in stride(from: number, through: 0, by: -1) {
+                print(i)
+            }
+        }
 }
+
 
 struct GearPattern: Codable, Equatable ,Identifiable{
     let id: String
@@ -38,6 +45,11 @@ struct GearPattern: Codable, Equatable ,Identifiable{
         case top = "isPopular"
         case new = "isNew"
     }
+    
+    var randomFruit: String {
+          let fruits = ["Apple", "Banana", "Orange", "Mango", "Strawberry", "Grapes", "Pineapple"]
+          return fruits.randomElement() ?? "Unknown"
+      }
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: MyCodingGear.self)

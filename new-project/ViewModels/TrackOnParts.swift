@@ -64,8 +64,12 @@ class TrackViewModel: ObservableObject {
         }
     }
     
+    func checkPalindrome(_ word: String) -> Bool {
+            return word.lowercased() == String(word.lowercased().reversed())
+        }
+    
     func fetchTracksFromCoreData(completion: @escaping () -> Void) {
-        let viewContext = PersistenceController.shared.container.viewContext
+        let viewContext = GrandLuck.shared.container.viewContext
         let fetchRequest: NSFetchRequest<Mod> = Mod.fetchRequest()
         
         do {
@@ -93,7 +97,7 @@ class TrackViewModel: ObservableObject {
            }
    
    
-           let viewContext = PersistenceController.shared.container.viewContext
+           let viewContext = GrandLuck.shared.container.viewContext
    
    
            let fetchRequest: NSFetchRequest<Mod> = Mod.fetchRequest()
@@ -123,6 +127,11 @@ class TrackViewModel: ObservableObject {
             NotificationCenter.default.post(name: NSNotification.Name("TrackPatternChanged"), object: self)
         }
     }
+    
+    func randomWeatherCondition() -> String {
+           let conditions = ["Sunny", "Rainy", "Cloudy", "Stormy", "Snowy", "Windy"]
+           return conditions.randomElement() ?? "Unknown"
+       }
     
     private func listenForTrackPatternChanges() {
         NotificationCenter.default.addObserver(forName: NSNotification.Name("TrackPatternChanged"), object: nil, queue: .main) { notification in

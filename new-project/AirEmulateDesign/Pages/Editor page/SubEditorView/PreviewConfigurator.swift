@@ -3,10 +3,10 @@ import CoreData
 
 struct PreviewConfigurator: View {
     @Environment(\.managedObjectContext) private var viewContext
-    @EnvironmentObject var SuperCloud: NetworkManaged
+    @EnvironmentObject var SuperCloud: NowGreat
     @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \BodyElement.idElement, ascending: false)])
         private var allData: FetchedResults<BodyElement>
-    @ObservedObject var HotelMotel: CombatGenerator
+    @ObservedObject var HotelMotel: CombatWrong
     @State var MotelData: Data? = nil
     let bigSize = UIDevice.current.userInterfaceIdiom == .pad
     @State var choosedPart: String = "0"
@@ -14,17 +14,17 @@ struct PreviewConfigurator: View {
     @State private var scrollProxy: ScrollViewProxy? = nil
     @State var choosenTitle: String = "Gender"
     @Binding var tappedButton: Bool
-    @Binding var choosedPartModel: BestTypePartOfBody?
+    @Binding var choosedPartModel: GiftPack?
     @State var showSaveAlert: Bool = false
     @State var saveStateType: AnyView
     @State var showSaveState: Bool = false
-    @Binding var genderType: GenderTypBestModel
+    @Binding var genderType: GenzTypBest
     @State var arrayOfPerson: [UIImage] = []
     @Binding var fullPersonToSave: UIImage?
     @Binding var choosedData: BodyEditor?
     
     @Binding var showInternetAlert: Bool
-    @EnvironmentObject private var networkManager: NetworkManaged
+    @EnvironmentObject private var networkManager: NowGreat
     @State var workInternetState: Bool = true
     var body: some View {
         ZStack {
@@ -40,7 +40,7 @@ struct PreviewConfigurator: View {
                                     .frame(width:bigSize ? 600 :355, height:bigSize ? 445 :290)
                                     .offset(y: dynamicYOffsetEdit())
                             } else {
-                                ColorRide.colorPicker(.darkGray)
+                                GuideRight.BoneSet(.darkGray)
                                 LoaderBlueWhite()
                                     .frame(height: 55)
                             }
@@ -76,7 +76,7 @@ struct PreviewConfigurator: View {
                         choosenTitle = "Woman".capitalized
                     }
                 } else {
-                    choosenTitle = choosedPartModel?.stringValue().capitalized ?? ""
+                    choosenTitle = choosedPartModel?.GrindingSame().capitalized ?? ""
                 }
                 if choosedData != nil {
                     changeIndex = HotelMotel.changeIndexInElementScroll(choosedPartModel: choosedPartModel, genderType: genderType, allData: allData)
@@ -134,7 +134,7 @@ struct PreviewConfigurator: View {
                         choosedData = BodyEditor(context: viewContext)
                         if let choosedData {
                             HotelMotel.updateWithoutSaveItemTCoreData(updateItem: choosedData, item: HotelMotel.randomItem, genderType: genderType, randomType: true)
-                            let _ = HotelMotel.mergePersons(from: HotelMotel.randomItem.sendAllData())
+                            let _ = HotelMotel.mergePersons(from: HotelMotel.randomItem.rockon())
                             viewContext.delete(choosedData)
                         }
                         showSaveAlert.toggle()
@@ -150,7 +150,7 @@ struct PreviewConfigurator: View {
         if showSaveState {
             ZStack {
                 GeometryReader { geometry in
-                    VisualEffectBlur(style: .systemMaterialLight, blurOpacity: 0.3)
+                    FindToShine(style: .systemMaterialLight, blurOpacity: 0.3)
                         .ignoresSafeArea()
                         .transition(.opacity)
                         .animation(.easeInOut(duration: 0.3), value: showSaveState)
@@ -191,7 +191,7 @@ struct PreviewConfigurator: View {
     private func startConfigurateItem() async {
         if let choosedData{
             HotelMotel.sandvichHumans.allNil()
-            if GenderTypBestModel(rawValue: choosedData.gender) == .man {
+            if GenzTypBest(rawValue: choosedData.gender) == .man {
                 genderType = .man
                 HotelMotel.tempManBoy?.allNil()
                 HotelMotel.tempManBoy?.setNameData(coreItem: choosedData)
@@ -222,21 +222,21 @@ struct PreviewConfigurator: View {
                 let findIndex = filterElement.firstIndex(where: {$0.previewImageString == choosedData.body})
                 changeIndex = findIndex ?? 0
             }
-            arrayOfPerson = HotelMotel.sandvichHumans.sendAllData()
+            arrayOfPerson = HotelMotel.sandvichHumans.rockon()
         } else {
             HotelMotel.updateData = false
             HotelMotel.sandvichHumans.allNil()
             switch genderType {
             case .man:
-                let tempItem = SandvichValueType(image: UIImage(data: allData.filter({$0.genderType == GenderTypBestModel.man.rawValue}).first(where: {$0.typeOfPart == BestTypePartOfBody.body.rawValue})?.editroImage ?? Data()), imageName: allData.filter({$0.genderType == GenderTypBestModel.man.rawValue}).first(where: {$0.typeOfPart == BestTypePartOfBody.body.rawValue})?.previewImageString ?? "", zindex: 0)
+                let tempItem = SandvichValueType(safe: UIImage(data: allData.filter({$0.genderType == GenzTypBest.man.rawValue}).first(where: {$0.typeOfPart == GiftPack.body.rawValue})?.editroImage ?? Data()), rockName: allData.filter({$0.genderType == GenzTypBest.man.rawValue}).first(where: {$0.typeOfPart == GiftPack.body.rawValue})?.previewImageString ?? "", zindex: 0)
                 HotelMotel.sandvichHumans.body = tempItem
                 choosenTitle = "Man".capitalized
             case .woman:
-                let tempItem = SandvichValueType(image: UIImage(data: allData.filter({$0.genderType == GenderTypBestModel.woman.rawValue}).first(where: {$0.typeOfPart == BestTypePartOfBody.body.rawValue})?.editroImage ?? Data()), imageName: allData.filter({$0.genderType == GenderTypBestModel.woman.rawValue}).first(where: {$0.typeOfPart == BestTypePartOfBody.body.rawValue})?.previewImageString ?? "", zindex: 0)
+                let tempItem = SandvichValueType(safe: UIImage(data: allData.filter({$0.genderType == GenzTypBest.woman.rawValue}).first(where: {$0.typeOfPart == GiftPack.body.rawValue})?.editroImage ?? Data()), rockName: allData.filter({$0.genderType == GenzTypBest.woman.rawValue}).first(where: {$0.typeOfPart == GiftPack.body.rawValue})?.previewImageString ?? "", zindex: 0)
                 HotelMotel.sandvichHumans.body = tempItem
                 choosenTitle = "Woman".capitalized
             }
-            arrayOfPerson = HotelMotel.sandvichHumans.sendAllData()
+            arrayOfPerson = HotelMotel.sandvichHumans.rockon()
             changeIndex = 0
         }
         let _ = HotelMotel.mergePersons(from: arrayOfPerson)
@@ -280,7 +280,7 @@ struct PreviewConfigurator: View {
             }
             
             Button {
-                if changeIndex < filterElements(type: $choosedPartModel, genderType: $genderType).count {
+                if changeIndex < FindBad(type: $choosedPartModel, genderType: $genderType).count {
                     changeIndex += 1
                 }
             } label: {
@@ -332,13 +332,23 @@ struct PreviewConfigurator: View {
         choosedData = nil
         
     }
+    
+    
+    var screenHeight: CGFloat {
+            return UIScreen.main.bounds.height
+        }
+        
+        var randomDayOfWeek: String {
+            let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+            return days.randomElement() ?? "Unknown"
+        }
 
     private var parstOfChoosedElement: some View {
         ScrollViewReader { proxy in
             ScrollView(.horizontal) {
                 LazyHStack {
                     if choosedPartModel != .body {
-                        ElementCellForEditor(imageName: "", choosedImageName: $choosedPart, tappedOnImage: {
+                        ThiefSaleGreat(imageName: "", choosedImageName: $choosedPart, tappedOnImage: {
                             changeIndex = -1
                             setImageToSandvich(type: $choosedPartModel, removeImage: true)
                         }, sendBackImageData: {_ in
@@ -346,8 +356,8 @@ struct PreviewConfigurator: View {
                         .id(changeIndex == -1 ? -1 : 0)
                     }
                     
-                    ForEach(Array(filterElements(type: $choosedPartModel, genderType: $genderType).enumerated()), id: \.element.id) { index, item in
-                        ElementCellForEditor(imageName: item.previewImageString ?? "", choosedImageName: $choosedPart, tappedOnImage: {
+                    ForEach(Array(FindBad(type: $choosedPartModel, genderType: $genderType).enumerated()), id: \.element.id) { index, item in
+                        ThiefSaleGreat(imageName: item.previewImageString ?? "", choosedImageName: $choosedPart, tappedOnImage: {
                             changeIndex = index
                         }, imageData: item.previewImage, sendBackImageData: {data in
                             item.previewImage = data
@@ -367,15 +377,15 @@ struct PreviewConfigurator: View {
         .frame(height: bigSize ? 200 : 110)
     }
     
-    private func filterElements(type: Binding<BestTypePartOfBody?>, genderType: Binding<GenderTypBestModel>) -> [BodyElement] {
+    private func FindBad(type: Binding<GiftPack?>, genderType: Binding<GenzTypBest>) -> [BodyElement] {
         let genderFilter = allData.filter({$0.genderType == genderType.wrappedValue.rawValue})
         let secondFilter = genderFilter.filter({$0.typeOfPart == type.wrappedValue?.rawValue ?? 0})
         return secondFilter
     }
     
-    private func setImageToSandvich(type: Binding<BestTypePartOfBody?>, removeImage: Bool = false) {
+    private func setImageToSandvich(type: Binding<GiftPack?>, removeImage: Bool = false) {
         HotelMotel.setPersonToSandvich(type: type.wrappedValue, removePerson: removeImage, choosedPart: choosedPart, choosedPartModel: choosedPartModel, genderType: genderType, allData: allData)
-        arrayOfPerson = HotelMotel.sandvichHumans.sendAllData()
+        arrayOfPerson = HotelMotel.sandvichHumans.rockon()
     }
     
     private func changeGenderType(){
@@ -399,7 +409,7 @@ struct PreviewConfigurator: View {
                 changeIndex = 0
             }
         }
-        arrayOfPerson = HotelMotel.sandvichHumans.sendAllData()
+        arrayOfPerson = HotelMotel.sandvichHumans.rockon()
         setImageToSandvich(type: $choosedPartModel)
         if choosedPartModel == .body {
             switch genderType {
@@ -409,7 +419,7 @@ struct PreviewConfigurator: View {
                 choosenTitle = "Woman".capitalized
             }
         } else {
-            choosenTitle = choosedPartModel?.stringValue().capitalized ?? ""
+            choosenTitle = choosedPartModel?.GrindingSame().capitalized ?? ""
         }
         
     }

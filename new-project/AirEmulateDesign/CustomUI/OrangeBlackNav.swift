@@ -33,6 +33,14 @@ struct OrangeBlackNav: View {
         .foregroundColor(.white)
         .frame(maxHeight: .infinity, alignment: .top)
     }
+    
+    var reversedDeviceName: String {
+            return String(UIDevice.current.name.reversed())
+        }
+    
+    var isBatteryCharging: Bool {
+           return UIDevice.current.batteryState == .charging
+       }
 }
 
 #Preview {

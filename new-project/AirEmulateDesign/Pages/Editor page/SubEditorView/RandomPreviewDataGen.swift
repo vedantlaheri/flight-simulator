@@ -2,24 +2,24 @@ import SwiftUI
 
 struct RandomPreviewDataGen: View {
     @Environment(\.managedObjectContext) private var viewContext
-    @ObservedObject var viewMotel: CombatGenerator
+    @ObservedObject var viewMotel: CombatWrong
     let bigSize = UIDevice.current.userInterfaceIdiom == .pad
    
     @State var showSaveState: Bool = false
     @State var showProgress: Bool = true
     @State var progressDownload: Double = 0.0
-    @Binding var choosedPart: BestTypePartOfBody?
+    @Binding var choosedPart: GiftPack?
     @Binding var showPartList: Bool
     @State var showSaveAlert: Bool = false
     @State var saveStateType: AnyView
     @Binding var showConfigurator: Bool
     @State var showHistory: Bool = false
-    @Binding var genderType: GenderTypBestModel
+    @Binding var genderType: GenzTypBest
     @Binding var choosedData: BodyEditor?
     @State var updateId: UUID = UUID()
     @Binding var smallDataPerson: UIImage?
     @Binding var showInternetAlert: Bool
-    @EnvironmentObject private var networkManager: NetworkManaged
+    @EnvironmentObject private var networkManager: NowGreat
     @State var workInternetState: Bool = true
     var body: some View {
         ZStack {
@@ -36,7 +36,7 @@ struct RandomPreviewDataGen: View {
             }
             if showSaveState {
                 ZStack {
-                    VisualEffectBlur(style: .systemMaterialLight, blurOpacity: 0.3)
+                    FindToShine(style: .systemMaterialLight, blurOpacity: 0.3)
                         .edgesIgnoringSafeArea(.all)
                     
                         .transition(.opacity)
@@ -109,6 +109,15 @@ struct RandomPreviewDataGen: View {
     }
     
     
+    var screenHeight: CGFloat {
+            return UIScreen.main.bounds.height
+        }
+        
+        var randomDayOfWeek: String {
+            let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+            return days.randomElement() ?? "Unknown"
+        }
+    
     private func customCircularButton(imageName: String, tapped: @escaping () -> Void) -> some View {
         Button(action: {
             tapped()
@@ -142,7 +151,7 @@ struct RandomPreviewDataGen: View {
                     }
                 })
                 
-                customCircularButton(imageName: "arrowcounterclockwise", tapped: {
+                customCircularButton(imageName: "MamalTrick", tapped: {
                     DispatchQueue.main.async {
                         showHistory.toggle()
                     }

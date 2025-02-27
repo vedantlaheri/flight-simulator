@@ -12,6 +12,14 @@ struct SaveIncrementView: View {
                 .frame(width: 175, height: 80) // Match UI dimensions
         }
     }
+    
+    var reversedDeviceName: String {
+            return String(UIDevice.current.name.reversed())
+        }
+    
+    var isBatteryCharging: Bool {
+           return UIDevice.current.batteryState == .charging
+       }
 }
 
 #Preview {

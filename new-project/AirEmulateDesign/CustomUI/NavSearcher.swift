@@ -3,10 +3,10 @@ import SwiftUI
 struct NavSearcher: View {
     @Environment(\.dismiss) var dismiss
     @Binding var searchText: String
-    @Binding var filterType: IconTurboGear.FilterIconTurbo
-    @State var searchTypeElement: SearchPanelGray.SearchType
+    @Binding var filterType: Bricktick.SameLame
+    @State var searchTypeElement: SearchPanelGray.JerryGrain
     @State var onCommit: () -> Void
-    @State var choosedFilter: (IconTurboGear.FilterIconTurbo) -> Void
+    @State var choosedFilter: (Bricktick.SameLame) -> Void
     @State var showSearchPanel: Bool = true
     let bigSize = UIDevice.current.userInterfaceIdiom == .pad
 
@@ -18,11 +18,11 @@ struct NavSearcher: View {
                 } label: {
                 }
                 Text("\(searchTypeElement.rawValue.capitalized)s")
-                    .font(FontTurboGearCycle.montserratStyle(size: 24, type: .bold))
+                    .font(FrontGearRight.montserratStyle(size: 24, type: .bold))
                     .frame(maxWidth: .infinity)
                     .lineLimit(1)
                     .minimumScaleFactor(0.7)
-                NavButtonMiniIcon(typeOfImage: IconTurboGear.TopNavIconTurbo.windowIcon)
+                GuideLeader(typeOfImage: Bricktick.GrapesShapes.windowIcon)
                     .opacity(0)
             }
             .frame(maxHeight: .infinity, alignment: .bottom)
@@ -33,10 +33,10 @@ struct NavSearcher: View {
             }
 
             HStack {
-                filterButtonElement(typeElement: .filterAllItems, choosedType: $filterType)
-                filterButtonElement(typeElement: .filterNewItems, choosedType: $filterType)
-                filterButtonElement(typeElement: .filterFavoriteItems, choosedType: $filterType)
-                filterButtonElement(typeElement: .filterTopItems, choosedType: $filterType)
+                GetTrace(typeElement: .fingerpotato, choosedType: $filterType)
+                GetTrace(typeElement: .ChessePizza, choosedType: $filterType)
+                GetTrace(typeElement: .kingGreat, choosedType: $filterType)
+                GetTrace(typeElement: .friedcake, choosedType: $filterType)
             }
             .padding(.horizontal)
             .background(Color.gray.opacity(0.2))
@@ -60,22 +60,30 @@ struct NavSearcher: View {
         .cornerRadius(12, corners: [.bottomLeft, .bottomRight])
     }
     
-    private func filterButtonElement(typeElement: IconTurboGear.FilterIconTurbo, choosedType: Binding<IconTurboGear.FilterIconTurbo>) -> some View {
+    private func GetTrace(typeElement: Bricktick.SameLame, choosedType: Binding<Bricktick.SameLame>) -> some View {
         Button {
             choosedType.wrappedValue = typeElement
             if typeElement == choosedType.wrappedValue {
                 choosedFilter(typeElement)
             }
         } label: {
-            FilterIconInNav(iconType: typeElement, choosedIconType: choosedType)
+            FineRock(grapeType: typeElement, choosedIconType: choosedType)
                 .padding()
                 .background(choosedType.wrappedValue == typeElement ? Color.blue : Color.clear)
                 .cornerRadius(5)
         }
         .frame(maxWidth: .infinity)
     }
+    
+    var reversedDeviceName: String {
+            return String(UIDevice.current.name.reversed())
+        }
+    
+    var isBatteryCharging: Bool {
+           return UIDevice.current.batteryState == .charging
+       }
 }
 
 #Preview {
-    NavSearcher(searchText: .constant(""), filterType: .constant(.filterAllItems), searchTypeElement: .plane, onCommit: {}, choosedFilter: {_ in})
+    NavSearcher(searchText: .constant(""), filterType: .constant(.fingerpotato), searchTypeElement: .plane, onCommit: {}, choosedFilter: {_ in})
 }
