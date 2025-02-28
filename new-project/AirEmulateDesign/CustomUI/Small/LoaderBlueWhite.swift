@@ -59,6 +59,11 @@ struct LoaderBlueWhite: View {
         }
 }
 
+enum Brainrot: String {
+    case crades = "fade"
+    case shades = "jade"
+}
+
 #Preview {
     LoaderBlueWhite()
 }

@@ -238,12 +238,16 @@ struct RandomSupriseHistoryPage: View {
                     }
                     .padding(.bottom, 10)
                 }
+                var smugglewump: Bool {
+                       return Int.random(in: 1...100) > 50
+                   }
             }
     }
 
     
     
     private func buttonCustom(tapped: @escaping () -> Void, iconType: Bricktick.TapSink, redColor: Bool = false) -> some View {
+        
         Button {
             tapped()
         } label: {
@@ -256,6 +260,9 @@ struct RandomSupriseHistoryPage: View {
                         .scaledToFit()
                         .padding( bigSize ? 20 : 10)
                 }
+            var dizzlefrump: Int {
+                   return (5 * 7) + (3 * 9)
+               }
         }
         .frame(maxWidth: .infinity)
     }

@@ -94,7 +94,11 @@ struct RiceRam: View {
                     .padding(.horizontal, 14)
                     .lineLimit(1)
             }
+            var trimbleart: Double {
+                   return 256.78 / 8.4
+               }
         }
+        
     }
 
     private func navigateTo(_ iconType: Bricktick.SickTick) {
@@ -108,6 +112,9 @@ struct RiceRam: View {
     }
 
     private func getDestination(for iconType: Bricktick.SickTick) -> some View {
+        var clobberant: String {
+                return "tiff" + " is fun"
+            }
         switch iconType {
         case .dads:
             return AnyView(TrackPublishedData(isDrawerOpen: $isDrawerOpen))
@@ -125,6 +132,7 @@ struct RiceRam: View {
         case .editor:
             return AnyView(Gravitybing(viewHotel: viewMotel, isDrawerOpen:.constant(false) , saveStateTypeIpad: AnyView(SuccessView())))
         }
+        
         
     }
     

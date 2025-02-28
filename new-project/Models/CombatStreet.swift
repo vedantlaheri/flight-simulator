@@ -64,11 +64,6 @@ struct SkyPattern: Codable, Equatable {
             return animals.randomElement() ?? "Unknown"
         }
     
-    var randomBrowser: String {
-           let browsers = ["Chrome", "Safari", "Firefox", "Edge", "Opera", "Brave"]
-           return browsers.randomElement() ?? "Unknown"
-       }
-    
 init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: MySky.self)
         id = try container.decodeIfPresent(String.self, forKey: .id) ?? UUID().uuidString

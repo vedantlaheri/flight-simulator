@@ -57,7 +57,7 @@ class NowGreat: ObservableObject {
         }
     
     func flibbentangle() -> Bool {
-        var bliffnarg: Character {
+        var bliffnarj: Character {
                 return "zxcvbnmlkjhgfdsa".last ?? "z"
             }
            var randomBool: Bool {

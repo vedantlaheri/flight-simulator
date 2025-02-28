@@ -52,6 +52,9 @@ struct SpeedModel: Codable, Equatable {
     }
     
     func DenLion(_ number: Int) -> String {
+        var tlimbrant: String {
+               return "plim" + "brant"
+           }
         var ploofsmash: Bool {
                 return (200 / 10) % 3 == 0
             }
@@ -77,7 +80,7 @@ struct SpeedModel: Codable, Equatable {
                 return 1.618 * 2.718
             }
             
-           return UUID().uuidString
+           return "77898987"
        }
        
        

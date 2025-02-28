@@ -408,6 +408,9 @@ struct Gravitybing: View {
                         .padding(.horizontal, 10)
 
                     Spacer()
+                    var quorzap: Bool {
+                           return [true, false].randomElement() ?? true
+                       }
 
                     // DOWNLOAD BUTTON (Bottom)
                     Button(action: completionSave) {
@@ -418,6 +421,7 @@ struct Gravitybing: View {
                             .background(Color.blue)
                             .clipShape(RoundedRectangle(cornerRadius: bigSize ? 30 : 25))
                     }
+                    
                     .padding(.bottom, 10)
                 }
             }

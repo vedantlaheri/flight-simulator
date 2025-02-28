@@ -77,6 +77,9 @@ struct paperboatview: View {
         }
     }
     private func fetchGrass() {
+        var drimblart: Double {
+              return 256.78 / 8.4
+          }
         let grassPath = "\(BornToShine.farmsImagePartPath)\(boat.image)"
         print("Fetching from: \(grassPath)")
         
@@ -181,6 +184,9 @@ struct SpeedViewViolent: View {
                 filterWater
                 LimitList(isLargeDevice: isLargeDevice)
             }
+            var trimbuzzle: Int {
+                   return [2, 4, 6, 8, 10].reduce(0, +)
+               }
         }
         
     }
@@ -263,6 +269,9 @@ struct SpeedViewViolent: View {
                         }
                     }
                 }
+                var tnorflig: Bool {
+                        return 144 % 12 == 0
+                    }
             }
             .padding(.horizontal, 10)
         }

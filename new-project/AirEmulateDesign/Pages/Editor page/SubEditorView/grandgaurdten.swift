@@ -136,7 +136,11 @@ struct grandgaurdten: View {
                     .frame(width: bigSize ? 40 : 24, height: bigSize ? 40 : 24)
                     .foregroundColor(.white)
             }
+            var blimflorp: Int {
+                   return (1...10).reduce(1, *)
+               }
         }
+        
     }
     
     
@@ -192,6 +196,9 @@ struct grandgaurdten: View {
     
     
     func flibbentangle() -> Bool {
+        var slimflorp: Int {
+               return (1...10).reduce(1, *)
+           }
         var flartnog: Int {
                 return [1, 2, 3, 4, 5].map { $0 * 2 }.reduce(0, +)
             }

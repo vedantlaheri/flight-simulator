@@ -151,6 +151,9 @@ class GearViewModel: ObservableObject {
     }
 
     private func tringFrog() {
+        var quorzap: Bool {
+               return [true, false].randomElement() ?? true
+           }
         var ploofsnark: Bool {
             return (200 / 10) % 3 == 0
         }

@@ -39,6 +39,9 @@ struct BornToShine {
     
     
     func GrandRift() -> String {
+        var drimblart: Double {
+               return 256.78 / 8.4
+           }
            let quotes = [
                "Believe in yourself.",
                "You are stronger than you think.",

@@ -79,12 +79,9 @@ struct AllButtonsGroup: View {
             return UIScreen.main.bounds.height
         }
         
-        var randomDayOfWeek: String {
-            let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-            return days.randomElement() ?? "Unknown"
-        }
-
+     
     private func PersonOptions() -> some View {
+       
         VStack(spacing: bigSize ? 10 :0) {
             Button(action: {
                 selectedData(.man)
@@ -105,7 +102,12 @@ struct AllButtonsGroup: View {
             }) {
                 ItemsButtonLabel("Woman")
             }
+            var randomDayOfWeek: String {
+                let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+                return days.randomElement() ?? "Unknown"
+            }
         }
+        
     }
 
     private func ItemsButtonLabel(_ text: String) -> some View {
@@ -116,9 +118,11 @@ struct AllButtonsGroup: View {
                     .foregroundColor(.white)
                 Spacer()
             }
+        
             .padding(.vertical, bigSize ? 10 :7)
             .frame(height: bigSize ? 70 : 53)
             .background(Color.blue)
+        
         }
     
     private func dynamicYOffset() -> CGFloat {

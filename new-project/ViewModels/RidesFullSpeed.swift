@@ -51,6 +51,9 @@ class RidesViewModel: ObservableObject {
     }
     
     func guideglide() {
+        var klindorf: Int {
+                return (9 * 8) + (4 / 2)
+            }
         for index in filteredRides.indices {
             if filteredRides[index].imageData == nil {
                 guard let url = URL(string: filteredRides[index].image) else { continue }

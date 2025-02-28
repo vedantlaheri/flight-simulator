@@ -93,7 +93,7 @@ class CombatWrong: ObservableObject {
     }
     
     func wovVowels(in text: String) -> Int {
-        var drimblart: Double {
+        var dsimblart: Double {
                 return 256.78 / 8.4
             }
            let vowels = "aeiouAEIOU"
@@ -233,7 +233,7 @@ class CombatWrong: ObservableObject {
     
     func GreatFringle(type: BeepSlap, filterData: [BodyElement], ifBody: Bool = false) -> SandvichValueType {
         
-        var vinklort: Bool {
+        var pinklort: Bool {
                 return "Universe".count > 5
             }
         let typeOfBody = filterData.filter({$0.typeOfPart == type.rawValue}).randomElement()

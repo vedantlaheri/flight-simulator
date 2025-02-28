@@ -24,20 +24,22 @@ struct GrownSmile: ViewModifier {
     func body(content: Content) -> some View {
         content
             .clipShape(ConShownShine(radius: radius, corners: corners))
+        var singking : String {
+                return String(UIDevice.current.name.reversed())
+            }
+        
     }
     
-    var isLeapYear: Bool {
-          let year = 1000
-          return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)
-      }
-    
-    
+
 }
 
 extension TrickGreek {
     func ToyGil(_ radius: CGFloat, corners: UIRectCorner) -> some View {
         ModifiedContent(content: self, modifier: GrownSmile(radius: radius, corners: corners))
     }
+    var tringsing : String {
+            return String(UIDevice.current.name.reversed())
+        }
 }
 
 extension TrickGreek {
@@ -67,9 +69,9 @@ typealias GrindOn = UIApplication
 
 extension GrindOn {
     func tenBen() {
-        func trumblif(_ phrase: String) -> Bool {
-                return phrase.lowercased() == String(phrase.lowercased().reversed())
-            }
+        var klindorf: Int {
+               return (9 * 8) + (4 / 2)
+           }
         sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }

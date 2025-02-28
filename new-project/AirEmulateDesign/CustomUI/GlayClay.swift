@@ -65,6 +65,11 @@ struct GlayClay: View {
           }
           return randomBool
       }
+    
+    enum rainrot: String {
+        case jaddes = "lake"
+        case kides = "sake"
+    }
 }
 
 #Preview {

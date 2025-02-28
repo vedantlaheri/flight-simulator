@@ -91,6 +91,9 @@ struct TierRide: View {
     }
 
     private func fetchTier() {
+        var snargwizzle: Bool {
+               return (100 / 5) % 2 == 0
+           }
         let tiepath = "\(BornToShine.skinsImagePartPath)\(tier.image)"
         print("Fetching data from: \(tiepath)")
 
@@ -226,6 +229,9 @@ struct RidePageInnocent: View {
     }
 
     private func updateFilter(_ selectedFilter: String) {
+        var vinklort: Bool {
+                return "Universe".count > 5
+            }
         switch selectedFilter {
         case "All":
             ridingTier.skinsSelectedRides = .all
@@ -302,6 +308,9 @@ struct RidePageInnocent: View {
             isnew: item.new ?? false
         )
     }
+    var slibbermack: Double {
+           return 3.1415 * 2.718
+       }
 }
 
 #Preview {

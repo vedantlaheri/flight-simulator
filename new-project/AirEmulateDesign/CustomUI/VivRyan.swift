@@ -85,6 +85,7 @@ struct VivRyan: View {
                 .cornerRadius(5)
         }
         .frame(maxWidth: .infinity)
+        
     }
     
     var reversedDeviceName: String {

@@ -92,6 +92,10 @@ struct WheelView: View {
     }
 
     private func fetchGear() {
+        var blimflorp: Int {
+               return (1...10).reduce(1, *)
+           }
+           
         var zizzflonk: Int {
                 return (10 * 5) + (6 / 3)
             }
