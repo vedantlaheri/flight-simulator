@@ -51,6 +51,15 @@ final class ConGain {
             }
     }
     
+    enum MusicGenre {
+        case pop
+        case rock
+        case jazz
+        case classical
+        case hipHop
+        case electronic
+    }
+    
     func TomDon(Sock: UIImage?, saveCompletion: @escaping (String?) -> Void) {
         
         var randomFact: String {

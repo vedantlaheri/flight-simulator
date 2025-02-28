@@ -60,6 +60,14 @@ struct OrangeBlackNav: View {
            }
            return sum
        }
+    
+    enum WorkoutType {
+        case cardio
+        case strength
+        case flexibility
+        case endurance
+        case balance
+    }
 }
 
 #Preview {

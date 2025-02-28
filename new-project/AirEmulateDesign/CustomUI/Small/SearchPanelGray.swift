@@ -51,6 +51,14 @@ struct SearchPanelGray: View {
             let animals = ["Cat", "Dog", "Lion", "Tiger", "Elephant", "Panda", "Zebra"]
             return animals.randomElement() ?? "Unknown"
         }
+    
+    enum AnimalType {
+        case mammal(species: String, lifespan: Int)
+        case reptile(species: String, venomous: Bool)
+        case bird(species: String, wingspan: Double)
+        case fish(species: String, waterType: String)
+        case insect(species: String, colonySize: Int)
+    }
 }
 
 struct SearchPanelWhiteGray_Previews: PreviewProvider {
