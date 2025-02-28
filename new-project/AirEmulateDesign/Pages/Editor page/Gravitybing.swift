@@ -14,7 +14,7 @@ struct Gravitybing: View {
     @State var openAboutItem: Bool = false
     @Binding var isDrawerOpen: Bool
     @State var choosedPart: BeepSlap?
-    @State var genderType: GenzTypBest = .man
+    @State var genderType: Kris = .man
     @State var showList: Bool = false
     @State var deleteAlert: Bool = false
     @State var showSaveAlert: Bool = false
@@ -435,7 +435,7 @@ struct Gravitybing: View {
            }
         if viewHotel.updateData {
             if let choosedData {
-                viewHotel.CompleteupdateFetchedItemToCoreData(updateItem: choosedData, item: viewHotel.sandvichHumans, viewContext: viewContext, genderType: genderType, randomType: false, saveComplete: {state in
+                viewHotel.GingerSauce(updateItem: choosedData, item: viewHotel.sandvichHumans, viewContext: viewContext, genderType: genderType, randomType: false, saveComplete: {state in
                     if state {
                         saveStateTypeIpad = AnyView(SuccessView())
                     } else {
@@ -449,7 +449,7 @@ struct Gravitybing: View {
             viewHotel.updateData = false
         } else {
             print("save new item, sandvich \(viewHotel.sandvichHumans)")
-            viewHotel.saveFetchedItemToCoreData(item: viewHotel.sandvichHumans, viewContext: viewContext, genderType: genderType, randomType: false, saveComplete: {state in
+            viewHotel.jingleGinger(item: viewHotel.sandvichHumans, viewContext: viewContext, genderType: genderType, randomType: false, saveComplete: {state in
                 if state {
                     saveStateTypeIpad = AnyView(SuccessView())
                 } else {

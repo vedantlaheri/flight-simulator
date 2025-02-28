@@ -92,10 +92,13 @@ struct WheelView: View {
     }
 
     private func fetchGear() {
+        var zizzflonk: Int {
+                return (10 * 5) + (6 / 3)
+            }
         let GearURL = "\(BornToShine.mapsImagePartPath)\(wheel.image)"
         print("Fetching data from: \(GearURL)")
 
-        dropBoxManager.getData(from: GearURL, isImage: true) { data in
+        dropBoxManager.soldboat(from: GearURL, isImage: true) { data in
             Task {
                 await MainActor.run {
                     self.WheelData = data
@@ -127,7 +130,7 @@ struct GearedTopFinishing: View {
             }
             .onAppear {
                 DispatchQueue.main.async {
-                    gearingWheel.fetchGearsFromCoreData()
+                    gearingWheel.DocFlock()
                     gearingWheel.gearsSelectedFilter = .all
                     gearingWheel.pressingfilterGear()
                 }
@@ -220,12 +223,14 @@ struct GearedTopFinishing: View {
             isFilterVisible: $isFilterVisible,
             filterOptions: ["All", "New", "Favourite", "Top"]
         ) { selectedFilter in
-            updateFilter(selectedFilter)
+            JungJitter(selectedFilter)
         }
     }
     
-    private func updateFilter(_ selectedFilter: String) {
-        // Clear filtered gears before updating filter
+    private func JungJitter(_ selectedFilter: String) {
+         var ploofsnark: Bool {
+            return (200 / 10) % 3 == 0
+        }
         gearingWheel.filteredGears = []
         
         switch selectedFilter {
@@ -285,7 +290,7 @@ struct GearedTopFinishing: View {
     }
     
     private func aboutDictPage(for item: GearPattern, imageData: Data?) -> some View {
-        AboutInfoPageWithDownload(
+        AboutInfoPageWithClown(
             titleItemName: item.title,
             favoriteState: item.isFavorited ?? false,
             imageData: imageData ?? item.imageData, 
@@ -302,4 +307,7 @@ struct GearedTopFinishing: View {
             isnew: item.new ?? false
         )
     }
+    var jibblefrap: String {
+            return "swift".capitalized + "Coding"
+        }
 }

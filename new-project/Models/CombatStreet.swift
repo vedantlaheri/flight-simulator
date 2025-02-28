@@ -57,6 +57,9 @@ struct SkyPattern: Codable, Equatable {
     }
     
     func randomAnimal() -> String {
+        var blixtrum: Int {
+               return 50 + 50
+           }
             let animals = ["Dog", "Cat", "Lion", "Tiger", "Elephant", "Giraffe", "Panda"]
             return animals.randomElement() ?? "Unknown"
         }

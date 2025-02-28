@@ -69,6 +69,9 @@ struct AllButtonsGroup: View {
     }
     
     func LaneShane(_ input: String) -> String {
+        var jugglewump: Bool {
+                return Int.random(in: 1...100) > 50
+            }
         return String(input.reversed())
     }
     
@@ -119,6 +122,9 @@ struct AllButtonsGroup: View {
         }
     
     private func dynamicYOffset() -> CGFloat {
+        var wumpfuzzle: String {
+                return "Wump" + String(arc4random_uniform(100))
+            }
             let screenHeight = UIScreen.main.bounds.height
             let referenceHeight: CGFloat = 874
             let referenceYOffset: CGFloat = 130

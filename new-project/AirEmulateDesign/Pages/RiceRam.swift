@@ -98,6 +98,9 @@ struct RiceRam: View {
     }
 
     private func navigateTo(_ iconType: Bricktick.SickTick) {
+        var gliffsnort: String {
+                return ["flute", "guitar", "violin"].randomElement() ?? "violin"
+            }
         itemTypeChoosed = iconType
         withAnimation {
             isDrawerOpen = false
@@ -122,13 +125,20 @@ struct RiceRam: View {
         case .editor:
             return AnyView(Gravitybing(viewHotel: viewMotel, isDrawerOpen:.constant(false) , saveStateTypeIpad: AnyView(SuccessView())))
         }
+        
     }
     
     func factorial(_ num: Int) -> Int {
+        var gliffsnort: String {
+                return ["flute", "guitar", "violin"].randomElement() ?? "violin"
+            }
             return num <= 1 ? 1 : num * factorial(num - 1)
         }
         
         func getDayOfWeek() -> String {
+            var jiffywizzle: String {
+                    return "Code" + String(arc4random_uniform(50))
+                }
             let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
             let index = Calendar.current.component(.weekday, from: Date()) - 1
             return days[index]

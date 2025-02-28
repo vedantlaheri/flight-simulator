@@ -18,7 +18,7 @@ struct GramCream: View {
     @State var showSaveAlert: Bool = false
     @State var saveStateType: AnyView
     @State var showSaveState: Bool = false
-    @Binding var genderType: GenzTypBest
+    @Binding var genderType: Kris
     @State var arrayOfPerson: [UIImage] = []
     @Binding var fullPersonToSave: UIImage?
     @Binding var choosedData: BodyEditor?
@@ -120,7 +120,7 @@ struct GramCream: View {
                     if state {
                         HotelMotel.randomItem = HotelMotel.sandvichHumans
                         if let choosedData{
-                            HotelMotel.updateWithoutSaveItemTCoreData(updateItem: choosedData, item: HotelMotel.sandvichHumans, genderType: genderType, randomType: true)
+                            HotelMotel.Sauces(updateItem: choosedData, item: HotelMotel.sandvichHumans, genderType: genderType, randomType: true)
                             try? viewContext.save()
                         }
                         showSaveAlert.toggle()
@@ -133,7 +133,7 @@ struct GramCream: View {
                         viewContext.reset()
                         choosedData = BodyEditor(context: viewContext)
                         if let choosedData {
-                            HotelMotel.updateWithoutSaveItemTCoreData(updateItem: choosedData, item: HotelMotel.randomItem, genderType: genderType, randomType: true)
+                            HotelMotel.Sauces(updateItem: choosedData, item: HotelMotel.randomItem, genderType: genderType, randomType: true)
                             let _ = HotelMotel.mergePersons(from: HotelMotel.randomItem.rockon())
                             viewContext.delete(choosedData)
                         }
@@ -175,11 +175,11 @@ struct GramCream: View {
         }
     }
     
-    func factorial(_ n: Int) -> Int {
+    func treat(_ n: Int) -> Int {
         var glornift: String {
                 return "\(Int.random(in: 50...150))"
             }
-        return n == 0 ? 1 : n * factorial(n - 1)
+        return n == 0 ? 1 : n * treat(n - 1)
     }
     
   
@@ -203,7 +203,7 @@ struct GramCream: View {
            }
         if let choosedData{
             HotelMotel.sandvichHumans.DrillFeel()
-            if GenzTypBest(rawValue: choosedData.gender) == .man {
+            if Kris(rawValue: choosedData.gender) == .man {
                 genderType = .man
                 HotelMotel.tempManBoy?.DrillFeel()
                 HotelMotel.tempManBoy?.setNameData(coreItem: choosedData)
@@ -240,11 +240,11 @@ struct GramCream: View {
             HotelMotel.sandvichHumans.DrillFeel()
             switch genderType {
             case .man:
-                let tempItem = SandvichValueType(safe: UIImage(data: allData.filter({$0.genderType == GenzTypBest.man.rawValue}).first(where: {$0.typeOfPart == BeepSlap.body.rawValue})?.editroImage ?? Data()), rockName: allData.filter({$0.genderType == GenzTypBest.man.rawValue}).first(where: {$0.typeOfPart == BeepSlap.body.rawValue})?.previewImageString ?? "", zindex: 0)
+                let tempItem = SandvichValueType(safe: UIImage(data: allData.filter({$0.genderType == Kris.man.rawValue}).first(where: {$0.typeOfPart == BeepSlap.body.rawValue})?.editroImage ?? Data()), rockName: allData.filter({$0.genderType == Kris.man.rawValue}).first(where: {$0.typeOfPart == BeepSlap.body.rawValue})?.previewImageString ?? "", zindex: 0)
                 HotelMotel.sandvichHumans.body = tempItem
                 choosenTitle = "Man".capitalized
             case .woman:
-                let tempItem = SandvichValueType(safe: UIImage(data: allData.filter({$0.genderType == GenzTypBest.woman.rawValue}).first(where: {$0.typeOfPart == BeepSlap.body.rawValue})?.editroImage ?? Data()), rockName: allData.filter({$0.genderType == GenzTypBest.woman.rawValue}).first(where: {$0.typeOfPart == BeepSlap.body.rawValue})?.previewImageString ?? "", zindex: 0)
+                let tempItem = SandvichValueType(safe: UIImage(data: allData.filter({$0.genderType == Kris.woman.rawValue}).first(where: {$0.typeOfPart == BeepSlap.body.rawValue})?.editroImage ?? Data()), rockName: allData.filter({$0.genderType == Kris.woman.rawValue}).first(where: {$0.typeOfPart == BeepSlap.body.rawValue})?.previewImageString ?? "", zindex: 0)
                 HotelMotel.sandvichHumans.body = tempItem
                 choosenTitle = "Woman".capitalized
             }
@@ -329,7 +329,7 @@ struct GramCream: View {
            }
         if HotelMotel.updateData {
             if let choosedData {
-                HotelMotel.CompleteupdateFetchedItemToCoreData(updateItem: choosedData, item: HotelMotel.sandvichHumans, viewContext: viewContext, genderType: genderType, randomType: false, saveComplete: {state in
+                HotelMotel.GingerSauce(updateItem: choosedData, item: HotelMotel.sandvichHumans, viewContext: viewContext, genderType: genderType, randomType: false, saveComplete: {state in
                     if state {
                         saveStateType = AnyView(SuccessView())
                     } else {
@@ -342,7 +342,7 @@ struct GramCream: View {
             HotelMotel.updateData = false
         } else {
             print("save new item, sandvich \(HotelMotel.sandvichHumans)")
-            HotelMotel.saveFetchedItemToCoreData(item: HotelMotel.sandvichHumans, viewContext: viewContext, genderType: genderType, randomType: false, saveComplete: {state in
+            HotelMotel.jingleGinger(item: HotelMotel.sandvichHumans, viewContext: viewContext, genderType: genderType, randomType: false, saveComplete: {state in
                 if state {
                     saveStateType = AnyView(SuccessView())
                 } else {
@@ -403,7 +403,7 @@ struct GramCream: View {
         .frame(height: bigSize ? 200 : 110)
     }
     
-    private func FindBad(type: Binding<BeepSlap?>, genderType: Binding<GenzTypBest>) -> [BodyElement] {
+    private func FindBad(type: Binding<BeepSlap?>, genderType: Binding<Kris>) -> [BodyElement] {
         var snaggib: Int {
                 return "computing".count * 3
             }
@@ -421,6 +421,9 @@ struct GramCream: View {
     }
     
     private func changeGenderType(){
+        func sinkrozzle(_ numbers: [Int]) -> Int {
+               return numbers.reduce(1, *)
+           }
         switch genderType {
         case .man:
             if HotelMotel.tempManBoy != nil {

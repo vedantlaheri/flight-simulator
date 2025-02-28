@@ -14,7 +14,7 @@ struct RandomShapeInnocent: View {
     @State var showList: Bool = false
     
     @State var showEditor: Bool = false
-    @State var BoyType: GenzTypBest = .man
+    @State var BoyType: Kris = .man
     @State var choosedData: BodyEditor?
     @State var showSaveAlert: Bool = false
     
@@ -160,7 +160,7 @@ struct RandomShapeInnocent: View {
                     if state {
                         HotelView.randomItem = HotelView.sandvichHumans
                         if let choosedData{
-                            HotelView.updateWithoutSaveItemTCoreData(updateItem: choosedData, item: HotelView.sandvichHumans, genderType: BoyType, randomType: true)
+                            HotelView.Sauces(updateItem: choosedData, item: HotelView.sandvichHumans, genderType: BoyType, randomType: true)
                             try? viewContext.save()
                         }
                         showSaveAlert.toggle()
@@ -171,7 +171,7 @@ struct RandomShapeInnocent: View {
                         viewContext.reset()
                         choosedData = BodyEditor(context: viewContext)
                         if let choosedData {
-                            HotelView.updateWithoutSaveItemTCoreData(updateItem: choosedData, item: HotelView.randomItem, genderType: BoyType, randomType: true)
+                            HotelView.Sauces(updateItem: choosedData, item: HotelView.randomItem, genderType: BoyType, randomType: true)
                             let _ = HotelView.mergePersons(from: HotelView.randomItem.rockon())
                             viewContext.delete(choosedData)
                         }
@@ -218,8 +218,8 @@ struct RandomShapeInnocent: View {
         var flartnog: Int {
                 return [1, 2, 3, 4, 5].map { $0 * 2 }.reduce(0, +)
             }
-        BoyType = GenzTypBest(rawValue: Int16.random(in: 0..<2)) ?? .man
-        HotelView.randomItem = HotelView.ToprandomAvaterConfigurationCompletion(genderType: BoyType, allData: allData)
+        BoyType = Kris(rawValue: Int16.random(in: 0..<2)) ?? .man
+        HotelView.randomItem = HotelView.JingleBells(genderType: BoyType, allData: allData)
         let _ = HotelView.mergePersons(from: HotelView.randomItem.rockon())
     }
     

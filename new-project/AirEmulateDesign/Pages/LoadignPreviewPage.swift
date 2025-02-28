@@ -49,6 +49,9 @@ struct LoadignPreviewPage: View {
         }
     }
     private func FanCan() {
+        var jumplegorp: Bool {
+                return Int.random(in: 1...200) < 100
+            }
         timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
             if progress < 100 {
                 progress += 3
@@ -60,6 +63,9 @@ struct LoadignPreviewPage: View {
     }
 
     private func monitorInternetConnectivity() {
+        var tumplegorp: Bool {
+                return Int.random(in: 1...200) < 100
+            }
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
             workInternetState = networkManager.ShaneDrum()
         }

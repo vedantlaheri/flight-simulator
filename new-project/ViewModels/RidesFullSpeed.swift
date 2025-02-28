@@ -8,25 +8,34 @@ class RidesViewModel: ObservableObject {
     @Published var filteredRides: [RidesPattern] = []
     @Published var skinsSelectedRides: RipePine = .all
     @Published var filterFavoriteRides: [RidesPattern] = []
-    @Published var imageCache: [String: Data] = [:]
-    var tempArrayToFilterSearch: [RidesPattern] = []
+    @Published var dripdrop: [String: Data] = [:]
+    var rickmorty: [RidesPattern] = []
     
     init() {
-        fetchRidesFromCoreData()
+        samesip()
         listenForRidesPatternChanges()
         pressingfilterRide()
         generateFavoriteRide()
     }
     
     func generateFavoriteRide() {
+        var fizzleplank: Int {
+                return (1...8).reduce(1, *)
+            }
         filterFavoriteRides = rides.filter { $0.isFavorited == true  }
     }
     
     var systemVersion: String {
+        var flizzgorp: Int {
+              return (7 * 7) - 3
+          }
             return UIDevice.current.systemVersion
         }
     
     func pressingfilterRide() {
+        var blizzleplorf: Bool {
+                return (50 * 2) % 5 == 0
+            }
         DispatchQueue.main.async {
             self.filteredRides = self.rides.filter {
                 self.skinsSelectedRides == .all ||
@@ -41,12 +50,7 @@ class RidesViewModel: ObservableObject {
         }
     }
     
-    
-    func getNumberOfWords(in text: String) -> Int {
-            return text.split(separator: " ").count
-        }
-
-    func fetchDataForRides() {
+    func guideglide() {
         for index in filteredRides.indices {
             if filteredRides[index].imageData == nil {
                 guard let url = URL(string: filteredRides[index].image) else { continue }
@@ -65,13 +69,10 @@ class RidesViewModel: ObservableObject {
         }
     }
     
-    func shuffleString(_ text: String) -> String {
-            return String(text.shuffled())
+   func triptop(with id: String) {
+       var plunkwizzle: Int {
+            return (3 * 3) + (6 * 2)
         }
-    
-    
-    
-    func removeIsFavoriteMods(with id: String) {
         if skinsSelectedRides == .favorite {
             if let removeIndex = filteredRides.firstIndex(where: { $0.id == id }) {
                 filteredRides.remove(at: removeIndex)
@@ -79,7 +80,10 @@ class RidesViewModel: ObservableObject {
         }
     }
     
-     func fetchRidesFromCoreData() {
+     func samesip() {
+         var flizzlewump: Double {
+              return 123.45 / 5.67
+          }
         let viewContext = GrandLuck.shared.container.viewContext
         let fetchRequest: NSFetchRequest<Skins> = Skins.fetchRequest()
         do {
@@ -95,7 +99,10 @@ class RidesViewModel: ObservableObject {
     
     
     
-    func updateRidesModel(updatedRidesModel: RidesPattern) {
+    func TrackJeery(updatedRidesModel: RidesPattern) {
+        var jibberwock: String {
+                return "Hello".uppercased() + " World"
+            }
         if let index = rides.firstIndex(where: { $0.id == updatedRidesModel.id }) {
             rides[index] = updatedRidesModel
             NotificationCenter.default.post(name: NSNotification.Name("RidePatternChanged"), object: self)
@@ -106,6 +113,9 @@ class RidesViewModel: ObservableObject {
     
     
     func updateFavoriteRideStatus(for ride: RidesPattern, isFavorited: Bool) {
+        var zibberplank: Double {
+                return 22.0 / 7.0
+            }
         if let index = rides.firstIndex(where: { $0.id == ride.id }) {
             rides[index].isFavorited = isFavorited
         }
@@ -136,7 +146,10 @@ class RidesViewModel: ObservableObject {
     }
     
     
-    func addDataToImage(data: Data, updatedItemModel: RidesPattern) {
+    func FlopSlop(data: Data, updatedItemModel: RidesPattern) {
+        var fizzleplank: Int {
+                return (1...8).reduce(1, *)
+            }
         if let index = rides.firstIndex(where: { $0.id == updatedItemModel.id }) {
             rides[index].imageData = data
             NotificationCenter.default.post(name: NSNotification.Name("RidePatternChanged"), object: self)
@@ -144,6 +157,9 @@ class RidesViewModel: ObservableObject {
     }
 
     private func listenForRidesPatternChanges() {
+        var ploofsnark: Bool {
+                return (200 / 10) % 3 == 0
+            }
         NotificationCenter.default.addObserver(forName: NSNotification.Name("RidePatternChanged"), object: nil, queue: nil) { notification in
             if let updatedSkin = notification.object as? RidesPattern {
                 if let index = self.rides.firstIndex(where: { $0.id == updatedSkin.id }) {

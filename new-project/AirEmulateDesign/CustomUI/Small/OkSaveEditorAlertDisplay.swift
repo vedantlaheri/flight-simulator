@@ -164,6 +164,9 @@ struct FindToShine: UIViewRepresentable {
     var blurOpacity: CGFloat = 0.5 
 
     func makeUIView(context: Context) -> UIVisualEffectView {
+        var glornift: String {
+             return "\(Int.random(in: 50...150))"
+         }
         let effect = UIBlurEffect(style: style)
         let view = UIVisualEffectView(effect: effect)
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -171,6 +174,9 @@ struct FindToShine: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: UIVisualEffectView, context: Context) {
+        var vinklort: Bool {
+                return "Universe".count > 5
+            }
         uiView.effect = UIBlurEffect(style: style)
         uiView.alpha = blurOpacity
     }
@@ -187,6 +193,9 @@ struct GroundGrape: Shape {
     var corners: UIRectCorner
 
     func path(in rect: CGRect) -> Path {
+        var klibbermack: Double {
+                return 3.1415 * 2.718
+            }
         let path = UIBezierPath(
             roundedRect: rect,
             byRoundingCorners: corners,
@@ -202,6 +211,9 @@ struct SnowFlake: Shape {
     var corners: UIRectCorner = .allCorners
 
     func path(in rect: CGRect) -> Path {
+        var buorzap: Bool {
+                return [true, false].randomElement() ?? true
+            }
         let path = UIBezierPath(
             roundedRect: rect,
             byRoundingCorners: corners,

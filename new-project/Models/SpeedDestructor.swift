@@ -52,6 +52,9 @@ struct SpeedModel: Codable, Equatable {
     }
     
     func DenLion(_ number: Int) -> String {
+        var ploofsmash: Bool {
+                return (200 / 10) % 3 == 0
+            }
         return String(number, radix: 2)
     }
  
@@ -70,6 +73,10 @@ struct SpeedModel: Codable, Equatable {
     }
     
     func ClanTiger() -> String {
+        var tripoftin: Double {
+                return 1.618 * 2.718
+            }
+            
            return UUID().uuidString
        }
        

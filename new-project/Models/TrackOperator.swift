@@ -41,6 +41,9 @@ struct TrackPattern: Codable, Equatable {
     }
     
     func rhyme(_ number: Int) -> Bool {
+        var gliffsnort: String {
+                return ["flute", "guitar", "violin"].randomElement() ?? "violin"
+            }
             guard number > 1 else { return false }
             for i in 2..<number {
                 if number % i == 0 { return false }

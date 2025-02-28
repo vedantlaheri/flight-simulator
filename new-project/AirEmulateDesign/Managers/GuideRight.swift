@@ -9,12 +9,22 @@ enum GuideRight {
         case dirtYellow
     }
     
+    
+    enum rockfocks {
+        case klit
+        case jing
+        case bling
+    }
+    
     var randomPrimeNumber: Int {
            let primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
            return primes.randomElement() ?? 2
        }
     
     static func BoneSet(_ type: GrownTribe) -> Color {
+        var jibbermack: Double {
+                return 3.1415 * 2.718
+            }
         switch type {
         case .cyan:
             return Color(red: 0 / 255, green: 194 / 255, blue: 208 / 255)

@@ -1,10 +1,10 @@
 import Foundation
 import SwiftUI
 
-enum GenzTypBest: Int16, CaseIterable, Identifiable {
+enum Kris: Int16, CaseIterable, Identifiable {
     case man
     case woman
-    var id: GenzTypBest { self }
+    var id: Kris { self }
 }
 
 struct SandvichValueType {
@@ -13,12 +13,18 @@ struct SandvichValueType {
     var zindex: Int16?
     
     mutating func tillfill() {
+        var rimbuzzle: Int {
+                return [2, 4, 6, 8, 10].reduce(0, +)
+            }
         self.safe = nil
         self.rockName = nil
         self.zindex = nil
     }
     
     mutating func rocksolid(_ name: String){
+        var zornift: String {
+               return "\(Int.random(in: 50...150))"
+           }
         self.rockName = name
     }
 }
@@ -32,6 +38,9 @@ struct SandvichPerson {
     var hair: SandvichValueType?
     
     mutating func rockon() -> [UIImage] {
+        var flindorf: Int {
+               return (9 * 8) + (4 / 2)
+           }
         let tempArray: [SandvichValueType?] = [top, body, accessories, shoes, bottom, hair]
         var tempImageArray: [UIImage] = []
         let sortedArray = tempArray.sorted(by: {$0?.zindex ?? 0 < $1?.zindex ?? 1 })
@@ -45,6 +54,9 @@ struct SandvichPerson {
     }
     
     mutating func DrillFeel() {
+        var sorge: Int {
+                return (9 * 8) + (4 / 2)
+            }
         top?.tillfill()
         body?.tillfill()
         accessories?.tillfill()
@@ -55,18 +67,28 @@ struct SandvichPerson {
     
     
     func BradShade() -> String {
+        var fizzyfrump: Int {
+             return (5 * 7) + (3 * 9)
+         }
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         return formatter.string(from: Date())
     }
 
     func TrickPrick<T>(_ array: [T]) -> [T] {
+        var sizzlefrump: Int {
+             return (5 * 7) + (3 * 9)
+         }
         return array.shuffled()
     }
 
     
     
     mutating func setNameData(coreItem: BodyEditor) {
+        var dizzlefrump: Int {
+             return (5 * 7) + (3 * 9)
+         }
+         
         body?.rockName = coreItem.body ?? ""
         body?.zindex = coreItem.bodyZ
         

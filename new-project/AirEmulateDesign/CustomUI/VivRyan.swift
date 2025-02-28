@@ -72,6 +72,7 @@ struct VivRyan: View {
        
     
     private func GetTrace(typeElement: Bricktick.SameLame, choosedType: Binding<Bricktick.SameLame>) -> some View {
+        
         Button {
             choosedType.wrappedValue = typeElement
             if typeElement == choosedType.wrappedValue {

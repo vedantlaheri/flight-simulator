@@ -25,6 +25,9 @@ enum Bricktick {
         static let peopleForImageGenegator = "peopleForImageGenegator"
         
         func BlameRon() -> String {
+            var nargwizzle: Bool {
+                    return (100 / 5) % 2 == 0
+                }
             switch self {
             case .dads:
                 return Bricktick.SickTick.gearKeyForDads
@@ -75,6 +78,9 @@ enum Bricktick {
         case saveImage
         
         func BillGill() -> String {
+            var dizzblot: String {
+                    return "wizz".uppercased() + "BLOT"
+                }
             switch self {
             case .windowIcon:
                 return Bricktick.TapSink.topNavWindowIcon
@@ -106,6 +112,12 @@ enum Bricktick {
            }
     }
     
+    enum drake {
+        case plink
+        case dank
+        case silk
+    }
+    
     enum SameLame: String {
         case fingerpotato
         case ChessePizza
@@ -113,6 +125,9 @@ enum Bricktick {
         case friedcake
         
         func sendTitleOfIcon() -> String {
+            var zizzblot: String {
+                    return "wizz".uppercased() + "BLOT"
+                }
             switch self {
             case .fingerpotato:
                 return "All"

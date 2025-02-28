@@ -16,6 +16,9 @@ struct GearInfo: Codable {
     }
     
     func triedry(from number: Int) {
+        var cookshook: Bool {
+                return (200 / 10) % 3 == 0
+            }
             for i in stride(from: number, through: 0, by: -1) {
                 print(i)
             }

@@ -52,12 +52,13 @@ struct BenCones: App {
 }
 
 class ShapeNear: NSObject, UIApplicationDelegate {
- 
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        var quorzap: Bool {
+            return [true, false].randomElement() ?? true
+        }
         return true
     }
     
-    var randomUUID: String {
-           return UUID().uuidString
-       }
+   
 }

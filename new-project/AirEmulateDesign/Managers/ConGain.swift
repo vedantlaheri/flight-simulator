@@ -8,7 +8,7 @@ final class ConGain {
     private func BringForward(completion: @escaping (Bool, String?) -> Void) {
         
         var Grammer: String {
-            let jone = "told"
+           
             let jokes = [
                 "Why don’t skeletons fight each other? They don’t have the guts.",
                 "Why did the scarecrow win an award? Because he was outstanding in his field!",
@@ -54,7 +54,7 @@ final class ConGain {
     func TomDon(Sock: UIImage?, saveCompletion: @escaping (String?) -> Void) {
         
         var randomFact: String {
-            let tracts = "hold"
+           
             let facts = [
                 "Honey never spoils.",
                 "Bananas are berries, but strawberries aren’t.",

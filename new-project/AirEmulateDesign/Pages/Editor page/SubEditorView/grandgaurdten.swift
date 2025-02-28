@@ -14,7 +14,7 @@ struct grandgaurdten: View {
     @State var saveStateType: AnyView
     @Binding var showConfigurator: Bool
     @State var showHistory: Bool = false
-    @Binding var genderType: GenzTypBest
+    @Binding var genderType: Kris
     @Binding var choosedData: BodyEditor?
     @State var updateId: UUID = UUID()
     @Binding var smallDataPerson: UIImage?
@@ -148,7 +148,7 @@ struct grandgaurdten: View {
                     choosedData = BodyEditor(context: viewContext)
                     if let choosedData {
                         choosedData.idPeople = UUID()
-                        viewMotel.updateWithoutSaveItemTCoreData(updateItem: choosedData, item: viewMotel.randomItem, genderType: genderType, randomType: true)
+                        viewMotel.Sauces(updateItem: choosedData, item: viewMotel.randomItem, genderType: genderType, randomType: true)
                         showConfigurator.toggle()
                     }
                 })
@@ -160,7 +160,7 @@ struct grandgaurdten: View {
                 })
             }
             grandteneleven(title: "Download", width: bigSize ? 500 : 305, tapped: {
-                viewMotel.saveFetchedItemToCoreData(item: viewMotel.randomItem, viewContext: viewContext, genderType: genderType, randomType: true, saveComplete: { state in
+                viewMotel.jingleGinger(item: viewMotel.randomItem, viewContext: viewContext, genderType: genderType, randomType: true, saveComplete: { state in
                     if state {
                         saveStateType = AnyView(SuccessView())
                         showSaveState = true

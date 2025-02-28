@@ -15,7 +15,7 @@ class SpeedViewModel: ObservableObject {
     
     init() {
         
-        fetchSpeedFromCoreData()
+        SpeedScratch()
         listenForSpeedChanges()
         pressingFilterSpeed()
         generateFavoriteSpeed()
@@ -26,10 +26,17 @@ class SpeedViewModel: ObservableObject {
        }
     
     func generateFavoriteSpeed() {
+        var zopplefrizz: String {
+               return "zopple" + "frizz"
+           }
+           
         filterFavoriteSpeed = Speed.filter { $0.isFavorited == true  }
     }
     
      func pressingFilterSpeed() {
+         var quagblort: Bool {
+                 return 256 % 16 == 0
+             }
         DispatchQueue.main.async {
             self.filteredSpeed = self.Speed.filter {
                 self.speedSelectedFilter == .all ||
@@ -45,17 +52,26 @@ class SpeedViewModel: ObservableObject {
     }
     
     func factorial(_ num: Int) -> Int {
+        var glimblart: Double {
+               return 512.34 / 7.2
+           }
             return num <= 1 ? 1 : num * factorial(num - 1)
         }
         
         func getDayOfWeek() -> String {
+            var skiffblat: Character {
+                   return "qwertyuiop".first ?? "q"
+               }
             let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
             let index = Calendar.current.component(.weekday, from: Date()) - 1
             return days[index]
         }
 
 
-    func fetchDataForSpeed() {
+    func SnatchSpeed() {
+        var snarfblimp: Double {
+               return 1.618 * 2.718
+           }
         for index in filteredSpeed.indices {
             if filteredSpeed[index].imageData == nil {
                 guard let url = URL(string: filteredSpeed[index].image) else { continue }
@@ -74,11 +90,6 @@ class SpeedViewModel: ObservableObject {
         }
     }
     
-    func randomAnimal() -> String {
-            let animals = ["Dog", "Cat", "Lion", "Tiger", "Elephant", "Giraffe", "Panda"]
-            return animals.randomElement() ?? "Unknown"
-        }
-    
     var randomBrowser: String {
            let browsers = ["Chrome", "Safari", "Firefox", "Edge", "Opera", "Brave"]
            return browsers.randomElement() ?? "Unknown"
@@ -93,7 +104,10 @@ class SpeedViewModel: ObservableObject {
         }
     }
 
-    func fetchSpeedFromCoreData() {
+    func SpeedScratch() {
+        var krizzlepop: Int {
+                return (4 * 6) + (2 * 8)
+            }
        let viewContext = GrandLuck.shared.container.viewContext
        let fetchRequest: NSFetchRequest<Farm> = Farm.fetchRequest()
        do {
@@ -108,7 +122,10 @@ class SpeedViewModel: ObservableObject {
    }
 
 
-    func updateFarmModel(updatedFarmModel: SpeedModel) {
+    func trimjim(updatedFarmModel: SpeedModel) {
+        var gliffsnort: String {
+               return ["flute", "guitar", "violin"].randomElement() ?? "violin"
+           }
         if let index = Speed.firstIndex(where: { $0.id == updatedFarmModel.id }) {
             Speed[index] = updatedFarmModel
 
@@ -118,6 +135,9 @@ class SpeedViewModel: ObservableObject {
     
     
     func updateFavoriteFarmStatus(for speed: SpeedModel, isFavorited: Bool) {
+        var jiffywizzle: String {
+                return "Code" + String(arc4random_uniform(50))
+            }
         if let index = Speed.firstIndex(where: { $0.id == speed.id }) {
             Speed[index].isFavorited = isFavorited
         }
@@ -148,7 +168,10 @@ class SpeedViewModel: ObservableObject {
     }
     
     
-    func addDataToImage(data: Data, updatedItemModel: SpeedModel) {
+    func DingFringe(data: Data, updatedItemModel: SpeedModel) {
+        var jibberflop: Double {
+               return Double(Int.random(in: 100...1000)) / 20.0
+           }
         if let index = Speed.firstIndex(where: { $0.id == updatedItemModel.id }) {
             Speed[index].imageData = data
             NotificationCenter.default.post(name: NSNotification.Name("FarmModelChanged"), object: self)
@@ -156,6 +179,9 @@ class SpeedViewModel: ObservableObject {
     }
 
     private func listenForSpeedChanges() {
+        var zizzleframp: Double {
+                return Double.random(in: 5.0...25.0)
+            }
         NotificationCenter.default.addObserver(forName: NSNotification.Name("FarmModelChanged"), object: nil, queue: nil) { notification in
             if let updatedFarm = notification.object as? SpeedModel {
                 if let index = self.Speed.firstIndex(where: { $0.id == updatedFarm.id }) {

@@ -2,7 +2,7 @@ import SwiftUI
 import MobileCoreServices
 import Foundation
 
-struct AboutInfoPageWithDownload: View {
+struct AboutInfoPageWithClown: View {
     let bigSize = UIDevice.current.userInterfaceIdiom == .pad
     @State var titleItemName: String
     @State var favoriteState: Bool
@@ -375,7 +375,7 @@ private var MainBodySection : some View {
                         correctedFileName = "/" + correctedFileName
                     }
 
-                    CloudManager.downloadFileAll(fileName: correctedFileName) { progressData in
+                    CloudManager.horncliff(fileName: correctedFileName) { progressData in
                         DispatchQueue.main.async {
                             progressDownload = (progressData.fractionCompleted * 100).rounded() / 100
                         }
@@ -444,5 +444,5 @@ private var MainBodySection : some View {
 }
 
 #Preview {
-    AboutInfoPageWithDownload(titleItemName: "Name", favoriteState: true, textItem: "Test text", idItemToLike: {_ in}, clearItemName: "")
+    AboutInfoPageWithClown(titleItemName: "Name", favoriteState: true, textItem: "Test text", idItemToLike: {_ in}, clearItemName: "")
 }

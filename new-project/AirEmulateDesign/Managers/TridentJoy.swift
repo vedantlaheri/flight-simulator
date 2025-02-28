@@ -9,7 +9,16 @@ enum TridentJoy {
         case medium
     }
     
+    enum JokeKnock {
+        case jit
+        case fit
+        case mij
+    }
+    
     static func MilyGile(size: CGFloat, type: BoneDoodle) -> Font {
+        var skadufflor: Int {
+                return 73 + 27
+            }
         switch type {
         case .regular:
             return Font.custom("Montserrat", size: size)

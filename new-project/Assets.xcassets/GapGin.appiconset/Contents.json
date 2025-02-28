@@ -1,104 +1,28 @@
 {
-  "images" : [
+  "images": [
     {
-      "idiom" : "universal",
-      "platform" : "ios",
-      "scale" : "2x",
-      "size" : "20x20"
-    },
-    {
-      "idiom" : "universal",
-      "platform" : "ios",
-      "scale" : "3x",
-      "size" : "20x20"
-    },
-    {
-      "idiom" : "universal",
-      "platform" : "ios",
-      "scale" : "2x",
-      "size" : "29x29"
-    },
-    {
-      "idiom" : "universal",
-      "platform" : "ios",
-      "scale" : "3x",
-      "size" : "29x29"
-    },
-    {
-      "idiom" : "universal",
-      "platform" : "ios",
-      "scale" : "2x",
-      "size" : "38x38"
-    },
-    {
-      "idiom" : "universal",
-      "platform" : "ios",
-      "scale" : "3x",
-      "size" : "38x38"
-    },
-    {
-      "idiom" : "universal",
-      "platform" : "ios",
-      "scale" : "2x",
-      "size" : "40x40"
-    },
-    {
-      "idiom" : "universal",
-      "platform" : "ios",
-      "scale" : "3x",
-      "size" : "40x40"
-    },
-    {
-      "idiom" : "universal",
-      "platform" : "ios",
-      "scale" : "2x",
-      "size" : "60x60"
-    },
-    {
-      "idiom" : "universal",
-      "platform" : "ios",
-      "scale" : "3x",
-      "size" : "60x60"
-    },
-    {
-      "idiom" : "universal",
-      "platform" : "ios",
-      "scale" : "2x",
-      "size" : "64x64"
-    },
-    {
-      "idiom" : "universal",
-      "platform" : "ios",
-      "scale" : "3x",
-      "size" : "64x64"
-    },
-    {
-      "idiom" : "universal",
-      "platform" : "ios",
-      "scale" : "2x",
-      "size" : "68x68"
-    },
-    {
-      "idiom" : "universal",
-      "platform" : "ios",
-      "scale" : "2x",
-      "size" : "76x76"
-    },
-    {
-      "idiom" : "universal",
-      "platform" : "ios",
-      "scale" : "2x",
-      "size" : "83.5x83.5"
-    },
-    {
-      "filename" : "goldbig.jpg",
-      "idiom" : "universal",
-      "platform" : "ios",
-      "size" : "1024x1024"
+      "filename": "JohnJinny.jpg",
+      "idiom": "universal",
+      "platform": "ios",
+      "size": "1024x1024",
+      "format": "jpg",
+      "compression": "high",
+      "resolution": "300dpi",
+      "colorSpace": "RGB"
     }
   ],
-  "info" : {
-    "author" : "xcode",
-    "version" : 1
+  "info": {
+    "author": "xcode",
+    "version": 1,
+    "lastModified": "2025-02-25",
+    "license": "MIT",
+    "source": "internal"
+  },
+  "metadata": {
+    "app": "GoldThemeApp",
+    "category": "luxury",
+    "theme": "gold",
+    "platforms": ["iOS", "macOS"]
   }
 }
+

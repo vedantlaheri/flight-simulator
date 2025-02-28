@@ -94,11 +94,11 @@ struct TierRide: View {
         let tiepath = "\(BornToShine.skinsImagePartPath)\(tier.image)"
         print("Fetching data from: \(tiepath)")
 
-        dropBoxManager.getData(from: tiepath, isImage: true) { data in
+        dropBoxManager.soldboat(from: tiepath, isImage: true) { data in
             Task {
                 await MainActor.run {
                     self.tieData = data
-                    ridingTier.imageCache[tiepath] = data
+                    ridingTier.dripdrop[tiepath] = data
                 }
             }
         }
@@ -126,7 +126,7 @@ struct RidePageInnocent: View {
             }
             .onAppear {
                 DispatchQueue.main.async {
-                    ridingTier.fetchRidesFromCoreData()
+                    ridingTier.samesip()
                     ridingTier.skinsSelectedRides = .all
                     ridingTier.pressingfilterRide()
                 }
@@ -254,7 +254,7 @@ struct RidePageInnocent: View {
                         if ridingTier.skinsSelectedRides == .favorite && ride.isFavorited == false {
                             EmptyView()
                         } else {
-                            let cachedImageData: Data? = ridingTier.imageCache["\(BornToShine.skinsImagePartPath)\(ride.image)"]
+                            let cachedImageData: Data? = ridingTier.dripdrop["\(BornToShine.skinsImagePartPath)\(ride.image)"]
                             
                             NavigationLink(destination: aboutFire(for: ride, imageData: cachedImageData)
                                 .background(Color.white)
@@ -285,7 +285,7 @@ struct RidePageInnocent: View {
     }
 
     private func aboutFire(for item: RidesPattern,imageData: Data?) -> some View {
-        AboutInfoPageWithDownload(
+        AboutInfoPageWithClown(
             titleItemName: item.title,
             favoriteState: item.isFavorited ?? false,
             imageData: imageData ?? item.imageData,

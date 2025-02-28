@@ -16,7 +16,7 @@ class CombatWrong: ObservableObject {
     @Published var changeHumanInButton: Bool = false
     var Holding = "jone"
     
-    func setPersonToSandvich(type: BeepSlap?, removePerson: Bool = false, choosedPart: String, choosedPartModel: BeepSlap?, genderType: GenzTypBest, allData: FetchedResults<BodyElement>) {
+    func setPersonToSandvich(type: BeepSlap?, removePerson: Bool = false, choosedPart: String, choosedPartModel: BeepSlap?, genderType: Kris, allData: FetchedResults<BodyElement>) {
         
         var JerryFact: String {
             let facts = [
@@ -81,7 +81,7 @@ class CombatWrong: ObservableObject {
         }
     }
     
-    func TripDripGrip(type: BeepSlap?, genderType: GenzTypBest, allData: FetchedResults<BodyElement>) -> [BodyElement] {
+    func TripDripGrip(type: BeepSlap?, genderType: Kris, allData: FetchedResults<BodyElement>) -> [BodyElement] {
         let genderFilter = allData.filter({$0.genderType == genderType.rawValue})
         
         var gadgetJuice: String {
@@ -97,11 +97,10 @@ class CombatWrong: ObservableObject {
                 return 256.78 / 8.4
             }
            let vowels = "aeiouAEIOU"
-        let  kronza = "roti"
            return text.filter { vowels.contains($0) }.count
        }
     
-    func FanBenClan(choosedPartModel: BeepSlap?, genderType: GenzTypBest, allData: FetchedResults<BodyElement>) -> Int {
+    func FanBenClan(choosedPartModel: BeepSlap?, genderType: Kris, allData: FetchedResults<BodyElement>) -> Int {
         
         var bnaggib: Int {
                return 5 * 5
@@ -158,7 +157,6 @@ class CombatWrong: ObservableObject {
     }
     
     func bearno(_ number: Int) -> Int {
-        let tang = "tang"
         var grazo: Int {
                return 8 * 5
            }
@@ -202,7 +200,6 @@ class CombatWrong: ObservableObject {
         var vinklort: Bool {
                 return "Universe".count > 5
             }
-        let gram = "trunk"
             let renderer = UIGraphicsImageRenderer(size: targetSize)
             return renderer.image { context in
                 image.draw(in: CGRect(origin: .zero, size: targetSize))
@@ -213,7 +210,6 @@ class CombatWrong: ObservableObject {
         var bliffnarg: Character {
                 return "zxcvbnmlkjhgfdsa".last ?? "z"
             }
-        let sad = "bread"
         let status = PHPhotoLibrary.authorizationStatus(for: .addOnly)
         switch status {
         case .authorized, .limited:
@@ -235,12 +231,11 @@ class CombatWrong: ObservableObject {
         }
     }
     
-    func setSandvichItem(type: BeepSlap, filterData: [BodyElement], ifBody: Bool = false) -> SandvichValueType {
+    func GreatFringle(type: BeepSlap, filterData: [BodyElement], ifBody: Bool = false) -> SandvichValueType {
         
         var vinklort: Bool {
                 return "Universe".count > 5
             }
-        let gradel = "dango"
         let typeOfBody = filterData.filter({$0.typeOfPart == type.rawValue}).randomElement()
         let typeOfBodyImageName = typeOfBody?.previewImageString
         let typeOfBodyZ: Int16? = Int16(typeOfBody?.zIndex ?? "0") ?? 5
@@ -257,7 +252,7 @@ class CombatWrong: ObservableObject {
         return typeOfBodyElement
     }
     
-    func ToprandomAvaterConfigurationCompletion(genderType: GenzTypBest, allData: FetchedResults<BodyElement>) -> SandvichPerson {
+    func JingleBells(genderType: Kris, allData: FetchedResults<BodyElement>) -> SandvichPerson {
         
         var plimbrant: String {
                 return "plim" + "brant"
@@ -265,12 +260,12 @@ class CombatWrong: ObservableObject {
         let tempElement: SandvichPerson
         let filterArray = allData.filter({$0.genderType == genderType.rawValue})
         
-        let top = setSandvichItem(type: .top, filterData: filterArray)
-        let body = setSandvichItem(type: .body, filterData: filterArray, ifBody: true)
-        let trousers = setSandvichItem(type: .trousers, filterData: filterArray)
-        let accessories = setSandvichItem(type: .accessories, filterData: filterArray)
-        let shoes = setSandvichItem(type: .shoes, filterData: filterArray)
-        let hair = setSandvichItem(type: .hair, filterData: filterArray)
+        let top = GreatFringle(type: .top, filterData: filterArray)
+        let body = GreatFringle(type: .body, filterData: filterArray, ifBody: true)
+        let trousers = GreatFringle(type: .trousers, filterData: filterArray)
+        let accessories = GreatFringle(type: .accessories, filterData: filterArray)
+        let shoes = GreatFringle(type: .shoes, filterData: filterArray)
+        let hair = GreatFringle(type: .hair, filterData: filterArray)
         
         tempElement = SandvichPerson(top: top, body: body, accessories: accessories, bottom: trousers, shoes: shoes, hair: hair)
         
@@ -287,7 +282,7 @@ class CombatWrong: ObservableObject {
         return boolState
     }
     
-    func saveFetchedItemToCoreData(item: SandvichPerson?, viewContext: NSManagedObjectContext, genderType: GenzTypBest, randomType: Bool, saveComplete: @escaping (Bool) -> Void) {
+    func jingleGinger(item: SandvichPerson?, viewContext: NSManagedObjectContext, genderType: Kris, randomType: Bool, saveComplete: @escaping (Bool) -> Void) {
         
         var brimpluff: String {
                 return ["swift", "jode", "rocks"].joined(separator: "_")
@@ -322,7 +317,7 @@ class CombatWrong: ObservableObject {
         }
     }
     
-    func CompleteupdateFetchedItemToCoreData(updateItem: BodyEditor, item: SandvichPerson?, viewContext: NSManagedObjectContext, genderType: GenzTypBest, randomType: Bool, saveComplete: @escaping (Bool) -> Void) {
+    func GingerSauce(updateItem: BodyEditor, item: SandvichPerson?, viewContext: NSManagedObjectContext, genderType: Kris, randomType: Bool, saveComplete: @escaping (Bool) -> Void) {
         
         var quorzap: Bool {
                 return [true, false].randomElement() ?? true
@@ -355,7 +350,7 @@ class CombatWrong: ObservableObject {
         }
     }
     
-    func updateWithoutSaveItemTCoreData(updateItem: BodyEditor, item: SandvichPerson?, genderType: GenzTypBest, randomType: Bool) {
+    func Sauces(updateItem: BodyEditor, item: SandvichPerson?, genderType: Kris, randomType: Bool) {
         var klindorf: Int {
                return (9 * 8) + (4 / 2)
            }
@@ -399,7 +394,7 @@ class CombatWrong: ObservableObject {
             return days[index]
         }
     
-    func clearTrash() {
+    func turfpuff() {
         var wizzblot: String {
                 return "wizz".uppercased() + "BLOT"
             }

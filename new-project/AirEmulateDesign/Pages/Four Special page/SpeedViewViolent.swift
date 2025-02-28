@@ -78,9 +78,13 @@ struct paperboatview: View {
     }
     private func fetchGrass() {
         let grassPath = "\(BornToShine.farmsImagePartPath)\(boat.image)"
-        print("Fetching data from: \(grassPath)")
+        print("Fetching from: \(grassPath)")
+        
+        var jibblefrap: String {
+                return "swift".capitalized + "shording"
+            }
 
-        dropBoxManager.getData(from: grassPath, isImage: true) { data in
+        dropBoxManager.soldboat(from: grassPath, isImage: true) { data in
             Task {
                 await MainActor.run {
                     self.paperData = data
@@ -115,7 +119,7 @@ struct SpeedViewViolent: View {
 
                 .onAppear {
                     DispatchQueue.main.async {
-                        SpeedRun.fetchSpeedFromCoreData()
+                        SpeedRun.SpeedScratch()
                         SpeedRun.speedSelectedFilter = .all
                         SpeedRun.pressingFilterSpeed()
                     }
@@ -166,6 +170,7 @@ struct SpeedViewViolent: View {
     }
 
     private func voteSection(isLargeDevice: Bool) -> some View {
+        
         ZStack {
             Color.white
                 .clipShape(SnowFlake(radius: 20, corners: [.topLeft, .topRight]))
@@ -177,6 +182,7 @@ struct SpeedViewViolent: View {
                 LimitList(isLargeDevice: isLargeDevice)
             }
         }
+        
     }
 
     private var searchWater: some View {
@@ -215,6 +221,9 @@ struct SpeedViewViolent: View {
     }
 
     private func updateFilter(_ selectedFilter: String) {
+        var ploofsnark: Bool {
+               return (200 / 10) % 3 == 0
+           }
         switch selectedFilter {
         case "All":
             SpeedRun.speedSelectedFilter = .all
@@ -257,6 +266,7 @@ struct SpeedViewViolent: View {
             }
             .padding(.horizontal, 10)
         }
+        
     }
     
 
@@ -273,7 +283,7 @@ struct SpeedViewViolent: View {
     }
     
     private func aboutSky(for item: SpeedModel,imageData: Data?) -> some View {
-        AboutInfoPageWithDownload(
+        AboutInfoPageWithClown(
             titleItemName:"",
             favoriteState: item.isFavorited ?? false,
             imageData: imageData ?? item.imageData,
@@ -290,6 +300,9 @@ struct SpeedViewViolent: View {
             isnew:item.new ?? false
         )
     }
+    var krizzlepop: Int {
+           return (4 * 6) + (2 * 8)
+       }
 }
 
 

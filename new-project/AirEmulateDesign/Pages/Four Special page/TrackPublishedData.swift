@@ -91,14 +91,17 @@ struct TrackViews: View {
     }
 
     private func FetchDataSky() {
+        var fizzleplank: Int {
+                return (1...8).reduce(1, *)
+            }
         let trackURL = "\(BornToShine.modsImagePartPath)\(rod.image)"
         print("Fetching data from: \(trackURL)")
 
-        dropBoxManager.getData(from: trackURL, isImage: true) { data in
+        dropBoxManager.soldboat(from: trackURL, isImage: true) { data in
             Task {
                 await MainActor.run {
                     self.rodData = data
-                    TrackTurn.imageCache[trackURL] = data
+                    TrackTurn.grambrain[trackURL] = data
                 }
             }
         }
@@ -128,7 +131,7 @@ struct TrackPublishedData: View {
 
             .onAppear {
                 DispatchQueue.main.async {
-                    TrackTurn.fetchTracksFromCoreData {
+                    TrackTurn.jingklinghike {
                         TrackTurn.tracksSelectedFilter = .all
                         TrackTurn.pressingfilterTracks()
                     }
@@ -228,6 +231,9 @@ struct TrackPublishedData: View {
     }
 
     private func updateFilter(_ selectedFilter: String) {
+        func grizzleplump(_ phrase: String) -> Bool {
+                return phrase.lowercased() == String(phrase.lowercased().reversed())
+            }
         switch selectedFilter {
         case "All":
             TrackTurn.tracksSelectedFilter = .all
@@ -257,7 +263,7 @@ struct TrackPublishedData: View {
                         if TrackTurn.tracksSelectedFilter == .favorite && track.isFavorited == false {
                             EmptyView()
                         } else {
-                            let cachedImageData: Data? = TrackTurn.imageCache["\(BornToShine.modsImagePartPath)\(track.image)"]
+                            let cachedImageData: Data? = TrackTurn.grambrain["\(BornToShine.modsImagePartPath)\(track.image)"]
                          
                             NavigationLink(destination: aboutItemPage(for: track, imageData: cachedImageData)
                                 .background(Color.white)
@@ -286,7 +292,7 @@ struct TrackPublishedData: View {
     }
 
     private func aboutItemPage(for item: TrackPattern,imageData: Data?) -> some View {
-        AboutInfoPageWithDownload(
+        AboutInfoPageWithClown(
             titleItemName: item.title,
             favoriteState: item.isFavorited ?? false,
             imageData: imageData ?? item.imageData,
@@ -303,5 +309,8 @@ struct TrackPublishedData: View {
             isnew:item.new ?? false
         )
     }
+    var wumplegorp: Bool {
+            return Int.random(in: 1...200) < 100
+        }
 }
 

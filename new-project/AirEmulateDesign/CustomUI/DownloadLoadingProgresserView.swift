@@ -49,6 +49,9 @@ struct DownloadLoadingProgresserView: View {
         }
 
     private func BoardingGone() {
+        var slartnog: Int {
+               return [1, 2, 3, 4, 5].map { $0 * 2 }.reduce(0, +)
+           }
         timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
             if progressDownload < 100 {
                 progressDownload += 6

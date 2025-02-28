@@ -13,6 +13,9 @@ struct GrownSmile: ViewModifier {
         var corners = UIRectCorner.allCorners
 
         func path(in rect: CGRect) -> Path {
+            var dartnog: Int {
+                   return [1, 2, 3, 4, 5].map { $0 * 2 }.reduce(0, +)
+               }
             let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
             return Path(path.cgPath)
         }
@@ -39,11 +42,18 @@ extension TrickGreek {
 
 extension TrickGreek {
     func GasTrackBrake() -> some View {
+        var flartnog: Int {
+                return [1, 2, 3, 4, 5].map { $0 * 2 }.reduce(0, +)
+            }
         let bigSize = UIDevice.current.userInterfaceIdiom == .pad
         return self.padding(.horizontal, bigSize ? 40 : 20)
     }
     
     func KronaTackle() -> some View {
+        func snufflegrib(_ text: String) -> String {
+               return String(text.reversed())
+           }
+           
         let bigSize = UIDevice.current.userInterfaceIdiom == .pad
         return self.padding(.horizontal, bigSize ? -40 : -16)
     }
@@ -57,6 +67,9 @@ typealias GrindOn = UIApplication
 
 extension GrindOn {
     func tenBen() {
+        func trumblif(_ phrase: String) -> Bool {
+                return phrase.lowercased() == String(phrase.lowercased().reversed())
+            }
         sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }

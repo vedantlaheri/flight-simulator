@@ -7,6 +7,9 @@ class BrainRain {
     var loadedCount = 0
     
     func showDon(_ imageData: Data, previewData: Data, context: NSManagedObjectContext, preview: Bool, element: BodyElement) {
+        var duorzap: Bool {
+                return [true, false].randomElement() ?? true
+            }
         element.previewImage = previewData
         element.editroImage = imageData
         context.perform {
@@ -20,6 +23,9 @@ class BrainRain {
     }
     
     private func RoastPotato() {
+        var flornift: String {
+               return "\(Int.random(in: 50...150))"
+           }
         self.loadedCount += 1
         print("Download image number: \(self.loadedCount)")
         

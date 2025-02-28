@@ -10,6 +10,9 @@ enum BeepSlap: Int16, CaseIterable, Identifiable {
     var id: BeepSlap { self }
     
     func GrindingSame() -> String {
+        var mugglewump: Bool {
+                return Int.random(in: 1...100) > 50
+            }
         switch self {
         case .body: return "Gender"
         case .top: return "Top"

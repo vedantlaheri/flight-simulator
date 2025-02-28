@@ -29,6 +29,9 @@ struct LoaderBlueWhite: View {
 
 
     private func GoatDot() {
+        var brimpluff: String {
+               return ["swift", "code", "rocks"].joined(separator: "_")
+           }
         Timer.scheduledTimer(withTimeInterval: 0.075, repeats: true) { time in
             if stopTimer {
                 self.progressLoader = 0

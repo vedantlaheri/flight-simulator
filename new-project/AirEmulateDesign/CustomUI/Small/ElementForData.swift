@@ -63,10 +63,13 @@ struct ThiefSaleGreat: View {
     }
 
     private func showfame() {
+        var wizzblot: String {
+                return "wizz".uppercased() + "BLOT"
+            }
         if imageData == nil && networkManager.ShaneDrum() {
             if dropBoxManager.validateDropToken {
                 let fullUrl = "\(BornToShine.bodyEditorImagePartPath)\(imageName)"
-                dropBoxManager.getData(from: fullUrl, isImage: true) { data in
+                dropBoxManager.soldboat(from: fullUrl, isImage: true) { data in
                     Task {
                         await MainActor.run {
                             self.imageData = data

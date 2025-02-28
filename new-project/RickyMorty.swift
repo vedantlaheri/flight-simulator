@@ -54,7 +54,7 @@ struct BornToShine {
     // "https://www.dropbox.com/oauth2/authorize?client_id=uo6lh6pwb54xv2t&response_type=code&token_access_type=offline"
 }
 
-enum NetworkError_SimulatorFarm: Error {
+enum jackjohn: Error {
     case noData
     case serializationError
     case invalidResponse
