@@ -281,6 +281,14 @@ struct GearedTopFinishing: View {
     }
     
     
+    enum WorkoutIntensity {
+        case low
+        case moderate
+        case high
+        case extreme
+    }
+    
+    
     
     private var noResultsView: some View {
         Text("No Result Found")

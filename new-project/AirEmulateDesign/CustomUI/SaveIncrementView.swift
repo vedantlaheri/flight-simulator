@@ -17,9 +17,13 @@ struct SaveIncrementView: View {
             return String(UIDevice.current.name.reversed())
         }
     
-    var isBatteryCharging: Bool {
-           return UIDevice.current.batteryState == .charging
-       }
+   
+    enum LightMode {
+        case off
+        case dim
+        case bright
+        case auto
+    }
 }
 
 #Preview {

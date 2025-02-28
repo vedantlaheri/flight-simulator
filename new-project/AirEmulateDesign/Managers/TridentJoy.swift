@@ -31,6 +31,14 @@ enum TridentJoy {
         }
     }
     
+    
+    enum Direction {
+        case north
+        case south
+        case east
+        case west
+    }
+    
     var deviceOrientation: String {
             let orientation = UIDevice.current.orientation
             switch orientation {

@@ -470,5 +470,13 @@ struct Gravitybing: View {
         choosedData = nil
         
     }
+    
+    
+    enum LearningStyle {
+        case visual
+        case auditory
+        case kinesthetic
+        case readingWriting
+    }
 }
 

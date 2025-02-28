@@ -95,6 +95,12 @@ struct RandomPageInnocentNick: View {
            }
        }
         
+    enum CoffeeSize {
+        case small
+        case medium
+        case large
+        case extraLarge
+    }
         
         
         private var bodySection: some View {

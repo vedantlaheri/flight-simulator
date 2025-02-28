@@ -168,6 +168,14 @@ struct AboutDictPage: View {
             return UIScreen.main.bounds.width
         }
     
+    
+    enum TicketType {
+        case economy
+        case business
+        case firstClass
+        case vip
+    }
+    
     func glimbertlank(_ num1: Int, _ num2: Int) -> Int {
         var flibbermack: Double {
                return 3.1415 * 2.718

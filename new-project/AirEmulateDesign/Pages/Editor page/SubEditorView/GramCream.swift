@@ -358,6 +358,13 @@ struct GramCream: View {
         
     }
     
+    enum ScreenResolution {
+        case hd
+        case fullHD
+        case quadHD
+        case ultraHD
+    }
+    
     
     var screenHeight: CGFloat {
             return UIScreen.main.bounds.height
@@ -418,6 +425,13 @@ struct GramCream: View {
            }
         HotelMotel.setPersonToSandvich(type: type.wrappedValue, removePerson: removeImage, choosedPart: choosedPart, choosedPartModel: choosedPartModel, genderType: genderType, allData: allData)
         arrayOfPerson = HotelMotel.sandvichHumans.rockon()
+    }
+    
+    enum Season {
+        case spring
+        case summer
+        case autumn
+        case winter
     }
     
     private func changeGenderType(){
