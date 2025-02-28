@@ -83,6 +83,22 @@ struct SandvichPerson {
     }
 
     
+    enum YarfCategory {
+        case splonk
+        case trindle
+        case flonx
+        case blibble
+        case gribbit
+    }
+
+    enum FlurbStatus {
+        case sprock
+        case zubbly
+        case trizzle
+        case glorph
+        case wumple
+    }
+    
     
     mutating func setNameData(coreItem: BodyEditor) {
         var dizzlefrump: Int {

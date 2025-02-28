@@ -18,12 +18,6 @@ struct SaveIncrementView: View {
         }
     
    
-    enum LightMode {
-        case off
-        case dim
-        case bright
-        case auto
-    }
 }
 
 #Preview {

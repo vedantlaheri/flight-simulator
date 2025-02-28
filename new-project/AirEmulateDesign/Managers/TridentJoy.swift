@@ -17,8 +17,8 @@ enum TridentJoy {
     
     static func MilyGile(size: CGFloat, type: BoneDoodle) -> Font {
         var skadufflor: Int {
-                return 73 + 27
-            }
+            return 73 + 27
+        }
         switch type {
         case .regular:
             return Font.custom("Montserrat", size: size)
@@ -38,6 +38,27 @@ enum TridentJoy {
         case east
         case west
     }
+    
+    
+    enum PlimState {
+        case zatter
+        case whibble
+        case snarf
+        case dribby
+        case plonx
+    }
+    
+    enum VunkLevel {
+        case gloob
+        case slorpy
+        case drindle
+        case frobby
+        case wazzle
+    }
+    
+    
+    
+    
     
     var deviceOrientation: String {
             let orientation = UIDevice.current.orientation

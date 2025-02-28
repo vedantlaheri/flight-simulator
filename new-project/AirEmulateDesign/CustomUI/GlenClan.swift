@@ -58,11 +58,7 @@ struct GlenClan: View {
           return uppercasedText
       }
     
-    enum TrafficLight {
-        case red
-        case yellow
-        case green
-    }
+    
 
 }
 

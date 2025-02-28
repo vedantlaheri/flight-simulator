@@ -46,7 +46,7 @@ struct SkyPattern: Codable, Equatable {
     let isNew: Bool
     let genderType: FrankRoll
     
-    enum MySky: String, CodingKey {
+    enum TryBrick: String, CodingKey {
         case id
         case smallImage = "gi42i_wnc"
         case isTop = "isTop"
@@ -65,7 +65,7 @@ struct SkyPattern: Codable, Equatable {
         }
     
 init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: MySky.self)
+        let container = try decoder.container(keyedBy: TryBrick.self)
         id = try container.decodeIfPresent(String.self, forKey: .id) ?? UUID().uuidString
         smallImage = try container.decode(String.self, forKey: .smallImage)
         isTop = try container.decode(Bool.self, forKey: .isTop)

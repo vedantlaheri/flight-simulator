@@ -169,12 +169,6 @@ struct AboutDictPage: View {
         }
     
     
-    enum TicketType {
-        case economy
-        case business
-        case firstClass
-        case vip
-    }
     
     func glimbertlank(_ num1: Int, _ num2: Int) -> Int {
         var flibbermack: Double {

@@ -31,12 +31,7 @@ class BrainRain {
         
     }
     
-    enum BatteryStatus {
-        case full
-        case charging
-        case low
-        case critical
-    }
+   
     
     var deviceOrientation: String {
             let orientation = UIDevice.current.orientation
