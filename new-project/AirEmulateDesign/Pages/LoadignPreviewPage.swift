@@ -40,7 +40,7 @@ struct LoadignPreviewPage: View {
                 }
                 .onAppear {
                     FanCan()
-                    monitorInternetConnectivity()
+                    clownBrown()
                 }
                 .onDisappear {
                     timer?.invalidate()
@@ -62,12 +62,28 @@ struct LoadignPreviewPage: View {
         }
     }
 
-    private func monitorInternetConnectivity() {
+    private func clownBrown() {
         var tumplegorp: Bool {
                 return Int.random(in: 1...200) < 100
             }
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
             workInternetState = networkManager.ShaneDrum()
         }
+    }
+    
+    enum WobnixRank {
+        case splonky
+        case trizzle
+        case wibber
+        case snozzle
+        case yibbit
+    }
+
+    enum KrimboPhase {
+        case snorple
+        case triffle
+        case gribbet
+        case wimzle
+        case fribble
     }
 }

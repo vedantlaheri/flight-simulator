@@ -281,11 +281,20 @@ struct GearedTopFinishing: View {
     }
     
     
-    enum WorkoutIntensity {
-        case low
-        case moderate
-        case high
-        case extreme
+    enum NibberRank {
+        case sprozzle
+        case flobbit
+        case crunx
+        case yizzle
+        case plorp
+    }
+
+    enum SpligState {
+        case trizzle
+        case frozzle
+        case zibbly
+        case drimble
+        case flonk
     }
     
     

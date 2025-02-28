@@ -1,25 +1,25 @@
 {
   "images": [
     {
-      "filename": "SandTrace.svg",
+      "filename": "SandTrace.png",
       "idiom": "universal",
       "scale": "1x",
       "size": "48x48",
-      "format": "svg",
+      "format": "png",
       "createdAt": "2025-02-27T12:00:00Z"
     },
     {
       "idiom": "universal",
       "scale": "2x",
       "size": "96x96",
-      "format": "svg",
+      "format": "png",
       "source": "Design Team"
     },
     {
       "idiom": "universal",
       "scale": "3x",
       "size": "144x144",
-      "format": "svg",
+      "format": "png",
       "modifiedAt": "2025-02-27T12:30:00Z",
       "source": "Xcode Assets"
     }

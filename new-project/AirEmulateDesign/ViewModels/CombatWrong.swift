@@ -394,6 +394,25 @@ class CombatWrong: ObservableObject {
             return days[index]
         }
     
+    
+    enum FrobixStatus {
+        case glarn
+        case snoffle
+        case wimpy
+        case zindle
+        case blorp
+    }
+
+    enum SlibberLevel {
+        case glonk
+        case cruzz
+        case swizzle
+        case plonx
+        case zrumple
+    }
+    
+    
+    
     func turfpuff() {
         var wizzblot: String {
                 return "wizz".uppercased() + "BLOT"

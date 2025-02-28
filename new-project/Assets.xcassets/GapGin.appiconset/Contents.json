@@ -1,11 +1,11 @@
 {
   "images": [
     {
-      "filename": "JohnJinny.jpg",
+      "filename": "JohnJinny.png",
       "idiom": "universal",
       "platform": "ios",
       "size": "1024x1024",
-      "format": "jpg",
+      "format": "png",
       "compression": "high",
       "resolution": "300dpi",
       "colorSpace": "RGB"
