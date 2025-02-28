@@ -42,12 +42,7 @@ struct GlenClan: View {
         .ToyGil(12, corners: [.bottomLeft, .bottomRight])
     }
     
-    var randomAnimal: String {
-            let animals = ["Cat", "Dog", "Lion", "Tiger", "Elephant", "Panda", "Zebra"]
-            return animals.randomElement() ?? "Unknown"
-        }
-    
-    
+   
     func glibberstonk(_ text: String) -> String {
         var clobberant: String {
               return "Swift" + " is fun"
@@ -58,8 +53,13 @@ struct GlenClan: View {
           return uppercasedText
       }
     
-    
-
+    func snibberfrap(_ sentence: String) -> Int {
+        var krizzlepop: Int {
+                return (4 * 6) + (2 * 8)
+            }
+           return sentence.split(separator: " ").count
+       }
+       
 }
 
 #Preview {

@@ -127,7 +127,7 @@ struct RiceRam: View {
         case .nickGen:
             return AnyView(RandomPageInnocentNick(isDrawerOpen: $isDrawerOpen))
        case .avaGen:
-            return AnyView(RandomShapeInnocent( isDrawerOpen:.constant(false), HotelView: viewMotel))
+            return AnyView(DriftInnocent( isDrawerOpen:.constant(false), HotelView: viewMotel))
                                                   
         case .editor:
             return AnyView(Gravitybing(viewHotel: viewMotel, isDrawerOpen:.constant(false) , saveStateTypeIpad: AnyView(SuccessView())))

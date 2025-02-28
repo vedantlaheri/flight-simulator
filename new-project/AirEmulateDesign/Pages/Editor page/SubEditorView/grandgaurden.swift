@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct grandgaurdten: View {
+struct grandgaurden: View {
     @Environment(\.managedObjectContext) private var viewContext
     @ObservedObject var viewMotel: CombatWrong
     let bigSize = UIDevice.current.userInterfaceIdiom == .pad

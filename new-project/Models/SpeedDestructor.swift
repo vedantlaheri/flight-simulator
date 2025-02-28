@@ -82,6 +82,22 @@ struct SpeedModel: Codable, Equatable {
             
            return "77898987"
        }
+    
+    enum BloopCondition {
+        case dribble
+        case flibber
+        case snoff
+        case glonkle
+        case trubbly
+    }
+
+    enum SnorpCategory {
+        case plonk
+        case quimzle
+        case wubbo
+        case snoffo
+        case driggle
+    }
        
        
     init(from coreDataObject: Farm) {

@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct RandomShapeInnocent: View {
+struct DriftInnocent: View {
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \BodyElement.idElement, ascending: false)])
         private var allData: FetchedResults<BodyElement>
@@ -114,19 +114,16 @@ struct RandomShapeInnocent: View {
             return !showPreview && !showList && !showEditor
         }
     
-    var randomTemperature: String {
-        let temp = Int.random(in: -10...45)
-        return "\(temp)°C"
-    }
+   
 
     private var bodySection: some View {
         ZStack {
             Color.white
             VStack(spacing: bigSize ? 31 : 10) {
                 if showPreview {
-                    grandgaurdten(viewMotel: HotelView, choosedPart: $choosedPart, showPartList: $showList, saveStateType: AnyView(SuccessView()), showConfigurator: $showEditor, genderType: $BoyType, choosedData: $choosedData, smallDataPerson: $HotelView.smallPersonToSave, showInternetAlert: $showInternetAlert)
+                    grandgaurden(viewMotel: HotelView, choosedPart: $choosedPart, showPartList: $showList, saveStateType: AnyView(SuccessView()), showConfigurator: $showEditor, genderType: $BoyType, choosedData: $choosedData, smallDataPerson: $HotelView.smallPersonToSave, showInternetAlert: $showInternetAlert)
                 } else {
-                    TextSectionToView
+                    FlingSingBing
                         .GasTrackBrake()
                 }
             }
@@ -201,7 +198,7 @@ struct RandomShapeInnocent: View {
            }
        }
     
-    private var TextSectionToView: some View {
+    private var FlingSingBing: some View {
         VStack {
             
             Text("Generate your new avatar")
@@ -224,9 +221,11 @@ struct RandomShapeInnocent: View {
     }
     
     
-    var currentHour: Int {
-           return Calendar.current.component(.hour, from: Date())
+    func jibberflop() -> Double {
+        var currentHour: Int {
+               return Calendar.current.component(.hour, from: Date())
+           }
+           return Double(Int.random(in: 100...1000)) / 20.0
        }
-       
        
 }

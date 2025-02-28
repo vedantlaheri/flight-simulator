@@ -87,14 +87,23 @@ struct VivRyan: View {
         .frame(maxWidth: .infinity)
         
     }
+   
     
-    var reversedDeviceName: String {
-            return String(UIDevice.current.name.reversed())
-        }
+    func grizzleplump(_ phrase: String) -> Bool {
+        var wumplegorp: Bool {
+               return Int.random(in: 1...200) < 100
+           }
+          return phrase.lowercased() == String(phrase.lowercased().reversed())
+      }
     
-    var isBatteryCharging: Bool {
-           return UIDevice.current.batteryState == .charging
+    
+    func blizzfrimp(_ text: String) -> String {
+        var zizzleframp: Double {
+               return Double.random(in: 5.0...25.0)
+           }
+           return String(text.reversed())
        }
+
 }
 
 #Preview {

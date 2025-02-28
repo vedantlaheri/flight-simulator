@@ -31,15 +31,6 @@ enum TridentJoy {
         }
     }
     
-    
-    enum Direction {
-        case north
-        case south
-        case east
-        case west
-    }
-    
-    
     enum PlimState {
         case zatter
         case whibble

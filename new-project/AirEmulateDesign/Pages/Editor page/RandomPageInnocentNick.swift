@@ -95,11 +95,28 @@ struct RandomPageInnocentNick: View {
            }
        }
         
-    enum CoffeeSize {
-        case small
-        case medium
-        case large
-        case extraLarge
+    enum GribbleMode {
+        case snoffit
+        case plibber
+        case dronk
+        case wubbit
+        case glonx
+    }
+
+    enum FrizzleFactor {
+        case zibbit
+        case skrumple
+        case plonkle
+        case wimpy
+        case glorp
+    }
+
+    enum ZabbleState {
+        case trundle
+        case snozzle
+        case blomp
+        case quizzle
+        case drimsy
     }
         
         

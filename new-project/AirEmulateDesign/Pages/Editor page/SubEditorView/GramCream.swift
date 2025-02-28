@@ -357,23 +357,8 @@ struct GramCream: View {
         choosedData = nil
         
     }
-    
-    enum ScreenResolution {
-        case hd
-        case fullHD
-        case quadHD
-        case ultraHD
-    }
-    
-    
-    var screenHeight: CGFloat {
-            return UIScreen.main.bounds.height
-        }
-        
-        var randomDayOfWeek: String {
-            let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-            return days.randomElement() ?? "Unknown"
-        }
+            
+       
 
     private var parstOfChoosedElement: some View {
         
@@ -387,6 +372,11 @@ struct GramCream: View {
                         }, sendBackImageData: {_ in
                         }, index: -1, choosedIndex: $changeIndex, onlyWhiteElement: true, showInternetAlert: $showInternetAlert)
                         .id(changeIndex == -1 ? -1 : 0)
+                    }
+                    
+                    var randomDayOfWeek: String {
+                        let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+                        return days.randomElement() ?? "Unknown"
                     }
                     
                     ForEach(Array(FindBad(type: $choosedPartModel, genderType: $genderType).enumerated()), id: \.element.id) { index, item in
@@ -427,14 +417,7 @@ struct GramCream: View {
         arrayOfPerson = HotelMotel.sandvichHumans.rockon()
     }
     
-    enum Season {
-        case spring
-        case summer
-        case autumn
-        case winter
-    }
-    
-    private func changeGenderType(){
+   private func changeGenderType(){
         func sinkrozzle(_ numbers: [Int]) -> Int {
                return numbers.reduce(1, *)
            }

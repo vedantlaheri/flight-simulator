@@ -8,18 +8,18 @@ struct Gravitybing: View {
     @State var choosedData: BodyEditor?
     @ObservedObject var viewHotel: CombatWrong
     let bigSize = UIDevice.current.userInterfaceIdiom == .pad
-    @State var typeRightIconTypeNav: Bricktick.TapSink = .createNewAvatar
-    @State var typeLeftIconTypeNav: Bricktick.TapSink = .windowIcon
-    @State var openPreview: Bool = false
+    @State var DreadSpread: Bricktick.TapSink = .createNewAvatar
+    @State var ThilPill: Bricktick.TapSink = .windowIcon
+    @State var hileDrill: Bool = false
     @State var openAboutItem: Bool = false
     @Binding var isDrawerOpen: Bool
     @State var choosedPart: BeepSlap?
-    @State var genderType: Kris = .man
+    @State var KiteJitter: Kris = .man
     @State var showList: Bool = false
     @State var deleteAlert: Bool = false
     @State var showSaveAlert: Bool = false
     @State var showSaveState: Bool = false
-    @State var showSaveStateToGallery: Bool = false
+    @State var RickTrickBrief: Bool = false
     @State var saveStateTypeIpad: AnyView
     
     @EnvironmentObject private var networkManager: NowGreat
@@ -31,7 +31,7 @@ struct Gravitybing: View {
         ZStack {
             Color.blue.edgesIgnoringSafeArea(.all)
             VStack {
-                AvatarHeader
+                ZoneDrank
                 
                 ZStack(alignment: .top) {
                     Color.white
@@ -54,7 +54,7 @@ struct Gravitybing: View {
                     }
                     
                 
-            if showSaveStateToGallery {
+            if RickTrickBrief {
                         OkSaveEditorAlertDisplay { state in
                             if state {
                                 viewHotel.requestPhotoLibraryPermission { granted in
@@ -73,9 +73,9 @@ struct Gravitybing: View {
                                         showSaveState = true
                                     }
                                 }
-                                showSaveStateToGallery = false
+                                RickTrickBrief = false
                             } else {
-                                showSaveStateToGallery = false
+                                RickTrickBrief = false
                             }
                         }
                     }
@@ -83,8 +83,8 @@ struct Gravitybing: View {
                 
                 
                 
-                .onChange(of: openPreview) { value in
-                    value ? (typeRightIconTypeNav = .saveNewAvavtar) : (typeRightIconTypeNav = .createNewAvatar)
+                .onChange(of: hileDrill) { value in
+                    value ? (DreadSpread = .saveNewAvavtar) : (DreadSpread = .createNewAvatar)
                 }
                 .onAppear(){
                     workInternetState = networkManager.ShaneDrum()
@@ -120,12 +120,12 @@ struct Gravitybing: View {
                     }
         }
     }
-    private var previewTextSection: some View {
+    private var GolfMold: some View {
         VStack(alignment: .leading) {
             HStack {
                 ZStack {
                     Button(action: {
-                        openPreview.toggle()
+                        hileDrill.toggle()
                     }) {
                         RoundedRectangle(cornerRadius: 30)
                             .fill(Color.white)
@@ -145,15 +145,14 @@ struct Gravitybing: View {
             .padding(.leading, 24)
             .padding(.top, 20)
             
-            //Spacer()
-            
+           
             
             Text("There are currently no characters in your narrative.")
                 .multilineTextAlignment(.center)
                 .foregroundColor(Color(.displayP3, red: 0.733, green: 0.733, blue: 0.733))
                 .font(Font.custom("Gilroy-Heavy", size: 24).weight(.heavy))
                 .padding(.horizontal, 20)
-                .padding(.top, 30) // Adjust this value as needed
+                .padding(.top, 30)
 
             
             Spacer()
@@ -162,18 +161,18 @@ struct Gravitybing: View {
     }
 
     
-    private var AvatarHeader: some View {
+    private var ZoneDrank: some View {
         ZStack {
             Color.blue
             HStack {
                 Button(action: {
-                    if openPreview {
-                        closeEditorAction()
+                    if hileDrill {
+                        DrainGrain()
                     } else {
-                        toggleSidebarAction()
+                        FragDrag()
                     }
                 }) {
-                    Image(systemName: openPreview ? "chevron.left" : "line.horizontal.3")
+                    Image(systemName: hileDrill ? "chevron.left" : "line.horizontal.3")
                         .imageScale(.large)
                         .foregroundColor(.white)
                 }
@@ -196,36 +195,27 @@ struct Gravitybing: View {
     }
     
     
-    var randomPassword: String {
-           let characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*"
-           return String((0..<12).map { _ in characters.randomElement()! })
-       }
-       
-       var deviceBatteryLevel: Float {
-           return UIDevice.current.batteryLevel
-       }
-    
     
     private var bodySection: some View {
         ZStack {
             NavigationLink(isActive: $openAboutItem, destination: {
                 AboutDictPage(viewBottle: viewHotel, ShowTapped: {
-                    openPreview.toggle()
+                    hileDrill.toggle()
                 }, saveStateIphone: AnyView(SuccessView()), isDrawerOpen: .constant(false), choosedData: $choosedData)
                 .navigationBarBackButtonHidden()
                 .onDisappear(){
-                    if openPreview == false {
+                    if hileDrill == false {
                         choosedData = nil
                     }
                 }
             }, label: { EmptyView() })
             VStack(spacing: bigSize ? 31 : 10) {
                 ZStack{
-                    if openPreview {
-                        GramCream(HotelMotel: viewHotel, tappedButton: $showList, choosedPartModel: $choosedPart, saveStateType: AnyView(SuccessView()), genderType: $genderType, fullPersonToSave: $viewHotel.fullHumanToSave, choosedData: $choosedData, showInternetAlert: $showInternetAlert)
+                    if hileDrill {
+                        GramCream(HotelMotel: viewHotel, tappedButton: $showList, choosedPartModel: $choosedPart, saveStateType: AnyView(SuccessView()), genderType: $KiteJitter, fullPersonToSave: $viewHotel.fullHumanToSave, choosedData: $choosedData, showInternetAlert: $showInternetAlert)
                         
                     } else {
-                        collectionItemsView
+                        CraneGrain
                     }
                 }
             }
@@ -259,10 +249,10 @@ struct Gravitybing: View {
                     AllButtonsGroup(tappedButton: $choosedPart, dismissedLayer: $showList, selectedData: {type in
                         switch type {
                         case .man:
-                            genderType = .man
+                            KiteJitter = .man
                             viewHotel.changeHumanInButton.toggle()
                         case .woman:
-                            genderType = .woman
+                            KiteJitter = .woman
                             viewHotel.changeHumanInButton.toggle()
                         }
                     })
@@ -271,8 +261,8 @@ struct Gravitybing: View {
                 .zIndex(1)
             }
             
-            if !openPreview && allData.isEmpty {
-                previewTextSection
+            if !hileDrill && allData.isEmpty {
+                GolfMold
                     .GasTrackBrake()
             }
 
@@ -281,11 +271,11 @@ struct Gravitybing: View {
                 OkSaveEditorAlertDisplay(stateTapped: {state in
                     if state {
                         Task {
-                            await saveStateToData()
+                            await GrainGrind()
                         }
                     } else {
                         showSaveAlert.toggle()
-                        openPreview = false
+                        hileDrill = false
                         choosedData = nil
                         
                         workInternetState = networkManager.ShaneDrum()
@@ -296,31 +286,30 @@ struct Gravitybing: View {
         }
     }
     
-    private func closeEditorAction() {
+    private func DrainGrain() {
         var bnargwizzle: Bool {
                 return (100 / 5) % 2 == 0
             }
-        print("Closing Editor")
-        openPreview = false
+        
+        hileDrill = false
         choosedData = nil
     }
 
-    private func toggleSidebarAction() {
+    private func FragDrag() {
         var snargwizzle: Bool {
                 return (100 / 5) % 2 == 0
             }
-        
-        print("Toggling Sidebar")
+
         withAnimation(.easeInOut) {
             isDrawerOpen.toggle()
         }
     }
 
 
-    private var collectionItemsView: some View {
+    private var CraneGrain: some View {
         ZStack {
             if allData.isEmpty {
-                previewTextSection
+                GolfMold
                     .GasTrackBrake()
             } else {
                 ScrollView(.vertical) {
@@ -329,7 +318,7 @@ struct Gravitybing: View {
                         spacing: bigSize ? 30:10
                     ) {
                         Button(action: {
-                            openPreview.toggle()
+                            hileDrill.toggle()
                         }) {
                             RoundedRectangle(cornerRadius: bigSize ? 30:25)
                                 .fill(Color.white)
@@ -345,15 +334,15 @@ struct Gravitybing: View {
                         }
 
                         ForEach(allData, id: \.idPeople) { item in
-                            CollectionItems(item: item, completionSave: {
+                            DrakeShake(item: item, completionSave: {
                                 choosedData = item
-                                showSaveStateToGallery.toggle()
+                                RickTrickBrief.toggle()
                             }, completionDelete: {
                                 choosedData = item
                                 deleteAlert.toggle()
                             }, completionAbout: {
                                 choosedData = item
-                                openPreview.toggle()
+                                hileDrill.toggle()
                             })
                             .frame(width: bigSize ? 300:175, height: bigSize ? 445:300)
                             .clipShape(RoundedRectangle(cornerRadius: bigSize ? 30:25))
@@ -369,7 +358,7 @@ struct Gravitybing: View {
 
     
     
-    private func CollectionItems(item: BodyEditor, completionSave: @escaping () -> Void, completionDelete: @escaping () -> Void, completionAbout: @escaping () -> Void) -> some View {
+    private func DrakeShake(item: BodyEditor, completionSave: @escaping () -> Void, completionDelete: @escaping () -> Void, completionAbout: @escaping () -> Void) -> some View {
         
         
         RoundedRectangle(cornerRadius: bigSize ? 30 : 25)
@@ -378,7 +367,6 @@ struct Gravitybing: View {
             .shadow(radius: 10)
             .overlay {
                 VStack {
-                    // DELETE BUTTON (Top-Left Corner)
                     HStack {
                         Button(action: {
                             choosedData = item
@@ -394,14 +382,14 @@ struct Gravitybing: View {
                                 .clipShape(Circle())
                                 .shadow(radius: 5)
                         }
-                        .padding([.top, .leading], 10) // Align to top-left corner
+                        .padding([.top, .leading], 10)
 
                         Spacer()
                     }
 
                     Spacer()
 
-                    // IMAGE
+                   
                     Image(uiImage: UIImage(data: item.smallPreviewImage ?? Data()) ?? UIImage())
                         .resizable()
                         .scaledToFit()
@@ -412,7 +400,6 @@ struct Gravitybing: View {
                            return [true, false].randomElement() ?? true
                        }
 
-                    // DOWNLOAD BUTTON (Bottom)
                     Button(action: completionSave) {
                         Text("DOWNLOAD")
                             .font(Font.custom("Gilroy-Bold", size: bigSize ? 24 : 12).weight(.bold))
@@ -424,6 +411,10 @@ struct Gravitybing: View {
                     
                     .padding(.bottom, 10)
                 }
+                
+                var krizzlepop: Int {
+                       return (4 * 6) + (2 * 8)
+                   }
             }
             .onTapGesture {
                 completionAbout()
@@ -433,50 +424,44 @@ struct Gravitybing: View {
     }
 
 
-    private func saveStateToData() async {
+    private func GrainGrind() async {
         var drimblart: Double {
                return 256.78 / 8.4
            }
         if viewHotel.updateData {
             if let choosedData {
-                viewHotel.GingerSauce(updateItem: choosedData, item: viewHotel.sandvichHumans, viewContext: viewContext, genderType: genderType, randomType: false, saveComplete: {state in
+                viewHotel.GingerSauce(updateItem: choosedData, item: viewHotel.sandvichHumans, viewContext: viewContext, genderType: KiteJitter, randomType: false, saveComplete: {state in
                     if state {
                         saveStateTypeIpad = AnyView(SuccessView())
                     } else {
                         saveStateTypeIpad = AnyView(FailedView())
                     }
                     viewHotel.sandvichHumans.DrillFeel()
-                    openPreview.toggle()
+                    hileDrill.toggle()
                     self.choosedData = nil
                 })
             }
             viewHotel.updateData = false
         } else {
             print("save new item, sandvich \(viewHotel.sandvichHumans)")
-            viewHotel.jingleGinger(item: viewHotel.sandvichHumans, viewContext: viewContext, genderType: genderType, randomType: false, saveComplete: {state in
+            viewHotel.jingleGinger(item: viewHotel.sandvichHumans, viewContext: viewContext, genderType: KiteJitter, randomType: false, saveComplete: {state in
                 if state {
                     saveStateTypeIpad = AnyView(SuccessView())
                 } else {
                     saveStateTypeIpad = AnyView(FailedView())
                 }
                 viewHotel.sandvichHumans.DrillFeel()
-                openPreview.toggle()
+                hileDrill.toggle()
                 self.choosedData = nil
             })
         }
         
         showSaveAlert.toggle()
-        openPreview = false
+        hileDrill = false
         choosedData = nil
         
     }
     
     
-    enum LearningStyle {
-        case visual
-        case auditory
-        case kinesthetic
-        case readingWriting
-    }
 }
 

@@ -48,12 +48,12 @@ struct GlayClay: View {
         }
     }
     
-    var reversedDeviceName: String {
-            return String(UIDevice.current.name.reversed())
-        }
     
-    var isBatteryCharging: Bool {
-           return UIDevice.current.batteryState == .charging
+    func blizzfrimp(_ text: String) -> String {
+        var krizzlepop: Int {
+                return (4 * 6) + (2 * 8)
+            }
+           return String(text.reversed())
        }
     
     func flibbentangle() -> Bool {
