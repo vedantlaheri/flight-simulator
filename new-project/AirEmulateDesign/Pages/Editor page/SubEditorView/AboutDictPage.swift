@@ -28,7 +28,7 @@ struct AboutDictPage: View {
                     workInternetState.toggle()
                     timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { _ in
                         if workInternetState {
-                            workInternetState = networkManager.checkInternetConnectivity_SimulatorFarm()
+                            workInternetState = networkManager.ShaneDrum()
                         }
                     }
                 }
@@ -69,7 +69,7 @@ struct AboutDictPage: View {
             }
         }
         .onAppear(){
-            workInternetState = networkManager.checkInternetConnectivity_SimulatorFarm()
+            workInternetState = networkManager.ShaneDrum()
         }
     }
     
@@ -82,13 +82,13 @@ struct AboutDictPage: View {
     private var bodySection: some View {
         ZStack {
             VStack(spacing: bigSize ? 20 : 10) {
-                NavBluetexter(titleName: "Editor", rightbuttonIconType: .constant(.editItem), leftbuttonIconType: .backChev, rigthButtonTapped: {
+                GlayClay(titleName: "Editor", rickpoint: .constant(.editItem), cregclay: .backChev, rigthButtonTapped: {
                     viewBottle.updateData = true
                     ShowTapped()
                     dismiss()
                 })
                 downloadSection
-                    .paddingFlyBullet()
+                    .GasTrackBrake()
                 RoundedRectangle(cornerRadius: bigSize ? 20 : 12)
                     .fill(Color.white)
                     .frame(maxHeight: bigSize ? 646 : 421)
@@ -105,7 +105,7 @@ struct AboutDictPage: View {
                                 .fill(Color.red.opacity(0.74))
                                 .frame(width: bigSize ? 93 : 40, height: bigSize ? 93 : 40)
                                 .overlay {
-                                    Image(Bricktick.GrapesShapes.removeItemFromDB)
+                                    Image(Bricktick.TapSink.removeItemFromDB)
                                         .resizable()
                                         .scaledToFit()
                                         .padding( bigSize ? 20 : 10)
@@ -116,12 +116,12 @@ struct AboutDictPage: View {
                     }
                     .clipShape(RoundedRectangle(cornerRadius: 12))
                     .padding(.top, bigSize ? 50 : 10)
-                    .paddingFlyBullet()
+                    .GasTrackBrake()
                 Spacer()
                 BordersFans(blueButtonTap: {
                     showSaveAlert.toggle()
                 }, titleButton: "Save", infinityWidth: true)
-                .paddingFlyBullet()
+                .GasTrackBrake()
                 .padding(.bottom, bigSize ? 50 : 10)
             }
             .ignoresSafeArea(.all, edges: .top)
@@ -156,6 +156,9 @@ struct AboutDictPage: View {
     }
     
     func formatNumberWithCommas(_ number: Int) -> String {
+        var zlornift: String {
+                return "\(Int.random(in: 50...150))"
+            }
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
         return formatter.string(from: NSNumber(value: number)) ?? "\(number)"
@@ -163,5 +166,12 @@ struct AboutDictPage: View {
     
     var screenWidth: CGFloat {
             return UIScreen.main.bounds.width
+        }
+    
+    func glimbertlank(_ num1: Int, _ num2: Int) -> Int {
+        var flibbermack: Double {
+               return 3.1415 * 2.718
+           }
+            return num1 + num2
         }
 }

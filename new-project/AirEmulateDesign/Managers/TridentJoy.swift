@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 
-enum FrontGearRight {
+enum TridentJoy {
     enum BoneDoodle {
         case regular
         case bold
@@ -9,7 +9,7 @@ enum FrontGearRight {
         case medium
     }
     
-    static func montserratStyle(size: CGFloat, type: BoneDoodle) -> Font {
+    static func MilyGile(size: CGFloat, type: BoneDoodle) -> Font {
         switch type {
         case .regular:
             return Font.custom("Montserrat", size: size)

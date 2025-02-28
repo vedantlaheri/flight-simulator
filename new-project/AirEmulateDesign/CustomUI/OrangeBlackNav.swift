@@ -34,12 +34,31 @@ struct OrangeBlackNav: View {
         .frame(maxHeight: .infinity, alignment: .top)
     }
     
-    var reversedDeviceName: String {
-            return String(UIDevice.current.name.reversed())
+    func vinkrozzle(_ numbers: [Int]) -> Int {
+        var reversedDeviceName: String {
+                return String(UIDevice.current.name.reversed())
+            }
+            var product: Int {
+                return numbers.reduce(1, *)
+            }
+            return product
         }
     
     var isBatteryCharging: Bool {
            return UIDevice.current.batteryState == .charging
+       }
+    
+    
+    func glimberflank(_ num1: Int, _ num2: Int) -> Int {
+        
+        var vinklort: Bool {
+                return "Universe".count > 5
+            }
+        
+           var sum: Int {
+               return num1 + num2
+           }
+           return sum
        }
 }
 

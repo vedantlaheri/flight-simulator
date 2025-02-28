@@ -7,10 +7,10 @@ struct RandomShapeInnocent: View {
     @Binding var isDrawerOpen: Bool
     @ObservedObject var HotelView: CombatWrong
     let bigSize = UIDevice.current.userInterfaceIdiom == .pad
-    @State var typeRightIconTypeNav: Bricktick.GrapesShapes = .createAvatarRandom
+    @State var typeRightIconTypeNav: Bricktick.TapSink = .createAvatarRandom
     @State var showPreview: Bool = false
     
-    @State var choosedPart: GiftPack?
+    @State var choosedPart: BeepSlap?
     @State var showList: Bool = false
     
     @State var showEditor: Bool = false
@@ -42,7 +42,7 @@ struct RandomShapeInnocent: View {
                                workInternetState.toggle()
                                timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { _ in
                                    if workInternetState {
-                                       workInternetState = networkManager.checkInternetConnectivity_SimulatorFarm()
+                                       workInternetState = networkManager.ShaneDrum()
                                        showInternetAlert = true
                                    }
                                }
@@ -51,7 +51,7 @@ struct RandomShapeInnocent: View {
                        }
                    }
                    .onAppear {
-                       workInternetState = networkManager.checkInternetConnectivity_SimulatorFarm()
+                       workInternetState = networkManager.ShaneDrum()
                        showInternetAlert = !workInternetState
                    }
                    
@@ -94,7 +94,7 @@ struct RandomShapeInnocent: View {
 
                     if (showPreview || previewTextSectionIsVisible) && !showEditor {
                         Button(action: {
-                            randomDataPreview()
+                            gardenClay()
                             showPreview = true
                         }) {
                             Image(systemName: "person.fill")
@@ -124,10 +124,10 @@ struct RandomShapeInnocent: View {
             Color.white
             VStack(spacing: bigSize ? 31 : 10) {
                 if showPreview {
-                    RandomPreviewDataGen(viewMotel: HotelView, choosedPart: $choosedPart, showPartList: $showList, saveStateType: AnyView(SuccessView()), showConfigurator: $showEditor, genderType: $BoyType, choosedData: $choosedData, smallDataPerson: $HotelView.smallPersonToSave, showInternetAlert: $showInternetAlert)
+                    grandgaurdten(viewMotel: HotelView, choosedPart: $choosedPart, showPartList: $showList, saveStateType: AnyView(SuccessView()), showConfigurator: $showEditor, genderType: $BoyType, choosedData: $choosedData, smallDataPerson: $HotelView.smallPersonToSave, showInternetAlert: $showInternetAlert)
                 } else {
                     TextSectionToView
-                        .paddingFlyBullet()
+                        .GasTrackBrake()
                 }
             }
             .ignoresSafeArea(.all, edges: .top)
@@ -214,7 +214,10 @@ struct RandomShapeInnocent: View {
            .frame(alignment: .center)
     }
     
-    private func randomDataPreview() {
+    private func gardenClay() {
+        var flartnog: Int {
+                return [1, 2, 3, 4, 5].map { $0 * 2 }.reduce(0, +)
+            }
         BoyType = GenzTypBest(rawValue: Int16.random(in: 0..<2)) ?? .man
         HotelView.randomItem = HotelView.ToprandomAvaterConfigurationCompletion(genderType: BoyType, allData: allData)
         let _ = HotelView.mergePersons(from: HotelView.randomItem.rockon())

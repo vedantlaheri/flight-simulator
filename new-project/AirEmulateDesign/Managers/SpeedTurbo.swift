@@ -49,7 +49,7 @@ enum Bricktick {
         
     }
     
-    enum GrapesShapes {
+    enum TapSink {
         static let topNavWindowIcon = "topNavWindowIcon"
         static let topNamBackChevron = "topNamBackChevron"
         static let topNavFavoriteInactiveIcon = "topNavFavoriteInactiveIcon"
@@ -74,30 +74,30 @@ enum Bricktick {
         case editItem
         case saveImage
         
-        func sendNameOfIcon() -> String {
+        func BillGill() -> String {
             switch self {
             case .windowIcon:
-                return Bricktick.GrapesShapes.topNavWindowIcon
+                return Bricktick.TapSink.topNavWindowIcon
             case .backChev:
-                return Bricktick.GrapesShapes.topNamBackChevron
+                return Bricktick.TapSink.topNamBackChevron
             case .favActive:
-                return Bricktick.GrapesShapes.topNavFavoriteActiveIcon
+                return Bricktick.TapSink.topNavFavoriteActiveIcon
             case .favInactive:
-                return Bricktick.GrapesShapes.topNavFavoriteInactiveIcon
+                return Bricktick.TapSink.topNavFavoriteInactiveIcon
             case .chevronLeft:
-                return Bricktick.GrapesShapes.chevronLeftButtonCustom
+                return Bricktick.TapSink.chevronLeftButtonCustom
             case .createNewAvatar:
-                return Bricktick.GrapesShapes.crateNewManualAvatar
+                return Bricktick.TapSink.crateNewManualAvatar
             case .saveNewAvavtar:
-                return Bricktick.GrapesShapes.saveNewManualAvavtar
+                return Bricktick.TapSink.saveNewManualAvavtar
             case .createAvatarRandom:
-                return Bricktick.GrapesShapes.createAvatarGeneratorRandom
+                return Bricktick.TapSink.createAvatarGeneratorRandom
             case .removeItem:
-                return Bricktick.GrapesShapes.removeItemFromDB
+                return Bricktick.TapSink.removeItemFromDB
             case .editItem:
-                return Bricktick.GrapesShapes.editItemFromDB
+                return Bricktick.TapSink.editItemFromDB
             case .saveImage:
-                return Bricktick.GrapesShapes.saveImageToGallary
+                return Bricktick.TapSink.saveImageToGallary
             }
         }
         

@@ -5,7 +5,7 @@ struct AllButtonsGroup: View {
         case man, woman
     }
 
-    @Binding var tappedButton: GiftPack?
+    @Binding var tappedButton: BeepSlap?
     @Binding var dismissedLayer: Bool
     @State private var showChoosedItem = false
     var selectedData: (SockSung) -> Void
@@ -14,7 +14,7 @@ struct AllButtonsGroup: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            ForEach(GiftPack.allCases, id: \.self) { item in
+            ForEach(BeepSlap.allCases, id: \.self) { item in
                 Button(action: {
                     if item == .body {
                         withAnimation {
@@ -68,7 +68,7 @@ struct AllButtonsGroup: View {
         .animation(.easeInOut, value: showChoosedItem)
     }
     
-    func reversedString(_ input: String) -> String {
+    func LaneShane(_ input: String) -> String {
         return String(input.reversed())
     }
     

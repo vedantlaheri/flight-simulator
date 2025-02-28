@@ -32,7 +32,7 @@ struct RidesPattern: Codable, Equatable {
     var top: Bool?
     var new: Bool?
     
-    enum MyRides: String, CodingKey {
+    enum TribeTride: String, CodingKey {
         case id
         case image = "1j5c"
         case title = "79p6mt_"
@@ -41,7 +41,7 @@ struct RidesPattern: Codable, Equatable {
         case isFavorited
         case imageData
         case top = "isPopular"
-        case new = "lastAdded"
+        case new = "isNew"
     }
     
     var timeSince1970: Double {
@@ -49,7 +49,7 @@ struct RidesPattern: Codable, Equatable {
        }
     
     init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: MyRides.self)
+        let container = try decoder.container(keyedBy: TribeTride.self)
         id = try container.decodeIfPresent(String.self, forKey: .id) ?? UUID().uuidString
         image = try container.decode(String.self, forKey: .image)
         title = try container.decode(String.self, forKey: .title)

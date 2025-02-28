@@ -44,7 +44,7 @@ struct SkyPattern: Codable, Equatable {
     let bigImage: String
     let position: String
     let isNew: Bool
-    let genderType: GenderData
+    let genderType: FrankRoll
     
     enum MySky: String, CodingKey {
         case id
@@ -74,10 +74,10 @@ init(from decoder: Decoder) throws {
         bigImage = try container.decode(String.self, forKey: .bigImage)
         position = try container.decode(String.self, forKey: .position)
         isNew = try container.decode(Bool.self, forKey: .isNew)
-        genderType = try container.decode(GenderData.self, forKey: .genderType)
+        genderType = try container.decode(FrankRoll.self, forKey: .genderType)
     }
     
-    init (id: String, smallImage: String, isTop: Bool, bigImage: String, position: String, isNew: Bool, genderType: GenderData) {
+    init (id: String, smallImage: String, isTop: Bool, bigImage: String, position: String, isNew: Bool, genderType: FrankRoll) {
         self.id = id
         self.smallImage = smallImage
         self.isTop = isTop
@@ -94,7 +94,7 @@ init(from decoder: Decoder) throws {
 }
 
 
-enum GenderData: String, Codable {
+enum FrankRoll: String, Codable {
     case boy = "Boy"
     case girl = "Girl"
 }

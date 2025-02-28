@@ -107,6 +107,7 @@ struct RandomPageInnocentNick: View {
                         Text(generatedNickname)
                             .font(Font.custom("Gilroy-Heavy", size: bigSize ? 50:32).weight(.heavy))
                             .multilineTextAlignment(.center)     .padding(.top,0)                                .foregroundColor(Color(.displayP3, red: 0.733, green: 0.733, blue: 0.733))
+                            .textSelection(.enabled)
                             .transition(.opacity)
                     } else {
                         Text("Generate your new nickname")

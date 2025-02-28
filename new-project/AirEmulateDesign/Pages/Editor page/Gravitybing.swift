@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct AvatarDataGeneration: View {
+struct Gravitybing: View {
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \BodyEditor.date, ascending: false)],
                         predicate: NSPredicate(format: "randomKey == %@", NSNumber(value: false)))
@@ -8,12 +8,12 @@ struct AvatarDataGeneration: View {
     @State var choosedData: BodyEditor?
     @ObservedObject var viewHotel: CombatWrong
     let bigSize = UIDevice.current.userInterfaceIdiom == .pad
-    @State var typeRightIconTypeNav: Bricktick.GrapesShapes = .createNewAvatar
-    @State var typeLeftIconTypeNav: Bricktick.GrapesShapes = .windowIcon
+    @State var typeRightIconTypeNav: Bricktick.TapSink = .createNewAvatar
+    @State var typeLeftIconTypeNav: Bricktick.TapSink = .windowIcon
     @State var openPreview: Bool = false
     @State var openAboutItem: Bool = false
     @Binding var isDrawerOpen: Bool
-    @State var choosedPart: GiftPack?
+    @State var choosedPart: BeepSlap?
     @State var genderType: GenzTypBest = .man
     @State var showList: Bool = false
     @State var deleteAlert: Bool = false
@@ -46,7 +46,7 @@ struct AvatarDataGeneration: View {
                             workInternetState.toggle()
                             timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { _ in
                                 if workInternetState {
-                                    workInternetState = networkManager.checkInternetConnectivity_SimulatorFarm()
+                                    workInternetState = networkManager.ShaneDrum()
                                     showInternetAlert = true
                                 }
                             }
@@ -87,7 +87,7 @@ struct AvatarDataGeneration: View {
                     value ? (typeRightIconTypeNav = .saveNewAvavtar) : (typeRightIconTypeNav = .createNewAvatar)
                 }
                 .onAppear(){
-                    workInternetState = networkManager.checkInternetConnectivity_SimulatorFarm()
+                    workInternetState = networkManager.ShaneDrum()
                     workInternetState ? (showInternetAlert = false) : (showInternetAlert = true)
                 }
             }
@@ -222,7 +222,7 @@ struct AvatarDataGeneration: View {
             VStack(spacing: bigSize ? 31 : 10) {
                 ZStack{
                     if openPreview {
-                        PreviewConfigurator(HotelMotel: viewHotel, tappedButton: $showList, choosedPartModel: $choosedPart, saveStateType: AnyView(SuccessView()), genderType: $genderType, fullPersonToSave: $viewHotel.fullHumanToSave, choosedData: $choosedData, showInternetAlert: $showInternetAlert)
+                        GramCream(HotelMotel: viewHotel, tappedButton: $showList, choosedPartModel: $choosedPart, saveStateType: AnyView(SuccessView()), genderType: $genderType, fullPersonToSave: $viewHotel.fullHumanToSave, choosedData: $choosedData, showInternetAlert: $showInternetAlert)
                         
                     } else {
                         collectionItemsView
@@ -273,7 +273,7 @@ struct AvatarDataGeneration: View {
             
             if !openPreview && allData.isEmpty {
                 previewTextSection
-                    .paddingFlyBullet()
+                    .GasTrackBrake()
             }
 
             
@@ -288,7 +288,7 @@ struct AvatarDataGeneration: View {
                         openPreview = false
                         choosedData = nil
                         
-                        workInternetState = networkManager.checkInternetConnectivity_SimulatorFarm()
+                        workInternetState = networkManager.ShaneDrum()
                         workInternetState ? (showInternetAlert = false) : (showInternetAlert = true)
                     }
                 }, saveToHistory: true)
@@ -297,12 +297,19 @@ struct AvatarDataGeneration: View {
     }
     
     private func closeEditorAction() {
+        var bnargwizzle: Bool {
+                return (100 / 5) % 2 == 0
+            }
         print("Closing Editor")
         openPreview = false
         choosedData = nil
     }
 
     private func toggleSidebarAction() {
+        var snargwizzle: Bool {
+                return (100 / 5) % 2 == 0
+            }
+        
         print("Toggling Sidebar")
         withAnimation(.easeInOut) {
             isDrawerOpen.toggle()
@@ -314,7 +321,7 @@ struct AvatarDataGeneration: View {
         ZStack {
             if allData.isEmpty {
                 previewTextSection
-                    .paddingFlyBullet()
+                    .GasTrackBrake()
             } else {
                 ScrollView(.vertical) {
                     LazyVGrid(
@@ -355,7 +362,7 @@ struct AvatarDataGeneration: View {
                     }
                     .padding(.top, 10)
                 }
-                .paddingFlyBullet()
+                .GasTrackBrake()
             }
         }
     }
@@ -363,6 +370,8 @@ struct AvatarDataGeneration: View {
     
     
     private func CollectionItems(item: BodyEditor, completionSave: @escaping () -> Void, completionDelete: @escaping () -> Void, completionAbout: @escaping () -> Void) -> some View {
+        
+        
         RoundedRectangle(cornerRadius: bigSize ? 30 : 25)
             .fill(Color.white)
             .frame(width: bigSize ? 300 : 175, height: bigSize ? 445 : 300)
@@ -415,10 +424,15 @@ struct AvatarDataGeneration: View {
             .onTapGesture {
                 completionAbout()
             }
+        
+        
     }
 
 
     private func saveStateToData() async {
+        var drimblart: Double {
+               return 256.78 / 8.4
+           }
         if viewHotel.updateData {
             if let choosedData {
                 viewHotel.CompleteupdateFetchedItemToCoreData(updateItem: choosedData, item: viewHotel.sandvichHumans, viewContext: viewContext, genderType: genderType, randomType: false, saveComplete: {state in
@@ -427,7 +441,7 @@ struct AvatarDataGeneration: View {
                     } else {
                         saveStateTypeIpad = AnyView(FailedView())
                     }
-                    viewHotel.sandvichHumans.allNil()
+                    viewHotel.sandvichHumans.DrillFeel()
                     openPreview.toggle()
                     self.choosedData = nil
                 })
@@ -441,7 +455,7 @@ struct AvatarDataGeneration: View {
                 } else {
                     saveStateTypeIpad = AnyView(FailedView())
                 }
-                viewHotel.sandvichHumans.allNil()
+                viewHotel.sandvichHumans.DrillFeel()
                 openPreview.toggle()
                 self.choosedData = nil
             })

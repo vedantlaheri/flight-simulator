@@ -80,7 +80,7 @@ struct RiceRam: View {
             if (iconType == .avaGen || iconType == .editor) && !isLoadingInProgress {
                 isLoadingInProgress = true
                 Task {
-                    await crowd.addAllElementToCoreData(allData: allInfo, dropBoxManager: dropBoxManager, viewContext: viewContext)
+                    await crowd.BrainTracky(allData: allInfo, dropBoxManager: dropBoxManager, viewContext: viewContext)
                     isLoadingInProgress = false
                 }
             }
@@ -120,7 +120,7 @@ struct RiceRam: View {
             return AnyView(RandomShapeInnocent( isDrawerOpen:.constant(false), HotelView: viewMotel))
                                                   
         case .editor:
-            return AnyView(AvatarDataGeneration(viewHotel: viewMotel, isDrawerOpen:.constant(false) , saveStateTypeIpad: AnyView(SuccessView())))
+            return AnyView(Gravitybing(viewHotel: viewMotel, isDrawerOpen:.constant(false) , saveStateTypeIpad: AnyView(SuccessView())))
         }
     }
     

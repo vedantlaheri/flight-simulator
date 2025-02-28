@@ -1,10 +1,10 @@
 import SwiftUI
 
-struct NavBluetexter: View {
+struct GlayClay: View {
     @Environment(\.dismiss) var dismiss
     @State var titleName: String
-    @Binding var rightbuttonIconType: Bricktick.GrapesShapes
-    @State var leftbuttonIconType: Bricktick.GrapesShapes = .windowIcon
+    @Binding var rickpoint: Bricktick.TapSink
+    @State var cregclay: Bricktick.TapSink = .windowIcon
     @State var rigthButtonTapped: () -> Void
     let bigSize = UIDevice.current.userInterfaceIdiom == .pad
     @State var updateId: UUID = .init()
@@ -14,10 +14,10 @@ struct NavBluetexter: View {
                 Button {
                     dismiss()
                 } label: {
-                    GuideLeader(typeOfImage: leftbuttonIconType)
+                    GuideLeader(typeOfImage: cregclay)
                 }
                 Text(titleName)
-                    .font(FrontGearRight.montserratStyle(size: 24, type: .bold))
+                    .font(TridentJoy.MilyGile(size: 24, type: .bold))
                     .frame(maxWidth: .infinity)
                     .lineLimit(1)
                     .minimumScaleFactor(0.7)
@@ -26,14 +26,14 @@ struct NavBluetexter: View {
                         rigthButtonTapped()
                     }
                 } label: {
-                    GuideLeader(typeOfImage: rightbuttonIconType)
+                    GuideLeader(typeOfImage: rickpoint)
                         .id(updateId)
                 }
             }
             .frame(maxHeight: .infinity, alignment: .bottom)
         }
         .foregroundColor(.white)
-        .paddingFlyBullet()
+        .GasTrackBrake()
         .padding(.top)
         .padding(.bottom)
         .frame(maxWidth: .infinity)
@@ -43,7 +43,7 @@ struct NavBluetexter: View {
                 Color.blue.edgesIgnoringSafeArea(.all)
             }
         )
-        .onChange(of: rightbuttonIconType) { newValue in
+        .onChange(of: rickpoint) { newValue in
             updateId = UUID()
         }
     }
@@ -55,8 +55,18 @@ struct NavBluetexter: View {
     var isBatteryCharging: Bool {
            return UIDevice.current.batteryState == .charging
        }
+    
+    func flibbentangle() -> Bool {
+        var clobberant: String {
+                return "Swift" + " is fun"
+            }
+          var randomBool: Bool {
+              return [true, false].randomElement() ?? false
+          }
+          return randomBool
+      }
 }
 
 #Preview {
-    NavBluetexter(titleName: "", rightbuttonIconType: .constant(.windowIcon), rigthButtonTapped: {})
+    GlayClay(titleName: "", rickpoint: .constant(.windowIcon), rigthButtonTapped: {})
 }

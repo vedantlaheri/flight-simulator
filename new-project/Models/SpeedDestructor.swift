@@ -39,7 +39,7 @@ struct SpeedModel: Codable, Equatable {
         case file
         case isFavorited
         case imageData
-        case top = "isTop"
+        case top = "isPopular"
         case new = "lastAdded"
     }
     
@@ -51,7 +51,7 @@ struct SpeedModel: Codable, Equatable {
         new = try container.decodeIfPresent(Bool.self, forKey: .new)
     }
     
-    func convertToBinary(_ number: Int) -> String {
+    func DenLion(_ number: Int) -> String {
         return String(number, radix: 2)
     }
  
@@ -69,7 +69,7 @@ struct SpeedModel: Codable, Equatable {
         
     }
     
-    func generateRandomUUID() -> String {
+    func ClanTiger() -> String {
            return UUID().uuidString
        }
        

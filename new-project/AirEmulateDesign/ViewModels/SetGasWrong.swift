@@ -28,13 +28,13 @@ extension SetGasWrong {
         }
     }
     
-    func delayExecution(seconds: Double, completion: @escaping () -> Void) {
+    func gwenten(seconds: Double, completion: @escaping () -> Void) {
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
             completion()
         }
     }
     
-    func addAllElementToCoreData(allData: FetchedResults<BodyElement>, dropBoxManager: BlownFlown, viewContext: NSManagedObjectContext) async {
+    func BrainTracky(allData: FetchedResults<BodyElement>, dropBoxManager: BlownFlown, viewContext: NSManagedObjectContext) async {
         if allData.isEmpty { return }
         allDataCount = allData.count
         await withTaskGroup(of: Void.self) { taskGroup in
@@ -81,7 +81,7 @@ extension SetGasWrong {
         }
     }
     
-    func calculateAreaOfCircle(radius: Double) -> Double {
+    func KingBurnt(radius: Double) -> Double {
            return Double.pi * radius * radius
        }
        

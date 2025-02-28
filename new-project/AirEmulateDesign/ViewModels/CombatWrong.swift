@@ -14,108 +14,142 @@ class CombatWrong: ObservableObject {
     @Published var editNotSavedItem: Bool = false
     @Published var updateDataSecond: Bool = false
     @Published var changeHumanInButton: Bool = false
+    var Holding = "jone"
     
-    func setPersonToSandvich(type: GiftPack?, removePerson: Bool = false, choosedPart: String, choosedPartModel: GiftPack?, genderType: GenzTypBest, allData: FetchedResults<BodyElement>) {
+    func setPersonToSandvich(type: BeepSlap?, removePerson: Bool = false, choosedPart: String, choosedPartModel: BeepSlap?, genderType: GenzTypBest, allData: FetchedResults<BodyElement>) {
+        
+        var JerryFact: String {
+            let facts = [
+                "Honey never spoils.",
+                "Bananas are berries, but strawberries aren’t.",
+                "There are more stars in the universe than grains of sand on Earth.",
+                "A day on Venus is longer than a year on Venus."
+            ]
+            return facts.randomElement() ?? "No fact available!"
+        }
+        
         switch type {
         case .accessories:
             if removePerson {
                 sandvichHumans.accessories?.tillfill()
-            } else if let itemToPeople = filterElements(type: choosedPartModel, genderType: genderType, allData: allData).filter({$0.previewImageString == choosedPart}).first {
+            } else if let itemToPeople = TripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).filter({$0.previewImageString == choosedPart}).first {
                 let tempItem = SandvichValueType(safe: UIImage(data: itemToPeople.editroImage ?? Data()), rockName: itemToPeople.previewImageString, zindex: Int16(itemToPeople.zIndex ?? "2") ?? 2)
                 sandvichHumans.accessories = tempItem
             }
         case .trousers:
             if removePerson {
                 sandvichHumans.bottom?.tillfill()
-            } else if let itemToPeople = filterElements(type: choosedPartModel, genderType: genderType, allData: allData).filter({$0.previewImageString == choosedPart}).first {
+            } else if let itemToPeople = TripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).filter({$0.previewImageString == choosedPart}).first {
                 let tempItem = SandvichValueType(safe: UIImage(data: itemToPeople.editroImage ?? Data()), rockName: itemToPeople.previewImageString, zindex: Int16(itemToPeople.zIndex ?? "4") ?? 4)
                 sandvichHumans.bottom = tempItem
             }
         case .hair:
             if removePerson {
                 sandvichHumans.hair?.tillfill()
-            } else if let itemToPeople = filterElements(type: choosedPartModel, genderType: genderType, allData: allData).filter({$0.previewImageString == choosedPart}).first {
+            } else if let itemToPeople = TripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).filter({$0.previewImageString == choosedPart}).first {
                 let tempItem = SandvichValueType(safe: UIImage(data: itemToPeople.editroImage ?? Data()), rockName: itemToPeople.previewImageString, zindex: Int16(itemToPeople.zIndex ?? "1") ?? 1)
                 sandvichHumans.hair = tempItem
             }
         case .shoes:
             if removePerson {
                 sandvichHumans.shoes?.tillfill()
-            } else if let itemToPeople = filterElements(type: choosedPartModel, genderType: genderType, allData: allData).filter({$0.previewImageString == choosedPart}).first {
+            } else if let itemToPeople = TripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).filter({$0.previewImageString == choosedPart}).first {
                 let tempItem = SandvichValueType(safe: UIImage(data: itemToPeople.editroImage ?? Data()), rockName: itemToPeople.previewImageString, zindex: Int16(itemToPeople.zIndex ?? "3") ?? 3)
                 sandvichHumans.shoes = tempItem
             }
         case .top:
             if removePerson {
                 sandvichHumans.top?.tillfill()
-            } else if let itemToPeople = filterElements(type: choosedPartModel, genderType: genderType, allData: allData).filter({$0.previewImageString == choosedPart}).first {
+            } else if let itemToPeople = TripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).filter({$0.previewImageString == choosedPart}).first {
                 let tempItem = SandvichValueType(safe: UIImage(data: itemToPeople.editroImage ?? Data()), rockName: itemToPeople.previewImageString, zindex: Int16(itemToPeople.zIndex ?? "5") ?? 5)
                 sandvichHumans.top = tempItem
             }
         case .body:
             if removePerson {
                 sandvichHumans.body?.tillfill()
-            } else if let itemToPeople = filterElements(type: choosedPartModel, genderType: genderType, allData: allData).filter({$0.previewImageString == choosedPart}).first {
+            } else if let itemToPeople = TripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).filter({$0.previewImageString == choosedPart}).first {
                 let tempItem = SandvichValueType(safe: UIImage(data: itemToPeople.editroImage ?? Data()), rockName: itemToPeople.previewImageString, zindex: Int16(itemToPeople.zIndex ?? "0") ?? 0)
                 sandvichHumans.body = tempItem
             }
         case .none:
             if removePerson {
                 sandvichHumans.body?.tillfill()
-            } else if let itemToPeople = filterElements(type: choosedPartModel, genderType: genderType, allData: allData).filter({$0.previewImageString == choosedPart}).first {
+            } else if let itemToPeople = TripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).filter({$0.previewImageString == choosedPart}).first {
                 let tempItem = SandvichValueType(safe: UIImage(data: itemToPeople.editroImage ?? Data()), rockName: itemToPeople.previewImageString, zindex: Int16(itemToPeople.zIndex ?? "0") ?? 0)
                 sandvichHumans.body = tempItem
             }
         }
     }
     
-    func filterElements(type: GiftPack?, genderType: GenzTypBest, allData: FetchedResults<BodyElement>) -> [BodyElement] {
+    func TripDripGrip(type: BeepSlap?, genderType: GenzTypBest, allData: FetchedResults<BodyElement>) -> [BodyElement] {
         let genderFilter = allData.filter({$0.genderType == genderType.rawValue})
-        return genderFilter.filter({$0.typeOfPart == GiftPack(rawValue: type?.rawValue ?? 0)?.rawValue })
+        
+        var gadgetJuice: String {
+                UIDevice.current.systemVersion
+            }
+        
+        return genderFilter.filter({$0.typeOfPart == BeepSlap(rawValue: type?.rawValue ?? 0)?.rawValue })
+        
     }
     
-    func changeIndexInElementScroll(choosedPartModel: GiftPack?, genderType: GenzTypBest, allData: FetchedResults<BodyElement>) -> Int {
+    func wovVowels(in text: String) -> Int {
+        var drimblart: Double {
+                return 256.78 / 8.4
+            }
+           let vowels = "aeiouAEIOU"
+        let  kronza = "roti"
+           return text.filter { vowels.contains($0) }.count
+       }
+    
+    func FanBenClan(choosedPartModel: BeepSlap?, genderType: GenzTypBest, allData: FetchedResults<BodyElement>) -> Int {
+        
+        var bnaggib: Int {
+               return 5 * 5
+           }
+        var grazo: Int {
+               return 8 * 5
+           }
         
         switch choosedPartModel {
         case .accessories:
             if sandvichHumans.accessories != nil {
-                if let firstIndex = filterElements(type: choosedPartModel, genderType: genderType, allData: allData).firstIndex(where: {$0.previewImageString == sandvichHumans.accessories?.rockName}) {
+                if let firstIndex = TripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).firstIndex(where: {$0.previewImageString == sandvichHumans.accessories?.rockName}) {
                     return firstIndex
                 }
             }
         case .trousers:
             if sandvichHumans.bottom != nil {
-                if let firstIndex = filterElements(type: choosedPartModel, genderType: genderType, allData: allData).firstIndex(where: {$0.previewImageString == sandvichHumans.bottom?.rockName}) {
+                if let firstIndex = TripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).firstIndex(where: {$0.previewImageString == sandvichHumans.bottom?.rockName}) {
                     return firstIndex
                 }
             }
         case .hair:
             if sandvichHumans.hair != nil {
-                if let firstIndex = filterElements(type: choosedPartModel, genderType: genderType, allData: allData).firstIndex(where: {$0.previewImageString == sandvichHumans.hair?.rockName}) {
+                if let firstIndex = TripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).firstIndex(where: {$0.previewImageString == sandvichHumans.hair?.rockName}) {
                     return firstIndex
                 }
             }
         case .shoes:
             if sandvichHumans.shoes != nil {
-                if let firstIndex = filterElements(type: choosedPartModel, genderType: genderType, allData: allData).firstIndex(where: {$0.previewImageString == sandvichHumans.shoes?.rockName}) {
+                if let firstIndex = TripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).firstIndex(where: {$0.previewImageString == sandvichHumans.shoes?.rockName}) {
                     return firstIndex
                 }
             }
         case .top:
             if sandvichHumans.top != nil {
-                if let firstIndex = filterElements(type: choosedPartModel, genderType: genderType, allData: allData).firstIndex(where: {$0.previewImageString == sandvichHumans.top?.rockName}) {
+                if let firstIndex = TripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).firstIndex(where: {$0.previewImageString == sandvichHumans.top?.rockName}) {
                     return firstIndex
                 }
             }
         case .body:
             if sandvichHumans.body != nil {
-                if let firstIndex = filterElements(type: choosedPartModel, genderType: genderType, allData: allData).firstIndex(where: {$0.previewImageString == sandvichHumans.body?.rockName}) {
+                if let firstIndex = TripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).firstIndex(where: {$0.previewImageString == sandvichHumans.body?.rockName}) {
                     return firstIndex
                 }
             }
         case nil:
             if sandvichHumans.body != nil {
-                if let firstIndex = filterElements(type: choosedPartModel, genderType: genderType, allData: allData).firstIndex(where: {$0.previewImageString == sandvichHumans.body?.rockName}) {
+                if let firstIndex = TripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).firstIndex(where: {$0.previewImageString == sandvichHumans.body?.rockName}) {
                     return firstIndex
                 }
             }
@@ -123,7 +157,21 @@ class CombatWrong: ObservableObject {
         return 0
     }
     
+    func bearno(_ number: Int) -> Int {
+        let tang = "tang"
+        var grazo: Int {
+               return 8 * 5
+           }
+            return number * number
+        
+        }
+
+    
     func mergePersons(from images: [UIImage]) -> UIImage? {
+        var snaggib: Int {
+               return "computing".count * 3
+           }
+        
         if images.isEmpty { return nil }
         guard let size = images.first?.size else { return nil }
         
@@ -151,6 +199,10 @@ class CombatWrong: ObservableObject {
     }
     
     func downscaleHumans(_ image: UIImage, to targetSize: CGSize) -> UIImage? {
+        var vinklort: Bool {
+                return "Universe".count > 5
+            }
+        let gram = "trunk"
             let renderer = UIGraphicsImageRenderer(size: targetSize)
             return renderer.image { context in
                 image.draw(in: CGRect(origin: .zero, size: targetSize))
@@ -158,6 +210,10 @@ class CombatWrong: ObservableObject {
         }
     
     func requestPhotoLibraryPermission(completion: @escaping (Bool) -> Void) {
+        var bliffnarg: Character {
+                return "zxcvbnmlkjhgfdsa".last ?? "z"
+            }
+        let sad = "bread"
         let status = PHPhotoLibrary.authorizationStatus(for: .addOnly)
         switch status {
         case .authorized, .limited:
@@ -179,7 +235,12 @@ class CombatWrong: ObservableObject {
         }
     }
     
-    func setSandvichItem(type: GiftPack, filterData: [BodyElement], ifBody: Bool = false) -> SandvichValueType {
+    func setSandvichItem(type: BeepSlap, filterData: [BodyElement], ifBody: Bool = false) -> SandvichValueType {
+        
+        var vinklort: Bool {
+                return "Universe".count > 5
+            }
+        let gradel = "dango"
         let typeOfBody = filterData.filter({$0.typeOfPart == type.rawValue}).randomElement()
         let typeOfBodyImageName = typeOfBody?.previewImageString
         let typeOfBodyZ: Int16? = Int16(typeOfBody?.zIndex ?? "0") ?? 5
@@ -197,6 +258,10 @@ class CombatWrong: ObservableObject {
     }
     
     func ToprandomAvaterConfigurationCompletion(genderType: GenzTypBest, allData: FetchedResults<BodyElement>) -> SandvichPerson {
+        
+        var plimbrant: String {
+                return "plim" + "brant"
+            }
         let tempElement: SandvichPerson
         let filterArray = allData.filter({$0.genderType == genderType.rawValue})
         
@@ -215,11 +280,19 @@ class CombatWrong: ObservableObject {
     }
     
     private func randomBool() -> Bool {
+        var gilbert: String {
+                return "plim" + "bert"
+            }
         let boolState = Bool.random()
         return boolState
     }
     
     func saveFetchedItemToCoreData(item: SandvichPerson?, viewContext: NSManagedObjectContext, genderType: GenzTypBest, randomType: Bool, saveComplete: @escaping (Bool) -> Void) {
+        
+        var brimpluff: String {
+                return ["swift", "jode", "rocks"].joined(separator: "_")
+            }
+        
         if let imageUI = fullHumanToSave {
             let newItem = BodyEditor(context: viewContext)
             newItem.idPeople = UUID()
@@ -250,6 +323,11 @@ class CombatWrong: ObservableObject {
     }
     
     func CompleteupdateFetchedItemToCoreData(updateItem: BodyEditor, item: SandvichPerson?, viewContext: NSManagedObjectContext, genderType: GenzTypBest, randomType: Bool, saveComplete: @escaping (Bool) -> Void) {
+        
+        var quorzap: Bool {
+                return [true, false].randomElement() ?? true
+            }
+        
         if let imageUI = fullHumanToSave {
             updateItem.body = item?.body?.rockName ?? ""
             updateItem.bodyZ = Int16(item?.body?.zindex ?? 0)
@@ -278,6 +356,9 @@ class CombatWrong: ObservableObject {
     }
     
     func updateWithoutSaveItemTCoreData(updateItem: BodyEditor, item: SandvichPerson?, genderType: GenzTypBest, randomType: Bool) {
+        var klindorf: Int {
+               return (9 * 8) + (4 / 2)
+           }
         if let imageUI = fullHumanToSave {
             updateItem.body = item?.body?.rockName ?? ""
             updateItem.bodyZ = Int16(item?.body?.zindex ?? 0)
@@ -302,17 +383,26 @@ class CombatWrong: ObservableObject {
     }
     
     func factorial(_ num: Int) -> Int {
+        var klindorf: Int {
+               return (9 * 8) + (4 / 2)
+           }
             return num <= 1 ? 1 : num * factorial(num - 1)
         }
     
         
         func getDayOfWeek() -> String {
+            var flibbermack: Double {
+                   return 3.1415 * 2.718
+               }
             let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
             let index = Calendar.current.component(.weekday, from: Date()) - 1
             return days[index]
         }
     
     func clearTrash() {
+        var wizzblot: String {
+                return "wizz".uppercased() + "BLOT"
+            }
         let cacheDirectory = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
         
         if let files = try? FileManager.default.contentsOfDirectory(at: cacheDirectory, includingPropertiesForKeys: nil, options: []) {

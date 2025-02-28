@@ -38,7 +38,7 @@ struct BornToShine {
     static let accessTokenName = "access_token"
     
     
-    func randomQuote() -> String {
+    func GrandRift() -> String {
            let quotes = [
                "Believe in yourself.",
                "You are stronger than you think.",

@@ -145,7 +145,7 @@ struct AboutInfoPageWithDownload: View {
                     }
                 }
                 .onAppear {
-                    workInternetState = networkManager.checkInternetConnectivity_SimulatorFarm()
+                    workInternetState = networkManager.ShaneDrum()
                 }
                 .onDisappear {
                     timer?.invalidate()
@@ -210,17 +210,17 @@ private var MainBodySection : some View {
         if !titleItemName.isEmpty || !textItem.isEmpty {
             ScrollView(.vertical, showsIndicators: false) {
                 textSection
-                    .paddingFlyBullet()
+                    .GasTrackBrake()
             }
         }
         
         VStack {
                                    if showDownloadProgress {
                                        downloadProgess
-                                           .paddingFlyBullet()
+                                           .GasTrackBrake()
                                    } else {
                                        downloadButton
-                                           .paddingFlyBullet()
+                                           .GasTrackBrake()
                                    }
                                }
     }
@@ -335,7 +335,7 @@ private var MainBodySection : some View {
     }
     
     
-    private func startLoadingAfterTimer() {
+    private func SinkTwinGin() {
         timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
             if progressDownload < 100 {
                 progressDownload += 6
@@ -351,7 +351,7 @@ private var MainBodySection : some View {
                 BordersFans(blueButtonTap: {
                     disableButton = true
 
-                    guard networkManager.checkInternetConnectivity_SimulatorFarm() else {
+                    guard networkManager.ShaneDrum() else {
                         workInternetState = false
                         disableButton = false
                         return
@@ -368,7 +368,7 @@ private var MainBodySection : some View {
                     isDownloading = true
                     showDownloadProgress = true
 
-                    startLoadingAfterTimer()
+                    SinkTwinGin()
 
                     var correctedFileName = fileName
                     if !correctedFileName.hasPrefix("/") {

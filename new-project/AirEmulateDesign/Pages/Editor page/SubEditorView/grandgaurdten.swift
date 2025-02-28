@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct RandomPreviewDataGen: View {
+struct grandgaurdten: View {
     @Environment(\.managedObjectContext) private var viewContext
     @ObservedObject var viewMotel: CombatWrong
     let bigSize = UIDevice.current.userInterfaceIdiom == .pad
@@ -8,7 +8,7 @@ struct RandomPreviewDataGen: View {
     @State var showSaveState: Bool = false
     @State var showProgress: Bool = true
     @State var progressDownload: Double = 0.0
-    @Binding var choosedPart: GiftPack?
+    @Binding var choosedPart: BeepSlap?
     @Binding var showPartList: Bool
     @State var showSaveAlert: Bool = false
     @State var saveStateType: AnyView
@@ -30,7 +30,7 @@ struct RandomPreviewDataGen: View {
                 .navigationBarBackButtonHidden()
             }, label: {EmptyView()})
             if showConfigurator {
-                PreviewConfigurator(HotelMotel: viewMotel, tappedButton: $showPartList, choosedPartModel: $choosedPart, saveStateType: AnyView(SuccessView()), genderType: $genderType, fullPersonToSave: $viewMotel.fullHumanToSave, choosedData: $choosedData, showInternetAlert: $showInternetAlert)
+                GramCream(HotelMotel: viewMotel, tappedButton: $showPartList, choosedPartModel: $choosedPart, saveStateType: AnyView(SuccessView()), genderType: $genderType, fullPersonToSave: $viewMotel.fullHumanToSave, choosedData: $choosedData, showInternetAlert: $showInternetAlert)
             } else {
                 previewSection
             }
@@ -60,11 +60,11 @@ struct RandomPreviewDataGen: View {
         }
         .onChange(of: viewMotel.updateDataSecond) { newValue in
             updateId = UUID()
-            workInternetState = networkManager.checkInternetConnectivity_SimulatorFarm()
+            workInternetState = networkManager.ShaneDrum()
             workInternetState ? (showInternetAlert = false) : (showInternetAlert = true)
         }
         .onAppear(){
-            workInternetState = networkManager.checkInternetConnectivity_SimulatorFarm()
+            workInternetState = networkManager.ShaneDrum()
             workInternetState ? (showInternetAlert = false) : (showInternetAlert = true)
         }
         
@@ -79,7 +79,7 @@ struct RandomPreviewDataGen: View {
                     .padding(.bottom, bigSize ? 50 : 10)
                     .frame(maxWidth: bigSize ? (UIScreen.main.bounds.width * 0.6) : .infinity)
             }
-            .paddingFlyBullet()
+            .GasTrackBrake()
         }
     }
     
@@ -119,6 +119,8 @@ struct RandomPreviewDataGen: View {
         }
     
     private func customCircularButton(imageName: String, tapped: @escaping () -> Void) -> some View {
+        
+        
         Button(action: {
             tapped()
         }) {
@@ -142,7 +144,7 @@ struct RandomPreviewDataGen: View {
     private var buttonsSection: some View {
         VStack(spacing: bigSize ? 34 : 10) {
             HStack {
-                customButtonRandomPreview(title: "Edit", width: bigSize ? 450 : 247, tapped: {
+                grandteneleven(title: "Edit", width: bigSize ? 450 : 247, tapped: {
                     choosedData = BodyEditor(context: viewContext)
                     if let choosedData {
                         choosedData.idPeople = UUID()
@@ -157,7 +159,7 @@ struct RandomPreviewDataGen: View {
                     }
                 })
             }
-            customButtonRandomPreview(title: "Download", width: bigSize ? 500 : 305, tapped: {
+            grandteneleven(title: "Download", width: bigSize ? 500 : 305, tapped: {
                 viewMotel.saveFetchedItemToCoreData(item: viewMotel.randomItem, viewContext: viewContext, genderType: genderType, randomType: true, saveComplete: { state in
                     if state {
                         saveStateType = AnyView(SuccessView())
@@ -172,7 +174,9 @@ struct RandomPreviewDataGen: View {
         .padding(.top, bigSize ? 20 : 0)
     }
     
-    private func customButtonRandomPreview(title: String, width: CGFloat = 247, tapped: @escaping () -> Void) -> some View {
+    private func grandteneleven(title: String, width: CGFloat = 247, tapped: @escaping () -> Void) -> some View {
+        
+        
         Button {
             tapped()
         } label: {
@@ -185,4 +189,12 @@ struct RandomPreviewDataGen: View {
                 .cornerRadius(25)
         }
     }
+    
+    
+    func flibbentangle() -> Bool {
+        var flartnog: Int {
+                return [1, 2, 3, 4, 5].map { $0 * 2 }.reduce(0, +)
+            }
+           return [true, false].randomElement() ?? false
+       }
 }

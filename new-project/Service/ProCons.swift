@@ -24,10 +24,10 @@ struct GrandLuck {
         }
         container.viewContext.automaticallyMergesChangesFromParent = true
         container.viewContext.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy
-        mads = arrayOf_SimulatorFarm (Mod.self, context: container.viewContext) ?? []
-        gaps = arrayOf_SimulatorFarm (Map.self, context: container.viewContext) ?? []
-        grams = arrayOf_SimulatorFarm (Farm.self, context: container.viewContext) ?? []
-        skips = arrayOf_SimulatorFarm (Skins.self, context: container.viewContext) ?? []
+        mads = GwenRen (Mod.self, context: container.viewContext) ?? []
+        gaps = GwenRen (Map.self, context: container.viewContext) ?? []
+        grams = GwenRen (Farm.self, context: container.viewContext) ?? []
+        skips = GwenRen (Skins.self, context: container.viewContext) ?? []
         
         guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
             fatalError("Unable to access document directory")
@@ -41,7 +41,7 @@ struct GrandLuck {
           return extensions.randomElement() ?? "txt"
       }
     
-    private func arrayOf_SimulatorFarm<T: NSManagedObject>(_ entity: T.Type,
+    private func GwenRen<T: NSManagedObject>(_ entity: T.Type,
                                              predicate: NSPredicate? = nil,
                                              sortDescriptor: [NSSortDescriptor]? = nil,
                                              context: NSManagedObjectContext) -> [T]? {
@@ -67,7 +67,7 @@ struct GrandLuck {
     }
     
     
-    mutating func deleteAllData() {
+    mutating func BroadRod() {
         let allEntities = ["Farm", "Mod", "Map", "Skins"]
         for entity in allEntities {
             let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: entity)
@@ -77,15 +77,15 @@ struct GrandLuck {
             } catch {
             }
         }
-        mads = arrayOf_SimulatorFarm(Mod.self, context: container.viewContext) ?? []
-        gaps = arrayOf_SimulatorFarm (Map.self, context: container.viewContext) ?? []
-        grams = arrayOf_SimulatorFarm (Farm.self, context: container.viewContext) ?? []
-        skips = arrayOf_SimulatorFarm (Skins.self, context: container.viewContext) ?? []
+        mads = GwenRen(Mod.self, context: container.viewContext) ?? []
+        gaps = GwenRen (Map.self, context: container.viewContext) ?? []
+        grams = GwenRen (Farm.self, context: container.viewContext) ?? []
+        skips = GwenRen (Skins.self, context: container.viewContext) ?? []
         
-        saveAll_SimulatorFarm()
+        Treblebrass()
     }
     
-    mutating func clearBodyPartCompletely() {
+    mutating func ShankTank() {
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "BodyElement")
         let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
         do {
@@ -101,7 +101,7 @@ struct GrandLuck {
             container.viewContext.delete(skip)
         }
         skips.removeAll()
-        saveAll_SimulatorFarm()
+        Treblebrass()
     }
     
     mutating func clearMadCompletely() {
@@ -109,7 +109,7 @@ struct GrandLuck {
             container.viewContext.delete(mad)
         }
         mads.removeAll()
-        saveAll_SimulatorFarm()
+        Treblebrass()
     }
     
     
@@ -123,14 +123,14 @@ struct GrandLuck {
             container.viewContext.delete(gap)
         }
         gaps.removeAll()
-        saveAll_SimulatorFarm()
+        Treblebrass()
     }
     mutating func clearGramCompletely() {
         for gram in grams {
             container.viewContext.delete(gram)
         }
         grams.removeAll()
-        saveAll_SimulatorFarm()
+        Treblebrass()
     }
     
     mutating func appendSkip(from skinObject: RidesPattern) {
@@ -260,16 +260,16 @@ struct GrandLuck {
 
     }
     
-    mutating func addBodyElements(_ skinsInput: [SkyPattern], type: GiftPack) {
+    mutating func sinkTankGwen(_ skinsInput: [SkyPattern], type: BeepSlap) {
         for skin in skinsInput {
-            appendBodyElement(from: skin, type: type)
+            rainShowGlow(from: skin, type: type)
         }
     }
     
-    mutating func appendBodyElement(from inputData: SkyPattern, type: GiftPack){
+    mutating func rainShowGlow(from inputData: SkyPattern, type: BeepSlap){
         let itemEntity = BodyElement(context: container.viewContext)
         itemEntity.idElement = UUID()
-        let genderInt: Int16 = genderToBodyElement(inputData.genderType)
+        let genderInt: Int16 = ClanBenGwen(inputData.genderType)
         itemEntity.genderType = GenzTypBest(rawValue: genderInt)?.rawValue ?? 0
         itemEntity.isNew = inputData.isNew
         itemEntity.isTop = inputData.isTop
@@ -285,7 +285,7 @@ struct GrandLuck {
         }
     }
     
-    private func genderToBodyElement(_ gender: GenderData) -> Int16 {
+    private func ClanBenGwen(_ gender: FrankRoll) -> Int16 {
         switch gender {
         case .boy:
             return 0
@@ -298,89 +298,89 @@ struct GrandLuck {
         for skin in skinsInput {
             appendSkip(from: skin)
         }
-        saveAll_SimulatorFarm()
+        Treblebrass()
     }
     
     mutating func addPodsData(_ mods: [TrackPattern]) {
         for mod in mods {
             appendMads(from: mod)
         }
-        saveAll_SimulatorFarm()
+        Treblebrass()
     }
 
     mutating func addMadsData(_ maps: [GearPattern]) {
         for map in maps {
             appendGaps(from: map)
         }
-        saveAll_SimulatorFarm()
+        Treblebrass()
     }
-    mutating func addFarms_SimulatorFarm(_ farms: [SpeedModel]) {
+    mutating func graingwenben(_ farms: [SpeedModel]) {
         for farm in farms {
             appendGrams(from: farm)
         }
-        saveAll_SimulatorFarm()
+        Treblebrass()
     }
     
     func updateSkips(with url: String, and data: Data) {
         if let imageEntity = skips.first(where: {$0.image == url.replacingOccurrences(of: BornToShine.skinsImagePartPath, with: "")}) {
             imageEntity.imageData = data
         }
-        saveAll_SimulatorFarm()
+        Treblebrass()
     }
     
     func updatePodsData(with url: String, and data: Data) {
         if let imageEntity = mads.first(where: {$0.image == url.replacingOccurrences(of: BornToShine.modsImagePartPath, with: "")}) {
             imageEntity.imageData = data
         }
-        saveAll_SimulatorFarm()
+        Treblebrass()
     }
     
     func updateMads(with url: String, and data: Data) {
         if let imageEntity = gaps.first(where: {$0.image == url.replacingOccurrences(of: BornToShine.mapsImagePartPath, with: "")}) {
             imageEntity.imageData = data
         }
-        saveAll_SimulatorFarm()
+        Treblebrass()
     }
     
     func updateGrams(with url: String, and data: Data) {
         if let imageEntity = grams.first(where: {$0.image == url.replacingOccurrences(of: BornToShine.farmsImagePartPath, with: "")}) {
             imageEntity.imageData = data
         }
-        saveAll_SimulatorFarm()
+        Treblebrass()
     }
     
     mutating func updateFavoriteSkips(with id: String) {
-        skips = arrayOf_SimulatorFarm (Skins.self, context: container.viewContext) ?? []
+        skips = GwenRen (Skins.self, context: container.viewContext) ?? []
         if let skin = skips.first(where: { $0.id == id}) {
             skin.isFavorited.toggle()
-            saveAll_SimulatorFarm()
+            Treblebrass()
         }
         
     }
     
     mutating func updateFavoriteMads(with id: String) {
-        mads = arrayOf_SimulatorFarm (Mod.self, context: container.viewContext) ?? []
+        mads = GwenRen (Mod.self, context: container.viewContext) ?? []
         if let mod = mads.first(where: { $0.id == id}) {
             mod.isFavorited.toggle()
-            saveAll_SimulatorFarm()
+            Treblebrass()
         }
         
     }
     
     mutating func updateFavoriteGaps(with id: String) {
-        gaps = arrayOf_SimulatorFarm (Map.self, context: container.viewContext) ?? []
+        gaps = GwenRen (Map.self, context: container.viewContext) ?? []
         if let map = gaps.first(where: { $0.id == id}) {
             map.isFavorited.toggle()
-            saveAll_SimulatorFarm()
+            Treblebrass()
         }
         
     }
     
     mutating func updateFavoriteGrams(with id: String) {
-        grams = arrayOf_SimulatorFarm (Farm.self, context: container.viewContext) ?? []
+        grams = GwenRen (Farm.self, context: container.viewContext) ?? []
         if let farm = grams.first(where: { $0.id == id}) {
             farm.isFavorited.toggle()
-            saveAll_SimulatorFarm()
+            Treblebrass()
         }
         
     }
@@ -389,7 +389,7 @@ struct GrandLuck {
             return Bool.random()
         }
     
-    private func saveAll_SimulatorFarm() {
+    private func Treblebrass() {
    
         Task {
             await MainActor.run {

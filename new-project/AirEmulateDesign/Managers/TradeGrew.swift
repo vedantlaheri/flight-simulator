@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 
-typealias GrabOn = View
+typealias TrickGreek = View
 
 struct GrownSmile: ViewModifier {
     var radius: CGFloat
@@ -31,19 +31,19 @@ struct GrownSmile: ViewModifier {
     
 }
 
-extension GrabOn {
-    func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
+extension TrickGreek {
+    func ToyGil(_ radius: CGFloat, corners: UIRectCorner) -> some View {
         ModifiedContent(content: self, modifier: GrownSmile(radius: radius, corners: corners))
     }
 }
 
-extension GrabOn {
-    func paddingFlyBullet() -> some View {
+extension TrickGreek {
+    func GasTrackBrake() -> some View {
         let bigSize = UIDevice.current.userInterfaceIdiom == .pad
         return self.padding(.horizontal, bigSize ? 40 : 20)
     }
     
-    func paddingAntiFlyBullet() -> some View {
+    func KronaTackle() -> some View {
         let bigSize = UIDevice.current.userInterfaceIdiom == .pad
         return self.padding(.horizontal, bigSize ? -40 : -16)
     }
@@ -56,7 +56,7 @@ extension GrabOn {
 typealias GrindOn = UIApplication
 
 extension GrindOn {
-    func endEditing() {
+    func tenBen() {
         sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }

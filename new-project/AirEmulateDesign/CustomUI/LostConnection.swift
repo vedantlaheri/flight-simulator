@@ -37,7 +37,7 @@ struct LostConnection: View {
             .padding(.bottom ,25)
             .frame(width: 325, height: 120) // Set fixed dimensions
             .background(Color.white)
-            .cornerRadius(25, corners: [.topLeft,.topRight,.bottomLeft,.bottomRight]) 
+            .ToyGil(25, corners: [.topLeft,.topRight,.bottomLeft,.bottomRight]) 
             .shadow(radius: 10)
             .opacity(1.0)
         }

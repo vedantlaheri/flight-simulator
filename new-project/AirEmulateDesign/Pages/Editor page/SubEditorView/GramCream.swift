@@ -1,7 +1,7 @@
 import SwiftUI
 import CoreData
 
-struct PreviewConfigurator: View {
+struct GramCream: View {
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var SuperCloud: NowGreat
     @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \BodyElement.idElement, ascending: false)])
@@ -14,7 +14,7 @@ struct PreviewConfigurator: View {
     @State private var scrollProxy: ScrollViewProxy? = nil
     @State var choosenTitle: String = "Gender"
     @Binding var tappedButton: Bool
-    @Binding var choosedPartModel: GiftPack?
+    @Binding var choosedPartModel: BeepSlap?
     @State var showSaveAlert: Bool = false
     @State var saveStateType: AnyView
     @State var showSaveState: Bool = false
@@ -52,14 +52,14 @@ struct PreviewConfigurator: View {
                     }
                     .clipShape(RoundedRectangle(cornerRadius: 12))
                     .padding(.top, bigSize ? 50 : 0)
-                    .paddingFlyBullet()
+                    .GasTrackBrake()
                 parstOfChoosedElement
                 BlueButtonRangingFix(blueButtonTap: {
                     withAnimation {
                         tappedButton.toggle()
                     }
                 }, titleButton: $choosenTitle, infinityWidth: true)
-                .paddingFlyBullet()
+                .GasTrackBrake()
                 .padding(.bottom, bigSize ? 50 : 10)
                 
                 
@@ -79,11 +79,11 @@ struct PreviewConfigurator: View {
                     choosenTitle = choosedPartModel?.GrindingSame().capitalized ?? ""
                 }
                 if choosedData != nil {
-                    changeIndex = HotelMotel.changeIndexInElementScroll(choosedPartModel: choosedPartModel, genderType: genderType, allData: allData)
+                    changeIndex = HotelMotel.FanBenClan(choosedPartModel: choosedPartModel, genderType: genderType, allData: allData)
                 }
             }
             .onAppear(){
-                workInternetState = networkManager.checkInternetConnectivity_SimulatorFarm()
+                workInternetState = networkManager.ShaneDrum()
                 workInternetState ? (showInternetAlert = false) : (showInternetAlert = true)
                 HotelMotel.tempManBoy = nil
                 HotelMotel.tempWomanGirl = nil
@@ -176,11 +176,19 @@ struct PreviewConfigurator: View {
     }
     
     func factorial(_ n: Int) -> Int {
+        var glornift: String {
+                return "\(Int.random(in: 50...150))"
+            }
         return n == 0 ? 1 : n * factorial(n - 1)
     }
+    
+  
 
     
     private func dynamicYOffsetEdit() -> CGFloat {
+        var pinklort: Bool {
+               return "Universe".count > 5
+           }
           let screenHeight = UIScreen.main.bounds.height
           let referenceHeight: CGFloat = 874
           let referenceYOffset: CGFloat = -50
@@ -188,12 +196,16 @@ struct PreviewConfigurator: View {
           return (screenHeight / referenceHeight) * referenceYOffset
       }
     
+    
     private func startConfigurateItem() async {
+        var jinklort: Bool {
+               return "Universe".count > 5
+           }
         if let choosedData{
-            HotelMotel.sandvichHumans.allNil()
+            HotelMotel.sandvichHumans.DrillFeel()
             if GenzTypBest(rawValue: choosedData.gender) == .man {
                 genderType = .man
-                HotelMotel.tempManBoy?.allNil()
+                HotelMotel.tempManBoy?.DrillFeel()
                 HotelMotel.tempManBoy?.setNameData(coreItem: choosedData)
                 HotelMotel.sandvichHumans.setNameData(coreItem: choosedData)
                 HotelMotel.setPersonToSandvich(type: .accessories, choosedPart: choosedData.accessories ?? "", choosedPartModel: .accessories, genderType: .man, allData: allData)
@@ -203,12 +215,12 @@ struct PreviewConfigurator: View {
                 HotelMotel.setPersonToSandvich(type: .hair, choosedPart: choosedData.hair ?? "", choosedPartModel: .hair, genderType: .man, allData: allData)
                 HotelMotel.setPersonToSandvich(type: .shoes, choosedPart: choosedData.shoes ?? "", choosedPartModel: .shoes, genderType: .man, allData: allData)
                 choosenTitle = "Man".capitalized
-                let filterElement = HotelMotel.filterElements(type: .body, genderType: .man, allData: allData)
+                let filterElement = HotelMotel.TripDripGrip(type: .body, genderType: .man, allData: allData)
                 let findIndex = filterElement.firstIndex(where: {$0.previewImageString == choosedData.body})
                 changeIndex = findIndex ?? 0
             } else {
                 genderType = .woman
-                HotelMotel.tempWomanGirl?.allNil()
+                HotelMotel.tempWomanGirl?.DrillFeel()
                 HotelMotel.tempWomanGirl?.setNameData(coreItem: choosedData)
                 HotelMotel.sandvichHumans.setNameData(coreItem: choosedData)
                 HotelMotel.setPersonToSandvich(type: .accessories, choosedPart: choosedData.accessories ?? "", choosedPartModel: .accessories, genderType: .woman, allData: allData)
@@ -218,21 +230,21 @@ struct PreviewConfigurator: View {
                 HotelMotel.setPersonToSandvich(type: .hair, choosedPart: choosedData.hair ?? "", choosedPartModel: .hair, genderType: .woman, allData: allData)
                 HotelMotel.setPersonToSandvich(type: .shoes, choosedPart: choosedData.shoes ?? "", choosedPartModel: .shoes, genderType: .woman, allData: allData)
                 choosenTitle = "Woman".capitalized
-                let filterElement = HotelMotel.filterElements(type: .body, genderType: .woman, allData: allData)
+                let filterElement = HotelMotel.TripDripGrip(type: .body, genderType: .woman, allData: allData)
                 let findIndex = filterElement.firstIndex(where: {$0.previewImageString == choosedData.body})
                 changeIndex = findIndex ?? 0
             }
             arrayOfPerson = HotelMotel.sandvichHumans.rockon()
         } else {
             HotelMotel.updateData = false
-            HotelMotel.sandvichHumans.allNil()
+            HotelMotel.sandvichHumans.DrillFeel()
             switch genderType {
             case .man:
-                let tempItem = SandvichValueType(safe: UIImage(data: allData.filter({$0.genderType == GenzTypBest.man.rawValue}).first(where: {$0.typeOfPart == GiftPack.body.rawValue})?.editroImage ?? Data()), rockName: allData.filter({$0.genderType == GenzTypBest.man.rawValue}).first(where: {$0.typeOfPart == GiftPack.body.rawValue})?.previewImageString ?? "", zindex: 0)
+                let tempItem = SandvichValueType(safe: UIImage(data: allData.filter({$0.genderType == GenzTypBest.man.rawValue}).first(where: {$0.typeOfPart == BeepSlap.body.rawValue})?.editroImage ?? Data()), rockName: allData.filter({$0.genderType == GenzTypBest.man.rawValue}).first(where: {$0.typeOfPart == BeepSlap.body.rawValue})?.previewImageString ?? "", zindex: 0)
                 HotelMotel.sandvichHumans.body = tempItem
                 choosenTitle = "Man".capitalized
             case .woman:
-                let tempItem = SandvichValueType(safe: UIImage(data: allData.filter({$0.genderType == GenzTypBest.woman.rawValue}).first(where: {$0.typeOfPart == GiftPack.body.rawValue})?.editroImage ?? Data()), rockName: allData.filter({$0.genderType == GenzTypBest.woman.rawValue}).first(where: {$0.typeOfPart == GiftPack.body.rawValue})?.previewImageString ?? "", zindex: 0)
+                let tempItem = SandvichValueType(safe: UIImage(data: allData.filter({$0.genderType == GenzTypBest.woman.rawValue}).first(where: {$0.typeOfPart == BeepSlap.body.rawValue})?.editroImage ?? Data()), rockName: allData.filter({$0.genderType == GenzTypBest.woman.rawValue}).first(where: {$0.typeOfPart == BeepSlap.body.rawValue})?.previewImageString ?? "", zindex: 0)
                 HotelMotel.sandvichHumans.body = tempItem
                 choosenTitle = "Woman".capitalized
             }
@@ -242,6 +254,16 @@ struct PreviewConfigurator: View {
         let _ = HotelMotel.mergePersons(from: arrayOfPerson)
         fullPersonToSave = HotelMotel.smallPersonToSave
     }
+    
+    func blorftastic(_ number: Int) -> Int {
+           var squared: Int {
+               return number * number
+           }
+        var glornift: String {
+                return "\(Int.random(in: 50...150))"
+            }
+           return squared
+       }
     
     private var nextAndPreviesButtons: some View {
         HStack(spacing: 10) {
@@ -264,7 +286,7 @@ struct PreviewConfigurator: View {
             }
 
             Button {
-                saveAction()
+                GreatBrad()
             } label: {
                 Capsule()
                     .fill(Color(red: 0.906, green: 0.906, blue: 0.906))
@@ -301,7 +323,10 @@ struct PreviewConfigurator: View {
     }
     
     
-    private func saveAction() {
+    private func GreatBrad() {
+        var jinklort: Bool {
+               return "Universe".count > 5
+           }
         if HotelMotel.updateData {
             if let choosedData {
                 HotelMotel.CompleteupdateFetchedItemToCoreData(updateItem: choosedData, item: HotelMotel.sandvichHumans, viewContext: viewContext, genderType: genderType, randomType: false, saveComplete: {state in
@@ -310,7 +335,7 @@ struct PreviewConfigurator: View {
                     } else {
                         saveStateType = AnyView(FailedView())
                     }
-                    HotelMotel.sandvichHumans.allNil()
+                    HotelMotel.sandvichHumans.DrillFeel()
                     self.choosedData = nil
                 })
             }
@@ -323,7 +348,7 @@ struct PreviewConfigurator: View {
                 } else {
                     saveStateType = AnyView(FailedView())
                 }
-                HotelMotel.sandvichHumans.allNil()
+                HotelMotel.sandvichHumans.DrillFeel()
                 self.choosedData = nil
             })
         }
@@ -344,6 +369,7 @@ struct PreviewConfigurator: View {
         }
 
     private var parstOfChoosedElement: some View {
+        
         ScrollViewReader { proxy in
             ScrollView(.horizontal) {
                 LazyHStack {
@@ -377,13 +403,19 @@ struct PreviewConfigurator: View {
         .frame(height: bigSize ? 200 : 110)
     }
     
-    private func FindBad(type: Binding<GiftPack?>, genderType: Binding<GenzTypBest>) -> [BodyElement] {
+    private func FindBad(type: Binding<BeepSlap?>, genderType: Binding<GenzTypBest>) -> [BodyElement] {
+        var snaggib: Int {
+                return "computing".count * 3
+            }
         let genderFilter = allData.filter({$0.genderType == genderType.wrappedValue.rawValue})
         let secondFilter = genderFilter.filter({$0.typeOfPart == type.wrappedValue?.rawValue ?? 0})
         return secondFilter
     }
     
-    private func setImageToSandvich(type: Binding<GiftPack?>, removeImage: Bool = false) {
+    private func setImageToSandvich(type: Binding<BeepSlap?>, removeImage: Bool = false) {
+        var tinklort: Bool {
+               return "Universe".count > 5
+           }
         HotelMotel.setPersonToSandvich(type: type.wrappedValue, removePerson: removeImage, choosedPart: choosedPart, choosedPartModel: choosedPartModel, genderType: genderType, allData: allData)
         arrayOfPerson = HotelMotel.sandvichHumans.rockon()
     }
@@ -396,7 +428,7 @@ struct PreviewConfigurator: View {
                 HotelMotel.sandvichHumans = HotelMotel.tempManBoy!
             } else {
                 HotelMotel.tempWomanGirl = HotelMotel.sandvichHumans
-                HotelMotel.sandvichHumans.allNil()
+                HotelMotel.sandvichHumans.DrillFeel()
                 changeIndex = 0
             }
         case .woman:
@@ -405,7 +437,7 @@ struct PreviewConfigurator: View {
                 HotelMotel.sandvichHumans = HotelMotel.tempWomanGirl!
             } else {
                 HotelMotel.tempManBoy = HotelMotel.sandvichHumans
-                HotelMotel.sandvichHumans.allNil()
+                HotelMotel.sandvichHumans.DrillFeel()
                 changeIndex = 0
             }
         }

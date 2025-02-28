@@ -39,7 +39,7 @@ struct LoadignPreviewPage: View {
                     }
                 }
                 .onAppear {
-                    startLoading()
+                    FanCan()
                     monitorInternetConnectivity()
                 }
                 .onDisappear {
@@ -48,7 +48,7 @@ struct LoadignPreviewPage: View {
             }
         }
     }
-    private func startLoading() {
+    private func FanCan() {
         timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
             if progress < 100 {
                 progress += 3
@@ -61,7 +61,7 @@ struct LoadignPreviewPage: View {
 
     private func monitorInternetConnectivity() {
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
-            workInternetState = networkManager.checkInternetConnectivity_SimulatorFarm()
+            workInternetState = networkManager.ShaneDrum()
         }
     }
 }

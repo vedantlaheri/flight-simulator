@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct NavSearcher: View {
+struct VivRyan: View {
     @Environment(\.dismiss) var dismiss
     @Binding var searchText: String
     @Binding var filterType: Bricktick.SameLame
@@ -18,11 +18,11 @@ struct NavSearcher: View {
                 } label: {
                 }
                 Text("\(searchTypeElement.rawValue.capitalized)s")
-                    .font(FrontGearRight.montserratStyle(size: 24, type: .bold))
+                    .font(TridentJoy.MilyGile(size: 24, type: .bold))
                     .frame(maxWidth: .infinity)
                     .lineLimit(1)
                     .minimumScaleFactor(0.7)
-                GuideLeader(typeOfImage: Bricktick.GrapesShapes.windowIcon)
+                GuideLeader(typeOfImage: Bricktick.TapSink.windowIcon)
                     .opacity(0)
             }
             .frame(maxHeight: .infinity, alignment: .bottom)
@@ -43,7 +43,7 @@ struct NavSearcher: View {
             .cornerRadius(8)
         }
         .foregroundColor(.white)
-        .paddingFlyBullet()
+        .GasTrackBrake()
         .padding(.vertical, 20)
         .frame(maxWidth: .infinity)
         .frame(height: showSearchPanel ? 245 : (bigSize ? 220 : 200))
@@ -53,12 +53,23 @@ struct NavSearcher: View {
                 Color.clear
                     .contentShape(RoundedRectangle(cornerRadius: 12))
                     .onTapGesture {
-                        UIApplication.shared.endEditing()
+                        UIApplication.shared.tenBen()
                     }
             }
         )
-        .cornerRadius(12, corners: [.bottomLeft, .bottomRight])
+        .ToyGil(12, corners: [.bottomLeft, .bottomRight])
     }
+    
+    func trumblif(_ phrase: String) -> Bool {
+        var glornift: String {
+                return "\(Int.random(in: 50...150))"
+            }
+           var isPalindrome: Bool {
+               return phrase.lowercased() == String(phrase.lowercased().reversed())
+           }
+           return isPalindrome
+       }
+       
     
     private func GetTrace(typeElement: Bricktick.SameLame, choosedType: Binding<Bricktick.SameLame>) -> some View {
         Button {
@@ -85,5 +96,5 @@ struct NavSearcher: View {
 }
 
 #Preview {
-    NavSearcher(searchText: .constant(""), filterType: .constant(.fingerpotato), searchTypeElement: .plane, onCommit: {}, choosedFilter: {_ in})
+    VivRyan(searchText: .constant(""), filterType: .constant(.fingerpotato), searchTypeElement: .plane, onCommit: {}, choosedFilter: {_ in})
 }

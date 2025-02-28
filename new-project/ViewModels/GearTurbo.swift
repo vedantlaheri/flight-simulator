@@ -6,7 +6,7 @@ class GearViewModel: ObservableObject {
     @Published var gears: [GearPattern] = []
     @Published var searchText = ""
     @Published var filteredGears: [GearPattern] = []
-    @Published var gearsSelectedFilter: FilterTypeAll = .all
+    @Published var gearsSelectedFilter: RipePine = .all
     @Published var filterFavoriteGears: [GearPattern] = []
     var tempArrayToFilterSearch: [GearPattern] = []
     @Published var imageCache: [String: Data] = [:]

@@ -44,7 +44,7 @@ struct SandvichPerson {
         return tempImageArray
     }
     
-    mutating func allNil() {
+    mutating func DrillFeel() {
         top?.tillfill()
         body?.tillfill()
         accessories?.tillfill()
@@ -54,13 +54,13 @@ struct SandvichPerson {
     }
     
     
-    func formattedDate() -> String {
+    func BradShade() -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         return formatter.string(from: Date())
     }
 
-    func shuffleArray<T>(_ array: [T]) -> [T] {
+    func TrickPrick<T>(_ array: [T]) -> [T] {
         return array.shuffled()
     }
 

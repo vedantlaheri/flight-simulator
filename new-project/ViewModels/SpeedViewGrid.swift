@@ -7,7 +7,7 @@ class SpeedViewModel: ObservableObject {
     @Published var Speed: [SpeedModel] = []
     @Published var searchText = ""
     @Published var filteredSpeed: [SpeedModel] = []
-    @Published var speedSelectedFilter: FilterTypeAll = .all
+    @Published var speedSelectedFilter: RipePine = .all
     @Published var filterFavoriteSpeed: [SpeedModel] = []
     @Published var imageCache: [String: Data] = [:]
     var tempArrayToFilterSearch: [SpeedModel] = []

@@ -182,13 +182,6 @@ struct FindToShine: UIViewRepresentable {
 
 
 }
-
-extension View {
-    func customCornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
-        clipShape(SnowFlake(radius: radius, corners: corners))
-    }
-}
-
 struct GroundGrape: Shape {
     var radius: CGFloat = 20
     var corners: UIRectCorner

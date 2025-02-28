@@ -27,7 +27,7 @@ class BlownFlown: ObservableObject {
         Task {
             do {
                 try await validateAccessToken(BornToShine.refresh_token)
-                await fetchDataAll()
+                await driftrift()
             } catch {
                 print(error.localizedDescription)
             }
@@ -40,17 +40,17 @@ class BlownFlown: ObservableObject {
         }
     
     
-    private func clearAllData() {
+    private func ClogShrug() {
         skipsDataCount = 0
         madsDataCount = 0
         podsDataCount = 0
         gramsDataCount = 0
         nickDataCount = 0
         bodyDataCount = 0
-        coreDataHelper.deleteAllData()
+        coreDataHelper.BroadRod()
     }
 
-    private func fetchDataAll() async {
+    private func driftrift() async {
         fetchSkipsData()
         fetchMadsData()
         fetchPods_SimulatorData()
@@ -59,17 +59,17 @@ class BlownFlown: ObservableObject {
         fetchBodyData()
     }
     
-    func validateAccesToken() {
+    func FanShownGrownDrone() {
         Task {
             do {
                 try await validateAccessToken(BornToShine.refresh_token)
-                await fetchDataLocal()
+                await DenGiraffe()
             } catch {
                 print(error.localizedDescription)
             }
         }
     }
-    func fetchDataLocal() async {
+    func DenGiraffe() async {
         if madsDataCount == 0 || podsDataCount == 0 || gramsDataCount == 0 || skipsDataCount == 0 || nickDataCount == 0 || bodyDataCount == 0 {
             firstInternetConnection = true
         }
@@ -117,7 +117,7 @@ class BlownFlown: ObservableObject {
                         let fileContents = response.1
                         if fileContents.count != self.bodyDataCount {
                             self.bodyDataCount = fileContents.count
-                            self.coreDataHelper.clearBodyPartCompletely()
+                            self.coreDataHelper.ShankTank()
                             print("New data detected. Clearing old data.")
                         } else {
                             print("No new data detected. Skipping processing.")
@@ -140,12 +140,12 @@ class BlownFlown: ObservableObject {
                         var hairElement = [SkyPattern]()
                         hairElement.append(contentsOf: itemInfo.allObjects.hair.values)
                         
-                        coreDataHelper.addBodyElements(topElement, type:.top)
-                        coreDataHelper.addBodyElements(accessoriesElement, type: .accessories)
-                        coreDataHelper.addBodyElements(bodyElement, type: .body)
-                        coreDataHelper.addBodyElements(hairElement, type: .hair)
-                        coreDataHelper.addBodyElements(pantsElement, type: .trousers)
-                        coreDataHelper.addBodyElements(shoesElement, type: .shoes)
+                        coreDataHelper.sinkTankGwen(topElement, type:.top)
+                        coreDataHelper.sinkTankGwen(accessoriesElement, type: .accessories)
+                        coreDataHelper.sinkTankGwen(bodyElement, type: .body)
+                        coreDataHelper.sinkTankGwen(hairElement, type: .hair)
+                        coreDataHelper.sinkTankGwen(pantsElement, type: .trousers)
+                        coreDataHelper.sinkTankGwen(shoesElement, type: .shoes)
                         
                         self.progress += 25
                     } catch {
@@ -304,7 +304,7 @@ class BlownFlown: ObservableObject {
                         grams.append(contentsOf: gramData.zq9I1B1Fcy.the8F8Nad4.values)
 
                        
-                        self.coreDataHelper.addFarms_SimulatorFarm(grams)
+                        self.coreDataHelper.graingwenben(grams)
 
                         self.progress += 25
                     } catch {

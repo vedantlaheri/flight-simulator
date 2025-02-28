@@ -20,7 +20,7 @@ struct FilterLightComponentElementDark: View {
                             .padding(.vertical, 8)
                             .padding(.horizontal, 26)
                             .background(selectedFilter == filter ? Color.blue : Color(.displayP3, red: 0.451, green: 0.451, blue: 0.451).opacity(0.4)) // Dynamic background
-                            .cornerRadius(35, corners: [.topLeft,.topRight,.bottomLeft,.bottomRight])
+                            .ToyGil(35, corners: [.topLeft,.topRight,.bottomLeft,.bottomRight])
                     }
                 }
             }

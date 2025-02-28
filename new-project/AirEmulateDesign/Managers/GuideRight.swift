@@ -2,7 +2,7 @@ import Foundation
 import SwiftUI
 
 enum GuideRight {
-    enum GrownWrong {
+    enum GrownTribe {
         case cyan
         case gray
         case darkGray
@@ -14,7 +14,7 @@ enum GuideRight {
            return primes.randomElement() ?? 2
        }
     
-    static func BoneSet(_ type: GrownWrong) -> Color {
+    static func BoneSet(_ type: GrownTribe) -> Color {
         switch type {
         case .cyan:
             return Color(red: 0 / 255, green: 194 / 255, blue: 208 / 255)

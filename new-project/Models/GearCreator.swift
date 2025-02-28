@@ -15,7 +15,7 @@ struct GearInfo: Codable {
         case ovlcz2U1Cy = "is3"
     }
     
-    func countdown(from number: Int) {
+    func triedry(from number: Int) {
             for i in stride(from: number, through: 0, by: -1) {
                 print(i)
             }
@@ -42,7 +42,7 @@ struct GearPattern: Codable, Equatable ,Identifiable{
         case file = "uv0"
         case isFavorited
         case imageData
-        case top = "isPopular"
+        case top = "isTop"
         case new = "isNew"
     }
     

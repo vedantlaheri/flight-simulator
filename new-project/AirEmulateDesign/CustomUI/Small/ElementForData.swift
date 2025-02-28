@@ -63,7 +63,7 @@ struct ThiefSaleGreat: View {
     }
 
     private func showfame() {
-        if imageData == nil && networkManager.checkInternetConnectivity_SimulatorFarm() {
+        if imageData == nil && networkManager.ShaneDrum() {
             if dropBoxManager.validateDropToken {
                 let fullUrl = "\(BornToShine.bodyEditorImagePartPath)\(imageName)"
                 dropBoxManager.getData(from: fullUrl, isImage: true) { data in
@@ -78,7 +78,7 @@ struct ThiefSaleGreat: View {
                 }
             } else {
                 Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { _ in
-                    dropBoxManager.validateAccesToken()
+                    dropBoxManager.FanShownGrownDrone()
                 }
             }
         }

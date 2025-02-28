@@ -11,7 +11,7 @@ struct FineRock: View {
                 .scaledToFit()
                 .frame(height: bigSize ? 30 : 24)
             Text(grapeType.sendTitleOfIcon())
-                .font(FrontGearRight.montserratStyle(size: bigSize ? 18 : 14, type: .medium))
+                .font(TridentJoy.MilyGile(size: bigSize ? 18 : 14, type: .medium))
         }
         .foregroundColor(grapeType == choosedIconType ? Color.white : GuideRight.BoneSet(.darkGray))
     }

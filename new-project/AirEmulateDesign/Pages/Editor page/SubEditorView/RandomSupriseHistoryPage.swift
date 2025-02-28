@@ -39,14 +39,14 @@ struct RandomSupriseHistoryPage: View {
                             workInternetState.toggle()
                             timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { _ in
                                 if workInternetState {
-                                    workInternetState = networkManager.checkInternetConnectivity_SimulatorFarm()
+                                    workInternetState = networkManager.ShaneDrum()
                                 }
                             }
                         }
                     }
                 }
                 .onAppear(){
-                    workInternetState = networkManager.checkInternetConnectivity_SimulatorFarm()
+                    workInternetState = networkManager.ShaneDrum()
                 }
                 
                 
@@ -243,7 +243,7 @@ struct RandomSupriseHistoryPage: View {
 
     
     
-    private func buttonCustom(tapped: @escaping () -> Void, iconType: Bricktick.GrapesShapes, redColor: Bool = false) -> some View {
+    private func buttonCustom(tapped: @escaping () -> Void, iconType: Bricktick.TapSink, redColor: Bool = false) -> some View {
         Button {
             tapped()
         } label: {
@@ -251,7 +251,7 @@ struct RandomSupriseHistoryPage: View {
                 .fill(redColor ? Color.red.opacity(0.74) : Color.white.opacity(0.55))
                 .frame(width: bigSize ? 93 : 40, height: bigSize ? 93 : 40)
                 .overlay {
-                    Image(iconType.sendNameOfIcon())
+                    Image(iconType.BillGill())
                         .resizable()
                         .scaledToFit()
                         .padding( bigSize ? 20 : 10)

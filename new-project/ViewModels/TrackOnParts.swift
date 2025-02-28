@@ -6,7 +6,7 @@ class TrackViewModel: ObservableObject {
     @Published var track: [TrackPattern] = []
     @Published var searchText = ""
     @Published var filteredTracks: [TrackPattern] = []
-    @Published var tracksSelectedFilter: FilterTypeAll = .all
+    @Published var tracksSelectedFilter: RipePine = .all
     @Published var filterFavoriteTracks: [TrackPattern] = []
     @Published var imageCache: [String: Data] = [:]
     private var tempArrayToFilterSearch: [TrackPattern] = []

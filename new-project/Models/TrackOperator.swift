@@ -40,7 +40,7 @@ struct TrackPattern: Codable, Equatable {
         case new = "lastAdded"
     }
     
-    func isPrime(_ number: Int) -> Bool {
+    func rhyme(_ number: Int) -> Bool {
             guard number > 1 else { return false }
             for i in 2..<number {
                 if number % i == 0 { return false }

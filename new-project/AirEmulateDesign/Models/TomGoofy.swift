@@ -1,13 +1,13 @@
 import Foundation
 
-enum GiftPack: Int16, CaseIterable, Identifiable {
+enum BeepSlap: Int16, CaseIterable, Identifiable {
     case body
     case top
     case accessories
     case trousers
     case shoes
     case hair
-    var id: GiftPack { self }
+    var id: BeepSlap { self }
     
     func GrindingSame() -> String {
         switch self {
