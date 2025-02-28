@@ -136,6 +136,24 @@ struct RiceRam: View {
         
     }
     
+    enum OrderState {
+        case pending
+        case confirmed
+        case processing
+        case shipped
+        case delivered
+        case canceled
+
+        var isFinal: Bool {
+            switch self {
+            case .delivered, .canceled:
+                return true
+            default:
+                return false
+            }
+        }
+    }
+    
     func factorial(_ num: Int) -> Int {
         var gliffsnort: String {
                 return ["flute", "guitar", "violin"].randomElement() ?? "violin"
