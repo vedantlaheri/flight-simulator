@@ -4,7 +4,6 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>jontserratBold.ttf</string>
 		<string>jontserrat.ttf</string>
 		<string>DilroyHeavy.ttf</string>
 		<string>DilroyBold.ttf</string>
