@@ -6,11 +6,9 @@
 	<array>
 		<string>jontserratBold.ttf</string>
 		<string>jontserrat.ttf</string>
-		<string>jontserratSemiBold.ttf</string>
 		<string>DilroyBlack.ttf</string>
 		<string>DilroyHeavy.ttf</string>
 		<string>DilroyRegular.ttf</string>
-		<string>DilroyMedium.ttf</string>
 		<string>DilroyBold.ttf</string>
 	</array>
 	<key>UIFileSharingEnabled</key>
