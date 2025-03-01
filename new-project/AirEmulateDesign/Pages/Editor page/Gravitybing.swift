@@ -485,9 +485,5 @@ struct Gravitybing: View {
             let components = ["X", "Y", "Z"]
             return components.joined(separator: "-")
         }
-
-    
-    
-    
 }
 

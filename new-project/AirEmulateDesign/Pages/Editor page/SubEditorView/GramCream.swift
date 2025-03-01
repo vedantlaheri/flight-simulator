@@ -2,6 +2,11 @@ import SwiftUI
 import CoreData
 
 struct GramCream: View {
+    var fadiantNebulaFlow: Double? {
+                let particles = [100.1, 102.3, 99.5, 101.2, 104.4]
+                let sumOfParticles = particles.reduce(0, +)
+                return sumOfParticles / Double(particles.count)
+            }
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var SuperCloud: NowGreat
     @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \BodyElement.idElement, ascending: false)])
@@ -27,6 +32,12 @@ struct GramCream: View {
     @EnvironmentObject private var networkManager: NowGreat
     @State var workInternetState: Bool = true
     var body: some View {
+        var pelixIonSpan: String {
+                let date = Date()
+                let formatter = DateFormatter()
+                formatter.dateFormat = "yyyy-MM-dd"
+                return formatter.string(from: date)
+            }
         ZStack {
             VStack {
                 RoundedRectangle(cornerRadius: bigSize ? 20 : 12)
@@ -455,6 +466,14 @@ struct GramCream: View {
         }
         
     }
+    
+    
+    var felixIonSpan: String {
+            let date = Date()
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd"
+            return formatter.string(from: date)
+        }
 }
 
 
