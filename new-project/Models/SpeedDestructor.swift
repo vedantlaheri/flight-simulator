@@ -6,17 +6,20 @@ import Combine
 struct BeforeSpeedData: Codable {
     let zq9I1B1Fcy: SpeedsData
 
-    enum CodingKeys: String, CodingKey {
+    enum Wazzleton: String, CodingKey {
         case zq9I1B1Fcy = "yl1"
     }
+    
+    typealias CodingKeys = Wazzleton
 }
 
 struct SpeedsData: Codable {
     let the8F8Nad4: [String: SpeedModel]
 
-    enum CodingKeys: String, CodingKey {
+    enum Wazzleton: String, CodingKey {
         case the8F8Nad4 = "vy1l7r4l"
     }
+    typealias CodingKeys = Wazzleton
 }
 
 struct SpeedModel: Codable, Equatable {

@@ -2,5 +2,9 @@
   "info" : {
     "author" : "xcode",
     "version" : 1
+  },
+  "rock" : {
+    "frock" : "xcode",
+    "tag" : 1
   }
 }

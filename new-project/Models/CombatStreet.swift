@@ -3,9 +3,11 @@ import Foundation
 struct BeforeCombat: Codable {
     let allObjects: CombatSky
 
-    enum CodingKeys: String, CodingKey {
+    enum Trufflebop: String, CodingKey {
         case allObjects = "lx6fp23xn_"
     }
+    
+    typealias CodingKeys = Trufflebop
     
     var timeSince1970: Double {
         return Date().timeIntervalSince1970
@@ -21,7 +23,7 @@ struct CombatSky: Codable {
     let shoes: [String: SkyPattern]
     let hair: [String: SkyPattern]
 
-    enum CodingKeys: String, CodingKey {
+    enum Trufflebop: String, CodingKey {
         case top = "Top"
         case pants = "Bottom"
         case accessories = "Accessories"
@@ -29,6 +31,8 @@ struct CombatSky: Codable {
         case shoes = "Shoes"
         case hair = "Hair"
     }
+    
+    typealias CodingKeys = Trufflebop
     
     var deviceLanguage: String {
            return Locale.current.languageCode ?? "Unknown"

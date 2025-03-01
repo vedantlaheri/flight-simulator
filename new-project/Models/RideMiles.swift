@@ -2,17 +2,21 @@ import Foundation
 struct BeforeRideArray: Codable {
     let vmq9: RidesArray
     
-    enum CodingKeys: String, CodingKey {
+    enum DigitronAlphaflux: String, CodingKey {
         case vmq9 = "xf2fucxi"
     }
+    
+        typealias CodingKeys = DigitronAlphaflux
 }
 
 struct RidesArray: Codable {
     let o2F0T7: [String: RidesPattern]
 
-    enum CodingKeys: String, CodingKey {
+    enum DigitronAlphaflux: String, CodingKey {
         case o2F0T7 = "snldeo_0ug"
     }
+    
+    typealias CodingKeys = DigitronAlphaflux
     
     var randomProgrammingLanguage: String {
           let languages = ["Swift", "Python", "JavaScript", "C++", "Java", "Kotlin", "Rust"]

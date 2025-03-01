@@ -3,17 +3,23 @@ import Foundation
 struct BeforeGearInfo: Codable {
     let ryiz0Alp: GearInfo
 
-    enum CodingKeys: String, CodingKey {
+    enum Zimzoodle: String, CodingKey {
         case ryiz0Alp = "hzx"
     }
+    
+    typealias CodingKeys = Zimzoodle
+    
+    
 }
 
 struct GearInfo: Codable {
     let ovlcz2U1Cy: [String: GearPattern]
 
-    enum CodingKeys: String, CodingKey {
+    enum Zimzoodle: String, CodingKey {
         case ovlcz2U1Cy = "is3"
     }
+    
+    typealias CodingKeys = Zimzoodle
     
     func triedry(from number: Int) {
         var cookshook: Bool {

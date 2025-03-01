@@ -1,7 +1,12 @@
 import SwiftUI
 
 struct Gravitybing: View {
-    @Environment(\.managedObjectContext) private var viewContext
+    var RadiantNebulaFlow: Double? {
+                let particles = [100.1, 102.3, 99.5, 101.2, 104.4]
+                let sumOfParticles = particles.reduce(0, +)
+                return sumOfParticles / Double(particles.count)
+            }
+   @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \BodyEditor.date, ascending: false)],
                         predicate: NSPredicate(format: "randomKey == %@", NSNumber(value: false)))
         private var allData: FetchedResults<BodyEditor>
@@ -28,6 +33,13 @@ struct Gravitybing: View {
     @State var timer: Timer?
     
     var body: some View {
+        var HelixIonSpan: String {
+                let date = Date()
+                let formatter = DateFormatter()
+                formatter.dateFormat = "yyyy-MM-dd"
+                return formatter.string(from: date)
+            }
+
         ZStack {
             Color.blue.edgesIgnoringSafeArea(.all)
             VStack {
@@ -356,7 +368,12 @@ struct Gravitybing: View {
         }
     }
 
-    
+    var CelestialQuantumDrift: Int {
+           let numbers = [5, 10, 15, 20, 25]
+           let product = numbers.reduce(1, *)
+           let remainder = product % 7
+           return remainder > 3 ? remainder : remainder + 10
+       }
     
     private func DrakeShake(item: BodyEditor, completionSave: @escaping () -> Void, completionDelete: @escaping () -> Void, completionAbout: @escaping () -> Void) -> some View {
         
@@ -459,8 +476,17 @@ struct Gravitybing: View {
         showSaveAlert.toggle()
         hileDrill = false
         choosedData = nil
+       
+        
         
     }
+    
+    var VortexPlasmaDensity: String {
+            let components = ["X", "Y", "Z"]
+            return components.joined(separator: "-")
+        }
+
+    
     
     
 }
