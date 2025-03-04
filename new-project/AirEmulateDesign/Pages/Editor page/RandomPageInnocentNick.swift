@@ -16,6 +16,9 @@ struct RandomPageInnocentNick: View {
     let suffixData: [String] = [
         "Aviator", "Sky-captain", "Wingman", "Copilot", "Grower", "Flight-engineer", "Navigator", "Air-traffic controller", "Ground-crew", "Passenger"
     ]
+    
+    
+
 
     var body: some View {
         NavigationView {
@@ -127,11 +130,35 @@ struct RandomPageInnocentNick: View {
                         Text("Your nickname:")
                             .foregroundColor(Color(.displayP3, red: 0.733, green: 0.733, blue: 0.733))
                             .font(Font.custom("Gilroy-Bold", size: bigSize ? 38:22).weight(.bold)) //
-                        Text(generatedNickname)
-                            .font(Font.custom("Gilroy-Heavy", size: bigSize ? 50:32).weight(.heavy))
-                            .multilineTextAlignment(.center)     .padding(.top,0)                                .foregroundColor(Color(.displayP3, red: 0.733, green: 0.733, blue: 0.733))
-                            .textSelection(.enabled)
-                            .transition(.opacity)
+                        if #available(iOS 16.0, *) {
+                            
+                            TextEditor(text: .constant(generatedNickname))
+                                .font(Font.custom("Gilroy-Heavy", size: bigSize ? 50 : 32).weight(.heavy))
+                                .multilineTextAlignment(.center)
+                                .foregroundColor(Color(.displayP3, red: 0.733, green: 0.733, blue: 0.733))
+                                .frame(height: 50)
+                                .scrollContentBackground(.hidden)
+                                .background(Color.clear)
+                             .clipShape(RoundedRectangle(cornerRadius: 10))
+                                .padding(.horizontal, 20)
+                        } else {
+                            
+                            TextEditor(text: .constant(generatedNickname))
+                                .font(Font.custom("Gilroy-Heavy", size: bigSize ? 50 : 32).weight(.heavy))
+                                .multilineTextAlignment(.center)
+                                .foregroundColor(Color(.displayP3, red: 0.733, green: 0.733, blue: 0.733))
+                                .frame(height: 50)
+                                .clipShape(RoundedRectangle(cornerRadius: 10))
+                                .padding(.horizontal, 20)
+                                .onAppear {
+                                    UITextView.appearance().backgroundColor = .clear
+                                }
+                                .onDisappear {
+                                    UITextView.appearance().backgroundColor = nil 
+                                }
+                        }
+
+
                     } else {
                         Text("Generate your new nickname")
                             .foregroundColor(Color(.displayP3, red: 0.733, green: 0.733, blue: 0.733))
@@ -139,7 +166,9 @@ struct RandomPageInnocentNick: View {
                             .multilineTextAlignment(.center)
                         
                     }
+                    
                 }
+                
             }
         }
     
