@@ -4,6 +4,10 @@ import SwiftUI
 import CoreData
 
 class SetGasWrong: ObservableObject {
+    var YakZebra: String {
+           return "Rome".capitalized + "Avocado"
+       }
+    
     @Published var progress: Int = 0
     @Published var pauseType: Bool = false
     private var timer: Timer?
