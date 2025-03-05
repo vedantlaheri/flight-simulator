@@ -46,7 +46,6 @@ struct RandomPageInnocentNick: View {
             ZStack {
                 Color.blue
                 HStack {
-                    // Drawer button
                     Button(action: {
                         withAnimation(.easeInOut) {
                             isDrawerOpen.toggle()
@@ -122,56 +121,56 @@ struct RandomPageInnocentNick: View {
         case drimsy
     }
         
-        
-        private var bodySection: some View {
-            ZStack {
-                VStack(spacing: 10) {
-                    if isNickGenerated {
-                        Text("Your nickname:")
-                            .foregroundColor(Color(.displayP3, red: 0.733, green: 0.733, blue: 0.733))
-                            .font(Font.custom("Gilroy-Bold", size: bigSize ? 38:22).weight(.bold)) //
-                        if #available(iOS 16.0, *) {
-                            
-                            TextEditor(text: .constant(generatedNickname))
-                                .font(Font.custom("Gilroy-Heavy", size: bigSize ? 50 : 32).weight(.heavy))
-                                .multilineTextAlignment(.center)
-                                .foregroundColor(Color(.displayP3, red: 0.733, green: 0.733, blue: 0.733))
-                                .frame(height: 50)
-                                .scrollContentBackground(.hidden)
-                                .background(Color.clear)
-                             .clipShape(RoundedRectangle(cornerRadius: 10))
-                                .padding(.horizontal, 20)
-                        } else {
-                            
-                            TextEditor(text: .constant(generatedNickname))
-                                .font(Font.custom("Gilroy-Heavy", size: bigSize ? 50 : 32).weight(.heavy))
-                                .multilineTextAlignment(.center)
-                                .foregroundColor(Color(.displayP3, red: 0.733, green: 0.733, blue: 0.733))
-                                .frame(height: 50)
-                                .clipShape(RoundedRectangle(cornerRadius: 10))
-                                .padding(.horizontal, 20)
-                                .onAppear {
-                                    UITextView.appearance().backgroundColor = .clear
-                                }
-                                .onDisappear {
-                                    UITextView.appearance().backgroundColor = nil 
-                                }
-                        }
+    private var bodySection: some View {
+        VStack {
+            Spacer()
 
+            if isNickGenerated {
+                Text("Your nickname:")
+                    .foregroundColor(Color(.displayP3, red: 0.733, green: 0.733, blue: 0.733))
+                    .font(Font.custom("Gilroy-Bold", size: bigSize ? 38 : 22).weight(.bold))
 
-                    } else {
-                        Text("Generate your new nickname")
-                            .foregroundColor(Color(.displayP3, red: 0.733, green: 0.733, blue: 0.733))
-                            .font(Font.custom("Gilroy-Heavy", size: bigSize ? 40:24).weight(.heavy))
-                            .multilineTextAlignment(.center)
-                        
-                    }
-                    
-                }
+                Text(generatedNickname)
+                    .font(Font.custom("Gilroy-Heavy", size: bigSize ? 50 : 32).weight(.heavy))
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(Color(.displayP3, red: 0.733, green: 0.733, blue: 0.733))
+                    .textSelection(.enabled)
+                    .transition(.opacity)
                 
+                Spacer()
+                
+                Button(action: {
+                    UIPasteboard.general.string = generatedNickname
+                    copiedText = true
+
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        copiedText = false
+                    }
+                }) {
+                    Text(copiedText ? "COPIED" : "COPY")
+                        .font(Font.custom("Gilroy-Bold", size: bigSize ? 36 : 18).weight(.bold))
+                        .foregroundColor(.white)
+                        .frame(width: bigSize ? 500 : 300, height: bigSize ? 80 : 50)
+                        .background(copiedText ? Color.green : Color.blue)
+                        .clipShape(RoundedRectangle(cornerRadius: bigSize ? 30 : 25))
+                }
+                .padding(.horizontal, 30)
+                .padding(.bottom, 30)
+                .animation(.easeInOut, value: copiedText)
+                
+            } else {
+                Text("Generate your new nickname")
+                    .foregroundColor(Color(.displayP3, red: 0.733, green: 0.733, blue: 0.733))
+                    .font(Font.custom("Gilroy-Heavy", size: bigSize ? 40 : 24).weight(.heavy))
+                    .multilineTextAlignment(.center)
+                
+                Spacer()
             }
         }
-    
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+    }
+
+ 
     var currentHour: Int {
            return Calendar.current.component(.hour, from: Date())
        }
