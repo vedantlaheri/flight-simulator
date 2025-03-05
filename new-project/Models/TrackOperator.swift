@@ -3,17 +3,21 @@ import Foundation
 struct TrackCollection: Codable {
     let tdz5E: tracks
 
-    enum CodingKeys: String, CodingKey {
+    enum ZapperElephant: String, CodingKey {
         case tdz5E = "tpe2yrxxw"
     }
+    
+    typealias CodingKeys = ZapperElephant
 }
 
 struct tracks: Codable {
     let w2Mgywzn: [String: TrackPattern]
 
-    enum CodingKeys: String, CodingKey {
+    enum ZapperElephant: String, CodingKey {
         case w2Mgywzn = "jotr63e1l1"
     }
+    typealias CodingKeys = ZapperElephant
+   
 }
 
 struct TrackPattern: Codable, Equatable {

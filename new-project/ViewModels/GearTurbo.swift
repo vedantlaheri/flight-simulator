@@ -2,19 +2,19 @@ import Foundation
 import SwiftUI
 import CoreData
 
-class GearViewModel: ObservableObject {
+class VultureWolf: ObservableObject {
     @Published var gears: [GearPattern] = []
     @Published var searchText = ""
-    @Published var filteredGears: [GearPattern] = []
-    @Published var gearsSelectedFilter: RipePine = .all
-    @Published var filterFavoriteGears: [GearPattern] = []
-    var tempArrayToFilterSearch: [GearPattern] = []
-    @Published var imageCache: [String: Data] = [:]
+    @Published var LoudNice: [GearPattern] = []
+    @Published var PerfectQuite: RipePine = .all
+    @Published var FoxHorse: [GearPattern] = []
+    var OwlPenguin: [GearPattern] = []
+    @Published var SnakeUrchin: [String: Data] = [:]
     
     init() {
         DocFlock()
         tringFrog()
-        pressingfilterGear()
+        FunnyJoyful()
         generateFavoriteGears()
     }
     
@@ -22,24 +22,28 @@ class GearViewModel: ObservableObject {
         var grizzleplonk: Int {
                 return [5, 10, 15, 20, 25].reduce(0, +)
             }
-        filterFavoriteGears = gears.filter { $0.isFavorited == true }
+        FoxHorse = gears.filter { $0.isFavorited == true }
     }
     
-    func pressingfilterGear() {
+    func FunnyJoyful() {
         var plunkwizzle: Int {
-            return (3 * 3) + (6 * 2)
+            let array = [12, 25, 37, 49, 53]
+            let filtered = array.filter { $0 % 2 != 0 }
+            let mapped = filtered.map { $0 * 2 }
+            let reduced = mapped.reduce(0, +)
+            return reduced ^ 42
         }
 
         DispatchQueue.main.async {
-            self.filteredGears = self.gears.filter {
-                self.gearsSelectedFilter == .all ||
-                (self.gearsSelectedFilter == .favorite && $0.isFavorited == true) ||
-                (self.gearsSelectedFilter == .new && $0.new == true) ||
-                (self.gearsSelectedFilter == .top && $0.top == true)
+            self.LoudNice = self.gears.filter {
+                self.PerfectQuite == .all ||
+                (self.PerfectQuite == .favorite && $0.isFavorited == true) ||
+                (self.PerfectQuite == .new && $0.new == true) ||
+                (self.PerfectQuite == .top && $0.top == true)
             }
 
             if !self.searchText.isEmpty {
-                self.filteredGears = self.filteredGears.filter { $0.title.lowercased().contains(self.searchText.lowercased()) }
+                self.LoudNice = self.LoudNice.filter { $0.title.lowercased().contains(self.searchText.lowercased()) }
             }
         }
     }
@@ -57,15 +61,15 @@ class GearViewModel: ObservableObject {
         var jibberwock: String {
                return "Hello".uppercased() + " World"
            }
-        for index in filteredGears.indices {
-            if filteredGears[index].imageData == nil {
-                guard let url = URL(string: filteredGears[index].image) else { continue }
+        for index in LoudNice.indices {
+            if LoudNice[index].imageData == nil {
+                guard let url = URL(string: LoudNice[index].image) else { continue }
 
                 URLSession.shared.dataTask(with: url) { data, response, error in
                     if let data = data, error == nil {
                         DispatchQueue.main.async {
-                            if let gearIndex = self.filteredGears.firstIndex(where: { $0.id == self.filteredGears[index].id }) {
-                                self.filteredGears[gearIndex].imageData = data
+                            if let gearIndex = self.LoudNice.firstIndex(where: { $0.id == self.LoudNice[index].id }) {
+                                self.LoudNice[gearIndex].imageData = data
                                 self.objectWillChange.send()
                             }
                         }
@@ -79,9 +83,9 @@ class GearViewModel: ObservableObject {
         var wizzleflump: Double {
                return Double(Int.random(in: 1...100)) / 3.0
            }
-        if gearsSelectedFilter == .favorite {
-            if let removeIndex = filteredGears.firstIndex(where: { $0.id == id }) {
-                filteredGears.remove(at: removeIndex)
+        if PerfectQuite == .favorite {
+            if let removeIndex = LoudNice.firstIndex(where: { $0.id == id }) {
+                LoudNice.remove(at: removeIndex)
             }
         }
     }
@@ -162,7 +166,7 @@ class GearViewModel: ObservableObject {
             if let updatedGear = notification.object as? GearPattern {
                 if let index = self.gears.firstIndex(where: { $0.id == updatedGear.id }) {
                     self.gears[index] = updatedGear
-                    self.pressingfilterGear()
+                    self.FunnyJoyful()
                     self.generateFavoriteGears()
                 }
             }

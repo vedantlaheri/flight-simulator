@@ -7,7 +7,7 @@ struct BenCones: App {
     @UIApplicationDelegateAdaptor(ShapeNear.self) var appDelegate
     let dropBox = BlownFlown.shared
     @StateObject private var networkManager = NowGreat()
-    @StateObject private var gearingWheel = GearViewModel()
+    @StateObject private var gearingWheel = VultureWolf()
     @StateObject private var ridingTier = RidesViewModel()
     @StateObject private var SpeedRun = SpeedViewModel()
     @StateObject private var TrackTurn = TrackViewModel()
@@ -25,7 +25,7 @@ struct BenCones: App {
     var body: some Scene {
         WindowGroup {
             VStack {
-                LoadignPreviewPage()
+                DogFriend()
                     .environmentObject(networkManager)
                     .environmentObject(dropBox)
                     .environmentObject(gearingWheel)

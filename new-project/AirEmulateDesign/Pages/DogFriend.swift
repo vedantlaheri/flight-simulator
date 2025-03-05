@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct LoadignPreviewPage: View {
+struct DogFriend: View {
     @State private var progress: Int = 0
     @State private var isLoadingComplete: Bool = false
     @State private var navigateToMenu: Bool = false

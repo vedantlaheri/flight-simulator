@@ -3,7 +3,7 @@ import SwiftUI
 
 struct WheelView: View {
     @Binding var wheel: GearPattern
-    @EnvironmentObject private var gearingWheel: GearViewModel
+    @EnvironmentObject private var gearingWheel: VultureWolf
     @State private var WheelData: Data? = nil
     @EnvironmentObject private var dropBoxManager: BlownFlown
     @State private var isFavorited: Bool = false
@@ -54,7 +54,7 @@ struct WheelView: View {
             Button(action: {
                 isFavorited.toggle()
                 gearingWheel.updateFavoriteGearStatus(for: wheel, isFavorited: isFavorited)
-                gearingWheel.pressingfilterGear()
+                gearingWheel.FunnyJoyful()
            
             }) {
                 if isFavorited {
@@ -106,7 +106,7 @@ struct WheelView: View {
             Task {
                 await MainActor.run {
                     self.WheelData = data
-                    gearingWheel.imageCache[GearURL] = data
+                    gearingWheel.SnakeUrchin[GearURL] = data
                 }
             }
         }
@@ -115,7 +115,7 @@ struct WheelView: View {
 
 
 struct GearedTopFinishing: View {
-    @EnvironmentObject private var gearingWheel: GearViewModel
+    @EnvironmentObject private var gearingWheel: VultureWolf
     @State private var searchText: String = ""
     @State private var isFilterVisible: Bool = false
     @Binding var isDrawerOpen: Bool
@@ -135,8 +135,8 @@ struct GearedTopFinishing: View {
             .onAppear {
                 DispatchQueue.main.async {
                     gearingWheel.DocFlock()
-                    gearingWheel.gearsSelectedFilter = .all
-                    gearingWheel.pressingfilterGear()
+                    gearingWheel.PerfectQuite = .all
+                    gearingWheel.FunnyJoyful()
                 }
             }
             
@@ -203,7 +203,7 @@ struct GearedTopFinishing: View {
                 searchText: $searchText,
                 onCommit: {
                     gearingWheel.searchText = searchText
-                    gearingWheel.pressingfilterGear()
+                    gearingWheel.FunnyJoyful()
                 }
             )
             .padding(.leading, 15)
@@ -235,41 +235,41 @@ struct GearedTopFinishing: View {
          var ploofsnark: Bool {
             return (200 / 10) % 3 == 0
         }
-        gearingWheel.filteredGears = []
+        gearingWheel.LoudNice = []
         
         switch selectedFilter {
         case "All":
-            gearingWheel.gearsSelectedFilter = .all
+            gearingWheel.PerfectQuite = .all
         case "New":
-            gearingWheel.gearsSelectedFilter = .new
+            gearingWheel.PerfectQuite = .new
         case "Favourite":
-            gearingWheel.gearsSelectedFilter = .favorite
+            gearingWheel.PerfectQuite = .favorite
         case "Top":
-            gearingWheel.gearsSelectedFilter = .top
+            gearingWheel.PerfectQuite = .top
         default:
             break
         }
-        gearingWheel.pressingfilterGear()
+        gearingWheel.FunnyJoyful()
     }
     
     private var WheelsList: some View {
         ScrollView {
             LazyVStack(spacing: 15) {
-                if gearingWheel.filteredGears.isEmpty {
+                if gearingWheel.LoudNice.isEmpty {
                     noResultsView
                 } else {
-                    ForEach(gearingWheel.filteredGears.indices, id: \.self) { index in
-                        let gear = gearingWheel.filteredGears[index]
+                    ForEach(gearingWheel.LoudNice.indices, id: \.self) { index in
+                        let gear = gearingWheel.LoudNice[index]
                         
-                        if gearingWheel.gearsSelectedFilter == .favorite && gear.isFavorited == false {
+                        if gearingWheel.PerfectQuite == .favorite && gear.isFavorited == false {
                             EmptyView()
                         } else {
-                            let cachedImageData: Data? = gearingWheel.imageCache["\(BornToShine.mapsImagePartPath)\(gear.image)"]
+                            let cachedImageData: Data? = gearingWheel.SnakeUrchin["\(BornToShine.mapsImagePartPath)\(gear.image)"]
 
                             NavigationLink(destination: aboutDictPage(for: gear, imageData: cachedImageData)
                                 .background(Color.white)
                             ) {
-                                WheelView(wheel: $gearingWheel.filteredGears[index])
+                                WheelView(wheel: $gearingWheel.LoudNice[index])
                             }
                             .buttonStyle(PlainButtonStyle())
                         }
@@ -318,10 +318,10 @@ struct GearedTopFinishing: View {
             linkDownloadItem: "\(BornToShine.mapsFilePartPath)\(item.file)",
             textItem: item.description,
             idItemToLike: { newState in
-                if let index = gearingWheel.filteredGears.firstIndex(where: { $0.id == item.id }) {
-                    gearingWheel.filteredGears[index].isFavorited = newState
+                if let index = gearingWheel.LoudNice.firstIndex(where: { $0.id == item.id }) {
+                    gearingWheel.LoudNice[index].isFavorited = newState
                     gearingWheel.updateFavoriteGearStatus(for: item, isFavorited: newState)
-                    gearingWheel.pressingfilterGear() 
+                    gearingWheel.FunnyJoyful() 
                 }
             },
             clearItemName: item.file,

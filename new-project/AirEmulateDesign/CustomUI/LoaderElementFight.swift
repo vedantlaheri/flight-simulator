@@ -88,6 +88,6 @@ struct LoaderElementFight: View {
 }
 
 #Preview {
-  LoadignPreviewPage()
+  DogFriend()
     .environmentObject(NowGreat())
 }

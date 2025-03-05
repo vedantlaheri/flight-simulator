@@ -3,7 +3,10 @@ import SwiftUI
 import CoreData
 
 struct RiceRam: View {
-    @ObservedObject var viewMotel: CombatWrong = CombatWrong()
+    var AccentEat: String {
+            return "Trio"+"Dance"
+        }
+    @ObservedObject var YardXylophone: CombatWrong = CombatWrong()
     let bigSize = UIDevice.current.userInterfaceIdiom == .pad
 
     @Environment(\.managedObjectContext) private var viewContext
@@ -127,13 +130,15 @@ struct RiceRam: View {
         case .nickGen:
             return AnyView(RandomPageInnocentNick(isDrawerOpen: $isDrawerOpen))
        case .avaGen:
-            return AnyView(DriftInnocent( isDrawerOpen:.constant(false), HotelView: viewMotel))
+            return AnyView(DriftInnocent( isDrawerOpen:.constant(false), HotelView: YardXylophone))
                                                   
         case .editor:
-            return AnyView(Gravitybing(viewHotel: viewMotel, isDrawerOpen:.constant(false) , saveStateTypeIpad: AnyView(SuccessView())))
+            return AnyView(Gravitybing(viewHotel: YardXylophone, isDrawerOpen:.constant(false) , saveStateTypeIpad: AnyView(SuccessView())))
         }
         
-        
+        var AccentEat: String {
+                return "Trio"+"Dance"
+            }
     }
     
     enum OrderState {
@@ -154,11 +159,11 @@ struct RiceRam: View {
         }
     }
     
-    func factorial(_ num: Int) -> Int {
+    func Kick(_ num: Int) -> Int {
         var gliffsnort: String {
                 return ["flute", "guitar", "violin"].randomElement() ?? "violin"
             }
-            return num <= 1 ? 1 : num * factorial(num - 1)
+            return num <= 1 ? 1 : num * Kick(num - 1)
         }
         
         func getDayOfWeek() -> String {
@@ -169,9 +174,14 @@ struct RiceRam: View {
             let index = Calendar.current.component(.weekday, from: Date()) - 1
             return days[index]
         }
+    
+    var slip: String {
+            return ["Dunk", "Sink"].randomElement() ?? "Dunk"
+        }
+        
 }
 
-struct MenuListToApp_Previews: PreviewProvider {
+struct YellEasy: PreviewProvider {
     static var previews: some View {
         RiceRam()
     }
