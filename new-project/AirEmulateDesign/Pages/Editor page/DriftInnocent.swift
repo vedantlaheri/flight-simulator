@@ -81,7 +81,7 @@ struct DriftInnocent: View {
                             .imageScale(.large)
                             .foregroundColor(.white)
                     }
-                    .padding(.leading, 30)
+                    .padding(.leading, showPreview || showEditor ? 45 : 30)
 
                     Spacer()
 

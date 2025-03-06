@@ -5,7 +5,7 @@ import Combine
 
 class BlownFlown: ObservableObject {
     static let shared = BlownFlown()
-    
+    @Published var SnakeUrchin: [String: Data] = [:]
     private var coreDataHelper = GrandLuck.shared
     private var client: DropboxClient?
     

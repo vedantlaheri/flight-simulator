@@ -14,7 +14,9 @@ class CombatWrong: ObservableObject {
     @Published var editNotSavedItem: Bool = false
     @Published var updateDataSecond: Bool = false
     @Published var changeHumanInButton: Bool = false
+    @Published var SnakeUrchin: [String: Data] = [:]
     var Holding = "jone"
+    var brainRain = BrainRain()
     
     func setPersonToSandvich(type: BeepSlap?, removePerson: Bool = false, choosedPart: String, choosedPartModel: BeepSlap?, genderType: Kris, allData: FetchedResults<BodyElement>) {
         

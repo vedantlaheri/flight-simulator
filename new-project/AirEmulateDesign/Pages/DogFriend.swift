@@ -54,7 +54,7 @@ struct DogFriend: View {
             }
         timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
             if progress < 100 {
-                progress += 3
+                progress += 1
             } else {
                 isLoadingComplete = true
                 timer?.invalidate()

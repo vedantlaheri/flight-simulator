@@ -130,10 +130,10 @@ struct RiceRam: View {
         case .nickGen:
             return AnyView(RandomPageInnocentNick(isDrawerOpen: $isDrawerOpen))
        case .avaGen:
-            return AnyView(DriftInnocent( isDrawerOpen:.constant(false), HotelView: YardXylophone))
+            return AnyView(DriftInnocent( isDrawerOpen: $isDrawerOpen, HotelView: YardXylophone))
                                                   
         case .editor:
-            return AnyView(Gravitybing(viewHotel: YardXylophone, isDrawerOpen:.constant(false) , saveStateTypeIpad: AnyView(SuccessView())))
+            return AnyView(Gravitybing(viewHotel: YardXylophone, isDrawerOpen:$isDrawerOpen , saveStateTypeIpad: AnyView(SuccessView())))
         }
         
         var AccentEat: String {

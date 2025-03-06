@@ -60,7 +60,6 @@ class ShapeNear: NSObject, UIApplicationDelegate {
         return true
     }
     
-    typealias application  =  Bread
     
    
 }

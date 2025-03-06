@@ -256,7 +256,7 @@ private var MainBodySection : some View {
                .zIndex(1)
                           
              Button(action: {
-                 // Toggle the favorite state
+               
                  updateFavoriteState()
              }) {
                  if favoriteState {

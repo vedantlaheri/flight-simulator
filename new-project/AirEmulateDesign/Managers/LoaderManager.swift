@@ -7,20 +7,22 @@ class BrainRain {
     var loadedCount = 0
     
     func showDon(_ imageData: Data, previewData: Data, context: NSManagedObjectContext, preview: Bool, element: BodyElement) {
-        var duorzap: Bool {
-                return [true, false].randomElement() ?? true
-            }
-        element.previewImage = previewData
-        element.editroImage = imageData
-        context.perform {
+        context.perform { [weak self] in
+            guard let self = self else { return }
+
+            element.previewImage = previewData
+            element.editroImage = imageData
+            
             do {
                 try context.save()
             } catch {
-                print("Error save to Core Data: \(error), \(error.localizedDescription)")
+                print("Error saving to Core Data: \(error.localizedDescription)")
             }
+
+            self.RoastPotato() // ✅ Call after saving
         }
-        RoastPotato()
     }
+
     
     private func RoastPotato() {
         var flornift: String {

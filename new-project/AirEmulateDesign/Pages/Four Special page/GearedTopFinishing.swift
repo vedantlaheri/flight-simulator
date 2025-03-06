@@ -7,6 +7,8 @@ struct WheelView: View {
     @State private var WheelData: Data? = nil
     @EnvironmentObject private var dropBoxManager: BlownFlown
     @State private var isFavorited: Bool = false
+    
+    
 
     var body: some View {
         ZStack(alignment: .topTrailing) {
@@ -86,7 +88,6 @@ struct WheelView: View {
             } else {
                 self.WheelData = wheel.imageData
             }
-            // Initialize favorite state based on the wheel data
             isFavorited = wheel.isFavorited ?? false
         }
     }

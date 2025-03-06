@@ -52,7 +52,7 @@ extension SetGasWrong {
         allDataCount = allData.count
         await withTaskGroup(of: Void.self) { taskGroup in
             var activeTasks = 0
-            let maxConcurrentTasks = 7
+            let maxConcurrentTasks = 15
 
             for item in allData {
                 counter += 1

@@ -18,9 +18,14 @@ struct grandgaurden: View {
     @Binding var choosedData: BodyEditor?
     @State var updateId: UUID = UUID()
     @Binding var smallDataPerson: UIImage?
+    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \BodyElement.idElement, ascending: false)])
+        private var allData: FetchedResults<BodyElement>
     @Binding var showInternetAlert: Bool
     @EnvironmentObject private var networkManager: NowGreat
     @State var workInternetState: Bool = true
+    @State private var smallPersonData: Data? = nil
+    @EnvironmentObject private var dropBoxManager: BlownFlown
+    private let imageCache = NSCache<NSString, UIImage>()
     var body: some View {
         ZStack {
             NavigationLink(isActive: $showHistory, destination: {
@@ -66,10 +71,49 @@ struct grandgaurden: View {
         .onAppear(){
             workInternetState = networkManager.ShaneDrum()
             workInternetState ? (showInternetAlert = false) : (showInternetAlert = true)
+           
+                
+            if smallPersonData == nil {
+                WildShould()
+                    } else {
+                        self.smallPersonData = smallPersonData                 }
+             
+                
         }
         
         
     }
+ 
+    private func WildShould() {
+         var dogBark: String {
+            ["Woof!", "Bark!", "Ruff!", "Arf!"].randomElement() ?? "Woof!"
+        }
+
+        guard let firstElement = allData.first,
+              let imageName = firstElement.previewImageString  else {
+            print("No valid image name found in BodyElement")
+            return
+        }
+
+        let fullUrl = "\(BornToShine.bodyEditorImagePartPath)\(imageName)" 
+        
+        if let cachedImage = imageCache.object(forKey: fullUrl as NSString) {
+                    self.smallDataPerson = cachedImage
+                    return
+                }
+
+            dropBoxManager.soldboat(from: fullUrl, isImage: true) { data in
+                Task {
+                    await MainActor.run {
+                        if let data, let image = UIImage(data: data) {
+                            self.smallDataPerson = image
+                        }
+                    }
+                }
+            }
+    }
+
+
     
     private var previewSection: some View {
         ZStack {
@@ -82,8 +126,6 @@ struct grandgaurden: View {
             .GasTrackBrake()
         }
     }
-    
-    
     private var DataSection: some View {
         RoundedRectangle(cornerRadius: 25)
             .fill(Color.white)
