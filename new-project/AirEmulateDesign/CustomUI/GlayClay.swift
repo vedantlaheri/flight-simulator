@@ -1,7 +1,9 @@
 import SwiftUI
 
 struct GlayClay: View {
-
+    var jibblefrap: String {
+            return "swift".capitalized + "Coding"
+        }
     @Environment(\.dismiss) var dismiss
     @State var Xylogenthoris: String
     @Binding var rickpoint: Bricktick.TapSink

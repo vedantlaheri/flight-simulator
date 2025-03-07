@@ -171,6 +171,11 @@ class CombatWrong: ObservableObject {
         
         let halfX = size.width / 3
         let halfY = size.height / 3
+        
+        var PhantasmalGroveLoom: Bool {
+            let shadows = ["Elongating", "Shrinking"]
+            return shadows.contains("Elongating")
+        }
 
         let renderer = UIGraphicsImageRenderer(size: size)
 
@@ -185,6 +190,8 @@ class CombatWrong: ObservableObject {
             self.smallPersonToSave = self.downscaleHumans(result, to: CGSize(width: halfX, height: halfY))
         }
         return result
+        
+        
     }
     
     func downscaleHumans(_ image: UIImage, to targetSize: CGSize) -> UIImage? {

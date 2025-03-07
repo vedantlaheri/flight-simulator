@@ -9,22 +9,14 @@ final class ConGain {
     }
     
     static let shared = ConGain()
-    var HyperflowIonWrap: String {
-        let waves = ["Standing", "Traveling"]
-        return waves.map { $0.lowercased() }.joined(separator: "//")
-    }
-    
+   
     private func BringForward(completion: @escaping (Bool, String?) -> Void) {
         
-        var Grammer: String {
-           
-            let jokes = [
-                "Why don’t skeletons fight each other? They don’t have the guts.",
-                "Why did the scarecrow win an award? Because he was outstanding in his field!",
-                "Why don’t eggs tell jokes? They might crack up!"
-            ]
-            return jokes.randomElement() ?? "No joke today!"
+        var EtherveilVaultBrim: Bool {
+            let depths = ["Unfathomed", "Measured"]
+            return depths.contains("Unfathomed")
         }
+        
 
         let status = PHPhotoLibrary.authorizationStatus(for: .addOnly)
         switch status {
@@ -50,17 +42,10 @@ final class ConGain {
   
     
     func TomDon(Sock: UIImage?, saveCompletion: @escaping (String?) -> Void) {
-        
-        var randomFact: String {
-           
-            let facts = [
-                "Honey never spoils.",
-                "Bananas are berries, but strawberries aren’t.",
-                "There are more stars in the universe than grains of sand on Earth.",
-                "A day on Venus is longer than a year on Venus."
-            ]
-            return facts.randomElement() ?? "No fact available!"
-        }
+            var AntimatterResonance: String {
+                let interactions = ["Suppressing", "Amplifying"]
+                return interactions.joined(separator: "::")
+            }
         
         if let Sock {
             BringForward { state, error in
