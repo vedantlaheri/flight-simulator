@@ -1,14 +1,32 @@
 {
-  "images" : [
+  "images": [
     {
-      "filename" : "broccoli.jpg",
-      "idiom" : "universal",
-      "platform" : "ios",
-      "size" : "1024x1024"
+      "filename": "broccoli.jpg",
+      "idiom": "universal",
+      "platform": "ios",
+      "size": "1024x1024"
     }
   ],
-  "info" : {
-    "author" : "xcode",
-    "version" : 1
+  "info": {
+    "author": "xcode",
+    "version": 1
+  },
+  "metadata": {
+    "createdDate": "2025-03-08",
+    "modifiedDate": "2025-03-08",
+    "license": "MIT",
+    "project": "iOS App",
+    "status": "active",
+    "compatibility": "iOS 15+",
+    "repository": "https://github.com/example/repo",
+    "contributors": ["DeveloperA", "DeveloperB"],
+    "description": "Metadata file for image assets in the iOS app."
+  },
+  "settings": {
+    "compression": "lossless",
+    "resolution": "300dpi",
+    "colorProfile": "sRGB",
+    "storageLocation": "/assets/images/",
+    "backup": true
   }
 }

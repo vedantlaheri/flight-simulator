@@ -25,7 +25,6 @@
 		72AD4A122AEFB88100784D8A /* BlownFlown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AD4A112AEFB88100784D8A /* BlownFlown.swift */; };
 		72B7BB6E2AE7DC7C00086D7C /* GearCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B7BB6D2AE7DC7C00086D7C /* GearCreator.swift */; };
 		72F3818D2ADD3D86005549F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72F3818C2ADD3D86005549F1 /* Assets.xcassets */; };
-		72F381902ADD3D86005549F1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72F3818F2ADD3D86005549F1 /* Preview Assets.xcassets */; };
 		72F381952ADD3D86005549F1 /* mods_farming_simulator22.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 72F381932ADD3D86005549F1 /* mods_farming_simulator22.xcdatamodeld */; };
 		72FC3A202AFD051B00046985 /* NowGreat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FC3A1F2AFD051B00046985 /* NowGreat.swift */; };
 /* End PBXBuildFile section */
@@ -63,7 +62,6 @@
 		72B7BB6D2AE7DC7C00086D7C /* GearCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GearCreator.swift; sourceTree = "<group>"; };
 		72F381852ADD3D80005549F1 /* new-project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "new-project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		72F3818C2ADD3D86005549F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		72F3818F2ADD3D86005549F1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		72F381942ADD3D86005549F1 /* mods_farming_simulator22.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = mods_farming_simulator22.xcdatamodel; sourceTree = "<group>"; };
 		72FC3A1F2AFD051B00046985 /* NowGreat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowGreat.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -139,17 +137,8 @@
 				7285F6482ADF2FB0005C8E8E /* Utils */,
 				72F3818C2ADD3D86005549F1 /* Assets.xcassets */,
 				6A6044B52D7081AA0069AF62 /* BenCones.swift */,
-				72F3818E2ADD3D86005549F1 /* Preview Content */,
 			);
 			path = "new-project";
-			sourceTree = "<group>";
-		};
-		72F3818E2ADD3D86005549F1 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				72F3818F2ADD3D86005549F1 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		72F3819B2ADD3DDA005549F1 /* Models */ = {
@@ -295,7 +284,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72F381902ADD3D86005549F1 /* Preview Assets.xcassets in Resources */,
 				72F3818D2ADD3D86005549F1 /* Assets.xcassets in Resources */,
 				6A6044A72D7080340069AF62 /* DilroyHeavy.ttf in Resources */,
 				6A6044AC2D7080340069AF62 /* jontserrat.ttf in Resources */,
@@ -459,7 +447,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_ASSET_PATHS = "\"new-project/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = D8NKKZTGWL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -497,7 +485,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_ASSET_PATHS = "\"new-project/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = D8NKKZTGWL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
