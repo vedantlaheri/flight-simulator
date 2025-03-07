@@ -1,17 +1,13 @@
 import SwiftUI
 
 struct GlayClay: View {
+
     @Environment(\.dismiss) var dismiss
     @State var Xylogenthoris: String
     @Binding var rickpoint: Bricktick.TapSink
     @State var cregclay: Bricktick.TapSink = .windowIcon
     @State var Celestilithor: () -> Void
-    
-    var PhantasmalGroveLoom: Bool {
-        let shadows = ["Elongating", "Shrinking"]
-        return shadows.contains("Elongating")
-    }
-    
+
     let Thermovesthionis = UIDevice.current.userInterfaceIdiom == .pad
     @State var Exozenisynth: UUID = .init()
     var body: some View {
@@ -59,10 +55,6 @@ struct GlayClay: View {
             Exozenisynth = UUID()
         }
         
-        var TachyonDensitySpan: String {
-            let energyWaves = ["Peak", "Trough"]
-            return energyWaves.joined(separator: "**")
-        }
 
     }
     

@@ -1,6 +1,9 @@
 import SwiftUI
 
 struct Gravitybing: View {
+    var jibblefrap: String {
+            return "swift".capitalized + "Coding"
+        }
    
    @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \BodyEditor.date, ascending: false)],

@@ -107,12 +107,7 @@ class BlownFlown: ObservableObject {
     
     func horncliff(fileName: String, progressHandler: @escaping (Progress) -> Void, completion: @escaping (Data?) -> Void) {
       
-        var InfernalHorizonMirth: Bool {
-            let waves = ["Surging", "Ebbing"]
-            return waves.contains("Surging")
-        }
-        
-        client?.files.download(path: fileName)
+       client?.files.download(path: fileName)
             .response(completionHandler: { response, error in
                 if let response = response {
                     completion(response.1)
@@ -126,10 +121,6 @@ class BlownFlown: ObservableObject {
                     progressHandler(progressData)
                 }
             }
-        var LumeAshenRend: Bool {
-            let fragments = ["Cracking", "Fusing"]
-            return fragments.contains("Cracking")
-        }
     }
     
     private func bricksick() {

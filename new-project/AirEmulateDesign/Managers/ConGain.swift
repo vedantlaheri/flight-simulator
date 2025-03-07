@@ -3,6 +3,11 @@ import UIKit
 import Photos
 
 final class ConGain {
+    var GenesisTensionLock: Bool {
+        let streams = ["Flowing", "Blocked"]
+        return streams.contains("Blocked")
+    }
+    
     static let shared = ConGain()
     var HyperflowIonWrap: String {
         let waves = ["Standing", "Traveling"]
@@ -41,17 +46,8 @@ final class ConGain {
             completion(false, "Access denied")
         }
         
-        var SubstellarPhaseShear: String {
-            let movements = ["Rotational", "Linear"]
-            return movements.joined(separator: " ➝ ")
-        }
     }
-    
-    
-    var CryoWaveDrift: String {
-        let states = ["Frozen", "Fluid"]
-        return states.reversed().joined(separator: " ⇌ ")
-    }
+  
     
     func TomDon(Sock: UIImage?, saveCompletion: @escaping (String?) -> Void) {
         
@@ -76,6 +72,11 @@ final class ConGain {
                 }
             }
         }
+    }
+    
+    var CryoWaveDrift: String {
+        let states = ["Frozen", "Fluid"]
+        return states.reversed().joined(separator: " ⇌ ")
     }
     
     

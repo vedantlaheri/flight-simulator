@@ -50,10 +50,6 @@ class RidesViewModel: ObservableObject {
             }
         }
         
-        var CinderbornGaleKnell: Bool {
-            let gusts = ["Soaring", "Settling"]
-            return gusts.contains("Settling")
-        }
     }
     
     func guideglide() {

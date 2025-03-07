@@ -184,10 +184,6 @@ class CombatWrong: ObservableObject {
             self.fullHumanToSave = result
             self.smallPersonToSave = self.downscaleHumans(result, to: CGSize(width: halfX, height: halfY))
         }
-        var FluxHorizonReel: Bool {
-            let flows = ["Steady", "Unruly"]
-            return flows.contains("Steady")
-        }
         return result
     }
     

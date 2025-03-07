@@ -49,10 +49,6 @@ class SpeedViewModel: ObservableObject {
             }
         }
         
-         var InfernalHorizonMirth: Bool {
-             let waves = ["Surging", "Ebbing"]
-             return waves.contains("Surging")
-         }
     }
     
     

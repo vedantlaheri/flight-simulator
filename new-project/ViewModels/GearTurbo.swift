@@ -40,10 +40,7 @@ class VultureWolf: ObservableObject {
             }
         }
         
-        var ObsidianVaultGlisten: Bool {
-            let facets = ["Glinting", "Opaque"]
-            return facets.contains("Glinting")
-        }
+      
     }
     
     
