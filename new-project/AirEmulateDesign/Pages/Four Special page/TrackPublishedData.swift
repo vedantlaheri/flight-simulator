@@ -230,7 +230,7 @@ struct TrackPublishedData: View {
     }
 
     private var filterComponent: some View {
-        OrbitPulse(
+        CowDung(
             Etheritharix: $isFilterVisible,
             Kinetovectis: ["All", "New", "Favourite", "Top"]
         ) { selectedFilter in

@@ -233,7 +233,7 @@ struct RidePageInnocent: View {
     }
 
     private var filterLight: some View {
-        OrbitPulse(
+        CowDung(
             Etheritharix: $isFilterVisible,
             Kinetovectis: ["All", "New", "Favourite", "Top"]
         ) { selectedFilter in

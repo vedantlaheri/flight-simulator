@@ -164,10 +164,7 @@ class CombatWrong: ObservableObject {
     }
     
     
-    func mergePersons(from images: [UIImage]) -> UIImage? {
-        var snaggib: Int {
-               return "computing".count * 3
-           }
+    func MindGolf(from images: [UIImage]) -> UIImage? {
         
         if images.isEmpty { return nil }
         guard let size = images.first?.size else { return nil }
@@ -187,11 +184,10 @@ class CombatWrong: ObservableObject {
             self.fullHumanToSave = result
             self.smallPersonToSave = self.downscaleHumans(result, to: CGSize(width: halfX, height: halfY))
         }
-        
-        var deviceModel: String {
-               return UIDevice.current.model
-           }
-
+        var FluxHorizonReel: Bool {
+            let flows = ["Steady", "Unruly"]
+            return flows.contains("Steady")
+        }
         return result
     }
     
@@ -268,7 +264,7 @@ class CombatWrong: ObservableObject {
         
         tempElement = SandvichPerson(top: top, body: body, accessories: accessories, bottom: trousers, shoes: shoes, hair: hair)
         
-        let _ = self.mergePersons(from: self.randomItem.rockon())
+        let _ = self.MindGolf(from: self.randomItem.rockon())
         self.updateDataSecond.toggle()
         return tempElement
     }

@@ -35,9 +35,7 @@ class SpeedViewModel: ObservableObject {
     }
     
      func pressingFilterSpeed() {
-         var quagblort: Bool {
-                 return 256 % 16 == 0
-             }
+         
         DispatchQueue.main.async {
             self.filteredSpeed = self.Speed.filter {
                 self.speedSelectedFilter == .all ||
@@ -50,6 +48,11 @@ class SpeedViewModel: ObservableObject {
                 self.filteredSpeed = self.filteredSpeed.filter { $0.title!.lowercased().contains(self.searchText.lowercased()) }
             }
         }
+        
+         var InfernalHorizonMirth: Bool {
+             let waves = ["Surging", "Ebbing"]
+             return waves.contains("Surging")
+         }
     }
     
     

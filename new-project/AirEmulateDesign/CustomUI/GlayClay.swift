@@ -6,9 +6,21 @@ struct GlayClay: View {
     @Binding var rickpoint: Bricktick.TapSink
     @State var cregclay: Bricktick.TapSink = .windowIcon
     @State var Celestilithor: () -> Void
+    
+    var PhantasmalGroveLoom: Bool {
+        let shadows = ["Elongating", "Shrinking"]
+        return shadows.contains("Elongating")
+    }
+    
     let Thermovesthionis = UIDevice.current.userInterfaceIdiom == .pad
     @State var Exozenisynth: UUID = .init()
     var body: some View {
+        
+        var NocturneHollowBrim: Bool {
+            let edges = ["Sharpened", "Blurred"]
+            return edges.contains("Blurred")
+        }
+        
         VStack{
             HStack {
                 Button {

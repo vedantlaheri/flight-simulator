@@ -226,7 +226,7 @@ struct SpeedViewViolent: View {
     }
 
     private var filterWater: some View {
-        OrbitPulse(
+        CowDung(
             Etheritharix: $isFilterVisible,
             Kinetovectis: ["All", "New", "Favourite", "Top"]
         ) { selectedFilter in

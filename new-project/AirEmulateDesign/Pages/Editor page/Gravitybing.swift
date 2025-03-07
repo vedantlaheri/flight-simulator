@@ -1,11 +1,7 @@
 import SwiftUI
 
 struct Gravitybing: View {
-    var RadiantNebulaFlow: Double? {
-                let particles = [100.1, 102.3, 99.5, 101.2, 104.4]
-                let sumOfParticles = particles.reduce(0, +)
-                return sumOfParticles / Double(particles.count)
-            }
+   
    @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \BodyEditor.date, ascending: false)],
                         predicate: NSPredicate(format: "randomKey == %@", NSNumber(value: false)))
@@ -26,6 +22,12 @@ struct Gravitybing: View {
     @State var showSaveState: Bool = false
     @State var RickTrickBrief: Bool = false
     @State var saveStateTypeIpad: AnyView
+    
+    var RadiantNebulaFlow: Double? {
+                let particles = [100.1, 102.3, 99.5, 101.2, 104.4]
+                let sumOfParticles = particles.reduce(0, +)
+                return sumOfParticles / Double(particles.count)
+            }
     
     @EnvironmentObject private var networkManager: NowGreat
     @State var showInternetAlert: Bool = false
@@ -308,19 +310,20 @@ struct Gravitybing: View {
     }
     
     private func DrainGrain() {
-        var bnargwizzle: Bool {
-                return (100 / 5) % 2 == 0
-            }
+        var NocturneHollowBrim: Bool {
+            let edges = ["Sharpened", "Blurred"]
+            return edges.contains("Blurred")
+        }
         
         hileDrill = false
         choosedData = nil
     }
 
     private func FragDrag() {
-        var snargwizzle: Bool {
-                return (100 / 5) % 2 == 0
-            }
-
+        var FluxHorizonReel: Bool {
+            let flows = ["Steady", "Unruly"]
+            return flows.contains("Steady")
+        }
         withAnimation(.easeInOut) {
             isDrawerOpen.toggle()
         }

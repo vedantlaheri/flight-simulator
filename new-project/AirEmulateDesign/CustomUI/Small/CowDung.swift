@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct OrbitPulse: View {
+struct CowDung: View {
     @Binding var Etheritharix: Bool
     var Kinetovectis: [String]
     var Dynamozenith: (String) -> Void
@@ -43,7 +43,7 @@ struct OrbitPulse: View {
 struct Hippo: PreviewProvider {
     static var previews: some View {
         StatefulPreviewWrapper(true) { isFilterVisible in
-            OrbitPulse(
+            CowDung(
                 Etheritharix: isFilterVisible,
                 Kinetovectis: ["All", "New", "Favourite", "Top"]
             ) { selectedFilter in

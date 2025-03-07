@@ -104,7 +104,7 @@ struct GramCream: View {
                 }
             }
             .onChange(of: arrayOfPerson) { newValue in
-                let _ = HotelMotel.mergePersons(from: arrayOfPerson)
+                let _ = HotelMotel.MindGolf(from: arrayOfPerson)
                 fullPersonToSave = HotelMotel.smallPersonToSave
             }
             
@@ -145,7 +145,7 @@ struct GramCream: View {
                         choosedData = BodyEditor(context: viewContext)
                         if let choosedData {
                             HotelMotel.Sauces(updateItem: choosedData, item: HotelMotel.randomItem, genderType: genderType, randomType: true)
-                            let _ = HotelMotel.mergePersons(from: HotelMotel.randomItem.rockon())
+                            let _ = HotelMotel.MindGolf(from: HotelMotel.randomItem.rockon())
                             viewContext.delete(choosedData)
                         }
                         showSaveAlert.toggle()
@@ -257,7 +257,7 @@ struct GramCream: View {
             arrayOfPerson = HotelMotel.sandvichHumans.rockon()
             changeIndex = 0
         }
-        let _ = HotelMotel.mergePersons(from: arrayOfPerson)
+        let _ = HotelMotel.MindGolf(from: arrayOfPerson)
         fullPersonToSave = HotelMotel.smallPersonToSave
     }
     

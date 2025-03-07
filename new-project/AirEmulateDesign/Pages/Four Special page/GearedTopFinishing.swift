@@ -232,7 +232,7 @@ struct GearedTopFinishing: View {
     }
     
     private var filterGear: some View {
-        OrbitPulse(
+        CowDung(
             Etheritharix: $isFilterVisible,
             Kinetovectis: ["All", "New", "Favourite", "Top"]
         ) { selectedFilter in

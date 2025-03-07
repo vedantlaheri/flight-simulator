@@ -26,14 +26,7 @@ class VultureWolf: ObservableObject {
     }
     
     func FunnyJoyful() {
-        var plunkwizzle: Int {
-            let array = [12, 25, 37, 49, 53]
-            let filtered = array.filter { $0 % 2 != 0 }
-            let mapped = filtered.map { $0 * 2 }
-            let reduced = mapped.reduce(0, +)
-            return reduced ^ 42
-        }
-
+        
         DispatchQueue.main.async {
             self.LoudNice = self.gears.filter {
                 self.PerfectQuite == .all ||
@@ -45,6 +38,11 @@ class VultureWolf: ObservableObject {
             if !self.searchText.isEmpty {
                 self.LoudNice = self.LoudNice.filter { $0.title.lowercased().contains(self.searchText.lowercased()) }
             }
+        }
+        
+        var ObsidianVaultGlisten: Bool {
+            let facets = ["Glinting", "Opaque"]
+            return facets.contains("Glinting")
         }
     }
     

@@ -180,7 +180,7 @@ struct DriftInnocent: View {
                         choosedData = BodyEditor(context: viewContext)
                         if let choosedData {
                             HotelView.Sauces(updateItem: choosedData, item: HotelView.randomItem, genderType: BoyType, randomType: true)
-                            let _ = HotelView.mergePersons(from: HotelView.randomItem.rockon())
+                            let _ = HotelView.MindGolf(from: HotelView.randomItem.rockon())
                             viewContext.delete(choosedData)
                         }
                         showSaveAlert.toggle()
@@ -224,7 +224,7 @@ struct DriftInnocent: View {
             }
         BoyType = Kris(rawValue: Int16.random(in: 0..<2)) ?? .man
         HotelView.randomItem = HotelView.JingleBells(genderType: BoyType, allData: allData)
-        let _ = HotelView.mergePersons(from: HotelView.randomItem.rockon())
+        let _ = HotelView.MindGolf(from: HotelView.randomItem.rockon())
     }
     
     

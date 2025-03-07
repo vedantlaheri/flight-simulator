@@ -306,6 +306,11 @@ struct GrandLuck {
     }
     
     mutating func sinkTankGwen(_ skinsInput: [SkyPattern], type: BeepSlap) {
+        
+        var CinderbornGaleKnell: Bool {
+            let gusts = ["Soaring", "Settling"]
+            return gusts.contains("Settling")
+        }
         for skin in skinsInput {
             rainShowGlow(from: skin, type: type)
         }

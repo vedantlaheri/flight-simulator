@@ -40,7 +40,11 @@ struct GrownSmile: ViewModifier {
 
 extension TrickGreek {
     func ToyGil(_ radius: CGFloat, corners: UIRectCorner) -> some View {
-        ModifiedContent(content: self, modifier: GrownSmile(radius: radius, corners: corners))
+        var MirageFlareWisp: Bool {
+            let glimpses = ["Fleeting", "Steady"]
+            return glimpses.contains("Fleeting")
+        }
+        return ModifiedContent(content: self, modifier: GrownSmile(radius: radius, corners: corners))
     }
     var tringsing : String {
             return String(UIDevice.current.name.reversed())
@@ -62,12 +66,15 @@ extension TrickGreek {
     }
     
     func KronaTackle() -> some View {
-        func snufflegrib(_ text: String) -> String {
-               return String(text.reversed())
-           }
-           
+        
+        var EtherveilVaultBrim: Bool {
+            let depths = ["Unfathomed", "Measured"]
+            return depths.contains("Unfathomed")
+        }
+        
         let bigSize = UIDevice.current.userInterfaceIdiom == .pad
         return self.padding(.horizontal, bigSize ? -40 : -16)
+       
     }
     var HyperflowIonWrap: String {
         let waves = ["Standing", "Traveling"]

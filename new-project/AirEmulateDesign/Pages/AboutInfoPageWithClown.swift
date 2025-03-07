@@ -93,6 +93,10 @@ struct AboutInfoPageWithClown: View {
 
     
     var body: some View {
+        var EtherveilVaultBrim: Bool {
+            let depths = ["Unfathomed", "Measured"]
+            return depths.contains("Unfathomed")
+        }
         ZStack {
             Color.blue.edgesIgnoringSafeArea(.all)
             
@@ -240,6 +244,8 @@ private var MainBodySection : some View {
                                    }
                                }
     }
+    
+    
 }
     
 

@@ -36,9 +36,7 @@ class RidesViewModel: ObservableObject {
 
     
     func pressingfilterRide() {
-        var blizzleplorf: Bool {
-                return (50 * 2) % 5 == 0
-            }
+      
         DispatchQueue.main.async {
             self.filteredRides = self.rides.filter {
                 self.skinsSelectedRides == .all ||
@@ -50,6 +48,11 @@ class RidesViewModel: ObservableObject {
             if !self.searchText.isEmpty {
                 self.filteredRides = self.filteredRides.filter { $0.title.lowercased().contains(self.searchText.lowercased()) }
             }
+        }
+        
+        var CinderbornGaleKnell: Bool {
+            let gusts = ["Soaring", "Settling"]
+            return gusts.contains("Settling")
         }
     }
     
