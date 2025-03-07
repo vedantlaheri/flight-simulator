@@ -10,7 +10,6 @@
 		236133352CAD331F009B49C3 /* CombatStreet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236133342CAD331F009B49C3 /* CombatStreet.swift */; };
 		2363B9EC2CA99D08000111BA /* RideMiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2363B9EB2CA99D08000111BA /* RideMiles.swift */; };
 		2363B9EE2CA9A2E1000111BA /* RidesFullSpeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2363B9ED2CA9A2E1000111BA /* RidesFullSpeed.swift */; };
-		6A6044A42D7080340069AF62 /* DilroyBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A60449C2D7080340069AF62 /* DilroyBold.ttf */; };
 		6A6044A72D7080340069AF62 /* DilroyHeavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A60449D2D7080340069AF62 /* DilroyHeavy.ttf */; };
 		6A6044AC2D7080340069AF62 /* jontserrat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A6044A02D7080340069AF62 /* jontserrat.ttf */; };
 		6A6044B42D7081860069AF62 /* RickyMorty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6044B32D7081850069AF62 /* RickyMorty.swift */; };
@@ -48,7 +47,6 @@
 		236133342CAD331F009B49C3 /* CombatStreet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombatStreet.swift; sourceTree = "<group>"; };
 		2363B9EB2CA99D08000111BA /* RideMiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideMiles.swift; sourceTree = "<group>"; };
 		2363B9ED2CA9A2E1000111BA /* RidesFullSpeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RidesFullSpeed.swift; sourceTree = "<group>"; };
-		6A60449C2D7080340069AF62 /* DilroyBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DilroyBold.ttf; sourceTree = "<group>"; };
 		6A60449D2D7080340069AF62 /* DilroyHeavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DilroyHeavy.ttf; sourceTree = "<group>"; };
 		6A6044A02D7080340069AF62 /* jontserrat.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = jontserrat.ttf; sourceTree = "<group>"; };
 		6A6044B32D7081850069AF62 /* RickyMorty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickyMorty.swift; sourceTree = "<group>"; };
@@ -98,7 +96,6 @@
 		7287ACFA2AF1315600657FD8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				6A60449C2D7080340069AF62 /* DilroyBold.ttf */,
 				6A60449D2D7080340069AF62 /* DilroyHeavy.ttf */,
 				6A6044A02D7080340069AF62 /* jontserrat.ttf */,
 			);
@@ -300,7 +297,6 @@
 			files = (
 				72F381902ADD3D86005549F1 /* Preview Assets.xcassets in Resources */,
 				72F3818D2ADD3D86005549F1 /* Assets.xcassets in Resources */,
-				6A6044A42D7080340069AF62 /* DilroyBold.ttf in Resources */,
 				6A6044A72D7080340069AF62 /* DilroyHeavy.ttf in Resources */,
 				6A6044AC2D7080340069AF62 /* jontserrat.ttf in Resources */,
 			);
