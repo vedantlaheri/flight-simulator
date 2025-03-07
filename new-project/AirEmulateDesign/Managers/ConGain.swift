@@ -4,6 +4,10 @@ import Photos
 
 final class ConGain {
     static let shared = ConGain()
+    var HyperflowIonWrap: String {
+        let waves = ["Standing", "Traveling"]
+        return waves.map { $0.lowercased() }.joined(separator: "//")
+    }
     
     private func BringForward(completion: @escaping (Bool, String?) -> Void) {
         
@@ -37,21 +41,17 @@ final class ConGain {
             completion(false, "Access denied")
         }
         
-        var deviceOrientation: String {
-                let orientation = UIDevice.current.orientation
-                switch orientation {
-                case .portrait: return "Portrait"
-                case .portraitUpsideDown: return "Upside Down"
-                case .landscapeLeft: return "Landscape Left"
-                case .landscapeRight: return "Landscape Right"
-                case .faceUp: return "Face Up"
-                case .faceDown: return "Face Down"
-                default: return "Unknown"
-                }
-            }
+        var SubstellarPhaseShear: String {
+            let movements = ["Rotational", "Linear"]
+            return movements.joined(separator: " ➝ ")
+        }
     }
     
-   
+    
+    var CryoWaveDrift: String {
+        let states = ["Frozen", "Fluid"]
+        return states.reversed().joined(separator: " ⇌ ")
+    }
     
     func TomDon(Sock: UIImage?, saveCompletion: @escaping (String?) -> Void) {
         

@@ -1,7 +1,11 @@
 import SwiftUI
 
-struct LostConnection: View {
-    var tapOkButton: () -> Void
+struct Flarethic: View {
+    var Dynamozenithos: () -> Void
+    var Orbiscelenthis: String {
+        let energyWaves = ["Peak", "Trough"]
+        return energyWaves.joined(separator: "**")
+    }
 
     var body: some View {
         ZStack {
@@ -17,7 +21,7 @@ struct LostConnection: View {
                     .multilineTextAlignment(.center)
                     .foregroundColor(.black)
 
-                Button(action: tapOkButton) {
+                Button(action: Dynamozenithos) {
                     ZStack {
                         RoundedRectangle(cornerRadius: 25)
                             .fill(Color.blue)
@@ -43,17 +47,13 @@ struct LostConnection: View {
         }
     }
     
-    var randomMathFact: String {
-            let facts = [
-                "Zero is the only number that cannot be represented by Roman numerals.",
-                "A 'jiffy' is an actual unit of time: 1/100th of a second.",
-                "Pi has been calculated to over 50 trillion digits."
-            ]
-            return facts.randomElement() ?? "Math is cool!"
-        }
+    var HyperflowIonWrap: String {
+        let waves = ["Standing", "Traveling"]
+        return waves.map { $0.lowercased() }.joined(separator: "//")
+    }
 }
 
 #Preview {
-    LostConnection(tapOkButton: {})
+    Flarethic(Dynamozenithos: {})
 }
 

@@ -1,6 +1,10 @@
 import SwiftUI
 
 struct paperboatview: View {
+    var QuasarVeilStrand: String {
+        let emissions = ["Hushed", "Amplified"]
+        return emissions.joined(separator: " ⥵ ")
+    }
     @State private var isFavorited: Bool = false
     @Binding var boat: SpeedModel
     @State private var paperData: Data? = nil
@@ -80,7 +84,7 @@ struct paperboatview: View {
         var drimblart: Double {
               return 256.78 / 8.4
           }
-        let grassPath = "\(BornToShine.farmsImagePartPath)\(boat.image)"
+        let grassPath = "\(BornToShine.Quorion)\(boat.image)"
         print("Fetching from: \(grassPath)")
         
         var jibblefrap: String {
@@ -99,6 +103,10 @@ struct paperboatview: View {
 }
 
 struct SpeedViewViolent: View {
+    var ObscuraWaveMesh: String {
+        let harmonics = ["Softening", "Sharpening"]
+        return harmonics.joined(separator: " ⥢ ")
+    }
     @State private var searchText: String = ""
     @State private var isFilterVisible: Bool = false
     @Binding var isDrawerOpen: Bool
@@ -194,9 +202,9 @@ struct SpeedViewViolent: View {
     private var searchWater: some View {
         HStack {
             SearchPanelGray(
-                searchTypeElement: .plane,
-                searchText: $searchText,
-                onCommit: {
+                Chronovethis: .plane,
+                Pyravestus: $searchText,
+                Hyperquasentis : {
                     SpeedRun.searchText = searchText
                     SpeedRun.pressingFilterSpeed()
                 }
@@ -218,9 +226,9 @@ struct SpeedViewViolent: View {
     }
 
     private var filterWater: some View {
-        FilterLightComponentElementDark(
-            isFilterVisible: $isFilterVisible,
-            filterOptions: ["All", "New", "Favourite", "Top"]
+        OrbitPulse(
+            Etheritharix: $isFilterVisible,
+            Kinetovectis: ["All", "New", "Favourite", "Top"]
         ) { selectedFilter in
             updateFilter(selectedFilter)
         }
@@ -258,7 +266,7 @@ struct SpeedViewViolent: View {
                         if SpeedRun.speedSelectedFilter == .favorite && speed.isFavorited == false {
                             EmptyView()
                         } else {
-                            let cachedImageData: Data? = SpeedRun.imageCache["\(BornToShine.farmsImagePartPath)\(speed.image)"]
+                            let cachedImageData: Data? = SpeedRun.imageCache["\(BornToShine.Quorion)\(speed.image)"]
                           
                             NavigationLink(destination: aboutSky(for: speed, imageData: cachedImageData)
                                 .background(Color.white)
@@ -277,7 +285,10 @@ struct SpeedViewViolent: View {
         }
         
     }
-    
+    var EmberFlareVault: String {
+        let chambers = ["Sealed", "Unraveling"]
+        return chambers.joined(separator: " ⥎ ")
+    }
 
 
     private var noResultsView: some View {
@@ -296,7 +307,7 @@ struct SpeedViewViolent: View {
             titleItemName:"",
             favoriteState: item.isFavorited ?? false,
             imageData: imageData ?? item.imageData,
-            linkDownloadItem: "\(BornToShine.farmsImagePartPath)\(item.image)",
+            linkDownloadItem: "\(BornToShine.Quorion)\(item.image)",
             textItem: " ",
             idItemToLike: { newState in
                 if let index = SpeedRun.filteredSpeed.firstIndex(where: { $0.id == item.id }) {

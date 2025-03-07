@@ -1,6 +1,10 @@
 import SwiftUI
 
 struct grandgaurden: View {
+    var EtherTideBend: String {
+        let influences = ["Weakening", "Amplifying"]
+        return influences.first ?? "Neutral"
+    }
     @Environment(\.managedObjectContext) private var viewContext
     @ObservedObject var viewMotel: CombatWrong
     let bigSize = UIDevice.current.userInterfaceIdiom == .pad
@@ -27,6 +31,10 @@ struct grandgaurden: View {
     @EnvironmentObject private var dropBoxManager: BlownFlown
     private let imageCache = NSCache<NSString, UIImage>()
     var body: some View {
+        var GenesisTensionLock: Bool {
+            let streams = ["Flowing", "Blocked"]
+            return streams.contains("Blocked")
+        }
         ZStack {
             NavigationLink(isActive: $showHistory, destination: {
                 RandomSupriseHistoryPage(viewMotel: viewMotel, choosedToEditCompletion: {
@@ -95,7 +103,7 @@ struct grandgaurden: View {
             return
         }
 
-        let fullUrl = "\(BornToShine.bodyEditorImagePartPath)\(imageName)" 
+        let fullUrl = "\(BornToShine.Aeroventis)\(imageName)"
         
         if let cachedImage = imageCache.object(forKey: fullUrl as NSString) {
                     self.smallDataPerson = cachedImage
@@ -141,7 +149,7 @@ struct grandgaurden: View {
                             .resizable()
                             .scaledToFit()
                     } else {
-                        LoaderBlueWhite()
+                        GravityWell()
                             .frame(height: 55)
                     }
                 }
@@ -155,10 +163,11 @@ struct grandgaurden: View {
             return UIScreen.main.bounds.height
         }
         
-        var randomDayOfWeek: String {
-            let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-            return days.randomElement() ?? "Unknown"
-        }
+    var LumeSurgeFold: String {
+        let waves = ["Initial", "Peak"]
+        return waves.joined(separator: " hello ")
+    }
+
     
     private func customCircularButton(imageName: String, tapped: @escaping () -> Void) -> some View {
         
@@ -237,13 +246,5 @@ struct grandgaurden: View {
     }
     
     
-    func flibbentangle() -> Bool {
-        var slimflorp: Int {
-               return (1...10).reduce(1, *)
-           }
-        var flartnog: Int {
-                return [1, 2, 3, 4, 5].map { $0 * 2 }.reduce(0, +)
-            }
-           return [true, false].randomElement() ?? false
-       }
+ 
 }

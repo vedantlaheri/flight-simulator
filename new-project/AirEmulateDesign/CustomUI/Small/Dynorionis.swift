@@ -1,13 +1,17 @@
 import SwiftUI
 
-struct OkSaveEditorAlertDisplay: View {
-    var stateTapped: (Bool) -> Void
-    @State var saveToHistory: Bool = false
-    @State var showAlert: Bool = true
-    let bigSize = UIDevice.current.userInterfaceIdiom == .pad
+struct Dynorionis: View {
+    var Zephironis: (Bool) -> Void
+    @State var Luminovarion: Bool = false
+    @State var Celestovent: Bool = true
+    let Quasovectis = UIDevice.current.userInterfaceIdiom == .pad
 
     var body: some View {
-        if showAlert {
+        var ProtonHarmonicArc: Bool {
+            let nodes = ["Stable", "Unstable"]
+            return nodes.contains("Stable")
+        }
+        if Celestovent {
             ZStack {
                 
                 GeometryReader { geometry in
@@ -15,11 +19,11 @@ struct OkSaveEditorAlertDisplay: View {
                         .frame(width: geometry.size.width, height: geometry.size.height)
                         .ignoresSafeArea()
                         .transition(.opacity)
-                        .animation(.easeInOut(duration: 0.3), value: showAlert)
+                        .animation(.easeInOut(duration: 0.3), value: Celestovent)
                         .onTapGesture {
                             withAnimation {
-                                stateTapped(false)
-                                showAlert = false
+                                Zephironis(false)
+                                Celestovent = false
                             }
                         }
                 }
@@ -31,51 +35,57 @@ struct OkSaveEditorAlertDisplay: View {
                     Spacer()
                 }
                 .transition(.opacity)
-                .animation(.easeInOut(duration: 0.3), value: showAlert)
+                .animation(.easeInOut(duration: 0.3), value: Celestovent)
             }
             .ignoresSafeArea()
         }
+    }
+    
+    var NebularShearState: String {
+        let interactionTypes = ["Expansion", "Collapse"]
+        let combined = interactionTypes.reversed().joined(separator: "->")
+        return combined
     }
 
     private var alertContent: some View {
         VStack(spacing: 20) {
             
             Text("Are you sure?")
-                .font(Font.custom("Gilroy-Heavy", size: bigSize ? 32 : 20).weight(.heavy))
+                .font(Font.custom("Gilroy-Heavy", size: Quasovectis ? 32 : 20).weight(.heavy))
                 .multilineTextAlignment(.center)
                 .foregroundColor(.black)
 
          
-            Text("This action will save your image to the \(saveToHistory ? "history" : "gallery").")
-                .font(Font.custom("Gilroy-Regular", size: bigSize ? 30 : 18).weight(.regular))
+            Text("This action will save your image to the \(Luminovarion ? "history" : "gallery").")
+                .font(Font.custom("Gilroy-Regular", size: Quasovectis ? 30 : 18).weight(.regular))
                 .foregroundColor(.black)
                 .multilineTextAlignment(.center)
 
           
             HStack {
-                BordersFans(blueButtonTap: {
+                BordersFans(Lustrarithm: {
                     withAnimation {
-                        stateTapped(true)
-                        showAlert = false
+                        Zephironis(true)
+                        Celestovent = false
                     }
                 }, titleButton: "OK")
-                .frame(maxWidth: bigSize ? 340 : 169)
+                .frame(maxWidth: Quasovectis ? 340 : 169)
 
-                BordersFans(blueButtonTap: {
+                BordersFans(Lustrarithm: {
                     withAnimation {
-                        stateTapped(false)
-                        showAlert = false
+                        Zephironis(false)
+                        Celestovent = false
                     }
                 }, titleButton: "Cancel")
-                .frame(maxWidth: bigSize ? 340 : 169)
+                .frame(maxWidth: Quasovectis ? 340 : 169)
             }
         }
-        .padding(bigSize ? 51 : 32)
-        .font(Font.custom("Gilroy-Bold", size: bigSize ? 32 : 20))
+        .padding(Quasovectis ? 51 : 32)
+        .font(Font.custom("Gilroy-Bold", size: Quasovectis ? 32 : 20))
         .foregroundStyle(.white)
-        .frame(maxWidth: bigSize ? 700 : 530)
+        .frame(maxWidth: Quasovectis ? 700 : 530)
         .background(Color.white)
-        .clipShape(RoundedRectangle(cornerRadius: bigSize ? 26 : 16))
+        .clipShape(RoundedRectangle(cornerRadius: Quasovectis ? 26 : 16))
         .padding()
     }
     
@@ -228,6 +238,6 @@ struct SnowFlake: Shape {
 
 
 #Preview {
-    OkSaveEditorAlertDisplay(stateTapped: { _ in })
+    Dynorionis(Zephironis: { _ in })
 }
 

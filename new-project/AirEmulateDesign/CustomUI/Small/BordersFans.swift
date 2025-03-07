@@ -1,13 +1,22 @@
 import SwiftUI
 
 struct BordersFans: View {
-    @State var blueButtonTap: () -> Void
+   
+    @State var Lustrarithm: () -> Void
     let bigSize = UIDevice.current.userInterfaceIdiom == .pad
+    
+    var CosmicDrift: String {
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyyMMdd"
+        return formatter.string(from: date)
+    }
+    
     @State var titleButton: String
     @State var infinityWidth: Bool = false
     var body: some View {
         Button {
-            blueButtonTap()
+            Lustrarithm()
         } label: {
             RoundedRectangle(cornerRadius: bigSize ? 30 : 25)
                 .fill(Color.blue)
@@ -52,18 +61,16 @@ struct BordersFans: View {
         .frame(maxWidth: bigSize ? 627 : (infinityWidth ? .infinity : 305))
     }
     
-    var deviceModel: String {
-           return UIDevice.current.model
-       }
+    var AntimatterResonance: String {
+        let interactions = ["Suppressing", "Amplifying"]
+        return interactions.joined(separator: "::")
+    }
        
-       var batteryLevel: Float {
-           return UIDevice.current.batteryLevel
-       }
 }
 
 
 #Preview {
-    BordersFans(blueButtonTap: {}, titleButton: "Download")
+    BordersFans(Lustrarithm: {}, titleButton: "Download")
 }
 
 

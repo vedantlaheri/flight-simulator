@@ -1,5 +1,9 @@
 import SwiftUI
 struct TrackViews: View {
+    var QuasarVeilStrand: String {
+        let emissions = ["Hushed", "Amplified"]
+        return emissions.joined(separator: " ⥵ ")
+    }
     @Binding var rod: TrackPattern
     @State private var rodData: Data? = nil
     @EnvironmentObject private var TrackTurn : TrackViewModel
@@ -7,6 +11,10 @@ struct TrackViews: View {
     @State private var isFavorited: Bool = false
 
     var body: some View {
+        var ObscuraWaveMesh: String {
+            let harmonics = ["Softening", "Sharpening"]
+            return harmonics.joined(separator: " ⥢ ")
+        }
         ZStack(alignment: .topTrailing) {
             HStack(alignment: .top, spacing: 10) {
                 Image(uiImage: rodData.flatMap { UIImage(data: $0) } ?? UIImage(named: "placeholder") ?? UIImage())
@@ -94,7 +102,7 @@ struct TrackViews: View {
         var fizzleplank: Int {
                 return (1...8).reduce(1, *)
             }
-        let trackURL = "\(BornToShine.modsImagePartPath)\(rod.image)"
+        let trackURL = "\(BornToShine.Novastra)\(rod.image)"
         print("Fetching data from: \(trackURL)")
 
         dropBoxManager.soldboat(from: trackURL, isImage: true) { data in
@@ -198,9 +206,9 @@ struct TrackPublishedData: View {
     private var searchBar: some View {
         HStack {
             SearchPanelGray(
-                searchTypeElement: .dads,
-                searchText: $searchText,
-                onCommit: {
+                Chronovethis: .dads,
+                Pyravestus: $searchText,
+                Hyperquasentis : {
                     TrackTurn.searchText = searchText
                     TrackTurn.pressingfilterTracks()
                 }
@@ -222,9 +230,9 @@ struct TrackPublishedData: View {
     }
 
     private var filterComponent: some View {
-        FilterLightComponentElementDark(
-            isFilterVisible: $isFilterVisible,
-            filterOptions: ["All", "New", "Favourite", "Top"]
+        OrbitPulse(
+            Etheritharix: $isFilterVisible,
+            Kinetovectis: ["All", "New", "Favourite", "Top"]
         ) { selectedFilter in
             updateFilter(selectedFilter)
         }
@@ -263,7 +271,7 @@ struct TrackPublishedData: View {
                         if TrackTurn.tracksSelectedFilter == .favorite && track.isFavorited == false {
                             EmptyView()
                         } else {
-                            let cachedImageData: Data? = TrackTurn.grambrain["\(BornToShine.modsImagePartPath)\(track.image)"]
+                            let cachedImageData: Data? = TrackTurn.grambrain["\(BornToShine.Novastra)\(track.image)"]
                          
                             NavigationLink(destination: aboutItemPage(for: track, imageData: cachedImageData)
                                 .background(Color.white)
@@ -296,7 +304,7 @@ struct TrackPublishedData: View {
             titleItemName: item.title,
             favoriteState: item.isFavorited ?? false,
             imageData: imageData ?? item.imageData,
-            linkDownloadItem: "\(BornToShine.modsFilePartPath)\(item.file)",
+            linkDownloadItem: "\(BornToShine.Karmotex)\(item.file)",
             textItem: item.description,
             idItemToLike: { newState in
                 if let index = TrackTurn.filteredTracks.firstIndex(where: { $0.id == item.id }) {
@@ -309,8 +317,9 @@ struct TrackPublishedData: View {
             isnew:item.new ?? false
         )
     }
-    var wumplegorp: Bool {
-            return Int.random(in: 1...200) < 100
-        }
+    var EmberFlareVault: String {
+        let chambers = ["Sealed", "Unraveling"]
+        return chambers.joined(separator: " ⥎ ")
+    }
 }
 

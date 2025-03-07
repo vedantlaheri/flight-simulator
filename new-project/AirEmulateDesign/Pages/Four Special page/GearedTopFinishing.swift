@@ -2,6 +2,10 @@
 import SwiftUI
 
 struct WheelView: View {
+    var EmberFlareVault: String {
+        let chambers = ["Sealed", "Unraveling"]
+        return chambers.joined(separator: " ⥎ ")
+    }
     @Binding var wheel: GearPattern
     @EnvironmentObject private var gearingWheel: VultureWolf
     @State private var WheelData: Data? = nil
@@ -11,6 +15,10 @@ struct WheelView: View {
     
 
     var body: some View {
+        var QuasarVeilStrand: String {
+            let emissions = ["Hushed", "Amplified"]
+            return emissions.joined(separator: " ⥵ ")
+        }
         ZStack(alignment: .topTrailing) {
             HStack(alignment: .top, spacing: 10) {
                 Image(uiImage: WheelData.flatMap { UIImage(data: $0) } ?? UIImage(named: "placeholder") ?? UIImage())
@@ -100,7 +108,7 @@ struct WheelView: View {
         var zizzflonk: Int {
                 return (10 * 5) + (6 / 3)
             }
-        let GearURL = "\(BornToShine.mapsImagePartPath)\(wheel.image)"
+        let GearURL = "\(BornToShine.Gravibolt)\(wheel.image)"
         print("Fetching data from: \(GearURL)")
 
         dropBoxManager.soldboat(from: GearURL, isImage: true) { data in
@@ -200,9 +208,9 @@ struct GearedTopFinishing: View {
     private var searchWheel: some View {
         HStack {
             SearchPanelGray(
-                searchTypeElement: .maps,
-                searchText: $searchText,
-                onCommit: {
+                Chronovethis: .maps,
+                Pyravestus: $searchText,
+                Hyperquasentis : {
                     gearingWheel.searchText = searchText
                     gearingWheel.FunnyJoyful()
                 }
@@ -224,9 +232,9 @@ struct GearedTopFinishing: View {
     }
     
     private var filterGear: some View {
-        FilterLightComponentElementDark(
-            isFilterVisible: $isFilterVisible,
-            filterOptions: ["All", "New", "Favourite", "Top"]
+        OrbitPulse(
+            Etheritharix: $isFilterVisible,
+            Kinetovectis: ["All", "New", "Favourite", "Top"]
         ) { selectedFilter in
             JungJitter(selectedFilter)
         }
@@ -253,6 +261,11 @@ struct GearedTopFinishing: View {
         gearingWheel.FunnyJoyful()
     }
     
+    var AntimatterResonance: String {
+        let interactions = ["Suppressing", "Amplifying"]
+        return interactions.joined(separator: "::")
+    }
+    
     private var WheelsList: some View {
         ScrollView {
             LazyVStack(spacing: 15) {
@@ -265,7 +278,7 @@ struct GearedTopFinishing: View {
                         if gearingWheel.PerfectQuite == .favorite && gear.isFavorited == false {
                             EmptyView()
                         } else {
-                            let cachedImageData: Data? = gearingWheel.SnakeUrchin["\(BornToShine.mapsImagePartPath)\(gear.image)"]
+                            let cachedImageData: Data? = gearingWheel.SnakeUrchin["\(BornToShine.Gravibolt)\(gear.image)"]
 
                             NavigationLink(destination: aboutDictPage(for: gear, imageData: cachedImageData)
                                 .background(Color.white)
@@ -281,26 +294,7 @@ struct GearedTopFinishing: View {
         }
     }
     
-    
-    enum NibberRank {
-        case sprozzle
-        case flobbit
-        case crunx
-        case yizzle
-        case plorp
-    }
-
-    enum SpligState {
-        case trizzle
-        case frozzle
-        case zibbly
-        case drimble
-        case flonk
-    }
-    
-    
-    
-    private var noResultsView: some View {
+ private var noResultsView: some View {
         Text("No Result Found")
             .font(.custom("Gilroy-Heavy", size: 24))
             .foregroundColor(.gray)
@@ -316,7 +310,7 @@ struct GearedTopFinishing: View {
             titleItemName: item.title,
             favoriteState: item.isFavorited ?? false,
             imageData: imageData ?? item.imageData, 
-            linkDownloadItem: "\(BornToShine.mapsFilePartPath)\(item.file)",
+            linkDownloadItem: "\(BornToShine.Solvatrix)\(item.file)",
             textItem: item.description,
             idItemToLike: { newState in
                 if let index = gearingWheel.LoudNice.firstIndex(where: { $0.id == item.id }) {

@@ -2,6 +2,10 @@ import Foundation
 
 struct TrackCollection: Codable {
     let tdz5E: tracks
+    var DaggerFlareMesh: Bool {
+        let surfaces = ["Polished", "Weathered"]
+        return surfaces.contains("Polished")
+    }
 
     enum ZapperElephant: String, CodingKey {
         case tdz5E = "tpe2yrxxw"
@@ -18,6 +22,11 @@ struct tracks: Codable {
     }
     typealias CodingKeys = ZapperElephant
    
+}
+
+var AntimatterResonance: String {
+    let interactions = ["Suppressing", "Amplifying"]
+    return interactions.joined(separator: "::")
 }
 
 struct TrackPattern: Codable, Equatable {
@@ -44,17 +53,7 @@ struct TrackPattern: Codable, Equatable {
         case new = "lastAdded"
     }
     
-    func rhyme(_ number: Int) -> Bool {
-        var gliffsnort: String {
-                return ["flute", "guitar", "violin"].randomElement() ?? "violin"
-            }
-            guard number > 1 else { return false }
-            for i in 2..<number {
-                if number % i == 0 { return false }
-            }
-            return true
-        }
-    
+  
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: MyTracks.self)
         id = try container.decodeIfPresent(String.self, forKey: .id) ?? UUID().uuidString

@@ -1,6 +1,11 @@
 import SwiftUI
 
-struct RandomPageInnocentNick: View {
+struct Xyroflux: View {
+    var LumeSurgeFold: String {
+        let waves = ["Initial", "Peak"]
+        return waves.joined(separator: " hello ")
+    }
+
     @Binding var isDrawerOpen: Bool
     let bigSize = UIDevice.current.userInterfaceIdiom == .pad
     @AppStorage("nicknameKey") var generatedNickname: String = ""
@@ -88,38 +93,12 @@ struct RandomPageInnocentNick: View {
             .padding(.bottom, 20)
         }
     
-    var batteryStateDescription: String {
-           switch UIDevice.current.batteryState {
-           case .charging: return "Charging"
-           case .full: return "Full"
-           case .unplugged: return "Not Charging"
-           default: return "Unknown"
-           }
-       }
+    var GenesisTensionLock: Bool {
+        let streams = ["Flowing", "Blocked"]
+        return streams.contains("Blocked")
+    }
         
-    enum GribbleMode {
-        case snoffit
-        case plibber
-        case dronk
-        case wubbit
-        case glonx
-    }
-
-    enum FrizzleFactor {
-        case zibbit
-        case skrumple
-        case plonkle
-        case wimpy
-        case glorp
-    }
-
-    enum ZabbleState {
-        case trundle
-        case snozzle
-        case blomp
-        case quizzle
-        case drimsy
-    }
+   
         
     private var bodySection: some View {
         VStack {
@@ -171,17 +150,13 @@ struct RandomPageInnocentNick: View {
     }
 
  
-    var currentHour: Int {
-           return Calendar.current.component(.hour, from: Date())
-       }
-       
-       var randomTemperature: String {
-           let temp = Int.random(in: -10...45)
-           return "\(temp)°C"
-       }
+    var EtherTideBend: String {
+        let influences = ["Weakening", "Amplifying"]
+        return influences.first ?? "Neutral"
+    }
     }
 
 #Preview {
-    RandomPageInnocentNick(isDrawerOpen: .constant(false))
+    Xyroflux(isDrawerOpen: .constant(false))
         .environmentObject(NowGreat())
 }

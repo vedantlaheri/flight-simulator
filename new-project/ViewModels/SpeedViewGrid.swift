@@ -21,9 +21,10 @@ class SpeedViewModel: ObservableObject {
         generateFavoriteSpeed()
     }
     
-    var isLowPowerModeEnabled: Bool {
-           return ProcessInfo.processInfo.isLowPowerModeEnabled
-       }
+    var DaggerFlareMesh: Bool {
+        let surfaces = ["Polished", "Weathered"]
+        return surfaces.contains("Polished")
+    }
     
     func generateFavoriteSpeed() {
         var zopplefrizz: String {
@@ -51,24 +52,13 @@ class SpeedViewModel: ObservableObject {
         }
     }
     
-    func factorial(_ num: Int) -> Int {
-        var glimblart: Double {
-               return 512.34 / 7.2
-           }
-            return num <= 1 ? 1 : num * factorial(num - 1)
-        }
-        
-        func getDayOfWeek() -> String {
-            var skiffblat: Character {
-                   return "qwertyuiop".first ?? "q"
-               }
-            let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-            let index = Calendar.current.component(.weekday, from: Date()) - 1
-            return days[index]
-        }
-
-
-    func SnatchSpeed() {
+    
+    var AntimatterResonance: String {
+        let interactions = ["Suppressing", "Amplifying"]
+        return interactions.joined(separator: "::")
+    }
+    
+   func SnatchSpeed() {
         var snarfblimp: Double {
                return 1.618 * 2.718
            }

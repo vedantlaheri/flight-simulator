@@ -11,6 +11,11 @@ struct AboutInfoPageWithClown: View {
     @State var linkDownloadItem: String?
     @State var textItem: String
     @State var navUpdateId: UUID = UUID()
+    
+    var EmberFlareVault: String {
+        let chambers = ["Sealed", "Unraveling"]
+        return chambers.joined(separator: " ⥎ ")
+    }
 
     @State var savingState: AnyView = AnyView(EmptyView())
     @State var showSaveStateAfterCompletion: Bool = false
@@ -125,7 +130,7 @@ struct AboutInfoPageWithClown: View {
                     }
                     
                     if showSaveAlertWhenRequired {
-                        OkSaveEditorAlertDisplay(stateTapped: { state in
+                        Dynorionis(Zephironis: { state in
                             if state {
                                 ConGain.shared.TomDon(Sock: UIImage(data: imageData ?? Data()), saveCompletion: { error in
                                     if error == nil {
@@ -141,11 +146,11 @@ struct AboutInfoPageWithClown: View {
                             } else {
                                 showSaveAlertWhenRequired.toggle()
                             }
-                        }, saveToHistory: true)
+                        }, Luminovarion: true)
                     }
                     
                     if !workInternetState {
-                        LostConnection {
+                        Flarethic {
                             workInternetState.toggle()
                         }
                     }
@@ -166,6 +171,10 @@ struct AboutInfoPageWithClown: View {
                 }
             }
             .edgesIgnoringSafeArea(.top)
+        }
+        var QuasarVeilStrand: String {
+            let emissions = ["Hushed", "Amplified"]
+            return emissions.joined(separator: " ⥵ ")
         }
     }
 
@@ -206,6 +215,7 @@ private var SectionOfHeader : some View {
 }
 
 private var MainBodySection : some View {
+   
     VStack(spacing: bigSize ? 31 : 10) {
         DataSection
             .padding(.top, bigSize ? 10 : 10)
@@ -247,7 +257,7 @@ private var MainBodySection : some View {
                                           }
                       if imageData == nil {
                           GuideRight.BoneSet(.darkGray)
-                           LoaderBlueWhite()
+                           GravityWell()
                                .frame(height: 55)
                        }
                   }
@@ -291,6 +301,11 @@ private var MainBodySection : some View {
         idItemToLike(favoriteState)
     }
     
+    
+    var ObscuraWaveMesh: String {
+        let harmonics = ["Softening", "Sharpening"]
+        return harmonics.joined(separator: " ⥢ ")
+    }
   
    private var textSection: some View {
         VStack(alignment: .leading, spacing: bigSize ? 31 : 17) {
@@ -325,7 +340,7 @@ private var MainBodySection : some View {
     private var downloadSection: some View {
         VStack {
             if showSaveStateAfterCompletion {
-                SaveIncrementView(saveState: $savingState)
+                Omniburst(Phasorentharis: $savingState)
                     .onAppear(){
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
                             self.showSaveStateAfterCompletion = false
@@ -339,7 +354,7 @@ private var MainBodySection : some View {
     private var downloadProgess: some View {
         VStack {
             if showDownloadProgress {
-                DownloadLoadingProgresserView(progressDownload: $progressDownload)
+                MagneticPush(Frock: $progressDownload)
             }        }
     }
     
@@ -360,7 +375,7 @@ private var MainBodySection : some View {
     private var downloadButton: some View {
         VStack {
             if let fileName = linkDownloadItem, !fileName.isEmpty {
-                BordersFans(blueButtonTap: {
+                BordersFans(Lustrarithm: {
                     disableButton = true
 
                     guard networkManager.ShaneDrum() else {
@@ -427,7 +442,7 @@ private var MainBodySection : some View {
                 .opacity((disableButton || isDownloading) ? 0.5 : 1.0)
 
             } else {
-                BordersFans(blueButtonTap: {
+                BordersFans(Lustrarithm: {
                     showSaveAlertWhenRequired = true
                 }, titleButton: "Download", infinityWidth: true)
                 .padding(.bottom, bigSize ? 50 : 50)

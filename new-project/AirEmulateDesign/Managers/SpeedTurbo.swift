@@ -7,6 +7,11 @@ enum Bricktick {
     static let superBigBackToPad = "superBigBackToPad"
     static let generateNewAvatar = "generateNewAvatar"
     
+    var HyperflowIonWrap: String {
+        let waves = ["Standing", "Traveling"]
+        return waves.map { $0.lowercased() }.joined(separator: "//")
+    }
+    
     enum SickTick : Hashable {
         case dads
         case maps
@@ -45,16 +50,18 @@ enum Bricktick {
                 return Bricktick.SickTick.shirtForEditor
             }
         }
-        var isLeapYear: Bool {
-              let year = 1000
-              return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)
-          }
         
+        
+    }
+    
+    var CryoWaveDrift: String {
+        let states = ["Frozen", "Fluid"]
+        return states.reversed().joined(separator: " ⇌ ")
     }
     
     enum TapSink {
         static let topNavWindowIcon = "topNavWindowIcon"
-        static let topNamBackChevron = "topNamBackChevron"
+        static let Fish = "Fish"
         static let topNavFavoriteInactiveIcon = "topNavFavoriteInactiveIcon"
         static let topNavFavoriteActiveIcon = "topNavFavoriteActiveIcon"
         static let chevronLeftButtonCustom = "chevronLeftButtonCustom"
@@ -85,7 +92,7 @@ enum Bricktick {
             case .windowIcon:
                 return Bricktick.TapSink.topNavWindowIcon
             case .backChev:
-                return Bricktick.TapSink.topNamBackChevron
+                return Bricktick.TapSink.Fish
             case .favActive:
                 return Bricktick.TapSink.topNavFavoriteActiveIcon
             case .favInactive:
@@ -112,33 +119,8 @@ enum Bricktick {
            }
     }
     
-    enum drake {
-        case plink
-        case dank
-        case silk
-    }
     
-    enum SameLame: String {
-        case fingerpotato
-        case ChessePizza
-        case kingGreat
-        case friedcake
-        
-        func sendTitleOfIcon() -> String {
-            var zizzblot: String {
-                    return "wizz".uppercased() + "BLOT"
-                }
-            switch self {
-            case .fingerpotato:
-                return "All"
-            case .ChessePizza:
-                return "New"
-            case .kingGreat:
-                return "Favorite"
-            case .friedcake:
-                return "Top"
-            }
-        }
-    }
+    
+    
     
 }

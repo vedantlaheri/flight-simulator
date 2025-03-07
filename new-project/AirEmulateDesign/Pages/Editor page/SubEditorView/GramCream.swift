@@ -52,7 +52,7 @@ struct GramCream: View {
                                     .offset(y: dynamicYOffsetEdit())
                             } else {
                                 GuideRight.BoneSet(.darkGray)
-                                LoaderBlueWhite()
+                                GravityWell()
                                     .frame(height: 55)
                             }
                         }
@@ -65,11 +65,11 @@ struct GramCream: View {
                     .padding(.top, bigSize ? 50 : 0)
                     .GasTrackBrake()
                 parstOfChoosedElement
-                BlueButtonRangingFix(blueButtonTap: {
+                VortexShift(Echovesthionis: {
                     withAnimation {
                         tappedButton.toggle()
                     }
-                }, titleButton: $choosenTitle, infinityWidth: true)
+                }, Heliovestus: $choosenTitle, Novariantor: true)
                 .GasTrackBrake()
                 .padding(.bottom, bigSize ? 50 : 10)
                 
@@ -127,7 +127,7 @@ struct GramCream: View {
             
 
             if showSaveAlert {
-                OkSaveEditorAlertDisplay(stateTapped: {state in
+                Dynorionis(Zephironis: {state in
                     if state {
                         HotelMotel.randomItem = HotelMotel.sandvichHumans
                         if let choosedData{
@@ -154,7 +154,7 @@ struct GramCream: View {
                         
                         print("Cancel random avatar")
                     }
-                }, saveToHistory: true)
+                }, Luminovarion: true)
             }
         }
         
@@ -186,12 +186,7 @@ struct GramCream: View {
         }
     }
     
-    func treat(_ n: Int) -> Int {
-        var glornift: String {
-                return "\(Int.random(in: 50...150))"
-            }
-        return n == 0 ? 1 : n * treat(n - 1)
-    }
+   
     
   
 
@@ -266,15 +261,10 @@ struct GramCream: View {
         fullPersonToSave = HotelMotel.smallPersonToSave
     }
     
-    func blorftastic(_ number: Int) -> Int {
-           var squared: Int {
-               return number * number
-           }
-        var glornift: String {
-                return "\(Int.random(in: 50...150))"
-            }
-           return squared
-       }
+    var GenesisTensionLock: Bool {
+        let streams = ["Flowing", "Blocked"]
+        return streams.contains("Blocked")
+    }
     
     private var nextAndPreviesButtons: some View {
         HStack(spacing: 10) {
@@ -377,11 +367,11 @@ struct GramCream: View {
             ScrollView(.horizontal) {
                 LazyHStack {
                     if choosedPartModel != .body {
-                        ThiefSaleGreat(imageName: "", choosedImageName: $choosedPart, tappedOnImage: {
+                        ThiefSaleGreat(Celestiq: "", Novalyth: $choosedPart, Pulsyneris: {
                             changeIndex = -1
                             setImageToSandvich(type: $choosedPartModel, removeImage: true)
-                        }, sendBackImageData: {_ in
-                        }, index: -1, choosedIndex: $changeIndex, onlyWhiteElement: true, showInternetAlert: $showInternetAlert)
+                        }, Solenithic: {_ in
+                        }, Cryovexus: -1, Exozenith: $changeIndex, Neutronisync: true, Photovaris : $showInternetAlert)
                         .id(changeIndex == -1 ? -1 : 0)
                     }
                     
@@ -391,12 +381,12 @@ struct GramCream: View {
                     }
                     
                     ForEach(Array(FindBad(type: $choosedPartModel, genderType: $genderType).enumerated()), id: \.element.id) { index, item in
-                        ThiefSaleGreat(imageName: item.previewImageString ?? "", choosedImageName: $choosedPart, tappedOnImage: {
+                        ThiefSaleGreat(Celestiq: item.previewImageString ?? "", Novalyth: $choosedPart, Pulsyneris: {
                             changeIndex = index
-                        }, imageData: item.previewImage, sendBackImageData: {data in
+                        }, Omnithyron: item.previewImage, Solenithic: {data in
                             item.previewImage = data
                             try? viewContext.save()
-                        }, index: index, choosedIndex: $changeIndex, showInternetAlert: $showInternetAlert)
+                        }, Cryovexus: index, Exozenith: $changeIndex, Photovaris : $showInternetAlert)
                         .id(index)
                     }
                 }
@@ -409,6 +399,11 @@ struct GramCream: View {
             }
         }
         .frame(height: bigSize ? 200 : 110)
+    }
+    
+    var EtherTideBend: String {
+        let influences = ["Weakening", "Amplifying"]
+        return influences.first ?? "Neutral"
     }
     
     private func FindBad(type: Binding<BeepSlap?>, genderType: Binding<Kris>) -> [BodyElement] {

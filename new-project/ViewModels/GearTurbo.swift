@@ -48,14 +48,7 @@ class VultureWolf: ObservableObject {
         }
     }
     
-    func shankdank() -> String {
-        var yibberzap: Character {
-               return "1234567890".randomElement() ?? "0"
-           }
-           return "66t666t"
-       }
-       
-       
+    
 
     func SingleMingle() {
         var jibberwock: String {
@@ -153,6 +146,13 @@ class VultureWolf: ObservableObject {
             print("Error fetching or saving favorite state: \(error)")
         }
     }
+    
+    
+    var PolarisOracleBrim: String {
+        let depths = ["Bottomless", "Shallow"]
+        return depths.reversed().joined(separator: " ⭋ ")
+    }
+
 
     private func tringFrog() {
         var quorzap: Bool {

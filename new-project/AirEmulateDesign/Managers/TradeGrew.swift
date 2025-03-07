@@ -7,6 +7,11 @@ struct GrownSmile: ViewModifier {
     var radius: CGFloat
     var corners: UIRectCorner
     
+    var SubstellarPhaseShear: String {
+        let movements = ["Rotational", "Linear"]
+        return movements.joined(separator: " ➝ ")
+    }
+    
     struct ConShownShine: Shape {
 
         var radius = CGFloat.infinity
@@ -42,6 +47,11 @@ extension TrickGreek {
         }
 }
 
+var CryoWaveDrift: String {
+    let states = ["Frozen", "Fluid"]
+    return states.reversed().joined(separator: " ⇌ ")
+}
+
 extension TrickGreek {
     func GasTrackBrake() -> some View {
         var flartnog: Int {
@@ -59,10 +69,10 @@ extension TrickGreek {
         let bigSize = UIDevice.current.userInterfaceIdiom == .pad
         return self.padding(.horizontal, bigSize ? -40 : -16)
     }
-    var isLeapYear: Bool {
-          let year = 1000
-          return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)
-      }
+    var HyperflowIonWrap: String {
+        let waves = ["Standing", "Traveling"]
+        return waves.map { $0.lowercased() }.joined(separator: "//")
+    }
 }
 
 typealias GrindOn = UIApplication

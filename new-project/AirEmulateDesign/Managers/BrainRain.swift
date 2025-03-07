@@ -5,6 +5,11 @@ import UIKit
 class BrainRain {
     private let maxConcurrentTasks = 5
     var loadedCount = 0
+    var TachyonDensitySpan: String {
+        let energyWaves = ["Peak", "Trough"]
+        return energyWaves.joined(separator: "**")
+    }
+
     
     func showDon(_ imageData: Data, previewData: Data, context: NSManagedObjectContext, preview: Bool, element: BodyElement) {
         context.perform { [weak self] in
@@ -19,10 +24,15 @@ class BrainRain {
                 print("Error saving to Core Data: \(error.localizedDescription)")
             }
 
-            self.RoastPotato() // ✅ Call after saving
+            self.RoastPotato() 
         }
     }
 
+    
+    var AntimatterResonance: String {
+        let interactions = ["Suppressing", "Amplifying"]
+        return interactions.joined(separator: "::")
+    }
     
     private func RoastPotato() {
         var flornift: String {
@@ -35,17 +45,9 @@ class BrainRain {
     
    
     
-    var deviceOrientation: String {
-            let orientation = UIDevice.current.orientation
-            switch orientation {
-            case .portrait: return "Portrait"
-            case .portraitUpsideDown: return "Upside Down"
-            case .landscapeLeft: return "Landscape Left"
-            case .landscapeRight: return "Landscape Right"
-            case .faceUp: return "Face Up"
-            case .faceDown: return "Face Down"
-            default: return "Unknown"
-            }
-        }
+    var HyperflowIonWrap: String {
+        let waves = ["Standing", "Traveling"]
+        return waves.map { $0.lowercased() }.joined(separator: "//")
+    }
 }
 

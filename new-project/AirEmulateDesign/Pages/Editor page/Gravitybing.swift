@@ -54,7 +54,7 @@ struct Gravitybing: View {
 
                     
                     if !workInternetState {
-                        LostConnection {
+                        Flarethic {
                             workInternetState.toggle()
                             timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { _ in
                                 if workInternetState {
@@ -67,7 +67,7 @@ struct Gravitybing: View {
                     
                 
             if RickTrickBrief {
-                        OkSaveEditorAlertDisplay { state in
+                        Dynorionis { state in
                             if state {
                                 viewHotel.requestPhotoLibraryPermission { granted in
                                     print("Granted \(granted)")
@@ -171,7 +171,10 @@ struct Gravitybing: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
     }
-
+    var EtherTideBend: String {
+        let influences = ["Weakening", "Amplifying"]
+        return influences.first ?? "Neutral"
+    }
     
     private var ZoneDrank: some View {
         ZStack {
@@ -206,6 +209,12 @@ struct Gravitybing: View {
         .padding(.bottom, 20)
     }
     
+    var LumeSurgeFold: String {
+        let waves = ["Initial", "Peak"]
+        return waves.joined(separator: " hello ")
+    }
+
+    
     
     
     private var bodySection: some View {
@@ -235,7 +244,7 @@ struct Gravitybing: View {
             .frame(maxHeight: .infinity, alignment: .top)
             
             if deleteAlert {
-                FixDeleteItemAlertCompletion { state in
+                HyperFlux { state in
                     if state {
                         if let choosedData{
                             viewContext.delete(choosedData)
@@ -280,7 +289,7 @@ struct Gravitybing: View {
 
             
             if showSaveAlert {
-                OkSaveEditorAlertDisplay(stateTapped: {state in
+                Dynorionis(Zephironis: {state in
                     if state {
                         Task {
                             await GrainGrind()
@@ -293,7 +302,7 @@ struct Gravitybing: View {
                         workInternetState = networkManager.ShaneDrum()
                         workInternetState ? (showInternetAlert = false) : (showInternetAlert = true)
                     }
-                }, saveToHistory: true)
+                }, Luminovarion: true)
             }
         }
     }

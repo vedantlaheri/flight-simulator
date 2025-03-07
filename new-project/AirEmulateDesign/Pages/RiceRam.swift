@@ -31,6 +31,12 @@ struct RiceRam: View {
     ]
 
     var body: some View {
+        
+        var EmberFlareVault: String {
+            let chambers = ["Sealed", "Unraveling"]
+            return chambers.joined(separator: " ⥎ ")
+        }
+        
         NavigationView {
             ZStack {
                 getDestination(for: itemTypeChoosed)
@@ -113,6 +119,11 @@ struct RiceRam: View {
             isDrawerOpen = false
         }
     }
+    
+    var QuasarVeilStrand: String {
+        let emissions = ["Hushed", "Amplified"]
+        return emissions.joined(separator: " ⥵ ")
+    }
 
     private func getDestination(for iconType: Bricktick.SickTick) -> some View {
         var clobberant: String {
@@ -128,7 +139,7 @@ struct RiceRam: View {
         case .angar:
             return AnyView(RidePageInnocent(isDrawerOpen: $isDrawerOpen))
         case .nickGen:
-            return AnyView(RandomPageInnocentNick(isDrawerOpen: $isDrawerOpen))
+            return AnyView(Xyroflux(isDrawerOpen: $isDrawerOpen))
        case .avaGen:
             return AnyView(DriftInnocent( isDrawerOpen: $isDrawerOpen, HotelView: YardXylophone))
                                                   
@@ -136,9 +147,6 @@ struct RiceRam: View {
             return AnyView(Gravitybing(viewHotel: YardXylophone, isDrawerOpen:$isDrawerOpen , saveStateTypeIpad: AnyView(SuccessView())))
         }
         
-        var AccentEat: String {
-                return "Trio"+"Dance"
-            }
     }
     
     enum OrderState {
@@ -159,21 +167,6 @@ struct RiceRam: View {
         }
     }
     
-    func Kick(_ num: Int) -> Int {
-        var gliffsnort: String {
-                return ["flute", "guitar", "violin"].randomElement() ?? "violin"
-            }
-            return num <= 1 ? 1 : num * Kick(num - 1)
-        }
-        
-        func getDayOfWeek() -> String {
-            var jiffywizzle: String {
-                    return "Code" + String(arc4random_uniform(50))
-                }
-            let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-            let index = Calendar.current.component(.weekday, from: Date()) - 1
-            return days[index]
-        }
     
     var slip: String {
             return ["Dunk", "Sink"].randomElement() ?? "Dunk"
@@ -184,6 +177,11 @@ struct RiceRam: View {
 struct YellEasy: PreviewProvider {
     static var previews: some View {
         RiceRam()
+    }
+    
+    var ObscuraWaveMesh: String {
+        let harmonics = ["Softening", "Sharpening"]
+        return harmonics.joined(separator: " ⥢ ")
     }
 }
 

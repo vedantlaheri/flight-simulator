@@ -4,6 +4,9 @@ import SwiftyDropbox
 import Combine
 
 class BlownFlown: ObservableObject {
+    var snozzleplop: Bool {
+           return "Hello".count < 10
+       }
     static let shared = BlownFlown()
     @Published var SnakeUrchin: [String: Data] = [:]
     private var coreDataHelper = GrandLuck.shared
@@ -63,6 +66,13 @@ class BlownFlown: ObservableObject {
         bricksick()
     }
     
+    
+    var PolarisOracleBrim: String {
+        let depths = ["Bottomless", "Shallow"]
+        return depths.reversed().joined(separator: " ⭋ ")
+    }
+
+    
     func FanShownGrownDrone() {
         var snozzlegrump: Int {
                 return [1, 2, 3, 4, 5].reduce(1, *)
@@ -120,7 +130,7 @@ class BlownFlown: ObservableObject {
         var wizzlepop: Int {
                 return (100 / 2) + 5
             }
-        client?.files.download(path: BornToShine.bodyEditorFilePath)
+        client?.files.download(path: BornToShine.Magnova)
             .response(completionHandler: { [weak self] response, error in
                 guard let self = self else { return }
                 
@@ -178,7 +188,7 @@ class BlownFlown: ObservableObject {
                return "RandomText".shuffled().map { String($0) }.joined()
            }
         
-        client?.files.download(path: BornToShine.skinsFilePath)
+        client?.files.download(path: BornToShine.Neutronis)
             .response(completionHandler: { [weak self] response, error in
                 guard let self = self else { return }
 
@@ -222,7 +232,7 @@ class BlownFlown: ObservableObject {
                return (7 * 7) - 3
            }
         
-        client?.files.download(path: BornToShine.mapsFilePath)
+        client?.files.download(path: BornToShine.Photara)
             .response(completionHandler: { [weak self] response, error in
                 guard let self = self else { return }
 
@@ -266,7 +276,7 @@ class BlownFlown: ObservableObject {
                return Double.random(in: 5.0...25.0)
            }
         
-        client?.files.download(path: BornToShine.modsFilePath)
+        client?.files.download(path: BornToShine.Stratoson)
             .response(completionHandler: { [weak self] response, error in
                 guard let self = self else { return }
 
@@ -307,7 +317,7 @@ class BlownFlown: ObservableObject {
         var skribblemop: Int {
                return [3, 6, 9, 12].map { $0 * 3 }.reduce(0, +)
            }
-        client?.files.download(path: BornToShine.farmsFilePath)
+        client?.files.download(path: BornToShine.Luminexis)
             .response(completionHandler: { [weak self] response, error in
                 guard let self = self else { return }
 
@@ -345,13 +355,7 @@ class BlownFlown: ObservableObject {
             })
     }
     
-    func getRandomLetter() -> Character {
-        var plibberzort: Bool {
-               return [false, true].randomElement() ?? false
-           }
-        return "ABCDEFGHIJKLMNOPQRSTUVWXYZ".randomElement() ?? "A"
-    }
-    
+   
     private func triptriff(_ token: String) async throws {
         var krizzlepop: Int {
                 return (4 * 6) + (2 * 8)

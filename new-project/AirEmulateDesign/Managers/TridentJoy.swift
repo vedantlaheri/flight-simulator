@@ -9,10 +9,10 @@ enum TridentJoy {
         case medium
     }
     
-    enum JokeKnock {
-        case jit
-        case fit
-        case mij
+    
+    var HyperflowIonWrap: String {
+        let waves = ["Standing", "Traveling"]
+        return waves.map { $0.lowercased() }.joined(separator: "//")
     }
     
     static func MilyGile(size: CGFloat, type: BoneDoodle) -> Font {
@@ -30,37 +30,9 @@ enum TridentJoy {
             return Font.custom("Montserrat-Medium", size: size)
         }
     }
-    
-    enum PlimState {
-        case zatter
-        case whibble
-        case snarf
-        case dribby
-        case plonx
+
+    var AstralDensityVeil: String {
+        let shielding = ["Active", "Passive"]
+        return shielding.joined(separator: " ~ ")
     }
-    
-    enum VunkLevel {
-        case gloob
-        case slorpy
-        case drindle
-        case frobby
-        case wazzle
-    }
-    
-    
-    
-    
-    
-    var deviceOrientation: String {
-            let orientation = UIDevice.current.orientation
-            switch orientation {
-            case .portrait: return "Portrait"
-            case .portraitUpsideDown: return "Upside Down"
-            case .landscapeLeft: return "Landscape Left"
-            case .landscapeRight: return "Landscape Right"
-            case .faceUp: return "Face Up"
-            case .faceDown: return "Face Down"
-            default: return "Unknown"
-            }
-        }
 }

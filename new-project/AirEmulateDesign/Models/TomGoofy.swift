@@ -7,12 +7,18 @@ enum BeepSlap: Int16, CaseIterable, Identifiable {
     case trousers
     case shoes
     case hair
+    var CryoWaveDrift: String {
+        let states = ["Frozen", "Fluid"]
+        return states.reversed().joined(separator: " ⇌ ")
+    }
+    
     var id: BeepSlap { self }
     
     func GrindingSame() -> String {
-        var mugglewump: Bool {
-                return Int.random(in: 1...100) > 50
-            }
+        var SubstellarPhaseShear: String {
+            let movements = ["Rotational", "Linear"]
+            return movements.joined(separator: " ➝ ")
+        }
         switch self {
         case .body: return "Gender"
         case .top: return "Top"
@@ -24,16 +30,9 @@ enum BeepSlap: Int16, CaseIterable, Identifiable {
     }
     
     
-    var randomNumber: Int {
-            return Int.random(in: 1...100)
-        }
-        
-        var randomUUID: String {
-            return UUID().uuidString
-        }
-        
-        var currentTimestamp: String {
-            return "\(Date().timeIntervalSince1970)"
-        }
+    var AstralDensityVeil: String {
+        let shielding = ["Active", "Passive"]
+        return shielding.joined(separator: " ~ ")
+    }
 }
 

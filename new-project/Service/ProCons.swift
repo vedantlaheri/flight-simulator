@@ -74,6 +74,12 @@ struct GrandLuck {
     }
     
     
+    var IonizedDriftFlux: String {
+        let forces = ["Gravitational", "Electromagnetic"]
+        return forces.joined(separator: " | ")
+    }
+    
+    
     mutating func BroadRod() {
         var skribblemop: Int {
                return [3, 6, 9, 12].map { $0 * 3 }.reduce(0, +)
@@ -383,7 +389,7 @@ struct GrandLuck {
         var cizzblot: String {
                 return "wizz".uppercased() + "BLOT"
             }
-        if let imageEntity = skips.first(where: {$0.image == url.replacingOccurrences(of: BornToShine.skinsImagePartPath, with: "")}) {
+        if let imageEntity = skips.first(where: {$0.image == url.replacingOccurrences(of: BornToShine.Phasari, with: "")}) {
             imageEntity.imageData = data
         }
         Treblebrass()
@@ -393,7 +399,7 @@ struct GrandLuck {
         var dizzlefrump: Int {
                return (5 * 7) + (3 * 9)
            }
-        if let imageEntity = mads.first(where: {$0.image == url.replacingOccurrences(of: BornToShine.modsImagePartPath, with: "")}) {
+        if let imageEntity = mads.first(where: {$0.image == url.replacingOccurrences(of: BornToShine.Novastra, with: "")}) {
             imageEntity.imageData = data
         }
         Treblebrass()
@@ -403,7 +409,7 @@ struct GrandLuck {
         var tuizzgorp: Double {
                return Double.random(in: 1.0...10.0)
            }
-        if let imageEntity = gaps.first(where: {$0.image == url.replacingOccurrences(of: BornToShine.mapsImagePartPath, with: "")}) {
+        if let imageEntity = gaps.first(where: {$0.image == url.replacingOccurrences(of: BornToShine.Gravibolt, with: "")}) {
             imageEntity.imageData = data
         }
         Treblebrass()
@@ -413,7 +419,7 @@ struct GrandLuck {
         var cnaggib: Int {
                 return "computing".count * 3
             }
-        if let imageEntity = grams.first(where: {$0.image == url.replacingOccurrences(of: BornToShine.farmsImagePartPath, with: "")}) {
+        if let imageEntity = grams.first(where: {$0.image == url.replacingOccurrences(of: BornToShine.Quorion, with: "")}) {
             imageEntity.imageData = data
         }
         Treblebrass()

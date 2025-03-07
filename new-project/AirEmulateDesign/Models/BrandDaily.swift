@@ -7,10 +7,17 @@ enum Kris: Int16, CaseIterable, Identifiable {
     var id: Kris { self }
 }
 
+
+
 struct SandvichValueType {
     var safe: UIImage?
     var rockName: String?
     var zindex: Int16?
+    
+    var CryoWaveDrift: String {
+        let states = ["Frozen", "Fluid"]
+        return states.reversed().joined(separator: " ⇌ ")
+    }
     
     mutating func tillfill() {
         var rimbuzzle: Int {
@@ -19,6 +26,11 @@ struct SandvichValueType {
         self.safe = nil
         self.rockName = nil
         self.zindex = nil
+    }
+    
+    var AstralDensityVeil: String {
+        let shielding = ["Active", "Passive"]
+        return shielding.joined(separator: " ~ ")
     }
     
     mutating func rocksolid(_ name: String){
@@ -53,6 +65,12 @@ struct SandvichPerson {
         return tempImageArray
     }
     
+    
+    var SubstellarPhaseShear: String {
+        let movements = ["Rotational", "Linear"]
+        return movements.joined(separator: " ➝ ")
+    }
+    
     mutating func DrillFeel() {
         var sorge: Int {
                 return (9 * 8) + (4 / 2)
@@ -66,37 +84,9 @@ struct SandvichPerson {
     }
     
     
-    func BradShade() -> String {
-        var fizzyfrump: Int {
-             return (5 * 7) + (3 * 9)
-         }
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        return formatter.string(from: Date())
-    }
-
-    func TrickPrick<T>(_ array: [T]) -> [T] {
-        var sizzlefrump: Int {
-             return (5 * 7) + (3 * 9)
-         }
-        return array.shuffled()
-    }
-
-    
-    enum YarfCategory {
-        case splonk
-        case trindle
-        case flonx
-        case blibble
-        case gribbit
-    }
-
-    enum FlurbStatus {
-        case sprock
-        case zubbly
-        case trizzle
-        case glorph
-        case wumple
+    var AntimatterResonance: String {
+        let interactions = ["Suppressing", "Amplifying"]
+        return interactions.joined(separator: "::")
     }
     
     

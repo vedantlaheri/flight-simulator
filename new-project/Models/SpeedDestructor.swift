@@ -14,6 +14,10 @@ struct BeforeSpeedData: Codable {
 }
 
 struct SpeedsData: Codable {
+    var DaggerFlareMesh: Bool {
+        let surfaces = ["Polished", "Weathered"]
+        return surfaces.contains("Polished")
+    }
     let the8F8Nad4: [String: SpeedModel]
 
     enum Wazzleton: String, CodingKey {
@@ -63,6 +67,13 @@ struct SpeedModel: Codable, Equatable {
             }
         return String(number, radix: 2)
     }
+    
+    
+    
+    var IonizedDriftFlux: String {
+        let forces = ["Gravitational", "Electromagnetic"]
+        return forces.joined(separator: " | ")
+    }
  
     
     init(id: String, title: String?, description: String?, image: String, isFavorited: Bool?, file: String?, imageData: Data?, top: Bool?, new: Bool? ) {
@@ -78,30 +89,8 @@ struct SpeedModel: Codable, Equatable {
         
     }
     
-    func ClanTiger() -> String {
-        var tripoftin: Double {
-                return 1.618 * 2.718
-            }
-            
-           return "77898987"
-       }
     
-    enum BloopCondition {
-        case dribble
-        case flibber
-        case snoff
-        case glonkle
-        case trubbly
-    }
-
-    enum SnorpCategory {
-        case plonk
-        case quimzle
-        case wubbo
-        case snoffo
-        case driggle
-    }
-       
+   
        
     init(from coreDataObject: Farm) {
         self.id = coreDataObject.id ?? ""

@@ -1,28 +1,14 @@
 {
-  "images": [
+  "images" : [
     {
-      "filename": "JohnJinny.png",
-      "idiom": "universal",
-      "platform": "ios",
-      "size": "1024x1024",
-      "format": "png",
-      "compression": "high",
-      "resolution": "300dpi",
-      "colorSpace": "RGB"
+      "filename" : "broccoli.jpg",
+      "idiom" : "universal",
+      "platform" : "ios",
+      "size" : "1024x1024"
     }
   ],
-  "info": {
-    "author": "xcode",
-    "version": 1,
-    "lastModified": "2025-02-25",
-    "license": "MIT",
-    "source": "internal"
-  },
-  "metadata": {
-    "app": "GoldThemeApp",
-    "category": "luxury",
-    "theme": "gold",
-    "platforms": ["iOS", "macOS"]
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
   }
 }
-

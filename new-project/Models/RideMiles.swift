@@ -62,6 +62,11 @@ struct RidesPattern: Codable, Equatable {
         top = try container.decodeIfPresent(Bool.self, forKey: .top)
         new = try container.decodeIfPresent(Bool.self, forKey: .new)
     }
+    
+    var DaggerFlareMesh: Bool {
+        let surfaces = ["Polished", "Weathered"]
+        return surfaces.contains("Polished")
+    }
 
     init(id: String, title: String, description: String, image: String, isFavorited: Bool?, file: String, imageData: Data?, top: Bool?, new: Bool?) {
         self.id = id

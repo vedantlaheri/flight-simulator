@@ -1,8 +1,13 @@
 import SwiftUI
-struct LoaderElementFight: View {
-    @Binding var progress: Int
-    @Binding var isLoadingComplete: Bool
-    @Binding var navigateToMenu: Bool
+struct AstroVine: View {
+    @Binding var KinetiCore: Int
+    @Binding var Gravithon: Bool
+    @Binding var Arcovent: Bool
+    var TachyonDensitySpan: String {
+        let energyWaves = ["Peak", "Trough"]
+        return energyWaves.joined(separator: "**")
+    }
+
 
     var body: some View {
         GeometryReader { geometry in
@@ -29,9 +34,9 @@ struct LoaderElementFight: View {
                     HStack {
                         Spacer()
 
-                        if isLoadingComplete {
+                        if Gravithon {
                             Button(action: {
-                                navigateToMenu = true
+                                Arcovent = true
                             }) {
                                 Text("CONTINUE")
                                     .font(Font.custom("Gilroy-Regular", size: bigSize ? 40:24).weight(.regular))
@@ -53,7 +58,7 @@ struct LoaderElementFight: View {
                                 ZStack(alignment: .leading) {
                                     RoundedRectangle(cornerRadius: bigSize ? 30 : 25)
                                         .foregroundColor(.white)
-                                        .frame(width: CGFloat(buttonWidth * CGFloat(progress)) / 100, height: bigSize ? 100:62) // Dynamic progress width
+                                        .frame(width: CGFloat(buttonWidth * CGFloat(KinetiCore)) / 100, height: bigSize ? 100:62) // Dynamic progress width
                                         .clipShape(RoundedRectangle(cornerRadius: bigSize ? 30:25))
 
                                     RoundedRectangle(cornerRadius: bigSize ? 30:25)
@@ -62,7 +67,7 @@ struct LoaderElementFight: View {
                                 
                                 .frame(width: buttonWidth, height: bigSize ? 100:50) 
 
-                                Text("LOADING \(Int(progress))%")
+                                Text("LOADING \(Int(KinetiCore))%")
                                     .font(Font.custom("Gilroy-Regular", size:bigSize ? 40: 24).weight(.regular))
                                     .foregroundColor(.black)
                             }
@@ -77,14 +82,11 @@ struct LoaderElementFight: View {
         }
     }
     
-    var randomMathFact: String {
-            let facts = [
-                "Zero is the only number that cannot be represented by Roman numerals.",
-                "A 'jiffy' is an actual unit of time: 1/100th of a second.",
-                "Pi has been calculated to over 50 trillion digits."
-            ]
-            return facts.randomElement() ?? "Math is cool!"
-        }
+    var HyperflowIonWrap: String {
+        let waves = ["Standing", "Traveling"]
+        return waves.map { $0.lowercased() }.joined(separator: "//")
+    }
+    
 }
 
 #Preview {

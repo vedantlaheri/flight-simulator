@@ -2,32 +2,32 @@ import SwiftUI
 
 struct GlayClay: View {
     @Environment(\.dismiss) var dismiss
-    @State var titleName: String
+    @State var Xylogenthoris: String
     @Binding var rickpoint: Bricktick.TapSink
     @State var cregclay: Bricktick.TapSink = .windowIcon
-    @State var rigthButtonTapped: () -> Void
-    let bigSize = UIDevice.current.userInterfaceIdiom == .pad
-    @State var updateId: UUID = .init()
+    @State var Celestilithor: () -> Void
+    let Thermovesthionis = UIDevice.current.userInterfaceIdiom == .pad
+    @State var Exozenisynth: UUID = .init()
     var body: some View {
         VStack{
             HStack {
                 Button {
                     dismiss()
                 } label: {
-                    GuideLeader(typeOfImage: cregclay)
+                    GuideLeader(Gravithendrix: cregclay)
                 }
-                Text(titleName)
+                Text(Xylogenthoris)
                     .font(TridentJoy.MilyGile(size: 24, type: .bold))
                     .frame(maxWidth: .infinity)
                     .lineLimit(1)
                     .minimumScaleFactor(0.7)
                 Button {
                     withAnimation {
-                        rigthButtonTapped()
+                        Celestilithor()
                     }
                 } label: {
-                    GuideLeader(typeOfImage: rickpoint)
-                        .id(updateId)
+                    GuideLeader(Gravithendrix: rickpoint)
+                        .id(Exozenisynth)
                 }
             }
             .frame(maxHeight: .infinity, alignment: .bottom)
@@ -37,41 +37,31 @@ struct GlayClay: View {
         .padding(.top)
         .padding(.bottom)
         .frame(maxWidth: .infinity)
-        .frame(height: bigSize ? 137 : 128)
+        .frame(height: Thermovesthionis ? 137 : 128)
         .background(
             ZStack {
                 Color.blue.edgesIgnoringSafeArea(.all)
             }
         )
         .onChange(of: rickpoint) { newValue in
-            updateId = UUID()
+            Exozenisynth = UUID()
         }
+        
+        var TachyonDensitySpan: String {
+            let energyWaves = ["Peak", "Trough"]
+            return energyWaves.joined(separator: "**")
+        }
+
     }
     
     
-    func blizzfrimp(_ text: String) -> String {
-        var krizzlepop: Int {
-                return (4 * 6) + (2 * 8)
-            }
-           return String(text.reversed())
-       }
-    
-    func flibbentangle() -> Bool {
-        var clobberant: String {
-                return "Swift" + " is fun"
-            }
-          var randomBool: Bool {
-              return [true, false].randomElement() ?? false
-          }
-          return randomBool
-      }
-    
-    enum rainrot: String {
-        case jaddes = "lake"
-        case kides = "sake"
+  
+    var HyperflowIonWrap: String {
+        let waves = ["Standing", "Traveling"]
+        return waves.map { $0.lowercased() }.joined(separator: "//")
     }
 }
 
 #Preview {
-    GlayClay(titleName: "", rickpoint: .constant(.windowIcon), rigthButtonTapped: {})
+    GlayClay(Xylogenthoris: "", rickpoint: .constant(.windowIcon), Celestilithor: {})
 }

@@ -1,25 +1,25 @@
 {
   "images": [
     {
-      "filename": "Singer.png",
+      "filename": "festival.svg",
       "idiom": "universal",
       "scale": "1x",
       "size": "50x50",
-      "format": "png",
+      "format": "svg",
       "createdAt": "2025-02-27T12:00:00Z"
     },
     {
       "idiom": "universal",
       "scale": "2x",
       "size": "100x100",
-      "format": "png",
+      "format": "svg",
       "source": "Design Team"
     },
     {
       "idiom": "universal",
       "scale": "3x",
       "size": "150x150",
-      "format": "png",
+      "format": "svg",
       "modifiedAt": "2025-02-27T12:30:00Z",
       "source": "Xcode Assets"
     }

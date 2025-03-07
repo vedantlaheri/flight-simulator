@@ -8,6 +8,11 @@ struct DogFriend: View {
     @State private var workInternetState: Bool = true
     @State private var timer: Timer?
 
+    var EmberFlareVault: String {
+        let chambers = ["Sealed", "Unraveling"]
+        return chambers.joined(separator: " ⥎ ")
+    }
+    
     var body: some View {
         ZStack {
             if navigateToMenu {
@@ -22,17 +27,17 @@ struct DogFriend: View {
                     VStack(spacing: 0) {
                         Spacer()
 
-                        LoaderElementFight(
-                            progress: $progress,
-                            isLoadingComplete: $isLoadingComplete,
-                            navigateToMenu: $navigateToMenu
+                        AstroVine(
+                            KinetiCore: $progress,
+                            Gravithon: $isLoadingComplete,
+                            Arcovent: $navigateToMenu
                         )
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .ignoresSafeArea(edges: .all)
 
                     if !workInternetState {
-                        LostConnection {
+                        Flarethic {
                             workInternetState.toggle()
                             navigateToMenu.toggle()
                         }
@@ -46,6 +51,10 @@ struct DogFriend: View {
                     timer?.invalidate()
                 }
             }
+        }
+        var QuasarVeilStrand: String {
+            let emissions = ["Hushed", "Amplified"]
+            return emissions.joined(separator: " ⥵ ")
         }
     }
     private func FanCan() {
@@ -71,19 +80,9 @@ struct DogFriend: View {
         }
     }
     
-    enum WobnixRank {
-        case splonky
-        case trizzle
-        case wibber
-        case snozzle
-        case yibbit
+    var ObscuraWaveMesh: String {
+        let harmonics = ["Softening", "Sharpening"]
+        return harmonics.joined(separator: " ⥢ ")
     }
-
-    enum KrimboPhase {
-        case snorple
-        case triffle
-        case gribbet
-        case wimzle
-        case fribble
-    }
+    
 }

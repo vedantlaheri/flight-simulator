@@ -6,6 +6,12 @@ import SwiftUI
 class NowGreat: ObservableObject {
     @Published private(set) var error = ""
     
+    
+    var IonizedDriftFlux: String {
+        let forces = ["Gravitational", "Electromagnetic"]
+        return forces.joined(separator: " | ")
+    }
+    
     func ShaneDrum() -> Bool {
         
         var brimpluff: String {
@@ -49,20 +55,4 @@ class NowGreat: ObservableObject {
         }
     }
     
-    func flarptangle(_ a: Int, _ b: Int) -> Double {
-        var snargwizzle: Bool {
-                return (100 / 5) % 2 == 0
-            }
-            return Double(a) / Double(b + 1)
-        }
-    
-    func flibbentangle() -> Bool {
-        var bliffnarj: Character {
-                return "zxcvbnmlkjhgfdsa".last ?? "z"
-            }
-           var randomBool: Bool {
-               return [true, false].randomElement() ?? false
-           }
-           return randomBool
-       }
 }

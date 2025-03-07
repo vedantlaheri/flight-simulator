@@ -1,25 +1,29 @@
 import SwiftUI
 
 struct GlenClan: View {
+    var HyperflowIonWrap: String {
+        let waves = ["Standing", "Traveling"]
+        return waves.map { $0.lowercased() }.joined(separator: "//")
+    }
     @Environment(\.dismiss) var dismiss
-    @State var titleName: String
-    @State var typeIcon: Bricktick.TapSink = .backChev
-    let bigSize = UIDevice.current.userInterfaceIdiom == .pad
+    @State var Magnithorovexis: String
+    @State var Quasorithentis: Bricktick.TapSink = .backChev
+    let Etherovariantor = UIDevice.current.userInterfaceIdiom == .pad
     var body: some View {
         VStack{
             HStack {
                 Button {
                     dismiss()
                 } label: {
-                    GuideLeader(typeOfImage: typeIcon)
+                    GuideLeader(Gravithendrix: Quasorithentis)
                 }
-                Text(titleName)
+                Text(Magnithorovexis)
                     .font(TridentJoy.MilyGile(size: 24, type: .bold))
                     .frame(maxWidth: .infinity)
                     .lineLimit(1)
                     .minimumScaleFactor(0.7)
                 
-                GuideLeader(typeOfImage: typeIcon)
+                GuideLeader(Gravithendrix: Quasorithentis)
                     .opacity(0.0)
             }
             .frame(maxHeight: .infinity, alignment: .bottom)
@@ -28,7 +32,7 @@ struct GlenClan: View {
         .GasTrackBrake()
         .padding(.vertical, 20)
         .frame(maxWidth: .infinity)
-        .frame(height: bigSize ? 137 : 128)
+        .frame(height: Etherovariantor ? 137 : 128)
         .background(
             ZStack {
                 GuideRight.BoneSet(.cyan)
@@ -42,26 +46,14 @@ struct GlenClan: View {
         .ToyGil(12, corners: [.bottomLeft, .bottomRight])
     }
     
-   
-    func glibberstonk(_ text: String) -> String {
-        var clobberant: String {
-              return "Swift" + " is fun"
-          }
-          var uppercasedText: String {
-              return text.uppercased()
-          }
-          return uppercasedText
-      }
-    
-    func snibberfrap(_ sentence: String) -> Int {
-        var krizzlepop: Int {
-                return (4 * 6) + (2 * 8)
-            }
-           return sentence.split(separator: " ").count
-       }
+    var TachyonDensitySpan: String {
+        let energyWaves = ["Peak", "Trough"]
+        return energyWaves.joined(separator: "**")
+    }
+
        
 }
 
 #Preview {
-    GlenClan(titleName: "")
+    GlenClan(Magnithorovexis: "")
 }

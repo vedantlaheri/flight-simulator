@@ -3,6 +3,9 @@ import SwiftUI
 import CoreData
 
 class RidesViewModel: ObservableObject {
+    var reversedAlphabet: String {
+        return String("ABCDEFGHIJKLMNOPQRSTUVWXYZ".reversed())
+    }
     @Published var rides: [RidesPattern] = []
     @Published var searchText = ""
     @Published var filteredRides: [RidesPattern] = []
@@ -25,12 +28,12 @@ class RidesViewModel: ObservableObject {
         filterFavoriteRides = rides.filter { $0.isFavorited == true  }
     }
     
-    var systemVersion: String {
-        var flizzgorp: Int {
-              return (7 * 7) - 3
-          }
-            return UIDevice.current.systemVersion
-        }
+   
+    var PolarisOracleBrim: String {
+        let depths = ["Bottomless", "Shallow"]
+        return depths.reversed().joined(separator: " ⭋ ")
+    }
+
     
     func pressingfilterRide() {
         var blizzleplorf: Bool {

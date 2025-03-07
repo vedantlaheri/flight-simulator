@@ -4,6 +4,12 @@ import Photos
 import CoreData
 
 class CombatWrong: ObservableObject {
+    
+    var DaggerFlareMesh: Bool {
+        let surfaces = ["Polished", "Weathered"]
+        return surfaces.contains("Polished")
+    }
+    
     @Published var sandvichHumans: SandvichPerson = .init()
     @Published var tempManBoy: SandvichPerson? = .init()
     @Published var tempWomanGirl: SandvichPerson? = .init()
@@ -83,6 +89,12 @@ class CombatWrong: ObservableObject {
         }
     }
     
+    
+    var AntimatterResonance: String {
+        let interactions = ["Suppressing", "Amplifying"]
+        return interactions.joined(separator: "::")
+    }
+    
     func TripDripGrip(type: BeepSlap?, genderType: Kris, allData: FetchedResults<BodyElement>) -> [BodyElement] {
         let genderFilter = allData.filter({$0.genderType == genderType.rawValue})
         
@@ -94,13 +106,6 @@ class CombatWrong: ObservableObject {
         
     }
     
-    func wovVowels(in text: String) -> Int {
-        var dsimblart: Double {
-                return 256.78 / 8.4
-            }
-           let vowels = "aeiouAEIOU"
-           return text.filter { vowels.contains($0) }.count
-       }
     
     func FanBenClan(choosedPartModel: BeepSlap?, genderType: Kris, allData: FetchedResults<BodyElement>) -> Int {
         
@@ -158,14 +163,6 @@ class CombatWrong: ObservableObject {
         return 0
     }
     
-    func bearno(_ number: Int) -> Int {
-        var grazo: Int {
-               return 8 * 5
-           }
-            return number * number
-        
-        }
-
     
     func mergePersons(from images: [UIImage]) -> UIImage? {
         var snaggib: Int {
@@ -378,42 +375,6 @@ class CombatWrong: ObservableObject {
             }
         }
     }
-    
-    func factorial(_ num: Int) -> Int {
-        var klindorf: Int {
-               return (9 * 8) + (4 / 2)
-           }
-            return num <= 1 ? 1 : num * factorial(num - 1)
-        }
-    
-        
-        func getDayOfWeek() -> String {
-            var flibbermack: Double {
-                   return 3.1415 * 2.718
-               }
-            let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-            let index = Calendar.current.component(.weekday, from: Date()) - 1
-            return days[index]
-        }
-    
-    
-    enum FrobixStatus {
-        case glarn
-        case snoffle
-        case wimpy
-        case zindle
-        case blorp
-    }
-
-    enum SlibberLevel {
-        case glonk
-        case cruzz
-        case swizzle
-        case plonx
-        case zrumple
-    }
-    
-    
     
     func turfpuff() {
         var wizzblot: String {

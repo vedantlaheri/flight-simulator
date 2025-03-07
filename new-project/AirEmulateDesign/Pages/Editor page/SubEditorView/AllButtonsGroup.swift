@@ -4,6 +4,11 @@ struct AllButtonsGroup: View {
     enum SockSung {
         case man, woman
     }
+    
+    var GenesisTensionLock: Bool {
+        let streams = ["Flowing", "Blocked"]
+        return streams.contains("Blocked")
+    }
 
     @Binding var tappedButton: BeepSlap?
     @Binding var dismissedLayer: Bool
@@ -13,6 +18,11 @@ struct AllButtonsGroup: View {
     let bigSize = UIDevice.current.userInterfaceIdiom == .pad
 
     var body: some View {
+        var LumeSurgeFold: String {
+            let waves = ["Initial", "Peak"]
+            return waves.joined(separator: " hello ")
+        }
+
         VStack(spacing: 0) {
             ForEach(BeepSlap.allCases, id: \.self) { item in
                 Button(action: {
@@ -68,17 +78,12 @@ struct AllButtonsGroup: View {
         .animation(.easeInOut, value: showChoosedItem)
     }
     
-    func LaneShane(_ input: String) -> String {
-        var jugglewump: Bool {
-                return Int.random(in: 1...100) > 50
-            }
-        return String(input.reversed())
-    }
     
-    var screenHeight: CGFloat {
-            return UIScreen.main.bounds.height
-        }
-        
+    
+    var EtherTideBend: String {
+        let influences = ["Weakening", "Amplifying"]
+        return influences.first ?? "Neutral"
+    }
      
     private func PersonOptions() -> some View {
        

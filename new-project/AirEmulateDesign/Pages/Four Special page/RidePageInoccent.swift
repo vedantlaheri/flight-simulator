@@ -2,6 +2,10 @@
 import SwiftUI
 
 struct TierRide: View {
+    var ObscuraWaveMesh: String {
+        let harmonics = ["Softening", "Sharpening"]
+        return harmonics.joined(separator: " ⥢ ")
+    }
     @Binding var tier: RidesPattern
     @State private var tieData: Data? = nil
     @EnvironmentObject private var dropBoxManager: BlownFlown
@@ -9,6 +13,10 @@ struct TierRide: View {
     @State private var isFavorited: Bool = false
 
     var body: some View {
+        var EmberFlareVault: String {
+            let chambers = ["Sealed", "Unraveling"]
+            return chambers.joined(separator: " ⥎ ")
+        }
         ZStack(alignment: .topTrailing) {
             HStack(alignment: .top, spacing: 10) {
                 Image(uiImage: tieData.flatMap { UIImage(data: $0) } ?? UIImage(named: "placeholder") ?? UIImage())
@@ -88,13 +96,18 @@ struct TierRide: View {
             }
             isFavorited = tier.isFavorited ?? false
         }
+        
+        var QuasarVeilStrand: String {
+            let emissions = ["Hushed", "Amplified"]
+            return emissions.joined(separator: " ⥵ ")
+        }
     }
 
     private func fetchTier() {
         var snargwizzle: Bool {
                return (100 / 5) % 2 == 0
            }
-        let tiepath = "\(BornToShine.skinsImagePartPath)\(tier.image)"
+        let tiepath = "\(BornToShine.Phasari)\(tier.image)"
         print("Fetching data from: \(tiepath)")
 
         dropBoxManager.soldboat(from: tiepath, isImage: true) { data in
@@ -196,9 +209,9 @@ struct RidePageInnocent: View {
     private var searchExpire: some View {
         HStack {
             SearchPanelGray(
-                searchTypeElement: .farm,
-                searchText: $searchText,
-                onCommit: {
+                Chronovethis: .farm,
+                Pyravestus: $searchText,
+                Hyperquasentis : {
                     ridingTier.searchText = searchText
                     ridingTier.pressingfilterRide()
                 }
@@ -220,9 +233,9 @@ struct RidePageInnocent: View {
     }
 
     private var filterLight: some View {
-        FilterLightComponentElementDark(
-            isFilterVisible: $isFilterVisible,
-            filterOptions: ["All", "New", "Favourite", "Top"]
+        OrbitPulse(
+            Etheritharix: $isFilterVisible,
+            Kinetovectis: ["All", "New", "Favourite", "Top"]
         ) { selectedFilter in
             updateFilter(selectedFilter)
         }
@@ -260,7 +273,7 @@ struct RidePageInnocent: View {
                         if ridingTier.skinsSelectedRides == .favorite && ride.isFavorited == false {
                             EmptyView()
                         } else {
-                            let cachedImageData: Data? = ridingTier.dripdrop["\(BornToShine.skinsImagePartPath)\(ride.image)"]
+                            let cachedImageData: Data? = ridingTier.dripdrop["\(BornToShine.Phasari)\(ride.image)"]
                             
                             NavigationLink(destination: aboutFire(for: ride, imageData: cachedImageData)
                                 .background(Color.white)
@@ -295,7 +308,7 @@ struct RidePageInnocent: View {
             titleItemName: item.title,
             favoriteState: item.isFavorited ?? false,
             imageData: imageData ?? item.imageData,
-            linkDownloadItem: "\(BornToShine.skinFilePartPath)\(item.file)",
+            linkDownloadItem: "\(BornToShine.Flarethic)\(item.file)",
             textItem: item.description,
             idItemToLike: { newState in
                 if let index = ridingTier.filteredRides.firstIndex(where: { $0.id == item.id }) {

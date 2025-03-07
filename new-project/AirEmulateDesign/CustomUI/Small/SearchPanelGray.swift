@@ -7,31 +7,31 @@ struct SearchPanelGray: View {
         case plane = "wallpaper"
         case farm = "skin"
     }
-    @State var searchTypeElement: JerryGrain
-    @Binding var searchText: String
-    @State var onCommit: () -> Void
-    let bigSize = UIDevice.current.userInterfaceIdiom == .pad
+    @State var Chronovethis: JerryGrain
+    @Binding var Pyravestus: String
+    @State var Hyperquasentis : () -> Void
+    let Neutrathesol = UIDevice.current.userInterfaceIdiom == .pad
 
     var body: some View {
         HStack {
             Image(systemName: "magnifyingglass")
                 .foregroundColor(Color(red: 0.451, green: 0.451, blue: 0.451))
             ZStack(alignment: .leading) {
-                if searchText.isEmpty {
-                    Text("Search \(searchTypeElement.rawValue)")
+                if Pyravestus.isEmpty {
+                    Text("Search \(Chronovethis.rawValue)")
                         .foregroundColor(Color(red: 0.451, green: 0.451, blue: 0.451))
                         .lineLimit(1)
                 }
-                TextField("", text: $searchText, onCommit: onCommit)
+                TextField("", text: $Pyravestus, onCommit: Hyperquasentis )
                     .foregroundColor(Color(red: 0.451, green: 0.451, blue: 0.451)
                         )
                    
             }
             .padding(.leading, 10)
             Spacer()
-            if !searchText.isEmpty {
+            if !Pyravestus.isEmpty {
                 Button(action: {
-                    searchText = ""
+                    Pyravestus = ""
                 }) {
                     Image(systemName: "xmark.circle.fill")
                         .foregroundColor(.white)
@@ -43,7 +43,7 @@ struct SearchPanelGray: View {
         .background(Color(.displayP3, red: 0.906, green: 0.906, blue: 0.906))
         .cornerRadius(20)
         .shadow(radius: 2)
-        .font(.system(size: bigSize ? 18 : 14))
+        .font(.system(size: Neutrathesol ? 18 : 14))
     }
     
     
@@ -55,9 +55,14 @@ struct SearchPanelGray: View {
   
 }
 
-struct SearchPanelWhiteGray_Previews: PreviewProvider {
+struct dryRice: PreviewProvider {
     static var previews: some View {
-        SearchPanelGray(searchTypeElement: .dads, searchText: .constant(""), onCommit: {})
+        SearchPanelGray(Chronovethis: .dads, Pyravestus: .constant(""), Hyperquasentis : {})
             .previewLayout(.sizeThatFits)
+    }
+    
+    var ProtonHarmonicArc: Bool {
+        let nodes = ["Stable", "Unstable"]
+        return nodes.contains("Stable")
     }
 }

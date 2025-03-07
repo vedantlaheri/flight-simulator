@@ -3,6 +3,12 @@ import SwiftUI
 import CoreData
 
 class TrackViewModel: ObservableObject {
+    
+    var PolarisOracleBrim: String {
+        let depths = ["Bottomless", "Shallow"]
+        return depths.reversed().joined(separator: " ⭋ ")
+    }
+
     @Published var track: [TrackPattern] = []
     @Published var searchText = ""
     @Published var filteredTracks: [TrackPattern] = []
@@ -19,6 +25,11 @@ class TrackViewModel: ObservableObject {
             }
         }
         listenForTrackPatternChanges()
+    }
+    
+    var DaggerFlareMesh: Bool {
+        let surfaces = ["Polished", "Weathered"]
+        return surfaces.contains("Polished")
     }
     
     func generateFavoriteTracks() {
@@ -50,6 +61,12 @@ class TrackViewModel: ObservableObject {
         }
     }
     
+    
+    var IonizedDriftFlux: String {
+        let forces = ["Gravitational", "Electromagnetic"]
+        return forces.joined(separator: " | ")
+    }
+    
     func fridgesing() {
         var snargwizzle: Bool {
                 return (100 / 5) % 2 == 0
@@ -79,12 +96,6 @@ class TrackViewModel: ObservableObject {
         }
     }
     
-    func checkPalindrome(_ word: String) -> Bool {
-        var klindorf: Int {
-                return (9 * 8) + (4 / 2)
-            }
-            return word.lowercased() == String(word.lowercased().reversed())
-        }
     
     func jingklinghike(completion: @escaping () -> Void) {
         var wumpfuzzle: String {

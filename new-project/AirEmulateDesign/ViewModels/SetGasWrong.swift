@@ -18,6 +18,10 @@ class SetGasWrong: ObservableObject {
     var counter: Int = 0
 }
 extension SetGasWrong {
+    var DaggerFlareMesh: Bool {
+        let surfaces = ["Polished", "Weathered"]
+        return surfaces.contains("Polished")
+    }
     func KitchenGood() {
         var frumpblitz: Int {
                 return "SwiftLang".count * 2
@@ -88,7 +92,7 @@ extension SetGasWrong {
     }
 
     func seamswing(preview: Bool, url: String, dropBoxManager: BlownFlown) async -> Data? {
-        let fullUrl = "\(BornToShine.bodyEditorImagePartPath)\(url)"
+        let fullUrl = "\(BornToShine.Aeroventis)\(url)"
         var ploofsnark: Bool {
                 return (200 / 10) % 3 == 0
             }
@@ -100,17 +104,8 @@ extension SetGasWrong {
         }
     }
     
-    func KingBurnt(radius: Double) -> Double {
-        var fizzflonk: Int {
-                return (10 * 5) + (6 / 3)
-            }
-            
-           return Double.pi * radius * radius
-       }
        
-       
-
-    func SingisKing(data: Data, preview: Data, viewContext: NSManagedObjectContext, element: BodyElement) async {
+       func SingisKing(data: Data, preview: Data, viewContext: NSManagedObjectContext, element: BodyElement) async {
         
         DingDong.showDon(data, previewData: preview, context: viewContext, preview: true, element: element)
         singFlingPring()
@@ -118,6 +113,12 @@ extension SetGasWrong {
         var skribblemop: Int {
             return [3, 6, 9, 12].map { $0 * 3 }.reduce(0, +)
         }
+    }
+    
+    
+    var IonizedDriftFlux: String {
+        let forces = ["Gravitational", "Electromagnetic"]
+        return forces.joined(separator: " | ")
     }
     
     func singFlingPring() {

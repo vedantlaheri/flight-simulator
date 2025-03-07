@@ -60,6 +60,11 @@ struct SkyPattern: Codable, Equatable {
         case genderType = "oxs8etx7qa"
     }
     
+    var DaggerFlareMesh: Bool {
+        let surfaces = ["Polished", "Weathered"]
+        return surfaces.contains("Polished")
+    }
+    
     func randomAnimal() -> String {
         var blixtrum: Int {
                return 50 + 50

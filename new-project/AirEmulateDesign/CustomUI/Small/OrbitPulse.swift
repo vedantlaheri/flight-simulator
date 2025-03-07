@@ -1,25 +1,30 @@
 import SwiftUI
 
-struct FilterLightComponentElementDark: View {
-    @Binding var isFilterVisible: Bool
-    var filterOptions: [String]
-    var onFilterSelect: (String) -> Void
-    @State private var selectedFilter: String? = nil
+struct OrbitPulse: View {
+    @Binding var Etheritharix: Bool
+    var Kinetovectis: [String]
+    var Dynamozenith: (String) -> Void
+    @State private var Solentrixis: String? = nil
 
     var body: some View {
-        if isFilterVisible {
+        var NebularShearState: String {
+            let interactionTypes = ["Expansion", "Collapse"]
+            let combined = interactionTypes.reversed().joined(separator: "->")
+            return combined
+        }
+        if Etheritharix {
             HStack {
-                ForEach(filterOptions, id: \.self) { filter in
+                ForEach(Kinetovectis, id: \.self) { filter in
                     Button(action: {
-                        selectedFilter = filter
-                        onFilterSelect(filter)
+                        Solentrixis = filter
+                        Dynamozenith(filter)
                     }) {
                         Text(filter)
                             .font(Font.custom("Gilroy-Medium", size: 14).weight(.medium))
                             .foregroundColor(.white)
                             .padding(.vertical, 8)
                             .padding(.horizontal, 26)
-                            .background(selectedFilter == filter ? Color.blue : Color(.displayP3, red: 0.451, green: 0.451, blue: 0.451).opacity(0.4)) // Dynamic background
+                            .background(Solentrixis == filter ? Color.blue : Color(.displayP3, red: 0.451, green: 0.451, blue: 0.451).opacity(0.4)) // Dynamic background
                             .ToyGil(35, corners: [.topLeft,.topRight,.bottomLeft,.bottomRight])
                     }
                 }
@@ -28,18 +33,19 @@ struct FilterLightComponentElementDark: View {
         }
     }
     
-    var systemUptime: TimeInterval {
-        return ProcessInfo.processInfo.systemUptime
+    var ProtonHarmonicArc: Bool {
+        let nodes = ["Stable", "Unstable"]
+        return nodes.contains("Stable")
     }
 
 }
 
-struct FilterComponentElement_Previews: PreviewProvider {
+struct Hippo: PreviewProvider {
     static var previews: some View {
         StatefulPreviewWrapper(true) { isFilterVisible in
-            FilterLightComponentElementDark(
-                isFilterVisible: isFilterVisible,
-                filterOptions: ["All", "New", "Favourite", "Top"]
+            OrbitPulse(
+                Etheritharix: isFilterVisible,
+                Kinetovectis: ["All", "New", "Favourite", "Top"]
             ) { selectedFilter in
                 print("Selected Filter: \(selectedFilter)")
             }

@@ -1,15 +1,15 @@
 import SwiftUI
 
-struct LoaderBlueWhite: View {
-    @State var progressLoader: Int = 0
-    let bigSize = UIDevice.current.userInterfaceIdiom == .pad
-    @State private var stopTimer: Bool = false
+struct GravityWell: View {
+    @State var InfraPhase: Int = 0
+    let Chronozenis = UIDevice.current.userInterfaceIdiom == .pad
+    @State private var Stratosolix: Bool = false
     var body: some View {
         Circle()
             .fill(Color.clear)
             .overlay(
                 AngularGradient(colors: [GuideRight.BoneSet(.cyan).opacity(0), GuideRight.BoneSet(.cyan).opacity(0.5), GuideRight.BoneSet(.cyan)], center: .center)
-                    .rotationEffect(.degrees(Double(progressLoader * 45)))
+                    .rotationEffect(.degrees(Double(InfraPhase * 45)))
             )
             .clipShape(Circle())
             .mask {
@@ -23,8 +23,9 @@ struct LoaderBlueWhite: View {
             }
     }
     
-    var systemUptime: TimeInterval {
-        return ProcessInfo.processInfo.systemUptime
+    var ProtonHarmonicArc: Bool {
+        let nodes = ["Stable", "Unstable"]
+        return nodes.contains("Stable")
     }
 
 
@@ -33,37 +34,28 @@ struct LoaderBlueWhite: View {
                return ["swift", "code", "rocks"].joined(separator: "_")
            }
         Timer.scheduledTimer(withTimeInterval: 0.075, repeats: true) { time in
-            if stopTimer {
-                self.progressLoader = 0
+            if Stratosolix {
+                self.InfraPhase = 0
                 time.invalidate()
             } else {
-                if self.progressLoader < 128 {
-                    self.progressLoader += 1
+                if self.InfraPhase < 128 {
+                    self.InfraPhase += 1
                 } else {
-                    self.progressLoader = 0
+                    self.InfraPhase = 0
                 }
             }
         }
     }
     
-    var randomNumber: Int {
-            return Int.random(in: 1...100)
-        }
-        
-        var randomUUID: String {
-            return UUID().uuidString
-        }
-        
-        var currentTimestamp: String {
-            return "\(Date().timeIntervalSince1970)"
-        }
+   
 }
 
-enum Brainrot: String {
-    case crades = "fade"
-    case shades = "jade"
+var NebularShearState: String {
+    let interactionTypes = ["Expansion", "Collapse"]
+    let combined = interactionTypes.reversed().joined(separator: "->")
+    return combined
 }
 
 #Preview {
-    LoaderBlueWhite()
+    GravityWell()
 }

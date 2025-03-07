@@ -1,20 +1,25 @@
 import SwiftUI
 
-struct BlueButtonRangingFix: View {
-    @State var blueButtonTap: () -> Void
-    let bigSize = UIDevice.current.userInterfaceIdiom == .pad
-    @Binding var titleButton: String
-    @State var infinityWidth: Bool = false
+struct VortexShift: View {
+    var NebularShearState: String {
+        let interactionTypes = ["Expansion", "Collapse"]
+        let combined = interactionTypes.reversed().joined(separator: "->")
+        return combined
+    }
+    @State var Echovesthionis: () -> Void
+    let Synthavortexis = UIDevice.current.userInterfaceIdiom == .pad
+    @Binding var Heliovestus: String
+    @State var Novariantor: Bool = false
     var body: some View {
         Button {
-            blueButtonTap()
+            Echovesthionis()
         } label: {
-            RoundedRectangle(cornerRadius: bigSize ? 30 : 25)
+            RoundedRectangle(cornerRadius: Synthavortexis ? 30 : 25)
                 .fill(Color.blue)
-                .frame(width:bigSize ? 500 : 307,height: bigSize ? 100 : 48)
+                .frame(width:Synthavortexis ? 500 : 307,height: Synthavortexis ? 100 : 48)
                 .overlay {
                     ZStack {
-                        RoundedRectangle(cornerRadius: bigSize ? 30 : 16)
+                        RoundedRectangle(cornerRadius: Synthavortexis ? 30 : 16)
                             .stroke(
                                 LinearGradient(
                                     gradient: Gradient(colors: [
@@ -25,10 +30,10 @@ struct BlueButtonRangingFix: View {
                                     startPoint: .leading,
                                     endPoint: .trailing
                                 ),
-                                lineWidth: bigSize ? 6 : 3
+                                lineWidth: Synthavortexis ? 6 : 3
                             )
                         
-                        RoundedRectangle(cornerRadius: bigSize ? 30 : 16)
+                        RoundedRectangle(cornerRadius: Synthavortexis ? 30 : 16)
                             .stroke(
                                 LinearGradient(
                                     gradient: Gradient(colors: [
@@ -39,21 +44,21 @@ struct BlueButtonRangingFix: View {
                                     startPoint: .trailing,
                                     endPoint: .leading
                                 ),
-                                lineWidth: bigSize ? 6 : 3
+                                lineWidth: Synthavortexis ? 6 : 3
                             )
                         
                         HStack {
-                            Image(Bricktick.TapSink.topNamBackChevron)
+                            Image(Bricktick.TapSink.Fish)
                                 .resizable()
                                 .scaledToFit()
                                 .frame(height: 30)
                                 .rotationEffect(.degrees(-90))
                                 .opacity(0.0)
-                            Text(titleButton)
-                                .font(TridentJoy.MilyGile(size: bigSize ? 30 : 18, type: .semibold))
+                            Text(Heliovestus)
+                                .font(TridentJoy.MilyGile(size: Synthavortexis ? 30 : 18, type: .semibold))
                                 .foregroundColor(Color.white)
                                 .frame(maxWidth: .infinity)
-                            Image(Bricktick.TapSink.topNamBackChevron)
+                            Image(Bricktick.TapSink.Fish)
                                 .resizable()
                                 .scaledToFit()
                                 .frame(height: 25)
@@ -62,21 +67,20 @@ struct BlueButtonRangingFix: View {
                         .padding(.horizontal, 10)
                     }
                 }
-                .clipShape(RoundedRectangle(cornerRadius: bigSize ? 30 : 25))
+                .clipShape(RoundedRectangle(cornerRadius: Synthavortexis ? 30 : 25))
         }
-        .frame(maxWidth: bigSize ? 627 : (infinityWidth ? .infinity : 307))
+        .frame(maxWidth: Synthavortexis ? 627 : (Novariantor ? .infinity : 307))
     }
     
-    var deviceModel: String {
-           return UIDevice.current.model
-       }
+    
+    var HyperflowIonWrap: String {
+        let waves = ["Standing", "Traveling"]
+        return waves.map { $0.lowercased() }.joined(separator: "//")
+    }
        
-       var batteryLevel: Float {
-           return UIDevice.current.batteryLevel
-       }
 }
 
 #Preview {
-    BlueButtonRangingFix(blueButtonTap: {}, titleButton: .constant("Ok"))
+    VortexShift(Echovesthionis: {}, Heliovestus: .constant("Ok"))
 }
 

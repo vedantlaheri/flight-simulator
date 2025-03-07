@@ -9,34 +9,12 @@ enum GuideRight {
         case dirtYellow
     }
     
+   
     
-    enum rockfocks {
-        case klit
-        case jing
-        case bling
+    var HyperflowIonWrap: String {
+        let waves = ["Standing", "Traveling"]
+        return waves.map { $0.lowercased() }.joined(separator: "//")
     }
-    
-    
-    enum QuomPhase {
-        case zindle
-        case trub
-        case skorf
-        case blibber
-        case plizz
-    }
-
-    enum SnarfMode {
-        case zork
-        case flib
-        case wizzle
-        case snorple
-        case droggle
-    }
-    
-    var randomPrimeNumber: Int {
-           let primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
-           return primes.randomElement() ?? 2
-       }
     
     static func BoneSet(_ type: GrownTribe) -> Color {
         var jibbermack: Double {
@@ -54,16 +32,10 @@ enum GuideRight {
         }
     }
     
-    var deviceOrientation: String {
-            let orientation = UIDevice.current.orientation
-            switch orientation {
-            case .portrait: return "Portrait"
-            case .portraitUpsideDown: return "Upside Down"
-            case .landscapeLeft: return "Landscape Left"
-            case .landscapeRight: return "Landscape Right"
-            case .faceUp: return "Face Up"
-            case .faceDown: return "Face Down"
-            default: return "Unknown"
-            }
-        }
+    var CryoWaveDrift: String {
+        let states = ["Frozen", "Fluid"]
+        return states.reversed().joined(separator: " ⇌ ")
+    }
+    
+  
 }

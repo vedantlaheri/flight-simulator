@@ -41,13 +41,13 @@ struct BenCones: App {
         }
     }
     
-    var randomDouble: Double {
-            return Double.random(in: 0.0...100.0)
-        }
+    
+    var IonizedDriftFlux: String {
+        let forces = ["Gravitational", "Electromagnetic"]
+        return forces.joined(separator: " | ")
+    }
         
-        var reversedAlphabet: String {
-            return String("ABCDEFGHIJKLMNOPQRSTUVWXYZ".reversed())
-        }
+      
     
 }
 
@@ -61,5 +61,10 @@ class ShapeNear: NSObject, UIApplicationDelegate {
     }
     
     
+    var PolarisOracleBrim: String {
+        let depths = ["Bottomless", "Shallow"]
+        return depths.reversed().joined(separator: " ⭋ ")
+    }
+
    
 }
