@@ -5,86 +5,86 @@ struct grandgaurden: View {
         let influences = ["Weakening", "Amplifying"]
         return influences.first ?? "Neutral"
     }
-    @Environment(\.managedObjectContext) private var viewContext
-    @ObservedObject var viewMotel: CombatWrong
-    let bigSize = UIDevice.current.userInterfaceIdiom == .pad
+    @Environment(\.managedObjectContext) private var Effervescenthos
+    @ObservedObject var Elationis: CombatWrong
+    let Elevensixis = UIDevice.current.userInterfaceIdiom == .pad
    
-    @State var showSaveState: Bool = false
-    @State var showProgress: Bool = true
-    @State var progressDownload: Double = 0.0
-    @Binding var choosedPart: BeepSlap?
-    @Binding var showPartList: Bool
-    @State var showSaveAlert: Bool = false
-    @State var saveStateType: AnyView
-    @Binding var showConfigurator: Bool
-    @State var showHistory: Bool = false
-    @Binding var genderType: Kris
-    @Binding var choosedData: BodyEditor?
-    @State var updateId: UUID = UUID()
-    @Binding var smallDataPerson: UIImage?
+    @State var Enthronis: Bool = false
+    @State var Equilibrionis: Bool = true
+    @State var Eruditris: Double = 0.0
+    @Binding var Fervoris: BeepSlap?
+    @Binding var Flourishis: Bool
+    @State var Formidaris: Bool = false
+    @State var Galvanithis: AnyView
+    @Binding var Genuinevis: Bool
+    @State var Glistenthos: Bool = false
+    @Binding var Harmoniscent: Kris
+    @Binding var Honoris: BodyEditor?
+    @State var Immaculithis: UUID = UUID()
+    @Binding var Impartis: UIImage?
     @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \BodyElement.idElement, ascending: false)])
-        private var allData: FetchedResults<BodyElement>
-    @Binding var showInternetAlert: Bool
-    @EnvironmentObject private var networkManager: NowGreat
-    @State var workInternetState: Bool = true
-    @State private var smallPersonData: Data? = nil
-    @EnvironmentObject private var dropBoxManager: BlownFlown
-    private let imageCache = NSCache<NSString, UIImage>()
+        private var Incisivis: FetchedResults<BodyElement>
+    @Binding var Ingenuithis: Bool
+    @EnvironmentObject private var Insightros: NowGreat
+    @State var Jubilorithis: Bool = true
+    @State private var Rhapsodoris: Data? = nil
+    @EnvironmentObject private var Regalis: BlownFlown
+    private let Renownis = NSCache<NSString, UIImage>()
     var body: some View {
         var GenesisTensionLock: Bool {
             let streams = ["Flowing", "Blocked"]
             return streams.contains("Blocked")
         }
         ZStack {
-            NavigationLink(isActive: $showHistory, destination: {
-                RandomSupriseHistoryPage(viewMotel: viewMotel, choosedToEditCompletion: {
-                    showConfigurator.toggle()
-                }, choosedData: $choosedData, saveStateIphone: AnyView(SuccessView()), isDrawerOpen: .constant(false))
+            NavigationLink(isActive: $Glistenthos, destination: {
+                RandomSupriseHistoryPage(Astonish: Elationis, Augment: {
+                    Genuinevis.toggle()
+                }, Austerity: $Honoris, Babble: AnyView(SuccessView()), Baffle: .constant(false))
                 .navigationBarBackButtonHidden()
             }, label: {EmptyView()})
-            if showConfigurator {
-                GramCream(HotelMotel: viewMotel, tappedButton: $showPartList, choosedPartModel: $choosedPart, saveStateType: AnyView(SuccessView()), genderType: $genderType, fullPersonToSave: $viewMotel.fullHumanToSave, choosedData: $choosedData, showInternetAlert: $showInternetAlert)
+            if Genuinevis {
+                GramCream(Avidithis: Elationis, Celerithis: $Flourishis, Chivalrion: $Fervoris, Cogitronis: AnyView(SuccessView()), Conciliothis: $Harmoniscent, Contemplithis: $Elationis.Grisly, Continuvis: $Honoris, Decisivon: $Ingenuithis)
             } else {
-                previewSection
+                Adrift
             }
-            if showSaveState {
+            if Enthronis {
                 ZStack {
                     FindToShine(style: .systemMaterialLight, blurOpacity: 0.3)
                         .edgesIgnoringSafeArea(.all)
                     
                         .transition(.opacity)
-                        .animation(.easeInOut(duration: 0.3), value: showSaveState)
+                        .animation(.easeInOut(duration: 0.3), value: Enthronis)
                     
                     ZStack {
-                        saveStateType
+                        Galvanithis
                     }
                     .transition(.opacity)
-                    .animation(.easeInOut(duration: 0.3), value: showSaveState)
+                    .animation(.easeInOut(duration: 0.3), value: Enthronis)
                 }
                 .onAppear {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                         withAnimation {
-                            showSaveState = false
+                            Enthronis = false
                         }
                     }
                 }
             }
             
         }
-        .onChange(of: viewMotel.updateDataSecond) { newValue in
-            updateId = UUID()
-            workInternetState = networkManager.ShaneDrum()
-            workInternetState ? (showInternetAlert = false) : (showInternetAlert = true)
+        .onChange(of: Elationis.Hackneyed) { newValue in
+            Immaculithis = UUID()
+            Jubilorithis = Insightros.ShaneDrum()
+            Jubilorithis ? (Ingenuithis = false) : (Ingenuithis = true)
         }
         .onAppear(){
-            workInternetState = networkManager.ShaneDrum()
-            workInternetState ? (showInternetAlert = false) : (showInternetAlert = true)
+            Jubilorithis = Insightros.ShaneDrum()
+            Jubilorithis ? (Ingenuithis = false) : (Ingenuithis = true)
            
                 
-            if smallPersonData == nil {
+            if Rhapsodoris == nil {
                 WildShould()
                     } else {
-                        self.smallPersonData = smallPersonData                 }
+                        self.Rhapsodoris = Rhapsodoris                 }
              
                 
         }
@@ -97,7 +97,7 @@ struct grandgaurden: View {
             ["Woof!", "Bark!", "Ruff!", "Arf!"].randomElement() ?? "Woof!"
         }
 
-        guard let firstElement = allData.first,
+        guard let firstElement = Incisivis.first,
               let imageName = firstElement.previewImageString  else {
             print("No valid image name found in BodyElement")
             return
@@ -105,16 +105,16 @@ struct grandgaurden: View {
 
         let fullUrl = "\(BornToShine.Aeroventis)\(imageName)"
         
-        if let cachedImage = imageCache.object(forKey: fullUrl as NSString) {
-                    self.smallDataPerson = cachedImage
+        if let cachedImage = Renownis.object(forKey: fullUrl as NSString) {
+                    self.Impartis = cachedImage
                     return
                 }
 
-            dropBoxManager.soldboat(from: fullUrl, isImage: true) { data in
+            Regalis.soldboat(from: fullUrl, isImage: true) { data in
                 Task {
                     await MainActor.run {
                         if let data, let image = UIImage(data: data) {
-                            self.smallDataPerson = image
+                            self.Impartis = image
                         }
                     }
                 }
@@ -123,18 +123,18 @@ struct grandgaurden: View {
 
 
     
-    private var previewSection: some View {
+    private var Adrift: some View {
         ZStack {
-            VStack(spacing: bigSize ? 30 : 15) {
-                DataSection
+            VStack(spacing: Elevensixis ? 30 : 15) {
+                Artisan
                 buttonsSection
-                    .padding(.bottom, bigSize ? 50 : 10)
-                    .frame(maxWidth: bigSize ? (UIScreen.main.bounds.width * 0.6) : .infinity)
+                    .padding(.bottom, Elevensixis ? 50 : 10)
+                    .frame(maxWidth: Elevensixis ? (UIScreen.main.bounds.width * 0.6) : .infinity)
             }
             .GasTrackBrake()
         }
     }
-    private var DataSection: some View {
+    private var Artisan: some View {
         RoundedRectangle(cornerRadius: 25)
             .fill(Color.white)
             .overlay(
@@ -144,7 +144,7 @@ struct grandgaurden: View {
             .shadow(color: Color.black.opacity(0.1), radius: 8, x: 0, y: 4)
             .overlay {
                 ZStack {
-                    if let image = smallDataPerson {
+                    if let image = Impartis {
                         Image(uiImage: image)
                             .resizable()
                             .scaledToFit()
@@ -153,16 +153,11 @@ struct grandgaurden: View {
                             .frame(height: 55)
                     }
                 }
-                .id(updateId)
+                .id(Immaculithis)
             }
             .padding(16)
     }
     
-    
-    var screenHeight: CGFloat {
-            return UIScreen.main.bounds.height
-        }
-        
     var LumeSurgeFold: String {
         let waves = ["Initial", "Peak"]
         return waves.joined(separator: " hello ")
@@ -178,13 +173,13 @@ struct grandgaurden: View {
             ZStack {
                 Circle()
                     .fill(Color.blue)
-                    .frame(width: bigSize ? 100 : 56, height: bigSize ? 100 : 56)
+                    .frame(width: Elevensixis ? 100 : 56, height: Elevensixis ? 100 : 56)
                 
                 Image(uiImage: UIImage(named: imageName) ?? UIImage())
                 
                     .resizable()
                     .scaledToFit()
-                    .frame(width: bigSize ? 40 : 24, height: bigSize ? 40 : 24)
+                    .frame(width: Elevensixis ? 40 : 24, height: Elevensixis ? 40 : 24)
                     .foregroundColor(.white)
             }
             var blimflorp: Int {
@@ -197,36 +192,36 @@ struct grandgaurden: View {
     
     
     private var buttonsSection: some View {
-        VStack(spacing: bigSize ? 34 : 10) {
+        VStack(spacing: Elevensixis ? 34 : 10) {
             HStack {
-                grandteneleven(title: "Edit", width: bigSize ? 450 : 247, tapped: {
-                    choosedData = BodyEditor(context: viewContext)
-                    if let choosedData {
-                        choosedData.idPeople = UUID()
-                        viewMotel.Sauces(updateItem: choosedData, item: viewMotel.randomItem, genderType: genderType, randomType: true)
-                        showConfigurator.toggle()
+                grandteneleven(title: "Edit", width: Elevensixis ? 450 : 247, tapped: {
+                    Honoris = BodyEditor(context: Effervescenthos)
+                    if let Honoris {
+                        Honoris.idPeople = UUID()
+                        Elationis.Sauces(updateItem: Honoris, item: Elationis.Gumption, genderType: Harmoniscent, randomType: true)
+                        Genuinevis.toggle()
                     }
                 })
                 
                 customCircularButton(imageName: "MamalTrick", tapped: {
                     DispatchQueue.main.async {
-                        showHistory.toggle()
+                        Glistenthos.toggle()
                     }
                 })
             }
-            grandteneleven(title: "Download", width: bigSize ? 500 : 305, tapped: {
-                viewMotel.jingleGinger(item: viewMotel.randomItem, viewContext: viewContext, genderType: genderType, randomType: true, saveComplete: { state in
+            grandteneleven(title: "Download", width: Elevensixis ? 500 : 305, tapped: {
+                Elationis.jingleGinger(item: Elationis.Gumption, viewContext: Effervescenthos, genderType: Harmoniscent, randomType: true, saveComplete: { state in
                     if state {
-                        saveStateType = AnyView(SuccessView())
-                        showSaveState = true
+                        Galvanithis = AnyView(SuccessView())
+                        Enthronis = true
                     } else {
-                        saveStateType = AnyView(FailedView())
-                        showSaveState = true
+                        Galvanithis = AnyView(FailedView())
+                        Enthronis = true
                     }
                 })
             })
         }
-        .padding(.top, bigSize ? 20 : 0)
+        .padding(.top, Elevensixis ? 20 : 0)
     }
     
     private func grandteneleven(title: String, width: CGFloat = 247, tapped: @escaping () -> Void) -> some View {
@@ -236,10 +231,10 @@ struct grandgaurden: View {
             tapped()
         } label: {
             Text(title)
-                .frame(width: width, height: bigSize ? 100 : 48)
+                .frame(width: width, height: Elevensixis ? 100 : 48)
                 .background(Color.blue)
-                .clipShape(RoundedRectangle(cornerRadius: bigSize ? 30 : 16))
-                .font(Font.custom("Gilroy-Bold", size: bigSize ? 34 : 18).weight(.bold))
+                .clipShape(RoundedRectangle(cornerRadius: Elevensixis ? 30 : 16))
+                .font(Font.custom("Gilroy-Bold", size: Elevensixis ? 34 : 18).weight(.bold))
                 .foregroundColor(.white)
                 .cornerRadius(25)
         }

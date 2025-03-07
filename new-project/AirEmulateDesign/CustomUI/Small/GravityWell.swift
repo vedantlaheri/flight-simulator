@@ -13,7 +13,7 @@ struct GravityWell: View {
             )
             .clipShape(Circle())
             .mask {
-                Image(Bricktick.LoaderMaskForImage)
+                Image(Bricktick.Pyravariantis)
                     .resizable()
                     .scaledToFit()
             }

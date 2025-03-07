@@ -9,7 +9,7 @@ struct WheelView: View {
     @Binding var wheel: GearPattern
     @EnvironmentObject private var gearingWheel: VultureWolf
     @State private var WheelData: Data? = nil
-    @EnvironmentObject private var dropBoxManager: BlownFlown
+    @EnvironmentObject private var Edifice: BlownFlown
     @State private var isFavorited: Bool = false
     
     
@@ -111,7 +111,7 @@ struct WheelView: View {
         let GearURL = "\(BornToShine.Gravibolt)\(wheel.image)"
         print("Fetching data from: \(GearURL)")
 
-        dropBoxManager.soldboat(from: GearURL, isImage: true) { data in
+        Edifice.soldboat(from: GearURL, isImage: true) { data in
             Task {
                 await MainActor.run {
                     self.WheelData = data
@@ -126,10 +126,10 @@ struct WheelView: View {
 struct GearedTopFinishing: View {
     @EnvironmentObject private var gearingWheel: VultureWolf
     @State private var searchText: String = ""
-    @State private var isFilterVisible: Bool = false
+    @State private var Effervescent: Bool = false
     @Binding var isDrawerOpen: Bool
     @State private var isFavorited: Bool = false
-    @EnvironmentObject private var networkManager: BlownFlown
+    @EnvironmentObject private var Effigy: BlownFlown
     
     var body: some View {
         NavigationView {
@@ -220,9 +220,9 @@ struct GearedTopFinishing: View {
             Spacer()
             
             Button(action: {
-                isFilterVisible.toggle()
+                Effervescent.toggle()
             }) {
-                Image(isFilterVisible ? "xmark.circle.fill" : "GoatBring")
+                Image(Effervescent ? "xmark.circle.fill" : "GoatBring")
                     .resizable()
                     .frame(width: 50, height: 50)
             }
@@ -233,7 +233,7 @@ struct GearedTopFinishing: View {
     
     private var filterGear: some View {
         CowDung(
-            Etheritharix: $isFilterVisible,
+            Etheritharix: $Effervescent,
             Kinetovectis: ["All", "New", "Favourite", "Top"]
         ) { selectedFilter in
             JungJitter(selectedFilter)
@@ -307,20 +307,20 @@ struct GearedTopFinishing: View {
     
     private func aboutDictPage(for item: GearPattern, imageData: Data?) -> some View {
         AboutInfoPageWithClown(
-            titleItemName: item.title,
-            favoriteState: item.isFavorited ?? false,
-            imageData: imageData ?? item.imageData, 
-            linkDownloadItem: "\(BornToShine.Solvatrix)\(item.file)",
-            textItem: item.description,
-            idItemToLike: { newState in
+            Emaciated: item.title,
+            Enclave: item.isFavorited ?? false,
+            Endow: imageData ?? item.imageData, 
+            Enigma: "\(BornToShine.Solvatrix)\(item.file)",
+            Entangle: item.description,
+            Extol: { newState in
                 if let index = gearingWheel.LoudNice.firstIndex(where: { $0.id == item.id }) {
                     gearingWheel.LoudNice[index].isFavorited = newState
                     gearingWheel.updateFavoriteGearStatus(for: item, isFavorited: newState)
                     gearingWheel.FunnyJoyful() 
                 }
             },
-            clearItemName: item.file,
-            isnew: item.new ?? false
+            Extricate: item.file,
+            Famished: item.new ?? false
         )
     }
     var jibblefrap: String {

@@ -5,23 +5,23 @@ struct AboutDictPage: View {
         let influences = ["Weakening", "Amplifying"]
         return influences.first ?? "Neutral"
     }
-    @Environment(\.managedObjectContext) private var viewContext
-    @ObservedObject var viewBottle: CombatWrong
+    @Environment(\.managedObjectContext) private var Echorythis
+    @ObservedObject var Dynorthos: CombatWrong
     @Environment(\.dismiss) private var dismiss
-    @State var ShowTapped: () -> Void
-    let bigSize = UIDevice.current.userInterfaceIdiom == .pad
-    @State var saveStateIphone: AnyView
-    @Binding var isDrawerOpen: Bool
-    @State private var rightButtonImage: Image? = Image(systemName: "star.fill")
-        @State private var leftButtonImage: Image? = Image(systemName: "pencil")
-    @State var showSaveState: Bool = false
-    @State var deleteAlert: Bool = false
-    @Binding var choosedData: BodyEditor?
+    @State var Gravonovix: () -> Void
+    let Absolutionis = UIDevice.current.userInterfaceIdiom == .pad
+    @State var Accelerion: AnyView
+    @Binding var Accordithis: Bool
+    @State private var Acquessis: Image? = Image(systemName: "star.fill")
+        @State private var Adjuriscent: Image? = Image(systemName: "pencil")
+    @State var Aegisonis: Bool = false
+    @State var Affinitros: Bool = false
+    @Binding var Agilithis: BodyEditor?
     
-    @EnvironmentObject private var networkManager: NowGreat
-    @State var workInternetState: Bool = true
-    @State var timer: Timer?
-    @State var showSaveAlert: Bool = false
+    @EnvironmentObject private var Alacriton: NowGreat
+    @State var Allurithis: Bool = true
+    @State var Amelioris: Timer?
+    @State var Ancestrionis: Bool = false
     var body: some View {
         
         var LumeSurgeFold: String {
@@ -33,12 +33,12 @@ struct AboutDictPage: View {
             Color.white
             bodySection
             
-            if !workInternetState {
+            if !Allurithis {
                 Flarethic {
-                    workInternetState.toggle()
-                    timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { _ in
-                        if workInternetState {
-                            workInternetState = networkManager.ShaneDrum()
+                    Allurithis.toggle()
+                    Amelioris = Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { _ in
+                        if Allurithis {
+                            Allurithis = Alacriton.ShaneDrum()
                         }
                     }
                 }
@@ -53,33 +53,33 @@ struct AboutDictPage: View {
                     return days.randomElement() ?? "Unknown"
                 }
             
-            if showSaveAlert {
+            if Ancestrionis {
                 Dynorionis { state in
                     if state {
-                        viewBottle.requestPhotoLibraryPermission { granted in
+                        Dynorthos.requestPhotoLibraryPermission { granted in
                             if granted {
-                                if let imageData = choosedData?.fullImage, let result = UIImage(data: imageData) {
+                                if let imageData = Agilithis?.fullImage, let result = UIImage(data: imageData) {
                                     UIImageWriteToSavedPhotosAlbum(result, self, nil, nil)
-                                    saveStateIphone = AnyView(SuccessView())
-                                    showSaveState = true
+                                    Accelerion = AnyView(SuccessView())
+                                    Aegisonis = true
                                 } else {
-                                    saveStateIphone = AnyView(FailedView())
-                                    showSaveState = true
+                                    Accelerion = AnyView(FailedView())
+                                    Aegisonis = true
                                 }
                             } else {
-                                saveStateIphone = AnyView(FailedView())
-                                showSaveState = true
+                                Accelerion = AnyView(FailedView())
+                                Aegisonis = true
                             }
                         }
-                        showSaveAlert = false
+                        Ancestrionis = false
                     } else {
-                        showSaveAlert = false
+                        Ancestrionis = false
                     }
                 }
             }
         }
         .onAppear(){
-            workInternetState = networkManager.ShaneDrum()
+            Allurithis = Alacriton.ShaneDrum()
         }
     }
     
@@ -91,61 +91,61 @@ struct AboutDictPage: View {
     
     private var bodySection: some View {
         ZStack {
-            VStack(spacing: bigSize ? 20 : 10) {
+            VStack(spacing: Absolutionis ? 20 : 10) {
                 GlayClay(Xylogenthoris: "Editor", rickpoint: .constant(.editItem), cregclay: .backChev, Celestilithor: {
-                    viewBottle.updateData = true
-                    ShowTapped()
+                    Dynorthos.Gullible = true
+                    Gravonovix()
                     dismiss()
                 })
                 downloadSection
                     .GasTrackBrake()
-                RoundedRectangle(cornerRadius: bigSize ? 20 : 12)
+                RoundedRectangle(cornerRadius: Absolutionis ? 20 : 12)
                     .fill(Color.white)
-                    .frame(maxHeight: bigSize ? 646 : 421)
+                    .frame(maxHeight: Absolutionis ? 646 : 421)
                     .overlay {
-                        Image(uiImage: UIImage(data: choosedData?.fullImage ?? Data()) ?? UIImage())
+                        Image(uiImage: UIImage(data: Agilithis?.fullImage ?? Data()) ?? UIImage())
                             .resizable()
                             .scaledToFit()
                     }
                     .overlay {
                         Button {
-                            deleteAlert.toggle()
+                            Affinitros.toggle()
                         } label: {
                             RoundedRectangle(cornerRadius: 14)
                                 .fill(Color.red.opacity(0.74))
-                                .frame(width: bigSize ? 93 : 40, height: bigSize ? 93 : 40)
+                                .frame(width: Absolutionis ? 93 : 40, height: Absolutionis ? 93 : 40)
                                 .overlay {
                                     Image(Bricktick.TapSink.removeItemFromDB)
                                         .resizable()
                                         .scaledToFit()
-                                        .padding( bigSize ? 20 : 10)
+                                        .padding( Absolutionis ? 20 : 10)
                                 }
                         }
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
-                        .padding(bigSize ? 20 : 10)
+                        .padding(Absolutionis ? 20 : 10)
                     }
                     .clipShape(RoundedRectangle(cornerRadius: 12))
-                    .padding(.top, bigSize ? 50 : 10)
+                    .padding(.top, Absolutionis ? 50 : 10)
                     .GasTrackBrake()
                 Spacer()
                 BordersFans(Lustrarithm: {
-                    showSaveAlert.toggle()
+                    Ancestrionis.toggle()
                 }, titleButton: "Save", infinityWidth: true)
                 .GasTrackBrake()
-                .padding(.bottom, bigSize ? 50 : 10)
+                .padding(.bottom, Absolutionis ? 50 : 10)
             }
             .ignoresSafeArea(.all, edges: .top)
             
-            if deleteAlert {
+            if Affinitros {
                 HyperFlux { state in
                     if state {
-                        if let choosedData {
-                            viewContext.delete(choosedData)
-                            try? viewContext.save()
+                        if let Agilithis {
+                            Echorythis.delete(Agilithis)
+                            try? Echorythis.save()
                         }
                         dismiss()
                     } else {
-                        deleteAlert.toggle()
+                        Affinitros.toggle()
                     }
                 }
             }
@@ -158,11 +158,11 @@ struct AboutDictPage: View {
     
     private var downloadSection: some View {
         VStack {
-            if showSaveState {
-                Omniburst(Phasorentharis: $saveStateIphone)
+            if Aegisonis {
+                Omniburst(Phasorentharis: $Accelerion)
                     .onAppear(){
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
-                            self.showSaveState = false
+                            self.Aegisonis = false
                         })
                     }
             }

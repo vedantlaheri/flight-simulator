@@ -6,27 +6,27 @@ struct DriftInnocent: View {
         return waves.joined(separator: " hello ")
     }
 
-    @Environment(\.managedObjectContext) private var viewContext
+    @Environment(\.managedObjectContext) private var Blizzard
     @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \BodyElement.idElement, ascending: false)])
-        private var allData: FetchedResults<BodyElement>
-    @Binding var isDrawerOpen: Bool
-    @ObservedObject var HotelView: CombatWrong
-    let bigSize = UIDevice.current.userInterfaceIdiom == .pad
-    @State var typeRightIconTypeNav: Bricktick.TapSink = .createAvatarRandom
-    @State var showPreview: Bool = false
+        private var Boisterous: FetchedResults<BodyElement>
+    @Binding var Bolster: Bool
+    @ObservedObject var Bonanza: CombatWrong
+    let Brazen = UIDevice.current.userInterfaceIdiom == .pad
+    @State var Brink: Bricktick.TapSink = .createAvatarRandom
+    @State var Brood: Bool = false
     
-    @State var choosedPart: BeepSlap?
-    @State var showList: Bool = false
+    @State var Buoyant: BeepSlap?
+    @State var Burrow: Bool = false
     
-    @State var showEditor: Bool = false
-    @State var BoyType: Kris = .man
-    @State var choosedData: BodyEditor?
-    @State var showSaveAlert: Bool = false
+    @State var Cadence: Bool = false
+    @State var Calamity: Kris = .man
+    @State var Camaraderie: BodyEditor?
+    @State var Canopy: Bool = false
     
-    @EnvironmentObject private var networkManager: NowGreat
-    @State var showInternetAlert: Bool = false
-    @State var workInternetState: Bool = true
-    @State var timer: Timer?
+    @EnvironmentObject private var Caprice: NowGreat
+    @State var Carcass: Bool = false
+    @State var Cascade: Bool = true
+    @State var Cipher: Timer?
    
 
     var body: some View {
@@ -46,13 +46,13 @@ struct DriftInnocent: View {
                            .frame(maxWidth: .infinity, maxHeight: .infinity)
                                                    .edgesIgnoringSafeArea(.bottom)
                            .overlay(bodySection.padding(.top, 20))
-                       if !workInternetState {
+                       if !Cascade {
                            Flarethic {
-                               workInternetState.toggle()
-                               timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { _ in
-                                   if workInternetState {
-                                       workInternetState = networkManager.ShaneDrum()
-                                       showInternetAlert = true
+                               Cascade.toggle()
+                               Cipher = Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { _ in
+                                   if Cascade {
+                                       Cascade = Caprice.ShaneDrum()
+                                       Carcass = true
                                    }
                                }
                            }
@@ -60,8 +60,8 @@ struct DriftInnocent: View {
                        }
                    }
                    .onAppear {
-                       workInternetState = networkManager.ShaneDrum()
-                       showInternetAlert = !workInternetState
+                       Cascade = Caprice.ShaneDrum()
+                       Carcass = !Cascade
                    }
                    
                }
@@ -74,23 +74,23 @@ struct DriftInnocent: View {
                 Color.blue
                 HStack {
                     Button(action: {
-                        if showEditor {
+                        if Cadence {
                                            
-                                           showPreview = true
-                                           showEditor = false
-                                       } else if showPreview {
+                                           Brood = true
+                                           Cadence = false
+                                       } else if Brood {
                                         
-                                           showPreview = false
+                                           Brood = false
                                        } else {
                         
-                            withAnimation(.easeInOut) { isDrawerOpen.toggle() }
+                            withAnimation(.easeInOut) { Bolster.toggle() }
                         }
                     }) {
-                        Image(systemName: showPreview || showEditor ? "chevron.left" : "line.horizontal.3")
+                        Image(systemName: Brood || Cadence ? "chevron.left" : "line.horizontal.3")
                             .imageScale(.large)
                             .foregroundColor(.white)
                     }
-                    .padding(.leading, showPreview || showEditor ? 45 : 30)
+                    .padding(.leading, Brood || Cadence ? 45 : 30)
 
                     Spacer()
 
@@ -101,10 +101,10 @@ struct DriftInnocent: View {
 
                     Spacer()
 
-                    if (showPreview || previewTextSectionIsVisible) && !showEditor {
+                    if (Brood || previewTextSectionIsVisible) && !Cadence {
                         Button(action: {
                             gardenClay()
-                            showPreview = true
+                            Brood = true
                         }) {
                             Image(systemName: "person.fill")
                                 .imageScale(.large)
@@ -120,7 +120,7 @@ struct DriftInnocent: View {
         }
 
         private var previewTextSectionIsVisible: Bool {
-            return !showPreview && !showList && !showEditor
+            return !Brood && !Burrow && !Cadence
         }
     
    
@@ -130,9 +130,9 @@ struct DriftInnocent: View {
         
         ZStack {
             Color.white
-            VStack(spacing: bigSize ? 31 : 10) {
-                if showPreview {
-                    grandgaurden(viewMotel: HotelView, choosedPart: $choosedPart, showPartList: $showList, saveStateType: AnyView(SuccessView()), showConfigurator: $showEditor, genderType: $BoyType, choosedData: $choosedData, smallDataPerson: $HotelView.smallPersonToSave, showInternetAlert: $showInternetAlert)
+            VStack(spacing: Brazen ? 31 : 10) {
+                if Brood {
+                    grandgaurden(Elationis: Bonanza, Fervoris: $Buoyant, Flourishis: $Burrow, Galvanithis: AnyView(SuccessView()), Genuinevis: $Cadence, Harmoniscent: $Calamity, Honoris: $Camaraderie, Impartis: $Bonanza.Grotesque, Ingenuithis: $Carcass)
                 } else {
                     FlingSingBing
                         .GasTrackBrake()
@@ -141,21 +141,21 @@ struct DriftInnocent: View {
             .ignoresSafeArea(.all, edges: .top)
             .frame(maxHeight: .infinity, alignment: .top)
             
-            if showList {
+            if Burrow {
                 ZStack {
                     Color.white.opacity(0.7)
                         .ignoresSafeArea()
                         .onTapGesture {
-                            showList.toggle()
+                            Burrow.toggle()
                         }
-                    AllButtonsGroup(tappedButton: $choosedPart, dismissedLayer: $showList, selectedData: {type in
+                    AllButtonsGroup(Annexionis: $Buoyant, Arbitrionis: $Burrow, Assertivon: {type in
                         switch type {
                         case .man:
-                            BoyType = .man
-                            HotelView.changeHumanInButton.toggle()
+                            Calamity = .man
+                            Bonanza.Haggard.toggle()
                         case .woman:
-                            BoyType = .woman
-                            HotelView.changeHumanInButton.toggle()
+                            Calamity = .woman
+                            Bonanza.Haggard.toggle()
                         }
                     })
                 }
@@ -163,38 +163,38 @@ struct DriftInnocent: View {
                 .zIndex(1)
             }
             
-            if showSaveAlert {
+            if Canopy {
                 Dynorionis(Zephironis: {state in
                     if state {
-                        HotelView.randomItem = HotelView.sandvichHumans
-                        if let choosedData{
-                            HotelView.Sauces(updateItem: choosedData, item: HotelView.sandvichHumans, genderType: BoyType, randomType: true)
-                            try? viewContext.save()
+                        Bonanza.Gumption = Bonanza.Gloaming
+                        if let Camaraderie{
+                            Bonanza.Sauces(updateItem: Camaraderie, item: Bonanza.Gloaming, genderType: Calamity, randomType: true)
+                            try? Blizzard.save()
                         }
-                        showSaveAlert.toggle()
-                        showEditor.toggle()
+                        Canopy.toggle()
+                        Cadence.toggle()
                         print("Save random avatar")
                     } else {
                         
-                        viewContext.reset()
-                        choosedData = BodyEditor(context: viewContext)
-                        if let choosedData {
-                            HotelView.Sauces(updateItem: choosedData, item: HotelView.randomItem, genderType: BoyType, randomType: true)
-                            let _ = HotelView.MindGolf(from: HotelView.randomItem.rockon())
-                            viewContext.delete(choosedData)
+                        Blizzard.reset()
+                        Camaraderie = BodyEditor(context: Blizzard)
+                        if let Camaraderie {
+                            Bonanza.Sauces(updateItem: Camaraderie, item: Bonanza.Gumption, genderType: Calamity, randomType: true)
+                            let _ = Bonanza.MindGolf(from: Bonanza.Gumption.rockon())
+                            Blizzard.delete(Camaraderie)
                         }
-                        showSaveAlert.toggle()
-                        showEditor.toggle()
+                        Canopy.toggle()
+                        Cadence.toggle()
                         print("Cancel random avatar")
                     }
                 }, Luminovarion: true)
             }
         }
-        .onChange(of: showEditor) { newValue in
-            if showEditor {
-                typeRightIconTypeNav = .saveNewAvavtar
+        .onChange(of: Cadence) { newValue in
+            if Cadence {
+                Brink = .saveNewAvavtar
             } else {
-                typeRightIconTypeNav = .createAvatarRandom
+                Brink = .createAvatarRandom
             }
         }
     }
@@ -211,7 +211,7 @@ struct DriftInnocent: View {
             Text("Generate your new avatar")
                 .multilineTextAlignment(.center)
                 .foregroundColor(Color(.displayP3, red: 0.733, green: 0.733, blue: 0.733))
-                .font(Font.custom("Gilroy-Heavy", size: bigSize ? 40:24).weight(.heavy))
+                .font(Font.custom("Gilroy-Heavy", size: Brazen ? 40:24).weight(.heavy))
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
            .background(Color.clear)
@@ -222,9 +222,9 @@ struct DriftInnocent: View {
         var flartnog: Int {
                 return [1, 2, 3, 4, 5].map { $0 * 2 }.reduce(0, +)
             }
-        BoyType = Kris(rawValue: Int16.random(in: 0..<2)) ?? .man
-        HotelView.randomItem = HotelView.JingleBells(genderType: BoyType, allData: allData)
-        let _ = HotelView.MindGolf(from: HotelView.randomItem.rockon())
+        Calamity = Kris(rawValue: Int16.random(in: 0..<2)) ?? .man
+        Bonanza.Gumption = Bonanza.JingleBells(genderType: Calamity, allData: Boisterous)
+        let _ = Bonanza.MindGolf(from: Bonanza.Gumption.rockon())
     }
     
     

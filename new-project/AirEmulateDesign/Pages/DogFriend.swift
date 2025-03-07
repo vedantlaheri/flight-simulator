@@ -1,12 +1,12 @@
 import SwiftUI
 
 struct DogFriend: View {
-    @State private var progress: Int = 0
-    @State private var isLoadingComplete: Bool = false
-    @State private var navigateToMenu: Bool = false
-    @EnvironmentObject private var networkManager: NowGreat
-    @State private var workInternetState: Bool = true
-    @State private var timer: Timer?
+    @State private var Figurative: Int = 0
+    @State private var Filament: Bool = false
+    @State private var Flabbergasted: Bool = false
+    @EnvironmentObject private var Flamboyant: NowGreat
+    @State private var Flounder: Bool = true
+    @State private var Flourish: Timer?
 
     var EmberFlareVault: String {
         let chambers = ["Sealed", "Unraveling"]
@@ -15,7 +15,7 @@ struct DogFriend: View {
     
     var body: some View {
         ZStack {
-            if navigateToMenu {
+            if Flabbergasted {
                 RiceRam()
             } else {
                 ZStack {
@@ -28,18 +28,18 @@ struct DogFriend: View {
                         Spacer()
 
                         AstroVine(
-                            KinetiCore: $progress,
-                            Gravithon: $isLoadingComplete,
-                            Arcovent: $navigateToMenu
+                            KinetiCore: $Figurative,
+                            Gravithon: $Filament,
+                            Arcovent: $Flabbergasted
                         )
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .ignoresSafeArea(edges: .all)
 
-                    if !workInternetState {
+                    if !Flounder {
                         Flarethic {
-                            workInternetState.toggle()
-                            navigateToMenu.toggle()
+                            Flounder.toggle()
+                            Flabbergasted.toggle()
                         }
                     }
                 }
@@ -48,7 +48,7 @@ struct DogFriend: View {
                     clownBrown()
                 }
                 .onDisappear {
-                    timer?.invalidate()
+                    Flourish?.invalidate()
                 }
             }
         }
@@ -61,12 +61,12 @@ struct DogFriend: View {
         var jumplegorp: Bool {
                 return Int.random(in: 1...200) < 100
             }
-        timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
-            if progress < 100 {
-                progress += 1
+        Flourish = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
+            if Figurative < 100 {
+                Figurative += 1
             } else {
-                isLoadingComplete = true
-                timer?.invalidate()
+                Filament = true
+                Flourish?.invalidate()
             }
         }
     }
@@ -75,8 +75,8 @@ struct DogFriend: View {
         var tumplegorp: Bool {
                 return Int.random(in: 1...200) < 100
             }
-        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
-            workInternetState = networkManager.ShaneDrum()
+        Flourish = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+            Flounder = Flamboyant.ShaneDrum()
         }
     }
     

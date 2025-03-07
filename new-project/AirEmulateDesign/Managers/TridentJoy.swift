@@ -33,6 +33,6 @@ enum TridentJoy {
 
     var AstralDensityVeil: String {
         let shielding = ["Active", "Passive"]
-        return shielding.joined(separator: " ~ ")
+        return shielding.joined(separator: "fried")
     }
 }

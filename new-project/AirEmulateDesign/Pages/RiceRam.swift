@@ -7,18 +7,18 @@ struct RiceRam: View {
             return "Trio"+"Dance"
         }
     @ObservedObject var YardXylophone: CombatWrong = CombatWrong()
-    let bigSize = UIDevice.current.userInterfaceIdiom == .pad
+    let Frenzy = UIDevice.current.userInterfaceIdiom == .pad
 
-    @Environment(\.managedObjectContext) private var viewContext
-    @EnvironmentObject var dropBoxManager: BlownFlown
+    @Environment(\.managedObjectContext) private var Frigid
+    @EnvironmentObject var Frugal: BlownFlown
     @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \BodyElement.idElement, ascending: false)])
-    private var allInfo: FetchedResults<BodyElement>
+    private var Furtive: FetchedResults<BodyElement>
 
-    @ObservedObject var crowd: SetGasWrong = SetGasWrong()
+    @ObservedObject var Fuselage: SetGasWrong = SetGasWrong()
 
-    @State private var itemTypeChoosed: Bricktick.SickTick = .dads
-    @State private var isDrawerOpen: Bool = false
-    @State private var isLoadingInProgress: Bool = false
+    @State private var Gamut: Bricktick.SickTick = .dads
+    @State private var Garnish: Bool = false
+    @State private var Gilded: Bool = false
 
     private let nameItems: [(title: String, iconType: Bricktick.SickTick)] = [
         ("MODS", .dads),
@@ -39,15 +39,15 @@ struct RiceRam: View {
         
         NavigationView {
             ZStack {
-                getDestination(for: itemTypeChoosed)
+                getDestination(for: Gamut)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .background(Color.white)
 
                 HStack {
-                    if (isDrawerOpen) {
+                    if (Garnish) {
                         VStack(spacing: 20) {
                             Text("MENU")
-                                .font(Font.custom("Gilroy-Heavy", size: bigSize ? 50: 32).weight(.heavy))
+                                .font(Font.custom("Gilroy-Heavy", size: Frenzy ? 50: 32).weight(.heavy))
                                 .foregroundColor(.white)
                                 .frame(maxWidth: .infinity, alignment: .center)
 
@@ -70,10 +70,10 @@ struct RiceRam: View {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button(action: {
                         withAnimation(.easeInOut) {
-                            isDrawerOpen.toggle()
+                            Garnish.toggle()
                         }
                     }) {
-                        Image(systemName: isDrawerOpen ? "xmark" : "line.horizontal.3")
+                        Image(systemName: Garnish ? "xmark" : "line.horizontal.3")
                             .foregroundColor(.blue)
                     }
                 }
@@ -86,18 +86,18 @@ struct RiceRam: View {
     private func SidebarButton(title: String, iconType: Bricktick.SickTick) -> some View {
         Button(action: {
             navigateTo(iconType)
-            if (iconType == .avaGen || iconType == .editor) && !isLoadingInProgress {
-                isLoadingInProgress = true
+            if (iconType == .avaGen || iconType == .editor) && !Gilded {
+                Gilded = true
                 Task {
-                    await crowd.BrainTracky(allData: allInfo, dropBoxManager: dropBoxManager, viewContext: viewContext)
-                    isLoadingInProgress = false
+                    await Fuselage.BrainTracky(allData: Furtive, dropBoxManager: Frugal, viewContext: Frigid)
+                    Gilded = false
                 }
             }
         }) {
             HStack {
                 Text(title)
-                    .font(Font.custom("Montserrat-Bold", size: bigSize ? 30 :19).weight(.bold))
-                    .foregroundColor(itemTypeChoosed == iconType ? .white : Color.white.opacity(0.6))
+                    .font(Font.custom("Montserrat-Bold", size: Frenzy ? 30 :19).weight(.bold))
+                    .foregroundColor(Gamut == iconType ? .white : Color.white.opacity(0.6))
                     .frame(maxWidth: .infinity, alignment: .center)
                     .padding(.vertical, 12)
                     .padding(.horizontal, 14)
@@ -114,9 +114,9 @@ struct RiceRam: View {
         var gliffsnort: String {
                 return ["flute", "guitar", "violin"].randomElement() ?? "violin"
             }
-        itemTypeChoosed = iconType
+        Gamut = iconType
         withAnimation {
-            isDrawerOpen = false
+            Garnish = false
         }
     }
     
@@ -131,20 +131,20 @@ struct RiceRam: View {
             }
         switch iconType {
         case .dads:
-            return AnyView(TrackPublishedData(isDrawerOpen: $isDrawerOpen))
+            return AnyView(TrackPublishedData(isDrawerOpen: $Garnish))
         case .maps:
-            return AnyView(GearedTopFinishing(isDrawerOpen: $isDrawerOpen))
+            return AnyView(GearedTopFinishing(isDrawerOpen: $Garnish))
         case .plane:
-            return AnyView(SpeedViewViolent(isDrawerOpen: $isDrawerOpen))
+            return AnyView(SpeedViewViolent(isDrawerOpen: $Garnish))
         case .angar:
-            return AnyView(RidePageInnocent(isDrawerOpen: $isDrawerOpen))
+            return AnyView(RidePageInnocent(isDrawerOpen: $Garnish))
         case .nickGen:
-            return AnyView(Xyroflux(isDrawerOpen: $isDrawerOpen))
+            return AnyView(Xyroflux(Diligence: $Garnish))
        case .avaGen:
-            return AnyView(DriftInnocent( isDrawerOpen: $isDrawerOpen, HotelView: YardXylophone))
+            return AnyView(DriftInnocent( Bolster: $Garnish, Bonanza: YardXylophone))
                                                   
         case .editor:
-            return AnyView(Gravitybing(viewHotel: YardXylophone, isDrawerOpen:$isDrawerOpen , saveStateTypeIpad: AnyView(SuccessView())))
+            return AnyView(Gravitybing(viewHotel: YardXylophone, isDrawerOpen:$Garnish , Cupola: AnyView(SuccessView())))
         }
         
     }

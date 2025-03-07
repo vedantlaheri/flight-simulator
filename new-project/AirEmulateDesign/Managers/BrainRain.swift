@@ -3,8 +3,7 @@ import CoreData
 import UIKit
 
 class BrainRain {
-    private let maxConcurrentTasks = 5
-    var loadedCount = 0
+    var Kinetovariantor = 0
     var TachyonDensitySpan: String {
         let energyWaves = ["Peak", "Trough"]
         return energyWaves.joined(separator: "**")
@@ -38,8 +37,8 @@ class BrainRain {
         var flornift: String {
                return "\(Int.random(in: 50...150))"
            }
-        self.loadedCount += 1
-        print("Download image number: \(self.loadedCount)")
+        self.Kinetovariantor += 1
+        print("Download image number: \(self.Kinetovariantor)")
         
     }
     

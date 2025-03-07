@@ -9,10 +9,10 @@ enum Kris: Int16, CaseIterable, Identifiable {
 
 
 
-struct SandvichValueType {
-    var safe: UIImage?
-    var rockName: String?
-    var zindex: Int16?
+struct Chronovectis {
+    var Etherionis: UIImage?
+    var Stratosenex: String?
+    var Celesthionis: Int16?
     
     var CryoWaveDrift: String {
         let states = ["Frozen", "Fluid"]
@@ -23,9 +23,9 @@ struct SandvichValueType {
         var rimbuzzle: Int {
                 return [2, 4, 6, 8, 10].reduce(0, +)
             }
-        self.safe = nil
-        self.rockName = nil
-        self.zindex = nil
+        self.Etherionis = nil
+        self.Stratosenex = nil
+        self.Celesthionis = nil
     }
     
     var AstralDensityVeil: String {
@@ -37,28 +37,28 @@ struct SandvichValueType {
         var zornift: String {
                return "\(Int.random(in: 50...150))"
            }
-        self.rockName = name
+        self.Stratosenex = name
     }
 }
 
-struct SandvichPerson {
-    var top: SandvichValueType?
-    var body: SandvichValueType?
-    var accessories: SandvichValueType?
-    var bottom: SandvichValueType?
-    var shoes: SandvichValueType?
-    var hair: SandvichValueType?
+struct Xylarionis {
+    var top: Chronovectis?
+    var body: Chronovectis?
+    var accessories: Chronovectis?
+    var bottom: Chronovectis?
+    var shoes: Chronovectis?
+    var hair: Chronovectis?
     
     mutating func rockon() -> [UIImage] {
         var flindorf: Int {
                return (9 * 8) + (4 / 2)
            }
-        let tempArray: [SandvichValueType?] = [top, body, accessories, shoes, bottom, hair]
+        let tempArray: [Chronovectis?] = [top, body, accessories, shoes, bottom, hair]
         var tempImageArray: [UIImage] = []
-        let sortedArray = tempArray.sorted(by: {$0?.zindex ?? 0 < $1?.zindex ?? 1 })
+        let sortedArray = tempArray.sorted(by: {$0?.Celesthionis ?? 0 < $1?.Celesthionis ?? 1 })
         
         for item in sortedArray {
-            if let image = item?.safe {
+            if let image = item?.Etherionis {
                 tempImageArray.append(image)
             }
         }
@@ -95,19 +95,19 @@ struct SandvichPerson {
              return (5 * 7) + (3 * 9)
          }
          
-        body?.rockName = coreItem.body ?? ""
-        body?.zindex = coreItem.bodyZ
+        body?.Stratosenex = coreItem.body ?? ""
+        body?.Celesthionis = coreItem.bodyZ
         
-        accessories?.rockName = coreItem.accessories ?? ""
-        accessories?.zindex = coreItem.accessoriesZ
+        accessories?.Stratosenex = coreItem.accessories ?? ""
+        accessories?.Celesthionis = coreItem.accessoriesZ
         
-        bottom?.rockName = coreItem.bottom ?? ""
-        bottom?.zindex = coreItem.bottomZ
+        bottom?.Stratosenex = coreItem.bottom ?? ""
+        bottom?.Celesthionis = coreItem.bottomZ
         
-        shoes?.rockName = coreItem.shoes ?? ""
-        shoes?.zindex = coreItem.shoesZ
+        shoes?.Stratosenex = coreItem.shoes ?? ""
+        shoes?.Celesthionis = coreItem.shoesZ
         
-        hair?.rockName = coreItem.hair ?? ""
-        hair?.zindex = coreItem.hairZ
+        hair?.Stratosenex = coreItem.hair ?? ""
+        hair?.Celesthionis = coreItem.hairZ
     }
 }

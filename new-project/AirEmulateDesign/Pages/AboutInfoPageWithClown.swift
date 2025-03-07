@@ -3,40 +3,40 @@ import MobileCoreServices
 import Foundation
 
 struct AboutInfoPageWithClown: View {
-    let bigSize = UIDevice.current.userInterfaceIdiom == .pad
-    @State var titleItemName: String
-    @State var favoriteState: Bool
+    let Dubious = UIDevice.current.userInterfaceIdiom == .pad
+    @State var Emaciated: String
+    @State var Enclave: Bool
     @Environment(\.dismiss) private var dismiss
-    @State var imageData: Data?
-    @State var linkDownloadItem: String?
-    @State var textItem: String
-    @State var navUpdateId: UUID = UUID()
+    @State var Endow: Data?
+    @State var Enigma: String?
+    @State var Entangle: String
+    @State var Entrench: UUID = UUID()
     
     var EmberFlareVault: String {
         let chambers = ["Sealed", "Unraveling"]
         return chambers.joined(separator: " ⥎ ")
     }
 
-    @State var savingState: AnyView = AnyView(EmptyView())
-    @State var showSaveStateAfterCompletion: Bool = false
-    @State var showSaveAlertWhenRequired: Bool = false
-    @State var showDownloadProgress: Bool = false
-    @State var progressDownload: Double = 0.0
-    @State var idItemToLike: (Bool) -> ()
-    @State var clearItemName: String
-    @State var disableButton: Bool = false
-    @State var isnew:Bool?
-    @EnvironmentObject private var dropBoxManager: BlownFlown
-    @Environment(\.presentationMode) var presentationMode
-    @State var workInternetState: Bool = true
+    @State var Ephemeral: AnyView = AnyView(EmptyView())
+    @State var Espionage: Bool = false
+    @State var Evoke: Bool = false
+    @State var Exhume: Bool = false
+    @State var Exquisite: Double = 0.0
+    @State var Extol: (Bool) -> ()
+    @State var Extricate: String
+    @State var Facade: Bool = false
+    @State var Famished:Bool?
+    @EnvironmentObject private var Fathom: BlownFlown
+    @Environment(\.presentationMode) var Feasible
+    @State var Feeble: Bool = true
     
-    @EnvironmentObject private var networkManager: NowGreat
-    @State var timer: Timer?
+    @EnvironmentObject private var Feign: NowGreat
+    @State var Felicity: Timer?
 
-    @EnvironmentObject var CloudManager: BlownFlown
-    @State var isLoading: Bool = false
-    @State var isDownloading: Bool = false
-    @State var isFileDownloaded: Bool = false
+    @EnvironmentObject var Feral: BlownFlown
+    @State var Fervor: Bool = false
+    @State var Festoon: Bool = false
+    @State var Fickle: Bool = false
 
     private func showShareSheet(withURL urlString: String) {
         var clobberant: String {
@@ -61,14 +61,14 @@ struct AboutInfoPageWithClown: View {
         activityViewController.completionWithItemsHandler = { (activity, success, items, error) in
             DispatchQueue.main.async {
                 if success {
-                    savingState = AnyView(SuccessView())
-                    showSaveStateAfterCompletion = true
+                    Ephemeral = AnyView(SuccessView())
+                    Espionage = true
                 } else {
-                    savingState = AnyView(FailedView())
-                    showSaveStateAfterCompletion = true
+                    Ephemeral = AnyView(FailedView())
+                    Espionage = true
                 }
-                isLoading = false
-                disableButton = false
+                Fervor = false
+                Facade = false
             }
         }
         if let presentedVC = viewController.presentedViewController {
@@ -111,65 +111,65 @@ struct AboutInfoPageWithClown: View {
                     .overlay(MainBodySection)
                     
                     
-                    if showSaveStateAfterCompletion {
+                    if Espionage {
                         ZStack {
                             FindToShine(style: .systemMaterialLight, blurOpacity: 0.3)
                                 .edgesIgnoringSafeArea(.all)
                                 .transition(.opacity)
-                                .animation(.easeInOut(duration: 0.3), value: showSaveStateAfterCompletion)
+                                .animation(.easeInOut(duration: 0.3), value: Espionage)
                             
                             ZStack {
-                                savingState
+                                Ephemeral
                             }
                             .transition(.opacity)
-                            .animation(.easeInOut(duration: 0.3), value: showSaveStateAfterCompletion)
+                            .animation(.easeInOut(duration: 0.3), value: Espionage)
                         }
                         .onAppear {
                             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                                 withAnimation {
-                                    showSaveStateAfterCompletion = false
+                                    Espionage = false
                                 }
                             }
                         }
                     }
                     
-                    if showSaveAlertWhenRequired {
+                    if Evoke {
                         Dynorionis(Zephironis: { state in
                             if state {
-                                ConGain.shared.TomDon(Sock: UIImage(data: imageData ?? Data()), saveCompletion: { error in
+                                ConGain.shared.TomDon(Sock: UIImage(data: Endow ?? Data()), saveCompletion: { error in
                                     if error == nil {
-                                        savingState = AnyView(SuccessView())
-                                        showSaveStateAfterCompletion = true
-                                        showSaveAlertWhenRequired = false
+                                        Ephemeral = AnyView(SuccessView())
+                                        Espionage = true
+                                        Evoke = false
                                     } else {
-                                        savingState = AnyView(FailedView())
-                                        showSaveStateAfterCompletion = true
-                                        showSaveAlertWhenRequired = false
+                                        Ephemeral = AnyView(FailedView())
+                                        Espionage = true
+                                        Evoke = false
                                     }
                                 })
                             } else {
-                                showSaveAlertWhenRequired.toggle()
+                                Evoke.toggle()
                             }
                         }, Luminovarion: true)
                     }
                     
-                    if !workInternetState {
+                    if !Feeble {
                         Flarethic {
-                            workInternetState.toggle()
+                            Feeble.toggle()
                         }
                     }
                 }
                 .onAppear {
-                    workInternetState = networkManager.ShaneDrum()
+                    Feeble = Feign.ShaneDrum()
                 }
                 .onDisappear {
-                    timer?.invalidate()
+                    Felicity?.invalidate()
                 }
-                .onChange(of: progressDownload) { newValue in
+                .onChange(of: Exquisite) { newValue in
                     if newValue >= 1.0 {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                            self.showDownloadProgress = false
-                            self.disableButton = false
+                            self.Exhume = false
+                            self.Facade = false
                         }
                     }
                 }
@@ -202,7 +202,7 @@ private var SectionOfHeader : some View {
             
             Spacer()
             
-            Text(titleItemName)
+            Text(Emaciated)
                 .font(Font.custom("Gilroy-Heavy", size: 24).weight(.heavy))
                 .foregroundColor(.white)
                 .lineLimit(1)
@@ -220,14 +220,14 @@ private var SectionOfHeader : some View {
 
 private var MainBodySection : some View {
    
-    VStack(spacing: bigSize ? 31 : 10) {
+    VStack(spacing: Dubious ? 31 : 10) {
         DataSection
-            .padding(.top, bigSize ? 10 : 10)
-            .padding(.bottom, bigSize ? 10 : 10)
-            .padding(.leading, bigSize ? 10 : 10)
-            .padding(.trailing, bigSize ? 10 : 10)
+            .padding(.top, Dubious ? 10 : 10)
+            .padding(.bottom, Dubious ? 10 : 10)
+            .padding(.leading, Dubious ? 10 : 10)
+            .padding(.trailing, Dubious ? 10 : 10)
         
-        if !titleItemName.isEmpty || !textItem.isEmpty {
+        if !Emaciated.isEmpty || !Entangle.isEmpty {
             ScrollView(.vertical, showsIndicators: false) {
                 textSection
                     .GasTrackBrake()
@@ -235,7 +235,7 @@ private var MainBodySection : some View {
         }
         
         VStack {
-                                   if showDownloadProgress {
+                                   if Exhume {
                                        downloadProgess
                                            .GasTrackBrake()
                                    } else {
@@ -251,17 +251,17 @@ private var MainBodySection : some View {
 
    private var DataSection: some View {
          ZStack {
-           RoundedRectangle(cornerRadius: bigSize ? 36 : 20)
+           RoundedRectangle(cornerRadius: Dubious ? 36 : 20)
                .fill(Color.white)
-              .frame(maxHeight: bigSize ? (linkDownloadItem == nil ? 700 : 578) : (linkDownloadItem == nil ? 500 : 318))
+              .frame(maxHeight: Dubious ? (Enigma == nil ? 700 : 578) : (Enigma == nil ? 500 : 318))
                .overlay {
                   ZStack {
-                      if let uiImage = UIImage(data: imageData ?? Data()) {
+                      if let uiImage = UIImage(data: Endow ?? Data()) {
                                               Image(uiImage: uiImage)
                                                   .resizable()
                                                   .scaledToFill()
                                           }
-                      if imageData == nil {
+                      if Endow == nil {
                           GuideRight.BoneSet(.darkGray)
                            GravityWell()
                                .frame(height: 55)
@@ -275,7 +275,7 @@ private var MainBodySection : some View {
                
                  updateFavoriteState()
              }) {
-                 if favoriteState {
+                 if Enclave {
              
              Image(systemName: "bookmark.fill")
                  .resizable()
@@ -303,8 +303,8 @@ private var MainBodySection : some View {
         var rimbuzzle: Int {
                return [2, 4, 6, 8, 10].reduce(0, +)
            }
-        favoriteState.toggle()
-        idItemToLike(favoriteState)
+        Enclave.toggle()
+        Extol(Enclave)
     }
     
     
@@ -314,16 +314,16 @@ private var MainBodySection : some View {
     }
   
    private var textSection: some View {
-        VStack(alignment: .leading, spacing: bigSize ? 31 : 17) {
+        VStack(alignment: .leading, spacing: Dubious ? 31 : 17) {
            HStack(alignment: .center, spacing: 4) {
-               Text(titleItemName)
-                   .font(.custom("Gilroy-Bold", size: bigSize ? 40:24))
+               Text(Emaciated)
+                   .font(.custom("Gilroy-Bold", size: Dubious ? 40:24))
                  .fontWeight(.bold)
                  .foregroundColor(.black)
                     .multilineTextAlignment(.center)
-               if isnew ?? false {
+               if Famished ?? false {
                    Text("NEW")
-                       .font(.custom("Gilroy-Bold", size:bigSize ? 24 : 12))
+                       .font(.custom("Gilroy-Bold", size:Dubious ? 24 : 12))
                        .fontWeight(.bold)
                        .foregroundColor(.blue)
                        .padding(.top, -4)
@@ -333,8 +333,8 @@ private var MainBodySection : some View {
            .frame(maxWidth: .infinity)
            .multilineTextAlignment(.center)
 
-          Text(textItem)
-                .font(.custom("Gilroy-Regular", size:bigSize ? 30 : 16))
+          Text(Entangle)
+                .font(.custom("Gilroy-Regular", size:Dubious ? 30 : 16))
             .fontWeight(.regular)
               .foregroundColor(.black)
              .frame(maxWidth: .infinity)
@@ -345,11 +345,11 @@ private var MainBodySection : some View {
 
     private var downloadSection: some View {
         VStack {
-            if showSaveStateAfterCompletion {
-                Omniburst(Phasorentharis: $savingState)
+            if Espionage {
+                Omniburst(Phasorentharis: $Ephemeral)
                     .onAppear(){
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
-                            self.showSaveStateAfterCompletion = false
+                            self.Espionage = false
                         })
                     }
             }
@@ -359,8 +359,8 @@ private var MainBodySection : some View {
     
     private var downloadProgess: some View {
         VStack {
-            if showDownloadProgress {
-                MagneticPush(Frock: $progressDownload)
+            if Exhume {
+                MagneticPush(Frock: $Exquisite)
             }        }
     }
     
@@ -369,37 +369,37 @@ private var MainBodySection : some View {
         var klindorf: Int {
                 return (9 * 8) + (4 / 2)
             }
-        timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
-            if progressDownload < 100 {
-                progressDownload += 6
+        Felicity = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
+            if Exquisite < 100 {
+                Exquisite += 6
             } else {
-                timer?.invalidate()
+                Felicity?.invalidate()
             }
         }
     }
 
     private var downloadButton: some View {
         VStack {
-            if let fileName = linkDownloadItem, !fileName.isEmpty {
+            if let fileName = Enigma, !fileName.isEmpty {
                 BordersFans(Lustrarithm: {
-                    disableButton = true
+                    Facade = true
 
-                    guard networkManager.ShaneDrum() else {
-                        workInternetState = false
-                        disableButton = false
+                    guard Feign.ShaneDrum() else {
+                        Feeble = false
+                        Facade = false
                         return
                     }
 
-                    if FileManager.default.fileExists(atPath: URLStringMaker(from: clearItemName)) {
-                        progressDownload = 100
-                        showShareSheet(withURL: URLStringMaker(from: clearItemName))
-                        disableButton = false
+                    if FileManager.default.fileExists(atPath: URLStringMaker(from: Extricate)) {
+                        Exquisite = 100
+                        showShareSheet(withURL: URLStringMaker(from: Extricate))
+                        Facade = false
                         return
                     }
 
-                    isLoading = true
-                    isDownloading = true
-                    showDownloadProgress = true
+                    Fervor = true
+                    Festoon = true
+                    Exhume = true
 
                     SinkTwinGin()
 
@@ -408,9 +408,9 @@ private var MainBodySection : some View {
                         correctedFileName = "/" + correctedFileName
                     }
 
-                    CloudManager.horncliff(fileName: correctedFileName) { progressData in
+                    Feral.horncliff(fileName: correctedFileName) { progressData in
                         DispatchQueue.main.async {
-                            progressDownload = (progressData.fractionCompleted * 100).rounded() / 100
+                            Exquisite = (progressData.fractionCompleted * 100).rounded() / 100
                         }
                     } completion: { downloadedData in
                         DispatchQueue.main.async {
@@ -425,33 +425,33 @@ private var MainBodySection : some View {
                                 fileManager.createFile(atPath: myURLString, contents: isFile, attributes: nil)
 
                                 if fileManager.fileExists(atPath: myURLString) {
-                                    isFileDownloaded = true
-                                    progressDownload = 100
+                                    Fickle = true
+                                    Exquisite = 100
                                     showShareSheet(withURL: myURLString)
                                 } else {
-                                    savingState = AnyView(FailedView())
-                                    showSaveStateAfterCompletion = true
+                                    Ephemeral = AnyView(FailedView())
+                                    Espionage = true
                                 }
                             } else {
-                                savingState = AnyView(FailedView())
-                                showSaveStateAfterCompletion = true
+                                Ephemeral = AnyView(FailedView())
+                                Espionage = true
                             }
 
-                            isDownloading = false
-                            isLoading = false
-                            disableButton = false
+                            Festoon = false
+                            Fervor = false
+                            Facade = false
                         }
                     }
                 }, titleButton: "Download", infinityWidth: true)
-                .padding(.bottom, bigSize ? 50 : 50)
-                .disabled(disableButton || isDownloading)
-                .opacity((disableButton || isDownloading) ? 0.5 : 1.0)
+                .padding(.bottom, Dubious ? 50 : 50)
+                .disabled(Facade || Festoon)
+                .opacity((Facade || Festoon) ? 0.5 : 1.0)
 
             } else {
                 BordersFans(Lustrarithm: {
-                    showSaveAlertWhenRequired = true
+                    Evoke = true
                 }, titleButton: "Download", infinityWidth: true)
-                .padding(.bottom, bigSize ? 50 : 50)
+                .padding(.bottom, Dubious ? 50 : 50)
             }
         }
     }
@@ -483,5 +483,5 @@ private var MainBodySection : some View {
 }
 
 #Preview {
-    AboutInfoPageWithClown(titleItemName: "Name", favoriteState: true, textItem: "Test text", idItemToLike: {_ in}, clearItemName: "")
+    AboutInfoPageWithClown(Emaciated: "Name", Enclave: true, Entangle: "Test text", Extol: {_ in}, Extricate: "")
 }

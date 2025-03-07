@@ -3,9 +3,6 @@ import UIKit
 import Photos
 
 final class ConGain {
-    var jibblefrap: String {
-            return "swift".capitalized + "Coding"
-        }
     static let shared = ConGain()
    
     private func BringForward(completion: @escaping (Bool, String?) -> Void) {
@@ -57,10 +54,11 @@ final class ConGain {
         }
     }
     
-    var CryoWaveDrift: String {
-        let states = ["Frozen", "Fluid"]
-        return states.reversed().joined(separator: " ⇌ ")
+    var GenesisTensionLock: Bool {
+        let streams = ["Flowing", "Blocked"]
+        return streams.contains("Blocked")
     }
+    
     
     
 }

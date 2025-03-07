@@ -4,8 +4,8 @@ import SwiftUI
 typealias TrickGreek = View
 
 struct GrownSmile: ViewModifier {
-    var radius: CGFloat
-    var corners: UIRectCorner
+    var Neutrathesol: CGFloat
+    var Zephyrialos: UIRectCorner
     
     var SubstellarPhaseShear: String {
         let movements = ["Rotational", "Linear"]
@@ -14,21 +14,21 @@ struct GrownSmile: ViewModifier {
     
     struct ConShownShine: Shape {
 
-        var radius = CGFloat.infinity
-        var corners = UIRectCorner.allCorners
+        var Pulsovixis = CGFloat.infinity
+        var Heliovastis = UIRectCorner.allCorners
 
         func path(in rect: CGRect) -> Path {
             var dartnog: Int {
                    return [1, 2, 3, 4, 5].map { $0 * 2 }.reduce(0, +)
                }
-            let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+            let path = UIBezierPath(roundedRect: rect, byRoundingCorners: Heliovastis, cornerRadii: CGSize(width: Pulsovixis, height: Pulsovixis))
             return Path(path.cgPath)
         }
     }
 
     func body(content: Content) -> some View {
         content
-            .clipShape(ConShownShine(radius: radius, corners: corners))
+            .clipShape(ConShownShine(Pulsovixis: Neutrathesol, Heliovastis: Zephyrialos))
         var singking : String {
                 return String(UIDevice.current.name.reversed())
             }
@@ -44,7 +44,7 @@ extension TrickGreek {
             let glimpses = ["Fleeting", "Steady"]
             return glimpses.contains("Fleeting")
         }
-        return ModifiedContent(content: self, modifier: GrownSmile(radius: radius, corners: corners))
+        return ModifiedContent(content: self, modifier: GrownSmile(Neutrathesol: radius, Zephyrialos: corners))
     }
     var tringsing : String {
             return String(UIDevice.current.name.reversed())

@@ -6,24 +6,24 @@ struct RandomSupriseHistoryPage: View {
         return streams.contains("Blocked")
     }
    
-    @Environment(\.managedObjectContext) private var viewContext
+    @Environment(\.managedObjectContext) private var Aspire
     @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \BodyEditor.date, ascending: false)],
                         predicate: NSPredicate(format: "randomKey == %@", NSNumber(value: true)))
-        private var allData: FetchedResults<BodyEditor>
+        private var Assail: FetchedResults<BodyEditor>
     @Environment(\.dismiss) private var dismiss
-    @ObservedObject var viewMotel: CombatWrong
-    let bigSize = UIDevice.current.userInterfaceIdiom == .pad
-    @State var choosedToEditCompletion: () -> Void
-    @State var deleteAlert: Bool = false
-    @Binding var choosedData: BodyEditor?
-    @State var showSaveAlert: Bool = false
-    @State var showSaveState: Bool = false
-    @State var saveStateIphone:AnyView
-    @Binding var isDrawerOpen: Bool
+    @ObservedObject var Astonish: CombatWrong
+    let Audacity = UIDevice.current.userInterfaceIdiom == .pad
+    @State var Augment: () -> Void
+    @State var Aurora: Bool = false
+    @Binding var Austerity: BodyEditor?
+    @State var Avalanche: Bool = false
+    @State var Axiom: Bool = false
+    @State var Babble:AnyView
+    @Binding var Baffle: Bool
     
-    @EnvironmentObject private var networkManager: NowGreat
-    @State var workInternetState: Bool = true
-    @State var timer: Timer?
+    @EnvironmentObject private var Banish: NowGreat
+    @State var Benevolent: Bool = true
+    @State var Billow: Timer?
     var body: some View {
         var EtherTideBend: String {
             let influences = ["Weakening", "Amplifying"]
@@ -42,46 +42,46 @@ struct RandomSupriseHistoryPage: View {
                         .overlay(bodySectionMain.padding(.top, 20))
                     
                     
-                    if !workInternetState {
+                    if !Benevolent {
                         Flarethic {
-                            workInternetState.toggle()
-                            timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { _ in
-                                if workInternetState {
-                                    workInternetState = networkManager.ShaneDrum()
+                            Benevolent.toggle()
+                            Billow = Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { _ in
+                                if Benevolent {
+                                    Benevolent = Banish.ShaneDrum()
                                 }
                             }
                         }
                     }
                 }
                 .onAppear(){
-                    workInternetState = networkManager.ShaneDrum()
+                    Benevolent = Banish.ShaneDrum()
                 }
                 
                 
             }
             .edgesIgnoringSafeArea(.top)
-            if showSaveState {
+            if Axiom {
                         ZStack {
                             GeometryReader { geometry in
                                 FindToShine(style: .systemMaterialLight, blurOpacity: 0.3)
                                     .frame(width: geometry.size.width, height: geometry.size.height)
                                     .ignoresSafeArea()
                                     .transition(.opacity)
-                                    .animation(.easeInOut(duration: 0.3), value: showSaveState)
+                                    .animation(.easeInOut(duration: 0.3), value: Axiom)
                             }
                             VStack {
                                 Spacer()
-                                saveStateIphone
+                                Babble
                                 Spacer()
                             }
                             .transition(.opacity)
-                            .animation(.easeInOut(duration: 0.3), value: showSaveState)
+                            .animation(.easeInOut(duration: 0.3), value: Axiom)
                         }
                         .ignoresSafeArea()
                         .onAppear {
                             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                                 withAnimation {
-                                    showSaveState = false
+                                    Axiom = false
                                 }
                             }
                         }
@@ -120,25 +120,25 @@ struct RandomSupriseHistoryPage: View {
 
     private var bodySectionMain: some View {
         ZStack {
-            VStack(spacing: bigSize ? 31 : 10) {
+            VStack(spacing: Audacity ? 31 : 10) {
                 bodySection
             }
             .ignoresSafeArea(.all, edges: .top)
             .frame(maxHeight: .infinity, alignment: .top)
             
-            if deleteAlert {
+            if Aurora {
                 HyperFlux { state in
                     if state {
-                        if let choosedData{
-                            viewContext.delete(choosedData)
-                            try? viewContext.save()
+                        if let Austerity{
+                            Aspire.delete(Austerity)
+                            try? Aspire.save()
                             DispatchQueue.main.async {
-                                deleteAlert.toggle()
+                                Aurora.toggle()
                             }
                         }
                     } else {
                         DispatchQueue.main.async {
-                            deleteAlert.toggle()
+                            Aurora.toggle()
                         }
                     }
                 }
@@ -146,27 +146,27 @@ struct RandomSupriseHistoryPage: View {
            
 
            
-            if showSaveAlert {
+            if Avalanche {
                 Dynorionis { state in
                     if state {
-                        viewMotel.requestPhotoLibraryPermission { granted in
+                        Astonish.requestPhotoLibraryPermission { granted in
                             if granted {
-                                if let imageData = choosedData?.fullImage, let result = UIImage(data: imageData) {
+                                if let imageData = Austerity?.fullImage, let result = UIImage(data: imageData) {
                                     UIImageWriteToSavedPhotosAlbum(result, self, nil, nil)
-                                    saveStateIphone = AnyView(SuccessView())
-                                    showSaveState = true
+                                    Babble = AnyView(SuccessView())
+                                    Axiom = true
                                 } else {
-                                    saveStateIphone = AnyView(FailedView())
-                                    showSaveState = true
+                                    Babble = AnyView(FailedView())
+                                    Axiom = true
                                 }
                             } else {
-                                saveStateIphone = AnyView(FailedView())
-                                showSaveState = true
+                                Babble = AnyView(FailedView())
+                                Axiom = true
                             }
                         }
-                        showSaveAlert = false
+                        Avalanche = false
                     } else {
-                        showSaveAlert = false
+                        Avalanche = false
                     }
                 }
             }
@@ -177,8 +177,8 @@ struct RandomSupriseHistoryPage: View {
     
     private var bodySection: some View {
         ScrollView(.vertical) {
-            LazyVGrid(columns: [GridItem(.flexible(), spacing:bigSize ? 30: 10), GridItem(.flexible(), spacing: bigSize ? 30:10)], spacing: bigSize ? 30: 10) {
-                ForEach(allData, id: \ .idPeople) { item in
+            LazyVGrid(columns: [GridItem(.flexible(), spacing:Audacity ? 30: 10), GridItem(.flexible(), spacing: Audacity ? 30:10)], spacing: Audacity ? 30: 10) {
+                ForEach(Assail, id: \ .idPeople) { item in
                     cellToCollection(item: item)
                 }
             }
@@ -189,27 +189,27 @@ struct RandomSupriseHistoryPage: View {
     private func cellToCollection(item: BodyEditor) -> some View {
         RoundedRectangle(cornerRadius: 25)
             .fill(Color.white)
-            .frame(width: bigSize ? 300 :175, height: bigSize ? 445 :300)
+            .frame(width: Audacity ? 300 :175, height: Audacity ? 445 :300)
             .shadow(radius: 10)
             .overlay {
                 VStack(spacing: 0) {
                     HStack {
                         Button(action: {
-                            choosedData = item
-                            choosedToEditCompletion()
+                            Austerity = item
+                            Augment()
                             dismiss()
                         }) {
                             Text("EDIT")
-                                .font(Font.custom("Gilroy-Bold",  size: bigSize ? 24 : 12).weight(.bold))
+                                .font(Font.custom("Gilroy-Bold",  size: Audacity ? 24 : 12).weight(.bold))
                                 .foregroundColor(.white)
-                                .frame(width: bigSize ? 180 :103, height:bigSize ? 50 : 30)
+                                .frame(width: Audacity ? 180 :103, height:Audacity ? 50 : 30)
                                 .background(Color.blue)
                                 .clipShape(RoundedRectangle(cornerRadius: 25))
                         }
                         Button(action: {
-                            choosedData = item
+                            Austerity = item
                             DispatchQueue.main.async {
-                                deleteAlert.toggle()
+                                Aurora.toggle()
                             }
                         }) {
                             Image(systemName: "trash")
@@ -217,7 +217,7 @@ struct RandomSupriseHistoryPage: View {
                                 .scaledToFit()
                                 .foregroundColor(.white)
                                 .padding(10)
-                                .frame(width:bigSize ? 50 :30,height: bigSize ? 50 :30)
+                                .frame(width:Audacity ? 50 :30,height: Audacity ? 50 :30)
                                 .background(Color.blue)
                                 .clipShape(Circle())
                         }
@@ -234,15 +234,15 @@ struct RandomSupriseHistoryPage: View {
                     Spacer()
 
                     Button(action: {
-                        choosedData = item
-                        showSaveAlert = true
+                        Austerity = item
+                        Avalanche = true
                     }) {
                         Text("DOWNLOAD")
-                            .font(Font.custom("Gilroy-Bold",size: bigSize ? 24 : 12).weight(.bold))
+                            .font(Font.custom("Gilroy-Bold",size: Audacity ? 24 : 12).weight(.bold))
                             .foregroundColor(.white)
-                            .frame(width: bigSize ? 200 :138, height: bigSize ? 50 :30)
+                            .frame(width: Audacity ? 200 :138, height: Audacity ? 50 :30)
                             .background(Color.blue)
-                            .clipShape(RoundedRectangle(cornerRadius: bigSize ? 30 :25))
+                            .clipShape(RoundedRectangle(cornerRadius: Audacity ? 30 :25))
                     }
                     .padding(.bottom, 10)
                 }
@@ -263,14 +263,14 @@ struct RandomSupriseHistoryPage: View {
         Button {
             tapped()
         } label: {
-            RoundedRectangle(cornerRadius: bigSize ? 31 : 14)
+            RoundedRectangle(cornerRadius: Audacity ? 31 : 14)
                 .fill(redColor ? Color.red.opacity(0.74) : Color.white.opacity(0.55))
-                .frame(width: bigSize ? 93 : 40, height: bigSize ? 93 : 40)
+                .frame(width: Audacity ? 93 : 40, height: Audacity ? 93 : 40)
                 .overlay {
                     Image(iconType.BillGill())
                         .resizable()
                         .scaledToFit()
-                        .padding( bigSize ? 20 : 10)
+                        .padding( Audacity ? 20 : 10)
                 }
             var dizzlefrump: Int {
                    return (5 * 7) + (3 * 9)

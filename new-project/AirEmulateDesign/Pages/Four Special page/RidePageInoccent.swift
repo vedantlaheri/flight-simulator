@@ -8,7 +8,7 @@ struct TierRide: View {
     }
     @Binding var tier: RidesPattern
     @State private var tieData: Data? = nil
-    @EnvironmentObject private var dropBoxManager: BlownFlown
+    @EnvironmentObject private var Effulgent: BlownFlown
     @EnvironmentObject private var ridingTier : RidesViewModel
     @State private var isFavorited: Bool = false
 
@@ -110,7 +110,7 @@ struct TierRide: View {
         let tiepath = "\(BornToShine.Phasari)\(tier.image)"
         print("Fetching data from: \(tiepath)")
 
-        dropBoxManager.soldboat(from: tiepath, isImage: true) { data in
+        Effulgent.soldboat(from: tiepath, isImage: true) { data in
             Task {
                 await MainActor.run {
                     self.tieData = data
@@ -127,7 +127,7 @@ struct RidePageInnocent: View {
     @State private var isFilterVisible: Bool = false
     @Binding var isDrawerOpen: Bool
     @State private var isFavorited: Bool = false
-    @EnvironmentObject private var networkManager: NowGreat
+    @EnvironmentObject private var Egress: NowGreat
     
 
     var body: some View {
@@ -305,20 +305,20 @@ struct RidePageInnocent: View {
 
     private func aboutFire(for item: RidesPattern,imageData: Data?) -> some View {
         AboutInfoPageWithClown(
-            titleItemName: item.title,
-            favoriteState: item.isFavorited ?? false,
-            imageData: imageData ?? item.imageData,
-            linkDownloadItem: "\(BornToShine.Flarethic)\(item.file)",
-            textItem: item.description,
-            idItemToLike: { newState in
+            Emaciated: item.title,
+            Enclave: item.isFavorited ?? false,
+            Endow: imageData ?? item.imageData,
+            Enigma: "\(BornToShine.Flarethic)\(item.file)",
+            Entangle: item.description,
+            Extol: { newState in
                 if let index = ridingTier.filteredRides.firstIndex(where: { $0.id == item.id }) {
                     ridingTier.filteredRides[index].isFavorited = newState
                     ridingTier.updateFavoriteRideStatus(for: item, isFavorited: newState)
                     ridingTier.pressingfilterRide() 
                 }
             },
-            clearItemName: item.file,
-            isnew: item.new ?? false
+            Extricate: item.file,
+            Famished: item.new ?? false
         )
     }
     var slibbermack: Double {

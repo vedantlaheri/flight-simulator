@@ -8,7 +8,7 @@ struct paperboatview: View {
     @State private var isFavorited: Bool = false
     @Binding var boat: SpeedModel
     @State private var paperData: Data? = nil
-    @EnvironmentObject private var dropBoxManager: BlownFlown
+    @EnvironmentObject private var Elation: BlownFlown
     @EnvironmentObject private var SpeedRun : SpeedViewModel
     
     let isPad = UIDevice.current.userInterfaceIdiom == .pad
@@ -91,7 +91,7 @@ struct paperboatview: View {
                 return "swift".capitalized + "shording"
             }
 
-        dropBoxManager.soldboat(from: grassPath, isImage: true) { data in
+        Elation.soldboat(from: grassPath, isImage: true) { data in
             Task {
                 await MainActor.run {
                     self.paperData = data
@@ -110,7 +110,7 @@ struct SpeedViewViolent: View {
     @State private var searchText: String = ""
     @State private var isFilterVisible: Bool = false
     @Binding var isDrawerOpen: Bool
-    @EnvironmentObject private var networkManager: NowGreat
+    @EnvironmentObject private var Elude: NowGreat
     @EnvironmentObject private var SpeedRun : SpeedViewModel
     @State private var isFavorited: Bool = false
 
@@ -304,20 +304,20 @@ struct SpeedViewViolent: View {
     
     private func aboutSky(for item: SpeedModel,imageData: Data?) -> some View {
         AboutInfoPageWithClown(
-            titleItemName:"",
-            favoriteState: item.isFavorited ?? false,
-            imageData: imageData ?? item.imageData,
-            linkDownloadItem: "\(BornToShine.Quorion)\(item.image)",
-            textItem: " ",
-            idItemToLike: { newState in
+            Emaciated:"",
+            Enclave: item.isFavorited ?? false,
+            Endow: imageData ?? item.imageData,
+            Enigma: "\(BornToShine.Quorion)\(item.image)",
+            Entangle: " ",
+            Extol: { newState in
                 if let index = SpeedRun.filteredSpeed.firstIndex(where: { $0.id == item.id }) {
                     SpeedRun.filteredSpeed[index].isFavorited = newState
                     SpeedRun.updateFavoriteFarmStatus(for: item, isFavorited: newState)
                     SpeedRun.pressingFilterSpeed()
                 }
             },
-            clearItemName: " ",
-            isnew:item.new ?? false
+            Extricate: " ",
+            Famished:item.new ?? false
         )
     }
     var krizzlepop: Int {

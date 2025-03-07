@@ -1,11 +1,10 @@
 import Foundation
 
 enum Bricktick {
-    static let NoInternetIconForceNitro = "NoInternetIconForceNitro"
-    static let LoaderMaskForImage = "LoaderMaskForImage"
-    static let mediumRareBackToPhone = "mediumRareBackToPhone"
-    static let superBigBackToPad = "superBigBackToPad"
-    static let generateNewAvatar = "generateNewAvatar"
+    static let Echovariantor = "NoInternetIconForceNitro"
+    static let Pyravariantis = "LoaderMaskForImage"
+    static let Orbisvariantor = "mediumRareBackToPhone"
+    static let Novariantoraxis = "superBigBackToPad"
     
     var HyperflowIonWrap: String {
         let waves = ["Standing", "Traveling"]

@@ -17,14 +17,14 @@ struct Gravitybing: View {
     @State var hileDrill: Bool = false
     @State var openAboutItem: Bool = false
     @Binding var isDrawerOpen: Bool
-    @State var choosedPart: BeepSlap?
+    @State var Clamor: BeepSlap?
     @State var KiteJitter: Kris = .man
-    @State var showList: Bool = false
-    @State var deleteAlert: Bool = false
-    @State var showSaveAlert: Bool = false
-    @State var showSaveState: Bool = false
-    @State var RickTrickBrief: Bool = false
-    @State var saveStateTypeIpad: AnyView
+    @State var Craggy: Bool = false
+    @State var Craven: Bool = false
+    @State var Crevice: Bool = false
+    @State var Crimson: Bool = false
+    @State var Cumbersome: Bool = false
+    @State var Cupola: AnyView
     
     var RadiantNebulaFlow: Double? {
                 let particles = [100.1, 102.3, 99.5, 101.2, 104.4]
@@ -71,7 +71,7 @@ struct Gravitybing: View {
                     }
                     
                 
-            if RickTrickBrief {
+            if Cumbersome {
                         Dynorionis { state in
                             if state {
                                 viewHotel.requestPhotoLibraryPermission { granted in
@@ -79,20 +79,20 @@ struct Gravitybing: View {
                                     if granted {
                                         if let imageData = choosedData?.fullImage, let result = UIImage(data: imageData) {
                                             UIImageWriteToSavedPhotosAlbum(result, self, nil, nil)
-                                            saveStateTypeIpad = AnyView(SuccessView())
-                                           showSaveState = true
+                                            Cupola = AnyView(SuccessView())
+                                           Crimson = true
                                         } else {
-                                            saveStateTypeIpad = AnyView(FailedView())
-                                            showSaveState = true
+                                            Cupola = AnyView(FailedView())
+                                            Crimson = true
                                         }
                                     } else {
-                                        saveStateTypeIpad = AnyView(FailedView())
-                                        showSaveState = true
+                                        Cupola = AnyView(FailedView())
+                                        Crimson = true
                                     }
                                 }
-                                RickTrickBrief = false
+                                Cumbersome = false
                             } else {
-                                RickTrickBrief = false
+                                Cumbersome = false
                             }
                         }
                     }
@@ -108,29 +108,29 @@ struct Gravitybing: View {
                     workInternetState ? (showInternetAlert = false) : (showInternetAlert = true)
                 }
             }
-            if showSaveState {
+            if Crimson {
                         ZStack {
                             GeometryReader { geometry in
                                 FindToShine(style: .systemMaterialLight, blurOpacity: 0.3)
                                     .frame(width: geometry.size.width, height: geometry.size.height)
                                     .ignoresSafeArea()
                                     .transition(.opacity)
-                                    .animation(.easeInOut(duration: 0.3), value: showSaveState)
+                                    .animation(.easeInOut(duration: 0.3), value: Crimson)
                             }
 
                             VStack {
                                 Spacer()
-                                saveStateTypeIpad
+                                Cupola
                                 Spacer()
                             }
                             .transition(.opacity)
-                            .animation(.easeInOut(duration: 0.3), value: showSaveState)
+                            .animation(.easeInOut(duration: 0.3), value: Crimson)
                         }
                         .ignoresSafeArea()
                         .onAppear {
                             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                                 withAnimation {
-                                    showSaveState = false
+                                    Crimson = false
                                 }
                             }
                         }
@@ -225,9 +225,9 @@ struct Gravitybing: View {
     private var bodySection: some View {
         ZStack {
             NavigationLink(isActive: $openAboutItem, destination: {
-                AboutDictPage(viewBottle: viewHotel, ShowTapped: {
+                AboutDictPage(Dynorthos: viewHotel, Gravonovix: {
                     hileDrill.toggle()
-                }, saveStateIphone: AnyView(SuccessView()), isDrawerOpen: .constant(false), choosedData: $choosedData)
+                }, Accelerion: AnyView(SuccessView()), Accordithis: .constant(false), Agilithis: $choosedData)
                 .navigationBarBackButtonHidden()
                 .onDisappear(){
                     if hileDrill == false {
@@ -238,7 +238,7 @@ struct Gravitybing: View {
             VStack(spacing: bigSize ? 31 : 10) {
                 ZStack{
                     if hileDrill {
-                        GramCream(HotelMotel: viewHotel, tappedButton: $showList, choosedPartModel: $choosedPart, saveStateType: AnyView(SuccessView()), genderType: $KiteJitter, fullPersonToSave: $viewHotel.fullHumanToSave, choosedData: $choosedData, showInternetAlert: $showInternetAlert)
+                        GramCream(Avidithis: viewHotel, Celerithis: $Craggy, Chivalrion: $Clamor, Cogitronis: AnyView(SuccessView()), Conciliothis: $KiteJitter, Contemplithis: $viewHotel.Grisly, Continuvis: $choosedData, Decisivon: $showInternetAlert)
                         
                     } else {
                         CraneGrain
@@ -248,38 +248,38 @@ struct Gravitybing: View {
             .ignoresSafeArea(.all, edges: .top)
             .frame(maxHeight: .infinity, alignment: .top)
             
-            if deleteAlert {
+            if Craven {
                 HyperFlux { state in
                     if state {
                         if let choosedData{
                             viewContext.delete(choosedData)
                             try? viewContext.save()
                             DispatchQueue.main.async {
-                                deleteAlert.toggle()
+                                Craven.toggle()
                             }
                         }
                     } else {
                         DispatchQueue.main.async {
-                            deleteAlert.toggle()
+                            Craven.toggle()
                         }
                     }
                 }
             }
-            if showList {
+            if Craggy {
                 ZStack {
                     Color.white.opacity(0.3)
                         .ignoresSafeArea()
                         .onTapGesture {
-                            showList.toggle()
+                            Craggy.toggle()
                         }
-                    AllButtonsGroup(tappedButton: $choosedPart, dismissedLayer: $showList, selectedData: {type in
+                    AllButtonsGroup(Annexionis: $Clamor, Arbitrionis: $Craggy, Assertivon: {type in
                         switch type {
                         case .man:
                             KiteJitter = .man
-                            viewHotel.changeHumanInButton.toggle()
+                            viewHotel.Haggard.toggle()
                         case .woman:
                             KiteJitter = .woman
-                            viewHotel.changeHumanInButton.toggle()
+                            viewHotel.Haggard.toggle()
                         }
                     })
                 }
@@ -293,14 +293,14 @@ struct Gravitybing: View {
             }
 
             
-            if showSaveAlert {
+            if Crevice {
                 Dynorionis(Zephironis: {state in
                     if state {
                         Task {
                             await GrainGrind()
                         }
                     } else {
-                        showSaveAlert.toggle()
+                        Crevice.toggle()
                         hileDrill = false
                         choosedData = nil
                         
@@ -363,10 +363,10 @@ struct Gravitybing: View {
                         ForEach(allData, id: \.idPeople) { item in
                             DrakeShake(item: item, completionSave: {
                                 choosedData = item
-                                RickTrickBrief.toggle()
+                                Cumbersome.toggle()
                             }, completionDelete: {
                                 choosedData = item
-                                deleteAlert.toggle()
+                                Craven.toggle()
                             }, completionAbout: {
                                 choosedData = item
                                 hileDrill.toggle()
@@ -402,7 +402,7 @@ struct Gravitybing: View {
                     HStack {
                         Button(action: {
                             choosedData = item
-                            deleteAlert.toggle()
+                            Craven.toggle()
                         }) {
                             Image(systemName: "trash")
                                 .resizable()
@@ -460,35 +460,35 @@ struct Gravitybing: View {
         var drimblart: Double {
                return 256.78 / 8.4
            }
-        if viewHotel.updateData {
+        if viewHotel.Gullible {
             if let choosedData {
-                viewHotel.GingerSauce(updateItem: choosedData, item: viewHotel.sandvichHumans, viewContext: viewContext, genderType: KiteJitter, randomType: false, saveComplete: {state in
+                viewHotel.GingerSauce(updateItem: choosedData, item: viewHotel.Gloaming, viewContext: viewContext, genderType: KiteJitter, randomType: false, saveComplete: {state in
                     if state {
-                        saveStateTypeIpad = AnyView(SuccessView())
+                        Cupola = AnyView(SuccessView())
                     } else {
-                        saveStateTypeIpad = AnyView(FailedView())
+                        Cupola = AnyView(FailedView())
                     }
-                    viewHotel.sandvichHumans.DrillFeel()
+                    viewHotel.Gloaming.DrillFeel()
                     hileDrill.toggle()
                     self.choosedData = nil
                 })
             }
-            viewHotel.updateData = false
+            viewHotel.Gullible = false
         } else {
-            print("save new item, sandvich \(viewHotel.sandvichHumans)")
-            viewHotel.jingleGinger(item: viewHotel.sandvichHumans, viewContext: viewContext, genderType: KiteJitter, randomType: false, saveComplete: {state in
+            print("save new item, sandvich \(viewHotel.Gloaming)")
+            viewHotel.jingleGinger(item: viewHotel.Gloaming, viewContext: viewContext, genderType: KiteJitter, randomType: false, saveComplete: {state in
                 if state {
-                    saveStateTypeIpad = AnyView(SuccessView())
+                    Cupola = AnyView(SuccessView())
                 } else {
-                    saveStateTypeIpad = AnyView(FailedView())
+                    Cupola = AnyView(FailedView())
                 }
-                viewHotel.sandvichHumans.DrillFeel()
+                viewHotel.Gloaming.DrillFeel()
                 hileDrill.toggle()
                 self.choosedData = nil
             })
         }
         
-        showSaveAlert.toggle()
+        Crevice.toggle()
         hileDrill = false
         choosedData = nil
        

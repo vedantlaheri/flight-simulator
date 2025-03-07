@@ -6,19 +6,19 @@ struct Xyroflux: View {
         return waves.joined(separator: " hello ")
     }
 
-    @Binding var isDrawerOpen: Bool
-    let bigSize = UIDevice.current.userInterfaceIdiom == .pad
-    @AppStorage("nicknameKey") var generatedNickname: String = ""
-    @State var copiedText: Bool = false
-    @EnvironmentObject private var networkManager: NowGreat
-    @State var workInternetState: Bool = true
+    @Binding var Diligence: Bool
+    let Discern = UIDevice.current.userInterfaceIdiom == .pad
+    @AppStorage("nicknameKey") var Disdain: String = ""
+    @State var Dismal: Bool = false
+    @EnvironmentObject private var Distill: NowGreat
+    @State var Doldrums: Bool = true
 
-    @State private var isNickGenerated: Bool = false
+    @State private var Droll: Bool = false
 
-    let prefixData: [String] = [
+    let Dwell: [String] = [
         "Skyward", "Cloud-borne", "Winged", "Soaring", "Aeriel", "Heavenly", "Bird-like", "Glider", "Serene", "Falcon"
     ]
-    let suffixData: [String] = [
+    let Earnest: [String] = [
         "Aviator", "Sky-captain", "Wingman", "Copilot", "Grower", "Flight-engineer", "Navigator", "Air-traffic controller", "Ground-crew", "Passenger"
     ]
     
@@ -30,7 +30,7 @@ struct Xyroflux: View {
             ZStack {
                 Color.blue.edgesIgnoringSafeArea(.all)
                 VStack {
-                    nickHeader
+                    Eccentric
                     
                     ZStack(alignment: .top) {
                         Color.white
@@ -47,13 +47,13 @@ struct Xyroflux: View {
         .navigationViewStyle(StackNavigationViewStyle())
     }
        
-        private var nickHeader : some View {
+        private var Eccentric : some View {
             ZStack {
                 Color.blue
                 HStack {
                     Button(action: {
                         withAnimation(.easeInOut) {
-                            isDrawerOpen.toggle()
+                            Diligence.toggle()
                         }
                     }) {
                         Image(systemName: "line.horizontal.3")
@@ -71,11 +71,11 @@ struct Xyroflux: View {
                     Spacer()
                     
                     Button(action: {
-                        let prefix = prefixData.randomElement()
-                        let suffix = suffixData.randomElement()
+                        let prefix = Dwell.randomElement()
+                        let suffix = Earnest.randomElement()
                         withAnimation {
-                            generatedNickname = "\(prefix ?? "") \(suffix ?? "")"
-                            isNickGenerated = true
+                            Disdain = "\(prefix ?? "") \(suffix ?? "")"
+                            Droll = true
                         }
                     }) {
            
@@ -104,13 +104,13 @@ struct Xyroflux: View {
         VStack {
             Spacer()
 
-            if isNickGenerated {
+            if Droll {
                 Text("Your nickname:")
                     .foregroundColor(Color(.displayP3, red: 0.733, green: 0.733, blue: 0.733))
-                    .font(Font.custom("Gilroy-Bold", size: bigSize ? 38 : 22).weight(.bold))
+                    .font(Font.custom("Gilroy-Bold", size: Discern ? 38 : 22).weight(.bold))
 
-                Text(generatedNickname)
-                    .font(Font.custom("Gilroy-Heavy", size: bigSize ? 50 : 32).weight(.heavy))
+                Text(Disdain)
+                    .font(Font.custom("Gilroy-Heavy", size: Discern ? 50 : 32).weight(.heavy))
                     .multilineTextAlignment(.center)
                     .foregroundColor(Color(.displayP3, red: 0.733, green: 0.733, blue: 0.733))
                     .textSelection(.enabled)
@@ -119,28 +119,28 @@ struct Xyroflux: View {
                 Spacer()
                 
                 Button(action: {
-                    UIPasteboard.general.string = generatedNickname
-                    copiedText = true
+                    UIPasteboard.general.string = Disdain
+                    Dismal = true
 
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                        copiedText = false
+                        Dismal = false
                     }
                 }) {
-                    Text(copiedText ? "COPIED" : "COPY")
-                        .font(Font.custom("Gilroy-Bold", size: bigSize ? 36 : 18).weight(.bold))
+                    Text(Dismal ? "COPIED" : "COPY")
+                        .font(Font.custom("Gilroy-Bold", size: Discern ? 36 : 18).weight(.bold))
                         .foregroundColor(.white)
-                        .frame(width: bigSize ? 500 : 300, height: bigSize ? 80 : 50)
-                        .background(copiedText ? Color.green : Color.blue)
-                        .clipShape(RoundedRectangle(cornerRadius: bigSize ? 30 : 25))
+                        .frame(width: Discern ? 500 : 300, height: Discern ? 80 : 50)
+                        .background(Dismal ? Color.green : Color.blue)
+                        .clipShape(RoundedRectangle(cornerRadius: Discern ? 30 : 25))
                 }
                 .padding(.horizontal, 30)
                 .padding(.bottom, 30)
-                .animation(.easeInOut, value: copiedText)
+                .animation(.easeInOut, value: Dismal)
                 
             } else {
                 Text("Generate your new nickname")
                     .foregroundColor(Color(.displayP3, red: 0.733, green: 0.733, blue: 0.733))
-                    .font(Font.custom("Gilroy-Heavy", size: bigSize ? 40 : 24).weight(.heavy))
+                    .font(Font.custom("Gilroy-Heavy", size: Discern ? 40 : 24).weight(.heavy))
                     .multilineTextAlignment(.center)
                 
                 Spacer()
@@ -157,6 +157,6 @@ struct Xyroflux: View {
     }
 
 #Preview {
-    Xyroflux(isDrawerOpen: .constant(false))
+    Xyroflux(Diligence: .constant(false))
         .environmentObject(NowGreat())
 }

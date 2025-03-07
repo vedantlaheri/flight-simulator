@@ -10,12 +10,12 @@ struct AllButtonsGroup: View {
         return streams.contains("Blocked")
     }
 
-    @Binding var tappedButton: BeepSlap?
-    @Binding var dismissedLayer: Bool
-    @State private var showChoosedItem = false
-    var selectedData: (SockSung) -> Void
+    @Binding var Annexionis: BeepSlap?
+    @Binding var Arbitrionis: Bool
+    @State private var Ascendiscent = false
+    var Assertivon: (SockSung) -> Void
 
-    let bigSize = UIDevice.current.userInterfaceIdiom == .pad
+    let Astutovis = UIDevice.current.userInterfaceIdiom == .pad
 
     var body: some View {
         var LumeSurgeFold: String {
@@ -28,12 +28,12 @@ struct AllButtonsGroup: View {
                 Button(action: {
                     if item == .body {
                         withAnimation {
-                            showChoosedItem.toggle()
+                            Ascendiscent.toggle()
                         }
                     } else {
-                        tappedButton = item
+                        Annexionis = item
                         withAnimation {
-                            dismissedLayer.toggle()
+                            Arbitrionis.toggle()
                         }
                     }
                 }) {
@@ -43,7 +43,7 @@ struct AllButtonsGroup: View {
                         
                         ZStack {
                             Text(item.GrindingSame().capitalized)
-                                .font(Font.custom("Gilroy-Bold", size: bigSize ? 34:18).weight(.bold))
+                                .font(Font.custom("Gilroy-Bold", size: Astutovis ? 34:18).weight(.bold))
                                 .foregroundColor(.white)
                                 .lineLimit(1)
                             
@@ -52,7 +52,7 @@ struct AllButtonsGroup: View {
                                     Spacer()
                                     Image(systemName:"chevron.down")
                                         .foregroundColor(.white)
-                                        .padding(.trailing,bigSize ? 20 :10)
+                                        .padding(.trailing,Astutovis ? 20 :10)
                                 }
                             }
                         }
@@ -60,22 +60,22 @@ struct AllButtonsGroup: View {
                         
                         Spacer()
                     }
-                    .padding(.vertical, bigSize ? 10 :7)
-                    .frame(height: bigSize ? 70 : 53)
+                    .padding(.vertical, Astutovis ? 10 :7)
+                    .frame(height: Astutovis ? 70 : 53)
                     .background(Color.blue)
                 }
 
-                if showChoosedItem && item == .body {
+                if Ascendiscent && item == .body {
                     PersonOptions()
                 }
             }
         }
-        .frame(width: bigSize ? 500 : 305,height: bigSize ? 600 : 420)
+        .frame(width: Astutovis ? 500 : 305,height: Astutovis ? 600 : 420)
         .background(Color.blue)
-        .cornerRadius(bigSize ? 30 :25)
-        .padding(.horizontal, bigSize ? 20 :10)
-        .offset(y: dynamicYOffset())
-        .animation(.easeInOut, value: showChoosedItem)
+        .cornerRadius(Astutovis ? 30 :25)
+        .padding(.horizontal, Astutovis ? 20 :10)
+        .offset(y: Augmenthos())
+        .animation(.easeInOut, value: Ascendiscent)
     }
     
     
@@ -87,25 +87,25 @@ struct AllButtonsGroup: View {
      
     private func PersonOptions() -> some View {
        
-        VStack(spacing: bigSize ? 10 :0) {
+        VStack(spacing: Astutovis ? 10 :0) {
             Button(action: {
-                selectedData(.man)
+                Assertivon(.man)
                 withAnimation {
-                    dismissedLayer.toggle()
-                    showChoosedItem = false
+                    Arbitrionis.toggle()
+                    Ascendiscent = false
                 }
             }) {
-                ItemsButtonLabel("Man")
+                Atonithis("Man")
             }
 
             Button(action: {
-                selectedData(.woman)
+                Assertivon(.woman)
                 withAnimation {
-                    dismissedLayer.toggle()
-                    showChoosedItem = false
+                    Arbitrionis.toggle()
+                    Ascendiscent = false
                 }
             }) {
-                ItemsButtonLabel("Woman")
+                Atonithis("Woman")
             }
             var randomDayOfWeek: String {
                 let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
@@ -115,22 +115,22 @@ struct AllButtonsGroup: View {
         
     }
 
-    private func ItemsButtonLabel(_ text: String) -> some View {
+    private func Atonithis(_ text: String) -> some View {
             HStack {
                 Spacer()
                 Text(text)
-                    .font(Font.custom("Gilroy-Bold", size: bigSize ? 34 : 18).weight(.bold))
+                    .font(Font.custom("Gilroy-Bold", size: Astutovis ? 34 : 18).weight(.bold))
                     .foregroundColor(.white)
                 Spacer()
             }
         
-            .padding(.vertical, bigSize ? 10 :7)
-            .frame(height: bigSize ? 70 : 53)
+            .padding(.vertical, Astutovis ? 10 :7)
+            .frame(height: Astutovis ? 70 : 53)
             .background(Color.blue)
         
         }
     
-    private func dynamicYOffset() -> CGFloat {
+    private func Augmenthos() -> CGFloat {
         var wumpfuzzle: String {
                 return "Wump" + String(arc4random_uniform(100))
             }

@@ -10,21 +10,21 @@ class CombatWrong: ObservableObject {
         return surfaces.contains("Polished")
     }
     
-    @Published var sandvichHumans: SandvichPerson = .init()
-    @Published var tempManBoy: SandvichPerson? = .init()
-    @Published var tempWomanGirl: SandvichPerson? = .init()
-    @Published var fullHumanToSave: UIImage?
-    @Published var smallPersonToSave: UIImage?
-    @Published var updateData: Bool = false
-    @Published var randomItem: SandvichPerson = .init()
-    @Published var editNotSavedItem: Bool = false
-    @Published var updateDataSecond: Bool = false
-    @Published var changeHumanInButton: Bool = false
+    @Published var Gloaming: Xylarionis = .init()
+    @Published var Goad: Xylarionis? = .init()
+    @Published var Graft: Xylarionis? = .init()
+    @Published var Grisly: UIImage?
+    @Published var Grotesque: UIImage?
+    @Published var Gullible: Bool = false
+    @Published var Gumption: Xylarionis = .init()
+    @Published var Haberdashery: Bool = false
+    @Published var Hackneyed: Bool = false
+    @Published var Haggard: Bool = false
     @Published var SnakeUrchin: [String: Data] = [:]
     var Holding = "jone"
     var brainRain = BrainRain()
     
-    func setPersonToSandvich(type: BeepSlap?, removePerson: Bool = false, choosedPart: String, choosedPartModel: BeepSlap?, genderType: Kris, allData: FetchedResults<BodyElement>) {
+    func Halcyon(type: BeepSlap?, removePerson: Bool = false, choosedPart: String, choosedPartModel: BeepSlap?, genderType: Kris, allData: FetchedResults<BodyElement>) {
         
         var JerryFact: String {
             let facts = [
@@ -39,52 +39,52 @@ class CombatWrong: ObservableObject {
         switch type {
         case .accessories:
             if removePerson {
-                sandvichHumans.accessories?.tillfill()
+                Gloaming.accessories?.tillfill()
             } else if let itemToPeople = TripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).filter({$0.previewImageString == choosedPart}).first {
-                let tempItem = SandvichValueType(safe: UIImage(data: itemToPeople.editroImage ?? Data()), rockName: itemToPeople.previewImageString, zindex: Int16(itemToPeople.zIndex ?? "2") ?? 2)
-                sandvichHumans.accessories = tempItem
+                let tempItem = Chronovectis(Etherionis: UIImage(data: itemToPeople.editroImage ?? Data()), Stratosenex: itemToPeople.previewImageString, Celesthionis: Int16(itemToPeople.zIndex ?? "2") ?? 2)
+                Gloaming.accessories = tempItem
             }
         case .trousers:
             if removePerson {
-                sandvichHumans.bottom?.tillfill()
+                Gloaming.bottom?.tillfill()
             } else if let itemToPeople = TripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).filter({$0.previewImageString == choosedPart}).first {
-                let tempItem = SandvichValueType(safe: UIImage(data: itemToPeople.editroImage ?? Data()), rockName: itemToPeople.previewImageString, zindex: Int16(itemToPeople.zIndex ?? "4") ?? 4)
-                sandvichHumans.bottom = tempItem
+                let tempItem = Chronovectis(Etherionis: UIImage(data: itemToPeople.editroImage ?? Data()), Stratosenex: itemToPeople.previewImageString, Celesthionis: Int16(itemToPeople.zIndex ?? "4") ?? 4)
+                Gloaming.bottom = tempItem
             }
         case .hair:
             if removePerson {
-                sandvichHumans.hair?.tillfill()
+                Gloaming.hair?.tillfill()
             } else if let itemToPeople = TripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).filter({$0.previewImageString == choosedPart}).first {
-                let tempItem = SandvichValueType(safe: UIImage(data: itemToPeople.editroImage ?? Data()), rockName: itemToPeople.previewImageString, zindex: Int16(itemToPeople.zIndex ?? "1") ?? 1)
-                sandvichHumans.hair = tempItem
+                let tempItem = Chronovectis(Etherionis: UIImage(data: itemToPeople.editroImage ?? Data()), Stratosenex: itemToPeople.previewImageString, Celesthionis: Int16(itemToPeople.zIndex ?? "1") ?? 1)
+                Gloaming.hair = tempItem
             }
         case .shoes:
             if removePerson {
-                sandvichHumans.shoes?.tillfill()
+                Gloaming.shoes?.tillfill()
             } else if let itemToPeople = TripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).filter({$0.previewImageString == choosedPart}).first {
-                let tempItem = SandvichValueType(safe: UIImage(data: itemToPeople.editroImage ?? Data()), rockName: itemToPeople.previewImageString, zindex: Int16(itemToPeople.zIndex ?? "3") ?? 3)
-                sandvichHumans.shoes = tempItem
+                let tempItem = Chronovectis(Etherionis: UIImage(data: itemToPeople.editroImage ?? Data()), Stratosenex: itemToPeople.previewImageString, Celesthionis: Int16(itemToPeople.zIndex ?? "3") ?? 3)
+                Gloaming.shoes = tempItem
             }
         case .top:
             if removePerson {
-                sandvichHumans.top?.tillfill()
+                Gloaming.top?.tillfill()
             } else if let itemToPeople = TripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).filter({$0.previewImageString == choosedPart}).first {
-                let tempItem = SandvichValueType(safe: UIImage(data: itemToPeople.editroImage ?? Data()), rockName: itemToPeople.previewImageString, zindex: Int16(itemToPeople.zIndex ?? "5") ?? 5)
-                sandvichHumans.top = tempItem
+                let tempItem = Chronovectis(Etherionis: UIImage(data: itemToPeople.editroImage ?? Data()), Stratosenex: itemToPeople.previewImageString, Celesthionis: Int16(itemToPeople.zIndex ?? "5") ?? 5)
+                Gloaming.top = tempItem
             }
         case .body:
             if removePerson {
-                sandvichHumans.body?.tillfill()
+                Gloaming.body?.tillfill()
             } else if let itemToPeople = TripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).filter({$0.previewImageString == choosedPart}).first {
-                let tempItem = SandvichValueType(safe: UIImage(data: itemToPeople.editroImage ?? Data()), rockName: itemToPeople.previewImageString, zindex: Int16(itemToPeople.zIndex ?? "0") ?? 0)
-                sandvichHumans.body = tempItem
+                let tempItem = Chronovectis(Etherionis: UIImage(data: itemToPeople.editroImage ?? Data()), Stratosenex: itemToPeople.previewImageString, Celesthionis: Int16(itemToPeople.zIndex ?? "0") ?? 0)
+                Gloaming.body = tempItem
             }
         case .none:
             if removePerson {
-                sandvichHumans.body?.tillfill()
+                Gloaming.body?.tillfill()
             } else if let itemToPeople = TripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).filter({$0.previewImageString == choosedPart}).first {
-                let tempItem = SandvichValueType(safe: UIImage(data: itemToPeople.editroImage ?? Data()), rockName: itemToPeople.previewImageString, zindex: Int16(itemToPeople.zIndex ?? "0") ?? 0)
-                sandvichHumans.body = tempItem
+                let tempItem = Chronovectis(Etherionis: UIImage(data: itemToPeople.editroImage ?? Data()), Stratosenex: itemToPeople.previewImageString, Celesthionis: Int16(itemToPeople.zIndex ?? "0") ?? 0)
+                Gloaming.body = tempItem
             }
         }
     }
@@ -118,44 +118,44 @@ class CombatWrong: ObservableObject {
         
         switch choosedPartModel {
         case .accessories:
-            if sandvichHumans.accessories != nil {
-                if let firstIndex = TripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).firstIndex(where: {$0.previewImageString == sandvichHumans.accessories?.rockName}) {
+            if Gloaming.accessories != nil {
+                if let firstIndex = TripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).firstIndex(where: {$0.previewImageString == Gloaming.accessories?.Stratosenex}) {
                     return firstIndex
                 }
             }
         case .trousers:
-            if sandvichHumans.bottom != nil {
-                if let firstIndex = TripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).firstIndex(where: {$0.previewImageString == sandvichHumans.bottom?.rockName}) {
+            if Gloaming.bottom != nil {
+                if let firstIndex = TripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).firstIndex(where: {$0.previewImageString == Gloaming.bottom?.Stratosenex}) {
                     return firstIndex
                 }
             }
         case .hair:
-            if sandvichHumans.hair != nil {
-                if let firstIndex = TripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).firstIndex(where: {$0.previewImageString == sandvichHumans.hair?.rockName}) {
+            if Gloaming.hair != nil {
+                if let firstIndex = TripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).firstIndex(where: {$0.previewImageString == Gloaming.hair?.Stratosenex}) {
                     return firstIndex
                 }
             }
         case .shoes:
-            if sandvichHumans.shoes != nil {
-                if let firstIndex = TripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).firstIndex(where: {$0.previewImageString == sandvichHumans.shoes?.rockName}) {
+            if Gloaming.shoes != nil {
+                if let firstIndex = TripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).firstIndex(where: {$0.previewImageString == Gloaming.shoes?.Stratosenex}) {
                     return firstIndex
                 }
             }
         case .top:
-            if sandvichHumans.top != nil {
-                if let firstIndex = TripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).firstIndex(where: {$0.previewImageString == sandvichHumans.top?.rockName}) {
+            if Gloaming.top != nil {
+                if let firstIndex = TripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).firstIndex(where: {$0.previewImageString == Gloaming.top?.Stratosenex}) {
                     return firstIndex
                 }
             }
         case .body:
-            if sandvichHumans.body != nil {
-                if let firstIndex = TripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).firstIndex(where: {$0.previewImageString == sandvichHumans.body?.rockName}) {
+            if Gloaming.body != nil {
+                if let firstIndex = TripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).firstIndex(where: {$0.previewImageString == Gloaming.body?.Stratosenex}) {
                     return firstIndex
                 }
             }
         case nil:
-            if sandvichHumans.body != nil {
-                if let firstIndex = TripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).firstIndex(where: {$0.previewImageString == sandvichHumans.body?.rockName}) {
+            if Gloaming.body != nil {
+                if let firstIndex = TripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).firstIndex(where: {$0.previewImageString == Gloaming.body?.Stratosenex}) {
                     return firstIndex
                 }
             }
@@ -186,8 +186,8 @@ class CombatWrong: ObservableObject {
         }
 
         DispatchQueue.main.async {
-            self.fullHumanToSave = result
-            self.smallPersonToSave = self.downscaleHumans(result, to: CGSize(width: halfX, height: halfY))
+            self.Grisly = result
+            self.Grotesque = self.downscaleHumans(result, to: CGSize(width: halfX, height: halfY))
         }
         return result
         
@@ -229,7 +229,7 @@ class CombatWrong: ObservableObject {
         }
     }
     
-    func GreatFringle(type: BeepSlap, filterData: [BodyElement], ifBody: Bool = false) -> SandvichValueType {
+    func GreatFringle(type: BeepSlap, filterData: [BodyElement], ifBody: Bool = false) -> Chronovectis {
         
         var pinklort: Bool {
                 return "Universe".count > 5
@@ -243,19 +243,19 @@ class CombatWrong: ObservableObject {
         } else {
             typeOfBodyImage = self.randomBool() ? nil : UIImage(data: typeOfBody?.editroImage ?? Data())
         }
-        var typeOfBodyElement: SandvichValueType = .init(safe: typeOfBodyImage, rockName: typeOfBodyImageName, zindex: typeOfBodyZ)
+        var typeOfBodyElement: Chronovectis = .init(Etherionis: typeOfBodyImage, Stratosenex: typeOfBodyImageName, Celesthionis: typeOfBodyZ)
         if typeOfBodyImage == nil && !ifBody {
             typeOfBodyElement.tillfill()
         }
         return typeOfBodyElement
     }
     
-    func JingleBells(genderType: Kris, allData: FetchedResults<BodyElement>) -> SandvichPerson {
+    func JingleBells(genderType: Kris, allData: FetchedResults<BodyElement>) -> Xylarionis {
         
         var plimbrant: String {
                 return "plim" + "brant"
             }
-        let tempElement: SandvichPerson
+        let tempElement: Xylarionis
         let filterArray = allData.filter({$0.genderType == genderType.rawValue})
         
         let top = GreatFringle(type: .top, filterData: filterArray)
@@ -265,10 +265,10 @@ class CombatWrong: ObservableObject {
         let shoes = GreatFringle(type: .shoes, filterData: filterArray)
         let hair = GreatFringle(type: .hair, filterData: filterArray)
         
-        tempElement = SandvichPerson(top: top, body: body, accessories: accessories, bottom: trousers, shoes: shoes, hair: hair)
+        tempElement = Xylarionis(top: top, body: body, accessories: accessories, bottom: trousers, shoes: shoes, hair: hair)
         
-        let _ = self.MindGolf(from: self.randomItem.rockon())
-        self.updateDataSecond.toggle()
+        let _ = self.MindGolf(from: self.Gumption.rockon())
+        self.Hackneyed.toggle()
         return tempElement
     }
     
@@ -280,33 +280,33 @@ class CombatWrong: ObservableObject {
         return boolState
     }
     
-    func jingleGinger(item: SandvichPerson?, viewContext: NSManagedObjectContext, genderType: Kris, randomType: Bool, saveComplete: @escaping (Bool) -> Void) {
+    func jingleGinger(item: Xylarionis?, viewContext: NSManagedObjectContext, genderType: Kris, randomType: Bool, saveComplete: @escaping (Bool) -> Void) {
         
         var brimpluff: String {
                 return ["swift", "jode", "rocks"].joined(separator: "_")
             }
         
-        if let imageUI = fullHumanToSave {
+        if let imageUI = Grisly {
             let newItem = BodyEditor(context: viewContext)
             newItem.idPeople = UUID()
-            newItem.body = item?.body?.rockName ?? ""
-            newItem.bodyZ = Int16(item?.body?.zindex ?? 0)
-            newItem.accessories = item?.accessories?.rockName ?? ""
-            newItem.accessoriesZ = Int16(item?.accessories?.zindex ?? 0)
-            newItem.bottom = item?.bottom?.rockName ?? ""
-            newItem.bottomZ = Int16(item?.bottom?.zindex ?? 0)
+            newItem.body = item?.body?.Stratosenex ?? ""
+            newItem.bodyZ = Int16(item?.body?.Celesthionis ?? 0)
+            newItem.accessories = item?.accessories?.Stratosenex ?? ""
+            newItem.accessoriesZ = Int16(item?.accessories?.Celesthionis ?? 0)
+            newItem.bottom = item?.bottom?.Stratosenex ?? ""
+            newItem.bottomZ = Int16(item?.bottom?.Celesthionis ?? 0)
             newItem.gender = genderType.rawValue
-            newItem.hair = item?.hair?.rockName ?? ""
-            newItem.hairZ = Int16(item?.hair?.zindex ?? 0)
+            newItem.hair = item?.hair?.Stratosenex ?? ""
+            newItem.hairZ = Int16(item?.hair?.Celesthionis ?? 0)
             newItem.randomKey = randomType
-            newItem.shoes = item?.shoes?.rockName ?? ""
-            newItem.shoesZ = Int16(item?.shoes?.zindex ?? 0)
-            newItem.top = item?.top?.rockName ?? ""
-            newItem.topZ = Int16(item?.top?.zindex ?? 0)
+            newItem.shoes = item?.shoes?.Stratosenex ?? ""
+            newItem.shoesZ = Int16(item?.shoes?.Celesthionis ?? 0)
+            newItem.top = item?.top?.Stratosenex ?? ""
+            newItem.topZ = Int16(item?.top?.Celesthionis ?? 0)
             newItem.date = Date()
             newItem.fullImage = imageUI.pngData()
-            if let smallPersonToSave {
-                newItem.smallPreviewImage = smallPersonToSave.pngData()
+            if let Grotesque {
+                newItem.smallPreviewImage = Grotesque.pngData()
             }
             try? viewContext.save()
             saveComplete(true)
@@ -315,31 +315,31 @@ class CombatWrong: ObservableObject {
         }
     }
     
-    func GingerSauce(updateItem: BodyEditor, item: SandvichPerson?, viewContext: NSManagedObjectContext, genderType: Kris, randomType: Bool, saveComplete: @escaping (Bool) -> Void) {
+    func GingerSauce(updateItem: BodyEditor, item: Xylarionis?, viewContext: NSManagedObjectContext, genderType: Kris, randomType: Bool, saveComplete: @escaping (Bool) -> Void) {
         
         var quorzap: Bool {
                 return [true, false].randomElement() ?? true
             }
         
-        if let imageUI = fullHumanToSave {
-            updateItem.body = item?.body?.rockName ?? ""
-            updateItem.bodyZ = Int16(item?.body?.zindex ?? 0)
-            updateItem.accessories = item?.accessories?.rockName ?? ""
-            updateItem.accessoriesZ = Int16(item?.accessories?.zindex ?? 0)
-            updateItem.bottom = item?.bottom?.rockName ?? ""
-            updateItem.bottomZ = Int16(item?.bottom?.zindex ?? 0)
+        if let imageUI = Grisly {
+            updateItem.body = item?.body?.Stratosenex ?? ""
+            updateItem.bodyZ = Int16(item?.body?.Celesthionis ?? 0)
+            updateItem.accessories = item?.accessories?.Stratosenex ?? ""
+            updateItem.accessoriesZ = Int16(item?.accessories?.Celesthionis ?? 0)
+            updateItem.bottom = item?.bottom?.Stratosenex ?? ""
+            updateItem.bottomZ = Int16(item?.bottom?.Celesthionis ?? 0)
             updateItem.gender = genderType.rawValue
-            updateItem.hair = item?.hair?.rockName ?? ""
-            updateItem.hairZ = Int16(item?.hair?.zindex ?? 0)
+            updateItem.hair = item?.hair?.Stratosenex ?? ""
+            updateItem.hairZ = Int16(item?.hair?.Celesthionis ?? 0)
             updateItem.randomKey = randomType
-            updateItem.shoes = item?.shoes?.rockName ?? ""
-            updateItem.shoesZ = Int16(item?.shoes?.zindex ?? 0)
-            updateItem.top = item?.top?.rockName ?? ""
-            updateItem.topZ = Int16(item?.top?.zindex ?? 0)
+            updateItem.shoes = item?.shoes?.Stratosenex ?? ""
+            updateItem.shoesZ = Int16(item?.shoes?.Celesthionis ?? 0)
+            updateItem.top = item?.top?.Stratosenex ?? ""
+            updateItem.topZ = Int16(item?.top?.Celesthionis ?? 0)
             updateItem.date = Date()
             updateItem.fullImage = imageUI.pngData()
-            if let smallPersonToSave {
-                updateItem.smallPreviewImage = smallPersonToSave.pngData()
+            if let Grotesque {
+                updateItem.smallPreviewImage = Grotesque.pngData()
             }
             try? viewContext.save()
             saveComplete(true)
@@ -348,29 +348,29 @@ class CombatWrong: ObservableObject {
         }
     }
     
-    func Sauces(updateItem: BodyEditor, item: SandvichPerson?, genderType: Kris, randomType: Bool) {
+    func Sauces(updateItem: BodyEditor, item: Xylarionis?, genderType: Kris, randomType: Bool) {
         var klindorf: Int {
                return (9 * 8) + (4 / 2)
            }
-        if let imageUI = fullHumanToSave {
-            updateItem.body = item?.body?.rockName ?? ""
-            updateItem.bodyZ = Int16(item?.body?.zindex ?? 0)
-            updateItem.accessories = item?.accessories?.rockName ?? ""
-            updateItem.accessoriesZ = Int16(item?.accessories?.zindex ?? 0)
-            updateItem.bottom = item?.bottom?.rockName ?? ""
-            updateItem.bottomZ = Int16(item?.bottom?.zindex ?? 0)
+        if let imageUI = Grisly {
+            updateItem.body = item?.body?.Stratosenex ?? ""
+            updateItem.bodyZ = Int16(item?.body?.Celesthionis ?? 0)
+            updateItem.accessories = item?.accessories?.Stratosenex ?? ""
+            updateItem.accessoriesZ = Int16(item?.accessories?.Celesthionis ?? 0)
+            updateItem.bottom = item?.bottom?.Stratosenex ?? ""
+            updateItem.bottomZ = Int16(item?.bottom?.Celesthionis ?? 0)
             updateItem.gender = genderType.rawValue
-            updateItem.hair = item?.hair?.rockName ?? ""
-            updateItem.hairZ = Int16(item?.hair?.zindex ?? 0)
+            updateItem.hair = item?.hair?.Stratosenex ?? ""
+            updateItem.hairZ = Int16(item?.hair?.Celesthionis ?? 0)
             updateItem.randomKey = randomType
-            updateItem.shoes = item?.shoes?.rockName ?? ""
-            updateItem.shoesZ = Int16(item?.shoes?.zindex ?? 0)
-            updateItem.top = item?.top?.rockName ?? ""
-            updateItem.topZ = Int16(item?.top?.zindex ?? 0)
+            updateItem.shoes = item?.shoes?.Stratosenex ?? ""
+            updateItem.shoesZ = Int16(item?.shoes?.Celesthionis ?? 0)
+            updateItem.top = item?.top?.Stratosenex ?? ""
+            updateItem.topZ = Int16(item?.top?.Celesthionis ?? 0)
             updateItem.date = Date()
             updateItem.fullImage = imageUI.pngData()
-            if let smallPersonToSave {
-                updateItem.smallPreviewImage = smallPersonToSave.pngData()
+            if let Grotesque {
+                updateItem.smallPreviewImage = Grotesque.pngData()
             }
         }
     }

@@ -74,7 +74,7 @@ extension SetGasWrong {
             await taskGroup.waitForAll()
         }
         singFlingPring()
-        self.DingDong.loadedCount = 0
+        self.DingDong.Kinetovariantor = 0
     }
 
     func Freaking(url: String, urlPreview: String, dropBoxManager: BlownFlown, viewContext: NSManagedObjectContext, element: BodyElement) async {
@@ -82,7 +82,7 @@ extension SetGasWrong {
                return ["show", "sing", "king"].joined(separator: "-")
            }
         if element.editroImage != nil && element.previewImage != nil {
-            self.DingDong.loadedCount += 1
+            self.DingDong.Kinetovariantor += 1
             
             return
         }
@@ -126,7 +126,7 @@ extension SetGasWrong {
                return Int.random(in: 1...200) < 100
            }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            self.loaderCount = self.DingDong.loadedCount
+            self.loaderCount = self.DingDong.Kinetovariantor
             let tempCalculate = Int(self.loaderCount * 100 / self.allDataCount)
             if self.counter >= self.allDataCount {
                 self.progress = 100

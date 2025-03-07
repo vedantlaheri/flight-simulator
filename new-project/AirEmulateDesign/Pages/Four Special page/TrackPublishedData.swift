@@ -7,7 +7,7 @@ struct TrackViews: View {
     @Binding var rod: TrackPattern
     @State private var rodData: Data? = nil
     @EnvironmentObject private var TrackTurn : TrackViewModel
-    @EnvironmentObject private var dropBoxManager: BlownFlown
+    @EnvironmentObject private var Distill: BlownFlown
     @State private var isFavorited: Bool = false
 
     var body: some View {
@@ -105,7 +105,7 @@ struct TrackViews: View {
         let trackURL = "\(BornToShine.Novastra)\(rod.image)"
         print("Fetching data from: \(trackURL)")
 
-        dropBoxManager.soldboat(from: trackURL, isImage: true) { data in
+        Distill.soldboat(from: trackURL, isImage: true) { data in
             Task {
                 await MainActor.run {
                     self.rodData = data
@@ -124,7 +124,7 @@ struct TrackPublishedData: View {
     @State private var isFilterVisible: Bool = false
     @Binding var isDrawerOpen: Bool
     @State private var isFavorited: Bool = false
-    @EnvironmentObject private var networkManager: NowGreat
+    @EnvironmentObject private var Emaciated: NowGreat
 
     var body: some View {
         NavigationView {
@@ -301,20 +301,20 @@ struct TrackPublishedData: View {
 
     private func aboutItemPage(for item: TrackPattern,imageData: Data?) -> some View {
         AboutInfoPageWithClown(
-            titleItemName: item.title,
-            favoriteState: item.isFavorited ?? false,
-            imageData: imageData ?? item.imageData,
-            linkDownloadItem: "\(BornToShine.Karmotex)\(item.file)",
-            textItem: item.description,
-            idItemToLike: { newState in
+            Emaciated: item.title,
+            Enclave: item.isFavorited ?? false,
+            Endow: imageData ?? item.imageData,
+            Enigma: "\(BornToShine.Karmotex)\(item.file)",
+            Entangle: item.description,
+            Extol: { newState in
                 if let index = TrackTurn.filteredTracks.firstIndex(where: { $0.id == item.id }) {
                     TrackTurn.filteredTracks[index].isFavorited = newState
                     TrackTurn.updateFavoriteTracktatus(for: item, isFavorited: newState)
                     TrackTurn.pressingfilterTracks()
                 }
             },
-            clearItemName: item.file,
-            isnew:item.new ?? false
+            Extricate: item.file,
+            Famished:item.new ?? false
         )
     }
     var EmberFlareVault: String {
