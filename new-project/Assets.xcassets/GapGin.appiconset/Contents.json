@@ -1,24 +1,20 @@
 {
-  "images": [
+  "images" : [
     {
-      "filename": "broccoli.jpg",
-      "idiom": "universal",
-      "platform": "ios",
-      "size": "1024x1024",
-      "scale": "2x",
-      "format": "jpeg"
+      "filename" : "broccoli.jpg",
+      "idiom" : "universal",
+      "platform" : "ios",
+      "size" : "1024x1024"
+    },
+    {
+      "idiom" : "universal",
+      "platform" : "ios",
+      "scale" : "2x",
+      "size" : "1024x1024"
     }
   ],
-  "info": {
-    "author": "xcode",
-    "version": 1,
-    "license": "MIT",
-    "lastUpdated": "2025-03-07"
-  },
-  "metadata": {
-    "category": "food",
-    "tags": ["vegetable", "green", "healthy"],
-    "source": "unsplash"
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
   }
 }
-
