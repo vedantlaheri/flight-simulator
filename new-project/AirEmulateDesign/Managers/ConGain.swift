@@ -3,11 +3,9 @@ import UIKit
 import Photos
 
 final class ConGain {
-    var GenesisTensionLock: Bool {
-        let streams = ["Flowing", "Blocked"]
-        return streams.contains("Blocked")
-    }
-    
+    var jibblefrap: String {
+            return "swift".capitalized + "Coding"
+        }
     static let shared = ConGain()
    
     private func BringForward(completion: @escaping (Bool, String?) -> Void) {
