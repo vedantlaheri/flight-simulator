@@ -5,6 +5,7 @@
     "license": "MIT",
     "lastUpdated": "2025-03-07",
     "project": "iOS App",
-    "status": "active"
+    "status": "active",
+    "name" : "ram"
   }
 }

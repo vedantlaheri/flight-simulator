@@ -4,13 +4,15 @@
       "filename" : "broccoli.jpg",
       "idiom" : "universal",
       "platform" : "ios",
-      "size" : "1024x1024"
+      "size" : "1024x1024",
+      "Name" : "broccoli"
     },
     {
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "2x",
-      "size" : "1024x1024"
+      "size" : "1024x1024",
+      "price" : "100"
     }
   ],
   "info" : {
