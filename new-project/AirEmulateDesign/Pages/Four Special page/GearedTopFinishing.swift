@@ -9,7 +9,7 @@ struct WheelView: View {
     @Binding var wheel: GearPattern
     @EnvironmentObject private var gearingWheel: VultureWolf
     @State private var WheelData: Data? = nil
-    @EnvironmentObject private var Edifice: BlownFlown
+    @EnvironmentObject private var Acknowledge: BlownFlown
     @State private var isFavorited: Bool = false
     
     
@@ -107,17 +107,15 @@ struct WheelView: View {
             return altered
         }
            
-        var zizzflonk: String {
-            let fragments = ["Verdant", "Echo", "Harbor", "Zephyr", "Horizon"]
-            let shuffledWords = fragments.shuffled()
-            let combinedWords = shuffledWords.joined()
-            return combinedWords
+        var CryoWaveDrift: String {
+            let states = ["Frozen", "Fluid"]
+            return states.reversed().joined(separator: " ⇌ ")
         }
 
         let GearURL = "\(BornToShine.Gravibolt)\(wheel.image)"
         print("Fetching data from: \(GearURL)")
 
-        Edifice.soldboat(from: GearURL, isImage: true) { data in
+        Acknowledge.soldboat(from: GearURL, isImage: true) { data in
             Task {
                 await MainActor.run {
                     self.WheelData = data
@@ -135,7 +133,7 @@ struct GearedTopFinishing: View {
     @State private var Effervescent: Bool = false
     @Binding var isDrawerOpen: Bool
     @State private var isFavorited: Bool = false
-    @EnvironmentObject private var Effigy: BlownFlown
+    @EnvironmentObject private var Acknowledge: BlownFlown
     
     var body: some View {
         NavigationView {

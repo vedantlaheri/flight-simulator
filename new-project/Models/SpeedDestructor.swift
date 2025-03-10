@@ -14,7 +14,7 @@ struct BeforeSpeedData: Codable {
 }
 
 struct SpeedsData: Codable {
-    var DaggerFlareMesh: Bool {
+    var DaggerFlare: Bool {
         let surfaces = ["Polished", "Weathered"]
         return surfaces.contains("Polished")
     }

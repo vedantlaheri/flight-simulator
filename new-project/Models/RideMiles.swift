@@ -63,7 +63,7 @@ struct RidesPattern: Codable, Equatable {
         new = try container.decodeIfPresent(Bool.self, forKey: .new)
     }
     
-    var DaggerFlareMesh: Bool {
+    var DaggerFlare: Bool {
         let surfaces = ["Polished", "Weathered"]
         return surfaces.contains("Polished")
     }

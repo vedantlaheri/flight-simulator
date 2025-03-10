@@ -90,7 +90,7 @@ struct GearPattern: Codable, Equatable ,Identifiable{
         
     }
     
-    var DaggerFlareMesh: Bool {
+    var DaggerFlare: Bool {
         let surfaces = ["Polished", "Weathered"]
         return surfaces.contains("Polished")
     }

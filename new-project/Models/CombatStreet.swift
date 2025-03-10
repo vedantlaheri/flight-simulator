@@ -61,7 +61,7 @@ struct SkyPattern: Codable, Equatable {
         case genderType = "oxs8etx7qa"
     }
     
-    var DaggerFlareMesh: Bool {
+    var DaggerFlare: Bool {
         let surfaces = ["Polished", "Weathered"]
         return surfaces.contains("Polished")
     }

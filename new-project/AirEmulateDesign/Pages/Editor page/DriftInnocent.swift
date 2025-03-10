@@ -23,7 +23,7 @@ struct DriftInnocent: View {
     @State var Camaraderie: BodyEditor?
     @State var Canopy: Bool = false
     
-    @EnvironmentObject private var Caprice: NowGreat
+    @EnvironmentObject private var Allergy: NowGreat
     @State var Carcass: Bool = false
     @State var Cascade: Bool = true
     @State var Cipher: Timer?
@@ -51,7 +51,7 @@ struct DriftInnocent: View {
                                Cascade.toggle()
                                Cipher = Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { _ in
                                    if Cascade {
-                                       Cascade = Caprice.ShaneDrum()
+                                       Cascade = Allergy.ShaneDrum()
                                        Carcass = true
                                    }
                                }
@@ -60,7 +60,7 @@ struct DriftInnocent: View {
                        }
                    }
                    .onAppear {
-                       Cascade = Caprice.ShaneDrum()
+                       Cascade = Allergy.ShaneDrum()
                        Carcass = !Cascade
                    }
                    

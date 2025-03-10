@@ -21,7 +21,7 @@ struct RandomSupriseHistoryPage: View {
     @State var Babble:AnyView
     @Binding var Baffle: Bool
     
-    @EnvironmentObject private var Banish: NowGreat
+    @EnvironmentObject private var Allergy: NowGreat
     @State var Benevolent: Bool = true
     @State var Billow: Timer?
     var body: some View {
@@ -47,14 +47,14 @@ struct RandomSupriseHistoryPage: View {
                             Benevolent.toggle()
                             Billow = Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { _ in
                                 if Benevolent {
-                                    Benevolent = Banish.ShaneDrum()
+                                    Benevolent = Allergy.ShaneDrum()
                                 }
                             }
                         }
                     }
                 }
                 .onAppear(){
-                    Benevolent = Banish.ShaneDrum()
+                    Benevolent = Allergy.ShaneDrum()
                 }
                 
                 

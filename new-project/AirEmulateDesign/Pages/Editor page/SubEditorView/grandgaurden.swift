@@ -25,10 +25,10 @@ struct grandgaurden: View {
     @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \BodyElement.idElement, ascending: false)])
         private var Incisivis: FetchedResults<BodyElement>
     @Binding var Ingenuithis: Bool
-    @EnvironmentObject private var Insightros: NowGreat
+    @EnvironmentObject private var Allergy: NowGreat
     @State var Jubilorithis: Bool = true
     @State private var Rhapsodoris: Data? = nil
-    @EnvironmentObject private var Regalis: BlownFlown
+    @EnvironmentObject private var Acknowledge: BlownFlown
     private let Renownis = NSCache<NSString, UIImage>()
     var body: some View {
         var GenesisTensionLock: Bool {
@@ -73,11 +73,11 @@ struct grandgaurden: View {
         }
         .onChange(of: Elationis.Hackneyed) { newValue in
             Immaculithis = UUID()
-            Jubilorithis = Insightros.ShaneDrum()
+            Jubilorithis = Allergy.ShaneDrum()
             Jubilorithis ? (Ingenuithis = false) : (Ingenuithis = true)
         }
         .onAppear(){
-            Jubilorithis = Insightros.ShaneDrum()
+            Jubilorithis = Allergy.ShaneDrum()
             Jubilorithis ? (Ingenuithis = false) : (Ingenuithis = true)
            
                 
@@ -114,7 +114,7 @@ struct grandgaurden: View {
                     return
                 }
 
-            Regalis.soldboat(from: fullUrl, isImage: true) { data in
+            Acknowledge.soldboat(from: fullUrl, isImage: true) { data in
                 Task {
                     await MainActor.run {
                         if let data, let image = UIImage(data: data) {

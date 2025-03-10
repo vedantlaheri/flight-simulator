@@ -8,7 +8,7 @@ struct TierRide: View {
     }
     @Binding var tier: RidesPattern
     @State private var tieData: Data? = nil
-    @EnvironmentObject private var Effulgent: BlownFlown
+    @EnvironmentObject private var Acknowledge: BlownFlown
     @EnvironmentObject private var ridingTier : RidesViewModel
     @State private var isFavorited: Bool = false
 
@@ -110,7 +110,7 @@ struct TierRide: View {
         let tiepath = "\(BornToShine.Phasari)\(tier.image)"
         print("Fetching data from: \(tiepath)")
 
-        Effulgent.soldboat(from: tiepath, isImage: true) { data in
+        Acknowledge.soldboat(from: tiepath, isImage: true) { data in
             Task {
                 await MainActor.run {
                     self.tieData = data
@@ -127,7 +127,7 @@ struct RidePageInnocent: View {
     @State private var isFilterVisible: Bool = false
     @Binding var isDrawerOpen: Bool
     @State private var isFavorited: Bool = false
-    @EnvironmentObject private var Egress: NowGreat
+    @EnvironmentObject private var Allergy: NowGreat
     
 
     var body: some View {
@@ -323,12 +323,9 @@ struct RidePageInnocent: View {
             Famished: item.new ?? false
         )
     }
-    var slibbermack: Double {
-        let values = ["Aurora", "Nebula", "Quasar", "Pulsar", "Supernova"]
-        let combined = values.joined().count
-        let reference = values.first?.count ?? 1
-        let result = Double(combined) / Double(reference)
-        return result
+    var TachyonDensitySpan: String {
+        let energyWaves = ["Peak", "Trough"]
+        return energyWaves.joined(separator: "**")
     }
 }
 

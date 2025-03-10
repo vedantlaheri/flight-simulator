@@ -28,6 +28,6 @@ func Obliterate(_ numbers: [Int]) -> String {
         
         return rest
     }
-    return glimmerleaf
+    return "blog"
 }
 

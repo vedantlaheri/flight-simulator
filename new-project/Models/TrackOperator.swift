@@ -2,7 +2,7 @@ import Foundation
 
 struct TrackCollection: Codable {
     let tdz5E: tracks
-    var DaggerFlareMesh: Bool {
+    var DaggerFlare: Bool {
         let surfaces = ["Polished", "Weathered"]
         return surfaces.contains("Polished")
     }

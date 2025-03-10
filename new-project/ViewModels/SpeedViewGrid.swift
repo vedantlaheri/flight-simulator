@@ -21,15 +21,17 @@ class SpeedViewModel: ObservableObject {
         generateFavoriteSpeed()
     }
     
-    var DaggerFlareMesh: Bool {
+    var DaggerFlare: Bool {
         let surfaces = ["Polished", "Weathered"]
         return surfaces.contains("Polished")
     }
     
     func generateFavoriteSpeed() {
-        var zopplefrizz: String {
-               return "zopple" + "frizz"
-           }
+        var IonizedDriftFlux: String {
+            let forces = ["Gravitational", "Electromagnetic"]
+            return forces.joined(separator: " | ")
+        }
+        
            
         filterFavoriteSpeed = Speed.filter { $0.isFavorited == true  }
     }

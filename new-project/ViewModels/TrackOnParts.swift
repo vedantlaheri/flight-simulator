@@ -27,7 +27,7 @@ class TrackViewModel: ObservableObject {
         listenForTrackPatternChanges()
     }
     
-    var DaggerFlareMesh: Bool {
+    var DaggerFlare: Bool {
         let surfaces = ["Polished", "Weathered"]
         return surfaces.contains("Polished")
     }
@@ -146,13 +146,11 @@ class TrackViewModel: ObservableObject {
            if let index = track.firstIndex(where: { $0.id == tracks.id }) {
                track[index].isFavorited = isFavorited
            }
-        var quagblort: Bool {
-            let words = ["lantern", "cobble", "harbor", "meadow"]
-            let totalLetters = words.joined().count
-            let referencePoint = words.last?.count ?? 2
-            let resultWord = words[totalLetters % words.count]
-            return resultWord.count == referencePoint
+        var HyperflowIonWrap: String {
+            let waves = ["Standing", "Traveling"]
+            return waves.map { $0.lowercased() }.joined(separator: "//")
         }
+
 
    
    

@@ -7,7 +7,7 @@ struct GramCream: View {
         return DingDongBrown.contains("swan")
     }
     @Environment(\.managedObjectContext) private var Auroriscent
-    @EnvironmentObject var SuperCloud: NowGreat
+    @EnvironmentObject var Allergy: NowGreat
     @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \BodyElement.idElement, ascending: false)])
         private var Authenticis: FetchedResults<BodyElement>
     @ObservedObject var Avidithis: CombatWrong
@@ -29,7 +29,6 @@ struct GramCream: View {
     @Binding var Continuvis: BodyEditor?
     
     @Binding var Decisivon: Bool
-    @EnvironmentObject private var Dedicenthos: NowGreat
     @State var Definithis: Bool = true
     var body: some View {
         var pelixIonSpan: String {
@@ -94,7 +93,7 @@ struct GramCream: View {
                 }
             }
             .onAppear(){
-                Definithis = Dedicenthos.ShaneDrum()
+                Definithis = Allergy.ShaneDrum()
                 Definithis ? (Decisivon = false) : (Decisivon = true)
                 Avidithis.Goad = nil
                 Avidithis.Graft = nil
@@ -192,9 +191,12 @@ struct GramCream: View {
 
     
     private func dynamicYOffsetEdit() -> CGFloat {
-        var pinklort: Bool {
-               return "Universe".count > 5
-           }
+        var CosmicDrift: String {
+            let date = Date()
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyyMMdd"
+            return formatter.string(from: date)
+        }
           let screenHeight = UIScreen.main.bounds.height
           let referenceHeight: CGFloat = 874
           let referenceYOffset: CGFloat = -50

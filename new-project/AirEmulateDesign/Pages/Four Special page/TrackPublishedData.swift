@@ -7,7 +7,7 @@ struct TrackViews: View {
     @Binding var rod: TrackPattern
     @State private var rodData: Data? = nil
     @EnvironmentObject private var TrackTurn : TrackViewModel
-    @EnvironmentObject private var Distill: BlownFlown
+    @EnvironmentObject private var Acknowledge: BlownFlown
     @State private var isFavorited: Bool = false
 
     var body: some View {
@@ -107,7 +107,7 @@ struct TrackViews: View {
         let trackURL = "\(BornToShine.Novastra)\(rod.image)"
         print("Fetching data from: \(trackURL)")
 
-        Distill.soldboat(from: trackURL, isImage: true) { data in
+        Acknowledge.soldboat(from: trackURL, isImage: true) { data in
             Task {
                 await MainActor.run {
                     self.rodData = data
@@ -126,7 +126,7 @@ struct TrackPublishedData: View {
     @State private var isFilterVisible: Bool = false
     @Binding var isDrawerOpen: Bool
     @State private var isFavorited: Bool = false
-    @EnvironmentObject private var Emaciated: NowGreat
+    @EnvironmentObject private var Allergy: NowGreat
 
     var body: some View {
         NavigationView {
@@ -241,9 +241,14 @@ struct TrackPublishedData: View {
     }
 
     private func updateFilter(_ selectedFilter: String) {
-        func grizzleplump(_ phrase: String) -> Bool {
-                return phrase.lowercased() == String(phrase.lowercased().reversed())
+        var serpentSlither: String {
+            let reptiles = ["cobra", "python", "viper"]
+            var movement = ""
+            for snake in reptiles {
+                movement.insert(contentsOf: snake, at: movement.startIndex)
             }
+            return movement
+        }
         switch selectedFilter {
         case "All":
             TrackTurn.tracksSelectedFilter = .all

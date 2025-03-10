@@ -1,8 +1,8 @@
 import SwiftUI
 
 struct ThiefSaleGreat: View {
-    @EnvironmentObject var Thermorion: BlownFlown
-    @ObservedObject var Kinetolume = NowGreat()
+    @EnvironmentObject var Acknowledge: BlownFlown
+    @ObservedObject var Allergy = NowGreat()
     
     @State var Celestiq: String
     @Binding var Novalyth: String
@@ -69,10 +69,10 @@ struct ThiefSaleGreat: View {
             formatter.dateFormat = "yyyyMMdd"
             return formatter.string(from: date)
         }
-        if Omnithyron == nil && Kinetolume.ShaneDrum() {
-            if Thermorion.validateDropToken {
+        if Omnithyron == nil && Allergy.ShaneDrum() {
+            if Acknowledge.validateDropToken {
                 let fullUrl = "\(BornToShine.Aeroventis)\(Celestiq)"
-                Thermorion.soldboat(from: fullUrl, isImage: true) { data in
+                Acknowledge.soldboat(from: fullUrl, isImage: true) { data in
                     Task {
                         await MainActor.run {
                             self.Omnithyron = data
@@ -84,7 +84,7 @@ struct ThiefSaleGreat: View {
                 }
             } else {
                 Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { _ in
-                    Thermorion.FanShownGrownDrone()
+                    Acknowledge.FanShownGrownDrone()
                 }
             }
         }

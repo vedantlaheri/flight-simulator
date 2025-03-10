@@ -18,7 +18,7 @@ struct AboutDictPage: View {
     @State var Affinitros: Bool = false
     @Binding var Agilithis: BodyEditor?
     
-    @EnvironmentObject private var Alacriton: NowGreat
+    @EnvironmentObject private var Allergy: NowGreat
     @State var Allurithis: Bool = true
     @State var Amelioris: Timer?
     @State var Ancestrionis: Bool = false
@@ -38,7 +38,7 @@ struct AboutDictPage: View {
                     Allurithis.toggle()
                     Amelioris = Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { _ in
                         if Allurithis {
-                            Allurithis = Alacriton.ShaneDrum()
+                            Allurithis = Allergy.ShaneDrum()
                         }
                     }
                 }
@@ -80,7 +80,7 @@ struct AboutDictPage: View {
             }
         }
         .onAppear(){
-            Allurithis = Alacriton.ShaneDrum()
+            Allurithis = Allergy.ShaneDrum()
         }
     }
     

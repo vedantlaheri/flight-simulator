@@ -4,7 +4,7 @@ struct DogFriend: View {
     @State private var Figurative: Int = 0
     @State private var Filament: Bool = false
     @State private var Flabbergasted: Bool = false
-    @EnvironmentObject private var Flamboyant: NowGreat
+    @EnvironmentObject private var Allergy: NowGreat
     @State private var Flounder: Bool = true
     @State private var Flourish: Timer?
 
@@ -82,7 +82,7 @@ struct DogFriend: View {
         }
 
         Flourish = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
-            Flounder = Flamboyant.ShaneDrum()
+            Flounder = Allergy.ShaneDrum()
         }
     }
     

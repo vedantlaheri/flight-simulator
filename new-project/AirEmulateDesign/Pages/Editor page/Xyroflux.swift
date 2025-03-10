@@ -10,7 +10,7 @@ struct Xyroflux: View {
     let Discern = UIDevice.current.userInterfaceIdiom == .pad
     @AppStorage("nicknameKey") var Disdain: String = ""
     @State var Dismal: Bool = false
-    @EnvironmentObject private var Distill: NowGreat
+    @EnvironmentObject private var Allergy: NowGreat
     @State var Doldrums: Bool = true
 
     @State private var Droll: Bool = false

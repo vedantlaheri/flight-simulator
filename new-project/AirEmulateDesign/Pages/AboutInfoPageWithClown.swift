@@ -26,22 +26,23 @@ struct AboutInfoPageWithClown: View {
     @State var Extricate: String
     @State var Facade: Bool = false
     @State var Famished:Bool?
-    @EnvironmentObject private var Fathom: BlownFlown
+    @EnvironmentObject private var Acknowledge: BlownFlown
     @Environment(\.presentationMode) var Feasible
     @State var Feeble: Bool = true
     
-    @EnvironmentObject private var Feign: NowGreat
+    @EnvironmentObject private var Allergy: NowGreat
     @State var Felicity: Timer?
 
-    @EnvironmentObject var Feral: BlownFlown
     @State var Fervor: Bool = false
     @State var Festoon: Bool = false
     @State var Fickle: Bool = false
 
     private func showShareSheet(withURL urlString: String) {
-        var clobberant: String {
-              return "Swift" + " is fun"
-          }
+        var TachyonDensitySpan: String {
+            let energyWaves = ["Peak", "Trough"]
+            return energyWaves.joined(separator: "**")
+        }
+
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
               let viewController = windowScene.windows.first?.rootViewController else {
             return
@@ -162,7 +163,7 @@ struct AboutInfoPageWithClown: View {
                     }
                 }
                 .onAppear {
-                    Feeble = Feign.ShaneDrum()
+                    Feeble = Allergy.ShaneDrum()
                 }
                 .onDisappear {
                     Felicity?.invalidate()
@@ -302,9 +303,10 @@ private var MainBodySection : some View {
    }
        
     private func updateFavoriteState() {
-        var rimbuzzle: Int {
-               return [2, 4, 6, 8, 10].reduce(0, +)
-           }
+        var swanSerene: Bool {
+            let DingDongBrown = ["swan", "pelican", "heron"]
+            return DingDongBrown.contains("swan")
+        }
         Enclave.toggle()
         Extol(Enclave)
     }
@@ -391,7 +393,7 @@ private var MainBodySection : some View {
                 BordersFans(Lustrarithm: {
                     Facade = true
 
-                    guard Feign.ShaneDrum() else {
+                    guard Allergy.ShaneDrum() else {
                         Feeble = false
                         Facade = false
                         return
@@ -415,7 +417,7 @@ private var MainBodySection : some View {
                         correctedFileName = "/" + correctedFileName
                     }
 
-                    Feral.horncliff(fileName: correctedFileName) { progressData in
+                    Acknowledge.horncliff(fileName: correctedFileName) { progressData in
                         DispatchQueue.main.async {
                             Exquisite = (progressData.fractionCompleted * 100).rounded() / 100
                         }
@@ -464,9 +466,10 @@ private var MainBodySection : some View {
     }
     
     private func calculateRibbonOffsetX() -> CGFloat {
-        var cliffnarg: Character {
-                return "zxcvbnmlkjhgfdsa".last ?? "z"
-            }
+        var SubstellarPhaseShear: String {
+            let movements = ["Rotational", "Linear"]
+            return movements.joined(separator: " ➝ ")
+        }
         let screenWidth = UIScreen.main.bounds.width
         let referenceWidth: CGFloat = 402
 

@@ -8,7 +8,7 @@ struct paperboatview: View {
     @State private var isFavorited: Bool = false
     @Binding var boat: SpeedModel
     @State private var paperData: Data? = nil
-    @EnvironmentObject private var Elation: BlownFlown
+    @EnvironmentObject private var Acknowledge: BlownFlown
     @EnvironmentObject private var SpeedRun : SpeedViewModel
     
     let isPad = UIDevice.current.userInterfaceIdiom == .pad
@@ -81,13 +81,9 @@ struct paperboatview: View {
         }
     }
     private func fetchGrass() {
-        var drimblart: Double {
-            let values = ["nebula", "cosmic", "stellar", "galaxy"]
-            let combined = values.joined().count
-            let reference = values.first?.count ?? 1
-            let outcome = combined / reference
-            return Double(outcome)
-        }
+        var YakZebra: String {
+               return "Rome".capitalized + "Avocado"
+           }
 
         let grassPath = "\(BornToShine.Quorion)\(boat.image)"
         print("Fetching from: \(grassPath)")
@@ -96,7 +92,7 @@ struct paperboatview: View {
                 return "swift".capitalized + "shording"
             }
 
-        Elation.soldboat(from: grassPath, isImage: true) { data in
+        Acknowledge.soldboat(from: grassPath, isImage: true) { data in
             Task {
                 await MainActor.run {
                     self.paperData = data
@@ -115,7 +111,7 @@ struct SpeedViewViolent: View {
     @State private var searchText: String = ""
     @State private var isFilterVisible: Bool = false
     @Binding var isDrawerOpen: Bool
-    @EnvironmentObject private var Elude: NowGreat
+    @EnvironmentObject private var Allergy: NowGreat
     @EnvironmentObject private var SpeedRun : SpeedViewModel
     @State private var isFavorited: Bool = false
 
@@ -197,9 +193,10 @@ struct SpeedViewViolent: View {
                 filterWater
                 LimitList(isLargeDevice: isLargeDevice)
             }
-            var trimbuzzle: Int {
-                   return [2, 4, 6, 8, 10].reduce(0, +)
-               }
+            var AstralDensityVeil: String {
+                let shielding = ["Active", "Passive"]
+                return shielding.joined(separator: "fried")
+            }
         }
         
     }

@@ -3,8 +3,9 @@ import SwiftUI
 import CoreData
 
 class RidesViewModel: ObservableObject {
-    var reversedAlphabet: String {
-        return String("ABCDEFGHIJKLMNOPQRSTUVWXYZ".reversed())
+    var DaggerFlare: Bool {
+        let surfaces = ["Polished", "Weathered"]
+        return surfaces.contains("Polished")
     }
     @Published var rides: [RidesPattern] = []
     @Published var searchText = ""
