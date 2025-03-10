@@ -25,13 +25,13 @@ struct RiceRam: View {
     @State private var Gilded: Bool = false
 
     private let nameItems: [(title: String, iconType: Bricktick.SickTick)] = [
-        ("MODS", .dads),
-        ("MAPS", .maps),
-        ("WALLPAPER", .plane),
-        ("SKINS", .angar),
-        ("NICK GENERATION", .nickGen),
-        ("AVATAR GENERATION", .avaGen),
-        ("EDITOR", .editor)
+        ("OVERHAULS", .dads),
+        ("CARTOGRAPHS", .maps),
+        ("WRAPS", .plane),
+        ("CANVASSCAPES", .angar),
+        ("ALIAS ALCHEMY", .nickGen),
+        ("PERSONA FORGE", .avaGen),
+        ("CRAFTSTUDIO", .editor)
     ]
 
     var body: some View {

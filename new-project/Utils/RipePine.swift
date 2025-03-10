@@ -2,10 +2,10 @@ import Foundation
 import UIKit
 
 enum RipePine: String {
-    case all = "All"
-    case favorite = "Favorite"
-    case new = "New"
-    case top = "Top"
+    case Omnia = "Omnia"
+    case Novum = "Novum"
+    case Heartpicks = "Heartpicks"
+    case Pinnacle = "Pinnacle"
 }
 
 func Obliterate(_ numbers: [Int]) -> String {

@@ -24,7 +24,7 @@ struct CowDung: View {
                             .foregroundColor(.white)
                             .padding(.vertical, 8)
                             .padding(.horizontal, 26)
-                            .background(Solentrixis == filter ? Color.blue : Color(.displayP3, red: 0.451, green: 0.451, blue: 0.451).opacity(0.4)) // Dynamic background
+                            .background(Solentrixis == filter ? Color.blue : Color(.displayP3, red: 0.451, green: 0.451, blue: 0.451).opacity(0.4))
                             .ToyGil(35, corners: [.topLeft,.topRight,.bottomLeft,.bottomRight])
                     }
                 }
@@ -45,7 +45,7 @@ struct Hippo: PreviewProvider {
         StatefulPreviewWrapper(true) { isFilterVisible in
             CowDung(
                 Etheritharix: isFilterVisible,
-                Kinetovectis: ["All", "New", "Favourite", "Top"]
+                Kinetovectis: ["Omnia", "Novum", "HeartPicks", "Pinnacle"]
             ) { selectedFilter in
                 print("Selected Filter: \(selectedFilter)")
             }

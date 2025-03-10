@@ -132,7 +132,7 @@ struct SpeedViewViolent: View {
                 .onAppear {
                     DispatchQueue.main.async {
                         SpeedRun.SpeedScratch()
-                        SpeedRun.speedSelectedFilter = .all
+                        SpeedRun.speedSelectedFilter = .Omnia
                         SpeedRun.pressingFilterSpeed()
                     }
                 }
@@ -173,7 +173,7 @@ struct SpeedViewViolent: View {
     }
 
     private var titleText: some View {
-        Text("WALLPAPERS")
+        Text("WRAPS")
             .font(.custom("Gilroy-Heavy", size: 24).weight(.heavy))
             .foregroundColor(.white)
             .lineSpacing(20)
@@ -230,7 +230,7 @@ struct SpeedViewViolent: View {
     private var filterWater: some View {
         CowDung(
             Etheritharix: $isFilterVisible,
-            Kinetovectis: ["All", "New", "Favourite", "Top"]
+            Kinetovectis:  ["Omnia", "Novum", "Heartpicks", "Pinnacle"]
         ) { selectedFilter in
             updateFilter(selectedFilter)
         }
@@ -243,14 +243,14 @@ struct SpeedViewViolent: View {
         }
 
         switch selectedFilter {
-        case "All":
-            SpeedRun.speedSelectedFilter = .all
-        case "New":
-            SpeedRun.speedSelectedFilter = .new
-        case "Favourite":
-            SpeedRun.speedSelectedFilter = .favorite
-        case "Top":
-            SpeedRun.speedSelectedFilter = .top
+        case "Omnia":
+            SpeedRun.speedSelectedFilter = .Omnia
+        case "Novum":
+            SpeedRun.speedSelectedFilter = .Novum
+        case "Heartpicks":
+            SpeedRun.speedSelectedFilter = .Heartpicks
+        case "Pinnacle":
+            SpeedRun.speedSelectedFilter = .Pinnacle
         default:
             break
         }
@@ -267,7 +267,7 @@ struct SpeedViewViolent: View {
                     ForEach(SpeedRun.filteredSpeed.indices, id: \.self) { index in
                         let speed = SpeedRun.filteredSpeed[index]
                         
-                        if SpeedRun.speedSelectedFilter == .favorite && speed.isFavorited == false {
+                        if SpeedRun.speedSelectedFilter == .Heartpicks && speed.isFavorited == false {
                             EmptyView()
                         } else {
                             let cachedImageData: Data? = SpeedRun.imageCache["\(BornToShine.Quorion)\(speed.image)"]

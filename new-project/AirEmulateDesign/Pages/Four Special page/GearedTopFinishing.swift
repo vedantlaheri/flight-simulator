@@ -148,7 +148,7 @@ struct GearedTopFinishing: View {
             .onAppear {
                 DispatchQueue.main.async {
                     gearingWheel.DocFlock()
-                    gearingWheel.PerfectQuite = .all
+                    gearingWheel.PerfectQuite = .Omnia
                     gearingWheel.FunnyJoyful()
                 }
             }
@@ -187,7 +187,7 @@ struct GearedTopFinishing: View {
     }
     
     private var titleText: some View {
-        Text("MAPS")
+        Text("CARTOGRAPHS")
             .font(.custom("Gilroy-Heavy", size: 24).weight(.heavy))
             .foregroundColor(.white)
             .lineSpacing(20)
@@ -238,7 +238,7 @@ struct GearedTopFinishing: View {
     private var filterGear: some View {
         CowDung(
             Etheritharix: $Effervescent,
-            Kinetovectis: ["All", "New", "Favourite", "Top"]
+            Kinetovectis:  ["Omnia", "Novum", "HeartPicks", "Pinnacle"]
         ) { selectedFilter in
             JungJitter(selectedFilter)
         }
@@ -253,14 +253,14 @@ struct GearedTopFinishing: View {
         gearingWheel.LoudNice = []
         
         switch selectedFilter {
-        case "All":
-            gearingWheel.PerfectQuite = .all
-        case "New":
-            gearingWheel.PerfectQuite = .new
-        case "Favourite":
-            gearingWheel.PerfectQuite = .favorite
-        case "Top":
-            gearingWheel.PerfectQuite = .top
+        case "Omnia":
+            gearingWheel.PerfectQuite = .Omnia
+        case "Novum":
+            gearingWheel.PerfectQuite = .Novum
+        case "HeartPicks":
+            gearingWheel.PerfectQuite = .Heartpicks
+        case "Pinnacle":
+            gearingWheel.PerfectQuite = .Pinnacle
         default:
             break
         }
@@ -281,7 +281,7 @@ struct GearedTopFinishing: View {
                     ForEach(gearingWheel.LoudNice.indices, id: \.self) { index in
                         let gear = gearingWheel.LoudNice[index]
                         
-                        if gearingWheel.PerfectQuite == .favorite && gear.isFavorited == false {
+                        if gearingWheel.PerfectQuite == .Heartpicks && gear.isFavorited == false {
                             EmptyView()
                         } else {
                             let cachedImageData: Data? = gearingWheel.SnakeUrchin["\(BornToShine.Gravibolt)\(gear.image)"]

@@ -7,7 +7,7 @@ class SpeedViewModel: ObservableObject {
     @Published var Speed: [SpeedModel] = []
     @Published var searchText = ""
     @Published var filteredSpeed: [SpeedModel] = []
-    @Published var speedSelectedFilter: RipePine = .all
+    @Published var speedSelectedFilter: RipePine = .Omnia
     @Published var filterFavoriteSpeed: [SpeedModel] = []
     @Published var imageCache: [String: Data] = [:]
     var tempArrayToFilterSearch: [SpeedModel] = []
@@ -40,10 +40,10 @@ class SpeedViewModel: ObservableObject {
          
         DispatchQueue.main.async {
             self.filteredSpeed = self.Speed.filter {
-                self.speedSelectedFilter == .all ||
-                (self.speedSelectedFilter == .favorite && $0.isFavorited == true) ||
-                (self.speedSelectedFilter == .new && $0.new == true) ||
-                (self.speedSelectedFilter == .top && $0.top == true)
+                self.speedSelectedFilter == .Omnia ||
+                (self.speedSelectedFilter == .Heartpicks && $0.isFavorited == true) ||
+                (self.speedSelectedFilter == .Novum && $0.new == true) ||
+                (self.speedSelectedFilter == .Pinnacle && $0.top == true)
             }
 
             if !self.searchText.isEmpty {
@@ -89,7 +89,7 @@ class SpeedViewModel: ObservableObject {
     
     
     func removeIsFavoriteFarm(with id: String) {
-        if speedSelectedFilter == .favorite {
+        if speedSelectedFilter == .Heartpicks {
             if let removeIndex = filteredSpeed.firstIndex(where: { $0.id == id }) {
                 filteredSpeed.remove(at: removeIndex)
             }

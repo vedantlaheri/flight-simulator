@@ -94,7 +94,7 @@ struct DriftInnocent: View {
 
                     Spacer()
 
-                    Text("AVATAR GEN")
+                    Text("PERSONA FORGE")
                         .font(Font.custom("Gilroy-Heavy", size: 24).weight(.heavy))
                         .foregroundColor(.white)
                         .padding(.trailing, 20)

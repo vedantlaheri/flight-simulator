@@ -64,7 +64,7 @@ struct Xyroflux: View {
                     
                     Spacer()
                     
-                    Text("NICKNAME")
+                    Text("ALIAS ALCHEMY")
                         .font(Font.custom("Gilroy-Heavy", size: 24).weight(.heavy))
                         .foregroundColor(.white)
                     

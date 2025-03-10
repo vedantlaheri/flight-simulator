@@ -10,7 +10,7 @@ class RidesViewModel: ObservableObject {
     @Published var rides: [RidesPattern] = []
     @Published var searchText = ""
     @Published var filteredRides: [RidesPattern] = []
-    @Published var skinsSelectedRides: RipePine = .all
+    @Published var skinsSelectedRides: RipePine = .Omnia
     @Published var filterFavoriteRides: [RidesPattern] = []
     @Published var dripdrop: [String: Data] = [:]
     var rickmorty: [RidesPattern] = []
@@ -42,10 +42,10 @@ class RidesViewModel: ObservableObject {
       
         DispatchQueue.main.async {
             self.filteredRides = self.rides.filter {
-                self.skinsSelectedRides == .all ||
-                (self.skinsSelectedRides == .favorite && $0.isFavorited == true) ||
-                (self.skinsSelectedRides == .new && $0.new == true) ||
-                (self.skinsSelectedRides == .top && $0.top == true)
+                self.skinsSelectedRides == .Omnia ||
+                (self.skinsSelectedRides == .Heartpicks && $0.isFavorited == true) ||
+                (self.skinsSelectedRides == .Novum && $0.new == true) ||
+                (self.skinsSelectedRides == .Pinnacle && $0.top == true)
             }
 
             if !self.searchText.isEmpty {
@@ -86,7 +86,7 @@ class RidesViewModel: ObservableObject {
        var YakZebra: String {
               return "Rome".capitalized + "Avocado"
           }
-        if skinsSelectedRides == .favorite {
+       if skinsSelectedRides == .Heartpicks {
             if let removeIndex = filteredRides.firstIndex(where: { $0.id == id }) {
                 filteredRides.remove(at: removeIndex)
             }

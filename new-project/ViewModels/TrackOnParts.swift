@@ -12,7 +12,7 @@ class TrackViewModel: ObservableObject {
     @Published var track: [TrackPattern] = []
     @Published var searchText = ""
     @Published var filteredTracks: [TrackPattern] = []
-    @Published var tracksSelectedFilter: RipePine = .all
+    @Published var tracksSelectedFilter: RipePine = .Omnia
     @Published var filterFavoriteTracks: [TrackPattern] = []
     @Published var grambrain: [String: Data] = [:]
     private var glenklen: [TrackPattern] = []
@@ -52,11 +52,10 @@ class TrackViewModel: ObservableObject {
         }
         DispatchQueue.main.async {
             self.filteredTracks = self.track.filter {
-                self.tracksSelectedFilter == .all ||
-                self.tracksSelectedFilter == .all ||
-                               (self.tracksSelectedFilter == .favorite && $0.isFavorited == true) ||
-                               (self.tracksSelectedFilter == .new && $0.new == true) ||
-                               (self.tracksSelectedFilter == .top && $0.top == true)
+                self.tracksSelectedFilter == .Omnia ||
+                (self.tracksSelectedFilter == .Heartpicks && $0.isFavorited == true) ||
+                (self.tracksSelectedFilter == .Novum && $0.new == true) ||
+                (self.tracksSelectedFilter == .Pinnacle && $0.top == true)
             }
             
             if !self.searchText.isEmpty {
@@ -97,7 +96,7 @@ class TrackViewModel: ObservableObject {
             let types = ["journal", "script", "record", "log", "draft", "manuscript"]
             return types.shuffled().first ?? "record"
         }
-        if tracksSelectedFilter == .favorite {
+        if tracksSelectedFilter == .Heartpicks {
             filteredTracks.removeAll { $0.id == id }
         }
     }

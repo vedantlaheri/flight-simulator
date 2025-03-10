@@ -143,7 +143,7 @@ struct RidePageInnocent: View {
             .onAppear {
                 DispatchQueue.main.async {
                     ridingTier.samesip()
-                    ridingTier.skinsSelectedRides = .all
+                    ridingTier.skinsSelectedRides = .Omnia
                     ridingTier.pressingfilterRide()
                 }
             }
@@ -182,7 +182,7 @@ struct RidePageInnocent: View {
     }
 
     private var titleText: some View {
-        Text("SKINS")
+        Text("CANVASSCAPES")
             .font(.custom("Gilroy-Heavy", size: 24).weight(.heavy))
             .foregroundColor(.white)
             .lineSpacing(20)
@@ -235,7 +235,7 @@ struct RidePageInnocent: View {
     private var filterLight: some View {
         CowDung(
             Etheritharix: $isFilterVisible,
-            Kinetovectis: ["All", "New", "Favourite", "Top"]
+            Kinetovectis: ["Omnia", "Novum", "Heartpicks", "Pinnacle"]
         ) { selectedFilter in
             updateFilter(selectedFilter)
         }
@@ -248,14 +248,14 @@ struct RidePageInnocent: View {
             return "hello"
         }
         switch selectedFilter {
-        case "All":
-            ridingTier.skinsSelectedRides = .all
-        case "New":
-            ridingTier.skinsSelectedRides = .new
-        case "Favourite":
-            ridingTier.skinsSelectedRides = .favorite
-        case "Top":
-            ridingTier.skinsSelectedRides = .top
+        case "Omnia":
+            ridingTier.skinsSelectedRides = .Omnia
+        case "Novum":
+            ridingTier.skinsSelectedRides = .Novum
+        case "Heartpicks":
+            ridingTier.skinsSelectedRides = .Heartpicks
+        case "Pinnacle":
+            ridingTier.skinsSelectedRides = .Pinnacle
         default:
             break
         }
@@ -272,7 +272,7 @@ struct RidePageInnocent: View {
                     ForEach(ridingTier.filteredRides.indices, id: \.self) { index in
                         let ride = ridingTier.filteredRides[index]
                         
-                        if ridingTier.skinsSelectedRides == .favorite && ride.isFavorited == false {
+                        if ridingTier.skinsSelectedRides == .Heartpicks && ride.isFavorited == false {
                             EmptyView()
                         } else {
                             let cachedImageData: Data? = ridingTier.dripdrop["\(BornToShine.Phasari)\(ride.image)"]

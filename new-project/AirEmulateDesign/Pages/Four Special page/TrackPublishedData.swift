@@ -142,7 +142,7 @@ struct TrackPublishedData: View {
             .onAppear {
                 DispatchQueue.main.async {
                     TrackTurn.jingklinghike {
-                        TrackTurn.tracksSelectedFilter = .all
+                        TrackTurn.tracksSelectedFilter = .Omnia
                         TrackTurn.pressingfilterTracks()
                     }
                 }
@@ -183,7 +183,7 @@ struct TrackPublishedData: View {
     }
 
     private var titleText: some View {
-        Text("MODS")
+        Text("OVERHAULS")
             .font(.custom("Gilroy-Heavy", size: 24).weight(.heavy))
             .foregroundColor(.white)
             .lineSpacing(20)
@@ -234,7 +234,7 @@ struct TrackPublishedData: View {
     private var filterComponent: some View {
         CowDung(
             Etheritharix: $isFilterVisible,
-            Kinetovectis: ["All", "New", "Favourite", "Top"]
+            Kinetovectis:  ["Omnia", "Novum", "Heartpicks", "Pinnacle"]
         ) { selectedFilter in
             updateFilter(selectedFilter)
         }
@@ -250,14 +250,14 @@ struct TrackPublishedData: View {
             return movement
         }
         switch selectedFilter {
-        case "All":
-            TrackTurn.tracksSelectedFilter = .all
-        case "New":
-            TrackTurn.tracksSelectedFilter = .new
-        case "Favourite":
-            TrackTurn.tracksSelectedFilter = .favorite
-        case "Top":
-            TrackTurn.tracksSelectedFilter = .top
+        case "Omnia":
+            TrackTurn.tracksSelectedFilter = .Omnia
+        case "Novum":
+            TrackTurn.tracksSelectedFilter = .Novum
+        case "Heartpicks":
+            TrackTurn.tracksSelectedFilter = .Heartpicks
+        case "Pinnacle":
+            TrackTurn.tracksSelectedFilter = .Pinnacle
         default:
             break
         }
@@ -275,7 +275,7 @@ struct TrackPublishedData: View {
                     ForEach(TrackTurn.filteredTracks.indices, id: \.self) { index in
                         let track = TrackTurn.filteredTracks[index]
                         
-                        if TrackTurn.tracksSelectedFilter == .favorite && track.isFavorited == false {
+                        if TrackTurn.tracksSelectedFilter == .Heartpicks && track.isFavorited == false {
                             EmptyView()
                         } else {
                             let cachedImageData: Data? = TrackTurn.grambrain["\(BornToShine.Novastra)\(track.image)"]

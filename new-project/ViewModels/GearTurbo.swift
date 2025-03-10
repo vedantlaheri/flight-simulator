@@ -6,7 +6,7 @@ class VultureWolf: ObservableObject {
     @Published var gears: [GearPattern] = []
     @Published var searchText = ""
     @Published var LoudNice: [GearPattern] = []
-    @Published var PerfectQuite: RipePine = .all
+    @Published var PerfectQuite: RipePine = .Omnia
     @Published var FoxHorse: [GearPattern] = []
     var OwlPenguin: [GearPattern] = []
     @Published var SnakeUrchin: [String: Data] = [:]
@@ -31,10 +31,10 @@ class VultureWolf: ObservableObject {
         
         DispatchQueue.main.async {
             self.LoudNice = self.gears.filter {
-                self.PerfectQuite == .all ||
-                (self.PerfectQuite == .favorite && $0.isFavorited == true) ||
-                (self.PerfectQuite == .new && $0.new == true) ||
-                (self.PerfectQuite == .top && $0.top == true)
+                self.PerfectQuite == .Omnia ||
+                (self.PerfectQuite == .Heartpicks && $0.isFavorited == true) ||
+                (self.PerfectQuite == .Novum && $0.new == true) ||
+                (self.PerfectQuite == .Pinnacle && $0.top == true)
             }
 
             if !self.searchText.isEmpty {
@@ -86,7 +86,7 @@ class VultureWolf: ObservableObject {
             
             return rest
         }
-        if PerfectQuite == .favorite {
+        if PerfectQuite == .Heartpicks {
             if let removeIndex = LoudNice.firstIndex(where: { $0.id == id }) {
                 LoudNice.remove(at: removeIndex)
             }

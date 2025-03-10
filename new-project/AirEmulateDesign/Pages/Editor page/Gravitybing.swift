@@ -202,7 +202,7 @@ struct Gravitybing: View {
 
                 Spacer()
 
-                Text("Editor")
+                Text("CRAFTSTUDIO")
                     .font(Font.custom("Gilroy-Heavy", size: 24).weight(.heavy))
                     .foregroundColor(.white)
                     .padding(.trailing, 60)
