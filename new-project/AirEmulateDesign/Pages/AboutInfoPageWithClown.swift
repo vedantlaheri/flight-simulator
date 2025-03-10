@@ -242,7 +242,7 @@ private var MainBodySection : some View {
                                        downloadProgess
                                            .GasTrackBrake()
                                    } else {
-                                       downloadButton
+                                                                              Chimera
                                            .GasTrackBrake()
                                    }
                                }
@@ -387,7 +387,7 @@ private var MainBodySection : some View {
         }
     }
 
-    private var downloadButton: some View {
+    private var                                        Chimera: some View {
         VStack {
             if let fileName = Enigma, !fileName.isEmpty {
                 BordersFans(Lustrarithm: {
@@ -451,7 +451,7 @@ private var MainBodySection : some View {
                             Facade = false
                         }
                     }
-                }, titleButton: "Download", infinityWidth: true)
+                }, Timorous: "Download", infinityWidth: true)
                 .padding(.bottom, Dubious ? 50 : 50)
                 .disabled(Facade || Festoon)
                 .opacity((Facade || Festoon) ? 0.5 : 1.0)
@@ -459,7 +459,7 @@ private var MainBodySection : some View {
             } else {
                 BordersFans(Lustrarithm: {
                     Evoke = true
-                }, titleButton: "Download", infinityWidth: true)
+                }, Timorous: "Download", infinityWidth: true)
                 .padding(.bottom, Dubious ? 50 : 50)
             }
         }

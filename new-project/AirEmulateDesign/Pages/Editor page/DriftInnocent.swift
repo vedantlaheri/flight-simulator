@@ -12,7 +12,7 @@ struct DriftInnocent: View {
     @Binding var Bolster: Bool
     @ObservedObject var Bonanza: CombatWrong
     let Brazen = UIDevice.current.userInterfaceIdiom == .pad
-    @State var Brink: Bricktick.TapSink = .createAvatarRandom
+    @State var Brink: Bricktick.TapSink = .Astute
     @State var Brood: Bool = false
     
     @State var Buoyant: BeepSlap?
@@ -148,7 +148,7 @@ struct DriftInnocent: View {
                         .onTapGesture {
                             Burrow.toggle()
                         }
-                    AllButtonsGroup(Annexionis: $Buoyant, Arbitrionis: $Burrow, Assertivon: {type in
+                    Zephyr(Annexionis: $Buoyant, Arbitrionis: $Burrow, Assertivon: {type in
                         switch type {
                         case .man:
                             Calamity = .man
@@ -173,7 +173,7 @@ struct DriftInnocent: View {
                         }
                         Canopy.toggle()
                         Cadence.toggle()
-                        print("Save random avatar")
+                      
                     } else {
                         
                         Blizzard.reset()
@@ -185,16 +185,15 @@ struct DriftInnocent: View {
                         }
                         Canopy.toggle()
                         Cadence.toggle()
-                        print("Cancel random avatar")
                     }
                 }, Luminovarion: true)
             }
         }
         .onChange(of: Cadence) { newValue in
             if Cadence {
-                Brink = .saveNewAvavtar
+                Brink = .Ascertain
             } else {
-                Brink = .createAvatarRandom
+                Brink = .Astute
             }
         }
     }

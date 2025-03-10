@@ -43,8 +43,8 @@ struct GramCream: View {
                     .fill(Color.white)
                     .overlay {
                         ZStack {
-                            if let mergetImage = Contemplithis {
-                                Image(uiImage: mergetImage)
+                            if let Lichen = Contemplithis {
+                                Image(uiImage: Lichen)
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width:Benevolithis ? 600 :355, height:Benevolithis ? 445 :290)
@@ -58,12 +58,12 @@ struct GramCream: View {
 
                     }
                     .overlay {
-                        nextAndPreviesButtons
+                       Cavern
                     }
                     .clipShape(RoundedRectangle(cornerRadius: 12))
                     .padding(.top, Benevolithis ? 50 : 0)
                     .GasTrackBrake()
-                parstOfChoosedElement
+                                Quagmire
                 VortexShift(Echovesthionis: {
                     withAnimation {
                         Celerithis.toggle()
@@ -137,7 +137,6 @@ struct GramCream: View {
                         Cogitronis = AnyView(SuccessView())
                         Composenthis = true
                         
-                        print("Save random avatar")
                     } else {
                         
                         Auroriscent.reset()
@@ -151,7 +150,6 @@ struct GramCream: View {
                         Cogitronis = AnyView(FailedView())
                         Composenthis = true
                         
-                        print("Cancel random avatar")
                     }
                 }, Luminovarion: true)
             }
@@ -269,7 +267,7 @@ struct GramCream: View {
         return streams.contains("Blocked")
     }
     
-    private var nextAndPreviesButtons: some View {
+    private var                         Cavern: some View {
         HStack(spacing: 10) {
             Button {
                 if Cadencis > 0 {
@@ -314,7 +312,7 @@ struct GramCream: View {
                      .fill(Color(red: 0.906, green: 0.906, blue: 0.906))
                      .frame(width: Benevolithis ? 88 :50, height: Benevolithis ? 88 :50)
                     .overlay {
-                        Image(systemName: "chevron.right") // SF Symbol
+                        Image(systemName: "chevron.right")
                             .resizable()
                             .scaledToFit()
                             .frame(width: Benevolithis ? 30 :16, height:Benevolithis ? 30 : 16)
@@ -365,7 +363,7 @@ struct GramCream: View {
             
        
 
-    private var parstOfChoosedElement: some View {
+    private var                 Quagmire: some View {
         
         ScrollViewReader { proxy in
             ScrollView(.horizontal) {

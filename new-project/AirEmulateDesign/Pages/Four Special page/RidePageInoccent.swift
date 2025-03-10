@@ -156,7 +156,7 @@ struct RidePageInnocent: View {
         ZStack {
             Color.blue
             HStack {
-                menuInspire
+                Usurp
                 Spacer()
                 titleText
                 
@@ -168,7 +168,7 @@ struct RidePageInnocent: View {
         .padding(.bottom,20)
     }
 
-    private var menuInspire: some View {
+    private var Usurp: some View {
         Button(action: {
             withAnimation(.easeInOut) {
                 isDrawerOpen.toggle()

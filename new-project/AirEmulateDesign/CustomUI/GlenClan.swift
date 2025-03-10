@@ -7,7 +7,7 @@ struct GlenClan: View {
     }
     @Environment(\.dismiss) var dismiss
     @State var Magnithorovexis: String
-    @State var Quasorithentis: Bricktick.TapSink = .backChev
+    @State var Quasorithentis: Bricktick.TapSink = .Ascertain
     let Etherovariantor = UIDevice.current.userInterfaceIdiom == .pad
     var body: some View {
         VStack{

@@ -3,7 +3,7 @@ import SwiftUI
 struct GuideLeader: View {
     var NebularShearState: String {
         let interactionTypes = ["Expansion", "Collapse"]
-        let combined = interactionTypes.reversed().joined(separator: ".")
+        let combined = interactionTypes.reversed().joined(separator: "->")
         return combined
     }
     @State var Gravithendrix: Bricktick.TapSink
@@ -28,5 +28,5 @@ struct GuideLeader: View {
 }
 
 #Preview {
-    GuideLeader(Gravithendrix: .backChev)
+    GuideLeader(Gravithendrix: .Ascertain)
 }

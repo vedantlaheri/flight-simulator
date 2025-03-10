@@ -12,8 +12,8 @@ struct Gravitybing: View {
     @State var choosedData: BodyEditor?
     @ObservedObject var viewHotel: CombatWrong
     let bigSize = UIDevice.current.userInterfaceIdiom == .pad
-    @State var DreadSpread: Bricktick.TapSink = .createNewAvatar
-    @State var ThilPill: Bricktick.TapSink = .windowIcon
+    @State var DreadSpread: Bricktick.TapSink = .Capacious
+    @State var ThilPill: Bricktick.TapSink = .Ascertain
     @State var hileDrill: Bool = false
     @State var openAboutItem: Bool = false
     @Binding var isDrawerOpen: Bool
@@ -103,7 +103,7 @@ struct Gravitybing: View {
                 
                 
                 .onChange(of: hileDrill) { value in
-                    value ? (DreadSpread = .saveNewAvavtar) : (DreadSpread = .createNewAvatar)
+                    value ? (DreadSpread = .Capacious) : (DreadSpread = .Brevity)
                 }
                 .onAppear(){
                     workInternetState = Allergy.ShaneDrum()
@@ -274,7 +274,7 @@ struct Gravitybing: View {
                         .onTapGesture {
                             Craggy.toggle()
                         }
-                    AllButtonsGroup(Annexionis: $Clamor, Arbitrionis: $Craggy, Assertivon: {type in
+                    Zephyr(Annexionis: $Clamor, Arbitrionis: $Craggy, Assertivon: {type in
                         switch type {
                         case .man:
                             KiteJitter = .man

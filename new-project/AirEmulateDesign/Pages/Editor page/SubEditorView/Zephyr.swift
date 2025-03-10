@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct AllButtonsGroup: View {
+struct Zephyr: View {
     enum SockSung {
         case man, woman
     }

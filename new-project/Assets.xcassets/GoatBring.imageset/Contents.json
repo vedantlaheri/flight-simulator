@@ -1,38 +1,25 @@
 {
-  "images": [
+  "images" : [
     {
-      "filename": "Phasorovant.svg",
-      "idiom": "universal",
-      "scale": "1x",
+      "filename" : "Phasorovan.svg",
+      "idiom" : "universal",
+      "scale" : "1x",
       "size": "50x50",
       "format": "svg",
       "createdAt": "2025-02-27T12:00:00Z"
     },
     {
-      "idiom": "universal",
-      "scale": "2x",
-      "size": "100x100",
-      "format": "svg",
-      "source": "Design Team"
+      "idiom" : "universal",
+      "scale" : "2x"
+      
     },
     {
-      "idiom": "universal",
-      "scale": "3x",
-      "size": "150x150",
-      "format": "svg",
-      "modifiedAt": "2025-02-27T12:30:00Z",
-      "source": "Xcode Assets"
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
-  "info": {
-    "author": "xcode",
-    "version": 1,
-    "lastUpdated": "2025-02-27",
-    "projectName": "EnhancedAppAssets"
-  },
-  "properties": {
-    "renderingMode": "bitmap",
-    "compression": "lossless",
-    "theme": "light & dark"
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
   }
 }

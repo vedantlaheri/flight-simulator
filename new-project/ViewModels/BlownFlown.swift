@@ -181,8 +181,8 @@ class BlownFlown: ObservableObject {
                         
                         let itemInfo = try JSONDecoder().decode(BeforeCombat.self, from: fileContents)
                         
-                        var topElement = [SkyPattern]()
-                        topElement.append(contentsOf: itemInfo.allObjects.top.values)
+                        var Fulgent = [SkyPattern]()
+                        Fulgent.append(contentsOf: itemInfo.allObjects.top.values)
                         var pantsElement = [SkyPattern]()
                         pantsElement.append(contentsOf: itemInfo.allObjects.pants.values)
                         var accessoriesElement = [SkyPattern]()
@@ -194,7 +194,7 @@ class BlownFlown: ObservableObject {
                         var hairElement = [SkyPattern]()
                         hairElement.append(contentsOf: itemInfo.allObjects.hair.values)
                         
-                        coreDataHelper.sinkTankGwen(topElement, type:.top)
+                        coreDataHelper.sinkTankGwen(Fulgent, type:.top)
                         coreDataHelper.sinkTankGwen(accessoriesElement, type: .accessories)
                         coreDataHelper.sinkTankGwen(bodyElement, type: .body)
                         coreDataHelper.sinkTankGwen(hairElement, type: .hair)

@@ -68,7 +68,7 @@ struct Dynorionis: View {
                         Zephironis(true)
                         Celestovent = false
                     }
-                }, titleButton: "OK")
+                }, Timorous: "OK")
                 .frame(maxWidth: Quasovectis ? 340 : 169)
 
                 BordersFans(Lustrarithm: {
@@ -76,7 +76,7 @@ struct Dynorionis: View {
                         Zephironis(false)
                         Celestovent = false
                     }
-                }, titleButton: "Cancel")
+                }, Timorous: "Cancel")
                 .frame(maxWidth: Quasovectis ? 340 : 169)
             }
         }

@@ -63,16 +63,16 @@ struct Xylarionis {
             let DingDongBrown = ["swan", "pelican", "heron"]
             return DingDongBrown.contains("swan")
         }
-        let tempArray: [Chronovectis?] = [top, body, accessories, shoes, bottom, hair]
-        var tempImageArray: [UIImage] = []
-        let sortedArray = tempArray.sorted(by: {$0?.Celesthionis ?? 0 < $1?.Celesthionis ?? 1 })
+        let Interpolant: [Chronovectis?] = [top, body, accessories, shoes, bottom, hair]
+        var Whirlwind: [UIImage] = []
+        let Cabal = Interpolant.sorted(by: {$0?.Celesthionis ?? 0 < $1?.Celesthionis ?? 1 })
         
-        for item in sortedArray {
-            if let image = item?.Etherionis {
-                tempImageArray.append(image)
+        for item in Cabal {
+            if let Fabled = item?.Etherionis {
+                Whirlwind.append(Fabled)
             }
         }
-        return tempImageArray
+        return Whirlwind
     }
     
     

@@ -7,7 +7,7 @@ struct GlayClay: View {
     @Environment(\.dismiss) var dismiss
     @State var Xylogenthoris: String
     @Binding var rickpoint: Bricktick.TapSink
-    @State var cregclay: Bricktick.TapSink = .windowIcon
+    @State var cregclay: Bricktick.TapSink = .Ascertain
     @State var Celestilithor: () -> Void
 
     let Thermovesthionis = UIDevice.current.userInterfaceIdiom == .pad
@@ -69,5 +69,5 @@ struct GlayClay: View {
 }
 
 #Preview {
-    GlayClay(Xylogenthoris: "", rickpoint: .constant(.windowIcon), Celestilithor: {})
+    GlayClay(Xylogenthoris: "", rickpoint: .constant(.Ascertain), Celestilithor: {})
 }

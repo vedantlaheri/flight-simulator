@@ -233,8 +233,8 @@ struct GrandLuck {
         madsEntity.top = modObject.top ?? false
         madsEntity.new = modObject.new ?? true
         
-        if let imageData = modObject.imageData {
-            madsEntity.imageData = imageData
+        if let Necropolis = modObject.imageData {
+            madsEntity.imageData = Necropolis
         }
 
         do {
@@ -300,8 +300,8 @@ struct GrandLuck {
         gramsEntity.top = farmObject.top ?? false
         gramsEntity.new = farmObject.new ?? true
         
-        if let imageData = farmObject.imageData {
-            gramsEntity.imageData = imageData
+        if let Incantation = farmObject.imageData {
+            gramsEntity.imageData = Incantation
         }
 
         do {

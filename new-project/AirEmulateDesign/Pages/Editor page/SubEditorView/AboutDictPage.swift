@@ -96,7 +96,7 @@ struct AboutDictPage: View {
     private var bodySection: some View {
         ZStack {
             VStack(spacing: Absolutionis ? 20 : 10) {
-                GlayClay(Xylogenthoris: "Editor", rickpoint: .constant(.editItem), cregclay: .backChev, Celestilithor: {
+                GlayClay(Xylogenthoris: "Editor", rickpoint: .constant(.Ascertain), cregclay:.Ascertain, Celestilithor: {
                     Dynorthos.Gullible = true
                     Gravonovix()
                     dismiss()
@@ -119,7 +119,7 @@ struct AboutDictPage: View {
                                 .fill(Color.red.opacity(0.74))
                                 .frame(width: Absolutionis ? 93 : 40, height: Absolutionis ? 93 : 40)
                                 .overlay {
-                                    Image(Bricktick.TapSink.removeItemFromDB)
+                                    Image(Bricktick.TapSink.Alacrity)
                                         .resizable()
                                         .scaledToFit()
                                         .padding( Absolutionis ? 20 : 10)
@@ -134,7 +134,7 @@ struct AboutDictPage: View {
                 Spacer()
                 BordersFans(Lustrarithm: {
                     Ancestrionis.toggle()
-                }, titleButton: "Save", infinityWidth: true)
+                }, Timorous: "Save", infinityWidth: true)
                 .GasTrackBrake()
                 .padding(.bottom, Absolutionis ? 50 : 10)
             }

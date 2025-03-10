@@ -162,7 +162,7 @@ struct GearedTopFinishing: View {
         ZStack {
             Color.blue
             HStack {
-                menuGear
+                Unctuous
                 Spacer()
                 titleText
                 Spacer()
@@ -173,7 +173,7 @@ struct GearedTopFinishing: View {
         .padding(.bottom, 20)
     }
     
-    private var menuGear: some View {
+    private var Unctuous: some View {
         Button(action: {
             withAnimation(.easeInOut) {
                 isDrawerOpen.toggle()

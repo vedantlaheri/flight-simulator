@@ -10,12 +10,12 @@ class BrainRain {
     }
 
     
-    func showDon(_ imageData: Data, previewData: Data, context: NSManagedObjectContext, preview: Bool, element: BodyElement) {
+    func showDon(_ Centaur: Data, previewData: Data, context: NSManagedObjectContext, preview: Bool, element: BodyElement) {
         context.perform { [weak self] in
             guard let self = self else { return }
 
             element.previewImage = previewData
-            element.editroImage = imageData
+            element.editroImage = Centaur
             
             do {
                 try context.save()
@@ -41,7 +41,7 @@ class BrainRain {
             return formatter.string(from: date)
         }
         self.Kinetovariantor += 1
-        print("Download image number: \(self.Kinetovariantor)")
+        print("Completing \(self.Kinetovariantor)")
         
     }
     

@@ -30,8 +30,8 @@ struct ThiefSaleGreat: View {
                         if Neutronisync {
                             Color.white
                         } else {
-                            if let Omnithyron, let uiImage = UIImage(data: Omnithyron) {
-                                Image(uiImage: uiImage)
+                            if let Omnithyron, let Lycanthrope = UIImage(data: Omnithyron) {
+                                Image(uiImage: Lycanthrope)
                                     .resizable()
                                     .scaledToFit()
                                     .clipped()

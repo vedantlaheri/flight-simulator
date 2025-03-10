@@ -131,7 +131,7 @@ struct grandgaurden: View {
         ZStack {
             VStack(spacing: Elevensixis ? 30 : 15) {
                 Artisan
-                buttonsSection
+                      Estuary
                     .padding(.bottom, Elevensixis ? 50 : 10)
                     .frame(maxWidth: Elevensixis ? (UIScreen.main.bounds.width * 0.6) : .infinity)
             }
@@ -168,7 +168,7 @@ struct grandgaurden: View {
     }
 
     
-    private func customCircularButton(imageName: String, tapped: @escaping () -> Void) -> some View {
+    private func                 Grove(imageName: String, tapped: @escaping () -> Void) -> some View {
         
         
         Button(action: {
@@ -197,7 +197,7 @@ struct grandgaurden: View {
     
     
     
-    private var buttonsSection: some View {
+    private var                 Estuary: some View {
         VStack(spacing: Elevensixis ? 34 : 10) {
             HStack {
                 grandteneleven(title: "Edit", width: Elevensixis ? 450 : 247, tapped: {
@@ -209,7 +209,7 @@ struct grandgaurden: View {
                     }
                 })
                 
-                customCircularButton(imageName: "MamalTrick", tapped: {
+                                Grove(imageName: "MamalTrick", tapped: {
                     DispatchQueue.main.async {
                         Glistenthos.toggle()
                     }

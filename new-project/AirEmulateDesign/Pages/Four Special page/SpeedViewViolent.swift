@@ -148,7 +148,7 @@ struct SpeedViewViolent: View {
         ZStack {
             Color.blue
             HStack {
-                menuButton
+                Veracity
                 Spacer()
                 titleText
                 Spacer()
@@ -159,7 +159,7 @@ struct SpeedViewViolent: View {
         .padding(.bottom, 20)
     }
 
-    private var menuButton: some View {
+    private var Veracity: some View {
         Button(action: {
             withAnimation(.easeInOut) {
                 isDrawerOpen.toggle()

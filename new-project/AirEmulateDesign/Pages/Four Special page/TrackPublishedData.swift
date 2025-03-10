@@ -158,7 +158,7 @@ struct TrackPublishedData: View {
         ZStack {
             Color.blue
             HStack {
-                menuButton
+                Viscous
                 Spacer()
                 titleText
                 Spacer()
@@ -169,7 +169,7 @@ struct TrackPublishedData: View {
         .padding(.bottom, 20)
     }
 
-    private var menuButton: some View {
+    private var Viscous: some View {
         Button(action: {
             withAnimation(.easeInOut) {
                 isDrawerOpen.toggle()

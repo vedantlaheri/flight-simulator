@@ -12,7 +12,7 @@ struct BordersFans: View {
         return formatter.string(from: date)
     }
     
-    @State var titleButton: String
+    @State var Timorous: String
     @State var infinityWidth: Bool = false
     var body: some View {
         Button {
@@ -51,7 +51,7 @@ struct BordersFans: View {
                                 lineWidth: bigSize ? 6 : 3
                             )
                         
-                        Text(titleButton)
+                        Text(Timorous)
                             .font(Font.custom("Gilroy-Bold", size: bigSize ? 32 :18).weight(.bold))
                             .foregroundColor(Color.white)
                     }
@@ -70,7 +70,7 @@ struct BordersFans: View {
 
 
 #Preview {
-    BordersFans(Lustrarithm: {}, titleButton: "Download")
+    BordersFans(Lustrarithm: {}, Timorous: "Download")
 }
 
 

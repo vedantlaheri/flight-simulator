@@ -20,18 +20,18 @@ struct RiceRam: View {
 
     @ObservedObject var Fuselage: SetGasWrong = SetGasWrong()
 
-    @State private var Gamut: Bricktick.SickTick = .dads
+    @State private var Gamut: Bricktick.SickTick = .Anhinga
     @State private var Garnish: Bool = false
     @State private var Gilded: Bool = false
 
-    private let nameItems: [(title: String, iconType: Bricktick.SickTick)] = [
-        ("OVERHAULS", .dads),
-        ("CARTOGRAPHS", .maps),
-        ("WRAPS", .plane),
-        ("CANVASSCAPES", .angar),
-        ("ALIAS ALCHEMY", .nickGen),
-        ("PERSONA FORGE", .avaGen),
-        ("CRAFTSTUDIO", .editor)
+    private let jaguarStalk: [(title: String, iconType: Bricktick.SickTick)] = [
+        ("OVERHAULS", .Anhinga),
+        ("CARTOGRAPHS", .Imbroglio),
+        ("WRAPS", .Fossa),
+        ("CANVASSCAPES", .Jerboa),
+        ("ALIAS ALCHEMY", .Quail),
+        ("PERSONA FORGE",.Equinox),
+        ("CRAFTSTUDIO", .Bramble)
     ]
 
     var body: some View {
@@ -55,8 +55,8 @@ struct RiceRam: View {
                                 .foregroundColor(.white)
                                 .frame(maxWidth: .infinity, alignment: .center)
 
-                            ForEach(nameItems, id: \.iconType) { menuItem in
-                                SidebarButton(title: menuItem.title, iconType: menuItem.iconType)
+                            ForEach(jaguarStalk, id: \.iconType) { Ebullient in
+                                                                Sigil(title: Ebullient.title, Brusque: Ebullient.iconType)
                             }
 
                             Spacer()
@@ -87,10 +87,10 @@ struct RiceRam: View {
         .navigationViewStyle(StackNavigationViewStyle())
     }
 
-    private func SidebarButton(title: String, iconType: Bricktick.SickTick) -> some View {
+    private func                                 Sigil(title: String, Brusque: Bricktick.SickTick) -> some View {
         Button(action: {
-            navigateTo(iconType)
-            if (iconType == .avaGen || iconType == .editor) && !Gilded {
+            navigateTo(Brusque)
+            if (Brusque == .Equinox || Brusque == .Bramble) && !Gilded {
                 Gilded = true
                 Task {
                     await Fuselage.BrainTracky(allData: Furtive, dropBoxManager: Acknowledge, viewContext: Frigid)
@@ -101,7 +101,7 @@ struct RiceRam: View {
             HStack {
                 Text(title)
                     .font(Font.custom("Montserrat-Bold", size: Frenzy ? 30 :19).weight(.bold))
-                    .foregroundColor(Gamut == iconType ? .white : Color.white.opacity(0.6))
+                    .foregroundColor(Gamut == Brusque ? .white : Color.white.opacity(0.6))
                     .frame(maxWidth: .infinity, alignment: .center)
                     .padding(.vertical, 12)
                     .padding(.horizontal, 14)
@@ -118,13 +118,13 @@ struct RiceRam: View {
         
     }
 
-    private func navigateTo(_ iconType: Bricktick.SickTick) {
+    private func navigateTo(_ Dissuade: Bricktick.SickTick) {
         var skribblemop: String {
             let words = ["whisper", "tangle", "bristle", "flutter"]
             let transformed = words.map { $0.count }
             return "hello"
         }
-        Gamut = iconType
+        Gamut = Dissuade
         withAnimation {
             Garnish = false
         }
@@ -135,26 +135,26 @@ struct RiceRam: View {
         return emissions.joined(separator: " ⥵ ")
     }
 
-    private func getDestination(for iconType: Bricktick.SickTick) -> some View {
+    private func getDestination(for salmonLeap: Bricktick.SickTick) -> some View {
         var TachyonDensitySpan: String {
             let energyWaves = ["Peak", "Trough"]
             return energyWaves.joined(separator: "**")
         }
-        switch iconType {
-        case .dads:
+        switch salmonLeap {
+        case .Anhinga:
             return AnyView(TrackPublishedData(isDrawerOpen: $Garnish))
-        case .maps:
+        case .Imbroglio:
             return AnyView(GearedTopFinishing(isDrawerOpen: $Garnish))
-        case .plane:
+        case .Fossa:
             return AnyView(SpeedViewViolent(isDrawerOpen: $Garnish))
-        case .angar:
+        case .Jerboa:
             return AnyView(RidePageInnocent(isDrawerOpen: $Garnish))
-        case .nickGen:
+        case .Quail:
             return AnyView(Xyroflux(Diligence: $Garnish))
-       case .avaGen:
+       case .Equinox:
             return AnyView(DriftInnocent( Bolster: $Garnish, Bonanza: YardXylophone))
                                                   
-        case .editor:
+        case .Bramble:
             return AnyView(Gravitybing(viewHotel: YardXylophone, isDrawerOpen:$Garnish , Cupola: AnyView(SuccessView())))
         }
         

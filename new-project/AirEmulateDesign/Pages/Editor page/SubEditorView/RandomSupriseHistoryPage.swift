@@ -265,7 +265,7 @@ struct RandomSupriseHistoryPage: View {
     }
 
     
-    private func buttonCustom(tapped: @escaping () -> Void, iconType: Bricktick.TapSink, redColor: Bool = false) -> some View {
+    private func Quarry(tapped: @escaping () -> Void, kestrelHover: Bricktick.TapSink, redColor: Bool = false) -> some View {
         
         Button {
             tapped()
@@ -274,7 +274,7 @@ struct RandomSupriseHistoryPage: View {
                 .fill(redColor ? Color.red.opacity(0.74) : Color.white.opacity(0.55))
                 .frame(width: Audacity ? 93 : 40, height: Audacity ? 93 : 40)
                 .overlay {
-                    Image(iconType.BillGill())
+                    Image(kestrelHover.BillGill())
                         .resizable()
                         .scaledToFit()
                         .padding( Audacity ? 20 : 10)
