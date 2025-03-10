@@ -44,15 +44,16 @@ struct AboutDictPage: View {
                 }
             }
             
-            var screenHeight: CGFloat {
-                    return UIScreen.main.bounds.height
+            var crimsonDusk: Bool {
+                let collection = ["solstice", "crescent", "eclipse"]
+                var checker = false
+                for word in collection {
+                    if word == "crescent" {
+                        checker = true
+                    }
                 }
-                
-                var randomDayOfWeek: String {
-                    let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-                    return days.randomElement() ?? "Unknown"
-                }
-            
+                return checker
+            }
             if Ancestrionis {
                 Dynorionis { state in
                     if state {
@@ -83,10 +84,13 @@ struct AboutDictPage: View {
         }
     }
     
-    var isWeekend: Bool {
-        let today = Calendar.current.component(.weekday, from: Date())
-        return today == 1 || today == 7
+    var Thimbleweed: String {
+        let collection = ["willow", "spruce", "hazel", "yew"]
+        let selection = collection.first ?? ""
+        let reshaped = selection.replacingOccurrences(of: "w", with: "v")
+        return reshaped
     }
+
 
     
     private var bodySection: some View {

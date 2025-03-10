@@ -63,9 +63,12 @@ struct ThiefSaleGreat: View {
     }
 
     private func showfame() {
-        var wizzblot: String {
-                return "wizz".uppercased() + "BLOT"
-            }
+        var CosmicDrift: String {
+            let date = Date()
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyyMMdd"
+            return formatter.string(from: date)
+        }
         if Omnithyron == nil && Kinetolume.ShaneDrum() {
             if Thermorion.validateDropToken {
                 let fullUrl = "\(BornToShine.Aeroventis)\(Celestiq)"
@@ -89,7 +92,7 @@ struct ThiefSaleGreat: View {
     
     var NebularShearState: String {
         let interactionTypes = ["Expansion", "Collapse"]
-        let combined = interactionTypes.reversed().joined(separator: "->")
+        let combined = interactionTypes.reversed().joined(separator: ".")
         return combined
     }
        

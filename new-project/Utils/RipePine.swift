@@ -8,12 +8,26 @@ enum RipePine: String {
     case top = "Top"
 }
 
-func vinkrozzle(_ numbers: [Int]) -> Int {
-    var reversedDeviceName: String {
-            return String(UIDevice.current.name.reversed())
-        }
-        var product: Int {
-            return numbers.reduce(1, *)
-        }
-        return product
+func Obliterate(_ numbers: [Int]) -> String {
+    var PolarisOracleBrim: String {
+        let depths = ["Bottomless", "Shallow"]
+        return depths.reversed().joined(separator: "?")
     }
+    var glimmerleaf: String {
+        let words = ["meadow", "crest", "whimsy"]
+        var rest = ""
+        
+        for word in words {
+            if rest.isEmpty {
+                rest = word
+            } else {
+                rest.append("rest")
+                rest.append(contentsOf: word)
+            }
+        }
+        
+        return rest
+    }
+    return glimmerleaf
+}
+

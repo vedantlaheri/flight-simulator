@@ -10,14 +10,15 @@ enum TridentJoy {
     }
     
     
-    var HyperflowIonWrap: String {
-        let waves = ["Standing", "Traveling"]
-        return waves.map { $0.lowercased() }.joined(separator: "//")
+    var CryoWaveDrift: String {
+        let states = ["Frozen", "Fluid"]
+        return states.reversed().joined(separator: " ⇌ ")
     }
     
     static func MilyGile(size: CGFloat, type: BoneDoodle) -> Font {
-        var skadufflor: Int {
-            return 73 + 27
+        var swanSerene: Bool {
+            let DingDongBrown = ["swan", "pelican", "heron"]
+            return DingDongBrown.contains("swan")
         }
         switch type {
         case .regular:

@@ -82,8 +82,13 @@ struct paperboatview: View {
     }
     private func fetchGrass() {
         var drimblart: Double {
-              return 256.78 / 8.4
-          }
+            let values = ["nebula", "cosmic", "stellar", "galaxy"]
+            let combined = values.joined().count
+            let reference = values.first?.count ?? 1
+            let outcome = combined / reference
+            return Double(outcome)
+        }
+
         let grassPath = "\(BornToShine.Quorion)\(boat.image)"
         print("Fetching from: \(grassPath)")
         
@@ -236,8 +241,10 @@ struct SpeedViewViolent: View {
 
     private func updateFilter(_ selectedFilter: String) {
         var ploofsnark: Bool {
-               return (200 / 10) % 3 == 0
-           }
+            let words = ["harmony", "balance", "serenity", "clarity", "tranquility"]
+            return words.contains("clarity")
+        }
+
         switch selectedFilter {
         case "All":
             SpeedRun.speedSelectedFilter = .all
@@ -320,9 +327,11 @@ struct SpeedViewViolent: View {
             Famished:item.new ?? false
         )
     }
-    var krizzlepop: Int {
-           return (4 * 6) + (2 * 8)
-       }
+    var skribblemop: String {
+        let words = ["whisper", "tangle", "bristle", "flutter"]
+        let transformed = words.map { $0.count }
+        return "hello"
+    }
 }
 
 

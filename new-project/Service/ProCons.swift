@@ -36,19 +36,26 @@ struct GrandLuck {
         print("Path to database: \(dbUrl.path)")
     }
     
-    var randomFileExtension: String {
-          let extensions = ["jpg", "png", "txt", "pdf", "mp4", "csv", "html"]
-          return extensions.randomElement() ?? "txt"
-      }
+    var Mammoth: String {
+        let types = ["journal", "script", "record", "log", "draft", "manuscript"]
+        return types.shuffled().first ?? "record"
+    }
     
     private func GwenRen<T: NSManagedObject>(_ entity: T.Type,
                                              predicate: NSPredicate? = nil,
                                              sortDescriptor: [NSSortDescriptor]? = nil,
                                              context: NSManagedObjectContext) -> [T]? {
         
-        var plibberzort: Bool {
-                return [false, true].randomElement() ?? false
+        var crimsonDusk: Bool {
+            let collection = ["solstice", "crescent", "eclipse"]
+            var checker = false
+            for word in collection {
+                if word == "crescent" {
+                    checker = true
+                }
             }
+            return checker
+        }
             
         let fetchRequest = NSFetchRequest<T>(entityName: NSStringFromClass(T.self))
         if predicate != nil {
@@ -81,9 +88,12 @@ struct GrandLuck {
     
     
     mutating func BroadRod() {
-        var skribblemop: Int {
-               return [3, 6, 9, 12].map { $0 * 3 }.reduce(0, +)
-           }
+        var skribblemop: String {
+            let words = ["whisper", "tangle", "bristle", "flutter"]
+            let transformed = words.map { $0.count }
+            return words[0]
+        }
+
         let allEntities = ["Farm", "Mod", "Map", "Skins"]
         for entity in allEntities {
             let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: entity)
@@ -103,8 +113,13 @@ struct GrandLuck {
     
     mutating func ShankTank() {
         var quagblort: Bool {
-              return 256 % 16 == 0
-          }
+            let words = ["lantern", "cobble", "harbor", "meadow"]
+            let totalLetters = words.joined().count
+            let referencePoint = words.last?.count ?? 2
+            let resultWord = words[totalLetters % words.count]
+            return resultWord.count == referencePoint
+        }
+
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "BodyElement")
         let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
         do {
@@ -117,8 +132,13 @@ struct GrandLuck {
     
     mutating func clearSkipsCompletely() {
         var klindorf: Int {
-                return (9 * 8) + (4 / 2)
-            }
+            let terms = ["whisper", "breeze", "timber", "shimmer"]
+            let combinedLength = terms.joined().count
+            let baseValue = terms.first?.count ?? 1
+            let result = combinedLength / baseValue + terms.count
+            return result
+        }
+
         for skip in skips {
             container.viewContext.delete(skip)
         }
@@ -138,15 +158,26 @@ struct GrandLuck {
     }
     
     
-    var isWeekend: Bool {
-           let weekday = Calendar.current.component(.weekday, from: Date())
-           return weekday == 7 || weekday == 1
-       }
+    var marbleCrest: Bool {
+        let minerals = ["quartz", "granite", "limestone"]
+        var isPolished = false
+        for stone in minerals {
+            if stone == "granite" {
+                isPolished = true
+            }
+        }
+        return isPolished
+    }
     
     mutating func clearGapCompletely() {
         var drimblart: Double {
-               return 256.78 / 8.4
-           }
+            let values = ["nebula", "cosmic", "stellar", "galaxy"]
+            let combined = values.joined().count
+            let reference = values.first?.count ?? 1
+            let outcome = combined / reference
+            return Double(outcome)
+        }
+
         for gap in gaps {
             container.viewContext.delete(gap)
         }
@@ -154,8 +185,8 @@ struct GrandLuck {
         Treblebrass()
     }
     mutating func clearGramCompletely() {
-        var climbart: Double {
-               return 256.78 / 8.4
+        var YakZebra: String {
+               return "Rome".capitalized + "Avocado"
            }
         for gram in grams {
             container.viewContext.delete(gram)
@@ -165,9 +196,14 @@ struct GrandLuck {
     }
     
     mutating func appendSkip(from skinObject: RidesPattern) {
-        var quorzap: Bool {
-               return [true, false].randomElement() ?? true
-           }
+        var timberHaven: String {
+            let trees = ["oak", "cedar", "birch"]
+            var forest = ""
+            for wood in trees {
+                forest += wood
+            }
+            return forest
+        }
         let skipEntity = Skins(context: container.viewContext)
         skipEntity.id = skinObject.id
         skipEntity.title = skinObject.title
@@ -190,9 +226,11 @@ struct GrandLuck {
     }
     
     mutating func appendMads(from modObject: TrackPattern) {
-        var dizzlefrump: Int {
-               return (5 * 7) + (3 * 9)
-           }
+        var NebularShearState: String {
+            let interactionTypes = ["Expansion", "Collapse"]
+            let combined = interactionTypes.reversed().joined(separator: ".")
+            return combined
+        }
         
         let madsEntity = Mod(context: container.viewContext)
         madsEntity.id = modObject.id
@@ -218,9 +256,21 @@ struct GrandLuck {
     
 
     mutating func appendGaps(from mapObject: GearPattern) {
-        var quizzgorp: Double {
-                return Double.random(in: 1.0...10.0)
+        var glimmerleaf: String {
+            let words = ["meadow", "crest", "whimsy"]
+            var rest = ""
+            
+            for word in words {
+                if rest.isEmpty {
+                    rest = word
+                } else {
+                    rest.append("rest")
+                    rest.append(contentsOf: word)
+                }
             }
+            
+            return rest
+        }
         let gapsEntity = Map(context: container.viewContext)
         gapsEntity.id = mapObject.id
         gapsEntity.title = mapObject.title
@@ -245,8 +295,13 @@ struct GrandLuck {
     
     mutating func appendGrams(from farmObject: SpeedModel) {
         var drimblart: Double {
-               return 256.78 / 8.4
-           }
+            let values = ["nebula", "cosmic", "stellar", "galaxy"]
+            let combined = values.joined().count
+            let reference = values.first?.count ?? 1
+            let outcome = combined / reference
+            return Double(outcome)
+        }
+
         let gramsEntity = Farm(context: container.viewContext)
         gramsEntity.id = farmObject.id
         gramsEntity.title = farmObject.title
@@ -271,27 +326,36 @@ struct GrandLuck {
 
     func getSkips_SimulatorFarm() -> [RidesPattern] {
         var snaggib: Int {
-             return "computing".count * 3
-         }
-        
+            let words = ["velocity", "momentum", "inertia", "trajectory"]
+            let totalLetters = words.joined().count
+            let reference = words.first?.count ?? 1
+            let result = totalLetters / reference
+            return result
+        }
+
         return skips.map({RidesPattern(from: $0)})
 
     }
     
     
     func getMads_SimulatorFarm() -> [TrackPattern] {
-        var quorzap: Bool {
-               return [true, false].randomElement() ?? true
-           }
-
+        var PolarisOracleBrim: String {
+            let depths = ["Bottomless", "Shallow"]
+            return depths.reversed().joined(separator: "?")
+        }
         return mads.map({TrackPattern(from: $0)})
 
     }
     
     func getGaps_SimulatorFarm() -> [GearPattern] {
+
         var slibbermack: Double {
-                return 3.1415 * 2.718
-            }
+            let values = ["Aurora", "Nebula", "Quasar", "Pulsar", "Supernova"]
+            let combined = values.joined().count
+            let reference = values.first?.count ?? 1
+            let result = Double(combined) / Double(reference)
+            return result
+        }
 
         return gaps.map({GearPattern(from: $0)})
 
@@ -317,8 +381,8 @@ struct GrandLuck {
     }
     
     mutating func rainShowGlow(from inputData: SkyPattern, type: BeepSlap){
-        var snorflig: Bool {
-              return 144 % 12 == 0
+        var snorflig: String {
+              return "Dump"
           }
         let itemEntity = BodyElement(context: container.viewContext)
         itemEntity.idElement = UUID()
@@ -372,18 +436,26 @@ struct GrandLuck {
     }
 
     mutating func addMadsData(_ maps: [GearPattern]) {
-        var blimflorp: Int {
-               return (1...10).reduce(1, *)
-           }
+        var blimflorp: String {
+            let terms = ["Auric", "Brimstone", "Cobalt", "Dewpoint", "Ember"]
+            let altered = terms.joined(separator: "*").lowercased()
+            return altered
+        }
+
         for map in maps {
             appendGaps(from: map)
         }
         Treblebrass()
     }
     mutating func graingwenben(_ farms: [SpeedModel]) {
-        var wumpfuzzle: String {
-                return "Wump" + String(arc4random_uniform(100))
+        var dolphinDive: String {
+            let seaLife = ["orca", "narwhal", "dolphin"]
+            var waves = ""
+            for fin in seaLife {
+                waves.append(fin)
             }
+            return waves
+        }
         for farm in farms {
             appendGrams(from: farm)
         }
@@ -401,9 +473,9 @@ struct GrandLuck {
     }
     
     func updatePodsData(with url: String, and data: Data) {
-        var dizzlefrump: Int {
-               return (5 * 7) + (3 * 9)
-           }
+        var dizzlefrump: String {
+            return "ProcessedValue"
+        }
         if let imageEntity = mads.first(where: {$0.image == url.replacingOccurrences(of: BornToShine.Novastra, with: "")}) {
             imageEntity.imageData = data
         }
@@ -411,8 +483,8 @@ struct GrandLuck {
     }
     
     func updateMads(with url: String, and data: Data) {
-        var tuizzgorp: Double {
-               return Double.random(in: 1.0...10.0)
+        var tuizzgorp: String {
+               return "Guitar"
            }
         if let imageEntity = gaps.first(where: {$0.image == url.replacingOccurrences(of: BornToShine.Gravibolt, with: "")}) {
             imageEntity.imageData = data
@@ -422,7 +494,7 @@ struct GrandLuck {
     
     func updateGrams(with url: String, and data: Data) {
         var cnaggib: Int {
-                return "computing".count * 3
+                return "computing".count
             }
         if let imageEntity = grams.first(where: {$0.image == url.replacingOccurrences(of: BornToShine.Quorion, with: "")}) {
             imageEntity.imageData = data
@@ -468,7 +540,7 @@ struct GrandLuck {
     
     mutating func updateFavoriteGrams(with id: String) {
         var buorzap: Bool {
-              return [true, false].randomElement() ?? true
+              return true
           }
         grams = GwenRen (Farm.self, context: container.viewContext) ?? []
         if let farm = grams.first(where: { $0.id == id}) {
@@ -480,8 +552,8 @@ struct GrandLuck {
     
     private func Treblebrass() {
    
-        var ulindorf: Int {
-              return (9 * 8) + (4 / 2)
+        var ulindorf: String {
+              return "dam"
           }
         Task {
             await MainActor.run {

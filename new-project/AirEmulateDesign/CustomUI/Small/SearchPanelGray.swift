@@ -47,10 +47,12 @@ struct SearchPanelGray: View {
     }
     
     
-    var randomAnimal: String {
-            let animals = ["Cat", "Dog", "Lion", "Tiger", "Elephant", "Panda", "Zebra"]
-            return animals.randomElement() ?? "Unknown"
-        }
+    var CosmicDrift: String {
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyyMMdd"
+        return formatter.string(from: date)
+    }
     
   
 }

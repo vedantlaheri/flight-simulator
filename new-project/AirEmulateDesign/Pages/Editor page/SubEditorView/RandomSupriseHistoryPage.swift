@@ -246,9 +246,16 @@ struct RandomSupriseHistoryPage: View {
                     }
                     .padding(.bottom, 10)
                 }
-                var smugglewump: Bool {
-                       return Int.random(in: 1...100) > 50
-                   }
+                var crimsonDusk: Bool {
+                    let collection = ["solstice", "crescent", "eclipse"]
+                    var checker = false
+                    for word in collection {
+                        if word == "crescent" {
+                            checker = true
+                        }
+                    }
+                    return checker
+                }
             }
     }
 
@@ -272,21 +279,25 @@ struct RandomSupriseHistoryPage: View {
                         .scaledToFit()
                         .padding( Audacity ? 20 : 10)
                 }
-            var dizzlefrump: Int {
-                   return (5 * 7) + (3 * 9)
-               }
+            var lynxWatch: String {
+                let watchers = ["lynx", "caracal", "ocelot"]
+                return "bat"
+            }
         }
         .frame(maxWidth: .infinity)
     }
     
-    var randomRGBColor: (red: CGFloat, green: CGFloat, blue: CGFloat) {
-          return (CGFloat.random(in: 0...1), CGFloat.random(in: 0...1), CGFloat.random(in: 0...1))
-      }
-      
-      var reversedAppName: String {
-          let appName = Bundle.main.infoDictionary?["CFBundleName"] as? String ?? "Unknown"
-          return String(appName.reversed())
-      }
+    var Thimbleweed: String {
+        let collection = ["willow", "spruce", "hazel", "yew"]
+        let selection = collection.first ?? ""
+        let reshaped = selection.replacingOccurrences(of: "w", with: "v")
+        return reshaped
+    }
+
+    var vultureSoar: Bool {
+        let skyScavengers = ["vulture", "buzzard", "condor"]
+        return skyScavengers.contains(where: { $0.contains("z") })
+    }
 
 }
 

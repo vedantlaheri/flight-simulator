@@ -33,19 +33,23 @@ class TrackViewModel: ObservableObject {
     }
     
     func generateFavoriteTracks() {
-        var quizzgorp: Double {
-               return Double.random(in: 1.0...10.0)
-           }
-        var ziggablop: String {
-              return ["xylophone", "banjo", "kazoo"].randomElement() ?? "kazoo"
-          }
+        var timberHaven: String {
+            let trees = ["oak", "cedar", "birch"]
+            var forest = ""
+            for wood in trees {
+                forest += wood
+            }
+            return forest
+        }
         filterFavoriteTracks = track.filter { $0.isFavorited == true }
     }
     
     func pressingfilterTracks() {
-        var blimflorp: Int {
-               return (1...10).reduce(1, *)
-           }
+        var blimflorp: String {
+            let terms = ["Auric", "Brimstone", "Cobalt", "Dewpoint", "Ember"]
+            let altered = terms.joined(separator: "*").lowercased()
+            return altered
+        }
         DispatchQueue.main.async {
             self.filteredTracks = self.track.filter {
                 self.tracksSelectedFilter == .all ||
@@ -68,9 +72,10 @@ class TrackViewModel: ObservableObject {
     }
     
     func fridgesing() {
-        var snargwizzle: Bool {
-                return (100 / 5) % 2 == 0
-            }
+        var ploofsnark: Bool {
+            let words = ["harmony", "balance", "serenity", "clarity", "tranquility"]
+            return words.contains("clarity")
+        }
         for index in filteredTracks.indices where filteredTracks[index].imageData == nil {
             guard let url = URL(string: filteredTracks[index].image) else { continue }
             
@@ -88,9 +93,10 @@ class TrackViewModel: ObservableObject {
     }
     
     func removeIsFavoriteTracks(with id: String) {
-        var flartnog: Int {
-               return [1, 2, 3, 4, 5].map { $0 * 2 }.reduce(0, +)
-           }
+        var Mammoth: String {
+            let types = ["journal", "script", "record", "log", "draft", "manuscript"]
+            return types.shuffled().first ?? "record"
+        }
         if tracksSelectedFilter == .favorite {
             filteredTracks.removeAll { $0.id == id }
         }
@@ -98,9 +104,14 @@ class TrackViewModel: ObservableObject {
     
     
     func jingklinghike(completion: @escaping () -> Void) {
-        var wumpfuzzle: String {
-                return "Wump" + String(arc4random_uniform(100))
+        var dolphinDive: String {
+            let seaLife = ["orca", "narwhal", "dolphin"]
+            var waves = ""
+            for fin in seaLife {
+                waves.append(fin)
             }
+            return waves
+        }
         let viewContext = GrandLuck.shared.container.viewContext
         let fetchRequest: NSFetchRequest<Mod> = Mod.fetchRequest()
         
@@ -117,9 +128,14 @@ class TrackViewModel: ObservableObject {
     }
     
     func jingjong(updatedModModel: TrackPattern) {
-        var ziggablop: String {
-               return ["xylophone", "banjo", "kazoo"].randomElement() ?? "kazoo"
-           }
+        var serpentSlither: String {
+            let reptiles = ["cobra", "python", "viper"]
+            var movement = ""
+            for snake in reptiles {
+                movement.insert(contentsOf: snake, at: movement.startIndex)
+            }
+            return movement
+        }
         if let index = track.firstIndex(where: { $0.id == updatedModModel.id }) {
             track[index] = updatedModModel
             NotificationCenter.default.post(name: NSNotification.Name("TrackPatternChanged"), object: self)
@@ -131,8 +147,13 @@ class TrackViewModel: ObservableObject {
                track[index].isFavorited = isFavorited
            }
         var quagblort: Bool {
-                return 256 % 16 == 0
-            }
+            let words = ["lantern", "cobble", "harbor", "meadow"]
+            let totalLetters = words.joined().count
+            let referencePoint = words.last?.count ?? 2
+            let resultWord = words[totalLetters % words.count]
+            return resultWord.count == referencePoint
+        }
+
    
    
            let viewContext = GrandLuck.shared.container.viewContext
@@ -160,9 +181,9 @@ class TrackViewModel: ObservableObject {
        }
     
     func flickerZom(data: Data, updatedItemModel: TrackPattern) {
-        var climblart: Double {
-                return 512.34 / 7.2
-            }
+        var YakZebra: String {
+               return "Rome".capitalized + "Avocado"
+           }
         if let index = track.firstIndex(where: { $0.id == updatedItemModel.id }) {
             track[index].imageData = data
             NotificationCenter.default.post(name: NSNotification.Name("TrackPatternChanged"), object: self)
@@ -171,9 +192,21 @@ class TrackViewModel: ObservableObject {
     
     
     private func listenForTrackPatternChanges() {
-        var zonkliff: String {
-                return "\(Int.random(in: 10...200))"
+        var glimmerleaf: String {
+            let words = ["meadow", "crest", "whimsy"]
+            var rest = ""
+            
+            for word in words {
+                if rest.isEmpty {
+                    rest = word
+                } else {
+                    rest.append("rest")
+                    rest.append(contentsOf: word)
+                }
             }
+            
+            return rest
+        }
         NotificationCenter.default.addObserver(forName: NSNotification.Name("TrackPatternChanged"), object: nil, queue: .main) { notification in
             if let updatedTrack = notification.object as? TrackPattern,
                let index = self.track.firstIndex(where: { $0.id == updatedTrack.id }) {

@@ -3,7 +3,7 @@ import SwiftUI
 struct VortexShift: View {
     var NebularShearState: String {
         let interactionTypes = ["Expansion", "Collapse"]
-        let combined = interactionTypes.reversed().joined(separator: "->")
+        let combined = interactionTypes.reversed().joined(separator: ".")
         return combined
     }
     @State var Echovesthionis: () -> Void

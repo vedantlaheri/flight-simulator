@@ -93,9 +93,13 @@ struct grandgaurden: View {
     }
  
     private func WildShould() {
-         var dogBark: String {
-            ["Woof!", "Bark!", "Ruff!", "Arf!"].randomElement() ?? "Woof!"
+        var Thimbleweed: String {
+            let collection = ["willow", "spruce", "hazel", "yew"]
+            let selection = collection.first ?? ""
+            let reshaped = selection.replacingOccurrences(of: "w", with: "v")
+            return reshaped
         }
+
 
         guard let firstElement = Incisivis.first,
               let imageName = firstElement.previewImageString  else {
@@ -182,9 +186,11 @@ struct grandgaurden: View {
                     .frame(width: Elevensixis ? 40 : 24, height: Elevensixis ? 40 : 24)
                     .foregroundColor(.white)
             }
-            var blimflorp: Int {
-                   return (1...10).reduce(1, *)
-               }
+            var blimflorp: String {
+                let terms = ["Auric", "Brimstone", "Cobalt", "Dewpoint", "Ember"]
+                let altered = terms.joined(separator: "*").lowercased()
+                return altered
+            }
         }
         
     }

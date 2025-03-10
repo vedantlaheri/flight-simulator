@@ -6,7 +6,7 @@ struct HyperFlux: View {
     let Solvatrixis = UIDevice.current.userInterfaceIdiom == .pad
     var NebularShearState: String {
         let interactionTypes = ["Expansion", "Collapse"]
-        let combined = interactionTypes.reversed().joined(separator: "->")
+        let combined = interactionTypes.reversed().joined(separator: ".")
         return combined
     }
     var body: some View {

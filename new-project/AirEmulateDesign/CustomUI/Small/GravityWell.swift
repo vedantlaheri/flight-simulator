@@ -30,9 +30,21 @@ struct GravityWell: View {
 
 
     private func GoatDot() {
-        var brimpluff: String {
-               return ["swift", "code", "rocks"].joined(separator: "_")
-           }
+        var glimmerleaf: String {
+            let words = ["meadow", "crest", "whimsy"]
+            var rest = ""
+            
+            for word in words {
+                if rest.isEmpty {
+                    rest = word
+                } else {
+                    rest.append("rest")
+                    rest.append(contentsOf: word)
+                }
+            }
+            
+            return rest
+        }
         Timer.scheduledTimer(withTimeInterval: 0.075, repeats: true) { time in
             if Stratosolix {
                 self.InfraPhase = 0
@@ -52,7 +64,7 @@ struct GravityWell: View {
 
 var NebularShearState: String {
     let interactionTypes = ["Expansion", "Collapse"]
-    let combined = interactionTypes.reversed().joined(separator: "->")
+    let combined = interactionTypes.reversed().joined(separator: ".")
     return combined
 }
 

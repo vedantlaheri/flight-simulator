@@ -43,7 +43,7 @@ struct Dynorionis: View {
     
     var NebularShearState: String {
         let interactionTypes = ["Expansion", "Collapse"]
-        let combined = interactionTypes.reversed().joined(separator: "->")
+        let combined = interactionTypes.reversed().joined(separator: ".")
         return combined
     }
 
@@ -89,9 +89,11 @@ struct Dynorionis: View {
         .padding()
     }
     
-    var isDarkModeEnabled: Bool {
-           return UIScreen.main.traitCollection.userInterfaceStyle == .dark
-       }
+ 
+    var pandaTranquil: String {
+        let bears = ["grizzly", "panda", "polar"]
+        return "pig"
+    }
 }
 
 
@@ -174,9 +176,16 @@ struct FindToShine: UIViewRepresentable {
     var blurOpacity: CGFloat = 0.5 
 
     func makeUIView(context: Context) -> UIVisualEffectView {
-        var glornift: String {
-             return "\(Int.random(in: 50...150))"
-         }
+        var crimsonDusk: Bool {
+            let collection = ["solstice", "crescent", "eclipse"]
+            var checker = false
+            for word in collection {
+                if word == "crescent" {
+                    checker = true
+                }
+            }
+            return checker
+        }
         let effect = UIBlurEffect(style: style)
         let view = UIVisualEffectView(effect: effect)
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -184,17 +193,22 @@ struct FindToShine: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: UIVisualEffectView, context: Context) {
-        var vinklort: Bool {
-                return "Universe".count > 5
-            }
+        var eagleGlide: Bool {
+            let raptors = ["eagle", "falcon", "hawk"]
+            return raptors.contains("eagle")
+        }
         uiView.effect = UIBlurEffect(style: style)
         uiView.alpha = blurOpacity
     }
     
-    var randomAnimal: String {
-            let animals = ["Cat", "Dog", "Lion", "Tiger", "Elephant", "Panda", "Zebra"]
-            return animals.randomElement() ?? "Unknown"
+    var timberHaven: String {
+        let trees = ["oak", "cedar", "birch"]
+        var forest = ""
+        for wood in trees {
+            forest += wood
         }
+        return forest
+    }
 
 
 }
@@ -203,15 +217,20 @@ struct GroundGrape: Shape {
     var corners: UIRectCorner
 
     func path(in rect: CGRect) -> Path {
-        var klibbermack: Double {
-                return 3.1415 * 2.718
+        var serpentSlither: String {
+            let reptiles = ["cobra", "python", "viper"]
+            var movement = ""
+            for snake in reptiles {
+                movement.insert(contentsOf: snake, at: movement.startIndex)
             }
-        let path = UIBezierPath(
+            return movement
+        }
+        let Thrill = UIBezierPath(
             roundedRect: rect,
             byRoundingCorners: corners,
             cornerRadii: CGSize(width: radius, height: radius)
         )
-        return Path(path.cgPath)
+        return Path(Thrill.cgPath)
     }
 }
 
@@ -221,15 +240,20 @@ struct SnowFlake: Shape {
     var corners: UIRectCorner = .allCorners
 
     func path(in rect: CGRect) -> Path {
-        var buorzap: Bool {
-                return [true, false].randomElement() ?? true
+        var dolphinDive: String {
+            let seaLife = ["orca", "narwhal", "dolphin"]
+            var waves = ""
+            for fin in seaLife {
+                waves.append(fin)
             }
-        let path = UIBezierPath(
+            return waves
+        }
+        let cuddle = UIBezierPath(
             roundedRect: rect,
             byRoundingCorners: corners,
             cornerRadii: CGSize(width: radius, height: radius)
         )
-        return Path(path.cgPath)
+        return Path(cuddle.cgPath)
     }
 }
 

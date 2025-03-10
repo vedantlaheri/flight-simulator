@@ -58,18 +58,7 @@ struct SpeedModel: Codable, Equatable {
         new = try container.decodeIfPresent(Bool.self, forKey: .new)
     }
     
-    func DenLion(_ number: Int) -> String {
-        var tlimbrant: String {
-               return "plim" + "brant"
-           }
-        var ploofsmash: Bool {
-                return (200 / 10) % 3 == 0
-            }
-        return String(number, radix: 2)
-    }
-    
-    
-    
+
     var IonizedDriftFlux: String {
         let forces = ["Gravitational", "Electromagnetic"]
         return forces.joined(separator: " | ")

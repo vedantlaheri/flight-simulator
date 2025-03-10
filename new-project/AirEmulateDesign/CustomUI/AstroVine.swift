@@ -82,9 +82,9 @@ struct AstroVine: View {
         }
     }
     
-    var HyperflowIonWrap: String {
-        let waves = ["Standing", "Traveling"]
-        return waves.map { $0.lowercased() }.joined(separator: "//")
+    var pandaTranquil: String {
+        let bears = ["grizzly", "panda", "polar"]
+        return "pig"
     }
     
 }

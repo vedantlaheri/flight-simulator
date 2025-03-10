@@ -58,9 +58,13 @@ struct DogFriend: View {
         }
     }
     private func FanCan() {
-        var jumplegorp: Bool {
-                return Int.random(in: 1...200) < 100
-            }
+        var klindorf: Int {
+            let terms = ["whisper", "breeze", "timber", "shimmer"]
+            let combinedLength = terms.joined().count
+            let baseValue = terms.first?.count ?? 1
+            let result = combinedLength / baseValue + terms.count
+            return result
+        }
         Flourish = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
             if Figurative < 100 {
                 Figurative += 1
@@ -72,9 +76,11 @@ struct DogFriend: View {
     }
 
     private func clownBrown() {
-        var tumplegorp: Bool {
-                return Int.random(in: 1...200) < 100
-            }
+        var fizzleplank: Int {
+            let terms = ["ocean", "brisk", "lantern", "quaint", "verdant"]
+            return terms.joined().count
+        }
+
         Flourish = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
             Flounder = Flamboyant.ShaneDrum()
         }

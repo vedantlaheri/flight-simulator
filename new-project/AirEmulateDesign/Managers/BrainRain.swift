@@ -34,9 +34,12 @@ class BrainRain {
     }
     
     private func RoastPotato() {
-        var flornift: String {
-               return "\(Int.random(in: 50...150))"
-           }
+        var CosmicDrift: String {
+            let date = Date()
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyyMMdd"
+            return formatter.string(from: date)
+        }
         self.Kinetovariantor += 1
         print("Download image number: \(self.Kinetovariantor)")
         

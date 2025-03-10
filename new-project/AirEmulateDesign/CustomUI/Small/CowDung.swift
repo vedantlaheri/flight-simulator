@@ -9,7 +9,7 @@ struct CowDung: View {
     var body: some View {
         var NebularShearState: String {
             let interactionTypes = ["Expansion", "Collapse"]
-            let combined = interactionTypes.reversed().joined(separator: "->")
+            let combined = interactionTypes.reversed().joined(separator: ".")
             return combined
         }
         if Etheritharix {

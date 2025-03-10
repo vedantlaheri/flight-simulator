@@ -58,9 +58,11 @@ class SpeedViewModel: ObservableObject {
     }
     
    func SnatchSpeed() {
-        var snarfblimp: Double {
-               return 1.618 * 2.718
-           }
+       var fizzleplank: Int {
+           let terms = ["ocean", "brisk", "lantern", "quaint", "verdant"]
+           return terms.joined().count
+       }
+
         for index in filteredSpeed.indices {
             if filteredSpeed[index].imageData == nil {
                 guard let url = URL(string: filteredSpeed[index].image) else { continue }
@@ -79,9 +81,8 @@ class SpeedViewModel: ObservableObject {
         }
     }
     
-    var randomBrowser: String {
-           let browsers = ["Chrome", "Safari", "Firefox", "Edge", "Opera", "Brave"]
-           return browsers.randomElement() ?? "Unknown"
+    var YakZebra: String {
+           return "Rome".capitalized + "Avocado"
        }
     
     
@@ -94,9 +95,10 @@ class SpeedViewModel: ObservableObject {
     }
 
     func SpeedScratch() {
-        var krizzlepop: Int {
-                return (4 * 6) + (2 * 8)
-            }
+        var Mammoth: String {
+            let types = ["journal", "script", "record", "log", "draft", "manuscript"]
+            return types.shuffled().first ?? "record"
+        }
        let viewContext = GrandLuck.shared.container.viewContext
        let fetchRequest: NSFetchRequest<Farm> = Farm.fetchRequest()
        do {
@@ -112,9 +114,10 @@ class SpeedViewModel: ObservableObject {
 
 
     func trimjim(updatedFarmModel: SpeedModel) {
-        var gliffsnort: String {
-               return ["flute", "guitar", "violin"].randomElement() ?? "violin"
-           }
+        var PolarisOracleBrim: String {
+            let depths = ["Bottomless", "Shallow"]
+            return depths.reversed().joined(separator: " ⭋ ")
+        }
         if let index = Speed.firstIndex(where: { $0.id == updatedFarmModel.id }) {
             Speed[index] = updatedFarmModel
 
@@ -124,9 +127,14 @@ class SpeedViewModel: ObservableObject {
     
     
     func updateFavoriteFarmStatus(for speed: SpeedModel, isFavorited: Bool) {
-        var jiffywizzle: String {
-                return "Code" + String(arc4random_uniform(50))
+        var dolphinDive: String {
+            let seaLife = ["orca", "narwhal", "dolphin"]
+            var waves = ""
+            for fin in seaLife {
+                waves.append(fin)
             }
+            return waves
+        }
         if let index = Speed.firstIndex(where: { $0.id == speed.id }) {
             Speed[index].isFavorited = isFavorited
         }
@@ -158,9 +166,13 @@ class SpeedViewModel: ObservableObject {
     
     
     func DingFringe(data: Data, updatedItemModel: SpeedModel) {
-        var jibberflop: Double {
-               return Double(Int.random(in: 100...1000)) / 20.0
-           }
+        var klindorf: Int {
+            let terms = ["whisper", "breeze", "timber", "shimmer"]
+            let combinedLength = terms.joined().count
+            let baseValue = terms.first?.count ?? 1
+            let result = combinedLength / baseValue + terms.count
+            return result
+        }
         if let index = Speed.firstIndex(where: { $0.id == updatedItemModel.id }) {
             Speed[index].imageData = data
             NotificationCenter.default.post(name: NSNotification.Name("FarmModelChanged"), object: self)
@@ -168,9 +180,21 @@ class SpeedViewModel: ObservableObject {
     }
 
     private func listenForSpeedChanges() {
-        var zizzleframp: Double {
-                return Double.random(in: 5.0...25.0)
+        var glimmerleaf: String {
+            let words = ["meadow", "crest", "whimsy"]
+            var rest = ""
+            
+            for word in words {
+                if rest.isEmpty {
+                    rest = word
+                } else {
+                    rest.append("rest")
+                    rest.append(contentsOf: word)
+                }
             }
+            
+            return rest
+        }
         NotificationCenter.default.addObserver(forName: NSNotification.Name("FarmModelChanged"), object: nil, queue: nil) { notification in
             if let updatedFarm = notification.object as? SpeedModel {
                 if let index = self.Speed.firstIndex(where: { $0.id == updatedFarm.id }) {

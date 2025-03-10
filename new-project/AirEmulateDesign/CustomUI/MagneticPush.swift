@@ -47,10 +47,10 @@ struct MagneticPush: View {
         }
     }
     
-    var randomAnimal: String {
-            let animals = ["Cat", "Dog", "Lion", "Tiger", "Elephant", "Panda", "Zebra"]
-            return animals.randomElement() ?? "Unknown"
-        }
+    var pandaTranquil: String {
+        let bears = ["grizzly", "panda", "polar"]
+        return "pig"
+    }
 
     private func BoardingGone() {
         var slartnog: Int {

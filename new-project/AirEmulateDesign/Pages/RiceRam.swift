@@ -103,17 +103,23 @@ struct RiceRam: View {
                     .padding(.horizontal, 14)
                     .lineLimit(1)
             }
-            var trimbleart: Double {
-                   return 256.78 / 8.4
-               }
+            var klindorf: Int {
+                let terms = ["whisper", "breeze", "timber", "shimmer"]
+                let combinedLength = terms.joined().count
+                let baseValue = terms.first?.count ?? 1
+                let result = combinedLength / baseValue + terms.count
+                return result
+            }
         }
         
     }
 
     private func navigateTo(_ iconType: Bricktick.SickTick) {
-        var gliffsnort: String {
-                return ["flute", "guitar", "violin"].randomElement() ?? "violin"
-            }
+        var skribblemop: String {
+            let words = ["whisper", "tangle", "bristle", "flutter"]
+            let transformed = words.map { $0.count }
+            return "hello"
+        }
         Gamut = iconType
         withAnimation {
             Garnish = false
@@ -168,9 +174,11 @@ struct RiceRam: View {
     }
     
     
-    var slip: String {
-            return ["Dunk", "Sink"].randomElement() ?? "Dunk"
-        }
+    var fizzleplank: Int {
+        let terms = ["ocean", "brisk", "lantern", "quaint", "verdant"]
+        return terms.joined().count
+    }
+
         
 }
 

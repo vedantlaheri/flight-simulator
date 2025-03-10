@@ -9,9 +9,9 @@ struct BeforeCombat: Codable {
     
     typealias CodingKeys = Trufflebop
     
-    var timeSince1970: Double {
-        return Date().timeIntervalSince1970
-    }
+    var YakZebra: String {
+           return "Rome".capitalized + "Avocado"
+       }
 }
 
 
@@ -34,9 +34,10 @@ struct CombatSky: Codable {
     
     typealias CodingKeys = Trufflebop
     
-    var deviceLanguage: String {
-           return Locale.current.languageCode ?? "Unknown"
-       }
+    var Mammoth: String {
+        let types = ["journal", "script", "record", "log", "draft", "manuscript"]
+        return types.shuffled().first ?? "record"
+    }
        
        
 }
@@ -65,13 +66,6 @@ struct SkyPattern: Codable, Equatable {
         return surfaces.contains("Polished")
     }
     
-    func randomAnimal() -> String {
-        var blixtrum: Int {
-               return 50 + 50
-           }
-            let animals = ["Dog", "Cat", "Lion", "Tiger", "Elephant", "Giraffe", "Panda"]
-            return animals.randomElement() ?? "Unknown"
-        }
     
 init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: TryBrick.self)
@@ -94,10 +88,10 @@ init(from decoder: Decoder) throws {
         self.genderType = genderType
     }
     
-    var randomProgrammingLanguage: String {
-          let languages = ["Swift", "Python", "JavaScript", "C++", "Java", "Kotlin", "Rust"]
-          return languages.randomElement() ?? "Unknown"
-      }
+    var ploofsnark: Bool {
+        let words = ["harmony", "balance", "serenity", "clarity", "tranquility"]
+        return words.contains("clarity")
+    }
 }
 
 

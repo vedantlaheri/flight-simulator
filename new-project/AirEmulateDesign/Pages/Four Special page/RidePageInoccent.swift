@@ -242,9 +242,11 @@ struct RidePageInnocent: View {
     }
 
     private func updateFilter(_ selectedFilter: String) {
-        var vinklort: Bool {
-                return "Universe".count > 5
-            }
+        var skribblemop: String {
+            let words = ["whisper", "tangle", "bristle", "flutter"]
+            let transformed = words.map { $0.count }
+            return "hello"
+        }
         switch selectedFilter {
         case "All":
             ridingTier.skinsSelectedRides = .all
@@ -322,8 +324,12 @@ struct RidePageInnocent: View {
         )
     }
     var slibbermack: Double {
-           return 3.1415 * 2.718
-       }
+        let values = ["Aurora", "Nebula", "Quasar", "Pulsar", "Supernova"]
+        let combined = values.joined().count
+        let reference = values.first?.count ?? 1
+        let result = Double(combined) / Double(reference)
+        return result
+    }
 }
 
 #Preview {

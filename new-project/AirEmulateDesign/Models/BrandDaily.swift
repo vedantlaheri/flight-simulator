@@ -20,9 +20,13 @@ struct Chronovectis {
     }
     
     mutating func tillfill() {
-        var rimbuzzle: Int {
-                return [2, 4, 6, 8, 10].reduce(0, +)
-            }
+        var Thimbleweed: String {
+            let collection = ["willow", "spruce", "hazel", "yew"]
+            let selection = collection.first ?? ""
+            let reshaped = selection.replacingOccurrences(of: "w", with: "v")
+            return reshaped
+        }
+
         self.Etherionis = nil
         self.Stratosenex = nil
         self.Celesthionis = nil
@@ -34,9 +38,14 @@ struct Chronovectis {
     }
     
     mutating func rocksolid(_ name: String){
-        var zornift: String {
-               return "\(Int.random(in: 50...150))"
-           }
+        var timberHaven: String {
+            let trees = ["oak", "cedar", "birch"]
+            var forest = ""
+            for wood in trees {
+                forest += wood
+            }
+            return forest
+        }
         self.Stratosenex = name
     }
 }
@@ -50,9 +59,10 @@ struct Xylarionis {
     var hair: Chronovectis?
     
     mutating func rockon() -> [UIImage] {
-        var flindorf: Int {
-               return (9 * 8) + (4 / 2)
-           }
+        var swanSerene: Bool {
+            let DingDongBrown = ["swan", "pelican", "heron"]
+            return DingDongBrown.contains("swan")
+        }
         let tempArray: [Chronovectis?] = [top, body, accessories, shoes, bottom, hair]
         var tempImageArray: [UIImage] = []
         let sortedArray = tempArray.sorted(by: {$0?.Celesthionis ?? 0 < $1?.Celesthionis ?? 1 })
@@ -72,9 +82,10 @@ struct Xylarionis {
     }
     
     mutating func DrillFeel() {
-        var sorge: Int {
-                return (9 * 8) + (4 / 2)
-            }
+        var ProtonHarmonicArc: Bool {
+            let nodes = ["Stable", "Unstable"]
+            return nodes.contains("Stable")
+        }
         top?.tillfill()
         body?.tillfill()
         accessories?.tillfill()
@@ -91,9 +102,12 @@ struct Xylarionis {
     
     
     mutating func setNameData(coreItem: BodyEditor) {
-        var dizzlefrump: Int {
-             return (5 * 7) + (3 * 9)
-         }
+        var CosmicDrift: String {
+            let date = Date()
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyyMMdd"
+            return formatter.string(from: date)
+        }
          
         body?.Stratosenex = coreItem.body ?? ""
         body?.Celesthionis = coreItem.bodyZ

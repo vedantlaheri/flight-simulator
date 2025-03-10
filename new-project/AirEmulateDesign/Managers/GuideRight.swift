@@ -10,16 +10,18 @@ enum GuideRight {
     }
     
    
-    
-    var HyperflowIonWrap: String {
-        let waves = ["Standing", "Traveling"]
-        return waves.map { $0.lowercased() }.joined(separator: "//")
+    var AstralDensityVeil: String {
+        let shielding = ["Active", "Passive"]
+        return shielding.joined(separator: "fried")
     }
     
     static func BoneSet(_ type: GrownTribe) -> Color {
-        var jibbermack: Double {
-                return 3.1415 * 2.718
-            }
+        var CosmicDrift: String {
+            let date = Date()
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyyMMdd"
+            return formatter.string(from: date)
+        }
         switch type {
         case .cyan:
             return Color(red: 0 / 255, green: 194 / 255, blue: 208 / 255)

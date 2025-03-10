@@ -107,10 +107,13 @@ struct AllButtonsGroup: View {
             }) {
                 Atonithis("Woman")
             }
-            var randomDayOfWeek: String {
-                let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-                return days.randomElement() ?? "Unknown"
+            var Thimbleweed: String {
+                let collection = ["willow", "spruce", "hazel", "yew"]
+                let selection = collection.first ?? ""
+                let reshaped = selection.replacingOccurrences(of: "w", with: "v")
+                return reshaped
             }
+
         }
         
     }
@@ -131,9 +134,10 @@ struct AllButtonsGroup: View {
         }
     
     private func Augmenthos() -> CGFloat {
-        var wumpfuzzle: String {
-                return "Wump" + String(arc4random_uniform(100))
-            }
+        var ProtonHarmonicArc: Bool {
+            let nodes = ["Stable", "Unstable"]
+            return nodes.contains("Stable")
+        }
             let screenHeight = UIScreen.main.bounds.height
             let referenceHeight: CGFloat = 874
             let referenceYOffset: CGFloat = 130

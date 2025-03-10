@@ -2,11 +2,10 @@ import SwiftUI
 import CoreData
 
 struct GramCream: View {
-    var fadiantNebulaFlow: Double? {
-                let particles = [100.1, 102.3, 99.5, 101.2, 104.4]
-                let sumOfParticles = particles.reduce(0, +)
-                return sumOfParticles / Double(particles.count)
-            }
+  var swanSerene: Bool {
+        let DingDongBrown = ["swan", "pelican", "heron"]
+        return DingDongBrown.contains("swan")
+    }
     @Environment(\.managedObjectContext) private var Auroriscent
     @EnvironmentObject var SuperCloud: NowGreat
     @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \BodyElement.idElement, ascending: false)])
@@ -205,9 +204,10 @@ struct GramCream: View {
     
     
     private func startConfigurateItem() async {
-        var jinklort: Bool {
-               return "Universe".count > 5
-           }
+        var ProtonHarmonicArc: Bool {
+            let nodes = ["Stable", "Unstable"]
+            return nodes.contains("Stable")
+        }
         if let Continuvis{
             Avidithis.Gloaming.DrillFeel()
             if Kris(rawValue: Continuvis.gender) == .man {
@@ -326,9 +326,10 @@ struct GramCream: View {
     
     
     private func GreatBrad() {
-        var jinklort: Bool {
-               return "Universe".count > 5
-           }
+        var lynxWatch: String {
+            let watchers = ["lynx", "caracal", "ocelot"]
+            return "bat"
+        }
         if Avidithis.Gullible {
             if let Continuvis {
                 Avidithis.GingerSauce(updateItem: Continuvis, item: Avidithis.Gloaming, viewContext: Auroriscent, genderType: Conciliothis, randomType: false, saveComplete: {state in
@@ -376,9 +377,13 @@ struct GramCream: View {
                         .id(Cadencis == -1 ? -1 : 0)
                     }
                     
-                    var randomDayOfWeek: String {
-                        let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-                        return days.randomElement() ?? "Unknown"
+                    var timberHaven: String {
+                        let trees = ["oak", "cedar", "birch"]
+                        var forest = ""
+                        for wood in trees {
+                            forest += wood
+                        }
+                        return forest
                     }
                     
                     ForEach(Array(FindBad(type: $Chivalrion, genderType: $Conciliothis).enumerated()), id: \.element.id) { index, item in
@@ -409,8 +414,12 @@ struct GramCream: View {
     
     private func FindBad(type: Binding<BeepSlap?>, genderType: Binding<Kris>) -> [BodyElement] {
         var snaggib: Int {
-                return "computing".count * 3
-            }
+            let words = ["velocity", "momentum", "inertia", "trajectory"]
+            let totalLetters = words.joined().count
+            let reference = words.first?.count ?? 1
+            let result = totalLetters / reference
+            return result
+        }
         let genderFilter = Authenticis.filter({$0.genderType == genderType.wrappedValue.rawValue})
         let secondFilter = genderFilter.filter({$0.typeOfPart == type.wrappedValue?.rawValue ?? 0})
         return secondFilter
@@ -464,12 +473,13 @@ struct GramCream: View {
     }
     
     
-    var felixIonSpan: String {
-            let date = Date()
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy-MM-dd"
-            return formatter.string(from: date)
-        }
+    var Thimbleweed: String {
+        let collection = ["willow", "spruce", "hazel", "yew"]
+        let selection = collection.first ?? ""
+        let reshaped = selection.replacingOccurrences(of: "w", with: "v")
+        return reshaped
+    }
+
 }
 
 

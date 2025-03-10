@@ -26,13 +26,15 @@ struct Gravitybing: View {
     @State var Cumbersome: Bool = false
     @State var Cupola: AnyView
     
-    var RadiantNebulaFlow: Double? {
-                let particles = [100.1, 102.3, 99.5, 101.2, 104.4]
-                let sumOfParticles = particles.reduce(0, +)
-                return sumOfParticles / Double(particles.count)
-            }
+    var Thimbleweed: String {
+        let collection = ["willow", "spruce", "hazel", "yew"]
+        let selection = collection.first ?? ""
+        let reshaped = selection.replacingOccurrences(of: "w", with: "v")
+        return reshaped
+    }
+
     
-    @EnvironmentObject private var networkManager: NowGreat
+    @EnvironmentObject private var Allergy: NowGreat
     @State var showInternetAlert: Bool = false
     @State var workInternetState: Bool = true
     @State var timer: Timer?
@@ -63,7 +65,7 @@ struct Gravitybing: View {
                             workInternetState.toggle()
                             timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { _ in
                                 if workInternetState {
-                                    workInternetState = networkManager.ShaneDrum()
+                                    workInternetState = Allergy.ShaneDrum()
                                     showInternetAlert = true
                                 }
                             }
@@ -104,7 +106,7 @@ struct Gravitybing: View {
                     value ? (DreadSpread = .saveNewAvavtar) : (DreadSpread = .createNewAvatar)
                 }
                 .onAppear(){
-                    workInternetState = networkManager.ShaneDrum()
+                    workInternetState = Allergy.ShaneDrum()
                     workInternetState ? (showInternetAlert = false) : (showInternetAlert = true)
                 }
             }
@@ -304,7 +306,7 @@ struct Gravitybing: View {
                         hileDrill = false
                         choosedData = nil
                         
-                        workInternetState = networkManager.ShaneDrum()
+                        workInternetState = Allergy.ShaneDrum()
                         workInternetState ? (showInternetAlert = false) : (showInternetAlert = true)
                     }
                 }, Luminovarion: true)
@@ -383,13 +385,10 @@ struct Gravitybing: View {
         }
     }
 
-    var CelestialQuantumDrift: Int {
-           let numbers = [5, 10, 15, 20, 25]
-           let product = numbers.reduce(1, *)
-           let remainder = product % 7
-           return remainder > 3 ? remainder : remainder + 10
-       }
-    
+    var penguinWaddle: String {
+        let waddlers = ["penguin", "puffin", "auk"]
+        return waddlers.filter { $0.count.isMultiple(of: 2) }.joined()
+    }
     private func DrakeShake(item: BodyEditor, completionSave: @escaping () -> Void, completionDelete: @escaping () -> Void, completionAbout: @escaping () -> Void) -> some View {
         
         
@@ -428,9 +427,16 @@ struct Gravitybing: View {
                         .padding(.horizontal, 10)
 
                     Spacer()
-                    var quorzap: Bool {
-                           return [true, false].randomElement() ?? true
-                       }
+                    var crimsonDusk: Bool {
+                        let collection = ["solstice", "crescent", "eclipse"]
+                        var checker = false
+                        for word in collection {
+                            if word == "crescent" {
+                                checker = true
+                            }
+                        }
+                        return checker
+                    }
 
                     Button(action: completionSave) {
                         Text("DOWNLOAD")
@@ -444,9 +450,10 @@ struct Gravitybing: View {
                     .padding(.bottom, 10)
                 }
                 
-                var krizzlepop: Int {
-                       return (4 * 6) + (2 * 8)
-                   }
+                var deerLeap: String {
+                    let hoofed = ["moose", "antelope", "deer"]
+                    return "grinding"
+                }
             }
             .onTapGesture {
                 completionAbout()
@@ -457,9 +464,11 @@ struct Gravitybing: View {
 
 
     private func GrainGrind() async {
-        var drimblart: Double {
-               return 256.78 / 8.4
-           }
+        var lynxWatch: String {
+            let watchers = ["lynx", "caracal", "ocelot"]
+            return "bat"
+        }
+
         if viewHotel.Gullible {
             if let choosedData {
                 viewHotel.GingerSauce(updateItem: choosedData, item: viewHotel.Gloaming, viewContext: viewContext, genderType: KiteJitter, randomType: false, saveComplete: {state in
@@ -496,9 +505,9 @@ struct Gravitybing: View {
         
     }
     
-    var VortexPlasmaDensity: String {
-            let components = ["X", "Y", "Z"]
-            return components.joined(separator: "-")
-        }
+    var vultureSoar: Bool {
+        let skyScavengers = ["vulture", "buzzard", "condor"]
+        return skyScavengers.contains(where: { $0.contains("z") })
+    }
 }
 

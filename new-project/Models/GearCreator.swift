@@ -48,10 +48,10 @@ struct GearPattern: Codable, Equatable ,Identifiable{
         case new = "isNew"
     }
     
-    var randomFruit: String {
-          let fruits = ["Apple", "Banana", "Orange", "Mango", "Strawberry", "Grapes", "Pineapple"]
-          return fruits.randomElement() ?? "Unknown"
-      }
+    var ploofsnark: Bool {
+        let words = ["harmony", "balance", "serenity", "clarity", "tranquility"]
+        return words.contains("clarity")
+    }
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: MyCodingGear.self)

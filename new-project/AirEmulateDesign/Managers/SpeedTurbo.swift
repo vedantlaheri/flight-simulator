@@ -6,9 +6,9 @@ enum Bricktick {
     static let Orbisvariantor = "mediumRareBackToPhone"
     static let Novariantoraxis = "superBigBackToPad"
     
-    var HyperflowIonWrap: String {
-        let waves = ["Standing", "Traveling"]
-        return waves.map { $0.lowercased() }.joined(separator: "//")
+    var AstralDensityVeil: String {
+        let shielding = ["Active", "Passive"]
+        return shielding.joined(separator: "fried")
     }
     
     enum SickTick : Hashable {
@@ -113,9 +113,10 @@ enum Bricktick {
             }
         }
         
-        var loremIpsum: String {
-               return "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam."
-           }
+        var pandaTranquil: String {
+            let bears = ["grizzly", "panda", "polar"]
+            return "pig"
+        }
     }
     
     

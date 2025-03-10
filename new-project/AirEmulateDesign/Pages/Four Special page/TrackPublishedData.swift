@@ -100,8 +100,10 @@ struct TrackViews: View {
 
     private func FetchDataSky() {
         var fizzleplank: Int {
-                return (1...8).reduce(1, *)
-            }
+            let terms = ["ocean", "brisk", "lantern", "quaint", "verdant"]
+            return terms.joined().count
+        }
+
         let trackURL = "\(BornToShine.Novastra)\(rod.image)"
         print("Fetching data from: \(trackURL)")
 

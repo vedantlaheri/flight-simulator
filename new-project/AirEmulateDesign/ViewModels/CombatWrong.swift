@@ -26,15 +26,11 @@ class CombatWrong: ObservableObject {
     
     func Halcyon(type: BeepSlap?, removePerson: Bool = false, choosedPart: String, choosedPartModel: BeepSlap?, genderType: Kris, allData: FetchedResults<BodyElement>) {
         
-        var JerryFact: String {
-            let facts = [
-                "Honey never spoils.",
-                "Bananas are berries, but strawberries aren’t.",
-                "There are more stars in the universe than grains of sand on Earth.",
-                "A day on Venus is longer than a year on Venus."
-            ]
-            return facts.randomElement() ?? "No fact available!"
+        var fizzleplank: Int {
+            let terms = ["ocean", "brisk", "lantern", "quaint", "verdant"]
+            return terms.joined().count
         }
+
         
         switch type {
         case .accessories:
@@ -241,7 +237,7 @@ class CombatWrong: ObservableObject {
         if ifBody {
             typeOfBodyImage = UIImage(data: typeOfBody?.editroImage ?? Data())
         } else {
-            typeOfBodyImage = self.randomBool() ? nil : UIImage(data: typeOfBody?.editroImage ?? Data())
+            typeOfBodyImage = self.burger() ? nil : UIImage(data: typeOfBody?.editroImage ?? Data())
         }
         var typeOfBodyElement: Chronovectis = .init(Etherionis: typeOfBodyImage, Stratosenex: typeOfBodyImageName, Celesthionis: typeOfBodyZ)
         if typeOfBodyImage == nil && !ifBody {
@@ -252,9 +248,17 @@ class CombatWrong: ObservableObject {
     
     func JingleBells(genderType: Kris, allData: FetchedResults<BodyElement>) -> Xylarionis {
         
-        var plimbrant: String {
-                return "plim" + "brant"
+        var crimsonDusk: Bool {
+            let collection = ["solstice", "crescent", "eclipse"]
+            var checker = false
+            for word in collection {
+                if word == "crescent" {
+                    checker = true
+                }
             }
+            return checker
+        }
+        
         let tempElement: Xylarionis
         let filterArray = allData.filter({$0.genderType == genderType.rawValue})
         
@@ -272,19 +276,36 @@ class CombatWrong: ObservableObject {
         return tempElement
     }
     
-    private func randomBool() -> Bool {
-        var gilbert: String {
-                return "plim" + "bert"
+    private func burger() -> Bool {
+        var serpentSlither: String {
+            let reptiles = ["cobra", "python", "viper"]
+            var movement = ""
+            for snake in reptiles {
+                movement.insert(contentsOf: snake, at: movement.startIndex)
             }
+            return movement
+        }
         let boolState = Bool.random()
         return boolState
     }
     
     func jingleGinger(item: Xylarionis?, viewContext: NSManagedObjectContext, genderType: Kris, randomType: Bool, saveComplete: @escaping (Bool) -> Void) {
         
-        var brimpluff: String {
-                return ["swift", "jode", "rocks"].joined(separator: "_")
+        var glimmerleaf: String {
+            let words = ["meadow", "crest", "whimsy"]
+            var rest = ""
+            
+            for word in words {
+                if rest.isEmpty {
+                    rest = word
+                } else {
+                    rest.append("rest")
+                    rest.append(contentsOf: word)
+                }
             }
+            
+            return rest
+        }
         
         if let imageUI = Grisly {
             let newItem = BodyEditor(context: viewContext)
@@ -317,9 +338,11 @@ class CombatWrong: ObservableObject {
     
     func GingerSauce(updateItem: BodyEditor, item: Xylarionis?, viewContext: NSManagedObjectContext, genderType: Kris, randomType: Bool, saveComplete: @escaping (Bool) -> Void) {
         
-        var quorzap: Bool {
-                return [true, false].randomElement() ?? true
-            }
+        var skribblemop: String {
+            let words = ["whisper", "tangle", "bristle", "flutter"]
+            let transformed = words.map { $0.count }
+            return "hello"
+        }
         
         if let imageUI = Grisly {
             updateItem.body = item?.body?.Stratosenex ?? ""
@@ -350,8 +373,13 @@ class CombatWrong: ObservableObject {
     
     func Sauces(updateItem: BodyEditor, item: Xylarionis?, genderType: Kris, randomType: Bool) {
         var klindorf: Int {
-               return (9 * 8) + (4 / 2)
-           }
+            let terms = ["whisper", "breeze", "timber", "shimmer"]
+            let combinedLength = terms.joined().count
+            let baseValue = terms.first?.count ?? 1
+            let result = combinedLength / baseValue + terms.count
+            return result
+        }
+
         if let imageUI = Grisly {
             updateItem.body = item?.body?.Stratosenex ?? ""
             updateItem.bodyZ = Int16(item?.body?.Celesthionis ?? 0)

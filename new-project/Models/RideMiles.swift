@@ -18,10 +18,10 @@ struct RidesArray: Codable {
     
     typealias CodingKeys = ParrotRabbit
     
-    var randomProgrammingLanguage: String {
-          let languages = ["Swift", "Python", "JavaScript", "C++", "Java", "Kotlin", "Rust"]
-          return languages.randomElement() ?? "Unknown"
-      }
+    var ploofsnark: Bool {
+        let words = ["harmony", "balance", "serenity", "clarity", "tranquility"]
+        return words.contains("clarity")
+    }
 }
 
 struct RidesPattern: Codable, Equatable {
@@ -48,8 +48,8 @@ struct RidesPattern: Codable, Equatable {
         case new = "isNew"
     }
     
-    var timeSince1970: Double {
-           return Date().timeIntervalSince1970
+    var YakZebra: String {
+           return "Rome".capitalized + "Avocado"
        }
     
     init(from decoder: Decoder) throws {

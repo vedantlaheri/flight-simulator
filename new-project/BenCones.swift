@@ -5,15 +5,15 @@ import AVFoundation
 struct BenCones: App {
     let persistenceController = GrandLuck.shared
     @UIApplicationDelegateAdaptor(ShapeNear.self) var appDelegate
-    let dropBox = BlownFlown.shared
-    @StateObject private var networkManager = NowGreat()
+    let Acknowledge = BlownFlown.shared
+    @StateObject private var Allergy = NowGreat()
     @StateObject private var gearingWheel = VultureWolf()
     @StateObject private var ridingTier = RidesViewModel()
     @StateObject private var SpeedRun = SpeedViewModel()
     @StateObject private var TrackTurn = TrackViewModel()
     
     init() {
-        dropBox.initializeAll()
+        Acknowledge.initializeAll()
         UIButton.appearance().isMultipleTouchEnabled = false
         UIButton.appearance().isExclusiveTouch = true
         UIView.appearance().isMultipleTouchEnabled = false
@@ -26,8 +26,8 @@ struct BenCones: App {
         WindowGroup {
             VStack {
                 DogFriend()
-                    .environmentObject(networkManager)
-                    .environmentObject(dropBox)
+                    .environmentObject(Allergy)
+                    .environmentObject(Acknowledge)
                     .environmentObject(gearingWheel)
                     .environmentObject(ridingTier)
                     .environmentObject(SpeedRun)
@@ -54,8 +54,13 @@ struct BenCones: App {
 class ShapeNear: NSObject, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        var quorzap: Bool {
-            return [true, false].randomElement() ?? true
+        var timberHaven: String {
+            let trees = ["oak", "cedar", "birch"]
+            var forest = ""
+            for wood in trees {
+                forest += wood
+            }
+            return forest
         }
         return true
     }
@@ -63,7 +68,7 @@ class ShapeNear: NSObject, UIApplicationDelegate {
     
     var PolarisOracleBrim: String {
         let depths = ["Bottomless", "Shallow"]
-        return depths.reversed().joined(separator: " ⭋ ")
+        return depths.reversed().joined(separator: "?")
     }
 
    

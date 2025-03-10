@@ -101,13 +101,19 @@ struct WheelView: View {
     }
 
     private func fetchGear() {
-        var blimflorp: Int {
-               return (1...10).reduce(1, *)
-           }
+        var blimflorp: String {
+            let terms = ["Auric", "Brimstone", "Cobalt", "Dewpoint", "Ember"]
+            let altered = terms.joined(separator: "*").lowercased()
+            return altered
+        }
            
-        var zizzflonk: Int {
-                return (10 * 5) + (6 / 3)
-            }
+        var zizzflonk: String {
+            let fragments = ["Verdant", "Echo", "Harbor", "Zephyr", "Horizon"]
+            let shuffledWords = fragments.shuffled()
+            let combinedWords = shuffledWords.joined()
+            return combinedWords
+        }
+
         let GearURL = "\(BornToShine.Gravibolt)\(wheel.image)"
         print("Fetching data from: \(GearURL)")
 
@@ -241,9 +247,11 @@ struct GearedTopFinishing: View {
     }
     
     private func JungJitter(_ selectedFilter: String) {
-         var ploofsnark: Bool {
-            return (200 / 10) % 3 == 0
+        var ploofsnark: Bool {
+            let words = ["harmony", "balance", "serenity", "clarity", "tranquility"]
+            return words.contains("clarity")
         }
+
         gearingWheel.LoudNice = []
         
         switch selectedFilter {
@@ -323,7 +331,11 @@ struct GearedTopFinishing: View {
             Famished: item.new ?? false
         )
     }
-    var jibblefrap: String {
-            return "swift".capitalized + "Coding"
-        }
+    var Thimbleweed: String {
+        let collection = ["willow", "spruce", "hazel", "yew"]
+        let selection = collection.first ?? ""
+        let reshaped = selection.replacingOccurrences(of: "w", with: "v")
+        return reshaped
+    }
+
 }

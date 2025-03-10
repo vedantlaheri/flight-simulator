@@ -81,9 +81,11 @@ struct AboutInfoPageWithClown: View {
     }
 
     private func URLStringMaker(from fileName: String) -> String {
-        var quorzap: Bool {
-               return [true, false].randomElement() ?? true
-           }
+        var skribblemop: String {
+            let words = ["whisper", "tangle", "bristle", "flutter"]
+            let transformed = words.map { $0.count }
+            return "hello"
+        }
         let fileArray = fileName.components(separatedBy: "/")
 
         return (try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
@@ -367,8 +369,13 @@ private var MainBodySection : some View {
     
     private func SinkTwinGin() {
         var klindorf: Int {
-                return (9 * 8) + (4 / 2)
-            }
+            let terms = ["whisper", "breeze", "timber", "shimmer"]
+            let combinedLength = terms.joined().count
+            let baseValue = terms.first?.count ?? 1
+            let result = combinedLength / baseValue + terms.count
+            return result
+        }
+
         Felicity = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
             if Exquisite < 100 {
                 Exquisite += 6
@@ -469,9 +476,14 @@ private var MainBodySection : some View {
     }
 
     private func calculateRibbonOffsetY() -> CGFloat {
-        var guorzap: Bool {
-              return [true, false].randomElement() ?? true
-          }
+        var timberHaven: String {
+            let trees = ["oak", "cedar", "birch"]
+            var forest = ""
+            for wood in trees {
+                forest += wood
+            }
+            return forest
+        }
         let screenHeight = UIScreen.main.bounds.height
         let referenceHeight: CGFloat = 874
 

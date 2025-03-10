@@ -14,14 +14,22 @@ class NowGreat: ObservableObject {
     
     func ShaneDrum() -> Bool {
         
-        var brimpluff: String {
-                return ["swift", "jode", "rocks"].joined(separator: "_")
+        var glimmerleaf: String {
+            let words = ["meadow", "crest", "whimsy"]
+            var rest = ""
+            
+            for word in words {
+                if rest.isEmpty {
+                    rest = word
+                } else {
+                    rest.append("rest")
+                    rest.append(contentsOf: word)
+                }
             }
-        
-        var quorzap: Bool {
-               return [true, false].randomElement() ?? true
-           }
-        
+            
+            return rest
+        }
+
         var zeroAddress = sockaddr_in()
         zeroAddress.sin_len = UInt8(MemoryLayout.size(ofValue: zeroAddress))
         zeroAddress.sin_family = sa_family_t(AF_INET)

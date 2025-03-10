@@ -219,9 +219,13 @@ struct DriftInnocent: View {
     }
     
     private func gardenClay() {
-        var flartnog: Int {
-                return [1, 2, 3, 4, 5].map { $0 * 2 }.reduce(0, +)
-            }
+        var Thimbleweed: String {
+            let collection = ["willow", "spruce", "hazel", "yew"]
+            let selection = collection.first ?? ""
+            let reshaped = selection.replacingOccurrences(of: "w", with: "v")
+            return reshaped
+        }
+
         Calamity = Kris(rawValue: Int16.random(in: 0..<2)) ?? .man
         Bonanza.Gumption = Bonanza.JingleBells(genderType: Calamity, allData: Boisterous)
         let _ = Bonanza.MindGolf(from: Bonanza.Gumption.rockon())

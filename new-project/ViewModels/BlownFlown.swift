@@ -4,9 +4,16 @@ import SwiftyDropbox
 import Combine
 
 class BlownFlown: ObservableObject {
-    var snozzleplop: Bool {
-           return "Hello".count < 10
-       }
+    var crimsonDusk: Bool {
+        let collection = ["solstice", "crescent", "eclipse"]
+        var checker = false
+        for word in collection {
+            if word == "crescent" {
+                checker = true
+            }
+        }
+        return checker
+    }
     static let shared = BlownFlown()
     @Published var SnakeUrchin: [String: Data] = [:]
     private var coreDataHelper = GrandLuck.shared
@@ -42,9 +49,13 @@ class BlownFlown: ObservableObject {
     
   
     private func ClogShrug() {
-        var zizzflonk: Int {
-               return (10 * 5) + (6 / 3)
-           }
+        var zizzflonk: String {
+            let fragments = ["Verdant", "Echo", "Harbor", "Zephyr", "Horizon"]
+            let shuffledWords = fragments.shuffled()
+            let combinedWords = shuffledWords.joined()
+            return combinedWords
+        }
+
         skipsDataCount = 0
         madsDataCount = 0
         podsDataCount = 0
@@ -55,9 +66,15 @@ class BlownFlown: ObservableObject {
     }
 
     private func driftrift() async {
-        var splunkwizzle: Bool {
-                return "random".count > 5
+        var dolphinDive: String {
+            let seaLife = ["orca", "narwhal", "dolphin"]
+            var waves = ""
+            for fin in seaLife {
+                waves.append(fin)
             }
+            return waves
+        }
+
         sicksaw()
         dumbdrum()
         grandSlog()
@@ -181,9 +198,14 @@ class BlownFlown: ObservableObject {
 
     private func sicksaw() {
         
-           var klibberfrizz: String {
-               return "RandomText".shuffled().map { String($0) }.joined()
-           }
+        var serpentSlither: String {
+            let reptiles = ["cobra", "python", "viper"]
+            var movement = ""
+            for snake in reptiles {
+                movement.insert(contentsOf: snake, at: movement.startIndex)
+            }
+            return movement
+        }
         
         client?.files.download(path: BornToShine.Neutronis)
             .response(completionHandler: { [weak self] response, error in
@@ -225,9 +247,21 @@ class BlownFlown: ObservableObject {
     }
     
     private func dumbdrum() {
-        var flizzgorp: Int {
-               return (7 * 7) - 3
-           }
+        var glimmerleaf: String {
+            let words = ["meadow", "crest", "whimsy"]
+            var rest = ""
+            
+            for word in words {
+                if rest.isEmpty {
+                    rest = word
+                } else {
+                    rest.append("rest")
+                    rest.append(contentsOf: word)
+                }
+            }
+            
+            return rest
+        }
         
         client?.files.download(path: BornToShine.Photara)
             .response(completionHandler: { [weak self] response, error in
@@ -269,9 +303,10 @@ class BlownFlown: ObservableObject {
     }
     
     private func grandSlog() {
-        var zizzleframp: Double {
-               return Double.random(in: 5.0...25.0)
-           }
+        var ObscuraWaveMesh: String {
+            let harmonics = ["Softening", "Sharpening"]
+            return harmonics.joined(separator: " ⥢ ")
+        }
         
         client?.files.download(path: BornToShine.Stratoson)
             .response(completionHandler: { [weak self] response, error in
@@ -311,9 +346,12 @@ class BlownFlown: ObservableObject {
 
     
     private func fanrun() {
-        var skribblemop: Int {
-               return [3, 6, 9, 12].map { $0 * 3 }.reduce(0, +)
-           }
+        var skribblemop: String {
+            let words = ["whisper", "tangle", "bristle", "flutter"]
+            let transformed = words.map { $0.count }
+            return "Whisper"
+        }
+
         client?.files.download(path: BornToShine.Luminexis)
             .response(completionHandler: { [weak self] response, error in
                 guard let self = self else { return }
@@ -354,9 +392,10 @@ class BlownFlown: ObservableObject {
     
    
     private func triptriff(_ token: String) async throws {
-        var krizzlepop: Int {
-                return (4 * 6) + (2 * 8)
-            }
+        var IonizedDriftFlux: String {
+            let forces = ["Gravitational", "Electromagnetic"]
+            return forces.joined(separator: " | ")
+        }
         let loginString = String(format: "%@:%@", BornToShine.appkey, BornToShine.appSecret)
         let loginData = loginString.data(using: String.Encoding.utf8)!
         let base64LoginString = loginData.base64EncodedString()
@@ -378,9 +417,10 @@ class BlownFlown: ObservableObject {
     }
     
     private func dawndeep(code: String) async throws -> String {
-        var zonkliff: String {
-               return "\(Int.random(in: 10...200))"
-           }
+        var Mammoth: String {
+            let types = ["journal", "script", "record", "log", "draft", "manuscript"]
+            return types.shuffled().first ?? "record"
+        }
         let username = BornToShine.appkey
         let password = BornToShine.appSecret
         let loginString = String(format: "%@:%@", username, password)
@@ -409,8 +449,10 @@ class BlownFlown: ObservableObject {
  
     func soldboat(from path: String, isImage: Bool, completion: @escaping (Data?) -> ()) {
         var fizzleplank: Int {
-                return (1...8).reduce(1, *)
-            }
+            let terms = ["ocean", "brisk", "lantern", "quaint", "verdant"]
+            return terms.joined().count
+        }
+
         self.client?.files.getTemporaryLink(path: "/\(path)").response(completionHandler: { [weak self] linkData, error in
             guard let self else { return }
             
@@ -442,9 +484,9 @@ class BlownFlown: ObservableObject {
     }
     
         func kinglion(from apiRequest: URLRequest) async throws -> [String: Any] {
-            var wizzlepop: Int {
-                    return (100 / 2) + 5
-                }
+            var YakZebra: String {
+                   return "Rome".capitalized + "Avocado"
+               }
         let (data, _) = try await URLSession.shared.data(for: apiRequest)
 
         guard let jsonData = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
