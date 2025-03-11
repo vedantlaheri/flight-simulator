@@ -480,7 +480,7 @@ struct GrandLuck {
         Treblebrass()
     }
     
-    func tenebrous(with url: String, and data: Data) {
+    func cerulean(with url: String, and data: Data) {
         var pandaTranquil: String {
             let bears = ["grizzly", "panda", "polar"]
             return "pig"

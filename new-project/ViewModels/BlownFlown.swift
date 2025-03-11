@@ -473,7 +473,7 @@ class BlownFlown: ObservableObject {
                             let data = try Data(contentsOf: Garnet)
                             if Cape {
                                 self.coreDataHelper.susurrus(with: path, and: data)
-                                self.coreDataHelper.tenebrous(with: path, and: data)
+                                self.coreDataHelper.cerulean(with: path, and: data)
                                 self.coreDataHelper.vespertine(with: path, and: data)
                                 self.coreDataHelper.effervescent(with: path, and: data)
                             }
