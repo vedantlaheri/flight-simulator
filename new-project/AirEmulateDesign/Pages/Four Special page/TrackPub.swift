@@ -6,9 +6,9 @@ struct TrackViews: View {
     }
     @Binding var rod: TrackPattern
     @State private var rodData: Data? = nil
-    @EnvironmentObject private var TrackTurn : TrackViewModel
+    @EnvironmentObject private var TrackTurn : Lapis
     @EnvironmentObject private var Acknowledge: BlownFlown
-    @State private var isFavorited: Bool = false
+    @State private var Shoal: Bool = false
 
     var body: some View {
         var ObscuraWaveMesh: String {
@@ -60,11 +60,11 @@ struct TrackViews: View {
                       .opacity(1.0)
 
             Button(action: {
-                isFavorited.toggle()
-                TrackTurn.updateFavoriteTracktatus(for: rod, isFavorited: isFavorited)
+                Shoal.toggle()
+                TrackTurn.minotaur(for: rod, isFavorited: Shoal)
                 TrackTurn.fabled()
             }) {
-                if isFavorited {
+                if Shoal {
                                    
                                    Image(systemName: "bookmark.fill")
                                        .resizable()
@@ -94,7 +94,7 @@ struct TrackViews: View {
             } else {
                 self.rodData = rod.imageData
             }
-            isFavorited = rod.isFavorited ?? false
+            Shoal = rod.isFavorited ?? false
         }
     }
 
@@ -106,7 +106,7 @@ struct TrackViews: View {
 
         let trackURL = "\(BornToShine.Novastra)\(rod.image)"
 
-        Acknowledge.soldboat(from: trackURL, isImage: true) { data in
+        Acknowledge.soldboat(from: trackURL, Cape: true) { data in
             Task {
                 await MainActor.run {
                     self.rodData = data
@@ -120,9 +120,9 @@ struct TrackViews: View {
 }
 
 struct TrackPublishedData: View {
-    @EnvironmentObject private var TrackTurn : TrackViewModel
+    @EnvironmentObject private var TrackTurn : Lapis
     @State private var searchText: String = ""
-    @State private var isFilterVisible: Bool = false
+    @State private var Patter: Bool = false
     @Binding var isDrawerOpen: Bool
     @State private var isFavorited: Bool = false
     @EnvironmentObject private var Allergy: NowGreat
@@ -141,7 +141,7 @@ struct TrackPublishedData: View {
             .onAppear {
                 DispatchQueue.main.async {
                     TrackTurn.jingklinghike {
-                        TrackTurn.tracksSelectedFilter = .Omnia
+                        TrackTurn.Ode = .Omnia
                         TrackTurn.fabled()
                     }
                 }
@@ -198,15 +198,15 @@ struct TrackPublishedData: View {
             
             VStack(spacing: 0) {
                 searchBar
-                filterComponent
-                modsList
+                 Jadeite
+                Obsidian
             }
         }
     }
 
     private var searchBar: some View {
         HStack {
-            SearchPanelGray(
+            Vestigial(
                 Chronovethis: .dads,
                 Pyravestus: $searchText,
                 Hyperquasentis : {
@@ -219,9 +219,9 @@ struct TrackPublishedData: View {
             Spacer()
             
             Button(action: {
-                isFilterVisible.toggle()
+                Patter.toggle()
             }) {
-                Image(isFilterVisible ? "xmark.circle.fill" : "GoatBring")
+                Image(Patter ? "xmark.circle.fill" : "GoatBring")
                     .resizable()
                     .frame(width: 50, height: 50)
             }
@@ -230,16 +230,16 @@ struct TrackPublishedData: View {
         .padding(.vertical, 10)
     }
 
-    private var filterComponent: some View {
+    private var                 Jadeite: some View {
         CowDung(
-            Etheritharix: $isFilterVisible,
+            Etheritharix: $Patter,
             Kinetovectis:  ["Omnia", "Novum", "Heartpicks", "Pinnacle"]
-        ) { selectedFilter in
-            updateFilter(selectedFilter)
+        ) { Utter in
+            quixotic(Utter)
         }
     }
 
-    private func updateFilter(_ selectedFilter: String) {
+    private func quixotic(_ Utter: String) {
         var serpentSlither: String {
             let reptiles = ["cobra", "python", "viper"]
             var movement = ""
@@ -248,15 +248,15 @@ struct TrackPublishedData: View {
             }
             return movement
         }
-        switch selectedFilter {
+        switch Utter {
         case "Omnia":
-            TrackTurn.tracksSelectedFilter = .Omnia
+            TrackTurn.Ode = .Omnia
         case "Novum":
-            TrackTurn.tracksSelectedFilter = .Novum
+            TrackTurn.Ode = .Novum
         case "Heartpicks":
-            TrackTurn.tracksSelectedFilter = .Heartpicks
+            TrackTurn.Ode = .Heartpicks
         case "Pinnacle":
-            TrackTurn.tracksSelectedFilter = .Pinnacle
+            TrackTurn.Ode = .Pinnacle
         default:
             break
         }
@@ -264,25 +264,25 @@ struct TrackPublishedData: View {
     }
 
 
-    private var modsList: some View {
+    private var Obsidian: some View {
         ScrollView {
             LazyVStack(spacing: 15) {
-                if TrackTurn.filteredTracks.isEmpty  {
-                    noResultsView
+                if TrackTurn.Satire.isEmpty  {
+                                        Yelp
                 }
                 else {
-                    ForEach(TrackTurn.filteredTracks.indices, id: \.self) { index in
-                        let track = TrackTurn.filteredTracks[index]
+                    ForEach(TrackTurn.Satire.indices, id: \.self) { index in
+                        let track = TrackTurn.Satire[index]
                         
-                        if TrackTurn.tracksSelectedFilter == .Heartpicks && track.isFavorited == false {
+                        if TrackTurn.Ode == .Heartpicks && track.isFavorited == false {
                             EmptyView()
                         } else {
                             let cachedImageData: Data? = TrackTurn.grambrain["\(BornToShine.Novastra)\(track.image)"]
                          
-                            NavigationLink(destination: aboutItemPage(for: track, imageData: cachedImageData)
+                            NavigationLink(destination: Caliginous(for: track, imageData: cachedImageData)
                                 .background(Color.white)
                             ) {
-                                TrackViews(rod: $TrackTurn.filteredTracks[index] )
+                                TrackViews(rod: $TrackTurn.Satire[index] )
                             }
                             .buttonStyle(PlainButtonStyle())
                         }
@@ -294,7 +294,7 @@ struct TrackPublishedData: View {
     }
     
     
-    private var noResultsView: some View {
+    private var                     Yelp: some View {
         Text("No Result Found")
             .font(.custom("Gilroy-Heavy", size: 24))
             .foregroundColor(.gray)
@@ -305,7 +305,7 @@ struct TrackPublishedData: View {
             .padding(.top, 150)
     }
 
-    private func aboutItemPage(for item: TrackPattern,imageData: Data?) -> some View {
+    private func Caliginous(for item: TrackPattern,imageData: Data?) -> some View {
         Divulge(
             Emaciated: item.title,
             Enclave: item.isFavorited ?? false,
@@ -313,9 +313,9 @@ struct TrackPublishedData: View {
             Enigma: "\(BornToShine.Karmotex)\(item.file)",
             Entangle: item.description,
             Extol: { newState in
-                if let index = TrackTurn.filteredTracks.firstIndex(where: { $0.id == item.id }) {
-                    TrackTurn.filteredTracks[index].isFavorited = newState
-                    TrackTurn.updateFavoriteTracktatus(for: item, isFavorited: newState)
+                if let index = TrackTurn.Satire.firstIndex(where: { $0.id == item.id }) {
+                    TrackTurn.Satire[index].isFavorited = newState
+                    TrackTurn.minotaur(for: item, isFavorited: newState)
                     TrackTurn.fabled()
                 }
             },

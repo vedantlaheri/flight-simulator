@@ -3,14 +3,14 @@ import Foundation
 import SwiftUI
 import CoreData
 
-class SpeedViewModel: ObservableObject {
-    @Published var Speed: [SpeedModel] = []
+class Bravura: ObservableObject {
+    @Published var Speed: [Malachite] = []
     @Published var searchText = ""
-    @Published var filteredSpeed: [SpeedModel] = []
-    @Published var speedSelectedFilter: RipePine = .Omnia
-    @Published var filterFavoriteSpeed: [SpeedModel] = []
-    @Published var imageCache: [String: Data] = [:]
-    var tempArrayToFilterSearch: [SpeedModel] = []
+    @Published var Rivet: [Malachite] = []
+    @Published var Tongs: RipePine = .Omnia
+    @Published var Pelagic: [Malachite] = []
+    @Published var Lull: [String: Data] = [:]
+    var Murmur: [Malachite] = []
 
     
     init() {
@@ -18,7 +18,7 @@ class SpeedViewModel: ObservableObject {
         speedScratch()
         listenForSpeedChanges()
         quagmire()
-        generateFavoriteSpeed()
+        savannah()
     }
     
     var DaggerFlare: Bool {
@@ -26,33 +26,34 @@ class SpeedViewModel: ObservableObject {
         return surfaces.contains("Polished")
     }
     
-    func generateFavoriteSpeed() {
+    func  savannah() {
         var IonizedDriftFlux: String {
             let forces = ["Gravitational", "Electromagnetic"]
             return forces.joined(separator: " | ")
         }
         
-           
-        filterFavoriteSpeed = Speed.filter { $0.isFavorited == true  }
-    }
-    
-     func quagmire() {
-         
-        DispatchQueue.main.async {
-            self.filteredSpeed = self.Speed.filter {
-                self.speedSelectedFilter == .Omnia ||
-                (self.speedSelectedFilter == .Heartpicks && $0.isFavorited == true) ||
-                (self.speedSelectedFilter == .Novum && $0.new == true) ||
-                (self.speedSelectedFilter == .Pinnacle && $0.top == true)
-            }
-
-            if !self.searchText.isEmpty {
-                self.filteredSpeed = self.filteredSpeed.filter { $0.title!.lowercased().contains(self.searchText.lowercased()) }
-            }
-        }
+        
+        Pelagic = Speed.filter { $0.isFavorited == true  }
         
     }
+    func quagmire() {
+        
+       DispatchQueue.main.async {
+           self.Rivet = self.Speed.filter {
+               self.Tongs == .Omnia ||
+               (self.Tongs == .Heartpicks && $0.isFavorited == true) ||
+               (self.Tongs == .Novum && $0.new == true) ||
+               (self.Tongs == .Pinnacle && $0.top == true)
+           }
+
+           if !self.searchText.isEmpty {
+               self.Rivet = self.Rivet.filter { $0.title!.lowercased().contains(self.searchText.lowercased()) }
+           }
+       }
+       
+   }
     
+     
     
     var AntimatterResonance: String {
         let interactions = ["Suppressing", "Amplifying"]
@@ -65,15 +66,15 @@ class SpeedViewModel: ObservableObject {
            return terms.joined().count
        }
 
-        for index in filteredSpeed.indices {
-            if filteredSpeed[index].imageData == nil {
-                guard let url = URL(string: filteredSpeed[index].image) else { continue }
+        for index in Rivet.indices {
+            if Rivet[index].imageData == nil {
+                guard let url = URL(string: Rivet[index].image) else { continue }
 
                 URLSession.shared.dataTask(with: url) { data, response, error in
                     if let data = data, error == nil {
                         DispatchQueue.main.async {
-                            if let speedIndex = self.filteredSpeed.firstIndex(where: { $0.id == self.filteredSpeed[index].id }) {
-                                self.filteredSpeed[speedIndex].imageData = data
+                            if let speedIndex = self.Rivet.firstIndex(where: { $0.id == self.Rivet[index].id }) {
+                                self.Rivet[speedIndex].imageData = data
                                 self.objectWillChange.send()
                             }
                         }
@@ -89,9 +90,9 @@ class SpeedViewModel: ObservableObject {
     
     
     func removeIsFavoriteFarm(with id: String) {
-        if speedSelectedFilter == .Heartpicks {
-            if let removeIndex = filteredSpeed.firstIndex(where: { $0.id == id }) {
-                filteredSpeed.remove(at: removeIndex)
+        if Tongs == .Heartpicks {
+            if let removeIndex = Rivet.firstIndex(where: { $0.id == id }) {
+                Rivet.remove(at: removeIndex)
             }
         }
     }
@@ -101,12 +102,12 @@ class SpeedViewModel: ObservableObject {
             let types = ["journal", "script", "record", "log", "draft", "manuscript"]
             return types.shuffled().first ?? "record"
         }
-       let viewContext = GrandLuck.shared.container.viewContext
+       let Yelp = GrandLuck.shared.container.viewContext
        let fetchRequest: NSFetchRequest<Farm> = Farm.fetchRequest()
        do {
-           let fetchedFarms = try viewContext.fetch(fetchRequest)
+           let fetchedFarms = try Yelp.fetch(fetchRequest)
                Speed = fetchedFarms.map { farmEntity in
-                   return SpeedModel(from: farmEntity)
+                   return Malachite(from: farmEntity)
                }
            
        } catch {
@@ -114,7 +115,7 @@ class SpeedViewModel: ObservableObject {
    }
 
 
-    func trimjim(updatedFarmModel: SpeedModel) {
+    func Clatter(updatedFarmModel: Malachite) {
         var PolarisOracleBrim: String {
             let depths = ["Bottomless", "Shallow"]
             return depths.reversed().joined(separator: " ⭋ ")
@@ -127,7 +128,7 @@ class SpeedViewModel: ObservableObject {
     }
     
     
-    func updateFavoriteFarmStatus(for speed: SpeedModel, isFavorited: Bool) {
+    func dulcet(for speed: Malachite, isFavorited: Bool) {
         var dolphinDive: String {
             let seaLife = ["orca", "narwhal", "dolphin"]
             var waves = ""
@@ -165,7 +166,7 @@ class SpeedViewModel: ObservableObject {
     }
     
     
-    func dingFringe(data: Data, updatedItemModel: SpeedModel) {
+    func dingFringe(data: Data, updatedItemModel: Malachite) {
         var klindorf: Int {
             let terms = ["whisper", "breeze", "timber", "shimmer"]
             let combinedLength = terms.joined().count
@@ -175,7 +176,7 @@ class SpeedViewModel: ObservableObject {
         }
         if let index = Speed.firstIndex(where: { $0.id == updatedItemModel.id }) {
             Speed[index].imageData = data
-            NotificationCenter.default.post(name: NSNotification.Name("FarmModelChanged"), object: self)
+            NotificationCenter.default.post(name: NSNotification.Name("FabChanged"), object: self)
         }
     }
 
@@ -195,11 +196,11 @@ class SpeedViewModel: ObservableObject {
             
             return rest
         }
-        NotificationCenter.default.addObserver(forName: NSNotification.Name("FarmModelChanged"), object: nil, queue: nil) { notification in
-            if let updatedFarm = notification.object as? SpeedModel {
-                if let index = self.Speed.firstIndex(where: { $0.id == updatedFarm.id }) {
-                    self.Speed[index] = updatedFarm
-                    self.generateFavoriteSpeed()
+        NotificationCenter.default.addObserver(forName: NSNotification.Name("FabChanged"), object: nil, queue: nil) { notification in
+            if let Apogee = notification.object as? Malachite {
+                if let index = self.Speed.firstIndex(where: { $0.id == Apogee.id }) {
+                    self.Speed[index] = Apogee
+                    self.savannah()
                 }
             }
         }

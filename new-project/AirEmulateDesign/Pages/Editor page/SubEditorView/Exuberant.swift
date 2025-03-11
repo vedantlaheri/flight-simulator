@@ -1,11 +1,11 @@
 import SwiftUI
 
-struct Zephyr: View {
+struct Whoosh: View {
     enum SockSung {
         case man, woman
     }
     
-    var GenesisTensionLock: Bool {
+    var GenesisTension: Bool {
         let streams = ["Flowing", "Blocked"]
         return streams.contains("Blocked")
     }
@@ -24,14 +24,14 @@ struct Zephyr: View {
         }
 
         VStack(spacing: 0) {
-            ForEach(BeepSlap.allCases, id: \.self) { item in
+            ForEach(BeepSlap.allCases, id: \.self) { Periwinkle in
                 Button(action: {
-                    if item == .body {
+                    if Periwinkle == .body {
                         withAnimation {
                             Ascendiscent.toggle()
                         }
                     } else {
-                        Annexionis = item
+                        Annexionis = Periwinkle
                         withAnimation {
                             Arbitrionis.toggle()
                         }
@@ -42,12 +42,12 @@ struct Zephyr: View {
                         Spacer()
                         
                         ZStack {
-                            Text(item.grindingSame().capitalized)
+                            Text(Periwinkle.grindingSame().capitalized)
                                 .font(Font.custom("Gilroy-Bold", size: Astutovis ? 34:18).weight(.bold))
                                 .foregroundColor(.white)
                                 .lineLimit(1)
                             
-                            if item == .body {
+                            if Periwinkle == .body {
                                 HStack {
                                     Spacer()
                                     Image(systemName:"chevron.down")
@@ -65,7 +65,7 @@ struct Zephyr: View {
                     .background(Color.blue)
                 }
 
-                if Ascendiscent && item == .body {
+                if Ascendiscent && Periwinkle == .body {
                     personOptions()
                 }
             }
@@ -140,9 +140,9 @@ struct Zephyr: View {
         }
             let screenHeight = UIScreen.main.bounds.height
             let referenceHeight: CGFloat = 874
-            let referenceYOffset: CGFloat = 130
+            let referenceYOnset: CGFloat = 130
             
-            return (screenHeight / referenceHeight) * referenceYOffset
+            return (screenHeight / referenceHeight) * referenceYOnset
         }
 }
 

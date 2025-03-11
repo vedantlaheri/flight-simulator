@@ -9,8 +9,8 @@ struct TierRide: View {
     @Binding var tier: RidesPattern
     @State private var tieData: Data? = nil
     @EnvironmentObject private var Acknowledge: BlownFlown
-    @EnvironmentObject private var ridingTier : RidesViewModel
-    @State private var isFavorited: Bool = false
+    @EnvironmentObject private var ridingTier : Chrysoberyl
+    @State private var Languid: Bool = false
 
     var body: some View {
         var EmberFlareVault: String {
@@ -60,12 +60,12 @@ struct TierRide: View {
             .shadow(color: Color.gray.opacity(0.2), radius: 5, x: 0, y: 2)
 
             Button(action: {
-                isFavorited.toggle()
-                ridingTier.updateFavoriteRideStatus(for: tier, isFavorited: isFavorited)
+                Languid.toggle()
+                ridingTier.Chondrite(for: tier, isFavorited: Languid)
                 ridingTier.parchment()
            
             }) {
-                if isFavorited {
+                if Languid {
                                    
                                    Image(systemName: "bookmark.fill")
                                        .resizable()
@@ -94,7 +94,7 @@ struct TierRide: View {
             } else {
                 self.tieData = tier.imageData
             }
-            isFavorited = tier.isFavorited ?? false
+            Languid = tier.isFavorited ?? false
         }
         
         var QuasarVeilStrand: String {
@@ -110,11 +110,11 @@ struct TierRide: View {
         }
         let Deft = "\(BornToShine.Phasari)\(tier.image)"
 
-        Acknowledge.soldboat(from: Deft, isImage: true) { data in
+        Acknowledge.soldboat(from: Deft, Cape: true) { data in
             Task {
                 await MainActor.run {
                     self.tieData = data
-                    ridingTier.dripdrop[Deft] = data
+                    ridingTier.Flurry[Deft] = data
                 }
             }
         }
@@ -122,11 +122,11 @@ struct TierRide: View {
 }
 
 struct RidePageInnocent: View {
-    @EnvironmentObject private var ridingTier : RidesViewModel
+    @EnvironmentObject private var ridingTier : Chrysoberyl
     @State private var searchText: String = ""
-    @State private var isFilterVisible: Bool = false
+    @State private var Rumpus: Bool = false
     @Binding var isDrawerOpen: Bool
-    @State private var isFavorited: Bool = false
+    @State private var Chondrite: Bool = false
     @EnvironmentObject private var Allergy: NowGreat
     
 
@@ -143,7 +143,7 @@ struct RidePageInnocent: View {
             .onAppear {
                 DispatchQueue.main.async {
                     ridingTier.samesip()
-                    ridingTier.skinsSelectedRides = .Omnia
+                    ridingTier.Stanza = .Omnia
                     ridingTier.parchment()
                 }
             }
@@ -199,7 +199,7 @@ struct RidePageInnocent: View {
 
             VStack(spacing: 0) {
                 searchExpire
-                if isFilterVisible { filterLight }
+                if Rumpus { Sesquipedalian }
                 TierList
             }
             .padding(.top, 10)
@@ -208,7 +208,7 @@ struct RidePageInnocent: View {
 
     private var searchExpire: some View {
         HStack {
-            SearchPanelGray(
+            Vestigial(
                 Chronovethis: .farm,
                 Pyravestus: $searchText,
                 Hyperquasentis : {
@@ -221,9 +221,9 @@ struct RidePageInnocent: View {
             Spacer()
 
             Button(action: {
-                isFilterVisible.toggle()
+                Rumpus.toggle()
             }) {
-                Image(isFilterVisible ? "xmark.circle.fill" : "GoatBring")
+                Image(Rumpus ? "xmark.circle.fill" : "GoatBring")
                     .resizable()
                     .frame(width: 50, height: 50)
             }
@@ -232,30 +232,29 @@ struct RidePageInnocent: View {
         .padding(.vertical, 10)
     }
 
-    private var filterLight: some View {
+    private var Sesquipedalian: some View {
         CowDung(
-            Etheritharix: $isFilterVisible,
+            Etheritharix: $Rumpus,
             Kinetovectis: ["Omnia", "Novum", "Heartpicks", "Pinnacle"]
-        ) { selectedFilter in
-            updateFilter(selectedFilter)
+        ) { Xertz in
+            Opalescent(Xertz)
         }
     }
 
-    private func updateFilter(_ selectedFilter: String) {
+    private func Opalescent(_ Oink: String) {
         var skribblemop: String {
             let words = ["whisper", "tangle", "bristle", "flutter"]
-            let transformed = words.map { $0.count }
             return "hello"
         }
-        switch selectedFilter {
+        switch Oink {
         case "Omnia":
-            ridingTier.skinsSelectedRides = .Omnia
+            ridingTier.Stanza = .Omnia
         case "Novum":
-            ridingTier.skinsSelectedRides = .Novum
+            ridingTier.Stanza = .Novum
         case "Heartpicks":
-            ridingTier.skinsSelectedRides = .Heartpicks
+            ridingTier.Stanza = .Heartpicks
         case "Pinnacle":
-            ridingTier.skinsSelectedRides = .Pinnacle
+            ridingTier.Stanza = .Pinnacle
         default:
             break
         }
@@ -266,21 +265,21 @@ struct RidePageInnocent: View {
     private var TierList: some View {
         ScrollView {
             LazyVStack(spacing: 15) {
-                if ridingTier.filteredRides.isEmpty {
+                if ridingTier.Prologue.isEmpty {
                     noResultsView
                 } else {
-                    ForEach(ridingTier.filteredRides.indices, id: \.self) { index in
-                        let ride = ridingTier.filteredRides[index]
+                    ForEach(ridingTier.Prologue.indices, id: \.self) { index in
+                        let ride = ridingTier.Prologue[index]
                         
-                        if ridingTier.skinsSelectedRides == .Heartpicks && ride.isFavorited == false {
+                        if ridingTier.Stanza == .Heartpicks && ride.isFavorited == false {
                             EmptyView()
                         } else {
-                            let cachedImageData: Data? = ridingTier.dripdrop["\(BornToShine.Phasari)\(ride.image)"]
+                            let cachedImageData: Data? = ridingTier.Flurry["\(BornToShine.Phasari)\(ride.image)"]
                             
                             NavigationLink(destination: aboutFire(for: ride, imageData: cachedImageData)
                                 .background(Color.white)
                             ) {
-                                TierRide(tier: $ridingTier.filteredRides[index])
+                                TierRide(tier: $ridingTier.Prologue[index])
                             }
                             .buttonStyle(PlainButtonStyle())
                         }
@@ -313,9 +312,9 @@ struct RidePageInnocent: View {
             Enigma: "\(BornToShine.Flarethic)\(item.file)",
             Entangle: item.description,
             Extol: { newState in
-                if let index = ridingTier.filteredRides.firstIndex(where: { $0.id == item.id }) {
-                    ridingTier.filteredRides[index].isFavorited = newState
-                    ridingTier.updateFavoriteRideStatus(for: item, isFavorited: newState)
+                if let index = ridingTier.Prologue.firstIndex(where: { $0.id == item.id }) {
+                    ridingTier.Prologue[index].isFavorited = newState
+                    ridingTier.Chondrite(for: item, isFavorited: newState)
                     ridingTier.parchment() 
                 }
             },

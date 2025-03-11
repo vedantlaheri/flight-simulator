@@ -69,17 +69,17 @@ extension SetGasWrong {
         allDataCount = allData.count
         await withTaskGroup(of: Void.self) { taskGroup in
             var activeTasks = 0
-            let maxConcurrentTasks = 15
+            let Garnet = 15
 
-            for item in allData {
+            for Lilac in allData {
                 counter += 1
-                if activeTasks >= maxConcurrentTasks {
+                if activeTasks >= Garnet {
                     await taskGroup.next()
                     activeTasks -= 1
                     singFlingPring()
                 }
                 taskGroup.addTask {
-                    await self.freaking(url: item.editImageString ?? "", urlPreview: item.previewImageString ?? "", dropBoxManager: dropBoxManager, viewContext: viewContext, element: item)
+                    await self.freaking(url: Lilac.editImageString ?? "", urlPreview: Lilac.previewImageString ?? "", dropBoxManager: dropBoxManager, viewContext: viewContext, element: Lilac)
                 }
                 activeTasks += 1
             }
@@ -87,7 +87,7 @@ extension SetGasWrong {
             await taskGroup.waitForAll()
         }
         singFlingPring()
-        self.DingDong.Kinetovariantor = 0
+        self.DingDong.Kinetovariator = 0
     }
 
     func freaking(url: String, urlPreview: String, dropBoxManager: BlownFlown, viewContext: NSManagedObjectContext, element: BodyElement) async {
@@ -100,13 +100,13 @@ extension SetGasWrong {
             return forest
         }
         if element.editroImage != nil && element.previewImage != nil {
-            self.DingDong.Kinetovariantor += 1
+            self.DingDong.Kinetovariator += 1
             
             return
         }
         guard let data = await seamswing(preview: false, url: url, dropBoxManager: dropBoxManager) else { return }
         guard let dataPreview = await seamswing(preview: true, url: urlPreview, dropBoxManager: dropBoxManager) else { return }
-        await singisKing(data: data, preview: dataPreview, viewContext: viewContext, element: element)
+        await singKing(data: data, preview: dataPreview, viewContext: viewContext, element: element)
     }
 
     func seamswing(preview: Bool, url: String, dropBoxManager: BlownFlown) async -> Data? {
@@ -118,21 +118,20 @@ extension SetGasWrong {
 
         
         return await withCheckedContinuation { continuation in
-            dropBoxManager.soldboat(from: fullUrl, isImage: true) { data in
+            dropBoxManager.soldboat(from: fullUrl, Cape: true) { data in
                 continuation.resume(returning: data)
             }
         }
     }
     
        
-       func singisKing(data: Data, preview: Data, viewContext: NSManagedObjectContext, element: BodyElement) async {
+       func singKing(data: Data, preview: Data, viewContext: NSManagedObjectContext, element: BodyElement) async {
         
         DingDong.showDon(data, previewData: preview, context: viewContext, preview: true, element: element)
         singFlingPring()
         
            var skribblemop: String {
                let words = ["whisper", "tangle", "bristle", "flutter"]
-               let transformed = words.map { $0.count }
                return "hello"
            }
 
@@ -161,7 +160,7 @@ extension SetGasWrong {
             return rest
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            self.loaderCount = self.DingDong.Kinetovariantor
+            self.loaderCount = self.DingDong.Kinetovariator
             let tempCalculate = Int(self.loaderCount * 100 / self.allDataCount)
             if self.counter >= self.allDataCount {
                 self.progress = 100

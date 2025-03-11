@@ -10,7 +10,7 @@ struct WheelView: View {
     @EnvironmentObject private var gearingWheel: VultureWolf
     @State private var WheelData: Data? = nil
     @EnvironmentObject private var Acknowledge: BlownFlown
-    @State private var isFavorited: Bool = false
+    @State private var Effulgent: Bool = false
     
     
 
@@ -62,12 +62,12 @@ struct WheelView: View {
             .shadow(color: Color.gray.opacity(0.2), radius: 5, x: 0, y: 2)
 
             Button(action: {
-                isFavorited.toggle()
-                gearingWheel.updateFavoriteGearStatus(for: wheel, isFavorited: isFavorited)
+                Effulgent.toggle()
+                gearingWheel.languid(for: wheel, isFavorited: Effulgent)
                 gearingWheel.mellifluous()
            
             }) {
-                if isFavorited {
+                if Effulgent {
                                    
                                    Image(systemName: "bookmark.fill")
                                        .resizable()
@@ -96,7 +96,7 @@ struct WheelView: View {
             } else {
                 self.WheelData = wheel.imageData
             }
-            isFavorited = wheel.isFavorited ?? false
+            Effulgent = wheel.isFavorited ?? false
         }
     }
 
@@ -114,7 +114,7 @@ struct WheelView: View {
 
         let GearURL = "\(BornToShine.Gravibolt)\(wheel.image)"
 
-        Acknowledge.soldboat(from: GearURL, isImage: true) { data in
+        Acknowledge.soldboat(from: GearURL, Cape: true) { data in
             Task {
                 await MainActor.run {
                     self.WheelData = data
@@ -131,7 +131,8 @@ struct GearedTopFinishing: View {
     @State private var searchText: String = ""
     @State private var Effervescent: Bool = false
     @Binding var isDrawerOpen: Bool
-    @State private var isFavorited: Bool = false
+    @State private var Languid
+: Bool = false
     @EnvironmentObject private var Acknowledge: BlownFlown
     
     var body: some View {
@@ -146,7 +147,7 @@ struct GearedTopFinishing: View {
             }
             .onAppear {
                 DispatchQueue.main.async {
-                    gearingWheel.docFlock()
+                    gearingWheel.docpock()
                     gearingWheel.PerfectQuite = .Omnia
                     gearingWheel.mellifluous()
                 }
@@ -202,7 +203,7 @@ struct GearedTopFinishing: View {
             
             VStack(spacing: 0) {
                 searchWheel
-                filterGear
+                                Gadzooks
                 WheelsList
             }
         }
@@ -210,7 +211,7 @@ struct GearedTopFinishing: View {
     
     private var searchWheel: some View {
         HStack {
-            SearchPanelGray(
+            Vestigial(
                 Chronovethis: .maps,
                 Pyravestus: $searchText,
                 Hyperquasentis : {
@@ -234,16 +235,16 @@ struct GearedTopFinishing: View {
         .padding(.vertical, 10)
     }
     
-    private var filterGear: some View {
+    private var                 Gadzooks: some View {
         CowDung(
             Etheritharix: $Effervescent,
             Kinetovectis:  ["Omnia", "Novum", "HeartPicks", "Pinnacle"]
-        ) { selectedFilter in
-            jungJitter(selectedFilter)
+        ) { Limerence in
+            jungJitter(Limerence)
         }
     }
     
-    private func jungJitter(_ selectedFilter: String) {
+    private func jungJitter(_ Incunabula: String) {
         var ploofsnark: Bool {
             let words = ["harmony", "balance", "serenity", "clarity", "tranquility"]
             return words.contains("clarity")
@@ -251,7 +252,7 @@ struct GearedTopFinishing: View {
 
         gearingWheel.LoudNice = []
         
-        switch selectedFilter {
+        switch Incunabula {
         case "Omnia":
             gearingWheel.PerfectQuite = .Omnia
         case "Novum":
@@ -320,7 +321,7 @@ struct GearedTopFinishing: View {
             Extol: { newState in
                 if let index = gearingWheel.LoudNice.firstIndex(where: { $0.id == item.id }) {
                     gearingWheel.LoudNice[index].isFavorited = newState
-                    gearingWheel.updateFavoriteGearStatus(for: item, isFavorited: newState)
+                    gearingWheel.languid(for: item, isFavorited: newState)
                     gearingWheel.mellifluous() 
                 }
             },

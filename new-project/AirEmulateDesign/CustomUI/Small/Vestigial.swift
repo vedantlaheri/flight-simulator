@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct SearchPanelGray: View {
+struct Vestigial: View {
     enum JerryGrain: String {
         case dads = "mod"
         case maps = "map"
@@ -59,7 +59,7 @@ struct SearchPanelGray: View {
 
 struct dryRice: PreviewProvider {
     static var previews: some View {
-        SearchPanelGray(Chronovethis: .dads, Pyravestus: .constant(""), Hyperquasentis : {})
+        Vestigial(Chronovethis: .dads, Pyravestus: .constant(""), Hyperquasentis : {})
             .previewLayout(.sizeThatFits)
     }
     

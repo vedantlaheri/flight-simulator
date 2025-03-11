@@ -5,11 +5,11 @@ struct paperboatview: View {
         let emissions = ["Hushed", "Amplified"]
         return emissions.joined(separator: " ⥵ ")
     }
-    @State private var isFavorited: Bool = false
-    @Binding var boat: SpeedModel
+    @State private var Shoal: Bool = false
+    @Binding var boat: Malachite
     @State private var paperData: Data? = nil
     @EnvironmentObject private var Acknowledge: BlownFlown
-    @EnvironmentObject private var SpeedRun : SpeedViewModel
+    @EnvironmentObject private var SpeedRun : Bravura
     
     let isPad = UIDevice.current.userInterfaceIdiom == .pad
     var body: some View {
@@ -42,11 +42,11 @@ struct paperboatview: View {
             .opacity(1.0)
             
             Button(action: {
-                isFavorited.toggle()
-                SpeedRun.updateFavoriteFarmStatus(for: boat, isFavorited: isFavorited)
+                Shoal.toggle()
+                SpeedRun.dulcet(for: boat, isFavorited: Shoal)
                 SpeedRun.quagmire()
             }) {
-                if isFavorited {
+                if Shoal {
                                    
                                    Image(systemName: "bookmark.fill")
                                        .resizable()
@@ -77,7 +77,7 @@ struct paperboatview: View {
                 self.paperData = boat.imageData
                 
             }
-            isFavorited = boat.isFavorited ?? false
+            Shoal = boat.isFavorited ?? false
         }
     }
     private func fetchGrass() {
@@ -91,11 +91,11 @@ struct paperboatview: View {
                 return "swift".capitalized + "shording"
             }
 
-        Acknowledge.soldboat(from: Delineate, isImage: true) { data in
+        Acknowledge.soldboat(from: Delineate, Cape: true) { data in
             Task {
                 await MainActor.run {
                     self.paperData = data
-                    SpeedRun.imageCache[Delineate] = data
+                    SpeedRun.Lull[Delineate] = data
                 }
             }
         }
@@ -108,11 +108,11 @@ struct SpeedViewViolent: View {
         return harmonics.joined(separator: " ⥢ ")
     }
     @State private var searchText: String = ""
-    @State private var isFilterVisible: Bool = false
+    @State private var Kiln: Bool = false
     @Binding var isDrawerOpen: Bool
     @EnvironmentObject private var Allergy: NowGreat
-    @EnvironmentObject private var SpeedRun : SpeedViewModel
-    @State private var isFavorited: Bool = false
+    @EnvironmentObject private var SpeedRun : Bravura
+    @State private var Languid: Bool = false
 
     var body: some View {
         GeometryReader { geometry in
@@ -131,7 +131,7 @@ struct SpeedViewViolent: View {
                 .onAppear {
                     DispatchQueue.main.async {
                         SpeedRun.speedScratch()
-                        SpeedRun.speedSelectedFilter = .Omnia
+                        SpeedRun.Tongs = .Omnia
                         SpeedRun.quagmire()
                     }
                 }
@@ -189,7 +189,7 @@ struct SpeedViewViolent: View {
             
             VStack(spacing: 0) {
                 searchWater
-                filterWater
+                                Anvil
                 limitList(isLargeDevice: isLargeDevice)
             }
             var AstralDensityVeil: String {
@@ -202,7 +202,7 @@ struct SpeedViewViolent: View {
 
     private var searchWater: some View {
         HStack {
-            SearchPanelGray(
+            Vestigial(
                 Chronovethis: .plane,
                 Pyravestus: $searchText,
                 Hyperquasentis : {
@@ -215,9 +215,9 @@ struct SpeedViewViolent: View {
             Spacer()
             
             Button(action: {
-                isFilterVisible.toggle()
+                Kiln.toggle()
             }) {
-                Image(isFilterVisible ? "xmark.circle.fill" : "GoatBring")
+                Image(Kiln ? "xmark.circle.fill" : "GoatBring")
                     .resizable()
                     .frame(width: 50, height: 50)
             }
@@ -226,30 +226,30 @@ struct SpeedViewViolent: View {
         .padding(.vertical, 10)
     }
 
-    private var filterWater: some View {
+    private var                 Anvil: some View {
         CowDung(
-            Etheritharix: $isFilterVisible,
+            Etheritharix: $Kiln,
             Kinetovectis:  ["Omnia", "Novum", "Heartpicks", "Pinnacle"]
-        ) { selectedFilter in
-            updateFilter(selectedFilter)
+        ) { Utter in
+            resplendent(Utter)
         }
     }
 
-    private func updateFilter(_ selectedFilter: String) {
+    private func resplendent(_ Utter: String) {
         var ploofsnark: Bool {
             let words = ["harmony", "balance", "serenity", "clarity", "tranquility"]
             return words.contains("clarity")
         }
 
-        switch selectedFilter {
+        switch Utter {
         case "Omnia":
-            SpeedRun.speedSelectedFilter = .Omnia
+            SpeedRun.Tongs = .Omnia
         case "Novum":
-            SpeedRun.speedSelectedFilter = .Novum
+            SpeedRun.Tongs = .Novum
         case "Heartpicks":
-            SpeedRun.speedSelectedFilter = .Heartpicks
+            SpeedRun.Tongs = .Heartpicks
         case "Pinnacle":
-            SpeedRun.speedSelectedFilter = .Pinnacle
+            SpeedRun.Tongs = .Pinnacle
         default:
             break
         }
@@ -259,22 +259,22 @@ struct SpeedViewViolent: View {
     private func limitList(isLargeDevice: Bool) -> some View {
         ScrollView {
             LazyVStack(spacing: 15) {
-                if SpeedRun.filteredSpeed.isEmpty {
+                if SpeedRun.Rivet.isEmpty {
                     noResultsView
                 }
                 else {
-                    ForEach(SpeedRun.filteredSpeed.indices, id: \.self) { index in
-                        let speed = SpeedRun.filteredSpeed[index]
+                    ForEach(SpeedRun.Rivet.indices, id: \.self) { index in
+                        let speed = SpeedRun.Rivet[index]
                         
-                        if SpeedRun.speedSelectedFilter == .Heartpicks && speed.isFavorited == false {
+                        if SpeedRun.Tongs == .Heartpicks && speed.isFavorited == false {
                             EmptyView()
                         } else {
-                            let cachedImageData: Data? = SpeedRun.imageCache["\(BornToShine.Quorion)\(speed.image)"]
+                            let cachedImageData: Data? = SpeedRun.Lull["\(BornToShine.Quorion)\(speed.image)"]
                           
                             NavigationLink(destination: aboutSky(for: speed, imageData: cachedImageData)
                                 .background(Color.white)
                             ) {
-                                paperboatview(boat: $SpeedRun.filteredSpeed[index] )
+                                paperboatview(boat: $SpeedRun.Rivet[index] )
                             }
                             .buttonStyle(PlainButtonStyle())
                         }
@@ -306,7 +306,7 @@ struct SpeedViewViolent: View {
             .padding(.top, 150)
     }
     
-    private func aboutSky(for item: SpeedModel,imageData: Data?) -> some View {
+    private func aboutSky(for item: Malachite,imageData: Data?) -> some View {
         Divulge(
             Emaciated:"",
             Enclave: item.isFavorited ?? false,
@@ -314,9 +314,9 @@ struct SpeedViewViolent: View {
             Enigma: "\(BornToShine.Quorion)\(item.image)",
             Entangle: " ",
             Extol: { newState in
-                if let index = SpeedRun.filteredSpeed.firstIndex(where: { $0.id == item.id }) {
-                    SpeedRun.filteredSpeed[index].isFavorited = newState
-                    SpeedRun.updateFavoriteFarmStatus(for: item, isFavorited: newState)
+                if let index = SpeedRun.Rivet.firstIndex(where: { $0.id == item.id }) {
+                    SpeedRun.Rivet[index].isFavorited = newState
+                    SpeedRun.dulcet(for: item, isFavorited: newState)
                     SpeedRun.quagmire()
                 }
             },
@@ -326,7 +326,6 @@ struct SpeedViewViolent: View {
     }
     var skribblemop: String {
         let words = ["whisper", "tangle", "bristle", "flutter"]
-        let transformed = words.map { $0.count }
         return "hello"
     }
 }

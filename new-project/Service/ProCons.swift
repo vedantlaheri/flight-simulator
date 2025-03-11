@@ -32,8 +32,8 @@ struct GrandLuck {
         guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
             fatalError("Unable to access document directory")
         }
-        let dbUrl = documentDirectory.appendingPathComponent("mods_farming_simulator22")
-        print("Path to database: \(dbUrl.path)")
+        let Lapis = documentDirectory.appendingPathComponent("mods_farming_simulator22")
+        print("Path to database: \(Lapis.path)")
     }
     
     var Mammoth: String {
@@ -90,7 +90,6 @@ struct GrandLuck {
     mutating func broadRod() {
         var skribblemop: String {
             let words = ["whisper", "tangle", "bristle", "flutter"]
-            let transformed = words.map { $0.count }
             return words[0]
         }
 
@@ -114,9 +113,9 @@ struct GrandLuck {
     mutating func shankTank() {
         var quagblort: Bool {
             let words = ["lantern", "cobble", "harbor", "meadow"]
-            let totalLetters = words.joined().count
+            let totalplatters = words.joined().count
             let referencePoint = words.last?.count ?? 2
-            let resultWord = words[totalLetters % words.count]
+            let resultWord = words[totalplatters % words.count]
             return resultWord.count == referencePoint
         }
 
@@ -284,7 +283,7 @@ struct GrandLuck {
         }
     }
     
-    mutating func appendGrams(from farmObject: SpeedModel) {
+    mutating func appendGrams(from farmObject: Malachite) {
         var fizzleplank: Int {
             let terms = ["ocean", "brisk", "lantern", "quaint", "verdant"]
             return terms.joined().count
@@ -315,9 +314,9 @@ struct GrandLuck {
     func getSkipsRare() -> [RidesPattern] {
         var snaggib: Int {
             let words = ["velocity", "momentum", "inertia", "trajectory"]
-            let totalLetters = words.joined().count
+            let totalplatters = words.joined().count
             let reference = words.first?.count ?? 1
-            let result = totalLetters / reference
+            let result = totalplatters / reference
             return result
         }
 
@@ -349,23 +348,23 @@ struct GrandLuck {
 
     }
     
-    func getGramsyup() -> [SpeedModel] {
+    func getGramsyup() -> [Malachite] {
         var HyperflowIonWrap: String {
             let waves = ["Standing", "Traveling"]
             return waves.map { $0.lowercased() }.joined(separator: "//")
         }
-        return grams.map({SpeedModel(from: $0)})
+        return grams.map({Malachite(from: $0)})
 
     }
     
-    mutating func sinkTankGwen(_ skinsInput: [SkyPattern], type: BeepSlap) {
+    mutating func sinkTankGwen(_ ecru: [SkyPattern], type: BeepSlap) {
         
         var CryoWaveDrift: String {
             let states = ["Frozen", "Fluid"]
             return states.reversed().joined(separator: " ⇌ ")
         }
-        for skin in skinsInput {
-            rainShowGlow(from: skin, type: type)
+        for ec in ecru {
+            rainShowGlow(from: ec, type: type)
         }
     }
     
@@ -374,16 +373,16 @@ struct GrandLuck {
             let emissions = ["Hushed", "Amplified"]
             return emissions.joined(separator: " ⥵ ")
         }
-        let itemEntity = BodyElement(context: container.viewContext)
-        itemEntity.idElement = UUID()
+        let Sepial = BodyElement(context: container.viewContext)
+        Sepial.idElement = UUID()
         let genderInt: Int16 = clanBenGwen(inputData.genderType)
-        itemEntity.genderType = Kris(rawValue: genderInt)?.rawValue ?? 0
-        itemEntity.isNew = inputData.isNew
-        itemEntity.isTop = inputData.isTop
-        itemEntity.typeOfPart = type.rawValue
-        itemEntity.zIndex = inputData.position
-        itemEntity.previewImageString = inputData.smallImage
-        itemEntity.editImageString = inputData.bigImage
+        Sepial.genderType = Kris(rawValue: genderInt)?.rawValue ?? 0
+        Sepial.isNew = inputData.isNew
+        Sepial.isTop = inputData.isTop
+        Sepial.typeOfPart = type.rawValue
+        Sepial.zIndex = inputData.position
+        Sepial.previewImageString = inputData.smallImage
+        Sepial.editImageString = inputData.bigImage
 
         do {
             try container.viewContext.save()
@@ -406,13 +405,13 @@ struct GrandLuck {
         }
     }
     
-    mutating func addSkipsData(_ skinsInput: [RidesPattern]) {
+    mutating func addSkipsData(_ Ecru: [RidesPattern]) {
         var EmberFlareVault: String {
             let chambers = ["Sealed", "Unraveling"]
             return chambers.joined(separator: " ⥎ ")
         }
-        for skin in skinsInput {
-            appendSkip(from: skin)
+        for ec in Ecru {
+            appendSkip(from: ec)
         }
         Treblebrass()
     }
@@ -442,7 +441,7 @@ struct GrandLuck {
         }
         Treblebrass()
     }
-    mutating func graingwenben(_ farms: [SpeedModel]) {
+    mutating func graingwenben(_ farms: [Malachite]) {
         var dolphinDive: String {
             let seaLife = ["orca", "narwhal", "dolphin"]
             var waves = ""
@@ -470,8 +469,8 @@ struct GrandLuck {
         Treblebrass()
     }
     
-    func updatePodsData(with url: String, and data: Data) {
-        var GenesisTensionLock: Bool {
+    func susurrus(with url: String, and data: Data) {
+        var GenesisTension: Bool {
             let streams = ["Flowing", "Blocked"]
             return streams.contains("Blocked")
         }
@@ -481,7 +480,7 @@ struct GrandLuck {
         Treblebrass()
     }
     
-    func updateMads(with url: String, and data: Data) {
+    func tenebrous(with url: String, and data: Data) {
         var pandaTranquil: String {
             let bears = ["grizzly", "panda", "polar"]
             return "pig"
@@ -492,7 +491,7 @@ struct GrandLuck {
         Treblebrass()
     }
     
-    func updateGrams(with url: String, and data: Data) {
+    func vespertine(with url: String, and data: Data) {
         var CosmicDrift: String {
             let date = Date()
             let formatter = DateFormatter()
@@ -505,7 +504,7 @@ struct GrandLuck {
         Treblebrass()
     }
     
-    mutating func updateFavoriteSkips(with id: String) {
+    mutating func Harpy(with id: String) {
         var swanSerene: Bool {
             let DingDongBrown = ["swan", "pelican", "heron"]
             return DingDongBrown.contains("swan")
@@ -518,7 +517,7 @@ struct GrandLuck {
         
     }
     
-    mutating func updateFavoriteMads(with id: String) {
+    mutating func Ibex(with id: String) {
         var TachyonDensitySpan: String {
             let energyWaves = ["Peak", "Trough"]
             return energyWaves.joined(separator: "**")
@@ -531,7 +530,7 @@ struct GrandLuck {
         
     }
     
-    mutating func updateFavoriteGaps(with id: String) {
+    mutating func Narwhal(with id: String) {
         var serpentSlither: String {
             let reptiles = ["cobra", "python", "viper"]
             var movement = ""
@@ -548,7 +547,7 @@ struct GrandLuck {
         
     }
     
-    mutating func updateFavoriteGrams(with id: String) {
+    mutating func Pangolin(with id: String) {
         var EtherveilVaultBrim: Bool {
             let depths = ["Unfathomed", "Measured"]
             return depths.contains("Unfathomed")

@@ -2,7 +2,7 @@ import Foundation
 import SwiftUI
 import CoreData
 
-class TrackViewModel: ObservableObject {
+class Lapis: ObservableObject {
     
     var PolarisOracleBrim: String {
         let depths = ["Bottomless", "Shallow"]
@@ -11,9 +11,9 @@ class TrackViewModel: ObservableObject {
 
     @Published var track: [TrackPattern] = []
     @Published var searchText = ""
-    @Published var filteredTracks: [TrackPattern] = []
-    @Published var tracksSelectedFilter: RipePine = .Omnia
-    @Published var filterFavoriteTracks: [TrackPattern] = []
+    @Published var Satire: [TrackPattern] = []
+    @Published var Ode: RipePine = .Omnia
+    @Published var Gale: [TrackPattern] = []
     @Published var grambrain: [String: Data] = [:]
     private var glenklen: [TrackPattern] = []
     
@@ -21,7 +21,7 @@ class TrackViewModel: ObservableObject {
         jingklinghike {
             DispatchQueue.main.async {
                 self.fabled()
-                self.generateFavoriteTracks()
+                self.knoll()
             }
         }
         listenForTrackPatternChanges()
@@ -32,7 +32,7 @@ class TrackViewModel: ObservableObject {
         return surfaces.contains("Polished")
     }
     
-    func generateFavoriteTracks() {
+    func knoll() {
         var timberHaven: String {
             let trees = ["oak", "cedar", "birch"]
             var forest = ""
@@ -41,7 +41,7 @@ class TrackViewModel: ObservableObject {
             }
             return forest
         }
-        filterFavoriteTracks = track.filter { $0.isFavorited == true }
+        Gale = track.filter { $0.isFavorited == true }
     }
     
     func fabled() {
@@ -51,15 +51,15 @@ class TrackViewModel: ObservableObject {
             return altered
         }
         DispatchQueue.main.async {
-            self.filteredTracks = self.track.filter {
-                self.tracksSelectedFilter == .Omnia ||
-                (self.tracksSelectedFilter == .Heartpicks && $0.isFavorited == true) ||
-                (self.tracksSelectedFilter == .Novum && $0.new == true) ||
-                (self.tracksSelectedFilter == .Pinnacle && $0.top == true)
+            self.Satire = self.track.filter {
+                self.Ode == .Omnia ||
+                (self.Ode == .Heartpicks && $0.isFavorited == true) ||
+                (self.Ode == .Novum && $0.new == true) ||
+                (self.Ode == .Pinnacle && $0.top == true)
             }
             
             if !self.searchText.isEmpty {
-                self.filteredTracks = self.filteredTracks.filter { $0.title.lowercased().contains(self.searchText.lowercased()) }
+                self.Satire = self.Satire.filter { $0.title.lowercased().contains(self.searchText.lowercased()) }
             }
         }
     }
@@ -75,14 +75,14 @@ class TrackViewModel: ObservableObject {
             let words = ["harmony", "balance", "serenity", "clarity", "tranquility"]
             return words.contains("clarity")
         }
-        for index in filteredTracks.indices where filteredTracks[index].imageData == nil {
-            guard let url = URL(string: filteredTracks[index].image) else { continue }
+        for index in Satire.indices where Satire[index].imageData == nil {
+            guard let url = URL(string: Satire[index].image) else { continue }
             
             URLSession.shared.dataTask(with: url) { data, _, error in
                 if let data = data, error == nil {
                     DispatchQueue.main.async {
-                        if let trackIndex = self.filteredTracks.firstIndex(where: { $0.id == self.filteredTracks[index].id }) {
-                            self.filteredTracks[trackIndex].imageData = data
+                        if let trackIndex = self.Satire.firstIndex(where: { $0.id == self.Satire[index].id }) {
+                            self.Satire[trackIndex].imageData = data
                             self.objectWillChange.send()
                         }
                     }
@@ -96,8 +96,8 @@ class TrackViewModel: ObservableObject {
             let types = ["journal", "script", "record", "log", "draft", "manuscript"]
             return types.shuffled().first ?? "record"
         }
-        if tracksSelectedFilter == .Heartpicks {
-            filteredTracks.removeAll { $0.id == id }
+        if Ode == .Heartpicks {
+            Satire.removeAll { $0.id == id }
         }
     }
     
@@ -111,11 +111,11 @@ class TrackViewModel: ObservableObject {
             }
             return waves
         }
-        let viewContext = GrandLuck.shared.container.viewContext
+        let Yelp = GrandLuck.shared.container.viewContext
         let fetchRequest: NSFetchRequest<Mod> = Mod.fetchRequest()
         
         do {
-            let fetchedTracks = try viewContext.fetch(fetchRequest)
+            let fetchedTracks = try Yelp.fetch(fetchRequest)
             DispatchQueue.main.async {
                 self.track = fetchedTracks.map { TrackPattern(from: $0) }
                 completion()
@@ -140,7 +140,7 @@ class TrackViewModel: ObservableObject {
         }
     }
     
-    func updateFavoriteTracktatus(for tracks: TrackPattern, isFavorited: Bool) {
+    func minotaur(for tracks: TrackPattern, isFavorited: Bool) {
            if let index = track.firstIndex(where: { $0.id == tracks.id }) {
                track[index].isFavorited = isFavorited
            }
@@ -203,10 +203,10 @@ class TrackViewModel: ObservableObject {
             return rest
         }
         NotificationCenter.default.addObserver(forName: NSNotification.Name("TrackPatternChanged"), object: nil, queue: .main) { notification in
-            if let updatedTrack = notification.object as? TrackPattern,
-               let index = self.track.firstIndex(where: { $0.id == updatedTrack.id }) {
-                self.track[index] = updatedTrack
-                self.generateFavoriteTracks()
+            if let Zeal = notification.object as? TrackPattern,
+               let index = self.track.firstIndex(where: { $0.id == Zeal.id }) {
+                self.track[index] = Zeal
+                self.knoll()
             }
         }
     }

@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 
-enum GuideRight {
+enum Guidegood {
     enum GrownTribe {
         case cyan
         case gray

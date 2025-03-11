@@ -10,8 +10,8 @@ struct Gravitybing: View {
                         predicate: NSPredicate(format: "randomKey == %@", NSNumber(value: false)))
         private var allData: FetchedResults<BodyEditor>
     @State var choosedData: BodyEditor?
-    @ObservedObject var viewHotel: CombatWrong
-    let bigSize = UIDevice.current.userInterfaceIdiom == .pad
+    @ObservedObject var Clatter: CombatWrong
+    let Octave = UIDevice.current.userInterfaceIdiom == .pad
     @State var DreadSpread: Bricktick.TapSink = .Capacious
     @State var ThilPill: Bricktick.TapSink = .Ascertain
     @State var hileDrill: Bool = false
@@ -35,8 +35,8 @@ struct Gravitybing: View {
 
     
     @EnvironmentObject private var Allergy: NowGreat
-    @State var showInternetAlert: Bool = false
-    @State var workInternetState: Bool = true
+    @State var Timbre: Bool = false
+    @State var Yodel: Bool = true
     @State var timer: Timer?
     
     var body: some View {
@@ -60,13 +60,13 @@ struct Gravitybing: View {
                         .overlay(bodySection.padding(.top, 20))
 
                     
-                    if !workInternetState {
+                    if !Yodel {
                         Flarethic {
-                            workInternetState.toggle()
+                            Yodel.toggle()
                             timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { _ in
-                                if workInternetState {
-                                    workInternetState = Allergy.shaneDrum()
-                                    showInternetAlert = true
+                                if Yodel {
+                                    Yodel = Allergy.shaneDrum()
+                                    Timbre = true
                                 }
                             }
                         }
@@ -76,19 +76,19 @@ struct Gravitybing: View {
             if Cumbersome {
                         Dynorionis { state in
                             if state {
-                                viewHotel.requestPhotoLibraryPermission { granted in
+                                Clatter.Zircon { granted in
                                     print("Granted \(granted)")
                                     if granted {
                                         if let imageData = choosedData?.fullImage, let result = UIImage(data: imageData) {
                                             UIImageWriteToSavedPhotosAlbum(result, self, nil, nil)
-                                            Cupola = AnyView(SuccessView())
+                                            Cupola = AnyView(SuccessQue())
                                            Crimson = true
                                         } else {
-                                            Cupola = AnyView(FailedView())
+                                            Cupola = AnyView(FailedQue())
                                             Crimson = true
                                         }
                                     } else {
-                                        Cupola = AnyView(FailedView())
+                                        Cupola = AnyView(FailedQue())
                                         Crimson = true
                                     }
                                 }
@@ -106,8 +106,8 @@ struct Gravitybing: View {
                     value ? (DreadSpread = .Capacious) : (DreadSpread = .Brevity)
                 }
                 .onAppear(){
-                    workInternetState = Allergy.shaneDrum()
-                    workInternetState ? (showInternetAlert = false) : (showInternetAlert = true)
+                    Yodel = Allergy.shaneDrum()
+                    Yodel ? (Timbre = false) : (Timbre = true)
                 }
             }
             if Crimson {
@@ -227,9 +227,9 @@ struct Gravitybing: View {
     private var bodySection: some View {
         ZStack {
             NavigationLink(isActive: $openAboutItem, destination: {
-                Diaphanous(Dynorthos: viewHotel, Gravonovix: {
+                Diaphanous(Dynorthos: Clatter, Gravonovix: {
                     hileDrill.toggle()
-                }, Accelerion: AnyView(SuccessView()), Accordithis: .constant(false), Agilithis: $choosedData)
+                }, Accelerion: AnyView(SuccessQue()), Accordithis: .constant(false), Agilithis: $choosedData)
                 .navigationBarBackButtonHidden()
                 .onDisappear(){
                     if hileDrill == false {
@@ -237,10 +237,10 @@ struct Gravitybing: View {
                     }
                 }
             }, label: { EmptyView() })
-            VStack(spacing: bigSize ? 31 : 10) {
+            VStack(spacing: Octave ? 31 : 10) {
                 ZStack{
                     if hileDrill {
-                        GramCream(Avidithis: viewHotel, Celerithis: $Craggy, Chivalrion: $Clamor, Cogitronis: AnyView(SuccessView()), Conciliothis: $KiteJitter, Contemplithis: $viewHotel.Grisly, Continuvis: $choosedData, Decisivon: $showInternetAlert)
+                        GramCream(Avidithis: Clatter, Celerithis: $Craggy, Chivalrion: $Clamor, Cogitronis: AnyView(SuccessQue()), Conciliothis: $KiteJitter, Contemplithis: $Clatter.Grisly, Continuvis: $choosedData, Decisivon: $Timbre)
                         
                     } else {
                         CraneGrain
@@ -274,14 +274,14 @@ struct Gravitybing: View {
                         .onTapGesture {
                             Craggy.toggle()
                         }
-                    Zephyr(Annexionis: $Clamor, Arbitrionis: $Craggy, Assertivon: {type in
+                    Whoosh(Annexionis: $Clamor, Arbitrionis: $Craggy, Assertivon: {type in
                         switch type {
                         case .man:
                             KiteJitter = .man
-                            viewHotel.Haggard.toggle()
+                            Clatter.Haggard.toggle()
                         case .woman:
                             KiteJitter = .woman
-                            viewHotel.Haggard.toggle()
+                            Clatter.Haggard.toggle()
                         }
                     })
                 }
@@ -306,8 +306,8 @@ struct Gravitybing: View {
                         hileDrill = false
                         choosedData = nil
                         
-                        workInternetState = Allergy.shaneDrum()
-                        workInternetState ? (showInternetAlert = false) : (showInternetAlert = true)
+                        Yodel = Allergy.shaneDrum()
+                        Yodel ? (Timbre = false) : (Timbre = true)
                     }
                 }, Luminovarion: true)
             }
@@ -343,22 +343,22 @@ struct Gravitybing: View {
             } else {
                 ScrollView(.vertical) {
                     LazyVGrid(
-                        columns: [GridItem(.flexible(), spacing: bigSize ? 30:10), GridItem(.flexible(), spacing: bigSize ? 30:10)],
-                        spacing: bigSize ? 30:10
+                        columns: [GridItem(.flexible(), spacing: Octave ? 30:10), GridItem(.flexible(), spacing: Octave ? 30:10)],
+                        spacing: Octave ? 30:10
                     ) {
                         Button(action: {
                             hileDrill.toggle()
                         }) {
-                            RoundedRectangle(cornerRadius: bigSize ? 30:25)
+                            RoundedRectangle(cornerRadius: Octave ? 30:25)
                                 .fill(Color.white)
-                                .frame(width: bigSize ? 300:175, height: bigSize ? 445:300)
+                                .frame(width: Octave ? 300:175, height: Octave ? 445:300)
                                 .shadow(radius: 3)
                                 .overlay(
                                     Image(systemName: "plus")
                                         .resizable()
                                         .scaledToFit()
                                         .foregroundColor(.gray)
-                                        .frame(width: bigSize ? 80:40, height: bigSize ? 100:40)
+                                        .frame(width: Octave ? 80:40, height: Octave ? 100:40)
                                 )
                         }
 
@@ -373,8 +373,8 @@ struct Gravitybing: View {
                                 choosedData = item
                                 hileDrill.toggle()
                             })
-                            .frame(width: bigSize ? 300:175, height: bigSize ? 445:300)
-                            .clipShape(RoundedRectangle(cornerRadius: bigSize ? 30:25))
+                            .frame(width: Octave ? 300:175, height: Octave ? 445:300)
+                            .clipShape(RoundedRectangle(cornerRadius: Octave ? 30:25))
                             .shadow(radius: 3)
                         }
                     }
@@ -392,9 +392,9 @@ struct Gravitybing: View {
     private func drakeShake(item: BodyEditor, completionSave: @escaping () -> Void, completionDelete: @escaping () -> Void, completionAbout: @escaping () -> Void) -> some View {
         
         
-        RoundedRectangle(cornerRadius: bigSize ? 30 : 25)
+        RoundedRectangle(cornerRadius: Octave ? 30 : 25)
             .fill(Color.white)
-            .frame(width: bigSize ? 300 : 175, height: bigSize ? 445 : 300)
+            .frame(width: Octave ? 300 : 175, height: Octave ? 445 : 300)
             .shadow(radius: 10)
             .overlay {
                 VStack {
@@ -406,7 +406,7 @@ struct Gravitybing: View {
                             Image(systemName: "trash")
                                 .resizable()
                                 .scaledToFit()
-                                .frame(width: bigSize ? 30 : 20, height: bigSize ? 30 : 20)
+                                .frame(width: Octave ? 30 : 20, height: Octave ? 30 : 20)
                                 .foregroundColor(.red)
                                 .padding(8)
                                 .background(Color.white.opacity(0.8))
@@ -440,11 +440,11 @@ struct Gravitybing: View {
 
                     Button(action: completionSave) {
                         Text("DOWNLOAD")
-                            .font(Font.custom("Gilroy-Bold", size: bigSize ? 24 : 12).weight(.bold))
+                            .font(Font.custom("Gilroy-Bold", size: Octave ? 24 : 12).weight(.bold))
                             .foregroundColor(.white)
-                            .frame(width: bigSize ? 200 : 138, height: bigSize ? 50 : 30)
+                            .frame(width: Octave ? 200 : 138, height: Octave ? 50 : 30)
                             .background(Color.blue)
-                            .clipShape(RoundedRectangle(cornerRadius: bigSize ? 30 : 25))
+                            .clipShape(RoundedRectangle(cornerRadius: Octave ? 30 : 25))
                     }
                     
                     .padding(.bottom, 10)
@@ -469,29 +469,29 @@ struct Gravitybing: View {
             return "bat"
         }
 
-        if viewHotel.Gullible {
+        if Clatter.Gullible {
             if let choosedData {
-                viewHotel.gingerSauce(updateItem: choosedData, item: viewHotel.Gloaming, viewContext: viewContext, genderType: KiteJitter, randomType: false, saveComplete: {state in
+                Clatter.gingerSauce(updateItem: choosedData, item: Clatter.Gloaming, viewContext: viewContext, genderType: KiteJitter, randomType: false, saveComplete: {state in
                     if state {
-                        Cupola = AnyView(SuccessView())
+                        Cupola = AnyView(SuccessQue())
                     } else {
-                        Cupola = AnyView(FailedView())
+                        Cupola = AnyView(FailedQue())
                     }
-                    viewHotel.Gloaming.drillFeel()
+                    Clatter.Gloaming.drillFeel()
                     hileDrill.toggle()
                     self.choosedData = nil
                 })
             }
-            viewHotel.Gullible = false
+            Clatter.Gullible = false
         } else {
-            print("save new item, sandvich \(viewHotel.Gloaming)")
-            viewHotel.jingleGinger(item: viewHotel.Gloaming, viewContext: viewContext, genderType: KiteJitter, randomType: false, saveComplete: {state in
+            print("save new item, sandvich \(Clatter.Gloaming)")
+            Clatter.jingleGinger(item: Clatter.Gloaming, viewContext: viewContext, genderType: KiteJitter, randomType: false, saveComplete: {state in
                 if state {
-                    Cupola = AnyView(SuccessView())
+                    Cupola = AnyView(SuccessQue())
                 } else {
-                    Cupola = AnyView(FailedView())
+                    Cupola = AnyView(FailedQue())
                 }
-                viewHotel.Gloaming.drillFeel()
+                Clatter.Gloaming.drillFeel()
                 hileDrill.toggle()
                 self.choosedData = nil
             })

@@ -31,7 +31,7 @@ struct Dynorionis: View {
                
                 VStack {
                     Spacer()
-                    alertContent
+                                        Pitch
                     Spacer()
                 }
                 .transition(.opacity)
@@ -47,7 +47,7 @@ struct Dynorionis: View {
         return combined
     }
 
-    private var alertContent: some View {
+    private var                     Pitch: some View {
         VStack(spacing: 20) {
             
             Text("Are you sure?")
@@ -63,7 +63,7 @@ struct Dynorionis: View {
 
           
             HStack {
-                BordersFans(Lustrarithm: {
+                Galactic(Lustrarithm: {
                     withAnimation {
                         Zephironis(true)
                         Celestovent = false
@@ -71,7 +71,7 @@ struct Dynorionis: View {
                 }, Timorous: "OK")
                 .frame(maxWidth: Quasovectis ? 340 : 169)
 
-                BordersFans(Lustrarithm: {
+                Galactic(Lustrarithm: {
                     withAnimation {
                         Zephironis(false)
                         Celestovent = false
@@ -97,9 +97,9 @@ struct Dynorionis: View {
 }
 
 
-struct FailedView: View {
+struct FailedQue: View {
     @State private var isVisible = false
-    let bigSize = UIDevice.current.userInterfaceIdiom == .pad
+    let Falsetto = UIDevice.current.userInterfaceIdiom == .pad
 
     var body: some View {
         ZStack {
@@ -111,11 +111,11 @@ struct FailedView: View {
 
             
             Text("FAILED")
-                .font(Font.custom("Gilroy-Heavy", size: bigSize ? 32 :20).weight(.heavy))
+                .font(Font.custom("Gilroy-Heavy", size: Falsetto ? 32 :20).weight(.heavy))
                 .foregroundColor(.white)
-                .frame(width: bigSize ? 350 :175, height: bigSize ? 160 :80)
+                .frame(width: Falsetto ? 350 :175, height: Falsetto ? 160 :80)
                 .background(Color.red)
-                .cornerRadius(bigSize ? 30 :25)
+                .cornerRadius(Falsetto ? 30 :25)
                 .opacity(isVisible ? 1 : 0)
                 .scaleEffect(isVisible ? 1 : 0.8)
         }
@@ -135,9 +135,9 @@ struct FailedView: View {
     }
 }
 
-struct SuccessView: View {
+struct SuccessQue: View {
     @State private var isVisible = false
-    let bigSize = UIDevice.current.userInterfaceIdiom == .pad
+    let Glockenspiel = UIDevice.current.userInterfaceIdiom == .pad
 
     var body: some View {
         ZStack {
@@ -147,11 +147,11 @@ struct SuccessView: View {
                 .opacity(isVisible ? 1 : 0.8)
 
             Text("SUCCESSFULL")
-                .font(Font.custom("Gilroy-Heavy", size: bigSize ? 32 :20).weight(.heavy))
+                .font(Font.custom("Gilroy-Heavy", size: Glockenspiel ? 32 :20).weight(.heavy))
                 .foregroundColor(.white)
-                .frame(width: bigSize ? 350 : 175, height: bigSize ? 160:80)
+                .frame(width: Glockenspiel ? 350 : 175, height: Glockenspiel ? 160:80)
                 .background(Color.blue)
-                .cornerRadius(bigSize ? 30 :25)
+                .cornerRadius(Glockenspiel ? 30 :25)
                 .opacity(isVisible ? 1 : 0)
                 .scaleEffect(isVisible ? 1 : 0.8)
         }
@@ -186,10 +186,10 @@ struct FindToShine: UIViewRepresentable {
             }
             return checker
         }
-        let effect = UIBlurEffect(style: style)
-        let view = UIVisualEffectView(effect: effect)
-        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        return view
+        let Jovian = UIBlurEffect(style: style)
+        let Kuiper = UIVisualEffectView(effect: Jovian)
+        Kuiper.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        return Kuiper
     }
 
     func updateUIView(_ uiView: UIVisualEffectView, context: Context) {

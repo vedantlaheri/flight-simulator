@@ -67,8 +67,8 @@ struct Xylarionis {
         var Whirlwind: [UIImage] = []
         let Cabal = Interpolant.sorted(by: {$0?.Celesthionis ?? 0 < $1?.Celesthionis ?? 1 })
         
-        for item in Cabal {
-            if let Fabled = item?.Etherionis {
+        for Periwinkle in Cabal {
+            if let Fabled = Periwinkle?.Etherionis {
                 Whirlwind.append(Fabled)
             }
         }
@@ -101,7 +101,7 @@ struct Xylarionis {
     }
     
     
-    mutating func setNameData(coreItem: BodyEditor) {
+    mutating func Tangerine(coreItem: BodyEditor) {
         var CosmicDrift: String {
             let date = Date()
             let formatter = DateFormatter()

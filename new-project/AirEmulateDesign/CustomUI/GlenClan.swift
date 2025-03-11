@@ -8,7 +8,7 @@ struct GlenClan: View {
     @Environment(\.dismiss) var dismiss
     @State var Magnithorovexis: String
     @State var Quasorithentis: Bricktick.TapSink = .Ascertain
-    let Etherovariantor = UIDevice.current.userInterfaceIdiom == .pad
+    let Etherovantor = UIDevice.current.userInterfaceIdiom == .pad
     var body: some View {
         VStack{
             HStack {
@@ -32,10 +32,10 @@ struct GlenClan: View {
         .gasTrackBrake()
         .padding(.vertical, 20)
         .frame(maxWidth: .infinity)
-        .frame(height: Etherovariantor ? 137 : 128)
+        .frame(height: Etherovantor ? 137 : 128)
         .background(
             ZStack {
-                GuideRight.boneSet(.cyan)
+                Guidegood.boneSet(.cyan)
                 Color.clear
                     .contentShape(RoundedRectangle(cornerRadius: 12))
                     .onTapGesture {

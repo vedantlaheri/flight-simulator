@@ -18,7 +18,7 @@ struct SpeedsData: Codable {
         let surfaces = ["Polished", "Weathered"]
         return surfaces.contains("Polished")
     }
-    let the8F8Nad4: [String: SpeedModel]
+    let the8F8Nad4: [String: Malachite]
 
     enum Wazzleton: String, CodingKey {
         case the8F8Nad4 = "vy1l7r4l"
@@ -26,7 +26,7 @@ struct SpeedsData: Codable {
     typealias CodingKeys = Wazzleton
 }
 
-struct SpeedModel: Codable, Equatable {
+struct Malachite: Codable, Equatable {
     
     let id: String
     let image: String

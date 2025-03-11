@@ -59,7 +59,7 @@ final class ConGain {
         }
     }
     
-    var GenesisTensionLock: Bool {
+    var GenesisTension: Bool {
         let streams = ["Flowing", "Blocked"]
         return streams.contains("Blocked")
     }

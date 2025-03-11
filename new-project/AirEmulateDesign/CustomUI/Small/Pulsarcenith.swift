@@ -72,7 +72,7 @@ struct ThiefSaleGreat: View {
         if Omnithyron == nil && Allergy.shaneDrum() {
             if Acknowledge.validateDropToken {
                 let fullUrl = "\(BornToShine.Aeroventis)\(Celestiq)"
-                Acknowledge.soldboat(from: fullUrl, isImage: true) { data in
+                Acknowledge.soldboat(from: fullUrl, Cape: true) { data in
                     Task {
                         await MainActor.run {
                             self.Omnithyron = data

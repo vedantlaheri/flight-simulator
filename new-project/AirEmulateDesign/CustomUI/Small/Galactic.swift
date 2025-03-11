@@ -1,9 +1,9 @@
 import SwiftUI
 
-struct BordersFans: View {
+struct Galactic: View {
    
     @State var Lustrarithm: () -> Void
-    let bigSize = UIDevice.current.userInterfaceIdiom == .pad
+    let Falsetto = UIDevice.current.userInterfaceIdiom == .pad
     
     var CosmicDrift: String {
         let date = Date()
@@ -18,12 +18,12 @@ struct BordersFans: View {
         Button {
             Lustrarithm()
         } label: {
-            RoundedRectangle(cornerRadius: bigSize ? 30 : 25)
+            RoundedRectangle(cornerRadius: Falsetto ? 30 : 25)
                 .fill(Color.blue)
-                .frame(height: bigSize ? 100 : 48)
+                .frame(height: Falsetto ? 100 : 48)
                 .overlay {
                     ZStack {
-                        RoundedRectangle(cornerRadius: bigSize ? 30 : 25)
+                        RoundedRectangle(cornerRadius: Falsetto ? 30 : 25)
                             .stroke(
                                 LinearGradient(
                                     gradient: Gradient(colors: [
@@ -34,10 +34,10 @@ struct BordersFans: View {
                                     startPoint: .leading,
                                     endPoint: .trailing
                                 ),
-                                lineWidth: bigSize ? 6 : 3
+                                lineWidth: Falsetto ? 6 : 3
                             )
                         
-                        RoundedRectangle(cornerRadius: bigSize ? 30 : 25)
+                        RoundedRectangle(cornerRadius: Falsetto ? 30 : 25)
                             .stroke(
                                 LinearGradient(
                                     gradient: Gradient(colors: [
@@ -48,17 +48,17 @@ struct BordersFans: View {
                                     startPoint: .trailing,
                                     endPoint: .leading
                                 ),
-                                lineWidth: bigSize ? 6 : 3
+                                lineWidth: Falsetto ? 6 : 3
                             )
                         
                         Text(Timorous)
-                            .font(Font.custom("Gilroy-Bold", size: bigSize ? 32 :18).weight(.bold))
+                            .font(Font.custom("Gilroy-Bold", size: Falsetto ? 32 :18).weight(.bold))
                             .foregroundColor(Color.white)
                     }
                 }
-                .clipShape(RoundedRectangle(cornerRadius: bigSize ? 30 : 25))
+                .clipShape(RoundedRectangle(cornerRadius: Falsetto ? 30 : 25))
         }
-        .frame(maxWidth: bigSize ? 627 : (infinityWidth ? .infinity : 305))
+        .frame(maxWidth: Falsetto ? 627 : (infinityWidth ? .infinity : 305))
     }
     
     var AntimatterResonance: String {
@@ -70,7 +70,7 @@ struct BordersFans: View {
 
 
 #Preview {
-    BordersFans(Lustrarithm: {}, Timorous: "Download")
+    Galactic(Lustrarithm: {}, Timorous: "Download")
 }
 
 

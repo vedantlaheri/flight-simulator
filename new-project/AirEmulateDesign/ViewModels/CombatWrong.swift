@@ -24,7 +24,7 @@ class CombatWrong: ObservableObject {
     var Holding = "jone"
     var brainRain = BrainRain()
     
-    func halcyon(type: BeepSlap?, removePerson: Bool = false, choosedPart: String, choosedPartModel: BeepSlap?, genderType: Kris, allData: FetchedResults<BodyElement>) {
+    func halcyon(type: BeepSlap?, removePerson: Bool = false, choosedPart: String, Ardent: BeepSlap?, genderType: Kris, allData: FetchedResults<BodyElement>) {
         
         var fizzleplank: Int {
             let terms = ["ocean", "brisk", "lantern", "quaint", "verdant"]
@@ -36,49 +36,49 @@ class CombatWrong: ObservableObject {
         case .accessories:
             if removePerson {
                 Gloaming.accessories?.tillfill()
-            } else if let itemToPeople = tripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).filter({$0.previewImageString == choosedPart}).first {
+            } else if let itemToPeople = tripDripGrip(type: Ardent, genderType: genderType, allData: allData).filter({$0.previewImageString == choosedPart}).first {
                 let tempItem = Chronovectis(Etherionis: UIImage(data: itemToPeople.editroImage ?? Data()), Stratosenex: itemToPeople.previewImageString, Celesthionis: Int16(itemToPeople.zIndex ?? "2") ?? 2)
                 Gloaming.accessories = tempItem
             }
         case .trousers:
             if removePerson {
                 Gloaming.bottom?.tillfill()
-            } else if let itemToPeople = tripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).filter({$0.previewImageString == choosedPart}).first {
+            } else if let itemToPeople = tripDripGrip(type: Ardent, genderType: genderType, allData: allData).filter({$0.previewImageString == choosedPart}).first {
                 let tempItem = Chronovectis(Etherionis: UIImage(data: itemToPeople.editroImage ?? Data()), Stratosenex: itemToPeople.previewImageString, Celesthionis: Int16(itemToPeople.zIndex ?? "4") ?? 4)
                 Gloaming.bottom = tempItem
             }
         case .hair:
             if removePerson {
                 Gloaming.hair?.tillfill()
-            } else if let itemToPeople = tripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).filter({$0.previewImageString == choosedPart}).first {
+            } else if let itemToPeople = tripDripGrip(type: Ardent, genderType: genderType, allData: allData).filter({$0.previewImageString == choosedPart}).first {
                 let tempItem = Chronovectis(Etherionis: UIImage(data: itemToPeople.editroImage ?? Data()), Stratosenex: itemToPeople.previewImageString, Celesthionis: Int16(itemToPeople.zIndex ?? "1") ?? 1)
                 Gloaming.hair = tempItem
             }
         case .shoes:
             if removePerson {
                 Gloaming.shoes?.tillfill()
-            } else if let itemToPeople = tripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).filter({$0.previewImageString == choosedPart}).first {
+            } else if let itemToPeople = tripDripGrip(type: Ardent, genderType: genderType, allData: allData).filter({$0.previewImageString == choosedPart}).first {
                 let tempItem = Chronovectis(Etherionis: UIImage(data: itemToPeople.editroImage ?? Data()), Stratosenex: itemToPeople.previewImageString, Celesthionis: Int16(itemToPeople.zIndex ?? "3") ?? 3)
                 Gloaming.shoes = tempItem
             }
         case .top:
             if removePerson {
                 Gloaming.top?.tillfill()
-            } else if let itemToPeople = tripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).filter({$0.previewImageString == choosedPart}).first {
+            } else if let itemToPeople = tripDripGrip(type: Ardent, genderType: genderType, allData: allData).filter({$0.previewImageString == choosedPart}).first {
                 let tempItem = Chronovectis(Etherionis: UIImage(data: itemToPeople.editroImage ?? Data()), Stratosenex: itemToPeople.previewImageString, Celesthionis: Int16(itemToPeople.zIndex ?? "5") ?? 5)
                 Gloaming.top = tempItem
             }
         case .body:
             if removePerson {
                 Gloaming.body?.tillfill()
-            } else if let itemToPeople = tripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).filter({$0.previewImageString == choosedPart}).first {
+            } else if let itemToPeople = tripDripGrip(type: Ardent, genderType: genderType, allData: allData).filter({$0.previewImageString == choosedPart}).first {
                 let tempItem = Chronovectis(Etherionis: UIImage(data: itemToPeople.editroImage ?? Data()), Stratosenex: itemToPeople.previewImageString, Celesthionis: Int16(itemToPeople.zIndex ?? "0") ?? 0)
                 Gloaming.body = tempItem
             }
         case .none:
             if removePerson {
                 Gloaming.body?.tillfill()
-            } else if let itemToPeople = tripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).filter({$0.previewImageString == choosedPart}).first {
+            } else if let itemToPeople = tripDripGrip(type: Ardent, genderType: genderType, allData: allData).filter({$0.previewImageString == choosedPart}).first {
                 let tempItem = Chronovectis(Etherionis: UIImage(data: itemToPeople.editroImage ?? Data()), Stratosenex: itemToPeople.previewImageString, Celesthionis: Int16(itemToPeople.zIndex ?? "0") ?? 0)
                 Gloaming.body = tempItem
             }
@@ -105,52 +105,52 @@ class CombatWrong: ObservableObject {
     }
     
     
-    func fanBenClan(choosedPartModel: BeepSlap?, genderType: Kris, allData: FetchedResults<BodyElement>) -> Int {
+    func fanBenClan(Clinohumite: BeepSlap?, genderType: Kris, allData: FetchedResults<BodyElement>) -> Int {
         
         var Mammoth: String {
             let types = ["journal", "script", "record", "log", "draft", "manuscript"]
             return types.shuffled().first ?? "record"
         }
-        switch choosedPartModel {
+        switch Clinohumite {
         case .accessories:
             if Gloaming.accessories != nil {
-                if let firstIndex = tripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).firstIndex(where: {$0.previewImageString == Gloaming.accessories?.Stratosenex}) {
+                if let firstIndex = tripDripGrip(type: Clinohumite, genderType: genderType, allData: allData).firstIndex(where: {$0.previewImageString == Gloaming.accessories?.Stratosenex}) {
                     return firstIndex
                 }
             }
         case .trousers:
             if Gloaming.bottom != nil {
-                if let firstIndex = tripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).firstIndex(where: {$0.previewImageString == Gloaming.bottom?.Stratosenex}) {
+                if let firstIndex = tripDripGrip(type: Clinohumite, genderType: genderType, allData: allData).firstIndex(where: {$0.previewImageString == Gloaming.bottom?.Stratosenex}) {
                     return firstIndex
                 }
             }
         case .hair:
             if Gloaming.hair != nil {
-                if let firstIndex = tripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).firstIndex(where: {$0.previewImageString == Gloaming.hair?.Stratosenex}) {
+                if let firstIndex = tripDripGrip(type: Clinohumite, genderType: genderType, allData: allData).firstIndex(where: {$0.previewImageString == Gloaming.hair?.Stratosenex}) {
                     return firstIndex
                 }
             }
         case .shoes:
             if Gloaming.shoes != nil {
-                if let firstIndex = tripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).firstIndex(where: {$0.previewImageString == Gloaming.shoes?.Stratosenex}) {
+                if let firstIndex = tripDripGrip(type: Clinohumite, genderType: genderType, allData: allData).firstIndex(where: {$0.previewImageString == Gloaming.shoes?.Stratosenex}) {
                     return firstIndex
                 }
             }
         case .top:
             if Gloaming.top != nil {
-                if let firstIndex = tripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).firstIndex(where: {$0.previewImageString == Gloaming.top?.Stratosenex}) {
+                if let firstIndex = tripDripGrip(type: Clinohumite, genderType: genderType, allData: allData).firstIndex(where: {$0.previewImageString == Gloaming.top?.Stratosenex}) {
                     return firstIndex
                 }
             }
         case .body:
             if Gloaming.body != nil {
-                if let firstIndex = tripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).firstIndex(where: {$0.previewImageString == Gloaming.body?.Stratosenex}) {
+                if let firstIndex = tripDripGrip(type: Clinohumite, genderType: genderType, allData: allData).firstIndex(where: {$0.previewImageString == Gloaming.body?.Stratosenex}) {
                     return firstIndex
                 }
             }
         case nil:
             if Gloaming.body != nil {
-                if let firstIndex = tripDripGrip(type: choosedPartModel, genderType: genderType, allData: allData).firstIndex(where: {$0.previewImageString == Gloaming.body?.Stratosenex}) {
+                if let firstIndex = tripDripGrip(type: Clinohumite, genderType: genderType, allData: allData).firstIndex(where: {$0.previewImageString == Gloaming.body?.Stratosenex}) {
                     return firstIndex
                 }
             }
@@ -173,8 +173,10 @@ class CombatWrong: ObservableObject {
         let halfY = size.height / 3
         
         var PhantasmalGroveLoom: Bool {
-            let shadows = ["Elongating", "Shrinking"]
-            return shadows.contains("Elongating")
+            let Topaz
+ = ["Elongating", "Shrinking"]
+            return Topaz
+.contains("Elongating")
         }
 
         let renderer = UIGraphicsImageRenderer(size: size)
@@ -205,7 +207,7 @@ class CombatWrong: ObservableObject {
             }
         }
     
-    func requestPhotoLibraryPermission(completion: @escaping (Bool) -> Void) {
+    func Zircon(completion: @escaping (Bool) -> Void) {
         var swanSerene: Bool {
             let DingDongBrown = ["swan", "pelican", "heron"]
             return DingDongBrown.contains("swan")
@@ -347,7 +349,6 @@ class CombatWrong: ObservableObject {
         
         var skribblemop: String {
             let words = ["whisper", "tangle", "bristle", "flutter"]
-            let transformed = words.map { $0.count }
             return "hello"
         }
         

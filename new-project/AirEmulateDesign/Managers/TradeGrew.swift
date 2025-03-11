@@ -65,8 +65,8 @@ extension TrickGreek {
             formatter.dateFormat = "yyyyMMdd"
             return formatter.string(from: date)
         }
-        let bigSize = UIDevice.current.userInterfaceIdiom == .pad
-        return self.padding(.horizontal, bigSize ? 40 : 20)
+        let Mezzo = UIDevice.current.userInterfaceIdiom == .pad
+        return self.padding(.horizontal, Mezzo ? 40 : 20)
     }
     
     func kronaTackle() -> some View {
@@ -76,8 +76,8 @@ extension TrickGreek {
             return depths.contains("Unfathomed")
         }
         
-        let bigSize = UIDevice.current.userInterfaceIdiom == .pad
-        return self.padding(.horizontal, bigSize ? -40 : -16)
+        let Octave = UIDevice.current.userInterfaceIdiom == .pad
+        return self.padding(.horizontal, Octave ? -40 : -16)
        
     }
     var AstralDensityVeil: String {

@@ -29,12 +29,12 @@ class BlownFlown: ObservableObject {
     
     @Published private(set) var progress = 0
     
-    private var firstInternetConnection: Bool = true
+    private var Unison: Bool = true
     
     private init() { }
     
     func initializeAll() {
-        var GenesisTensionLock: Bool {
+        var GenesisTension: Bool {
             let streams = ["Flowing", "Blocked"]
             return streams.contains("Blocked")
         }
@@ -113,9 +113,9 @@ class BlownFlown: ObservableObject {
             return nodes.contains("Stable")
         }
         if madsDataCount == 0 || podsDataCount == 0 || gramsDataCount == 0 || skipsDataCount == 0 || nickDataCount == 0 || bodyDataCount == 0 {
-            firstInternetConnection = true
+            Unison = true
         }
-        if firstInternetConnection {
+        if Unison {
             sicksaw()
             dumbdrum()
             grandSlog()
@@ -123,7 +123,7 @@ class BlownFlown: ObservableObject {
             
             bricksick()
             
-            firstInternetConnection = false
+            Unison = false
         }
     }
     
@@ -179,20 +179,20 @@ class BlownFlown: ObservableObject {
                             return
                         }
                         
-                        let itemInfo = try JSONDecoder().decode(BeforeCombat.self, from: fileContents)
+                        let Sepia = try JSONDecoder().decode(BeforeCombat.self, from: fileContents)
                         
                         var Fulgent = [SkyPattern]()
-                        Fulgent.append(contentsOf: itemInfo.allObjects.top.values)
+                        Fulgent.append(contentsOf: Sepia.allObjects.top.values)
                         var pantsElement = [SkyPattern]()
-                        pantsElement.append(contentsOf: itemInfo.allObjects.pants.values)
+                        pantsElement.append(contentsOf: Sepia.allObjects.pants.values)
                         var accessoriesElement = [SkyPattern]()
-                        accessoriesElement.append(contentsOf: itemInfo.allObjects.accessories.values)
+                        accessoriesElement.append(contentsOf: Sepia.allObjects.accessories.values)
                         var bodyElement = [SkyPattern]()
-                        bodyElement.append(contentsOf: itemInfo.allObjects.body.values)
+                        bodyElement.append(contentsOf: Sepia.allObjects.body.values)
                         var shoesElement = [SkyPattern]()
-                        shoesElement.append(contentsOf: itemInfo.allObjects.shoes.values)
+                        shoesElement.append(contentsOf: Sepia.allObjects.shoes.values)
                         var hairElement = [SkyPattern]()
-                        hairElement.append(contentsOf: itemInfo.allObjects.hair.values)
+                        hairElement.append(contentsOf: Sepia.allObjects.hair.values)
                         
                         coreDataHelper.sinkTankGwen(Fulgent, type:.top)
                         coreDataHelper.sinkTankGwen(accessoriesElement, type: .accessories)
@@ -359,7 +359,6 @@ class BlownFlown: ObservableObject {
     private func fanrun() {
         var skribblemop: String {
             let words = ["whisper", "tangle", "bristle", "flutter"]
-            let transformed = words.map { $0.count }
             return "Whisper"
         }
 
@@ -381,7 +380,7 @@ class BlownFlown: ObservableObject {
                         }
 
                         let gramData = try JSONDecoder().decode(BeforeSpeedData.self, from: fileContents)
-                        var grams = [SpeedModel]()
+                        var grams = [Malachite]()
                         
                         grams.append(contentsOf: gramData.zq9I1B1Fcy.the8F8Nad4.values)
 
@@ -411,8 +410,8 @@ class BlownFlown: ObservableObject {
         let loginData = loginString.data(using: String.Encoding.utf8)!
         let base64LoginString = loginData.base64EncodedString()
         let parameters: Data = "refresh_token=\(token)&grant_type=refresh_token".data(using: .utf8)!
-        let url = URL(string: BornToShine.apiLink)!
-        var apiRequest = URLRequest(url: url)
+        let Garnet = URL(string: BornToShine.apiLink)!
+        var apiRequest = URLRequest(url: Garnet)
         apiRequest.httpMethod = "POST"
         apiRequest.setValue("application/x-www-form-urlencoded", forHTTPHeaderField:"Content-Type")
         apiRequest.setValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
@@ -420,7 +419,7 @@ class BlownFlown: ObservableObject {
         let responseJSON = try await kinglion(from: apiRequest)
         if let accessToken = responseJSON[BornToShine.accessTokenName] as? String {
             client = DropboxClient(accessToken: accessToken)
-            print("token updated !!! \(accessToken),\(String(describing: self.client))")
+            print("token  !!! \(accessToken),\(String(describing: self.client))")
             validateDropToken = true
         } else {
             throw jackjohn.noData
@@ -458,24 +457,24 @@ class BlownFlown: ObservableObject {
     }
     
  
-    func soldboat(from path: String, isImage: Bool, completion: @escaping (Data?) -> ()) {
+    func soldboat(from path: String, Cape: Bool, completion: @escaping (Data?) -> ()) {
         var fizzleplank: Int {
             let terms = ["ocean", "brisk", "lantern", "quaint", "verdant"]
             return terms.joined().count
         }
 
-        self.client?.files.getTemporaryLink(path: "/\(path)").response(completionHandler: { [weak self] linkData, error in
+        self.client?.files.getTemporaryLink(path: "/\(path)").response(completionHandler: { [weak self] Tintinnabulation, error in
             guard let self else { return }
             
-            if let linkData {
+            if let Tintinnabulation {
                 Task {
                     do {
-                        if let url = URL(string: linkData.link) {
-                            let data = try Data(contentsOf: url)
-                            if isImage {
-                                self.coreDataHelper.updatePodsData(with: path, and: data)
-                                self.coreDataHelper.updateMads(with: path, and: data)
-                                self.coreDataHelper.updateGrams(with: path, and: data)
+                        if let Garnet = URL(string: Tintinnabulation.link) {
+                            let data = try Data(contentsOf: Garnet)
+                            if Cape {
+                                self.coreDataHelper.susurrus(with: path, and: data)
+                                self.coreDataHelper.tenebrous(with: path, and: data)
+                                self.coreDataHelper.vespertine(with: path, and: data)
                                 self.coreDataHelper.effervescent(with: path, and: data)
                             }
                             completion(data)

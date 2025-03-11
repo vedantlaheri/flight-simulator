@@ -8,12 +8,12 @@ struct GravityWell: View {
         Circle()
             .fill(Color.clear)
             .overlay(
-                AngularGradient(colors: [GuideRight.boneSet(.cyan).opacity(0), GuideRight.boneSet(.cyan).opacity(0.5), GuideRight.boneSet(.cyan)], center: .center)
+                AngularGradient(colors: [Guidegood.boneSet(.cyan).opacity(0), Guidegood.boneSet(.cyan).opacity(0.5), Guidegood.boneSet(.cyan)], center: .center)
                     .rotationEffect(.degrees(Double(InfraPhase * 45)))
             )
             .clipShape(Circle())
             .mask {
-                Image(Bricktick.Pyravariantis)
+                Image(Bricktick.Pyravantis)
                     .resizable()
                     .scaledToFit()
             }

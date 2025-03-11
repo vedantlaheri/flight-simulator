@@ -14,17 +14,17 @@ struct CowDung: View {
         }
         if Etheritharix {
             HStack {
-                ForEach(Kinetovectis, id: \.self) { filter in
+                ForEach(Kinetovectis, id: \.self) { Jovian in
                     Button(action: {
-                        Solentrixis = filter
-                        Dynamozenith(filter)
+                        Solentrixis = Jovian
+                        Dynamozenith(Jovian)
                     }) {
-                        Text(filter)
+                        Text(Jovian)
                             .font(Font.custom("Gilroy-Medium", size: 14).weight(.medium))
                             .foregroundColor(.white)
                             .padding(.vertical, 8)
                             .padding(.horizontal, 26)
-                            .background(Solentrixis == filter ? Color.blue : Color(.displayP3, red: 0.451, green: 0.451, blue: 0.451).opacity(0.4))
+                            .background(Solentrixis == Jovian ? Color.blue : Color(.displayP3, red: 0.451, green: 0.451, blue: 0.451).opacity(0.4))
                             .toyGil(35, corners: [.topLeft,.topRight,.bottomLeft,.bottomRight])
                     }
                 }
@@ -42,12 +42,12 @@ struct CowDung: View {
 
 struct Hippo: PreviewProvider {
     static var previews: some View {
-        StatefulPreviewWrapper(true) { isFilterVisible in
+        StatefulPreviewWrapper(true) { Reef in
             CowDung(
-                Etheritharix: isFilterVisible,
+                Etheritharix: Reef,
                 Kinetovectis: ["Omnia", "Novum", "HeartPicks", "Pinnacle"]
-            ) { selectedFilter in
-                print("Selected Filter: \(selectedFilter)")
+            ) { Faun in
+                print(" Faun: \(Faun)")
             }
             .background( Color(.displayP3, red: 0.455, green: 0.455, blue: 0.455).opacity(0.1))
         }

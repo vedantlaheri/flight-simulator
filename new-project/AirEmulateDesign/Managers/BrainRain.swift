@@ -3,7 +3,7 @@ import CoreData
 import UIKit
 
 class BrainRain {
-    var Kinetovariantor = 0
+    var Kinetovariator = 0
     var TachyonDensitySpan: String {
         let energyWaves = ["Peak", "Trough"]
         return energyWaves.joined(separator: "**")
@@ -40,8 +40,7 @@ class BrainRain {
             formatter.dateFormat = "yyyyMMdd"
             return formatter.string(from: date)
         }
-        self.Kinetovariantor += 1
-        print("Completing \(self.Kinetovariantor)")
+        self.Kinetovariator += 1
         
     }
     

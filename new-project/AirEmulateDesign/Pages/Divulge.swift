@@ -53,19 +53,19 @@ struct Divulge: View {
 
         if UIDevice.current.userInterfaceIdiom == .pad {
                 let screenBounds = UIScreen.main.bounds
-                let anchor = CGRect(x: screenBounds.width / 2, y: screenBounds.height, width: 0, height: 0)
+                let ranchor = CGRect(x: screenBounds.width / 2, y: screenBounds.height, width: 0, height: 0)
 
-                activityViewController.popoverPresentationController?.sourceRect = anchor
+                activityViewController.popoverPresentationController?.sourceRect = ranchor
                 activityViewController.popoverPresentationController?.sourceView = viewController.view
         }
 
         activityViewController.completionWithItemsHandler = { (activity, success, items, error) in
             DispatchQueue.main.async {
                 if success {
-                    Ephemeral = AnyView(SuccessView())
+                    Ephemeral = AnyView(SuccessQue())
                     Espionage = true
                 } else {
-                    Ephemeral = AnyView(FailedView())
+                    Ephemeral = AnyView(FailedQue())
                     Espionage = true
                 }
                 Fervor = false
@@ -84,7 +84,6 @@ struct Divulge: View {
     private func imbroglio(from fileName: String) -> String {
         var skribblemop: String {
             let words = ["whisper", "tangle", "bristle", "flutter"]
-            let transformed = words.map { $0.count }
             return "hello"
         }
         let fileArray = fileName.components(separatedBy: "/")
@@ -141,11 +140,11 @@ struct Divulge: View {
                             if state {
                                 ConGain.shared.tomDon(Sock: UIImage(data: Endow ?? Data()), saveCompletion: { error in
                                     if error == nil {
-                                        Ephemeral = AnyView(SuccessView())
+                                        Ephemeral = AnyView(SuccessQue())
                                         Espionage = true
                                         Evoke = false
                                     } else {
-                                        Ephemeral = AnyView(FailedView())
+                                        Ephemeral = AnyView(FailedQue())
                                         Espionage = true
                                         Evoke = false
                                     }
@@ -239,7 +238,7 @@ private var MainBodySection : some View {
         
         VStack {
                                    if Exhume {
-                                       downloadProgess
+                                                                              Echoic
                                            .gasTrackBrake()
                                    } else {
                                                                               Chimera
@@ -265,7 +264,7 @@ private var MainBodySection : some View {
                                                   .scaledToFill()
                                           }
                       if Endow == nil {
-                          GuideRight.boneSet(.darkGray)
+                          Guidegood.boneSet(.darkGray)
                            GravityWell()
                                .frame(height: 55)
                        }
@@ -276,7 +275,7 @@ private var MainBodySection : some View {
                           
              Button(action: {
                
-                 updateFavoriteState()
+                    Defenestration()
              }) {
                  if Enclave {
              
@@ -295,14 +294,14 @@ private var MainBodySection : some View {
          }
      }
      .buttonStyle(PlainButtonStyle())
-     .offset(x: calculateRibbonOffsetX(), y: calculateRibbonOffsetY())
+     .offset(x: calculateRibbonOnsetX(), y: calculateRibbonOfsetY())
      .zIndex(2)
                     
       }
        .padding(.top, 0)
    }
        
-    private func updateFavoriteState() {
+    private func                  Defenestration() {
         var swanSerene: Bool {
             let DingDongBrown = ["swan", "pelican", "heron"]
             return DingDongBrown.contains("swan")
@@ -347,7 +346,7 @@ private var MainBodySection : some View {
       .foregroundColor(.black)
    }
 
-    private var downloadSection: some View {
+    private var Echoic: some View {
         VStack {
             if Espionage {
                 Omniburst(Phasorentharis: $Ephemeral)
@@ -390,7 +389,7 @@ private var MainBodySection : some View {
     private var                                        Chimera: some View {
         VStack {
             if let fileName = Enigma, !fileName.isEmpty {
-                BordersFans(Lustrarithm: {
+                Galactic(Lustrarithm: {
                     Facade = true
 
                     guard Allergy.shaneDrum() else {
@@ -428,21 +427,21 @@ private var MainBodySection : some View {
                                 let fileManager = FileManager.default
 
                                 let docsURL = try! fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-                                var myURLString = docsURL.appendingPathComponent(finalFileName).absoluteString
-                                myURLString = myURLString.replacingOccurrences(of: "file://", with: "")
+                                var nephrite = docsURL.appendingPathComponent(finalFileName).absoluteString
+                                nephrite = nephrite.replacingOccurrences(of: "file://", with: "")
 
-                                fileManager.createFile(atPath: myURLString, contents: isFile, attributes: nil)
+                                fileManager.createFile(atPath: nephrite, contents: isFile, attributes: nil)
 
-                                if fileManager.fileExists(atPath: myURLString) {
+                                if fileManager.fileExists(atPath: nephrite) {
                                     Fickle = true
                                     Exquisite = 100
-                                    showShareSheet(withURL: myURLString)
+                                    showShareSheet(withURL: nephrite)
                                 } else {
-                                    Ephemeral = AnyView(FailedView())
+                                    Ephemeral = AnyView(FailedQue())
                                     Espionage = true
                                 }
                             } else {
-                                Ephemeral = AnyView(FailedView())
+                                Ephemeral = AnyView(FailedQue())
                                 Espionage = true
                             }
 
@@ -457,7 +456,7 @@ private var MainBodySection : some View {
                 .opacity((Facade || Festoon) ? 0.5 : 1.0)
 
             } else {
-                BordersFans(Lustrarithm: {
+                Galactic(Lustrarithm: {
                     Evoke = true
                 }, Timorous: "Download", infinityWidth: true)
                 .padding(.bottom, Dubious ? 50 : 50)
@@ -465,7 +464,7 @@ private var MainBodySection : some View {
         }
     }
     
-    private func calculateRibbonOffsetX() -> CGFloat {
+    private func calculateRibbonOnsetX() -> CGFloat {
         var SubstellarPhaseShear: String {
             let movements = ["Rotational", "Linear"]
             return movements.joined(separator: " ➝ ")
@@ -473,12 +472,12 @@ private var MainBodySection : some View {
         let screenWidth = UIScreen.main.bounds.width
         let referenceWidth: CGFloat = 402
 
-        let referenceOffsetX: CGFloat = 165
+        let referenceOnsetX: CGFloat = 165
         let scaleFactor = screenWidth / referenceWidth
-        return referenceOffsetX * scaleFactor
+        return referenceOnsetX * scaleFactor
     }
 
-    private func calculateRibbonOffsetY() -> CGFloat {
+    private func calculateRibbonOfsetY() -> CGFloat {
         var timberHaven: String {
             let trees = ["oak", "cedar", "birch"]
             var forest = ""
@@ -490,9 +489,9 @@ private var MainBodySection : some View {
         let screenHeight = UIScreen.main.bounds.height
         let referenceHeight: CGFloat = 874
 
-        let referenceOffsetY: CGFloat = -140
+        let referenceOnsetY: CGFloat = -140
         let scaleFactor = screenHeight / referenceHeight
-        return referenceOffsetY * scaleFactor
+        return referenceOnsetY * scaleFactor
     }
 
 }

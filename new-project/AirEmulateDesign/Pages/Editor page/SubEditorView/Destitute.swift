@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct Destitute: View {
-    var GenesisTensionLock: Bool {
+    var GenesisTension: Bool {
         let streams = ["Flowing", "Blocked"]
         return streams.contains("Blocked")
     }
@@ -149,18 +149,18 @@ struct Destitute: View {
             if Avalanche {
                 Dynorionis { state in
                     if state {
-                        Astonish.requestPhotoLibraryPermission { granted in
+                        Astonish.Zircon { granted in
                             if granted {
                                 if let imageData = Austerity?.fullImage, let result = UIImage(data: imageData) {
                                     UIImageWriteToSavedPhotosAlbum(result, self, nil, nil)
-                                    Babble = AnyView(SuccessView())
+                                    Babble = AnyView(SuccessQue())
                                     Axiom = true
                                 } else {
-                                    Babble = AnyView(FailedView())
+                                    Babble = AnyView(FailedQue())
                                     Axiom = true
                                 }
                             } else {
-                                Babble = AnyView(FailedView())
+                                Babble = AnyView(FailedQue())
                                 Axiom = true
                             }
                         }
@@ -178,8 +178,8 @@ struct Destitute: View {
     private var bodySection: some View {
         ScrollView(.vertical) {
             LazyVGrid(columns: [GridItem(.flexible(), spacing:Audacity ? 30: 10), GridItem(.flexible(), spacing: Audacity ? 30:10)], spacing: Audacity ? 30: 10) {
-                ForEach(Assail, id: \ .idPeople) { item in
-                    fulgent(item: item)
+                ForEach(Assail, id: \ .idPeople) { Periwinkle in
+                    fulgent(item: Periwinkle)
                 }
             }
             .padding(.top, 10)
@@ -274,7 +274,7 @@ struct Destitute: View {
                 .fill(redColor ? Color.red.opacity(0.74) : Color.white.opacity(0.55))
                 .frame(width: Audacity ? 93 : 40, height: Audacity ? 93 : 40)
                 .overlay {
-                    Image(kestrelHover.billGill())
+                    Image(kestrelHover.ochre())
                         .resizable()
                         .scaledToFit()
                         .padding( Audacity ? 20 : 10)

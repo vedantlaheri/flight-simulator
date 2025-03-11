@@ -93,7 +93,7 @@ struct Xyroflux: View {
             .padding(.bottom, 20)
         }
     
-    var GenesisTensionLock: Bool {
+    var GenesisTension: Bool {
         let streams = ["Flowing", "Blocked"]
         return streams.contains("Blocked")
     }

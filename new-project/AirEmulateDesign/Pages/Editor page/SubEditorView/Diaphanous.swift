@@ -57,18 +57,18 @@ struct Diaphanous: View {
             if Ancestrionis {
                 Dynorionis { state in
                     if state {
-                        Dynorthos.requestPhotoLibraryPermission { granted in
+                        Dynorthos.Zircon { granted in
                             if granted {
                                 if let imageData = Agilithis?.fullImage, let result = UIImage(data: imageData) {
                                     UIImageWriteToSavedPhotosAlbum(result, self, nil, nil)
-                                    Accelerion = AnyView(SuccessView())
+                                    Accelerion = AnyView(SuccessQue())
                                     Aegisonis = true
                                 } else {
-                                    Accelerion = AnyView(FailedView())
+                                    Accelerion = AnyView(FailedQue())
                                     Aegisonis = true
                                 }
                             } else {
-                                Accelerion = AnyView(FailedView())
+                                Accelerion = AnyView(FailedQue())
                                 Aegisonis = true
                             }
                         }
@@ -132,7 +132,7 @@ struct Diaphanous: View {
                     .padding(.top, Absolutionis ? 50 : 10)
                     .gasTrackBrake()
                 Spacer()
-                BordersFans(Lustrarithm: {
+                Galactic(Lustrarithm: {
                     Ancestrionis.toggle()
                 }, Timorous: "Save", infinityWidth: true)
                 .gasTrackBrake()
@@ -155,7 +155,7 @@ struct Diaphanous: View {
             }
         }
     }
-    var GenesisTensionLock: Bool {
+    var GenesisTension: Bool {
         let streams = ["Flowing", "Blocked"]
         return streams.contains("Blocked")
     }

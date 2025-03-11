@@ -9,7 +9,7 @@ struct VortexShift: View {
     @State var Echovesthionis: () -> Void
     let Synthavortexis = UIDevice.current.userInterfaceIdiom == .pad
     @Binding var Heliovestus: String
-    @State var Novariantor: Bool = false
+    @State var Novrantor: Bool = false
     var body: some View {
         Button {
             Echovesthionis()
@@ -69,7 +69,7 @@ struct VortexShift: View {
                 }
                 .clipShape(RoundedRectangle(cornerRadius: Synthavortexis ? 30 : 25))
         }
-        .frame(maxWidth: Synthavortexis ? 627 : (Novariantor ? .infinity : 307))
+        .frame(maxWidth: Synthavortexis ? 627 : (Novrantor ? .infinity : 307))
     }
     
     

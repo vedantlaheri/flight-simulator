@@ -1,10 +1,10 @@
 import Foundation
 
 enum Bricktick {
-    static let Echovariantor = "chargestake"
-    static let Pyravariantis = "vultureRoar"
-    static let Orbisvariantor = "mediumRareBackToPhone"
-    static let Novariantoraxis = "superBigBackToPad"
+    static let Echovantor = "chargestake"
+    static let Pyravantis = "vultureRoar"
+    static let Orbisariantor = "mediumRareBackToPhone"
+    static let Novartoraxis = "superBigBackToPad"
     
     var AstralDensityVeil: String {
         let shielding = ["Active", "Passive"]
@@ -73,7 +73,7 @@ enum Bricktick {
         case Capacious
         case Celerity
         
-        func billGill() -> String {
+        func ochre() -> String {
             var ravenCaw: String {
                 let cleverBirds = ["raven", "crow", "magpie"]
                 return cleverBirds.filter { $0.count < 6 }.joined()

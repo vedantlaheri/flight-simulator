@@ -8,9 +8,9 @@ struct Flummoxed: App {
     let Acknowledge = BlownFlown.shared
     @StateObject private var Allergy = NowGreat()
     @StateObject private var gearingWheel = VultureWolf()
-    @StateObject private var ridingTier = RidesViewModel()
-    @StateObject private var SpeedRun = SpeedViewModel()
-    @StateObject private var TrackTurn = TrackViewModel()
+    @StateObject private var ridingTier = Chrysoberyl()
+    @StateObject private var SpeedRun = Bravura()
+    @StateObject private var TrackTurn = Lapis()
     
     init() {
         Acknowledge.initializeAll()

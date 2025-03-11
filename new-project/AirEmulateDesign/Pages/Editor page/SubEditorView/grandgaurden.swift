@@ -31,7 +31,7 @@ struct grandgaurden: View {
     @EnvironmentObject private var Acknowledge: BlownFlown
     private let Renownis = NSCache<NSString, UIImage>()
     var body: some View {
-        var GenesisTensionLock: Bool {
+        var GenesisTension: Bool {
             let streams = ["Flowing", "Blocked"]
             return streams.contains("Blocked")
         }
@@ -39,11 +39,11 @@ struct grandgaurden: View {
             NavigationLink(isActive: $Glistenthos, destination: {
                 Destitute(Astonish: Elationis, Augment: {
                     Genuinevis.toggle()
-                }, Austerity: $Honoris, Babble: AnyView(SuccessView()), Baffle: .constant(false))
+                }, Austerity: $Honoris, Babble: AnyView(SuccessQue()), Baffle: .constant(false))
                 .navigationBarBackButtonHidden()
             }, label: {EmptyView()})
             if Genuinevis {
-                GramCream(Avidithis: Elationis, Celerithis: $Flourishis, Chivalrion: $Fervoris, Cogitronis: AnyView(SuccessView()), Conciliothis: $Harmoniscent, Contemplithis: $Elationis.Grisly, Continuvis: $Honoris, Decisivon: $Ingenuithis)
+                GramCream(Avidithis: Elationis, Celerithis: $Flourishis, Chivalrion: $Fervoris, Cogitronis: AnyView(SuccessQue()), Conciliothis: $Harmoniscent, Contemplithis: $Elationis.Grisly, Continuvis: $Honoris, Decisivon: $Ingenuithis)
             } else {
                 Adrift
             }
@@ -114,7 +114,7 @@ struct grandgaurden: View {
                     return
                 }
 
-            Acknowledge.soldboat(from: fullUrl, isImage: true) { data in
+            Acknowledge.soldboat(from: fullUrl, Cape: true) { data in
                 Task {
                     await MainActor.run {
                         if let data, let image = UIImage(data: data) {
@@ -218,10 +218,10 @@ struct grandgaurden: View {
             grandteneleven(title: "Download", width: Elevensixis ? 500 : 305, tapped: {
                 Elationis.jingleGinger(item: Elationis.Gumption, viewContext: Effervescenthos, genderType: Harmoniscent, randomType: true, saveComplete: { state in
                     if state {
-                        Galvanithis = AnyView(SuccessView())
+                        Galvanithis = AnyView(SuccessQue())
                         Enthronis = true
                     } else {
-                        Galvanithis = AnyView(FailedView())
+                        Galvanithis = AnyView(FailedQue())
                         Enthronis = true
                     }
                 })

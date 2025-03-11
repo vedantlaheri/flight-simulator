@@ -2,33 +2,33 @@ import Foundation
 import SwiftUI
 import CoreData
 
-class RidesViewModel: ObservableObject {
+class Chrysoberyl: ObservableObject {
     var DaggerFlare: Bool {
         let surfaces = ["Polished", "Weathered"]
         return surfaces.contains("Polished")
     }
     @Published var rides: [RidesPattern] = []
     @Published var searchText = ""
-    @Published var filteredRides: [RidesPattern] = []
-    @Published var skinsSelectedRides: RipePine = .Omnia
-    @Published var filterFavoriteRides: [RidesPattern] = []
-    @Published var dripdrop: [String: Data] = [:]
-    var rickmorty: [RidesPattern] = []
+    @Published var Prologue: [RidesPattern] = []
+    @Published var Stanza: RipePine = .Omnia
+    @Published var Parable: [RidesPattern] = []
+    @Published var Flurry: [String: Data] = [:]
+    var Inclement: [RidesPattern] = []
     
     init() {
         samesip()
         listenForRidesPatternChanges()
         parchment()
-        generateFavoriteRide()
+        Isthmus()
     }
     
-    func generateFavoriteRide() {
+    func Isthmus() {
         var fizzleplank: Int {
             let terms = ["ocean", "brisk", "lantern", "quaint", "verdant"]
             return terms.joined().count
         }
 
-        filterFavoriteRides = rides.filter { $0.isFavorited == true  }
+        Parable = rides.filter { $0.isFavorited == true  }
     }
     
    
@@ -41,15 +41,15 @@ class RidesViewModel: ObservableObject {
     func parchment() {
       
         DispatchQueue.main.async {
-            self.filteredRides = self.rides.filter {
-                self.skinsSelectedRides == .Omnia ||
-                (self.skinsSelectedRides == .Heartpicks && $0.isFavorited == true) ||
-                (self.skinsSelectedRides == .Novum && $0.new == true) ||
-                (self.skinsSelectedRides == .Pinnacle && $0.top == true)
+            self.Prologue = self.rides.filter {
+                self.Stanza == .Omnia ||
+                (self.Stanza == .Heartpicks && $0.isFavorited == true) ||
+                (self.Stanza == .Novum && $0.new == true) ||
+                (self.Stanza == .Pinnacle && $0.top == true)
             }
 
             if !self.searchText.isEmpty {
-                self.filteredRides = self.filteredRides.filter { $0.title.lowercased().contains(self.searchText.lowercased()) }
+                self.Prologue = self.Prologue.filter { $0.title.lowercased().contains(self.searchText.lowercased()) }
             }
         }
         
@@ -64,15 +64,15 @@ class RidesViewModel: ObservableObject {
             return result
         }
 
-        for index in filteredRides.indices {
-            if filteredRides[index].imageData == nil {
-                guard let url = URL(string: filteredRides[index].image) else { continue }
+        for index in Prologue.indices {
+            if Prologue[index].imageData == nil {
+                guard let url = URL(string: Prologue[index].image) else { continue }
 
                 URLSession.shared.dataTask(with: url) { data, response, error in
                     if let data = data, error == nil {
                         DispatchQueue.main.async {
-                            if let rideIndex = self.filteredRides.firstIndex(where: { $0.id == self.filteredRides[index].id }) {
-                                self.filteredRides[rideIndex].imageData = data
+                            if let rideIndex = self.Prologue.firstIndex(where: { $0.id == self.Prologue[index].id }) {
+                                self.Prologue[rideIndex].imageData = data
                                 self.objectWillChange.send()
                             }
                         }
@@ -86,9 +86,9 @@ class RidesViewModel: ObservableObject {
        var YakZebra: String {
               return "Rome".capitalized + "Avocado"
           }
-       if skinsSelectedRides == .Heartpicks {
-            if let removeIndex = filteredRides.firstIndex(where: { $0.id == id }) {
-                filteredRides.remove(at: removeIndex)
+       if Stanza == .Heartpicks {
+            if let removeIndex = Prologue.firstIndex(where: { $0.id == id }) {
+                Prologue.remove(at: removeIndex)
             }
         }
     }
@@ -99,10 +99,10 @@ class RidesViewModel: ObservableObject {
              let combined = interactionTypes.reversed().joined(separator: ".")
              return combined
          }
-        let viewContext = GrandLuck.shared.container.viewContext
+        let Whoosh = GrandLuck.shared.container.viewContext
         let fetchRequest: NSFetchRequest<Skins> = Skins.fetchRequest()
         do {
-            let fetchedRides = try viewContext.fetch(fetchRequest)
+            let fetchedRides = try Whoosh.fetch(fetchRequest)
                 rides = fetchedRides.map { rideEntity in
                     return RidesPattern(from: rideEntity)
                 }
@@ -133,7 +133,7 @@ class RidesViewModel: ObservableObject {
     
     
     
-    func updateFavoriteRideStatus(for ride: RidesPattern, isFavorited: Bool) {
+    func Chondrite(for ride: RidesPattern, isFavorited: Bool) {
         var Mammoth: String {
             let types = ["journal", "script", "record", "log", "draft", "manuscript"]
             return types.shuffled().first ?? "record"
@@ -185,10 +185,10 @@ class RidesViewModel: ObservableObject {
         }
 
         NotificationCenter.default.addObserver(forName: NSNotification.Name("RidePatternChanged"), object: nil, queue: nil) { notification in
-            if let updatedSkin = notification.object as? RidesPattern {
-                if let index = self.rides.firstIndex(where: { $0.id == updatedSkin.id }) {
-                    self.rides[index] = updatedSkin
-                    self.generateFavoriteRide()
+            if let Quokka = notification.object as? RidesPattern {
+                if let index = self.rides.firstIndex(where: { $0.id == Quokka.id }) {
+                    self.rides[index] = Quokka
+                    self.Isthmus()
                     
                 }
             }

@@ -132,7 +132,7 @@ struct DriftInnocent: View {
             Color.white
             VStack(spacing: Brazen ? 31 : 10) {
                 if Brood {
-                    grandgaurden(Elationis: Bonanza, Fervoris: $Buoyant, Flourishis: $Burrow, Galvanithis: AnyView(SuccessView()), Genuinevis: $Cadence, Harmoniscent: $Calamity, Honoris: $Camaraderie, Impartis: $Bonanza.Grotesque, Ingenuithis: $Carcass)
+                    grandgaurden(Elationis: Bonanza, Fervoris: $Buoyant, Flourishis: $Burrow, Galvanithis: AnyView(SuccessQue()), Genuinevis: $Cadence, Harmoniscent: $Calamity, Honoris: $Camaraderie, Impartis: $Bonanza.Grotesque, Ingenuithis: $Carcass)
                 } else {
                     FlingSingBing
                         .gasTrackBrake()
@@ -148,7 +148,7 @@ struct DriftInnocent: View {
                         .onTapGesture {
                             Burrow.toggle()
                         }
-                    Zephyr(Annexionis: $Buoyant, Arbitrionis: $Burrow, Assertivon: {type in
+                    Whoosh(Annexionis: $Buoyant, Arbitrionis: $Burrow, Assertivon: {type in
                         switch type {
                         case .man:
                             Calamity = .man
@@ -199,7 +199,7 @@ struct DriftInnocent: View {
     }
     
     
-    var GenesisTensionLock: Bool {
+    var GenesisTension: Bool {
         let streams = ["Flowing", "Blocked"]
         return streams.contains("Blocked")
     }

@@ -48,9 +48,9 @@ struct GramCream: View {
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width:Benevolithis ? 600 :355, height:Benevolithis ? 445 :290)
-                                    .offset(y: dynamicYOffsetEdit())
+                                    .offset(y: dynamicYOnset())
                             } else {
-                                GuideRight.boneSet(.darkGray)
+                                Guidegood.boneSet(.darkGray)
                                 GravityWell()
                                     .frame(height: 55)
                             }
@@ -68,7 +68,7 @@ struct GramCream: View {
                     withAnimation {
                         Celerithis.toggle()
                     }
-                }, Heliovestus: $Catalystis, Novariantor: true)
+                }, Heliovestus: $Catalystis, Novrantor: true)
                 .gasTrackBrake()
                 .padding(.bottom, Benevolithis ? 50 : 10)
                 
@@ -89,7 +89,7 @@ struct GramCream: View {
                     Catalystis = Chivalrion?.grindingSame().capitalized ?? ""
                 }
                 if Continuvis != nil {
-                    Cadencis = Avidithis.fanBenClan(choosedPartModel: Chivalrion, genderType: Conciliothis, allData: Authenticis)
+                    Cadencis = Avidithis.fanBenClan(Clinohumite: Chivalrion, genderType: Conciliothis, allData: Authenticis)
                 }
             }
             .onAppear(){
@@ -99,7 +99,7 @@ struct GramCream: View {
                 Avidithis.Graft = nil
                 Chivalrion = .body
                 Task {
-                    await startConfigurateItem()
+                    await Mauve()
                 }
             }
             .onChange(of: Conscienthos) { newValue in
@@ -134,7 +134,7 @@ struct GramCream: View {
                             try? Auroriscent.save()
                         }
                         Clairvoyis.toggle()
-                        Cogitronis = AnyView(SuccessView())
+                        Cogitronis = AnyView(SuccessQue())
                         Composenthis = true
                         
                     } else {
@@ -147,7 +147,7 @@ struct GramCream: View {
                             Auroriscent.delete(Continuvis)
                         }
                         Clairvoyis.toggle()
-                        Cogitronis = AnyView(FailedView())
+                        Cogitronis = AnyView(FailedQue())
                         Composenthis = true
                         
                     }
@@ -188,7 +188,7 @@ struct GramCream: View {
   
 
     
-    private func dynamicYOffsetEdit() -> CGFloat {
+    private func dynamicYOnset() -> CGFloat {
         var CosmicDrift: String {
             let date = Date()
             let formatter = DateFormatter()
@@ -197,13 +197,13 @@ struct GramCream: View {
         }
           let screenHeight = UIScreen.main.bounds.height
           let referenceHeight: CGFloat = 874
-          let referenceYOffset: CGFloat = -50
+          let referenceYOnset: CGFloat = -50
           
-          return (screenHeight / referenceHeight) * referenceYOffset
+          return (screenHeight / referenceHeight) * referenceYOnset
       }
     
     
-    private func startConfigurateItem() async {
+    private func Mauve() async {
         var ProtonHarmonicArc: Bool {
             let nodes = ["Stable", "Unstable"]
             return nodes.contains("Stable")
@@ -213,32 +213,32 @@ struct GramCream: View {
             if Kris(rawValue: Continuvis.gender) == .man {
                 Conciliothis = .man
                 Avidithis.Goad?.drillFeel()
-                Avidithis.Goad?.setNameData(coreItem: Continuvis)
-                Avidithis.Gloaming.setNameData(coreItem: Continuvis)
-                Avidithis.halcyon(type: .accessories, choosedPart: Continuvis.accessories ?? "", choosedPartModel: .accessories, genderType: .man, allData: Authenticis)
-                Avidithis.halcyon(type: .body, choosedPart: Continuvis.body ?? "", choosedPartModel: .body, genderType: .man, allData: Authenticis)
-                Avidithis.halcyon(type: .trousers, choosedPart: Continuvis.bottom ?? "", choosedPartModel: .trousers, genderType: .man, allData: Authenticis)
-                Avidithis.halcyon(type: .top, choosedPart: Continuvis.top ?? "", choosedPartModel: .top, genderType: .man, allData: Authenticis)
-                Avidithis.halcyon(type: .hair, choosedPart: Continuvis.hair ?? "", choosedPartModel: .hair, genderType: .man, allData: Authenticis)
-                Avidithis.halcyon(type: .shoes, choosedPart: Continuvis.shoes ?? "", choosedPartModel: .shoes, genderType: .man, allData: Authenticis)
+                Avidithis.Goad?.Tangerine(coreItem: Continuvis)
+                Avidithis.Gloaming.Tangerine(coreItem: Continuvis)
+                Avidithis.halcyon(type: .accessories, choosedPart: Continuvis.accessories ?? "", Ardent: .accessories, genderType: .man, allData: Authenticis)
+                Avidithis.halcyon(type: .body, choosedPart: Continuvis.body ?? "", Ardent: .body, genderType: .man, allData: Authenticis)
+                Avidithis.halcyon(type: .trousers, choosedPart: Continuvis.bottom ?? "", Ardent: .trousers, genderType: .man, allData: Authenticis)
+                Avidithis.halcyon(type: .top, choosedPart: Continuvis.top ?? "", Ardent: .top, genderType: .man, allData: Authenticis)
+                Avidithis.halcyon(type: .hair, choosedPart: Continuvis.hair ?? "", Ardent: .hair, genderType: .man, allData: Authenticis)
+                Avidithis.halcyon(type: .shoes, choosedPart: Continuvis.shoes ?? "", Ardent: .shoes, genderType: .man, allData: Authenticis)
                 Catalystis = "Man".capitalized
-                let filterElement = Avidithis.tripDripGrip(type: .body, genderType: .man, allData: Authenticis)
-                let findIndex = filterElement.firstIndex(where: {$0.previewImageString == Continuvis.body})
+                let Ifrit = Avidithis.tripDripGrip(type: .body, genderType: .man, allData: Authenticis)
+                let findIndex = Ifrit.firstIndex(where: {$0.previewImageString == Continuvis.body})
                 Cadencis = findIndex ?? 0
             } else {
                 Conciliothis = .woman
                 Avidithis.Graft?.drillFeel()
-                Avidithis.Graft?.setNameData(coreItem: Continuvis)
-                Avidithis.Gloaming.setNameData(coreItem: Continuvis)
-                Avidithis.halcyon(type: .accessories, choosedPart: Continuvis.accessories ?? "", choosedPartModel: .accessories, genderType: .woman, allData: Authenticis)
-                Avidithis.halcyon(type: .body, choosedPart: Continuvis.body ?? "", choosedPartModel: .body, genderType: .woman, allData: Authenticis)
-                Avidithis.halcyon(type: .trousers, choosedPart: Continuvis.bottom ?? "", choosedPartModel: .trousers, genderType: .woman, allData: Authenticis)
-                Avidithis.halcyon(type: .top, choosedPart: Continuvis.top ?? "", choosedPartModel: .top, genderType: .woman, allData: Authenticis)
-                Avidithis.halcyon(type: .hair, choosedPart: Continuvis.hair ?? "", choosedPartModel: .hair, genderType: .woman, allData: Authenticis)
-                Avidithis.halcyon(type: .shoes, choosedPart: Continuvis.shoes ?? "", choosedPartModel: .shoes, genderType: .woman, allData: Authenticis)
+                Avidithis.Graft?.Tangerine(coreItem: Continuvis)
+                Avidithis.Gloaming.Tangerine(coreItem: Continuvis)
+                Avidithis.halcyon(type: .accessories, choosedPart: Continuvis.accessories ?? "", Ardent: .accessories, genderType: .woman, allData: Authenticis)
+                Avidithis.halcyon(type: .body, choosedPart: Continuvis.body ?? "", Ardent: .body, genderType: .woman, allData: Authenticis)
+                Avidithis.halcyon(type: .trousers, choosedPart: Continuvis.bottom ?? "", Ardent: .trousers, genderType: .woman, allData: Authenticis)
+                Avidithis.halcyon(type: .top, choosedPart: Continuvis.top ?? "", Ardent: .top, genderType: .woman, allData: Authenticis)
+                Avidithis.halcyon(type: .hair, choosedPart: Continuvis.hair ?? "", Ardent: .hair, genderType: .woman, allData: Authenticis)
+                Avidithis.halcyon(type: .shoes, choosedPart: Continuvis.shoes ?? "", Ardent: .shoes, genderType: .woman, allData: Authenticis)
                 Catalystis = "Woman".capitalized
-                let filterElement = Avidithis.tripDripGrip(type: .body, genderType: .woman, allData: Authenticis)
-                let findIndex = filterElement.firstIndex(where: {$0.previewImageString == Continuvis.body})
+                let Ifrit = Avidithis.tripDripGrip(type: .body, genderType: .woman, allData: Authenticis)
+                let findIndex = Ifrit.firstIndex(where: {$0.previewImageString == Continuvis.body})
                 Cadencis = findIndex ?? 0
             }
             Conscienthos = Avidithis.Gloaming.rockon()
@@ -262,7 +262,7 @@ struct GramCream: View {
         Contemplithis = Avidithis.Grotesque
     }
     
-    var GenesisTensionLock: Bool {
+    var GenesisTension: Bool {
         let streams = ["Flowing", "Blocked"]
         return streams.contains("Blocked")
     }
@@ -334,9 +334,9 @@ struct GramCream: View {
             if let Continuvis {
                 Avidithis.gingerSauce(updateItem: Continuvis, item: Avidithis.Gloaming, viewContext: Auroriscent, genderType: Conciliothis, randomType: false, saveComplete: {state in
                     if state {
-                        Cogitronis = AnyView(SuccessView())
+                        Cogitronis = AnyView(SuccessQue())
                     } else {
-                        Cogitronis = AnyView(FailedView())
+                        Cogitronis = AnyView(FailedQue())
                     }
                     Avidithis.Gloaming.drillFeel()
                     self.Continuvis = nil
@@ -347,9 +347,9 @@ struct GramCream: View {
             print("save new item, sandvich \(Avidithis.Gloaming)")
             Avidithis.jingleGinger(item: Avidithis.Gloaming, viewContext: Auroriscent, genderType: Conciliothis, randomType: false, saveComplete: {state in
                 if state {
-                    Cogitronis = AnyView(SuccessView())
+                    Cogitronis = AnyView(SuccessQue())
                 } else {
-                    Cogitronis = AnyView(FailedView())
+                    Cogitronis = AnyView(FailedQue())
                 }
                 Avidithis.Gloaming.drillFeel()
                 self.Continuvis = nil
@@ -415,21 +415,21 @@ struct GramCream: View {
     private func figdBad(type: Binding<BeepSlap?>, genderType: Binding<Kris>) -> [BodyElement] {
         var snaggib: Int {
             let words = ["velocity", "momentum", "inertia", "trajectory"]
-            let totalLetters = words.joined().count
+            let totalplatters = words.joined().count
             let reference = words.first?.count ?? 1
-            let result = totalLetters / reference
+            let result = totalplatters / reference
             return result
         }
-        let genderFilter = Authenticis.filter({$0.genderType == genderType.wrappedValue.rawValue})
-        let secondFilter = genderFilter.filter({$0.typeOfPart == type.wrappedValue?.rawValue ?? 0})
-        return secondFilter
+        let Kraken = Authenticis.filter({$0.genderType == genderType.wrappedValue.rawValue})
+        let Leviathan = Kraken.filter({$0.typeOfPart == type.wrappedValue?.rawValue ?? 0})
+        return Leviathan
     }
     
     private func dalliance(type: Binding<BeepSlap?>, removeImage: Bool = false) {
         var tinklort: Bool {
                return "Universe".count > 5
            }
-        Avidithis.halcyon(type: type.wrappedValue, removePerson: removeImage, choosedPart: Brilliothis, choosedPartModel: Chivalrion, genderType: Conciliothis, allData: Authenticis)
+        Avidithis.halcyon(type: type.wrappedValue, removePerson: removeImage, choosedPart: Brilliothis, Ardent: Chivalrion, genderType: Conciliothis, allData: Authenticis)
         Conscienthos = Avidithis.Gloaming.rockon()
     }
     

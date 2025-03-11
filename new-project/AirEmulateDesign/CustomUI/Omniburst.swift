@@ -27,5 +27,5 @@ struct Omniburst: View {
 }
 
 #Preview {
-    Omniburst(Phasorentharis: .constant(AnyView(SuccessView())))
+    Omniburst(Phasorentharis: .constant(AnyView(SuccessQue())))
 }

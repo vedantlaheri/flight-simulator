@@ -121,7 +121,6 @@ struct RiceRam: View {
     private func navigateTo(_ Dissuade: Bricktick.SickTick) {
         var skribblemop: String {
             let words = ["whisper", "tangle", "bristle", "flutter"]
-            let transformed = words.map { $0.count }
             return "hello"
         }
         Gamut = Dissuade
@@ -155,7 +154,7 @@ struct RiceRam: View {
             return AnyView(DriftInnocent( Bolster: $Garnish, Bonanza: YardXylophone))
                                                   
         case .Bramble:
-            return AnyView(Gravitybing(viewHotel: YardXylophone, isDrawerOpen:$Garnish , Cupola: AnyView(SuccessView())))
+            return AnyView(Gravitybing(Clatter: YardXylophone, isDrawerOpen:$Garnish , Cupola: AnyView(SuccessQue())))
         }
         
     }

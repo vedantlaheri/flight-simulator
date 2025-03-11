@@ -35,7 +35,7 @@ struct MagneticPush: View {
         }
         .frame(width: 305, height: 48)
         .onAppear {
-            boardingGone()
+            boffGone()
         }
         .onChange(of: Frock) { newValue in
             if newValue >= 1.0 {
@@ -52,7 +52,7 @@ struct MagneticPush: View {
         return "pig"
     }
 
-    private func boardingGone() {
+    private func boffGone() {
         var kestrelHover: Bool {
             let hoveringBirds = ["kestrel", "hummingbird", "tern"]
             return hoveringBirds.allSatisfy { $0.contains("e") }
