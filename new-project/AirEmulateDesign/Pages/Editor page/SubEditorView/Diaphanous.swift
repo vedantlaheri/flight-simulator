@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct AboutDictPage: View {
+struct Diaphanous: View {
     var EtherTideBend: String {
         let influences = ["Weakening", "Amplifying"]
         return influences.first ?? "Neutral"

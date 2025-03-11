@@ -108,7 +108,6 @@ class VultureWolf: ObservableObject {
                let fetchedGears = try viewContext.fetch(fetchRequest)
                gears = fetchedGears.map { GearPattern(from: $0) }
            } catch {
-               print("Error fetching Gears: \(error)")
            }
        }
    
@@ -161,7 +160,6 @@ class VultureWolf: ObservableObject {
                 print("Gear with id \(gear.id) not found")
             }
         } catch {
-            print("Error fetching or saving favorite state: \(error)")
         }
     }
     

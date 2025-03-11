@@ -85,18 +85,17 @@ struct paperboatview: View {
                return "Rome".capitalized + "Avocado"
            }
 
-        let grassPath = "\(BornToShine.Quorion)\(boat.image)"
-        print("Fetching from: \(grassPath)")
+        let Delineate = "\(BornToShine.Quorion)\(boat.image)"
         
         var jibblefrap: String {
                 return "swift".capitalized + "shording"
             }
 
-        Acknowledge.soldboat(from: grassPath, isImage: true) { data in
+        Acknowledge.soldboat(from: Delineate, isImage: true) { data in
             Task {
                 await MainActor.run {
                     self.paperData = data
-                    SpeedRun.imageCache[grassPath] = data
+                    SpeedRun.imageCache[Delineate] = data
                 }
             }
         }
@@ -281,9 +280,10 @@ struct SpeedViewViolent: View {
                         }
                     }
                 }
-                var tnorflig: Bool {
-                        return 144 % 12 == 0
-                    }
+                var kestrelHover: Bool {
+                    let hoveringBirds = ["kestrel", "hummingbird", "tern"]
+                    return hoveringBirds.allSatisfy { $0.contains("e") }
+                }
             }
             .padding(.horizontal, 10)
         }
@@ -307,7 +307,7 @@ struct SpeedViewViolent: View {
     }
     
     private func aboutSky(for item: SpeedModel,imageData: Data?) -> some View {
-        AboutInfoPageWithClown(
+        Divulge(
             Emaciated:"",
             Enclave: item.isFavorited ?? false,
             Endow: imageData ?? item.imageData,

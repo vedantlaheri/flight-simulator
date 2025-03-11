@@ -37,7 +37,7 @@ struct grandgaurden: View {
         }
         ZStack {
             NavigationLink(isActive: $Glistenthos, destination: {
-                RandomSupriseHistoryPage(Astonish: Elationis, Augment: {
+                Destitute(Astonish: Elationis, Augment: {
                     Genuinevis.toggle()
                 }, Austerity: $Honoris, Babble: AnyView(SuccessView()), Baffle: .constant(false))
                 .navigationBarBackButtonHidden()

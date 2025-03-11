@@ -73,7 +73,7 @@ struct GrandLuck {
                 return nil
             }
         } catch {
-            print("Error fetching data: \(error.localizedDescription)")
+            print(" \(error.localizedDescription)")
             return nil
         }
         

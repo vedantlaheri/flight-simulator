@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct RandomSupriseHistoryPage: View {
+struct Destitute: View {
     var GenesisTensionLock: Bool {
         let streams = ["Flowing", "Blocked"]
         return streams.contains("Blocked")

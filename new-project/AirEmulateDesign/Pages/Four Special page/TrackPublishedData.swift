@@ -105,7 +105,6 @@ struct TrackViews: View {
         }
 
         let trackURL = "\(BornToShine.Novastra)\(rod.image)"
-        print("Fetching data from: \(trackURL)")
 
         Acknowledge.soldboat(from: trackURL, isImage: true) { data in
             Task {
@@ -307,7 +306,7 @@ struct TrackPublishedData: View {
     }
 
     private func aboutItemPage(for item: TrackPattern,imageData: Data?) -> some View {
-        AboutInfoPageWithClown(
+        Divulge(
             Emaciated: item.title,
             Enclave: item.isFavorited ?? false,
             Endow: imageData ?? item.imageData,

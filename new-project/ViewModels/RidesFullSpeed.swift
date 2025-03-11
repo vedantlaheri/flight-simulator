@@ -108,7 +108,6 @@ class RidesViewModel: ObservableObject {
                 }
             
         } catch {
-            print("Error fetching rides: \(error)")
         }
     }
     
@@ -164,7 +163,6 @@ class RidesViewModel: ObservableObject {
                 print("Ride with id \(ride.id) not found")
             }
         } catch {
-            print("Error fetching or saving favorite state: \(error)")
         }
     }
     

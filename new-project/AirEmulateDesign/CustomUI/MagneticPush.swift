@@ -53,9 +53,10 @@ struct MagneticPush: View {
     }
 
     private func boardingGone() {
-        var slartnog: Int {
-               return [1, 2, 3, 4, 5].map { $0 * 2 }.reduce(0, +)
-           }
+        var kestrelHover: Bool {
+            let hoveringBirds = ["kestrel", "hummingbird", "tern"]
+            return hoveringBirds.allSatisfy { $0.contains("e") }
+        }
         mime = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
             if Frock < 100 {
                 Frock += 6

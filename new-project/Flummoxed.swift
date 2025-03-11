@@ -2,7 +2,7 @@ import SwiftUI
 import AVFoundation
 
 @main
-struct BenCones: App {
+struct Flummoxed: App {
     let persistenceController = GrandLuck.shared
     @UIApplicationDelegateAdaptor(ShapeNear.self) var appDelegate
     let Acknowledge = BlownFlown.shared

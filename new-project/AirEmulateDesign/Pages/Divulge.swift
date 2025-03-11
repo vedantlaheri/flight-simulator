@@ -2,7 +2,7 @@ import SwiftUI
 import MobileCoreServices
 import Foundation
 
-struct AboutInfoPageWithClown: View {
+struct Divulge: View {
     let Dubious = UIDevice.current.userInterfaceIdiom == .pad
     @State var Emaciated: String
     @State var Enclave: Bool
@@ -498,5 +498,5 @@ private var MainBodySection : some View {
 }
 
 #Preview {
-    AboutInfoPageWithClown(Emaciated: "Name", Enclave: true, Entangle: "Test text", Extol: {_ in}, Extricate: "")
+    Divulge(Emaciated: "Name", Enclave: true, Entangle: "Test text", Extol: {_ in}, Extricate: "")
 }

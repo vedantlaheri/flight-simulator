@@ -121,7 +121,6 @@ class TrackViewModel: ObservableObject {
                 completion()
             }
         } catch {
-            print("❌ Error fetching tracks: \(error)")
             completion()
         }
     }
@@ -173,7 +172,6 @@ class TrackViewModel: ObservableObject {
                    print("Track with id \(tracks.id) not found")
                }
            } catch {
-               print("Error fetching or saving favorite state: \(error)")
            }
        }
     

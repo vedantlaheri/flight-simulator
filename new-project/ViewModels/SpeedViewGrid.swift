@@ -110,7 +110,6 @@ class SpeedViewModel: ObservableObject {
                }
            
        } catch {
-           print("Error fetching farms: \(error)")
        }
    }
 
@@ -162,7 +161,6 @@ class SpeedViewModel: ObservableObject {
                 print("Speed with id \(speed.id) not found")
             }
         } catch {
-            print("Error fetching or saving favorite state: \(error)")
         }
     }
     

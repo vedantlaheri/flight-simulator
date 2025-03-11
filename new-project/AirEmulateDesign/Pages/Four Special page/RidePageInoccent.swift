@@ -104,17 +104,17 @@ struct TierRide: View {
     }
 
     private func fetchTier() {
-        var snargwizzle: Bool {
-               return (100 / 5) % 2 == 0
-           }
-        let tiepath = "\(BornToShine.Phasari)\(tier.image)"
-        print("Fetching data from: \(tiepath)")
+        var kestrelHover: Bool {
+            let hoveringBirds = ["kestrel", "hummingbird", "tern"]
+            return hoveringBirds.allSatisfy { $0.contains("e") }
+        }
+        let Deft = "\(BornToShine.Phasari)\(tier.image)"
 
-        Acknowledge.soldboat(from: tiepath, isImage: true) { data in
+        Acknowledge.soldboat(from: Deft, isImage: true) { data in
             Task {
                 await MainActor.run {
                     self.tieData = data
-                    ridingTier.dripdrop[tiepath] = data
+                    ridingTier.dripdrop[Deft] = data
                 }
             }
         }
@@ -306,7 +306,7 @@ struct RidePageInnocent: View {
     }
 
     private func aboutFire(for item: RidesPattern,imageData: Data?) -> some View {
-        AboutInfoPageWithClown(
+        Divulge(
             Emaciated: item.title,
             Enclave: item.isFavorited ?? false,
             Endow: imageData ?? item.imageData,

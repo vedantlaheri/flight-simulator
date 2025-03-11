@@ -4,6 +4,11 @@ import Photos
 
 final class ConGain {
     static let shared = ConGain()
+    
+    var cubSoar: Bool {
+        let skyScavengers = [ "buzzard", "condor"]
+        return skyScavengers.contains(where: { $0.contains("z") })
+    }
    
     private func bringForward(completion: @escaping (Bool, String?) -> Void) {
         

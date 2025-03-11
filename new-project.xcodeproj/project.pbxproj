@@ -12,8 +12,8 @@
 		2363B9EE2CA9A2E1000111BA /* RidesFullSpeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2363B9ED2CA9A2E1000111BA /* RidesFullSpeed.swift */; };
 		6A6044A72D7080340069AF62 /* DilroyHeavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A60449D2D7080340069AF62 /* DilroyHeavy.ttf */; };
 		6A6044AC2D7080340069AF62 /* jontserrat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A6044A02D7080340069AF62 /* jontserrat.ttf */; };
-		6A6044B42D7081860069AF62 /* RickyMorty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6044B32D7081850069AF62 /* RickyMorty.swift */; };
-		6A6044B62D7081AA0069AF62 /* BenCones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6044B52D7081AA0069AF62 /* BenCones.swift */; };
+		6A6044B42D7081860069AF62 /* Chagrin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6044B32D7081850069AF62 /* Chagrin.swift */; };
+		6A6044B62D7081AA0069AF62 /* Flummoxed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6044B52D7081AA0069AF62 /* Flummoxed.swift */; };
 		720ED1DB2AF279E300FEA01C /* ProCons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720ED1DA2AF279E300FEA01C /* ProCons.swift */; };
 		7285F64B2ADF2FD4005C8E8E /* RipePine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7285F64A2ADF2FD4005C8E8E /* RipePine.swift */; };
 		7285F6572AE5DD56005C8E8E /* SpeedDestructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7285F6562AE5DD56005C8E8E /* SpeedDestructor.swift */; };
@@ -48,8 +48,8 @@
 		2363B9ED2CA9A2E1000111BA /* RidesFullSpeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RidesFullSpeed.swift; sourceTree = "<group>"; };
 		6A60449D2D7080340069AF62 /* DilroyHeavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DilroyHeavy.ttf; sourceTree = "<group>"; };
 		6A6044A02D7080340069AF62 /* jontserrat.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = jontserrat.ttf; sourceTree = "<group>"; };
-		6A6044B32D7081850069AF62 /* RickyMorty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickyMorty.swift; sourceTree = "<group>"; };
-		6A6044B52D7081AA0069AF62 /* BenCones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenCones.swift; sourceTree = "<group>"; };
+		6A6044B32D7081850069AF62 /* Chagrin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chagrin.swift; sourceTree = "<group>"; };
+		6A6044B52D7081AA0069AF62 /* Flummoxed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flummoxed.swift; sourceTree = "<group>"; };
 		720ED1DA2AF279E300FEA01C /* ProCons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProCons.swift; sourceTree = "<group>"; };
 		7285F64A2ADF2FD4005C8E8E /* RipePine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RipePine.swift; sourceTree = "<group>"; };
 		7285F6562AE5DD56005C8E8E /* SpeedDestructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedDestructor.swift; sourceTree = "<group>"; };
@@ -129,14 +129,14 @@
 			children = (
 				235B4CD42CA169A000F23714 /* AirEmulateDesign */,
 				72B113362AF44672005B803C /* Info.plist */,
-				6A6044B32D7081850069AF62 /* RickyMorty.swift */,
+				6A6044B32D7081850069AF62 /* Chagrin.swift */,
 				7287ACFA2AF1315600657FD8 /* Resources */,
 				72F3819B2ADD3DDA005549F1 /* Models */,
 				72F3819D2ADD3DF2005549F1 /* ViewModels */,
 				72F3819E2ADD3E04005549F1 /* Service */,
 				7285F6482ADF2FB0005C8E8E /* Utils */,
 				72F3818C2ADD3D86005549F1 /* Assets.xcassets */,
-				6A6044B52D7081AA0069AF62 /* BenCones.swift */,
+				6A6044B52D7081AA0069AF62 /* Flummoxed.swift */,
 			);
 			path = "new-project";
 			sourceTree = "<group>";
@@ -307,9 +307,9 @@
 				72AD4A062AEAA5CD00784D8A /* TrackOnParts.swift in Sources */,
 				72AD4A0B2AEABCEB00784D8A /* GearTurbo.swift in Sources */,
 				72AD4A042AEA714E00784D8A /* SpeedViewGrid.swift in Sources */,
-				6A6044B62D7081AA0069AF62 /* BenCones.swift in Sources */,
+				6A6044B62D7081AA0069AF62 /* Flummoxed.swift in Sources */,
 				72F381952ADD3D86005549F1 /* mods_farming_simulator22.xcdatamodeld in Sources */,
-				6A6044B42D7081860069AF62 /* RickyMorty.swift in Sources */,
+				6A6044B42D7081860069AF62 /* Chagrin.swift in Sources */,
 				72AD4A122AEFB88100784D8A /* BlownFlown.swift in Sources */,
 				720ED1DB2AF279E300FEA01C /* ProCons.swift in Sources */,
 				2363B9EE2CA9A2E1000111BA /* RidesFullSpeed.swift in Sources */,

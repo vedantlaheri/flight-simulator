@@ -227,7 +227,7 @@ struct Gravitybing: View {
     private var bodySection: some View {
         ZStack {
             NavigationLink(isActive: $openAboutItem, destination: {
-                AboutDictPage(Dynorthos: viewHotel, Gravonovix: {
+                Diaphanous(Dynorthos: viewHotel, Gravonovix: {
                     hileDrill.toggle()
                 }, Accelerion: AnyView(SuccessView()), Accordithis: .constant(false), Agilithis: $choosedData)
                 .navigationBarBackButtonHidden()

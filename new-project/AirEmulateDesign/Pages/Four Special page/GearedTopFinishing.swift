@@ -113,7 +113,6 @@ struct WheelView: View {
         }
 
         let GearURL = "\(BornToShine.Gravibolt)\(wheel.image)"
-        print("Fetching data from: \(GearURL)")
 
         Acknowledge.soldboat(from: GearURL, isImage: true) { data in
             Task {
@@ -312,7 +311,7 @@ struct GearedTopFinishing: View {
     }
     
     private func aboutDictPage(for item: GearPattern, imageData: Data?) -> some View {
-        AboutInfoPageWithClown(
+        Divulge(
             Emaciated: item.title,
             Enclave: item.isFavorited ?? false,
             Endow: imageData ?? item.imageData, 
