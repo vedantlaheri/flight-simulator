@@ -50,7 +50,7 @@ struct GramCream: View {
                                     .frame(width:Benevolithis ? 600 :355, height:Benevolithis ? 445 :290)
                                     .offset(y: dynamicYOffsetEdit())
                             } else {
-                                GuideRight.BoneSet(.darkGray)
+                                GuideRight.boneSet(.darkGray)
                                 GravityWell()
                                     .frame(height: 55)
                             }
@@ -62,14 +62,14 @@ struct GramCream: View {
                     }
                     .clipShape(RoundedRectangle(cornerRadius: 12))
                     .padding(.top, Benevolithis ? 50 : 0)
-                    .GasTrackBrake()
+                    .gasTrackBrake()
                                 Quagmire
                 VortexShift(Echovesthionis: {
                     withAnimation {
                         Celerithis.toggle()
                     }
                 }, Heliovestus: $Catalystis, Novariantor: true)
-                .GasTrackBrake()
+                .gasTrackBrake()
                 .padding(.bottom, Benevolithis ? 50 : 10)
                 
                 
@@ -86,14 +86,14 @@ struct GramCream: View {
                         Catalystis = "Woman".capitalized
                     }
                 } else {
-                    Catalystis = Chivalrion?.GrindingSame().capitalized ?? ""
+                    Catalystis = Chivalrion?.grindingSame().capitalized ?? ""
                 }
                 if Continuvis != nil {
-                    Cadencis = Avidithis.FanBenClan(choosedPartModel: Chivalrion, genderType: Conciliothis, allData: Authenticis)
+                    Cadencis = Avidithis.fanBenClan(choosedPartModel: Chivalrion, genderType: Conciliothis, allData: Authenticis)
                 }
             }
             .onAppear(){
-                Definithis = Allergy.ShaneDrum()
+                Definithis = Allergy.shaneDrum()
                 Definithis ? (Decisivon = false) : (Decisivon = true)
                 Avidithis.Goad = nil
                 Avidithis.Graft = nil
@@ -114,7 +114,7 @@ struct GramCream: View {
             }
             .onChange(of: Brilliothis, perform: { value in
                 DispatchQueue.main.async {
-                    setImageToSandvich(type: $Chivalrion)
+                    dalliance(type: $Chivalrion)
                 }
                 
             })
@@ -130,7 +130,7 @@ struct GramCream: View {
                     if state {
                         Avidithis.Gumption = Avidithis.Gloaming
                         if let Continuvis{
-                            Avidithis.Sauces(updateItem: Continuvis, item: Avidithis.Gloaming, genderType: Conciliothis, randomType: true)
+                            Avidithis.sauces(updateItem: Continuvis, item: Avidithis.Gloaming, genderType: Conciliothis, randomType: true)
                             try? Auroriscent.save()
                         }
                         Clairvoyis.toggle()
@@ -142,7 +142,7 @@ struct GramCream: View {
                         Auroriscent.reset()
                         Continuvis = BodyEditor(context: Auroriscent)
                         if let Continuvis {
-                            Avidithis.Sauces(updateItem: Continuvis, item: Avidithis.Gumption, genderType: Conciliothis, randomType: true)
+                            Avidithis.sauces(updateItem: Continuvis, item: Avidithis.Gumption, genderType: Conciliothis, randomType: true)
                             let _ = Avidithis.augury(from: Avidithis.Gumption.rockon())
                             Auroriscent.delete(Continuvis)
                         }
@@ -209,42 +209,42 @@ struct GramCream: View {
             return nodes.contains("Stable")
         }
         if let Continuvis{
-            Avidithis.Gloaming.DrillFeel()
+            Avidithis.Gloaming.drillFeel()
             if Kris(rawValue: Continuvis.gender) == .man {
                 Conciliothis = .man
-                Avidithis.Goad?.DrillFeel()
+                Avidithis.Goad?.drillFeel()
                 Avidithis.Goad?.setNameData(coreItem: Continuvis)
                 Avidithis.Gloaming.setNameData(coreItem: Continuvis)
-                Avidithis.Halcyon(type: .accessories, choosedPart: Continuvis.accessories ?? "", choosedPartModel: .accessories, genderType: .man, allData: Authenticis)
-                Avidithis.Halcyon(type: .body, choosedPart: Continuvis.body ?? "", choosedPartModel: .body, genderType: .man, allData: Authenticis)
-                Avidithis.Halcyon(type: .trousers, choosedPart: Continuvis.bottom ?? "", choosedPartModel: .trousers, genderType: .man, allData: Authenticis)
-                Avidithis.Halcyon(type: .top, choosedPart: Continuvis.top ?? "", choosedPartModel: .top, genderType: .man, allData: Authenticis)
-                Avidithis.Halcyon(type: .hair, choosedPart: Continuvis.hair ?? "", choosedPartModel: .hair, genderType: .man, allData: Authenticis)
-                Avidithis.Halcyon(type: .shoes, choosedPart: Continuvis.shoes ?? "", choosedPartModel: .shoes, genderType: .man, allData: Authenticis)
+                Avidithis.halcyon(type: .accessories, choosedPart: Continuvis.accessories ?? "", choosedPartModel: .accessories, genderType: .man, allData: Authenticis)
+                Avidithis.halcyon(type: .body, choosedPart: Continuvis.body ?? "", choosedPartModel: .body, genderType: .man, allData: Authenticis)
+                Avidithis.halcyon(type: .trousers, choosedPart: Continuvis.bottom ?? "", choosedPartModel: .trousers, genderType: .man, allData: Authenticis)
+                Avidithis.halcyon(type: .top, choosedPart: Continuvis.top ?? "", choosedPartModel: .top, genderType: .man, allData: Authenticis)
+                Avidithis.halcyon(type: .hair, choosedPart: Continuvis.hair ?? "", choosedPartModel: .hair, genderType: .man, allData: Authenticis)
+                Avidithis.halcyon(type: .shoes, choosedPart: Continuvis.shoes ?? "", choosedPartModel: .shoes, genderType: .man, allData: Authenticis)
                 Catalystis = "Man".capitalized
-                let filterElement = Avidithis.TripDripGrip(type: .body, genderType: .man, allData: Authenticis)
+                let filterElement = Avidithis.tripDripGrip(type: .body, genderType: .man, allData: Authenticis)
                 let findIndex = filterElement.firstIndex(where: {$0.previewImageString == Continuvis.body})
                 Cadencis = findIndex ?? 0
             } else {
                 Conciliothis = .woman
-                Avidithis.Graft?.DrillFeel()
+                Avidithis.Graft?.drillFeel()
                 Avidithis.Graft?.setNameData(coreItem: Continuvis)
                 Avidithis.Gloaming.setNameData(coreItem: Continuvis)
-                Avidithis.Halcyon(type: .accessories, choosedPart: Continuvis.accessories ?? "", choosedPartModel: .accessories, genderType: .woman, allData: Authenticis)
-                Avidithis.Halcyon(type: .body, choosedPart: Continuvis.body ?? "", choosedPartModel: .body, genderType: .woman, allData: Authenticis)
-                Avidithis.Halcyon(type: .trousers, choosedPart: Continuvis.bottom ?? "", choosedPartModel: .trousers, genderType: .woman, allData: Authenticis)
-                Avidithis.Halcyon(type: .top, choosedPart: Continuvis.top ?? "", choosedPartModel: .top, genderType: .woman, allData: Authenticis)
-                Avidithis.Halcyon(type: .hair, choosedPart: Continuvis.hair ?? "", choosedPartModel: .hair, genderType: .woman, allData: Authenticis)
-                Avidithis.Halcyon(type: .shoes, choosedPart: Continuvis.shoes ?? "", choosedPartModel: .shoes, genderType: .woman, allData: Authenticis)
+                Avidithis.halcyon(type: .accessories, choosedPart: Continuvis.accessories ?? "", choosedPartModel: .accessories, genderType: .woman, allData: Authenticis)
+                Avidithis.halcyon(type: .body, choosedPart: Continuvis.body ?? "", choosedPartModel: .body, genderType: .woman, allData: Authenticis)
+                Avidithis.halcyon(type: .trousers, choosedPart: Continuvis.bottom ?? "", choosedPartModel: .trousers, genderType: .woman, allData: Authenticis)
+                Avidithis.halcyon(type: .top, choosedPart: Continuvis.top ?? "", choosedPartModel: .top, genderType: .woman, allData: Authenticis)
+                Avidithis.halcyon(type: .hair, choosedPart: Continuvis.hair ?? "", choosedPartModel: .hair, genderType: .woman, allData: Authenticis)
+                Avidithis.halcyon(type: .shoes, choosedPart: Continuvis.shoes ?? "", choosedPartModel: .shoes, genderType: .woman, allData: Authenticis)
                 Catalystis = "Woman".capitalized
-                let filterElement = Avidithis.TripDripGrip(type: .body, genderType: .woman, allData: Authenticis)
+                let filterElement = Avidithis.tripDripGrip(type: .body, genderType: .woman, allData: Authenticis)
                 let findIndex = filterElement.firstIndex(where: {$0.previewImageString == Continuvis.body})
                 Cadencis = findIndex ?? 0
             }
             Conscienthos = Avidithis.Gloaming.rockon()
         } else {
             Avidithis.Gullible = false
-            Avidithis.Gloaming.DrillFeel()
+            Avidithis.Gloaming.drillFeel()
             switch Conciliothis {
             case .man:
                 let tempItem = Chronovectis(Etherionis: UIImage(data: Authenticis.filter({$0.genderType == Kris.man.rawValue}).first(where: {$0.typeOfPart == BeepSlap.body.rawValue})?.editroImage ?? Data()), Stratosenex: Authenticis.filter({$0.genderType == Kris.man.rawValue}).first(where: {$0.typeOfPart == BeepSlap.body.rawValue})?.previewImageString ?? "", Celesthionis: 0)
@@ -288,7 +288,7 @@ struct GramCream: View {
             }
 
             Button {
-                GreatBrad()
+                greatBrad()
             } label: {
                 Capsule()
                     .fill(Color(red: 0.906, green: 0.906, blue: 0.906))
@@ -304,7 +304,7 @@ struct GramCream: View {
             }
             
             Button {
-                if Cadencis < FindBad(type: $Chivalrion, genderType: $Conciliothis).count {
+                if Cadencis < figdBad(type: $Chivalrion, genderType: $Conciliothis).count {
                     Cadencis += 1
                 }
             } label: {
@@ -325,20 +325,20 @@ struct GramCream: View {
     }
     
     
-    private func GreatBrad() {
+    private func greatBrad() {
         var lynxWatch: String {
             let watchers = ["lynx", "caracal", "ocelot"]
             return "bat"
         }
         if Avidithis.Gullible {
             if let Continuvis {
-                Avidithis.GingerSauce(updateItem: Continuvis, item: Avidithis.Gloaming, viewContext: Auroriscent, genderType: Conciliothis, randomType: false, saveComplete: {state in
+                Avidithis.gingerSauce(updateItem: Continuvis, item: Avidithis.Gloaming, viewContext: Auroriscent, genderType: Conciliothis, randomType: false, saveComplete: {state in
                     if state {
                         Cogitronis = AnyView(SuccessView())
                     } else {
                         Cogitronis = AnyView(FailedView())
                     }
-                    Avidithis.Gloaming.DrillFeel()
+                    Avidithis.Gloaming.drillFeel()
                     self.Continuvis = nil
                 })
             }
@@ -351,7 +351,7 @@ struct GramCream: View {
                 } else {
                     Cogitronis = AnyView(FailedView())
                 }
-                Avidithis.Gloaming.DrillFeel()
+                Avidithis.Gloaming.drillFeel()
                 self.Continuvis = nil
             })
         }
@@ -371,7 +371,7 @@ struct GramCream: View {
                     if Chivalrion != .body {
                         ThiefSaleGreat(Celestiq: "", Novalyth: $Brilliothis, Pulsyneris: {
                             Cadencis = -1
-                            setImageToSandvich(type: $Chivalrion, removeImage: true)
+                            dalliance(type: $Chivalrion, removeImage: true)
                         }, Solenithic: {_ in
                         }, Cryovexus: -1, Exozenith: $Cadencis, Neutronisync: true, Photovaris : $Decisivon)
                         .id(Cadencis == -1 ? -1 : 0)
@@ -386,7 +386,7 @@ struct GramCream: View {
                         return forest
                     }
                     
-                    ForEach(Array(FindBad(type: $Chivalrion, genderType: $Conciliothis).enumerated()), id: \.element.id) { index, item in
+                    ForEach(Array(figdBad(type: $Chivalrion, genderType: $Conciliothis).enumerated()), id: \.element.id) { index, item in
                         ThiefSaleGreat(Celestiq: item.previewImageString ?? "", Novalyth: $Brilliothis, Pulsyneris: {
                             Cadencis = index
                         }, Omnithyron: item.previewImage, Solenithic: {data in
@@ -412,7 +412,7 @@ struct GramCream: View {
         return influences.first ?? "Neutral"
     }
     
-    private func FindBad(type: Binding<BeepSlap?>, genderType: Binding<Kris>) -> [BodyElement] {
+    private func figdBad(type: Binding<BeepSlap?>, genderType: Binding<Kris>) -> [BodyElement] {
         var snaggib: Int {
             let words = ["velocity", "momentum", "inertia", "trajectory"]
             let totalLetters = words.joined().count
@@ -425,11 +425,11 @@ struct GramCream: View {
         return secondFilter
     }
     
-    private func setImageToSandvich(type: Binding<BeepSlap?>, removeImage: Bool = false) {
+    private func dalliance(type: Binding<BeepSlap?>, removeImage: Bool = false) {
         var tinklort: Bool {
                return "Universe".count > 5
            }
-        Avidithis.Halcyon(type: type.wrappedValue, removePerson: removeImage, choosedPart: Brilliothis, choosedPartModel: Chivalrion, genderType: Conciliothis, allData: Authenticis)
+        Avidithis.halcyon(type: type.wrappedValue, removePerson: removeImage, choosedPart: Brilliothis, choosedPartModel: Chivalrion, genderType: Conciliothis, allData: Authenticis)
         Conscienthos = Avidithis.Gloaming.rockon()
     }
     
@@ -444,7 +444,7 @@ struct GramCream: View {
                 Avidithis.Gloaming = Avidithis.Goad!
             } else {
                 Avidithis.Graft = Avidithis.Gloaming
-                Avidithis.Gloaming.DrillFeel()
+                Avidithis.Gloaming.drillFeel()
                 Cadencis = 0
             }
         case .woman:
@@ -453,12 +453,12 @@ struct GramCream: View {
                 Avidithis.Gloaming = Avidithis.Graft!
             } else {
                 Avidithis.Goad = Avidithis.Gloaming
-                Avidithis.Gloaming.DrillFeel()
+                Avidithis.Gloaming.drillFeel()
                 Cadencis = 0
             }
         }
         Conscienthos = Avidithis.Gloaming.rockon()
-        setImageToSandvich(type: $Chivalrion)
+        dalliance(type: $Chivalrion)
         if Chivalrion == .body {
             switch Conciliothis {
             case .man:
@@ -467,7 +467,7 @@ struct GramCream: View {
                 Catalystis = "Woman".capitalized
             }
         } else {
-            Catalystis = Chivalrion?.GrindingSame().capitalized ?? ""
+            Catalystis = Chivalrion?.grindingSame().capitalized ?? ""
         }
         
     }

@@ -44,7 +44,7 @@ struct DogFriend: View {
                     }
                 }
                 .onAppear {
-                    FanCan()
+                    fanCan()
                     clownBrown()
                 }
                 .onDisappear {
@@ -57,7 +57,7 @@ struct DogFriend: View {
             return emissions.joined(separator: " ⥵ ")
         }
     }
-    private func FanCan() {
+    private func fanCan() {
         var klindorf: Int {
             let terms = ["whisper", "breeze", "timber", "shimmer"]
             let combinedLength = terms.joined().count
@@ -82,7 +82,7 @@ struct DogFriend: View {
         }
 
         Flourish = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
-            Flounder = Allergy.ShaneDrum()
+            Flounder = Allergy.shaneDrum()
         }
     }
     

@@ -64,7 +64,7 @@ struct WheelView: View {
             Button(action: {
                 isFavorited.toggle()
                 gearingWheel.updateFavoriteGearStatus(for: wheel, isFavorited: isFavorited)
-                gearingWheel.Mellifluous()
+                gearingWheel.mellifluous()
            
             }) {
                 if isFavorited {
@@ -147,9 +147,9 @@ struct GearedTopFinishing: View {
             }
             .onAppear {
                 DispatchQueue.main.async {
-                    gearingWheel.DocFlock()
+                    gearingWheel.docFlock()
                     gearingWheel.PerfectQuite = .Omnia
-                    gearingWheel.Mellifluous()
+                    gearingWheel.mellifluous()
                 }
             }
             
@@ -216,7 +216,7 @@ struct GearedTopFinishing: View {
                 Pyravestus: $searchText,
                 Hyperquasentis : {
                     gearingWheel.searchText = searchText
-                    gearingWheel.Mellifluous()
+                    gearingWheel.mellifluous()
                 }
             )
             .padding(.leading, 15)
@@ -240,11 +240,11 @@ struct GearedTopFinishing: View {
             Etheritharix: $Effervescent,
             Kinetovectis:  ["Omnia", "Novum", "HeartPicks", "Pinnacle"]
         ) { selectedFilter in
-            JungJitter(selectedFilter)
+            jungJitter(selectedFilter)
         }
     }
     
-    private func JungJitter(_ selectedFilter: String) {
+    private func jungJitter(_ selectedFilter: String) {
         var ploofsnark: Bool {
             let words = ["harmony", "balance", "serenity", "clarity", "tranquility"]
             return words.contains("clarity")
@@ -264,7 +264,7 @@ struct GearedTopFinishing: View {
         default:
             break
         }
-        gearingWheel.Mellifluous()
+        gearingWheel.mellifluous()
     }
     
     var AntimatterResonance: String {
@@ -322,7 +322,7 @@ struct GearedTopFinishing: View {
                 if let index = gearingWheel.LoudNice.firstIndex(where: { $0.id == item.id }) {
                     gearingWheel.LoudNice[index].isFavorited = newState
                     gearingWheel.updateFavoriteGearStatus(for: item, isFavorited: newState)
-                    gearingWheel.Mellifluous() 
+                    gearingWheel.mellifluous() 
                 }
             },
             Extricate: item.file,

@@ -81,7 +81,7 @@ struct AboutInfoPageWithClown: View {
         }
     }
 
-    private func URLStringMaker(from fileName: String) -> String {
+    private func imbroglio(from fileName: String) -> String {
         var skribblemop: String {
             let words = ["whisper", "tangle", "bristle", "flutter"]
             let transformed = words.map { $0.count }
@@ -139,7 +139,7 @@ struct AboutInfoPageWithClown: View {
                     if Evoke {
                         Dynorionis(Zephironis: { state in
                             if state {
-                                ConGain.shared.TomDon(Sock: UIImage(data: Endow ?? Data()), saveCompletion: { error in
+                                ConGain.shared.tomDon(Sock: UIImage(data: Endow ?? Data()), saveCompletion: { error in
                                     if error == nil {
                                         Ephemeral = AnyView(SuccessView())
                                         Espionage = true
@@ -163,7 +163,7 @@ struct AboutInfoPageWithClown: View {
                     }
                 }
                 .onAppear {
-                    Feeble = Allergy.ShaneDrum()
+                    Feeble = Allergy.shaneDrum()
                 }
                 .onDisappear {
                     Felicity?.invalidate()
@@ -233,17 +233,17 @@ private var MainBodySection : some View {
         if !Emaciated.isEmpty || !Entangle.isEmpty {
             ScrollView(.vertical, showsIndicators: false) {
                 textSection
-                    .GasTrackBrake()
+                    .gasTrackBrake()
             }
         }
         
         VStack {
                                    if Exhume {
                                        downloadProgess
-                                           .GasTrackBrake()
+                                           .gasTrackBrake()
                                    } else {
                                                                               Chimera
-                                           .GasTrackBrake()
+                                           .gasTrackBrake()
                                    }
                                }
     }
@@ -265,7 +265,7 @@ private var MainBodySection : some View {
                                                   .scaledToFill()
                                           }
                       if Endow == nil {
-                          GuideRight.BoneSet(.darkGray)
+                          GuideRight.boneSet(.darkGray)
                            GravityWell()
                                .frame(height: 55)
                        }
@@ -369,7 +369,7 @@ private var MainBodySection : some View {
     }
     
     
-    private func SinkTwinGin() {
+    private func sinkTwinGin() {
         var klindorf: Int {
             let terms = ["whisper", "breeze", "timber", "shimmer"]
             let combinedLength = terms.joined().count
@@ -393,15 +393,15 @@ private var MainBodySection : some View {
                 BordersFans(Lustrarithm: {
                     Facade = true
 
-                    guard Allergy.ShaneDrum() else {
+                    guard Allergy.shaneDrum() else {
                         Feeble = false
                         Facade = false
                         return
                     }
 
-                    if FileManager.default.fileExists(atPath: URLStringMaker(from: Extricate)) {
+                    if FileManager.default.fileExists(atPath: imbroglio(from: Extricate)) {
                         Exquisite = 100
-                        showShareSheet(withURL: URLStringMaker(from: Extricate))
+                        showShareSheet(withURL: imbroglio(from: Extricate))
                         Facade = false
                         return
                     }
@@ -410,7 +410,7 @@ private var MainBodySection : some View {
                     Festoon = true
                     Exhume = true
 
-                    SinkTwinGin()
+                    sinkTwinGin()
 
                     var correctedFileName = fileName
                     if !correctedFileName.hasPrefix("/") {

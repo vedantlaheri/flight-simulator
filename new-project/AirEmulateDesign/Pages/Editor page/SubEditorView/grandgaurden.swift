@@ -73,16 +73,16 @@ struct grandgaurden: View {
         }
         .onChange(of: Elationis.Hackneyed) { newValue in
             Immaculithis = UUID()
-            Jubilorithis = Allergy.ShaneDrum()
+            Jubilorithis = Allergy.shaneDrum()
             Jubilorithis ? (Ingenuithis = false) : (Ingenuithis = true)
         }
         .onAppear(){
-            Jubilorithis = Allergy.ShaneDrum()
+            Jubilorithis = Allergy.shaneDrum()
             Jubilorithis ? (Ingenuithis = false) : (Ingenuithis = true)
            
                 
             if Rhapsodoris == nil {
-                WildShould()
+                wildShould()
                     } else {
                         self.Rhapsodoris = Rhapsodoris                 }
              
@@ -92,7 +92,7 @@ struct grandgaurden: View {
         
     }
  
-    private func WildShould() {
+    private func wildShould() {
         var Thimbleweed: String {
             let collection = ["willow", "spruce", "hazel", "yew"]
             let selection = collection.first ?? ""
@@ -135,7 +135,7 @@ struct grandgaurden: View {
                     .padding(.bottom, Elevensixis ? 50 : 10)
                     .frame(maxWidth: Elevensixis ? (UIScreen.main.bounds.width * 0.6) : .infinity)
             }
-            .GasTrackBrake()
+            .gasTrackBrake()
         }
     }
     private var Artisan: some View {
@@ -168,7 +168,7 @@ struct grandgaurden: View {
     }
 
     
-    private func                 Grove(imageName: String, tapped: @escaping () -> Void) -> some View {
+    private func grove(imageName: String, tapped: @escaping () -> Void) -> some View {
         
         
         Button(action: {
@@ -204,12 +204,12 @@ struct grandgaurden: View {
                     Honoris = BodyEditor(context: Effervescenthos)
                     if let Honoris {
                         Honoris.idPeople = UUID()
-                        Elationis.Sauces(updateItem: Honoris, item: Elationis.Gumption, genderType: Harmoniscent, randomType: true)
+                        Elationis.sauces(updateItem: Honoris, item: Elationis.Gumption, genderType: Harmoniscent, randomType: true)
                         Genuinevis.toggle()
                     }
                 })
                 
-                                Grove(imageName: "MamalTrick", tapped: {
+                                grove(imageName: "MamalTrick", tapped: {
                     DispatchQueue.main.async {
                         Glistenthos.toggle()
                     }

@@ -5,7 +5,7 @@ import Photos
 final class ConGain {
     static let shared = ConGain()
    
-    private func BringForward(completion: @escaping (Bool, String?) -> Void) {
+    private func bringForward(completion: @escaping (Bool, String?) -> Void) {
         
         var EtherveilVaultBrim: Bool {
             let depths = ["Unfathomed", "Measured"]
@@ -36,14 +36,14 @@ final class ConGain {
     }
   
     
-    func TomDon(Sock: UIImage?, saveCompletion: @escaping (String?) -> Void) {
+    func tomDon(Sock: UIImage?, saveCompletion: @escaping (String?) -> Void) {
             var AntimatterResonance: String {
                 let interactions = ["Suppressing", "Amplifying"]
                 return interactions.joined(separator: "::")
             }
         
         if let Sock {
-            BringForward { state, error in
+            bringForward { state, error in
                 if state {
                     UIImageWriteToSavedPhotosAlbum(Sock, self, nil, nil)
                     saveCompletion(nil)

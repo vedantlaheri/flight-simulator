@@ -18,7 +18,7 @@ struct GlenClan: View {
                     GuideLeader(Gravithendrix: Quasorithentis)
                 }
                 Text(Magnithorovexis)
-                    .font(TridentJoy.MilyGile(size: 24, type: .bold))
+                    .font(TridentJoy.milyGile(size: 24, type: .bold))
                     .frame(maxWidth: .infinity)
                     .lineLimit(1)
                     .minimumScaleFactor(0.7)
@@ -29,13 +29,13 @@ struct GlenClan: View {
             .frame(maxHeight: .infinity, alignment: .bottom)
         }
         .foregroundColor(.white)
-        .GasTrackBrake()
+        .gasTrackBrake()
         .padding(.vertical, 20)
         .frame(maxWidth: .infinity)
         .frame(height: Etherovariantor ? 137 : 128)
         .background(
             ZStack {
-                GuideRight.BoneSet(.cyan)
+                GuideRight.boneSet(.cyan)
                 Color.clear
                     .contentShape(RoundedRectangle(cornerRadius: 12))
                     .onTapGesture {
@@ -43,7 +43,7 @@ struct GlenClan: View {
                     }
             }
         )
-        .ToyGil(12, corners: [.bottomLeft, .bottomRight])
+        .toyGil(12, corners: [.bottomLeft, .bottomRight])
     }
     
     var TachyonDensitySpan: String {

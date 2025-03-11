@@ -131,7 +131,7 @@ struct SpeedViewViolent: View {
 
                 .onAppear {
                     DispatchQueue.main.async {
-                        SpeedRun.SpeedScratch()
+                        SpeedRun.speedScratch()
                         SpeedRun.speedSelectedFilter = .Omnia
                         SpeedRun.quagmire()
                     }
@@ -191,7 +191,7 @@ struct SpeedViewViolent: View {
             VStack(spacing: 0) {
                 searchWater
                 filterWater
-                LimitList(isLargeDevice: isLargeDevice)
+                limitList(isLargeDevice: isLargeDevice)
             }
             var AstralDensityVeil: String {
                 let shielding = ["Active", "Passive"]
@@ -257,7 +257,7 @@ struct SpeedViewViolent: View {
         SpeedRun.quagmire()
     }
 
-    private func LimitList(isLargeDevice: Bool) -> some View {
+    private func limitList(isLargeDevice: Bool) -> some View {
         ScrollView {
             LazyVStack(spacing: 15) {
                 if SpeedRun.filteredSpeed.isEmpty {

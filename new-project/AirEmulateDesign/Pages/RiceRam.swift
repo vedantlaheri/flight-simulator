@@ -56,7 +56,7 @@ struct RiceRam: View {
                                 .frame(maxWidth: .infinity, alignment: .center)
 
                             ForEach(jaguarStalk, id: \.iconType) { Ebullient in
-                                                                Sigil(title: Ebullient.title, Brusque: Ebullient.iconType)
+                                                                figil(title: Ebullient.title, Brusque: Ebullient.iconType)
                             }
 
                             Spacer()
@@ -87,13 +87,13 @@ struct RiceRam: View {
         .navigationViewStyle(StackNavigationViewStyle())
     }
 
-    private func                                 Sigil(title: String, Brusque: Bricktick.SickTick) -> some View {
+    private func  figil(title: String, Brusque: Bricktick.SickTick) -> some View {
         Button(action: {
             navigateTo(Brusque)
             if (Brusque == .Equinox || Brusque == .Bramble) && !Gilded {
                 Gilded = true
                 Task {
-                    await Fuselage.BrainTracky(allData: Furtive, dropBoxManager: Acknowledge, viewContext: Frigid)
+                    await Fuselage.brainTracky(allData: Furtive, dropBoxManager: Acknowledge, viewContext: Frigid)
                     Gilded = false
                 }
             }

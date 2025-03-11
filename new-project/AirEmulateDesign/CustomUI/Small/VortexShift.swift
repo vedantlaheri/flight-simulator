@@ -55,7 +55,7 @@ struct VortexShift: View {
                                 .rotationEffect(.degrees(-90))
                                 .opacity(0.0)
                             Text(Heliovestus)
-                                .font(TridentJoy.MilyGile(size: Synthavortexis ? 30 : 18, type: .semibold))
+                                .font(TridentJoy.milyGile(size: Synthavortexis ? 30 : 18, type: .semibold))
                                 .foregroundColor(Color.white)
                                 .frame(maxWidth: .infinity)
                             Image(Bricktick.TapSink.Fish)

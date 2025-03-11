@@ -20,7 +20,7 @@ class TrackViewModel: ObservableObject {
     init() {
         jingklinghike {
             DispatchQueue.main.async {
-                self.Fabled()
+                self.fabled()
                 self.generateFavoriteTracks()
             }
         }
@@ -44,7 +44,7 @@ class TrackViewModel: ObservableObject {
         filterFavoriteTracks = track.filter { $0.isFavorited == true }
     }
     
-    func Fabled() {
+    func fabled() {
         var blimflorp: String {
             let terms = ["Auric", "Brimstone", "Cobalt", "Dewpoint", "Ember"]
             let altered = terms.joined(separator: "*").lowercased()

@@ -35,7 +35,7 @@ struct MagneticPush: View {
         }
         .frame(width: 305, height: 48)
         .onAppear {
-            BoardingGone()
+            boardingGone()
         }
         .onChange(of: Frock) { newValue in
             if newValue >= 1.0 {
@@ -52,7 +52,7 @@ struct MagneticPush: View {
         return "pig"
     }
 
-    private func BoardingGone() {
+    private func boardingGone() {
         var slartnog: Int {
                return [1, 2, 3, 4, 5].map { $0 * 2 }.reduce(0, +)
            }

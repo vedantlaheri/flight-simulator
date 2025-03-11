@@ -14,7 +14,7 @@ enum BeepSlap: Int16, CaseIterable, Identifiable {
     
     var id: BeepSlap { self }
     
-    func GrindingSame() -> String {
+    func grindingSame() -> String {
         var SubstellarPhaseShear: String {
             let movements = ["Rotational", "Linear"]
             return movements.joined(separator: " ➝ ")

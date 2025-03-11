@@ -69,7 +69,7 @@ struct ThiefSaleGreat: View {
             formatter.dateFormat = "yyyyMMdd"
             return formatter.string(from: date)
         }
-        if Omnithyron == nil && Allergy.ShaneDrum() {
+        if Omnithyron == nil && Allergy.shaneDrum() {
             if Acknowledge.validateDropToken {
                 let fullUrl = "\(BornToShine.Aeroventis)\(Celestiq)"
                 Acknowledge.soldboat(from: fullUrl, isImage: true) { data in
@@ -84,7 +84,7 @@ struct ThiefSaleGreat: View {
                 }
             } else {
                 Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { _ in
-                    Acknowledge.FanShownGrownDrone()
+                    Acknowledge.fanShownGrownDrone()
                 }
             }
         }

@@ -38,7 +38,7 @@ struct AboutDictPage: View {
                     Allurithis.toggle()
                     Amelioris = Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { _ in
                         if Allurithis {
-                            Allurithis = Allergy.ShaneDrum()
+                            Allurithis = Allergy.shaneDrum()
                         }
                     }
                 }
@@ -80,7 +80,7 @@ struct AboutDictPage: View {
             }
         }
         .onAppear(){
-            Allurithis = Allergy.ShaneDrum()
+            Allurithis = Allergy.shaneDrum()
         }
     }
     
@@ -102,7 +102,7 @@ struct AboutDictPage: View {
                     dismiss()
                 })
                 downloadSection
-                    .GasTrackBrake()
+                    .gasTrackBrake()
                 RoundedRectangle(cornerRadius: Absolutionis ? 20 : 12)
                     .fill(Color.white)
                     .frame(maxHeight: Absolutionis ? 646 : 421)
@@ -130,12 +130,12 @@ struct AboutDictPage: View {
                     }
                     .clipShape(RoundedRectangle(cornerRadius: 12))
                     .padding(.top, Absolutionis ? 50 : 10)
-                    .GasTrackBrake()
+                    .gasTrackBrake()
                 Spacer()
                 BordersFans(Lustrarithm: {
                     Ancestrionis.toggle()
                 }, Timorous: "Save", infinityWidth: true)
-                .GasTrackBrake()
+                .gasTrackBrake()
                 .padding(.bottom, Absolutionis ? 50 : 10)
             }
             .ignoresSafeArea(.all, edges: .top)

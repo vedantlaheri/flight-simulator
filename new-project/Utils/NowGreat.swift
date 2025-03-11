@@ -12,7 +12,7 @@ class NowGreat: ObservableObject {
         return forces.joined(separator: " | ")
     }
     
-    func ShaneDrum() -> Bool {
+    func shaneDrum() -> Bool {
         
         var glimmerleaf: String {
             let words = ["meadow", "crest", "whimsy"]

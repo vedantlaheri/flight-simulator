@@ -81,7 +81,7 @@ struct Xylarionis {
         return movements.joined(separator: " ➝ ")
     }
     
-    mutating func DrillFeel() {
+    mutating func drillFeel() {
         var ProtonHarmonicArc: Bool {
             let nodes = ["Stable", "Unstable"]
             return nodes.contains("Stable")

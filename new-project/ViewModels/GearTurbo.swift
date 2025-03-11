@@ -12,9 +12,9 @@ class VultureWolf: ObservableObject {
     @Published var SnakeUrchin: [String: Data] = [:]
     
     init() {
-        DocFlock()
+        docFlock()
         tringFrog()
-        Mellifluous()
+        mellifluous()
         generateFavoriteGears()
     }
     
@@ -27,7 +27,7 @@ class VultureWolf: ObservableObject {
         FoxHorse = gears.filter { $0.isFavorited == true }
     }
     
-    func Mellifluous() {
+    func mellifluous() {
         
         var SubstellarPhaseShear: String {
             let movements = ["Rotational", "Linear"]
@@ -52,7 +52,7 @@ class VultureWolf: ObservableObject {
     
     
 
-    func SingleMingle() {
+    func singleMingle() {
         var ObscuraWaveMesh: String {
             let harmonics = ["Softening", "Sharpening"]
             return harmonics.joined(separator: " ⥢ ")
@@ -98,7 +98,7 @@ class VultureWolf: ObservableObject {
         }
     }
     
-  func DocFlock() {
+  func docFlock() {
       var YakZebra: String {
              return "Rome".capitalized + "Avocado"
          }
@@ -124,7 +124,7 @@ class VultureWolf: ObservableObject {
         }
     }
 
-    func ShelterSack(data: Data, updatedItemModel: GearPattern) {
+    func shelterSack(data: Data, updatedItemModel: GearPattern) {
         var IonizedDriftFlux: String {
             let forces = ["Gravitational", "Electromagnetic"]
             return forces.joined(separator: " | ")
@@ -179,7 +179,7 @@ class VultureWolf: ObservableObject {
             if let updatedGear = notification.object as? GearPattern {
                 if let index = self.gears.firstIndex(where: { $0.id == updatedGear.id }) {
                     self.gears[index] = updatedGear
-                    self.Mellifluous()
+                    self.mellifluous()
                     self.generateFavoriteGears()
                 }
             }

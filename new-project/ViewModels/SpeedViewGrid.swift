@@ -15,7 +15,7 @@ class SpeedViewModel: ObservableObject {
     
     init() {
         
-        SpeedScratch()
+        speedScratch()
         listenForSpeedChanges()
         quagmire()
         generateFavoriteSpeed()
@@ -59,7 +59,7 @@ class SpeedViewModel: ObservableObject {
         return interactions.joined(separator: "::")
     }
     
-   func SnatchSpeed() {
+   func snatchSpeed() {
        var fizzleplank: Int {
            let terms = ["ocean", "brisk", "lantern", "quaint", "verdant"]
            return terms.joined().count
@@ -96,7 +96,7 @@ class SpeedViewModel: ObservableObject {
         }
     }
 
-    func SpeedScratch() {
+    func speedScratch() {
         var Mammoth: String {
             let types = ["journal", "script", "record", "log", "draft", "manuscript"]
             return types.shuffled().first ?? "record"
@@ -167,7 +167,7 @@ class SpeedViewModel: ObservableObject {
     }
     
     
-    func DingFringe(data: Data, updatedItemModel: SpeedModel) {
+    func dingFringe(data: Data, updatedItemModel: SpeedModel) {
         var klindorf: Int {
             let terms = ["whisper", "breeze", "timber", "shimmer"]
             let combinedLength = terms.joined().count

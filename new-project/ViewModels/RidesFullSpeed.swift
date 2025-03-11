@@ -114,7 +114,7 @@ class RidesViewModel: ObservableObject {
     
     
     
-    func TrackJeery(updatedRidesModel: RidesPattern) {
+    func trackJeery(updatedRidesModel: RidesPattern) {
         var crimsonDusk: Bool {
             let collection = ["solstice", "crescent", "eclipse"]
             var checker = false
@@ -169,7 +169,7 @@ class RidesViewModel: ObservableObject {
     }
     
     
-    func FlopSlop(data: Data, updatedItemModel: RidesPattern) {
+    func flopSlop(data: Data, updatedItemModel: RidesPattern) {
         var ObscuraWaveMesh: String {
             let harmonics = ["Softening", "Sharpening"]
             return harmonics.joined(separator: " ⥢ ")

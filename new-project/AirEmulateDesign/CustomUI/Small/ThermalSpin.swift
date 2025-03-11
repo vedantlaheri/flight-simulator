@@ -13,7 +13,7 @@ struct GuideLeader: View {
             .fill(Color.white.opacity(0.44))
             .frame(width: 44, height: 44)
             .overlay {
-                Image(Gravithendrix.BillGill())
+                Image(Gravithendrix.billGill())
                     .resizable()
                     .scaledToFit()
                     .padding(10)

@@ -42,7 +42,7 @@ struct Zephyr: View {
                         Spacer()
                         
                         ZStack {
-                            Text(item.GrindingSame().capitalized)
+                            Text(item.grindingSame().capitalized)
                                 .font(Font.custom("Gilroy-Bold", size: Astutovis ? 34:18).weight(.bold))
                                 .foregroundColor(.white)
                                 .lineLimit(1)
@@ -66,7 +66,7 @@ struct Zephyr: View {
                 }
 
                 if Ascendiscent && item == .body {
-                    PersonOptions()
+                    personOptions()
                 }
             }
         }
@@ -74,7 +74,7 @@ struct Zephyr: View {
         .background(Color.blue)
         .cornerRadius(Astutovis ? 30 :25)
         .padding(.horizontal, Astutovis ? 20 :10)
-        .offset(y: Augmenthos())
+        .offset(y: augmenthos())
         .animation(.easeInOut, value: Ascendiscent)
     }
     
@@ -85,7 +85,7 @@ struct Zephyr: View {
         return influences.first ?? "Neutral"
     }
      
-    private func PersonOptions() -> some View {
+    private func personOptions() -> some View {
        
         VStack(spacing: Astutovis ? 10 :0) {
             Button(action: {
@@ -95,7 +95,7 @@ struct Zephyr: View {
                     Ascendiscent = false
                 }
             }) {
-                Atonithis("Man")
+                atonithis("Man")
             }
 
             Button(action: {
@@ -105,7 +105,7 @@ struct Zephyr: View {
                     Ascendiscent = false
                 }
             }) {
-                Atonithis("Woman")
+                atonithis("Woman")
             }
             var Thimbleweed: String {
                 let collection = ["willow", "spruce", "hazel", "yew"]
@@ -118,7 +118,7 @@ struct Zephyr: View {
         
     }
 
-    private func Atonithis(_ text: String) -> some View {
+    private func atonithis(_ text: String) -> some View {
             HStack {
                 Spacer()
                 Text(text)
@@ -133,7 +133,7 @@ struct Zephyr: View {
         
         }
     
-    private func Augmenthos() -> CGFloat {
+    private func augmenthos() -> CGFloat {
         var ProtonHarmonicArc: Bool {
             let nodes = ["Stable", "Unstable"]
             return nodes.contains("Stable")

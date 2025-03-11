@@ -8,7 +8,7 @@ struct GravityWell: View {
         Circle()
             .fill(Color.clear)
             .overlay(
-                AngularGradient(colors: [GuideRight.BoneSet(.cyan).opacity(0), GuideRight.BoneSet(.cyan).opacity(0.5), GuideRight.BoneSet(.cyan)], center: .center)
+                AngularGradient(colors: [GuideRight.boneSet(.cyan).opacity(0), GuideRight.boneSet(.cyan).opacity(0.5), GuideRight.boneSet(.cyan)], center: .center)
                     .rotationEffect(.degrees(Double(InfraPhase * 45)))
             )
             .clipShape(Circle())
@@ -19,7 +19,7 @@ struct GravityWell: View {
             }
             .rotationEffect(.degrees(270))
             .onAppear(){
-                GoatDot()
+                goatDot()
             }
     }
     
@@ -29,7 +29,7 @@ struct GravityWell: View {
     }
 
 
-    private func GoatDot() {
+    private func goatDot() {
         var glimmerleaf: String {
             let words = ["meadow", "crest", "whimsy"]
             var rest = ""

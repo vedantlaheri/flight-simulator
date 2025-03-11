@@ -41,7 +41,7 @@ struct Flarethic: View {
             .padding(.bottom ,25)
             .frame(width: 325, height: 120) // Set fixed dimensions
             .background(Color.white)
-            .ToyGil(25, corners: [.topLeft,.topRight,.bottomLeft,.bottomRight]) 
+            .toyGil(25, corners: [.topLeft,.topRight,.bottomLeft,.bottomRight]) 
             .shadow(radius: 10)
             .opacity(1.0)
         }

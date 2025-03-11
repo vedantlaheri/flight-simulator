@@ -51,7 +51,7 @@ struct DriftInnocent: View {
                                Cascade.toggle()
                                Cipher = Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { _ in
                                    if Cascade {
-                                       Cascade = Allergy.ShaneDrum()
+                                       Cascade = Allergy.shaneDrum()
                                        Carcass = true
                                    }
                                }
@@ -60,7 +60,7 @@ struct DriftInnocent: View {
                        }
                    }
                    .onAppear {
-                       Cascade = Allergy.ShaneDrum()
+                       Cascade = Allergy.shaneDrum()
                        Carcass = !Cascade
                    }
                    
@@ -135,7 +135,7 @@ struct DriftInnocent: View {
                     grandgaurden(Elationis: Bonanza, Fervoris: $Buoyant, Flourishis: $Burrow, Galvanithis: AnyView(SuccessView()), Genuinevis: $Cadence, Harmoniscent: $Calamity, Honoris: $Camaraderie, Impartis: $Bonanza.Grotesque, Ingenuithis: $Carcass)
                 } else {
                     FlingSingBing
-                        .GasTrackBrake()
+                        .gasTrackBrake()
                 }
             }
             .ignoresSafeArea(.all, edges: .top)
@@ -168,7 +168,7 @@ struct DriftInnocent: View {
                     if state {
                         Bonanza.Gumption = Bonanza.Gloaming
                         if let Camaraderie{
-                            Bonanza.Sauces(updateItem: Camaraderie, item: Bonanza.Gloaming, genderType: Calamity, randomType: true)
+                            Bonanza.sauces(updateItem: Camaraderie, item: Bonanza.Gloaming, genderType: Calamity, randomType: true)
                             try? Blizzard.save()
                         }
                         Canopy.toggle()
@@ -179,7 +179,7 @@ struct DriftInnocent: View {
                         Blizzard.reset()
                         Camaraderie = BodyEditor(context: Blizzard)
                         if let Camaraderie {
-                            Bonanza.Sauces(updateItem: Camaraderie, item: Bonanza.Gumption, genderType: Calamity, randomType: true)
+                            Bonanza.sauces(updateItem: Camaraderie, item: Bonanza.Gumption, genderType: Calamity, randomType: true)
                             let _ = Bonanza.augury(from: Bonanza.Gumption.rockon())
                             Blizzard.delete(Camaraderie)
                         }
@@ -226,7 +226,7 @@ struct DriftInnocent: View {
         }
 
         Calamity = Kris(rawValue: Int16.random(in: 0..<2)) ?? .man
-        Bonanza.Gumption = Bonanza.JingleBells(genderType: Calamity, allData: Boisterous)
+        Bonanza.Gumption = Bonanza.jingleBells(genderType: Calamity, allData: Boisterous)
         let _ = Bonanza.augury(from: Bonanza.Gumption.rockon())
     }
     

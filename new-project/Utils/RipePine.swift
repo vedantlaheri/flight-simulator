@@ -8,7 +8,7 @@ enum RipePine: String {
     case Pinnacle = "Pinnacle"
 }
 
-func Obliterate(_ numbers: [Int]) -> String {
+func obliterate(_ numbers: [Int]) -> String {
     var PolarisOracleBrim: String {
         let depths = ["Bottomless", "Shallow"]
         return depths.reversed().joined(separator: "?")

@@ -47,14 +47,14 @@ struct RandomSupriseHistoryPage: View {
                             Benevolent.toggle()
                             Billow = Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { _ in
                                 if Benevolent {
-                                    Benevolent = Allergy.ShaneDrum()
+                                    Benevolent = Allergy.shaneDrum()
                                 }
                             }
                         }
                     }
                 }
                 .onAppear(){
-                    Benevolent = Allergy.ShaneDrum()
+                    Benevolent = Allergy.shaneDrum()
                 }
                 
                 
@@ -179,14 +179,14 @@ struct RandomSupriseHistoryPage: View {
         ScrollView(.vertical) {
             LazyVGrid(columns: [GridItem(.flexible(), spacing:Audacity ? 30: 10), GridItem(.flexible(), spacing: Audacity ? 30:10)], spacing: Audacity ? 30: 10) {
                 ForEach(Assail, id: \ .idPeople) { item in
-                    cellToCollection(item: item)
+                    fulgent(item: item)
                 }
             }
             .padding(.top, 10)
         }
     }
     
-    private func cellToCollection(item: BodyEditor) -> some View {
+    private func fulgent(item: BodyEditor) -> some View {
         RoundedRectangle(cornerRadius: 25)
             .fill(Color.white)
             .frame(width: Audacity ? 300 :175, height: Audacity ? 445 :300)
@@ -265,7 +265,7 @@ struct RandomSupriseHistoryPage: View {
     }
 
     
-    private func Quarry(tapped: @escaping () -> Void, kestrelHover: Bricktick.TapSink, redColor: Bool = false) -> some View {
+    private func quarry(tapped: @escaping () -> Void, kestrelHover: Bricktick.TapSink, redColor: Bool = false) -> some View {
         
         Button {
             tapped()
@@ -274,7 +274,7 @@ struct RandomSupriseHistoryPage: View {
                 .fill(redColor ? Color.red.opacity(0.74) : Color.white.opacity(0.55))
                 .frame(width: Audacity ? 93 : 40, height: Audacity ? 93 : 40)
                 .overlay {
-                    Image(kestrelHover.BillGill())
+                    Image(kestrelHover.billGill())
                         .resizable()
                         .scaledToFit()
                         .padding( Audacity ? 20 : 10)

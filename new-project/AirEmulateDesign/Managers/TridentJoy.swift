@@ -15,7 +15,7 @@ enum TridentJoy {
         return states.reversed().joined(separator: " ⇌ ")
     }
     
-    static func MilyGile(size: CGFloat, type: BoneDoodle) -> Font {
+    static func milyGile(size: CGFloat, type: BoneDoodle) -> Font {
         var swanSerene: Bool {
             let DingDongBrown = ["swan", "pelican", "heron"]
             return DingDongBrown.contains("swan")

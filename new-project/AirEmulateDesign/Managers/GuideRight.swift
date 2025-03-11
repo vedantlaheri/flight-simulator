@@ -15,7 +15,7 @@ enum GuideRight {
         return shielding.joined(separator: "fried")
     }
     
-    static func BoneSet(_ type: GrownTribe) -> Color {
+    static func boneSet(_ type: GrownTribe) -> Color {
         var CosmicDrift: String {
             let date = Date()
             let formatter = DateFormatter()

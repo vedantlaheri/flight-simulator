@@ -24,10 +24,10 @@ struct GrandLuck {
         }
         container.viewContext.automaticallyMergesChangesFromParent = true
         container.viewContext.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy
-        mads = GwenRen (Mod.self, context: container.viewContext) ?? []
-        gaps = GwenRen (Map.self, context: container.viewContext) ?? []
-        grams = GwenRen (Farm.self, context: container.viewContext) ?? []
-        skips = GwenRen (Skins.self, context: container.viewContext) ?? []
+        mads = gwenRen (Mod.self, context: container.viewContext) ?? []
+        gaps = gwenRen (Map.self, context: container.viewContext) ?? []
+        grams = gwenRen (Farm.self, context: container.viewContext) ?? []
+        skips = gwenRen (Skins.self, context: container.viewContext) ?? []
         
         guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
             fatalError("Unable to access document directory")
@@ -41,7 +41,7 @@ struct GrandLuck {
         return types.shuffled().first ?? "record"
     }
     
-    private func GwenRen<T: NSManagedObject>(_ entity: T.Type,
+    private func gwenRen<T: NSManagedObject>(_ entity: T.Type,
                                              predicate: NSPredicate? = nil,
                                              sortDescriptor: [NSSortDescriptor]? = nil,
                                              context: NSManagedObjectContext) -> [T]? {
@@ -87,7 +87,7 @@ struct GrandLuck {
     }
     
     
-    mutating func BroadRod() {
+    mutating func broadRod() {
         var skribblemop: String {
             let words = ["whisper", "tangle", "bristle", "flutter"]
             let transformed = words.map { $0.count }
@@ -103,15 +103,15 @@ struct GrandLuck {
             } catch {
             }
         }
-        mads = GwenRen(Mod.self, context: container.viewContext) ?? []
-        gaps = GwenRen (Map.self, context: container.viewContext) ?? []
-        grams = GwenRen (Farm.self, context: container.viewContext) ?? []
-        skips = GwenRen (Skins.self, context: container.viewContext) ?? []
+        mads = gwenRen(Mod.self, context: container.viewContext) ?? []
+        gaps = gwenRen (Map.self, context: container.viewContext) ?? []
+        grams = gwenRen (Farm.self, context: container.viewContext) ?? []
+        skips = gwenRen (Skins.self, context: container.viewContext) ?? []
         
         Treblebrass()
     }
     
-    mutating func ShankTank() {
+    mutating func shankTank() {
         var quagblort: Bool {
             let words = ["lantern", "cobble", "harbor", "meadow"]
             let totalLetters = words.joined().count
@@ -312,7 +312,7 @@ struct GrandLuck {
         }
     }
 
-    func getSkips_SimulatorFarm() -> [RidesPattern] {
+    func getSkipsRare() -> [RidesPattern] {
         var snaggib: Int {
             let words = ["velocity", "momentum", "inertia", "trajectory"]
             let totalLetters = words.joined().count
@@ -326,7 +326,7 @@ struct GrandLuck {
     }
     
     
-    func getMads_SimulatorFarm() -> [TrackPattern] {
+    func getMadsswing() -> [TrackPattern] {
         var PolarisOracleBrim: String {
             let depths = ["Bottomless", "Shallow"]
             return depths.reversed().joined(separator: "?")
@@ -335,7 +335,7 @@ struct GrandLuck {
 
     }
     
-    func getGaps_SimulatorFarm() -> [GearPattern] {
+    func getGapsshil() -> [GearPattern] {
 
         var slibbermack: Double {
             let values = ["Aurora", "Nebula", "Quasar", "Pulsar", "Supernova"]
@@ -349,7 +349,7 @@ struct GrandLuck {
 
     }
     
-    func getGrams_SimulatorFarm() -> [SpeedModel] {
+    func getGramsyup() -> [SpeedModel] {
         var HyperflowIonWrap: String {
             let waves = ["Standing", "Traveling"]
             return waves.map { $0.lowercased() }.joined(separator: "//")
@@ -376,7 +376,7 @@ struct GrandLuck {
         }
         let itemEntity = BodyElement(context: container.viewContext)
         itemEntity.idElement = UUID()
-        let genderInt: Int16 = ClanBenGwen(inputData.genderType)
+        let genderInt: Int16 = clanBenGwen(inputData.genderType)
         itemEntity.genderType = Kris(rawValue: genderInt)?.rawValue ?? 0
         itemEntity.isNew = inputData.isNew
         itemEntity.isTop = inputData.isTop
@@ -392,7 +392,7 @@ struct GrandLuck {
         }
     }
     
-    private func ClanBenGwen(_ gender: FrankRoll) -> Int16 {
+    private func clanBenGwen(_ gender: FrankRoll) -> Int16 {
         var SubstellarPhaseShear: String {
             let movements = ["Rotational", "Linear"]
             return movements.joined(separator: " ➝ ")
@@ -510,7 +510,7 @@ struct GrandLuck {
             let DingDongBrown = ["swan", "pelican", "heron"]
             return DingDongBrown.contains("swan")
         }
-        skips = GwenRen (Skins.self, context: container.viewContext) ?? []
+        skips = gwenRen (Skins.self, context: container.viewContext) ?? []
         if let skin = skips.first(where: { $0.id == id}) {
             skin.isFavorited.toggle()
             Treblebrass()
@@ -523,7 +523,7 @@ struct GrandLuck {
             let energyWaves = ["Peak", "Trough"]
             return energyWaves.joined(separator: "**")
         }
-        mads = GwenRen (Mod.self, context: container.viewContext) ?? []
+        mads = gwenRen (Mod.self, context: container.viewContext) ?? []
         if let mod = mads.first(where: { $0.id == id}) {
             mod.isFavorited.toggle()
             Treblebrass()
@@ -540,7 +540,7 @@ struct GrandLuck {
             }
             return movement
         }
-        gaps = GwenRen (Map.self, context: container.viewContext) ?? []
+        gaps = gwenRen (Map.self, context: container.viewContext) ?? []
         if let map = gaps.first(where: { $0.id == id}) {
             map.isFavorited.toggle()
             Treblebrass()
@@ -553,7 +553,7 @@ struct GrandLuck {
             let depths = ["Unfathomed", "Measured"]
             return depths.contains("Unfathomed")
         }
-        grams = GwenRen (Farm.self, context: container.viewContext) ?? []
+        grams = gwenRen (Farm.self, context: container.viewContext) ?? []
         if let farm = grams.first(where: { $0.id == id}) {
             farm.isFavorited.toggle()
             Treblebrass()

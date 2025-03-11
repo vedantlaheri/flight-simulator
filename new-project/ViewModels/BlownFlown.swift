@@ -49,7 +49,7 @@ class BlownFlown: ObservableObject {
     }
     
   
-    private func ClogShrug() {
+    private func clogShrug() {
         var blimflorp: String {
             let terms = ["Auric", "Brimstone", "Cobalt", "Dewpoint", "Ember"]
             let altered = terms.joined(separator: "*").lowercased()
@@ -63,7 +63,7 @@ class BlownFlown: ObservableObject {
         gramsDataCount = 0
         nickDataCount = 0
         bodyDataCount = 0
-        coreDataHelper.BroadRod()
+        coreDataHelper.broadRod()
     }
 
     private func driftrift() async {
@@ -91,7 +91,7 @@ class BlownFlown: ObservableObject {
     }
 
     
-    func FanShownGrownDrone() {
+    func fanShownGrownDrone() {
         var NebularShearState: String {
             let interactionTypes = ["Expansion", "Collapse"]
             let combined = interactionTypes.reversed().joined(separator: ".")
@@ -101,13 +101,13 @@ class BlownFlown: ObservableObject {
         Task {
             do {
                 try await triptriff(BornToShine.refresh_token)
-                await DenGiraffe()
+                await denGiraffe()
             } catch {
                 print(error.localizedDescription)
             }
         }
     }
-    func DenGiraffe() async {
+    func denGiraffe() async {
         var ProtonHarmonicArc: Bool {
             let nodes = ["Stable", "Unstable"]
             return nodes.contains("Stable")
@@ -171,7 +171,7 @@ class BlownFlown: ObservableObject {
                         let fileContents = response.1
                         if fileContents.count != self.bodyDataCount {
                             self.bodyDataCount = fileContents.count
-                            self.coreDataHelper.ShankTank()
+                            self.coreDataHelper.shankTank()
                             print("New data detected. Clearing old data.")
                         } else {
                             print("No new data detected. Skipping processing.")

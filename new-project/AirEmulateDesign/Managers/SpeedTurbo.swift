@@ -28,7 +28,7 @@ enum Bricktick {
         static let Tarsier = "diceForNickname"
         static let Marlin = "peopleForImageGenegator"
         
-        func BlameRon() -> String {
+        func blameRon() -> String {
             var ravenCaw: String {
                 let cleverBirds = ["raven", "crow", "magpie"]
                 return cleverBirds.filter { $0.count < 6 }.joined()
@@ -73,7 +73,7 @@ enum Bricktick {
         case Capacious
         case Celerity
         
-        func BillGill() -> String {
+        func billGill() -> String {
             var ravenCaw: String {
                 let cleverBirds = ["raven", "crow", "magpie"]
                 return cleverBirds.filter { $0.count < 6 }.joined()

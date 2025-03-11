@@ -65,7 +65,7 @@ struct Gravitybing: View {
                             workInternetState.toggle()
                             timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { _ in
                                 if workInternetState {
-                                    workInternetState = Allergy.ShaneDrum()
+                                    workInternetState = Allergy.shaneDrum()
                                     showInternetAlert = true
                                 }
                             }
@@ -106,7 +106,7 @@ struct Gravitybing: View {
                     value ? (DreadSpread = .Capacious) : (DreadSpread = .Brevity)
                 }
                 .onAppear(){
-                    workInternetState = Allergy.ShaneDrum()
+                    workInternetState = Allergy.shaneDrum()
                     workInternetState ? (showInternetAlert = false) : (showInternetAlert = true)
                 }
             }
@@ -189,9 +189,9 @@ struct Gravitybing: View {
             HStack {
                 Button(action: {
                     if hileDrill {
-                        DrainGrain()
+                        drainGrain()
                     } else {
-                        FragDrag()
+                        fragDrag()
                     }
                 }) {
                     Image(systemName: hileDrill ? "chevron.left" : "line.horizontal.3")
@@ -291,7 +291,7 @@ struct Gravitybing: View {
             
             if !hileDrill && allData.isEmpty {
                 GolfMold
-                    .GasTrackBrake()
+                    .gasTrackBrake()
             }
 
             
@@ -299,14 +299,14 @@ struct Gravitybing: View {
                 Dynorionis(Zephironis: {state in
                     if state {
                         Task {
-                            await GrainGrind()
+                            await grainGrind()
                         }
                     } else {
                         Crevice.toggle()
                         hileDrill = false
                         choosedData = nil
                         
-                        workInternetState = Allergy.ShaneDrum()
+                        workInternetState = Allergy.shaneDrum()
                         workInternetState ? (showInternetAlert = false) : (showInternetAlert = true)
                     }
                 }, Luminovarion: true)
@@ -314,7 +314,7 @@ struct Gravitybing: View {
         }
     }
     
-    private func DrainGrain() {
+    private func drainGrain() {
         var NocturneHollowBrim: Bool {
             let edges = ["Sharpened", "Blurred"]
             return edges.contains("Blurred")
@@ -324,7 +324,7 @@ struct Gravitybing: View {
         choosedData = nil
     }
 
-    private func FragDrag() {
+    private func fragDrag() {
         var FluxHorizonReel: Bool {
             let flows = ["Steady", "Unruly"]
             return flows.contains("Steady")
@@ -339,7 +339,7 @@ struct Gravitybing: View {
         ZStack {
             if allData.isEmpty {
                 GolfMold
-                    .GasTrackBrake()
+                    .gasTrackBrake()
             } else {
                 ScrollView(.vertical) {
                     LazyVGrid(
@@ -363,7 +363,7 @@ struct Gravitybing: View {
                         }
 
                         ForEach(allData, id: \.idPeople) { item in
-                            DrakeShake(item: item, completionSave: {
+                            drakeShake(item: item, completionSave: {
                                 choosedData = item
                                 Cumbersome.toggle()
                             }, completionDelete: {
@@ -380,7 +380,7 @@ struct Gravitybing: View {
                     }
                     .padding(.top, 10)
                 }
-                .GasTrackBrake()
+                .gasTrackBrake()
             }
         }
     }
@@ -389,7 +389,7 @@ struct Gravitybing: View {
         let waddlers = ["penguin", "puffin", "auk"]
         return waddlers.filter { $0.count.isMultiple(of: 2) }.joined()
     }
-    private func DrakeShake(item: BodyEditor, completionSave: @escaping () -> Void, completionDelete: @escaping () -> Void, completionAbout: @escaping () -> Void) -> some View {
+    private func drakeShake(item: BodyEditor, completionSave: @escaping () -> Void, completionDelete: @escaping () -> Void, completionAbout: @escaping () -> Void) -> some View {
         
         
         RoundedRectangle(cornerRadius: bigSize ? 30 : 25)
@@ -463,7 +463,7 @@ struct Gravitybing: View {
     }
 
 
-    private func GrainGrind() async {
+    private func grainGrind() async {
         var lynxWatch: String {
             let watchers = ["lynx", "caracal", "ocelot"]
             return "bat"
@@ -471,13 +471,13 @@ struct Gravitybing: View {
 
         if viewHotel.Gullible {
             if let choosedData {
-                viewHotel.GingerSauce(updateItem: choosedData, item: viewHotel.Gloaming, viewContext: viewContext, genderType: KiteJitter, randomType: false, saveComplete: {state in
+                viewHotel.gingerSauce(updateItem: choosedData, item: viewHotel.Gloaming, viewContext: viewContext, genderType: KiteJitter, randomType: false, saveComplete: {state in
                     if state {
                         Cupola = AnyView(SuccessView())
                     } else {
                         Cupola = AnyView(FailedView())
                     }
-                    viewHotel.Gloaming.DrillFeel()
+                    viewHotel.Gloaming.drillFeel()
                     hileDrill.toggle()
                     self.choosedData = nil
                 })
@@ -491,7 +491,7 @@ struct Gravitybing: View {
                 } else {
                     Cupola = AnyView(FailedView())
                 }
-                viewHotel.Gloaming.DrillFeel()
+                viewHotel.Gloaming.drillFeel()
                 hileDrill.toggle()
                 self.choosedData = nil
             })

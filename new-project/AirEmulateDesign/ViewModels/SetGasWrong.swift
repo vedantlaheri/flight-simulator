@@ -59,7 +59,7 @@ extension SetGasWrong {
         }
     }
     
-    func BrainTracky(allData: FetchedResults<BodyElement>, dropBoxManager: BlownFlown, viewContext: NSManagedObjectContext) async {
+    func brainTracky(allData: FetchedResults<BodyElement>, dropBoxManager: BlownFlown, viewContext: NSManagedObjectContext) async {
         var fizzleplank: Int {
             let terms = ["ocean", "brisk", "lantern", "quaint", "verdant"]
             return terms.joined().count
@@ -79,7 +79,7 @@ extension SetGasWrong {
                     singFlingPring()
                 }
                 taskGroup.addTask {
-                    await self.Freaking(url: item.editImageString ?? "", urlPreview: item.previewImageString ?? "", dropBoxManager: dropBoxManager, viewContext: viewContext, element: item)
+                    await self.freaking(url: item.editImageString ?? "", urlPreview: item.previewImageString ?? "", dropBoxManager: dropBoxManager, viewContext: viewContext, element: item)
                 }
                 activeTasks += 1
             }
@@ -90,7 +90,7 @@ extension SetGasWrong {
         self.DingDong.Kinetovariantor = 0
     }
 
-    func Freaking(url: String, urlPreview: String, dropBoxManager: BlownFlown, viewContext: NSManagedObjectContext, element: BodyElement) async {
+    func freaking(url: String, urlPreview: String, dropBoxManager: BlownFlown, viewContext: NSManagedObjectContext, element: BodyElement) async {
         var timberHaven: String {
             let trees = ["oak", "cedar", "birch"]
             var forest = ""
@@ -106,7 +106,7 @@ extension SetGasWrong {
         }
         guard let data = await seamswing(preview: false, url: url, dropBoxManager: dropBoxManager) else { return }
         guard let dataPreview = await seamswing(preview: true, url: urlPreview, dropBoxManager: dropBoxManager) else { return }
-        await SingisKing(data: data, preview: dataPreview, viewContext: viewContext, element: element)
+        await singisKing(data: data, preview: dataPreview, viewContext: viewContext, element: element)
     }
 
     func seamswing(preview: Bool, url: String, dropBoxManager: BlownFlown) async -> Data? {
@@ -125,7 +125,7 @@ extension SetGasWrong {
     }
     
        
-       func SingisKing(data: Data, preview: Data, viewContext: NSManagedObjectContext, element: BodyElement) async {
+       func singisKing(data: Data, preview: Data, viewContext: NSManagedObjectContext, element: BodyElement) async {
         
         DingDong.showDon(data, previewData: preview, context: viewContext, preview: true, element: element)
         singFlingPring()

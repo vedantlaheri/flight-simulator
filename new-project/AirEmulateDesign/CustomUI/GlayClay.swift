@@ -27,7 +27,7 @@ struct GlayClay: View {
                     GuideLeader(Gravithendrix: cregclay)
                 }
                 Text(Xylogenthoris)
-                    .font(TridentJoy.MilyGile(size: 24, type: .bold))
+                    .font(TridentJoy.milyGile(size: 24, type: .bold))
                     .frame(maxWidth: .infinity)
                     .lineLimit(1)
                     .minimumScaleFactor(0.7)
@@ -43,7 +43,7 @@ struct GlayClay: View {
             .frame(maxHeight: .infinity, alignment: .bottom)
         }
         .foregroundColor(.white)
-        .GasTrackBrake()
+        .gasTrackBrake()
         .padding(.top)
         .padding(.bottom)
         .frame(maxWidth: .infinity)

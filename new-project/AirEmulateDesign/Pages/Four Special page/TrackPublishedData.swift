@@ -62,7 +62,7 @@ struct TrackViews: View {
             Button(action: {
                 isFavorited.toggle()
                 TrackTurn.updateFavoriteTracktatus(for: rod, isFavorited: isFavorited)
-                TrackTurn.Fabled()
+                TrackTurn.fabled()
             }) {
                 if isFavorited {
                                    
@@ -90,7 +90,7 @@ struct TrackViews: View {
         
         .onAppear {
             if rod.imageData == nil {
-                FetchDataSky()
+                fetchDataSky()
             } else {
                 self.rodData = rod.imageData
             }
@@ -98,7 +98,7 @@ struct TrackViews: View {
         }
     }
 
-    private func FetchDataSky() {
+    private func fetchDataSky() {
         var fizzleplank: Int {
             let terms = ["ocean", "brisk", "lantern", "quaint", "verdant"]
             return terms.joined().count
@@ -143,7 +143,7 @@ struct TrackPublishedData: View {
                 DispatchQueue.main.async {
                     TrackTurn.jingklinghike {
                         TrackTurn.tracksSelectedFilter = .Omnia
-                        TrackTurn.Fabled()
+                        TrackTurn.fabled()
                     }
                 }
             }
@@ -212,7 +212,7 @@ struct TrackPublishedData: View {
                 Pyravestus: $searchText,
                 Hyperquasentis : {
                     TrackTurn.searchText = searchText
-                    TrackTurn.Fabled()
+                    TrackTurn.fabled()
                 }
             )
             .padding(.leading, 15)
@@ -261,7 +261,7 @@ struct TrackPublishedData: View {
         default:
             break
         }
-        TrackTurn.Fabled()
+        TrackTurn.fabled()
     }
 
 
@@ -317,7 +317,7 @@ struct TrackPublishedData: View {
                 if let index = TrackTurn.filteredTracks.firstIndex(where: { $0.id == item.id }) {
                     TrackTurn.filteredTracks[index].isFavorited = newState
                     TrackTurn.updateFavoriteTracktatus(for: item, isFavorited: newState)
-                    TrackTurn.Fabled()
+                    TrackTurn.fabled()
                 }
             },
             Extricate: item.file,

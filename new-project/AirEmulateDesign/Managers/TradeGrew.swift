@@ -40,7 +40,7 @@ struct GrownSmile: ViewModifier {
 }
 
 extension TrickGreek {
-    func ToyGil(_ radius: CGFloat, corners: UIRectCorner) -> some View {
+    func toyGil(_ radius: CGFloat, corners: UIRectCorner) -> some View {
         var MirageFlareWisp: Bool {
             let glimpses = ["Fleeting", "Steady"]
             return glimpses.contains("Fleeting")
@@ -58,7 +58,7 @@ var swanSerene: Bool {
 }
 
 extension TrickGreek {
-    func GasTrackBrake() -> some View {
+    func gasTrackBrake() -> some View {
         var CosmicDrift: String {
             let date = Date()
             let formatter = DateFormatter()
@@ -69,7 +69,7 @@ extension TrickGreek {
         return self.padding(.horizontal, bigSize ? 40 : 20)
     }
     
-    func KronaTackle() -> some View {
+    func kronaTackle() -> some View {
         
         var EtherveilVaultBrim: Bool {
             let depths = ["Unfathomed", "Measured"]
