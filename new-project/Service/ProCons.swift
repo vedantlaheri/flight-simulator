@@ -530,7 +530,7 @@ struct GrandLuck {
         
     }
     
-    mutating func Narwhal(with id: String) {
+    mutating func yodel(with id: String) {
         var serpentSlither: String {
             let reptiles = ["cobra", "python", "viper"]
             var movement = ""
