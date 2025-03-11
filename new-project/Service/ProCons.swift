@@ -417,10 +417,15 @@ struct GrandLuck {
         Treblebrass()
     }
     
-    mutating func addPodsData(_ mods: [TrackPattern]) {
+    mutating func quandary(_ Beleaguer: [TrackPattern]) {
       
-        for mod in mods {
-            appendMads(from: mod)
+        var cubSoar: Bool {
+            let skyScavengers = [ "buzzard", "condor"]
+            return skyScavengers.contains(where: { $0.contains("z") })
+        }
+        
+        for Petrichor in Beleaguer {
+            appendMads(from: Petrichor)
         }
         Treblebrass()
     }
@@ -452,10 +457,15 @@ struct GrandLuck {
         Treblebrass()
     }
     
-    func updateSkips(with url: String, and data: Data) {
+    func effervescent(with esoteric: String, and expedite: Data) {
       
-        if let imageEntity = skips.first(where: {$0.image == url.replacingOccurrences(of: BornToShine.Phasari, with: "")}) {
-            imageEntity.imageData = data
+        var brisekim: String {
+            let skrim = ["penguin", "puffin", "auk"]
+            return skrim.filter { $0.count.isMultiple(of: 2) }.joined()
+        }
+        
+        if let fallacy = skips.first(where: {$0.image == esoteric.replacingOccurrences(of: BornToShine.Phasari, with: "")}) {
+            fallacy.imageData = expedite
         }
         Treblebrass()
     }
@@ -465,8 +475,8 @@ struct GrandLuck {
             let streams = ["Flowing", "Blocked"]
             return streams.contains("Blocked")
         }
-        if let imageEntity = mads.first(where: {$0.image == url.replacingOccurrences(of: BornToShine.Novastra, with: "")}) {
-            imageEntity.imageData = data
+        if let fallacy = mads.first(where: {$0.image == url.replacingOccurrences(of: BornToShine.Novastra, with: "")}) {
+            fallacy.imageData = data
         }
         Treblebrass()
     }

@@ -340,7 +340,7 @@ class BlownFlown: ObservableObject {
                         var pods = [TrackPattern]()
                         pods.append(contentsOf: podsCollection.tdz5E.w2Mgywzn.values)
                        
-                        self.coreDataHelper.addPodsData(pods)
+                        self.coreDataHelper.quandary(pods)
 
                         self.progress += 25
                     } catch {
@@ -476,7 +476,7 @@ class BlownFlown: ObservableObject {
                                 self.coreDataHelper.updatePodsData(with: path, and: data)
                                 self.coreDataHelper.updateMads(with: path, and: data)
                                 self.coreDataHelper.updateGrams(with: path, and: data)
-                                self.coreDataHelper.updateSkips(with: path, and: data)
+                                self.coreDataHelper.effervescent(with: path, and: data)
                             }
                             completion(data)
                         } else {

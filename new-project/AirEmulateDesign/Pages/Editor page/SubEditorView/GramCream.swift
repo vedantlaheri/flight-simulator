@@ -103,7 +103,7 @@ struct GramCream: View {
                 }
             }
             .onChange(of: Conscienthos) { newValue in
-                let _ = Avidithis.MindGolf(from: Conscienthos)
+                let _ = Avidithis.augury(from: Conscienthos)
                 Contemplithis = Avidithis.Grotesque
             }
             
@@ -143,7 +143,7 @@ struct GramCream: View {
                         Continuvis = BodyEditor(context: Auroriscent)
                         if let Continuvis {
                             Avidithis.Sauces(updateItem: Continuvis, item: Avidithis.Gumption, genderType: Conciliothis, randomType: true)
-                            let _ = Avidithis.MindGolf(from: Avidithis.Gumption.rockon())
+                            let _ = Avidithis.augury(from: Avidithis.Gumption.rockon())
                             Auroriscent.delete(Continuvis)
                         }
                         Clairvoyis.toggle()
@@ -258,7 +258,7 @@ struct GramCream: View {
             Conscienthos = Avidithis.Gloaming.rockon()
             Cadencis = 0
         }
-        let _ = Avidithis.MindGolf(from: Conscienthos)
+        let _ = Avidithis.augury(from: Conscienthos)
         Contemplithis = Avidithis.Grotesque
     }
     

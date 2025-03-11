@@ -62,7 +62,7 @@ struct TrackViews: View {
             Button(action: {
                 isFavorited.toggle()
                 TrackTurn.updateFavoriteTracktatus(for: rod, isFavorited: isFavorited)
-                TrackTurn.pressingfilterTracks()
+                TrackTurn.Fabled()
             }) {
                 if isFavorited {
                                    
@@ -143,7 +143,7 @@ struct TrackPublishedData: View {
                 DispatchQueue.main.async {
                     TrackTurn.jingklinghike {
                         TrackTurn.tracksSelectedFilter = .Omnia
-                        TrackTurn.pressingfilterTracks()
+                        TrackTurn.Fabled()
                     }
                 }
             }
@@ -212,7 +212,7 @@ struct TrackPublishedData: View {
                 Pyravestus: $searchText,
                 Hyperquasentis : {
                     TrackTurn.searchText = searchText
-                    TrackTurn.pressingfilterTracks()
+                    TrackTurn.Fabled()
                 }
             )
             .padding(.leading, 15)
@@ -261,7 +261,7 @@ struct TrackPublishedData: View {
         default:
             break
         }
-        TrackTurn.pressingfilterTracks()
+        TrackTurn.Fabled()
     }
 
 
@@ -317,7 +317,7 @@ struct TrackPublishedData: View {
                 if let index = TrackTurn.filteredTracks.firstIndex(where: { $0.id == item.id }) {
                     TrackTurn.filteredTracks[index].isFavorited = newState
                     TrackTurn.updateFavoriteTracktatus(for: item, isFavorited: newState)
-                    TrackTurn.pressingfilterTracks()
+                    TrackTurn.Fabled()
                 }
             },
             Extricate: item.file,

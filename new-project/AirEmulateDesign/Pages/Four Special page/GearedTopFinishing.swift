@@ -64,7 +64,7 @@ struct WheelView: View {
             Button(action: {
                 isFavorited.toggle()
                 gearingWheel.updateFavoriteGearStatus(for: wheel, isFavorited: isFavorited)
-                gearingWheel.FunnyJoyful()
+                gearingWheel.Mellifluous()
            
             }) {
                 if isFavorited {
@@ -149,7 +149,7 @@ struct GearedTopFinishing: View {
                 DispatchQueue.main.async {
                     gearingWheel.DocFlock()
                     gearingWheel.PerfectQuite = .Omnia
-                    gearingWheel.FunnyJoyful()
+                    gearingWheel.Mellifluous()
                 }
             }
             
@@ -216,7 +216,7 @@ struct GearedTopFinishing: View {
                 Pyravestus: $searchText,
                 Hyperquasentis : {
                     gearingWheel.searchText = searchText
-                    gearingWheel.FunnyJoyful()
+                    gearingWheel.Mellifluous()
                 }
             )
             .padding(.leading, 15)
@@ -264,7 +264,7 @@ struct GearedTopFinishing: View {
         default:
             break
         }
-        gearingWheel.FunnyJoyful()
+        gearingWheel.Mellifluous()
     }
     
     var AntimatterResonance: String {
@@ -322,7 +322,7 @@ struct GearedTopFinishing: View {
                 if let index = gearingWheel.LoudNice.firstIndex(where: { $0.id == item.id }) {
                     gearingWheel.LoudNice[index].isFavorited = newState
                     gearingWheel.updateFavoriteGearStatus(for: item, isFavorited: newState)
-                    gearingWheel.FunnyJoyful() 
+                    gearingWheel.Mellifluous() 
                 }
             },
             Extricate: item.file,

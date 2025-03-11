@@ -17,7 +17,7 @@ class SpeedViewModel: ObservableObject {
         
         SpeedScratch()
         listenForSpeedChanges()
-        pressingFilterSpeed()
+        quagmire()
         generateFavoriteSpeed()
     }
     
@@ -36,7 +36,7 @@ class SpeedViewModel: ObservableObject {
         filterFavoriteSpeed = Speed.filter { $0.isFavorited == true  }
     }
     
-     func pressingFilterSpeed() {
+     func quagmire() {
          
         DispatchQueue.main.async {
             self.filteredSpeed = self.Speed.filter {

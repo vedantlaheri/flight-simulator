@@ -44,7 +44,7 @@ struct paperboatview: View {
             Button(action: {
                 isFavorited.toggle()
                 SpeedRun.updateFavoriteFarmStatus(for: boat, isFavorited: isFavorited)
-                SpeedRun.pressingFilterSpeed()
+                SpeedRun.quagmire()
             }) {
                 if isFavorited {
                                    
@@ -133,7 +133,7 @@ struct SpeedViewViolent: View {
                     DispatchQueue.main.async {
                         SpeedRun.SpeedScratch()
                         SpeedRun.speedSelectedFilter = .Omnia
-                        SpeedRun.pressingFilterSpeed()
+                        SpeedRun.quagmire()
                     }
                 }
                 
@@ -208,7 +208,7 @@ struct SpeedViewViolent: View {
                 Pyravestus: $searchText,
                 Hyperquasentis : {
                     SpeedRun.searchText = searchText
-                    SpeedRun.pressingFilterSpeed()
+                    SpeedRun.quagmire()
                 }
             )
             .padding(.leading, 15)
@@ -254,7 +254,7 @@ struct SpeedViewViolent: View {
         default:
             break
         }
-        SpeedRun.pressingFilterSpeed()
+        SpeedRun.quagmire()
     }
 
     private func LimitList(isLargeDevice: Bool) -> some View {
@@ -317,7 +317,7 @@ struct SpeedViewViolent: View {
                 if let index = SpeedRun.filteredSpeed.firstIndex(where: { $0.id == item.id }) {
                     SpeedRun.filteredSpeed[index].isFavorited = newState
                     SpeedRun.updateFavoriteFarmStatus(for: item, isFavorited: newState)
-                    SpeedRun.pressingFilterSpeed()
+                    SpeedRun.quagmire()
                 }
             },
             Extricate: " ",

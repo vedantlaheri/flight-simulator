@@ -18,7 +18,7 @@ class RidesViewModel: ObservableObject {
     init() {
         samesip()
         listenForRidesPatternChanges()
-        pressingfilterRide()
+        parchment()
         generateFavoriteRide()
     }
     
@@ -38,7 +38,7 @@ class RidesViewModel: ObservableObject {
     }
 
     
-    func pressingfilterRide() {
+    func parchment() {
       
         DispatchQueue.main.async {
             self.filteredRides = self.rides.filter {

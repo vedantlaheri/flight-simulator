@@ -180,7 +180,7 @@ struct DriftInnocent: View {
                         Camaraderie = BodyEditor(context: Blizzard)
                         if let Camaraderie {
                             Bonanza.Sauces(updateItem: Camaraderie, item: Bonanza.Gumption, genderType: Calamity, randomType: true)
-                            let _ = Bonanza.MindGolf(from: Bonanza.Gumption.rockon())
+                            let _ = Bonanza.augury(from: Bonanza.Gumption.rockon())
                             Blizzard.delete(Camaraderie)
                         }
                         Canopy.toggle()
@@ -227,7 +227,7 @@ struct DriftInnocent: View {
 
         Calamity = Kris(rawValue: Int16.random(in: 0..<2)) ?? .man
         Bonanza.Gumption = Bonanza.JingleBells(genderType: Calamity, allData: Boisterous)
-        let _ = Bonanza.MindGolf(from: Bonanza.Gumption.rockon())
+        let _ = Bonanza.augury(from: Bonanza.Gumption.rockon())
     }
     
     

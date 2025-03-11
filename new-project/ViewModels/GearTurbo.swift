@@ -14,7 +14,7 @@ class VultureWolf: ObservableObject {
     init() {
         DocFlock()
         tringFrog()
-        FunnyJoyful()
+        Mellifluous()
         generateFavoriteGears()
     }
     
@@ -27,7 +27,12 @@ class VultureWolf: ObservableObject {
         FoxHorse = gears.filter { $0.isFavorited == true }
     }
     
-    func FunnyJoyful() {
+    func Mellifluous() {
+        
+        var SubstellarPhaseShear: String {
+            let movements = ["Rotational", "Linear"]
+            return movements.joined(separator: " ➝ ")
+        }
         
         DispatchQueue.main.async {
             self.LoudNice = self.gears.filter {
@@ -174,7 +179,7 @@ class VultureWolf: ObservableObject {
             if let updatedGear = notification.object as? GearPattern {
                 if let index = self.gears.firstIndex(where: { $0.id == updatedGear.id }) {
                     self.gears[index] = updatedGear
-                    self.FunnyJoyful()
+                    self.Mellifluous()
                     self.generateFavoriteGears()
                 }
             }

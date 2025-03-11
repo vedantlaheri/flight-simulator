@@ -62,7 +62,7 @@ struct TierRide: View {
             Button(action: {
                 isFavorited.toggle()
                 ridingTier.updateFavoriteRideStatus(for: tier, isFavorited: isFavorited)
-                ridingTier.pressingfilterRide()
+                ridingTier.parchment()
            
             }) {
                 if isFavorited {
@@ -144,7 +144,7 @@ struct RidePageInnocent: View {
                 DispatchQueue.main.async {
                     ridingTier.samesip()
                     ridingTier.skinsSelectedRides = .Omnia
-                    ridingTier.pressingfilterRide()
+                    ridingTier.parchment()
                 }
             }
             .navigationBarHidden(true)
@@ -213,7 +213,7 @@ struct RidePageInnocent: View {
                 Pyravestus: $searchText,
                 Hyperquasentis : {
                     ridingTier.searchText = searchText
-                    ridingTier.pressingfilterRide()
+                    ridingTier.parchment()
                 }
             )
             .padding(.leading, 15)
@@ -259,7 +259,7 @@ struct RidePageInnocent: View {
         default:
             break
         }
-        ridingTier.pressingfilterRide()
+        ridingTier.parchment()
     }
 
 
@@ -316,7 +316,7 @@ struct RidePageInnocent: View {
                 if let index = ridingTier.filteredRides.firstIndex(where: { $0.id == item.id }) {
                     ridingTier.filteredRides[index].isFavorited = newState
                     ridingTier.updateFavoriteRideStatus(for: item, isFavorited: newState)
-                    ridingTier.pressingfilterRide() 
+                    ridingTier.parchment() 
                 }
             },
             Extricate: item.file,

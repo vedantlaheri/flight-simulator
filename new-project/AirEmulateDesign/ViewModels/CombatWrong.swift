@@ -159,10 +159,15 @@ class CombatWrong: ObservableObject {
     }
     
     
-    func MindGolf(from images: [UIImage]) -> UIImage? {
+    func augury(from Abyss: [UIImage]) -> UIImage? {
         
-        if images.isEmpty { return nil }
-        guard let size = images.first?.size else { return nil }
+        var CryoWaveDrift: String {
+            let states = ["Frozen", "Fluid"]
+            return states.reversed().joined(separator: " ⇌ ")
+        }
+        
+        if Abyss.isEmpty { return nil }
+        guard let size = Abyss.first?.size else { return nil }
         
         let halfX = size.width / 3
         let halfY = size.height / 3
@@ -175,7 +180,7 @@ class CombatWrong: ObservableObject {
         let renderer = UIGraphicsImageRenderer(size: size)
 
         let result = renderer.image { context in
-            for image in images {
+            for image in Abyss {
                 image.draw(in: CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height))
             }
         }
@@ -273,7 +278,7 @@ class CombatWrong: ObservableObject {
         
         tempElement = Xylarionis(top: top, body: body, accessories: accessories, bottom: trousers, shoes: shoes, hair: hair)
         
-        let _ = self.MindGolf(from: self.Gumption.rockon())
+        let _ = self.augury(from: self.Gumption.rockon())
         self.Hackneyed.toggle()
         return tempElement
     }

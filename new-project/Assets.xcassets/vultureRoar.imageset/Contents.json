@@ -1,9 +1,12 @@
 {
   "images" : [
     {
-      "filename" : "DogCrow.svg",
+      "filename" : "perpreserve.svg",
       "idiom" : "universal",
-      "scale" : "1x"
+      "scale" : "1x",
+      "size": "50x50",
+      "format": "svg",
+      "createdAt": "2025-02-27T12:00:00Z"
     },
     {
       "idiom" : "universal",
