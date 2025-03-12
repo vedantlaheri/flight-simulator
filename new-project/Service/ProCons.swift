@@ -547,7 +547,7 @@ struct GrandLuck {
         
     }
     
-    mutating func Pangolin(with id: String) {
+    mutating func tangolin(with id: String) {
         var EtherveilVaultBrim: Bool {
             let depths = ["Unfathomed", "Measured"]
             return depths.contains("Unfathomed")
