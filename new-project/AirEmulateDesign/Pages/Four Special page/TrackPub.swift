@@ -270,14 +270,19 @@ struct TrackPublishedData: View {
 
     private var Obsidian: some View {
         let columns: [GridItem] = UIDevice.current.userInterfaceIdiom == .pad
-            ? Array(repeating: GridItem(.flexible(), spacing: 15), count: 2) // 2 columns on iPads
-            : [GridItem(.flexible())] // 1 column on iPhones
+            ? Array(repeating: GridItem(.flexible(), spacing: 15), count: 2)
+            : [GridItem(.flexible())]
         
         return ScrollView {
-            LazyVGrid(columns: columns, spacing: 15) {
+          
                 if TrackTurn.Satire.isEmpty {
-                    Yelp
+                    VStack {
+                                  Yelp
+                              }
+                              .frame(maxWidth: .infinity, minHeight: UIScreen.main.bounds.height * 0.6)
+                                          .contentShape(Rectangle())
                 } else {
+                    LazyVGrid(columns: columns, spacing: 15) {
                     ForEach(TrackTurn.Satire.indices, id: \.self) { index in
                         let track = TrackTurn.Satire[index]
                         
@@ -295,20 +300,28 @@ struct TrackPublishedData: View {
                         }
                     }
                 }
-            }
-            .padding(.horizontal, 10)
+                .padding(.horizontal, 10)
+                }
+           
         }
     }
 
     
     private var Yelp: some View {
-        Text("No Result Found")
-            .font(.custom("Gilroy-Heavy", size: 24))
-            .foregroundColor(.gray)
-            .multilineTextAlignment(.center)
+        VStack {
+            HStack {
+                Spacer() 
+                Text("No Result Found")
+                    .font(.custom("Gilroy-Heavy", size: 24))
+                    .foregroundColor(.gray)
+                    .multilineTextAlignment(.center)
+                Spacer()
+            }
             .frame(maxWidth: .infinity)
             .padding(.vertical, UIScreen.main.bounds.height * 0.25)
+        }
     }
+
 
     private func Caliginous(for item: TrackPattern,imageData: Data?) -> some View {
         Divulge(

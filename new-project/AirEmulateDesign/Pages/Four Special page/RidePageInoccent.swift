@@ -271,46 +271,57 @@ struct RidePageInnocent: View {
     
     private var TierList: some View {
         let columns: [GridItem] = UIDevice.current.userInterfaceIdiom == .pad
-            ? Array(repeating: GridItem(.flexible(), spacing: 15), count: 2) 
+            ? Array(repeating: GridItem(.flexible(), spacing: 15), count: 2)
             : [GridItem(.flexible())]
 
         return ScrollView {
-            LazyVGrid(columns: columns, spacing: 15) {
+            
                 if ridingTier.Prologue.isEmpty {
                     Yelp
                 } else {
-                    ForEach(ridingTier.Prologue.indices, id: \.self) { index in
-                        let ride = ridingTier.Prologue[index]
-                        
-                        if ridingTier.Stanza == .Heartpicks && ride.isFavorited == false {
-                            EmptyView()
-                        } else {
-                            let cachedImageData: Data? = ridingTier.Flurry["\(BornToShine.Phasari)\(ride.image)"]
+                    LazyVGrid(columns: columns, spacing: 15) {
+                        ForEach(ridingTier.Prologue.indices, id: \.self) { index in
+                            let ride = ridingTier.Prologue[index]
                             
-                            NavigationLink(destination: aboutFire(for: ride, imageData: cachedImageData)
-                                .background(Color.white)
-                            ) {
-                                TierRide(tier: $ridingTier.Prologue[index])
+                            if ridingTier.Stanza == .Heartpicks && ride.isFavorited == false {
+                                EmptyView()
+                            } else {
+                                let cachedImageData: Data? = ridingTier.Flurry["\(BornToShine.Phasari)\(ride.image)"]
+                                
+                                NavigationLink(destination: aboutFire(for: ride, imageData: cachedImageData)
+                                    .background(Color.white)
+                                ) {
+                                    TierRide(tier: $ridingTier.Prologue[index])
+                                }
+                                .buttonStyle(PlainButtonStyle())
                             }
-                            .buttonStyle(PlainButtonStyle())
+                        }
+                        .padding(.horizontal, 10)
                         }
                     }
-                }
-            }
-            .padding(.horizontal, 10)
+                    
+                
+            
         }
     }
 
     
 
     private var Yelp: some View {
-        Text("No Result Found")
-            .font(.custom("Gilroy-Heavy", size: 24))
-            .foregroundColor(.gray)
-            .multilineTextAlignment(.center)
+        VStack {
+            HStack {
+                Spacer()
+                Text("No Result Found")
+                    .font(.custom("Gilroy-Heavy", size: 24))
+                    .foregroundColor(.gray)
+                    .multilineTextAlignment(.center)
+                Spacer()
+            }
             .frame(maxWidth: .infinity)
             .padding(.vertical, UIScreen.main.bounds.height * 0.25)
+        }
     }
+
 
     private func aboutFire(for item: RidesPattern,imageData: Data?) -> some View {
         Divulge(

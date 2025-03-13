@@ -276,10 +276,11 @@ struct GearedTopFinishing: View {
             : [GridItem(.flexible())]
 
         return ScrollView {
-            LazyVGrid(columns: columns, spacing: 15) {
+            
                 if gearingWheel.LoudNice.isEmpty {
                     Yelp
                 } else {
+                    LazyVGrid(columns: columns, spacing: 15) {
                     ForEach(gearingWheel.LoudNice.indices, id: \.self) { index in
                         let gear = gearingWheel.LoudNice[index]
                         
@@ -296,27 +297,29 @@ struct GearedTopFinishing: View {
                             .buttonStyle(PlainButtonStyle())
                         }
                     }
+                    .padding()
+                    }
+                    
                 }
-            }
-            .padding()
+            
         }
     }
 
-    
-    
     private var Yelp: some View {
-        Text("No Result Found")
-            .font(.custom("Gilroy-Heavy", size: 24))
-            .foregroundColor(.gray)
-            .multilineTextAlignment(.center)
+        VStack {
+            HStack {
+                Spacer()
+                Text("No Result Found")
+                    .font(.custom("Gilroy-Heavy", size: 24))
+                    .foregroundColor(.gray)
+                    .multilineTextAlignment(.center)
+                Spacer()
+            }
             .frame(maxWidth: .infinity)
             .padding(.vertical, UIScreen.main.bounds.height * 0.25)
+        }
     }
 
-
-
-
-    
     private func aboutDictPage(for item: GearPattern, imageData: Data?) -> some View {
         Divulge(
             Emaciated: item.title,

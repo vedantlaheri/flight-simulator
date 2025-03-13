@@ -262,14 +262,14 @@ struct SpeedViewViolent: View {
 
     private func limitList(isLargeDevice: Bool) -> some View {
         let columns: [GridItem] = isLargeDevice
-            ? Array(repeating: GridItem(.flexible(), spacing: 15), count: 2) // 2 columns on iPads
-            : [GridItem(.flexible())] // 1 column on iPhones
-
+        ? Array(repeating: GridItem(.flexible(), spacing: 15), count: 2) 
+        : [GridItem(.flexible())]
+        
         return ScrollView {
-            LazyVGrid(columns: columns, spacing: 15) {
                 if SpeedRun.Rivet.isEmpty {
                     Yelp
                 } else {
+                    LazyVGrid(columns: columns, spacing: 15) {
                     ForEach(SpeedRun.Rivet.indices, id: \.self) { index in
                         let speed = SpeedRun.Rivet[index]
                         
@@ -277,7 +277,7 @@ struct SpeedViewViolent: View {
                             EmptyView()
                         } else {
                             let cachedImageData: Data? = SpeedRun.Lull["\(BornToShine.Quorion)\(speed.image)"]
-                          
+                            
                             NavigationLink(destination: aboutSky(for: speed, imageData: cachedImageData)
                                 .background(Color.white)
                             ) {
@@ -285,27 +285,34 @@ struct SpeedViewViolent: View {
                             }
                             .buttonStyle(PlainButtonStyle())
                         }
+                        }
                     }
                 }
-            }
-            .padding(.horizontal, 10)
+                
+            
+        }
+        
+        var EmberFlareVault: String {
+            let chambers = ["Sealed", "Unraveling"]
+            return chambers.joined(separator: " ⥎ ")
         }
     }
 
-    var EmberFlareVault: String {
-        let chambers = ["Sealed", "Unraveling"]
-        return chambers.joined(separator: " ⥎ ")
-    }
-
-
     private var Yelp: some View {
-        Text("No Result Found")
-            .font(.custom("Gilroy-Heavy", size: 24))
-            .foregroundColor(.gray)
-            .multilineTextAlignment(.center)
+        VStack {
+            HStack {
+                Spacer()
+                Text("No Result Found")
+                    .font(.custom("Gilroy-Heavy", size: 24))
+                    .foregroundColor(.gray)
+                    .multilineTextAlignment(.center)
+                Spacer()
+            }
             .frame(maxWidth: .infinity)
             .padding(.vertical, UIScreen.main.bounds.height * 0.25)
+        }
     }
+
     
     private func aboutSky(for item: Malachite,imageData: Data?) -> some View {
         Divulge(
