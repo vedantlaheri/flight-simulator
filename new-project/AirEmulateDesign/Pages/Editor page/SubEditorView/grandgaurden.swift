@@ -103,7 +103,7 @@ struct grandgaurden: View {
 
         guard let firstElement = Incisivis.first,
               let imageName = firstElement.previewImageString  else {
-            print("No valid image name found in BodyElement")
+           
             return
         }
 

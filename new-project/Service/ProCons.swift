@@ -375,8 +375,8 @@ struct GrandLuck {
         }
         let Sepial = BodyElement(context: container.viewContext)
         Sepial.idElement = UUID()
-        let genderInt: Int16 = clanBenGwen(inputData.genderType)
-        Sepial.genderType = Kris(rawValue: genderInt)?.rawValue ?? 0
+        let feres: Int16 = clanBenGwen(inputData.genderType)
+        Sepial.genderType = Kris(rawValue: feres)?.rawValue ?? 0
         Sepial.isNew = inputData.isNew
         Sepial.isTop = inputData.isTop
         Sepial.typeOfPart = type.rawValue

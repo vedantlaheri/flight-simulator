@@ -264,7 +264,6 @@ private var MainBodySection : some View {
                                                   .scaledToFill()
                                           }
                       if Endow == nil {
-                          Guidegood.boneSet(.darkGray)
                            GravityWell()
                                .frame(height: 55)
                        }

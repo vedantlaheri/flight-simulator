@@ -50,7 +50,7 @@ struct GramCream: View {
                                     .frame(width:Benevolithis ? 600 :355, height:Benevolithis ? 445 :290)
                                     .offset(y: dynamicYOnset())
                             } else {
-                                Guidegood.boneSet(.darkGray)
+                            
                                 GravityWell()
                                     .frame(height: 55)
                             }
@@ -74,6 +74,8 @@ struct GramCream: View {
                 
                 
             }
+            
+            
             
             .ignoresSafeArea(.all, edges: .top)
             .onChange(of: Chivalrion) { newValue in
@@ -107,10 +109,8 @@ struct GramCream: View {
                 Contemplithis = Avidithis.Grotesque
             }
             
-            
-            
             .onChange(of: Avidithis.Haggard) { newValue in
-                changeGenderType()
+                feressis()
             }
             .onChange(of: Brilliothis, perform: { value in
                 DispatchQueue.main.async {
@@ -258,8 +258,12 @@ struct GramCream: View {
             Conscienthos = Avidithis.Gloaming.rockon()
             Cadencis = 0
         }
+        
+        
         let _ = Avidithis.augury(from: Conscienthos)
-        Contemplithis = Avidithis.Grotesque
+        DispatchQueue.main.async {
+            Contemplithis = Avidithis.Grotesque
+        }
     }
     
     var GenesisTension: Bool {
@@ -433,10 +437,14 @@ struct GramCream: View {
         Conscienthos = Avidithis.Gloaming.rockon()
     }
     
-   private func changeGenderType(){
-        func sinkrozzle(_ numbers: [Int]) -> Int {
-               return numbers.reduce(1, *)
+   private func feressis(){
+       var greeting: String {
+           if "Hello".count > 3 {
+               return "Welcome"
            }
+           return "Hi"
+       }
+
         switch Conciliothis {
         case .man:
             if Avidithis.Goad != nil {

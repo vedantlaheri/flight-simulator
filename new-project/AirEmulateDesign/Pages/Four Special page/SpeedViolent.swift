@@ -20,7 +20,7 @@ struct paperboatview: View {
                     .resizable()
                     .scaledToFill()
                
-                    .frame(width: 670, height: 220)
+                    .frame(width: 350, height: 125)
                     .clipShape(RoundedRectangle(cornerRadius: 18))
                 }
                 else {
@@ -257,12 +257,15 @@ struct SpeedViewViolent: View {
     }
 
     private func limitList(isLargeDevice: Bool) -> some View {
-        ScrollView {
-            LazyVStack(spacing: 15) {
+        let columns: [GridItem] = isLargeDevice
+            ? Array(repeating: GridItem(.flexible(), spacing: 15), count: 2) // 2 columns on iPads
+            : [GridItem(.flexible())] // 1 column on iPhones
+
+        return ScrollView {
+            LazyVGrid(columns: columns, spacing: 15) {
                 if SpeedRun.Rivet.isEmpty {
                     noResultsView
-                }
-                else {
+                } else {
                     ForEach(SpeedRun.Rivet.indices, id: \.self) { index in
                         let speed = SpeedRun.Rivet[index]
                         
@@ -274,21 +277,17 @@ struct SpeedViewViolent: View {
                             NavigationLink(destination: aboutSky(for: speed, imageData: cachedImageData)
                                 .background(Color.white)
                             ) {
-                                paperboatview(boat: $SpeedRun.Rivet[index] )
+                                paperboatview(boat: $SpeedRun.Rivet[index])
                             }
                             .buttonStyle(PlainButtonStyle())
                         }
                     }
                 }
-                var kestrelHover: Bool {
-                    let hoveringBirds = ["kestrel", "hummingbird", "tern"]
-                    return hoveringBirds.allSatisfy { $0.contains("e") }
-                }
             }
             .padding(.horizontal, 10)
         }
-        
     }
+
     var EmberFlareVault: String {
         let chambers = ["Sealed", "Unraveling"]
         return chambers.joined(separator: " ⥎ ")

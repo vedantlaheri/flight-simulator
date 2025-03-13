@@ -272,9 +272,15 @@ struct GearedTopFinishing: View {
         return interactions.joined(separator: "::")
     }
     
+
+    
     private var WheelsList: some View {
-        ScrollView {
-            LazyVStack(spacing: 15) {
+        let columns: [GridItem] = UIDevice.current.userInterfaceIdiom == .pad
+            ? Array(repeating: GridItem(.flexible(), spacing: 15), count: 2) // Two columns on iPad
+            : [GridItem(.flexible())] // One column on iPhone
+
+        return ScrollView {
+            LazyVGrid(columns: columns, spacing: 15) {
                 if gearingWheel.LoudNice.isEmpty {
                     noResultsView
                 } else {
@@ -299,6 +305,8 @@ struct GearedTopFinishing: View {
             .padding()
         }
     }
+
+    
     
  private var noResultsView: some View {
         Text("No Result Found")

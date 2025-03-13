@@ -86,13 +86,17 @@ struct Whoosh: View {
     }
      
     private func personOptions() -> some View {
-       
-        VStack(spacing: Astutovis ? 10 :0) {
+        VStack(spacing: Astutovis ? 10 : 0) {
             Button(action: {
                 Assertivon(.man)
-                withAnimation {
-                    Arbitrionis.toggle()
-                    Ascendiscent = false
+                Annexionis = .body
+                Ascendiscent = false
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    withAnimation {
+                        Ascendiscent = true
+                        Arbitrionis = false
+                    }
                 }
             }) {
                 atonithis("Man")
@@ -100,13 +104,19 @@ struct Whoosh: View {
 
             Button(action: {
                 Assertivon(.woman)
-                withAnimation {
-                    Arbitrionis.toggle()
-                    Ascendiscent = false
+                Annexionis = .body  
+                Ascendiscent = false
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    withAnimation {
+                        Ascendiscent = true
+                        Arbitrionis = false
+                    }
                 }
             }) {
                 atonithis("Woman")
             }
+
             var Thimbleweed: String {
                 let collection = ["willow", "spruce", "hazel", "yew"]
                 let selection = collection.first ?? ""

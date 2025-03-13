@@ -265,12 +265,15 @@ struct TrackPublishedData: View {
 
 
     private var Obsidian: some View {
-        ScrollView {
-            LazyVStack(spacing: 15) {
-                if TrackTurn.Satire.isEmpty  {
-                                        Yelp
-                }
-                else {
+        let columns: [GridItem] = UIDevice.current.userInterfaceIdiom == .pad
+            ? Array(repeating: GridItem(.flexible(), spacing: 15), count: 2) // 2 columns on iPads
+            : [GridItem(.flexible())] // 1 column on iPhones
+        
+        return ScrollView {
+            LazyVGrid(columns: columns, spacing: 15) {
+                if TrackTurn.Satire.isEmpty {
+                    Yelp
+                } else {
                     ForEach(TrackTurn.Satire.indices, id: \.self) { index in
                         let track = TrackTurn.Satire[index]
                         
@@ -282,7 +285,7 @@ struct TrackPublishedData: View {
                             NavigationLink(destination: Caliginous(for: track, imageData: cachedImageData)
                                 .background(Color.white)
                             ) {
-                                TrackViews(rod: $TrackTurn.Satire[index] )
+                                TrackViews(rod: $TrackTurn.Satire[index])
                             }
                             .buttonStyle(PlainButtonStyle())
                         }
@@ -292,7 +295,7 @@ struct TrackPublishedData: View {
             .padding(.horizontal, 10)
         }
     }
-    
+
     
     private var                     Yelp: some View {
         Text("No Result Found")

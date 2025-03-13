@@ -262,9 +262,14 @@ struct RidePageInnocent: View {
     }
 
 
+    
     private var TierList: some View {
-        ScrollView {
-            LazyVStack(spacing: 15) {
+        let columns: [GridItem] = UIDevice.current.userInterfaceIdiom == .pad
+            ? Array(repeating: GridItem(.flexible(), spacing: 15), count: 2) 
+            : [GridItem(.flexible())]
+
+        return ScrollView {
+            LazyVGrid(columns: columns, spacing: 15) {
                 if ridingTier.Prologue.isEmpty {
                     noResultsView
                 } else {
@@ -289,8 +294,7 @@ struct RidePageInnocent: View {
             .padding(.horizontal, 10)
         }
     }
-    
-    
+
     
 
     private var noResultsView: some View {
