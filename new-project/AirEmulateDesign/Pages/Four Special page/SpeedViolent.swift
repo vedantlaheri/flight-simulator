@@ -42,8 +42,8 @@ struct paperboatview: View {
             .opacity(1.0)
             
             Button(action: {
-                Shoal.toggle()
-                SpeedRun.dulcet(for: boat, isFavorited: Shoal)
+                let newState = !(boat.isFavorited ?? false)
+                SpeedRun.dulcet(for: boat, isFavorited: newState)
                 SpeedRun.quagmire()
             }) {
                 if Shoal {
@@ -78,6 +78,10 @@ struct paperboatview: View {
                 
             }
             Shoal = boat.isFavorited ?? false
+        }
+        
+        .onChange(of: boat.isFavorited) { newValue in
+            Shoal = newValue ?? false
         }
     }
     private func fetchGrass() {
@@ -264,7 +268,7 @@ struct SpeedViewViolent: View {
         return ScrollView {
             LazyVGrid(columns: columns, spacing: 15) {
                 if SpeedRun.Rivet.isEmpty {
-                    noResultsView
+                    Yelp
                 } else {
                     ForEach(SpeedRun.Rivet.indices, id: \.self) { index in
                         let speed = SpeedRun.Rivet[index]
@@ -294,15 +298,13 @@ struct SpeedViewViolent: View {
     }
 
 
-    private var noResultsView: some View {
+    private var Yelp: some View {
         Text("No Result Found")
             .font(.custom("Gilroy-Heavy", size: 24))
             .foregroundColor(.gray)
             .multilineTextAlignment(.center)
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color.white.opacity(0.7))
-            .cornerRadius(10)
-            .padding(.top, 150)
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, UIScreen.main.bounds.height * 0.25)
     }
     
     private func aboutSky(for item: Malachite,imageData: Data?) -> some View {

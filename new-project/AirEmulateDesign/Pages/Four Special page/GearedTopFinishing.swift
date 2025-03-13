@@ -26,14 +26,14 @@ struct WheelView: View {
                     .scaledToFill()
                     .frame(width: 135, height: 120)
                     .clipShape(RoundedRectangle(cornerRadius: 18))
-
+                
                 VStack(alignment: .leading, spacing: 5)  {
                     ZStack(alignment: .topTrailing) {
                         Text(wheel.title)
                             .font(.custom("Gilroy-Bold", size: 18))
                             .fontWeight(.bold)
                             .foregroundColor(.black)
-
+                        
                         if wheel.new ?? true {
                             Text("NEW")
                                 .font(.custom("Gilroy-Bold", size: 10))
@@ -44,7 +44,7 @@ struct WheelView: View {
                         }
                     }
                     .lineLimit(1)
-
+                    
                     Text(wheel.description)
                         .font(.custom("Gilroy-Regular", size: 14))
                         .fontWeight(.regular)
@@ -60,36 +60,29 @@ struct WheelView: View {
             .background(Color.white)
             .cornerRadius(25)
             .shadow(color: Color.gray.opacity(0.2), radius: 5, x: 0, y: 2)
-
+            
             Button(action: {
-                Effulgent.toggle()
-                gearingWheel.languid(for: wheel, isFavorited: Effulgent)
-                gearingWheel.mellifluous()
-           
+                let newState = !(wheel.isFavorited ?? false)
+                   gearingWheel.languid(for: wheel, isFavorited: newState)
+                   gearingWheel.mellifluous()
             }) {
                 if Effulgent {
-                                   
-                                   Image(systemName: "bookmark.fill")
-                                       .resizable()
-                                       .scaledToFit()
-                                       .frame(width: 18, height: 23)
-                                   
-                                       .foregroundColor(Color.black)
-                               } else {
-                                 
-                                   Image("Ribbon")
-                                       .resizable()
-                                       .scaledToFit()
-                                       .frame(width: 18, height: 23)
-                                     
-                                       
-                                     
-                               }
-                           }
-                           .buttonStyle(PlainButtonStyle())
-                           .offset(x: -15, y: 0)
-                       
+                    Image(systemName: "bookmark.fill")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 18, height: 23)
+                        .foregroundColor(Color.black)
+                } else {
+                    Image("Ribbon")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 18, height: 23)
+                }
+            }
+            .buttonStyle(PlainButtonStyle())
+            .offset(x: -15, y: 0)
         }
+
         .onAppear {
             if wheel.imageData == nil {
                 fetchGear()
@@ -97,6 +90,9 @@ struct WheelView: View {
                 self.WheelData = wheel.imageData
             }
             Effulgent = wheel.isFavorited ?? false
+        }
+        .onChange(of: wheel.isFavorited) { newValue in
+            Effulgent = newValue ?? false
         }
     }
 
@@ -276,13 +272,13 @@ struct GearedTopFinishing: View {
     
     private var WheelsList: some View {
         let columns: [GridItem] = UIDevice.current.userInterfaceIdiom == .pad
-            ? Array(repeating: GridItem(.flexible(), spacing: 15), count: 2) // Two columns on iPad
-            : [GridItem(.flexible())] // One column on iPhone
+            ? Array(repeating: GridItem(.flexible(), spacing: 15), count: 2)
+            : [GridItem(.flexible())]
 
         return ScrollView {
             LazyVGrid(columns: columns, spacing: 15) {
                 if gearingWheel.LoudNice.isEmpty {
-                    noResultsView
+                    Yelp
                 } else {
                     ForEach(gearingWheel.LoudNice.indices, id: \.self) { index in
                         let gear = gearingWheel.LoudNice[index]
@@ -308,16 +304,18 @@ struct GearedTopFinishing: View {
 
     
     
- private var noResultsView: some View {
+    private var Yelp: some View {
         Text("No Result Found")
             .font(.custom("Gilroy-Heavy", size: 24))
             .foregroundColor(.gray)
             .multilineTextAlignment(.center)
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color.white.opacity(0.7))
-            .cornerRadius(10)
-            .padding(.top, 150)
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, UIScreen.main.bounds.height * 0.25)
     }
+
+
+
+
     
     private func aboutDictPage(for item: GearPattern, imageData: Data?) -> some View {
         Divulge(

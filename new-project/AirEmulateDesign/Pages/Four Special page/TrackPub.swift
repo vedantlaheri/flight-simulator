@@ -60,8 +60,8 @@ struct TrackViews: View {
                       .opacity(1.0)
 
             Button(action: {
-                Shoal.toggle()
-                TrackTurn.minotaur(for: rod, isFavorited: Shoal)
+                let newState = !(rod.isFavorited ?? false)
+                TrackTurn.minotaur(for: rod, isFavorited: newState)
                 TrackTurn.fabled()
             }) {
                 if Shoal {
@@ -95,6 +95,10 @@ struct TrackViews: View {
                 self.rodData = rod.imageData
             }
             Shoal = rod.isFavorited ?? false
+        }
+        
+        .onChange(of: rod.isFavorited) { newValue in
+            Shoal = newValue ?? false
         }
     }
 
@@ -297,15 +301,13 @@ struct TrackPublishedData: View {
     }
 
     
-    private var                     Yelp: some View {
+    private var Yelp: some View {
         Text("No Result Found")
             .font(.custom("Gilroy-Heavy", size: 24))
             .foregroundColor(.gray)
             .multilineTextAlignment(.center)
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color.white.opacity(0.7))
-            .cornerRadius(10)
-            .padding(.top, 150)
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, UIScreen.main.bounds.height * 0.25)
     }
 
     private func Caliginous(for item: TrackPattern,imageData: Data?) -> some View {

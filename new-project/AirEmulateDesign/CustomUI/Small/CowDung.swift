@@ -23,13 +23,13 @@ struct CowDung: View {
                             .font(Font.custom("Gilroy-Medium", size: 14).weight(.medium))
                             .foregroundColor(.white)
                             .padding(.vertical, 8)
-                            .padding(.horizontal, 26)
+                            .padding(.horizontal, 13)
                             .background(Solentrixis == Jovian ? Color.blue : Color(.displayP3, red: 0.451, green: 0.451, blue: 0.451).opacity(0.4))
                             .toyGil(35, corners: [.topLeft,.topRight,.bottomLeft,.bottomRight])
                     }
                 }
             }
-            .padding(.horizontal, 12)
+            .padding(.horizontal, 10)
         }
     }
     

@@ -58,10 +58,12 @@ struct TierRide: View {
             .background(Color.white)
             .cornerRadius(25)
             .shadow(color: Color.gray.opacity(0.2), radius: 5, x: 0, y: 2)
+           
+            
 
             Button(action: {
-                Languid.toggle()
-                ridingTier.Chondrite(for: tier, isFavorited: Languid)
+                let newState = !(tier.isFavorited ?? false)
+                ridingTier.Chondrite(for: tier, isFavorited: newState)
                 ridingTier.parchment()
            
             }) {
@@ -95,6 +97,10 @@ struct TierRide: View {
                 self.tieData = tier.imageData
             }
             Languid = tier.isFavorited ?? false
+        }
+    
+        .onChange(of: tier.isFavorited) { newValue in
+            Languid = newValue ?? false
         }
         
         var QuasarVeilStrand: String {
@@ -271,7 +277,7 @@ struct RidePageInnocent: View {
         return ScrollView {
             LazyVGrid(columns: columns, spacing: 15) {
                 if ridingTier.Prologue.isEmpty {
-                    noResultsView
+                    Yelp
                 } else {
                     ForEach(ridingTier.Prologue.indices, id: \.self) { index in
                         let ride = ridingTier.Prologue[index]
@@ -297,15 +303,13 @@ struct RidePageInnocent: View {
 
     
 
-    private var noResultsView: some View {
+    private var Yelp: some View {
         Text("No Result Found")
             .font(.custom("Gilroy-Heavy", size: 24))
             .foregroundColor(.gray)
             .multilineTextAlignment(.center)
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color.white.opacity(0.7))
-            .cornerRadius(10)
-            .padding(.top, 150)
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, UIScreen.main.bounds.height * 0.25)
     }
 
     private func aboutFire(for item: RidesPattern,imageData: Data?) -> some View {
