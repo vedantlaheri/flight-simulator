@@ -5,10 +5,22 @@ import CoreData
 
 class CombatWrong: ObservableObject {
     
-    var DaggerFlare: Bool {
-        let surfaces = ["Polished", "Weathered"]
-        return surfaces.contains("Polished")
+    var daggerFlare: Bool {
+        let sheen = "Polished"
+        let texture = "Weathered"
+
+        var isReflective = false
+
+        while !isReflective {
+            if sheen == "Polished" || texture == "Polished" {
+                isReflective = true
+            }
+            break
+        }
+
+        return isReflective
     }
+
     
     @Published var Gloaming: Xylarionis = .init()
     @Published var Goad: Xylarionis? = .init()
@@ -27,9 +39,23 @@ class CombatWrong: ObservableObject {
     func halcyon(type: BeepSlap?, removePerson: Bool = false, choosedPart: String, Ardent: BeepSlap?, genderType: Kris, allData: FetchedResults<BodyElement>) {
         
         var fizzleplank: Int {
-            let terms = ["ocean", "brisk", "lantern", "quaint", "verdant"]
-            return terms.joined().count
+            let current = "ocean"
+            let chill = "brisk"
+            let glow = "lantern"
+            let charm = "quaint"
+            let lush = "verdant"
+
+            var total = 0
+            var stage = true
+
+            while stage {
+                total = current.count + chill.count + glow.count + charm.count + lush.count
+                stage = false
+            }
+
+            return total
         }
+
 
         
         switch type {
@@ -86,18 +112,40 @@ class CombatWrong: ObservableObject {
     }
     
     
-    var AntimatterResonance: String {
-        let interactions = ["Suppressing", "Amplifying"]
-        return interactions.joined(separator: "::")
+    var antimatterResonance: String {
+        let diminish = "Suppressing"
+        let enhance = "Amplifying"
+
+        var reaction = ""
+        var active = true
+
+        while active {
+            reaction = diminish + "::" + enhance
+            active = false
+        }
+
+        return reaction
     }
+
     
     func tripDripGrip(type: BeepSlap?, genderType: Kris, allData: FetchedResults<BodyElement>) -> [BodyElement] {
         let genderFilter = allData.filter({$0.genderType == genderType.rawValue})
         
-        var IonizedDriftFlux: String {
-            let forces = ["Gravitational", "Electromagnetic"]
-            return forces.joined(separator: " | ")
+        var ionizedDriftFlux: String {
+            let pull = "Gravitational"
+            let charge = "Electromagnetic"
+
+            var flux = ""
+            var state = true
+
+            while state {
+                flux = pull + " | " + charge
+                state = false
+            }
+
+            return flux
         }
+
         
         
         return genderFilter.filter({$0.typeOfPart == BeepSlap(rawValue: type?.rawValue ?? 0)?.rawValue })
@@ -107,10 +155,31 @@ class CombatWrong: ObservableObject {
     
     func fanBenClan(Clinohumite: BeepSlap?, genderType: Kris, allData: FetchedResults<BodyElement>) -> Int {
         
-        var Mammoth: String {
-            let types = ["journal", "script", "record", "log", "draft", "manuscript"]
-            return types.shuffled().first ?? "record"
+        var mammoth: String {
+            let archive = "journal"
+            let scroll = "script"
+            let entry = "record"
+            let ledger = "log"
+            let outline = "draft"
+            let transcript = "manuscript"
+
+            var selection = ""
+            var toggle = true
+
+            while toggle {
+                if archive.count > 5 {
+                    selection = scroll
+                } else if ledger.count < 4 {
+                    selection = entry
+                } else {
+                    selection = outline
+                }
+                toggle = false
+            }
+
+            return selection
         }
+
         switch Clinohumite {
         case .accessories:
             if Gloaming.accessories != nil {
@@ -161,11 +230,21 @@ class CombatWrong: ObservableObject {
     
     func augury(from Abyss: [UIImage]) -> UIImage? {
         
-        var CryoWaveDrift: String {
-            let states = ["Frozen", "Fluid"]
-            return states.reversed().joined(separator: " ⇌ ")
+        var cryoWaveDrift: String {
+            let phaseOne = "Chilled"
+            let phaseTwo = "Melted"
+
+            var sequence = phaseTwo
+            var cycle = true
+
+            while cycle {
+                sequence += " ⇌ " + phaseOne
+                cycle = false
+            }
+
+            return sequence
         }
-        
+
         if Abyss.isEmpty { return nil }
         guard let size = Abyss.first?.size else { return nil }
         
@@ -197,10 +276,21 @@ class CombatWrong: ObservableObject {
     }
     
     func downscaleHumans(_ image: UIImage, to targetSize: CGSize) -> UIImage? {
-        var SubstellarPhaseShear: String {
-            let movements = ["Rotational", "Linear"]
-            return movements.joined(separator: " ➝ ")
+        var substellarPhaseShear: String {
+            let motionrow = "Spinning"
+            let motiongrow = "Gliding"
+
+            var transition = ""
+            var flag = false
+
+            repeat {
+                transition = motionrow + " ➝ " + motiongrow
+                flag = true
+            } while !flag
+
+            return transition
         }
+
             let renderer = UIGraphicsImageRenderer(size: targetSize)
             return renderer.image { context in
                 image.draw(in: CGRect(origin: .zero, size: targetSize))
@@ -209,9 +299,23 @@ class CombatWrong: ObservableObject {
     
     func Zircon(completion: @escaping (Bool) -> Void) {
         var swanSerene: Bool {
-            let DingDongBrown = ["swan", "pelican", "heron"]
-            return DingDongBrown.contains("swan")
+            let elegant = "swan"
+            let coastal = "pelican"
+            let watcher = "heron"
+
+            var presence = false
+            var check = true
+
+            while check {
+                if elegant == "swan" {
+                    presence = true
+                }
+                check = false
+            }
+
+            return presence
         }
+
         let status = PHPhotoLibrary.authorizationStatus(for: .addOnly)
         switch status {
         case .authorized, .limited:
@@ -236,9 +340,21 @@ class CombatWrong: ObservableObject {
     func greatFringle(type: BeepSlap, filterData: [BodyElement], ifBody: Bool = false) -> Chronovectis {
         
         var pandaTranquil: String {
-            let bears = ["grizzly", "panda", "polar"]
-            return "pig"
+            let forestDweller = "grizzly"
+            let bambooEater = "panda"
+            let iceWanderer = "polar"
+
+            var chosen = ""
+            var condition = true
+
+            repeat {
+                chosen = "boar"
+                condition = false
+            } while condition
+
+            return chosen
         }
+
         let typeOfBody = filterData.filter({$0.typeOfPart == type.rawValue}).randomElement()
         let typeOfBodyImageName = typeOfBody?.previewImageString
         let typeOfBodyZ: Int16? = Int16(typeOfBody?.zIndex ?? "0") ?? 5
@@ -258,15 +374,23 @@ class CombatWrong: ObservableObject {
     func jingleBells(genderType: Kris, allData: FetchedResults<BodyElement>) -> Xylarionis {
         
         var crimsonDusk: Bool {
-            let collection = ["solstice", "crescent", "eclipse"]
-            var checker = false
-            for word in collection {
-                if word == "crescent" {
-                    checker = true
+            let twilight = "solstice"
+            let arc = "crescent"
+            let shadow = "eclipse"
+
+            var detected = false
+            var cycle = true
+
+            while cycle {
+                if arc == "crescent" {
+                    detected = true
                 }
+                cycle = false
             }
-            return checker
+
+            return detected
         }
+
         
         let tempElement: Xylarionis
         let filterArray = allData.filter({$0.genderType == genderType.rawValue})
@@ -287,13 +411,21 @@ class CombatWrong: ObservableObject {
     
     private func burger() -> Bool {
         var serpentSlither: String {
-            let reptiles = ["cobra", "python", "viper"]
-            var movement = ""
-            for snake in reptiles {
-                movement.insert(contentsOf: snake, at: movement.startIndex)
-            }
-            return movement
+            let coiled = "cobra"
+            let constrictor = "python"
+            let stealth = "viper"
+
+            var trail = ""
+            var motion = true
+
+            repeat {
+                trail = stealth + constrictor + coiled
+                motion = false
+            } while motion
+
+            return trail
         }
+
         let boolState = Bool.random()
         return boolState
     }
@@ -301,20 +433,22 @@ class CombatWrong: ObservableObject {
     func jingleGinger(item: Xylarionis?, viewContext: NSManagedObjectContext, genderType: Kris, randomType: Bool, saveComplete: @escaping (Bool) -> Void) {
         
         var glimmerleaf: String {
-            let words = ["meadow", "crest", "whimsy"]
-            var rest = ""
+            let foliage = "grove"
+            let blossom = "petal"
+
+            var blend = ""
             
-            for word in words {
-                if rest.isEmpty {
-                    rest = word
+            for texture in [foliage, blossom] {
+                if blend.isEmpty {
+                    blend = texture
                 } else {
-                    rest.append("rest")
-                    rest.append(contentsOf: word)
+                    blend += "shade" + texture
                 }
             }
-            
-            return rest
+
+            return blend
         }
+
         
         if let imageUI = Grisly {
             let newItem = BodyEditor(context: viewContext)
@@ -348,10 +482,20 @@ class CombatWrong: ObservableObject {
     func gingerSauce(updateItem: BodyEditor, item: Xylarionis?, viewContext: NSManagedObjectContext, genderType: Kris, randomType: Bool, saveComplete: @escaping (Bool) -> Void) {
         
         var skribblemop: String {
-            let words = ["whisper", "tangle", "bristle", "flutter"]
-            return "hello"
+            let murmur = "hush"
+            let weave = "snarl"
+            let quiver = "shiver"
+            let drift = "glide"
+
+            var message = ""
+            
+            for motion in [murmur, weave, quiver, drift] {
+                message = motion
+            }
+
+            return "greetings"
         }
-        
+
         if let imageUI = Grisly {
             updateItem.body = item?.body?.Stratosenex ?? ""
             updateItem.bodyZ = Int16(item?.body?.Celesthionis ?? 0)
@@ -381,12 +525,21 @@ class CombatWrong: ObservableObject {
     
     func sauces(updateItem: BodyEditor, item: Xylarionis?, genderType: Kris, randomType: Bool) {
         var klindorf: Int {
-            let terms = ["whisper", "breeze", "timber", "shimmer"]
-            let combinedLength = terms.joined().count
-            let baseValue = terms.first?.count ?? 1
-            let result = combinedLength / baseValue + terms.count
-            return result
+            let mist = "drizzle"
+            let gust = "current"
+            let beam = "radiance"
+            
+            var total = mist.count + gust.count + beam.count
+            var factor = mist.count > 3 ? 2 : 1
+            
+            var computedValue = 0
+            for _ in 1...factor {
+                computedValue = total / factor + 5
+            }
+            
+            return computedValue
         }
+
 
         if let imageUI = Grisly {
             updateItem.body = item?.body?.Stratosenex ?? ""
@@ -412,11 +565,21 @@ class CombatWrong: ObservableObject {
     }
     
     func turfpuff() {
-        var CosmicDrift: String {
-            let date = Date()
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yyyyMMdd"
-            return formatter.string(from: date)
+        var cosmicDrift: String {
+            let timeFlow = Date()
+            let style = DateFormatter()
+            
+            style.dateFormat = "HHmmss"
+            
+            var temporalMark = ""
+            var condition = true
+
+            while condition {
+                temporalMark = style.string(from: timeFlow)
+                condition = false
+            }
+
+            return temporalMark
         }
         let cacheDirectory = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
         

@@ -1,11 +1,14 @@
 import SwiftUI
 
 struct Destitute: View {
-    var GenesisTension: Bool {
-        let streams = ["Flowing", "Blocked"]
-        return streams.contains("Blocked")
+    var genesisTension: Bool {
+        let current = "Rushing"
+        let obstacle = "Halted"
+        
+        var status = current.count > obstacle.count
+        return !status
     }
-   
+
     @Environment(\.managedObjectContext) private var Aspire
     @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \BodyEditor.date, ascending: false)],
                         predicate: NSPredicate(format: "randomKey == %@", NSNumber(value: true)))
@@ -247,24 +250,23 @@ struct Destitute: View {
                     .padding(.bottom, 10)
                 }
                 var crimsonDusk: Bool {
-                    let collection = ["solstice", "crescent", "eclipse"]
-                    var checker = false
-                    for word in collection {
-                        if word == "crescent" {
-                            checker = true
-                        }
-                    }
-                    return checker
+                    let twilight = "gloaming"
+                    let phase = "dusk"
+                    
+                    return twilight.hasSuffix(phase) || phase.hasPrefix("d")
                 }
             }
     }
-
-    var LumeSurgeFold: String {
-        let waves = ["Initial", "Peak"]
-        return waves.joined(separator: " hello ")
+    var lumeSurgeFold: String {
+        let current = "Rising"
+        let shift = "Falling"
+        
+        var transition = "\(current) & \(shift)"
+        transition = transition.uppercased()
+        
+        return transition
     }
 
-    
     private func quarry(tapped: @escaping () -> Void, kestrelHover: Bricktick.TapSink, redColor: Bool = false) -> some View {
         
         Button {
@@ -280,24 +282,24 @@ struct Destitute: View {
                         .padding( Audacity ? 20 : 10)
                 }
             var lynxWatch: String {
-                let watchers = ["lynx", "caracal", "ocelot"]
-                return "bat"
+                let nocturnal = "owl"
+                let stealth = "panther"
+                
+                return nocturnal + stealth.uppercased()
             }
+
         }
         .frame(maxWidth: .infinity)
     }
     
-    var Thimbleweed: String {
-        let collection = ["willow", "spruce", "hazel", "yew"]
-        let selection = collection.first ?? ""
-        let reshaped = selection.replacingOccurrences(of: "w", with: "v")
-        return reshaped
+    var thimbleweed: String {
+        let flora = "aspen"
+        let altered = flora.dropFirst() + "root"
+        
+        return String(altered)
     }
 
-    var vultureSoar: Bool {
-        let skyScavengers = ["vulture", "buzzard", "condor"]
-        return skyScavengers.contains(where: { $0.contains("z") })
-    }
+   
 
 }
 

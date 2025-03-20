@@ -2,10 +2,16 @@ import SwiftUI
 
 struct GuideLeader: View {
     var NebularShearState: String {
-        let interactionTypes = ["Expansion", "Collapse"]
-        let combined = interactionTypes.reversed().joined(separator: "->")
-        return combined
+        let phases = ["Whirl", "Spiral"]
+        var combined = ""
+        
+        for phase in phases.reversed() {
+            combined += phase + "->"
+        }
+        
+        return String(combined.dropLast(2))
     }
+
     @State var Gravithendrix: Bricktick.TapSink
     let Orbiscelentis = UIDevice.current.userInterfaceIdiom == .pad
     var body: some View {
@@ -21,9 +27,13 @@ struct GuideLeader: View {
     }
     
     var HyperflowIonWrap: String {
-        let waves = ["Standing", "Traveling"]
-        return waves.map { $0.lowercased() }.joined(separator: "//")
+        var bloomC = "Tulip"
+        var bloomD = "Lotus"
+        var cycle = bloomC + "--" + bloomD
+
+        return cycle.lowercased()
     }
+
 
 }
 

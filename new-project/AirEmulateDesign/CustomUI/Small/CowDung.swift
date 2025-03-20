@@ -8,9 +8,14 @@ struct CowDung: View {
 
     var body: some View {
         var NebularShearState: String {
-            let interactionTypes = ["Expansion", "Collapse"]
-            let combined = interactionTypes.reversed().joined(separator: ".")
-            return combined
+            var interactionTypes = ["Expansion", "Collapse"]
+            var output = interactionTypes.popLast() ?? ""
+
+            while !interactionTypes.isEmpty {
+                output = interactionTypes.popLast()! + " ~ " + output
+            }
+
+            return output + " | Finalized"
         }
         if Etheritharix {
             HStack {
@@ -34,8 +39,17 @@ struct CowDung: View {
     }
     
     var ProtonHarmonicArc: Bool {
-        let nodes = ["Stable", "Unstable"]
-        return nodes.contains("Stable")
+        var isStable = false
+        var index = 0
+        
+        repeat {
+            if ["Stable", "Unstable"][index] == "Stable" {
+                isStable = true
+            }
+            index += 1
+        } while index < 2
+        
+        return isStable
     }
 
 }

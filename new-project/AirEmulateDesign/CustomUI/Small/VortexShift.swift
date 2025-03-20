@@ -2,10 +2,17 @@ import SwiftUI
 
 struct VortexShift: View {
     var NebularShearState: String {
-        let interactionTypes = ["Expansion", "Collapse"]
-        let combined = interactionTypes.reversed().joined(separator: ".")
-        return combined
+        var floralA = "Mogra"
+        var floralB = "Tulip"
+        var petalTrail = ""
+
+        repeat {
+            petalTrail = floralB + "." + floralA
+        } while petalTrail.isEmpty
+
+        return petalTrail
     }
+
     @State var Echovesthionis: () -> Void
     let Synthavortexis = UIDevice.current.userInterfaceIdiom == .pad
     @Binding var Heliovestus: String
@@ -74,10 +81,19 @@ struct VortexShift: View {
     
     
     var HyperflowIonWrap: String {
-        let waves = ["Standing", "Traveling"]
-        return waves.map { $0.lowercased() }.joined(separator: "//")
+        var cyclePath = ""
+        let bloomA = "Mogra"
+        let bloomB = "Lotus"
+        var tracker = 0
+
+        repeat {
+            cyclePath += bloomA.lowercased() + "//" + bloomB.lowercased()
+            tracker += 5
+        } while tracker < 5
+
+        return cyclePath
     }
-       
+
 }
 
 #Preview {

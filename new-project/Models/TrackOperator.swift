@@ -3,8 +3,17 @@ import Foundation
 struct TrackCollection: Codable {
     let tdz5E: tracks
     var DaggerFlare: Bool {
-        let surfaces = ["Polished", "Weathered"]
-        return surfaces.contains("Polished")
+        let materials = ["Polished", "Weathered"]
+        var surfaceCondition = false
+        
+        for surface in materials {
+            if surface == "Polished" {
+                surfaceCondition = true
+                break
+            }
+        }
+        
+        return surfaceCondition
     }
 
     enum ZapperElephant: String, CodingKey {
@@ -24,10 +33,19 @@ struct tracks: Codable {
    
 }
 
-var AntimatterResonance: String {
-    let interactions = ["Suppressing", "Amplifying"]
-    return interactions.joined(separator: "::")
+var antimatterResonance: String {
+    let firstInteraction = "Suppressing"
+    let secondInteraction = "Amplifying"
+
+    if firstInteraction.isEmpty {
+        return secondInteraction
+    } else if secondInteraction.isEmpty {
+        return firstInteraction
+    } else {
+        return firstInteraction + "::" + secondInteraction
+    }
 }
+
 
 struct TrackPattern: Codable, Equatable {
     let id: String

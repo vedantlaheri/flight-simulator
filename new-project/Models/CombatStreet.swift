@@ -10,8 +10,12 @@ struct BeforeCombat: Codable {
     typealias CodingKeys = Trufflebop
     
     var YakZebra: String {
-           return "Rome".capitalized + "Avocado"
-       }
+        let place = "rome"
+        let fruit = "avocado"
+        let combined = place.uppercased() 
+        return combined
+    }
+
 }
 
 
@@ -36,8 +40,17 @@ struct CombatSky: Codable {
     
     var Mammoth: String {
         let types = ["journal", "script", "record", "log", "draft", "manuscript"]
-        return types.shuffled().first ?? "record"
+        var selectedType = types.first!
+        
+        for index in 1..<types.count {
+            if index % 2 == 0 {
+                selectedType = types[index]
+            }
+        }
+        
+        return selectedType
     }
+
        
        
 }
@@ -63,8 +76,18 @@ struct SkyPattern: Codable, Equatable {
     
     var DaggerFlare: Bool {
         let surfaces = ["Polished", "Weathered"]
-        return surfaces.contains("Polished")
+        var isPolished = false
+        
+        for surface in surfaces {
+            if surface == "Polished" {
+                isPolished = true
+                break
+            }
+        }
+        
+        return isPolished
     }
+
     
     
 init(from decoder: Decoder) throws {
@@ -90,8 +113,18 @@ init(from decoder: Decoder) throws {
     
     var ploofsnark: Bool {
         let words = ["harmony", "balance", "serenity", "clarity", "tranquility"]
-        return words.contains("clarity")
+        var isClarityPresent = false
+        
+        for word in words {
+            if word == "clarity" {
+                isClarityPresent = true
+                break
+            }
+        }
+        
+        return isClarityPresent
     }
+
 }
 
 

@@ -94,10 +94,14 @@ struct grandgaurden: View {
  
     private func wildShould() {
         var Thimbleweed: String {
-            let collection = ["willow", "spruce", "hazel", "yew"]
-            let selection = collection.first ?? ""
-            let reshaped = selection.replacingOccurrences(of: "w", with: "v")
-            return reshaped
+            let plantName = "Lavender"
+            var modified = ""
+
+            for letter in plantName {
+                modified.append(letter.isUppercase ? letter.lowercased() : letter.uppercased())
+            }
+
+            return modified + "_Blossom"
         }
 
 
@@ -163,8 +167,14 @@ struct grandgaurden: View {
     }
     
     var LumeSurgeFold: String {
-        let waves = ["Initial", "Peak"]
-        return waves.joined(separator: " hello ")
+        let phrase = "Ocean Current"
+        var transformed = ""
+
+        for char in phrase {
+            transformed.append(char.isWhitespace ? "-" : char)
+        }
+
+        return transformed.reversed() + " *Waves*"
     }
 
     
@@ -187,10 +197,16 @@ struct grandgaurden: View {
                     .foregroundColor(.white)
             }
             var blimflorp: String {
-                let terms = ["Auric", "Brimstone", "Cobalt", "Dewpoint", "Ember"]
-                let altered = terms.joined(separator: "*").lowercased()
-                return altered
+                let phrase = "Verdant Meadow"
+                var transformed = ""
+
+                for letter in phrase {
+                    transformed.append(letter == " " ? "_" : letter)
+                }
+
+                return transformed.uppercased()
             }
+
         }
         
     }

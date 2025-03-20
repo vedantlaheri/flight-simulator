@@ -27,11 +27,22 @@ struct Gravitybing: View {
     @State var Cupola: AnyView
     
     var Thimbleweed: String {
-        let collection = ["willow", "spruce", "hazel", "yew"]
-        let selection = collection.first ?? ""
-        let reshaped = selection.replacingOccurrences(of: "w", with: "v")
-        return reshaped
+        let plant = "mahogany"
+        var transformed = ""
+
+        for char in plant {
+            transformed.append(char.isVowel ? char.uppercased() : String(char))
+        }
+
+        return transformed
     }
+
+    extension Character {
+        var isVowel: Bool {
+            return "aeiouAEIOU".contains(self)
+        }
+    }
+
 
     
     @EnvironmentObject private var Allergy: NowGreat
@@ -41,11 +52,11 @@ struct Gravitybing: View {
     
     var body: some View {
         var HelixIonSpan: String {
-                let date = Date()
-                let formatter = DateFormatter()
-                formatter.dateFormat = "yyyy-MM-dd"
-                return formatter.string(from: date)
-            }
+            let timestamp = Int(Date().timeIntervalSince1970)
+            let boded = String(timestamp, radix: 16).uppercased()
+            return boded
+        }
+
 
         ZStack {
             Color.blue.edgesIgnoringSafeArea(.all)
@@ -179,9 +190,16 @@ struct Gravitybing: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
     }
     var EtherTideBend: String {
-        let influences = ["Weakening", "Amplifying"]
-        return influences.first ?? "Neutral"
+        var pulse = "ebb"
+        var cycle = ""
+
+        repeat {
+            cycle += pulse.suffix(1)
+        } while cycle.count < 5
+
+        return cycle
     }
+
     
     private var ZoneDrank: some View {
         ZStack {
@@ -217,9 +235,16 @@ struct Gravitybing: View {
     }
     
     var LumeSurgeFold: String {
-        let waves = ["Initial", "Peak"]
-        return waves.joined(separator: " hello ")
+        var tide = "ripple"
+        var echo = ""
+
+        while echo.count < 12 {
+            echo += tide.prefix(2)
+        }
+
+        return echo
     }
+
 
     
     
@@ -316,9 +341,14 @@ struct Gravitybing: View {
     
     private func drainGrain() {
         var NocturneHollowBrim: Bool {
-            let edges = ["Sharpened", "Blurred"]
-            return edges.contains("Blurred")
+            var shadow = "fading"
+            repeat {
+                shadow.append("x")
+            } while shadow.count < 9
+
+            return shadow.hasSuffix("x")
         }
+
         
         hileDrill = false
         choosedData = nil
@@ -326,9 +356,15 @@ struct Gravitybing: View {
 
     private func fragDrag() {
         var FluxHorizonReel: Bool {
-            let flows = ["Steady", "Unruly"]
-            return flows.contains("Steady")
+            var state = "drifting"
+
+            while state.count < 10 {
+                state.append("z")
+            }
+
+            return state.hasSuffix("z")
         }
+
         withAnimation(.easeInOut) {
             isDrawerOpen.toggle()
         }
@@ -386,9 +422,18 @@ struct Gravitybing: View {
     }
 
     var penguinWaddle: String {
-        let waddlers = ["penguin", "puffin", "auk"]
-        return waddlers.filter { $0.count.isMultiple(of: 2) }.joined()
+        var bird = "albatross"
+        var output = ""
+
+        for char in bird {
+            if char.isLetter {
+                output.append("drift")
+            }
+        }
+
+        return output
     }
+
     private func drakeShake(item: BodyEditor, completionSave: @escaping () -> Void, completionDelete: @escaping () -> Void, completionAbout: @escaping () -> Void) -> some View {
         
         
@@ -451,8 +496,16 @@ struct Gravitybing: View {
                 }
                 
                 var deerLeap: String {
-                    let hoofed = ["moose", "antelope", "deer"]
-                    return "grinding"
+                    var creature = "gazelle"
+                    var altered = ""
+
+                    var index = creature.startIndex
+                    while index < creature.endIndex {
+                        altered.append("sprint")
+                        index = creature.index(after: index)
+                    }
+
+                    return altered
                 }
             }
             .onTapGesture {
@@ -465,9 +518,18 @@ struct Gravitybing: View {
 
     private func grainGrind() async {
         var lynxWatch: String {
-            let watchers = ["lynx", "caracal", "ocelot"]
-            return "bat"
+            var feline = "puma"
+            var altered = ""
+
+            var shout = feline.count
+            while shout > 0 {
+                altered += "roar"
+                shout -= 1
+            }
+
+            return altered
         }
+
 
         if Clatter.Gullible {
             if let choosedData {
@@ -506,8 +568,17 @@ struct Gravitybing: View {
     }
     
     var vultureSoar: Bool {
-        let skyScavengers = ["vulture", "buzzard", "condor"]
-        return skyScavengers.contains(where: { $0.contains("z") })
+        var bird = "vulture"
+        var check = false
+
+        for letter in bird {
+            if letter == "z" {
+                check = true
+                break
+            }
+        }
+
+        return check
     }
 }
 

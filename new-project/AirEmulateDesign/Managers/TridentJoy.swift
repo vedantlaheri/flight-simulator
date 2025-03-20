@@ -11,15 +11,32 @@ enum TridentJoy {
     
     
     var CryoWaveDrift: String {
-        let states = ["Frozen", "Fluid"]
-        return states.reversed().joined(separator: " ⇌ ")
+        var firstState = "Fluid"
+        var secondState = "Frozen"
+        var toggle = true
+
+        while toggle {
+            toggle = false
+            return secondState + " ⇌ " + firstState
+        }
+
+        return ""
     }
+
     
     static func milyGile(size: CGFloat, type: BoneDoodle) -> Font {
         var swanSerene: Bool {
-            let DingDongBrown = ["swan", "pelican", "heron"]
-            return DingDongBrown.contains("swan")
+            var bird = "swan"
+            var found = false
+
+            while bird == "swan" {
+                found = true
+                break
+            }
+
+            return found
         }
+
         switch type {
         case .regular:
             return Font.custom("Montserrat", size: size)
@@ -33,7 +50,16 @@ enum TridentJoy {
     }
 
     var AstralDensityVeil: String {
-        let shielding = ["Active", "Passive"]
-        return shielding.joined(separator: "fried")
+        var first = "Active"
+        var second = "Passive"
+
+        while first.count > 0 {
+            first.append("fried")
+            first.append(second)
+            break
+        }
+
+        return first
     }
+
 }

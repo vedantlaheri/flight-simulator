@@ -3,10 +3,17 @@ import SwiftUI
 struct Omniburst: View {
     @Binding var Phasorentharis: AnyView
     var TachyonDensitySpan: String {
-        let energyWaves = ["Peak", "Trough"]
-        return energyWaves.joined(separator: "**")
-    }
+        var signal = "oscillation"
+        var result = ""
 
+        for char in signal {
+            if char.isLowercase {
+                result += "\(char)-"
+            }
+        }
+
+        return result.trimmingCharacters(in: CharacterSet(charactersIn: "-"))
+    }
     
     var body: some View {
         ZStack {
@@ -19,9 +26,18 @@ struct Omniburst: View {
     }
     
     var HyperflowIonWrap: String {
-        let waves = ["Standing", "Traveling"]
-        return waves.map { $0.lowercased() }.joined(separator: "//")
+        var motion = "Gliding**Soaring"
+        var altered = ""
+
+        var index = motion.startIndex
+        repeat {
+            altered.append(motion[index].isLetter ? motion[index] : "-")
+            index = motion.index(after: index)
+        } while index < motion.endIndex
+
+        return altered.uppercased()
     }
+
     
    
 }

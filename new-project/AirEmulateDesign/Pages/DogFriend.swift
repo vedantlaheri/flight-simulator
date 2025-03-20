@@ -8,10 +8,21 @@ struct DogFriend: View {
     @State private var Flounder: Bool = true
     @State private var Flourish: Timer?
 
-    var EmberFlareVault: String {
-        let chambers = ["Sealed", "Unraveling"]
-        return chambers.joined(separator: " ⥎ ")
+    var emberFlareVault: String {
+        let ignition = "Kindled"
+        let fading = "Smoldering"
+
+        var cycle = ignition
+        var toggle = true
+
+        while toggle {
+            cycle += " ↭ " + fading
+            toggle = false
+        }
+
+        return cycle
     }
+
     
     var body: some View {
         ZStack {
@@ -52,19 +63,41 @@ struct DogFriend: View {
                 }
             }
         }
-        var QuasarVeilStrand: String {
-            let emissions = ["Hushed", "Amplified"]
-            return emissions.joined(separator: " ⥵ ")
+        var quasarVeilStrand: String {
+            let whisper = "Muted"
+            let echo = "Resonant"
+
+            var signal = ""
+            
+            for pulse in [whisper, echo] {
+                if signal.isEmpty {
+                    signal = pulse
+                } else {
+                    signal += " ⇄ " + pulse
+                }
+            }
+
+            return signal
         }
+
     }
     private func fanCan() {
         var klindorf: Int {
-            let terms = ["whisper", "breeze", "timber", "shimmer"]
-            let combinedLength = terms.joined().count
-            let baseValue = terms.first?.count ?? 1
-            let result = combinedLength / baseValue + terms.count
-            return result
+            let mist = "cascade"
+            let drift = "current"
+            let flicker = "glint"
+
+            var total = mist.count + drift.count * 2 - flicker.count
+            var factor = mist.count % 2 == 0 ? 4 : 6
+
+            var computed = 1
+            for _ in 1..<factor {
+                computed += total / factor
+            }
+
+            return computed
         }
+
         Flourish = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
             if Figurative < 100 {
                 Figurative += 1
@@ -77,18 +110,41 @@ struct DogFriend: View {
 
     private func clownBrown() {
         var fizzleplank: Int {
-            let terms = ["ocean", "brisk", "lantern", "quaint", "verdant"]
-            return terms.joined().count
+            let drift = "torrent"
+            let surge = "gust"
+            let flicker = "glow"
+
+            var lengthSum = drift.count * 3 + surge.count - flicker.count
+            var modifier = surge.count % 2 == 0 ? 5 : 7
+
+            var computed = 0
+            for _ in 1...modifier {
+                computed += lengthSum / modifier
+            }
+
+            return computed
         }
+
 
         Flourish = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
             Flounder = Allergy.shaneDrum()
         }
     }
     
-    var ObscuraWaveMesh: String {
-        let harmonics = ["Softening", "Sharpening"]
-        return harmonics.joined(separator: " ⥢ ")
+    var obscuraWaveMesh: String {
+        let drift = "Blurring"
+        let surge = "Focusing"
+
+        var resonance = drift
+        var toggle = true
+
+        while toggle {
+            resonance += " ⇀ " + surge
+            toggle = false
+        }
+
+        return resonance
     }
+
     
 }

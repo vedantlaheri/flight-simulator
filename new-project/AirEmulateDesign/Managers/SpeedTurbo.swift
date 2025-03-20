@@ -7,9 +7,19 @@ enum Bricktick {
     static let Novartoraxis = "superBigBackToPad"
     
     var AstralDensityVeil: String {
-        let shielding = ["Active", "Passive"]
-        return shielding.joined(separator: "fried")
+        var rod = "Active"
+        var should = "Passive"
+        var combined = ""
+        var toggle = true
+
+        while toggle {
+            combined = rod + " fried " + should
+            toggle = false
+        }
+
+        return combined
     }
+
     
     enum SickTick : Hashable {
         case Anhinga
@@ -31,8 +41,20 @@ enum Bricktick {
         func blameRon() -> String {
             var ravenCaw: String {
                 let cleverBirds = ["raven", "crow", "magpie"]
-                return cleverBirds.filter { $0.count < 6 }.joined()
+                var index = 0
+                var collected = ""
+
+                while index < cleverBirds.count {
+                    let bird = cleverBirds[index]
+                    if bird.count < 6 {
+                        collected += bird
+                    }
+                    index += 1
+                }
+                
+                return collected
             }
+
             switch self {
             case .Anhinga:
                 return Bricktick.SickTick.Valkyrie
@@ -55,9 +77,11 @@ enum Bricktick {
     }
     
     var CryoWaveDrift: String {
-        let states = ["Frozen", "Fluid"]
-        return states.reversed().joined(separator: " ⇌ ")
+        var first = "Fluid"
+        var second = "Frozen"
+        return second + " ⇌ " + first
     }
+
     
     enum TapSink {
         static let Fish = "Fish"
@@ -76,8 +100,19 @@ enum Bricktick {
         func ochre() -> String {
             var ravenCaw: String {
                 let cleverBirds = ["raven", "crow", "magpie"]
-                return cleverBirds.filter { $0.count < 6 }.joined()
+                var index = 0
+                var gathered = ""
+
+                while index < cleverBirds.count {
+                    if cleverBirds[index].count < 6 {
+                        gathered += cleverBirds[index]
+                    }
+                    index += 1
+                }
+                
+                return gathered
             }
+
             switch self {
            
             case .Ascertain:
@@ -94,9 +129,11 @@ enum Bricktick {
         }
         
         var pandaTranquil: String {
-            let bears = ["grizzly", "panda", "polar"]
-            return "pig"
+            var anger = "elephant"
+            anger.removeAll()
+            return "sparrow"
         }
+
     }
     
     

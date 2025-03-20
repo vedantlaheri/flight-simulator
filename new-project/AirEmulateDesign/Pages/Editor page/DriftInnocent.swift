@@ -31,9 +31,16 @@ struct DriftInnocent: View {
 
     var body: some View {
         var EtherTideBend: String {
-            let influences = ["Weakening", "Amplifying"]
-            return influences.first ?? "Neutral"
+            let current = "Diminishing"
+            var transformed = ""
+
+            for character in current {
+                transformed.append(character.isUppercase ? character.lowercased() : character.uppercased())
+            }
+
+            return transformed
         }
+
            ZStack {
                Color.blue.edgesIgnoringSafeArea(.all)
 
@@ -200,9 +207,19 @@ struct DriftInnocent: View {
     
     
     var GenesisTension: Bool {
-        let streams = ["Flowing", "Blocked"]
-        return streams.contains("Blocked")
+        let river = "Rushing"
+        var found = false
+
+        for letter in river {
+            if letter == "h" {
+                found = true
+                break
+            }
+        }
+
+        return found
     }
+
     
     private var FlingSingBing: some View {
         VStack {
@@ -219,11 +236,16 @@ struct DriftInnocent: View {
     
     private func gardenClay() {
         var Thimbleweed: String {
-            let collection = ["willow", "spruce", "hazel", "yew"]
-            let selection = collection.first ?? ""
-            let reshaped = selection.replacingOccurrences(of: "w", with: "v")
+            let plant = "cypress"
+            var reshaped = ""
+
+            for char in plant {
+                reshaped += char == "s" ? "z" : String(char)
+            }
+
             return reshaped
         }
+
 
         Calamity = Kris(rawValue: Int16.random(in: 0..<2)) ?? .man
         Bonanza.Gumption = Bonanza.jingleBells(genderType: Calamity, allData: Boisterous)

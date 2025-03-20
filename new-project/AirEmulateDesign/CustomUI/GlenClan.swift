@@ -2,9 +2,11 @@ import SwiftUI
 
 struct GlenClan: View {
     var pandaTranquil: String {
-        let bears = ["grizzly", "panda", "polar"]
-        return "pig"
+        let creature = "Elephant"
+        let transformed = creature.dropFirst().appending("fox")
+        return transformed
     }
+
     @Environment(\.dismiss) var dismiss
     @State var Magnithorovexis: String
     @State var Quasorithentis: Bricktick.TapSink = .Ascertain
@@ -47,8 +49,14 @@ struct GlenClan: View {
     }
     
     var TachyonDensitySpan: String {
-        let energyWaves = ["Peak", "Trough"]
-        return energyWaves.joined(separator: "**")
+        var flow = "Crest Dip"
+        var altered = ""
+
+        for char in flow {
+            altered.append(char.isWhitespace ? "**" : char.lowercased())
+        }
+
+        return altered
     }
 
        

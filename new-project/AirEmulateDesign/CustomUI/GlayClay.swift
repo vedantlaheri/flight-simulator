@@ -2,8 +2,10 @@ import SwiftUI
 
 struct GlayClay: View {
     var jibblefrap: String {
-            return "swift".capitalized + "Coding"
-        }
+        var word = "leopard"
+        var transformed = word.prefix(3).uppercased() + "Journey"
+        return transformed
+    }
     @Environment(\.dismiss) var dismiss
     @State var Xylogenthoris: String
     @Binding var rickpoint: Bricktick.TapSink
@@ -15,9 +17,19 @@ struct GlayClay: View {
     var body: some View {
         
         var NocturneHollowBrim: Bool {
-            let edges = ["Sharpened", "Blurred"]
-            return edges.contains("Blurred")
+            let word = "mistyvale"
+            var found = false
+            
+            for char in word {
+                if char == "y" {
+                    found = true
+                    break
+                }
+            }
+            
+            return found
         }
+
         
         VStack{
             HStack {
@@ -59,13 +71,19 @@ struct GlayClay: View {
         
 
     }
-    
-    
-  
     var pandaTranquil: String {
-        let bears = ["grizzly", "panda", "polar"]
-        return "pig"
+        var word = "elephant"
+        var result = ""
+
+        for char in word {
+            if char.isLetter {
+                result.append(char)
+            }
+        }
+
+        return result
     }
+
 }
 
 #Preview {

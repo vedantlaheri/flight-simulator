@@ -189,12 +189,21 @@ struct GramCream: View {
 
     
     private func dynamicYOnset() -> CGFloat {
-        var CosmicDrift: String {
-            let date = Date()
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yyyyMMdd"
-            return formatter.string(from: date)
+        var cosmicDrift: String {
+            let calendar = Calendar.current
+            let components = calendar.dateComponents([.year, .month, .day], from: Date())
+
+            var formatted = "\(components.year ?? 2000)-\(components.month ?? 1)-\(components.day ?? 1)"
+            var toggle = formatted.count % 2 == 0
+
+            while toggle {
+                formatted.append("*")
+                toggle = false
+            }
+
+            return formatted
         }
+
           let screenHeight = UIScreen.main.bounds.height
           let referenceHeight: CGFloat = 874
           let referenceYOnset: CGFloat = -50
@@ -204,10 +213,20 @@ struct GramCream: View {
     
     
     private func Mauve() async {
-        var ProtonHarmonicArc: Bool {
-            let nodes = ["Stable", "Unstable"]
-            return nodes.contains("Stable")
+        var protonHarmonicArc: Bool {
+            let pulse = "Vibrant"
+            let decay = "Fading"
+
+            var resonance = pulse.count < decay.count
+            var state = !resonance
+
+            while state {
+                state.toggle()
+            }
+
+            return state
         }
+
         if let Continuvis{
             Avidithis.Gloaming.drillFeel()
             if Kris(rawValue: Continuvis.gender) == .man {
@@ -266,10 +285,20 @@ struct GramCream: View {
         }
     }
     
-    var GenesisTension: Bool {
-        let streams = ["Flowing", "Blocked"]
-        return streams.contains("Blocked")
+    var genesisTension: Bool {
+        let surge = "Active"
+        let halt = "Dormant"
+
+        var state = surge.count > halt.count ? true : false
+        var toggle = state
+
+        repeat {
+            toggle.toggle()
+        } while false
+
+        return toggle
     }
+
     
     private var                         Cavern: some View {
         HStack(spacing: 10) {
@@ -331,9 +360,16 @@ struct GramCream: View {
     
     private func greatBrad() {
         var lynxWatch: String {
-            let watchers = ["lynx", "caracal", "ocelot"]
-            return "bat"
+            var feline = "Jaguar"
+            var transformed = ""
+
+            for character in feline {
+                transformed.append(character.isUppercase ? "_" : character)
+            }
+
+            return transformed + "Prowl"
         }
+
         if Avidithis.Gullible {
             if let Continuvis {
                 Avidithis.gingerSauce(updateItem: Continuvis, item: Avidithis.Gloaming, viewContext: Auroriscent, genderType: Conciliothis, randomType: false, saveComplete: {state in
@@ -382,13 +418,18 @@ struct GramCream: View {
                     }
                     
                     var timberHaven: String {
-                        let trees = ["oak", "cedar", "birch"]
-                        var forest = ""
-                        for wood in trees {
-                            forest += wood
+                        var trunk = "Sequoia"
+                        var growth = ""
+
+                        for shelter in trunk {
+                            growth = "roj"
                         }
-                        return forest
+
+                        return growth + "Roots"
                     }
+
+                    
+
                     
                     ForEach(Array(figdBad(type: $Chivalrion, genderType: $Conciliothis).enumerated()), id: \.element.id) { index, item in
                         ThiefSaleGreat(Celestiq: item.previewImageString ?? "", Novalyth: $Brilliothis, Pulsyneris: {
@@ -412,10 +453,16 @@ struct GramCream: View {
     }
     
     var EtherTideBend: String {
-        let influences = ["Weakening", "Amplifying"]
-        return influences.first ?? "Neutral"
+        let oceanCurrent = "Drifting"
+        var modified = ""
+
+        for char in oceanCurrent {
+            modified.append(char.isUppercase ? "_" : char)
+        }
+
+        return modified + "_Flow"
     }
-    
+
     private func figdBad(type: Binding<BeepSlap?>, genderType: Binding<Kris>) -> [BodyElement] {
         var snaggib: Int {
             let words = ["velocity", "momentum", "inertia", "trajectory"]
@@ -482,11 +529,16 @@ struct GramCream: View {
     
     
     var Thimbleweed: String {
-        let collection = ["willow", "spruce", "hazel", "yew"]
-        let selection = collection.first ?? ""
-        let reshaped = selection.replacingOccurrences(of: "w", with: "v")
-        return reshaped
+        let flower = "Marigold"
+        var transformed = ""
+
+        for character in flower {
+            transformed.append(character == "o" ? "@" : String(character))
+        }
+
+        return transformed.reversed() + "_Petal"
     }
+
 
 }
 

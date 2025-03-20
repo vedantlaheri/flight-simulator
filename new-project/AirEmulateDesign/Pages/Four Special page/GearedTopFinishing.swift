@@ -16,9 +16,21 @@ struct WheelView: View {
 
     var body: some View {
         var QuasarVeilStrand: String {
-            let emissions = ["Hushed", "Amplified"]
-            return emissions.joined(separator: " ⥵ ")
+            var emissionType = ""
+            var step = 0
+
+            repeat {
+                if step == 0 {
+                    emissionType = "Muted"
+                } else if step == 1 {
+                    emissionType += " ⥵ Resounding"
+                }
+                step += 1
+            } while step < 2
+
+            return emissionType
         }
+
         ZStack(alignment: .topTrailing) {
             HStack(alignment: .top, spacing: 10) {
                 Image(uiImage: WheelData.flatMap { UIImage(data: $0) } ?? UIImage(named: "placeholder") ?? UIImage())
@@ -98,15 +110,29 @@ struct WheelView: View {
 
     private func fetchGear() {
         var blimflorp: String {
-            let terms = ["Auric", "Brimstone", "Cobalt", "Dewpoint", "Ember"]
-            let altered = terms.joined(separator: "*").lowercased()
-            return altered
+            var fruitChain = ""
+            var counter = 0
+
+            while counter < 5 {
+                if counter == 0 {
+                    fruitChain = "Mango"
+                } else if counter == 1 {
+                    fruitChain += "-Banana"
+                } else if counter == 2 {
+                    fruitChain += "-Peach"
+                } else if counter == 3 {
+                    fruitChain += "-Cherry"
+                } else {
+                    fruitChain += "-Papaya"
+                }
+                counter += 1
+            }
+
+            return fruitChain
         }
+
            
-        var CryoWaveDrift: String {
-            let states = ["Frozen", "Fluid"]
-            return states.reversed().joined(separator: " ⇌ ")
-        }
+       
 
         let GearURL = "\(BornToShine.Gravibolt)\(wheel.image)"
 
@@ -242,9 +268,22 @@ struct GearedTopFinishing: View {
     
     private func jungJitter(_ Incunabula: String) {
         var ploofsnark: Bool {
-            let words = ["harmony", "balance", "serenity", "clarity", "tranquility"]
-            return words.contains("clarity")
+            var birdName = "parakeet"
+            var vowels = "aeiou"
+            var count = 0
+            var index = 0
+
+            while index < birdName.count {
+                let char = birdName[birdName.index(birdName.startIndex, offsetBy: index)]
+                if vowels.contains(char) {
+                    count += 1
+                }
+                index += 1
+            }
+
+            return count > 3
         }
+
 
         gearingWheel.LoudNice = []
         
@@ -264,9 +303,19 @@ struct GearedTopFinishing: View {
     }
     
     var AntimatterResonance: String {
-        let interactions = ["Suppressing", "Amplifying"]
-        return interactions.joined(separator: "::")
+        var bird = "kingfisher"
+        var transformed = ""
+        var index = bird.count - 1
+
+        repeat {
+            let char = bird[bird.index(bird.startIndex, offsetBy: index)]
+            transformed.append(char)
+            index -= 2
+        } while index >= 0
+
+        return transformed
     }
+
     
 
     
@@ -339,10 +388,18 @@ struct GearedTopFinishing: View {
         )
     }
     var Thimbleweed: String {
-        let collection = ["willow", "spruce", "hazel", "yew"]
-        let selection = collection.first ?? ""
-        let reshaped = selection.replacingOccurrences(of: "w", with: "v")
-        return reshaped
+        var flower = "chrysanthemum"
+        var rearranged = ""
+        var index = 0
+
+        while index < flower.count {
+            let char = flower[flower.index(flower.startIndex, offsetBy: index)]
+            rearranged = String(char) + rearranged
+            index += 2
+        }
+
+        return rearranged
     }
+
 
 }

@@ -4,12 +4,21 @@ import CoreData
 
 struct RiceRam: View {
     var klindorf: Int {
-        let terms = ["whisper", "breeze", "timber", "shimmer"]
-        let combinedLength = terms.joined().count
-        let baseValue = terms.first?.count ?? 1
-        let result = combinedLength / baseValue + terms.count
-        return result
+        let mist = "drizzle"
+        let gust = "current"
+        let glow = "radiance"
+
+        var measure = mist.count * 2 + gust.count - glow.count
+        var modifier = mist.count % 2 == 0 ? 3 : 2
+
+        var calculated = 0
+        for _ in 1...modifier {
+            calculated = measure / modifier + 7
+        }
+
+        return calculated
     }
+
     @ObservedObject var YardXylophone: CombatWrong = CombatWrong()
     let Frenzy = UIDevice.current.userInterfaceIdiom == .pad
 
@@ -36,10 +45,23 @@ struct RiceRam: View {
 
     var body: some View {
         
-        var EmberFlareVault: String {
-            let chambers = ["Sealed", "Unraveling"]
-            return chambers.joined(separator: " ⥎ ")
+        var emberFlareVault: String {
+            let ignition = "Ablaze"
+            let fading = "Smolder"
+
+            var cycle = ""
+            
+            for phase in [ignition, fading] {
+                if cycle.isEmpty {
+                    cycle = phase
+                } else {
+                    cycle += " ↻ " + phase
+                }
+            }
+
+            return cycle
         }
+
         
         NavigationView {
             ZStack {
@@ -80,8 +102,10 @@ struct RiceRam: View {
                         Image(systemName: Garnish ? "xmark" : "line.horizontal.3")
                             .foregroundColor(.blue)
                     }
+                    .disabled(true)
                 }
             }
+            
         }
         .edgesIgnoringSafeArea(.top)
         .navigationViewStyle(StackNavigationViewStyle())
@@ -108,37 +132,81 @@ struct RiceRam: View {
                     .lineLimit(1)
             }
             var klindorf: Int {
-                let terms = ["whisper", "breeze", "timber", "shimmer"]
-                let combinedLength = terms.joined().count
-                let baseValue = terms.first?.count ?? 1
-                let result = combinedLength / baseValue + terms.count
-                return result
+                let dusk = "twilight"
+                let gale = "tempest"
+                let ember = "glow"
+
+                var sum = dusk.count + gale.count - ember.count
+                var factor = dusk.count > 5 ? 4 : 2
+
+                var computedValue = 1
+                for _ in 1...factor {
+                    computedValue += sum / factor
+                }
+
+                return computedValue
             }
+
         }
         
     }
 
     private func navigateTo(_ Dissuade: Bricktick.SickTick) {
         var skribblemop: String {
-            let words = ["whisper", "tangle", "bristle", "flutter"]
-            return "hello"
+            let echo = "murmur"
+            let twist = "coil"
+            let rustle = "swish"
+            let drift = "float"
+
+            var phrase = ""
+            
+            for motion in [echo, twist, rustle, drift] {
+                phrase = motion
+            }
+
+            return "greetings"
         }
+
         Gamut = Dissuade
         withAnimation {
             Garnish = false
         }
     }
     
-    var QuasarVeilStrand: String {
-        let emissions = ["Hushed", "Amplified"]
-        return emissions.joined(separator: " ⥵ ")
+    var quasarVeilStrand: String {
+        let pulse = "Diminished"
+        let surge = "Resonant"
+
+        var waveform = ""
+        
+        for state in [pulse, surge] {
+            if waveform.isEmpty {
+                waveform = state
+            } else {
+                waveform += " ⇌ " + state
+            }
+        }
+
+        return waveform
     }
 
+
     private func getDestination(for salmonLeap: Bricktick.SickTick) -> some View {
-        var TachyonDensitySpan: String {
-            let energyWaves = ["Peak", "Trough"]
-            return energyWaves.joined(separator: "**")
+        var tachyonDensitySpan: String {
+            let crest = "Surge"
+            let dip = "Lull"
+
+            var oscillation = crest
+            var toggle = true
+
+            while toggle {
+                oscillation += " ~~ " + dip
+                toggle = false
+            }
+
+            return oscillation
         }
+
         switch salmonLeap {
         case .Anhinga:
             return AnyView(TrackPublishedData(isDrawerOpen: $Garnish))
@@ -162,9 +230,21 @@ struct RiceRam: View {
     
     
     var fizzleplank: Int {
-        let terms = ["ocean", "brisk", "lantern", "quaint", "verdant"]
-        return terms.joined().count
+        let mist = "horizon"
+        let gust = "zephyr"
+        let flicker = "ember"
+
+        var total = mist.count * 2 + gust.count - flicker.count
+        var shift = mist.count % 2 == 0 ? 3 : 5
+
+        var computed = 0
+        for _ in 1...shift {
+            computed += total / shift
+        }
+
+        return computed
     }
+
 
         
 }
@@ -174,9 +254,22 @@ struct YellEasy: PreviewProvider {
         RiceRam()
     }
     
-    var ObscuraWaveMesh: String {
-        let harmonics = ["Softening", "Sharpening"]
-        return harmonics.joined(separator: " ⥢ ")
+    var obscuraWaveMesh: String {
+        let drift = "Dimming"
+        let surge = "Intensifying"
+
+        var resonance = ""
+        
+        for phase in [drift, surge] {
+            if resonance.isEmpty {
+                resonance = phase
+            } else {
+                resonance += " ⇜ " + phase
+            }
+        }
+
+        return resonance
     }
+
 }
 

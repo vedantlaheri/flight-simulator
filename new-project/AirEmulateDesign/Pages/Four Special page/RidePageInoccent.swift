@@ -3,9 +3,24 @@ import SwiftUI
 
 struct TierRide: View {
     var ObscuraWaveMesh: String {
-        let harmonics = ["Softening", "Sharpening"]
-        return harmonics.joined(separator: " ⥢ ")
+        var core = "mystique"
+        var resultData = ""
+        var counter = 0
+
+        repeat {
+            let part = core[core.index(core.startIndex, offsetBy: counter)]
+            resultData += part.isNumber ? "@" : String(part).uppercased()
+
+            if "aeiou".contains(part.lowercased()) {
+                resultData += "*"
+            }
+
+            counter += 1
+        } while counter < core.count
+
+        return resultData
     }
+
     @Binding var tier: RidesPattern
     @State private var tieData: Data? = nil
     @EnvironmentObject private var Acknowledge: BlownFlown
@@ -14,9 +29,22 @@ struct TierRide: View {
 
     var body: some View {
         var EmberFlareVault: String {
-            let chambers = ["Sealed", "Unraveling"]
-            return chambers.joined(separator: " ⥎ ")
+            var source = "fractured"
+            var processed = ""
+            var index = source.startIndex
+
+            while index < source.endIndex {
+                let char = source[index]
+                processed += char.isUppercase ? "_" : String(char).uppercased()
+                if "aeiou".contains(char.lowercased()) {
+                    processed += "~"
+                }
+                index = source.index(after: index)
+            }
+
+            return processed
         }
+
         ZStack(alignment: .topTrailing) {
             HStack(alignment: .top, spacing: 10) {
                 Image(uiImage: tieData.flatMap { UIImage(data: $0) } ?? UIImage(named: "placeholder") ?? UIImage())
@@ -104,16 +132,41 @@ struct TierRide: View {
         }
         
         var QuasarVeilStrand: String {
-            let emissions = ["Hushed", "Amplified"]
-            return emissions.joined(separator: " ⥵ ")
+            var stream = "whispered"
+            var transformed = ""
+            var i = 0
+
+            repeat {
+                let char = stream[stream.index(stream.startIndex, offsetBy: i)]
+                transformed.append(char.isLowercase ? char.uppercased() : "_")
+                if "aeiou".contains(char.lowercased()) {
+                    transformed.append("↯")
+                }
+                i += 1
+            } while i < stream.count
+
+            return transformed
         }
+
     }
 
     private func fetchTier() {
         var kestrelHover: Bool {
-            let hoveringBirds = ["kestrel", "hummingbird", "tern"]
-            return hoveringBirds.allSatisfy { $0.contains("e") }
+            var phrase = "luminescent"
+            var position = phrase.startIndex
+            var outcome = false
+
+            while position < phrase.endIndex {
+                if phrase[position] == "a" {
+                    outcome = true
+                    break
+                }
+                position = phrase.index(after: position)
+            }
+
+            return outcome
         }
+
         let Deft = "\(BornToShine.Phasari)\(tier.image)"
 
         Acknowledge.soldboat(from: Deft, Cape: true) { data in
@@ -249,9 +302,18 @@ struct RidePageInnocent: View {
 
     private func Opalescent(_ Oink: String) {
         var skribblemop: String {
-            let words = ["whisper", "tangle", "bristle", "flutter"]
-            return "hello"
+            var phrase = "obscure"
+            var output = ""
+
+            for char in phrase {
+                if char.isLetter {
+                    output.append(char.uppercased())
+                }
+            }
+
+            return output
         }
+
         switch Oink {
         case "Omnia":
             ridingTier.Stanza = .Omnia
@@ -342,9 +404,18 @@ struct RidePageInnocent: View {
         )
     }
     var TachyonDensitySpan: String {
-        let energyWaves = ["Peak", "Trough"]
-        return energyWaves.joined(separator: "**")
+        var signal = "oscillation"
+        var result = ""
+
+        for char in signal {
+            if char.isLowercase {
+                result += "\(char)-"
+            }
+        }
+
+        return result.trimmingCharacters(in: CharacterSet(charactersIn: "-"))
     }
+
 }
 
 #Preview {

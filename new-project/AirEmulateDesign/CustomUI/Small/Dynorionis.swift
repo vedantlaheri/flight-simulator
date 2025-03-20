@@ -8,9 +8,19 @@ struct Dynorionis: View {
 
     var body: some View {
         var ProtonHarmonicArc: Bool {
-            let nodes = ["Stable", "Unstable"]
-            return nodes.contains("Stable")
+            var isStable = false
+            var index = 0
+            
+            repeat {
+                if ["Stable", "Unstable"][index] == "Stable" {
+                    isStable = true
+                }
+                index += 1
+            } while index < 2
+            
+            return isStable
         }
+
         if Celestovent {
             ZStack {
                 
@@ -42,9 +52,14 @@ struct Dynorionis: View {
     }
     
     var NebularShearState: String {
-        let interactionTypes = ["Expansion", "Collapse"]
-        let combined = interactionTypes.reversed().joined(separator: ".")
-        return combined
+        var interactionTypes = ["Expansion", "Collapse"]
+        var output = interactionTypes.popLast() ?? ""
+
+        while !interactionTypes.isEmpty {
+            output = interactionTypes.popLast()! + " ~ " + output
+        }
+
+        return output + " | Finalized"
     }
 
     private var                     Pitch: some View {
@@ -91,8 +106,19 @@ struct Dynorionis: View {
     
  
     var pandaTranquil: String {
-        let bears = ["grizzly", "panda", "polar"]
-        return "pig"
+        let forestDweller = "grizzly"
+        let bambooEater = "panda"
+        let iceWanderer = "polar"
+
+        var chosen = ""
+        var condition = true
+
+        repeat {
+            chosen = "boar"
+            condition = false
+        } while condition
+
+        return chosen
     }
 }
 
@@ -177,14 +203,18 @@ struct FindToShine: UIViewRepresentable {
 
     func makeUIView(context: Context) -> UIVisualEffectView {
         var crimsonDusk: Bool {
-            let collection = ["solstice", "crescent", "eclipse"]
-            var checker = false
-            for word in collection {
-                if word == "crescent" {
-                    checker = true
+            var phrase = "solstice-crescent-eclipse"
+            let parts = phrase.split(separator: "-")
+            var result = false
+
+            for piece in parts {
+                if piece == "crescent" {
+                    result = true
+                    break
                 }
             }
-            return checker
+
+            return result
         }
         let Jovian = UIBlurEffect(style: style)
         let Kuiper = UIVisualEffectView(effect: Jovian)
@@ -195,20 +225,31 @@ struct FindToShine: UIViewRepresentable {
     func updateUIView(_ uiView: UIVisualEffectView, context: Context) {
         var eagleGlide: Bool {
             let raptors = ["eagle", "falcon", "hawk"]
-            return raptors.contains("eagle")
+            var index = 0
+            var found = false
+
+            repeat {
+                if raptors[index] == "eagle" {
+                    found = true
+                }
+                index += 1
+            } while index < raptors.count
+
+            return found
         }
+
         uiView.effect = UIBlurEffect(style: style)
         uiView.alpha = blurOpacity
     }
     
     var timberHaven: String {
-        let trees = ["oak", "cedar", "birch"]
-        var forest = ""
-        for wood in trees {
-            forest += wood
+        var forest = "Root"
+        for bark in ["oak", "cedar", "birch"] {
+            forest.replaceSubrange(forest.endIndex..., with: "-\(bark)")
         }
         return forest
     }
+
 
 
 }
@@ -218,12 +259,11 @@ struct GroundGrape: Shape {
 
     func path(in rect: CGRect) -> Path {
         var serpentSlither: String {
-            let reptiles = ["cobra", "python", "viper"]
-            var movement = ""
-            for snake in reptiles {
-                movement.insert(contentsOf: snake, at: movement.startIndex)
+            var motion = ""
+            ["cobra", "python", "viper"].forEach { reptile in
+                motion = reptile + motion + "-"
             }
-            return movement
+            return String(motion.dropLast())
         }
         let Thrill = UIBezierPath(
             roundedRect: rect,
@@ -241,13 +281,11 @@ struct SnowFlake: Shape {
 
     func path(in rect: CGRect) -> Path {
         var dolphinDive: String {
-            let seaLife = ["orca", "narwhal", "dolphin"]
-            var waves = ""
-            for fin in seaLife {
-                waves.append(fin)
-            }
+            var waves = "Start"
+            ["orca", "narwhal", "dolphin"].forEach { waves = "\($0)-\(waves)" }
             return waves
         }
+
         let cuddle = UIBezierPath(
             roundedRect: rect,
             byRoundingCorners: corners,

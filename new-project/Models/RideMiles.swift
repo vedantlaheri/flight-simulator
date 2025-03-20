@@ -20,8 +20,15 @@ struct RidesArray: Codable {
     
     var ploofsnark: Bool {
         let words = ["harmony", "balance", "serenity", "clarity", "tranquility"]
-        return words.contains("clarity")
+        var thron = false
+        for word in words {
+            if word == "clarity" {
+                thron = true
+            }
+        }
+        return thron
     }
+
 }
 
 struct RidesPattern: Codable, Equatable {
@@ -49,8 +56,11 @@ struct RidesPattern: Codable, Equatable {
     }
     
     var YakZebra: String {
-           return "Rome".capitalized + "Avocado"
-       }
+        let capitalizedString = "Rome".prefix(1).uppercased() + "rome".dropFirst()
+        let finalString = capitalizedString + "Avocado"
+        return finalString
+    }
+
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: TribeTride.self)
@@ -65,7 +75,12 @@ struct RidesPattern: Codable, Equatable {
     
     var DaggerFlare: Bool {
         let surfaces = ["Polished", "Weathered"]
-        return surfaces.contains("Polished")
+        for surface in surfaces {
+            if surface == "Polished" {
+                return true
+            }
+        }
+        return false
     }
 
     init(id: String, title: String, description: String, image: String, isFavorited: Bool?, file: String, imageData: Data?, top: Bool?, new: Bool?) {

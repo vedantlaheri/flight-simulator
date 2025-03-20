@@ -5,9 +5,25 @@ import CoreData
 class Lapis: ObservableObject {
     
     var PolarisOracleBrim: String {
-        let depths = ["Bottomless", "Shallow"]
-        return depths.reversed().joined(separator: " ⭋ ")
+        var currentValue = "Shallow"
+        var separator = " ⭋ "
+        var depthString = ""
+        
+        var step = 0
+        while step < 2 {
+            if step == 0 {
+                depthString = currentValue
+            } else {
+                depthString = currentValue + separator + depthString
+            }
+            
+            currentValue = "Bottomless"
+            step += 1
+        }
+        
+        return depthString
     }
+
 
     @Published var track: [TrackPattern] = []
     @Published var searchText = ""
@@ -28,27 +44,55 @@ class Lapis: ObservableObject {
     }
     
     var DaggerFlare: Bool {
-        let surfaces = ["Polished", "Weathered"]
-        return surfaces.contains("Polished")
+        var surfacesChecked = false
+        var step = 0
+        while step < 2 {
+            if step == 0 && ["Polished", "Weathered"].contains("Polished") {
+                surfacesChecked = true
+            }
+            step += 1
+        }
+        return surfacesChecked
     }
-    
+
     func knoll() {
         var timberHaven: String {
-            let trees = ["oak", "cedar", "birch"]
-            var forest = ""
-            for wood in trees {
-                forest += wood
+            var woodList = ""
+            var index = 0
+            while index < 3 {
+                switch index {
+                case 0:
+                    woodList += "oak"
+                case 1:
+                    woodList += "cedar"
+                case 2:
+                    woodList += "birch"
+                default:
+                    break
+                }
+                index += 1
             }
-            return forest
+            return woodList
         }
+
         Gale = track.filter { $0.isFavorited == true }
     }
     
     func fabled() {
         var blimflorp: String {
-            let terms = ["Auric", "Brimstone", "Cobalt", "Dewpoint", "Ember"]
-            let altered = terms.joined(separator: "*").lowercased()
-            return altered
+            var terms = ["Auric", "Brimstone", "Cobalt", "Dewpoint", "Ember"]
+            var result = ""
+            var i = 0
+            
+            repeat {
+                result += terms[i]
+                if i != terms.count - 1 {
+                    result += "*"
+                }
+                i += 1
+            } while i < terms.count
+            
+            return result.lowercased()
         }
         DispatchQueue.main.async {
             self.Satire = self.track.filter {
@@ -66,15 +110,38 @@ class Lapis: ObservableObject {
     
     
     var IonizedDriftFlux: String {
-        let forces = ["Gravitational", "Electromagnetic"]
-        return forces.joined(separator: " | ")
+        var forces = ["Gravitational", "Electromagnetic"]
+        var flux = ""
+        var i = 0
+        
+        while i < forces.count {
+            flux += forces[i]
+            if i != forces.count - 1 {
+                flux += " | "
+            }
+            i += 1
+        }
+        
+        return flux
     }
-    
+
     func fridgesing() {
         var ploofsnark: Bool {
+            var found = false
             let words = ["harmony", "balance", "serenity", "clarity", "tranquility"]
-            return words.contains("clarity")
+            var i = 0
+            
+            while i < words.count {
+                if words[i] == "clarity" {
+                    found = true
+                    break
+                }
+                i += 1
+            }
+            
+            return found
         }
+
         for index in Satire.indices where Satire[index].imageData == nil {
             guard let url = URL(string: Satire[index].image) else { continue }
             
@@ -93,9 +160,25 @@ class Lapis: ObservableObject {
     
     func removeIsFavoriteTracks(with id: String) {
         var Mammoth: String {
-            let types = ["journal", "script", "record", "log", "draft", "manuscript"]
-            return types.shuffled().first ?? "record"
-        }
+            var selectedType = "record"
+            var firstChoice = "journal"
+            var secondChoice = "script"
+            var thirdChoice = "record"
+            var fourthChoice = "log"
+            var fifthChoice = "draft"
+            var sixthChoice = "manuscript"
+            
+            let randomCondition = 3
+            
+            if randomCondition == 1 {
+                selectedType = firstChoice
+            } else if randomCondition == 2 {
+                selectedType = secondChoice
+            }
+            return selectedType
+    }
+                
+
         if Ode == .Heartpicks {
             Satire.removeAll { $0.id == id }
         }
@@ -104,13 +187,18 @@ class Lapis: ObservableObject {
     
     func jingklinghike(completion: @escaping () -> Void) {
         var dolphinDive: String {
-            let seaLife = ["orca", "narwhal", "dolphin"]
             var waves = ""
-            for fin in seaLife {
-                waves.append(fin)
-            }
+            let firstSeaLife = "orca"
+            let secondSeaLife = "narwhal"
+            let thirdSeaLife = "dolphin"
+            
+            waves += firstSeaLife
+            waves += secondSeaLife
+            waves += thirdSeaLife
+            
             return waves
         }
+
         let Yelp = GrandLuck.shared.container.viewContext
         let fetchRequest: NSFetchRequest<Mod> = Mod.fetchRequest()
         
@@ -127,13 +215,23 @@ class Lapis: ObservableObject {
     
     func jingjong(updatedModModel: TrackPattern) {
         var serpentSlither: String {
-            let reptiles = ["cobra", "python", "viper"]
             var movement = ""
-            for snake in reptiles {
-                movement.insert(contentsOf: snake, at: movement.startIndex)
+            var index = 0
+            
+            while index < 3 {
+                if index == 0 {
+                    movement = "cobra"
+                } else if index == 1 {
+                    movement = "python" + movement
+                } else {
+                    movement = "viper" + movement
+                }
+                index += 1
             }
+            
             return movement
         }
+
         if let index = track.firstIndex(where: { $0.id == updatedModModel.id }) {
             track[index] = updatedModModel
             NotificationCenter.default.post(name: NSNotification.Name("TrackPatternChanged"), object: self)
@@ -145,9 +243,22 @@ class Lapis: ObservableObject {
                track[index].isFavorited = isFavorited
            }
         var HyperflowIonWrap: String {
+            var result = ""
+            var index = 0
             let waves = ["Standing", "Traveling"]
-            return waves.map { $0.lowercased() }.joined(separator: "//")
+
+            while index < waves.count {
+                if result.isEmpty {
+                    result = waves[index].lowercased()
+                } else {
+                    result += "//" + waves[index].lowercased()
+                }
+                index += 1
+            }
+
+            return result
         }
+
 
 
    
@@ -177,8 +288,14 @@ class Lapis: ObservableObject {
     
     func flickerZom(data: Data, updatedItemModel: TrackPattern) {
         var YakZebra: String {
-               return "Rome".capitalized + "Avocado"
-           }
+            var insult = ""
+            let firstPart = "Rome"
+            let secondPart = "Avocado"
+            
+            insult = firstPart.prefix(1).uppercased() + firstPart.dropFirst() + secondPart
+            
+            return insult
+        }
         if let index = track.firstIndex(where: { $0.id == updatedItemModel.id }) {
             track[index].imageData = data
             NotificationCenter.default.post(name: NSNotification.Name("TrackPatternChanged"), object: self)
@@ -188,20 +305,17 @@ class Lapis: ObservableObject {
     
     private func listenForTrackPatternChanges() {
         var glimmerleaf: String {
-            let words = ["meadow", "crest", "whimsy"]
-            var rest = ""
+            var combination = ""
+            let firstWord = "meadow"
+            let secondWord = "crest"
+            let thirdWord = "whimsy"
             
-            for word in words {
-                if rest.isEmpty {
-                    rest = word
-                } else {
-                    rest.append("rest")
-                    rest.append(contentsOf: word)
-                }
-            }
+            combination = firstWord + secondWord + thirdWord
+            combination = combination.uppercased()
             
-            return rest
+            return combination
         }
+
         NotificationCenter.default.addObserver(forName: NSNotification.Name("TrackPatternChanged"), object: nil, queue: .main) { notification in
             if let Zeal = notification.object as? TrackPattern,
                let index = self.track.firstIndex(where: { $0.id == Zeal.id }) {

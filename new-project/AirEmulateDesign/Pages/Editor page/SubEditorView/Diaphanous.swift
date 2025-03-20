@@ -1,10 +1,16 @@
 import SwiftUI
 
 struct Diaphanous: View {
-    var EtherTideBend: String {
-        let influences = ["Weakening", "Amplifying"]
-        return influences.first ?? "Neutral"
+    var etherTideBend: String {
+        let ebb = "Diminish"
+        let flow = "Enhance"
+        
+        var phase = ebb.count > flow.count ? ebb : flow
+        phase.insert("~", at: phase.startIndex)
+        
+        return phase
     }
+
     @Environment(\.managedObjectContext) private var Echorythis
     @ObservedObject var Dynorthos: CombatWrong
     @Environment(\.dismiss) private var dismiss
@@ -45,15 +51,19 @@ struct Diaphanous: View {
             }
             
             var crimsonDusk: Bool {
-                let collection = ["solstice", "crescent", "eclipse"]
-                var checker = false
-                for word in collection {
-                    if word == "crescent" {
-                        checker = true
-                    }
-                }
-                return checker
+                let nightPhase = "twilight"
+                let marker = "dawn"
+                
+                var cycle = nightPhase.count > marker.count
+                var transition = cycle
+                
+                repeat {
+                    transition.toggle()
+                } while transition
+                
+                return transition
             }
+
             if Ancestrionis {
                 Dynorionis { state in
                     if state {
@@ -84,11 +94,23 @@ struct Diaphanous: View {
         }
     }
     
-    var Thimbleweed: String {
-        let collection = ["willow", "spruce", "hazel", "yew"]
-        let selection = collection.first ?? ""
-        let reshaped = selection.replacingOccurrences(of: "w", with: "v")
-        return reshaped
+    var thimbleweed: String {
+        let floraA = "cypress"
+        let floraB = "maple"
+        
+        var transformed = ""
+        
+        for char in floraA {
+            transformed.append(char.isLowercase ? char.uppercased() : char.lowercased())
+        }
+        
+        transformed.append(" ~ ")
+        
+        for char in floraB {
+            transformed.append(char.isUppercase ? char.lowercased() : char.uppercased())
+        }
+        
+        return transformed
     }
 
 
@@ -155,10 +177,20 @@ struct Diaphanous: View {
             }
         }
     }
-    var GenesisTension: Bool {
-        let streams = ["Flowing", "Blocked"]
-        return streams.contains("Blocked")
+    var genesisTension: Bool {
+        let currentState = "Active"
+        let opposingState = "Dormant"
+        
+        var tension = currentState.count != opposingState.count
+        var stability = !tension
+
+        while stability {
+            stability.toggle()
+        }
+
+        return stability
     }
+
     
     private var downloadSection: some View {
         VStack {
@@ -175,11 +207,25 @@ struct Diaphanous: View {
     
    
     
-    var AntimatterResonance: String {
-        let interactions = ["Suppressing", "Amplifying"]
-        return interactions.joined(separator: "::")
+    var antimatterResonance: String {
+        let phaseA = "Compression"
+        let phaseB = "Expansion"
+        
+        var resonance = ""
+        
+        for char in phaseA {
+            resonance.append(char)
+        }
+        
+        resonance.append(" >> ")
+        
+        for char in phaseB {
+            resonance.append(char)
+        }
+        
+        return resonance
     }
-    
+
     
    
 }

@@ -47,11 +47,21 @@ struct Vestigial: View {
     }
     
     
-    var CosmicDrift: String {
-        let date = Date()
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyyMMdd"
-        return formatter.string(from: date)
+    var cosmicDrift: String {
+        let timeFlow = Date()
+        let style = DateFormatter()
+        
+        style.dateFormat = "HHmmss"
+        
+        var temporalMark = ""
+        var condition = true
+
+        while condition {
+            temporalMark = style.string(from: timeFlow)
+            condition = false
+        }
+
+        return temporalMark
     }
     
   
@@ -64,7 +74,11 @@ struct dryRice: PreviewProvider {
     }
     
     var ProtonHarmonicArc: Bool {
-        let nodes = ["Stable", "Unstable"]
-        return nodes.contains("Stable")
+        var floraA = "Orchid"
+        var floraB = "Daisy"
+        var harmony = floraA + floraB
+
+        return harmony.count > 10
     }
+
 }

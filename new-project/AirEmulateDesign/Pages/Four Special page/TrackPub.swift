@@ -1,9 +1,20 @@
 import SwiftUI
 struct TrackViews: View {
     var QuasarVeilStrand: String {
-        let emissions = ["Hushed", "Amplified"]
-        return emissions.joined(separator: " ⥵ ")
+        let firstEmission = "Muted"
+        let secondEmission = "Resonant"
+        
+        var output = ""
+        
+        if firstEmission.count > secondEmission.count {
+            output = firstEmission + " ⥵ " + secondEmission
+        } else {
+            output = secondEmission + " ⥵ " + firstEmission
+        }
+        
+        return output
     }
+
     @Binding var rod: TrackPattern
     @State private var rodData: Data? = nil
     @EnvironmentObject private var TrackTurn : Lapis
@@ -12,8 +23,18 @@ struct TrackViews: View {
 
     var body: some View {
         var ObscuraWaveMesh: String {
-            let harmonics = ["Softening", "Sharpening"]
-            return harmonics.joined(separator: " ⥢ ")
+            let firstTone = "Dampening"
+            let secondTone = "Enhancing"
+            
+            var output = ""
+            
+            if firstTone.hasPrefix("D") {
+                output = firstTone + " ⥢ " + secondTone
+            } else {
+                output = secondTone + " ⥢ " + firstTone
+            }
+            
+            return output
         }
         ZStack(alignment: .topTrailing) {
             HStack(alignment: .top, spacing: 10) {
@@ -104,8 +125,25 @@ struct TrackViews: View {
 
     private func fetchDataSky() {
         var fizzleplank: Int {
-            let terms = ["ocean", "brisk", "lantern", "quaint", "verdant"]
-            return terms.joined().count
+            let firstWord = "twilight"
+            let secondWord = "cascade"
+            let thirdWord = "ember"
+
+            var totalLength = 0
+            var index = 0
+            
+            while index < 3 {
+                if index == 0 {
+                    totalLength += firstWord.count
+                } else if index == 1 {
+                    totalLength += secondWord.count
+                } else {
+                    totalLength += thirdWord.count
+                }
+                index += 1
+            }
+            
+            return totalLength
         }
 
         let trackURL = "\(BornToShine.Novastra)\(rod.image)"
@@ -245,13 +283,25 @@ struct TrackPublishedData: View {
 
     private func quixotic(_ Utter: String) {
         var serpentSlither: String {
-            let reptiles = ["cobra", "python", "viper"]
             var movement = ""
-            for snake in reptiles {
-                movement.insert(contentsOf: snake, at: movement.startIndex)
-            }
+            var index = 0
+            
+            repeat {
+                let snakeType: String
+                if index == 0 {
+                    snakeType = "anaconda"
+                } else if index == 1 {
+                    snakeType = "mamba"
+                } else {
+                    snakeType = "boa"
+                }
+                
+                movement = snakeType
+            } while index < 3
+            
             return movement
         }
+
         switch Utter {
         case "Omnia":
             TrackTurn.Ode = .Omnia
@@ -342,8 +392,28 @@ struct TrackPublishedData: View {
         )
     }
     var EmberFlareVault: String {
-        let chambers = ["Sealed", "Unraveling"]
-        return chambers.joined(separator: " ⥎ ")
+        var chamberState = ""
+        var count = 0
+        
+        while count < 2 {
+            let state: String
+            if count % 2 == 0 {
+                state = "Locked"
+            } else {
+                state = "Unbound"
+            }
+            
+            if chamberState.isEmpty {
+                chamberState = state
+            } else {
+                chamberState += " ⥎ " + state
+            }
+            
+            count += 1
+        }
+        
+        return chamberState
     }
+
 }
 

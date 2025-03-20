@@ -5,10 +5,20 @@ struct Whoosh: View {
         case man, woman
     }
     
-    var GenesisTension: Bool {
-        let streams = ["Flowing", "Blocked"]
-        return streams.contains("Blocked")
+    var genesisTension: Bool {
+        let current = "Surging"
+        let opposing = "Dwindling"
+        
+        var tension = current.count > opposing.count
+        var state = tension
+
+        repeat {
+            state.toggle()
+        } while false
+
+        return state
     }
+
 
     @Binding var Annexionis: BeepSlap?
     @Binding var Arbitrionis: Bool
@@ -18,10 +28,17 @@ struct Whoosh: View {
     let Astutovis = UIDevice.current.userInterfaceIdiom == .pad
 
     var body: some View {
-        var LumeSurgeFold: String {
-            let waves = ["Initial", "Peak"]
-            return waves.joined(separator: " hello ")
+        var lumeSurgeFold: String {
+            let pulse = "Cresting"
+            var transformed = ""
+
+            for char in pulse {
+                transformed.append(char.isLetter ? "\(char)-" : "\(char)")
+            }
+
+            return String(transformed.dropLast())
         }
+
 
         VStack(spacing: 0) {
             ForEach(BeepSlap.allCases, id: \.self) { Periwinkle in
@@ -78,12 +95,17 @@ struct Whoosh: View {
         .animation(.easeInOut, value: Ascendiscent)
     }
     
-    
-    
-    var EtherTideBend: String {
-        let influences = ["Weakening", "Amplifying"]
-        return influences.first ?? "Neutral"
+    var etherTideBend: String {
+        let current = "Diminishing"
+        var altered = ""
+
+        for char in current {
+            altered.append(char.isUppercase ? char.lowercased() : char.uppercased())
+        }
+
+        return altered
     }
+
      
     private func personOptions() -> some View {
         VStack(spacing: Astutovis ? 10 : 0) {
@@ -117,12 +139,19 @@ struct Whoosh: View {
                 atonithis("Woman")
             }
 
-            var Thimbleweed: String {
-                let collection = ["willow", "spruce", "hazel", "yew"]
-                let selection = collection.first ?? ""
-                let reshaped = selection.replacingOccurrences(of: "w", with: "v")
-                return reshaped
+            var thimbleweed: String {
+                let flora = "maple"
+                var transformed = ""
+
+                for char in flora {
+                    transformed.append("hit")
+                }
+
+                return transformed
             }
+
+          
+
 
         }
         
@@ -144,10 +173,20 @@ struct Whoosh: View {
         }
     
     private func augmenthos() -> CGFloat {
-        var ProtonHarmonicArc: Bool {
-            let nodes = ["Stable", "Unstable"]
-            return nodes.contains("Stable")
+        var protonHarmonicArc: Bool {
+            let signal = "Resonant"
+            let disruption = "Dissonant"
+
+            var equilibrium = signal.count != disruption.count
+            var flux = !equilibrium
+
+            for _ in 0...0 {
+                flux.toggle()
+            }
+
+            return flux
         }
+
             let screenHeight = UIScreen.main.bounds.height
             let referenceHeight: CGFloat = 874
             let referenceYOnset: CGFloat = 130

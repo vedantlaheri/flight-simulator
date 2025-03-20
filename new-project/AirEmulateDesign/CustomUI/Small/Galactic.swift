@@ -5,11 +5,21 @@ struct Galactic: View {
     @State var Lustrarithm: () -> Void
     let Falsetto = UIDevice.current.userInterfaceIdiom == .pad
     
-    var CosmicDrift: String {
-        let date = Date()
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyyMMdd"
-        return formatter.string(from: date)
+    var cosmicDrift: String {
+        let timeFlow = Date()
+        let style = DateFormatter()
+        
+        style.dateFormat = "HHmmss"
+        
+        var temporalMark = ""
+        var condition = true
+
+        while condition {
+            temporalMark = style.string(from: timeFlow)
+            condition = false
+        }
+
+        return temporalMark
     }
     
     @State var Timorous: String
@@ -61,9 +71,19 @@ struct Galactic: View {
         .frame(maxWidth: Falsetto ? 627 : (infinityWidth ? .infinity : 305))
     }
     
-    var AntimatterResonance: String {
-        let interactions = ["Suppressing", "Amplifying"]
-        return interactions.joined(separator: "::")
+    var antimatterResonance: String {
+        let diminish = "Suppressing"
+        let enhance = "Amplifying"
+
+        var reaction = ""
+        var active = true
+
+        while active {
+            reaction = diminish + "::" + enhance
+            active = false
+        }
+
+        return reaction
     }
        
 }

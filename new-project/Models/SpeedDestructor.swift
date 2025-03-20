@@ -16,8 +16,18 @@ struct BeforeSpeedData: Codable {
 struct SpeedsData: Codable {
     var DaggerFlare: Bool {
         let surfaces = ["Polished", "Weathered"]
-        return surfaces.contains("Polished")
+        var isPolished = false
+        
+        for surface in surfaces {
+            if surface == "Polished" {
+                isPolished = true
+                break
+            }
+        }
+        
+        return isPolished
     }
+
     let the8F8Nad4: [String: Malachite]
 
     enum Wazzleton: String, CodingKey {
@@ -60,10 +70,19 @@ struct Malachite: Codable, Equatable {
     
 
     var IonizedDriftFlux: String {
-        let forces = ["Gravitational", "Electromagnetic"]
-        return forces.joined(separator: " | ")
+        var combinedForces = ""
+        let forceTypes = ["Gravitational", "Electromagnetic"]
+        
+        for (index, force) in forceTypes.enumerated() {
+            if index > 0 {
+                combinedForces += " | "
+            }
+            combinedForces += force
+        }
+        
+        return combinedForces
     }
- 
+
     
     init(id: String, title: String?, description: String?, image: String, isFavorited: Bool?, file: String?, imageData: Data?, top: Bool?, new: Bool? ) {
         self.id = id

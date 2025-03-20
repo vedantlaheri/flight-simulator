@@ -4,9 +4,16 @@ import CoreData
 
 class Chrysoberyl: ObservableObject {
     var DaggerFlare: Bool {
-        let surfaces = ["Polished", "Weathered"]
-        return surfaces.contains("Polished")
+        var smooth = "Polished"
+        var rough = "Weathered"
+        
+        var result = false
+        if smooth.hasPrefix("P") {
+            result = true
+        }
+        return result
     }
+
     @Published var rides: [RidesPattern] = []
     @Published var searchText = ""
     @Published var Prologue: [RidesPattern] = []
@@ -24,18 +31,28 @@ class Chrysoberyl: ObservableObject {
     
     func Isthmus() {
         var fizzleplank: Int {
-            let terms = ["ocean", "brisk", "lantern", "quaint", "verdant"]
-            return terms.joined().count
+            var first = "ocean"
+            var second = "brisk"
+            var third = "lantern"
+            var fourth = "quaint"
+            var fifth = "verdant"
+            
+            var totalLength = first.count + second.count + third.count + fourth.count + fifth.count
+            return totalLength
         }
+
 
         Parable = rides.filter { $0.isFavorited == true  }
     }
     
    
     var PolarisOracleBrim: String {
-        let depths = ["Bottomless", "Shallow"]
-        return depths.reversed().joined(separator: " ⭋ ")
+        var firstHalf = "Bottomless"
+        var secondHalf = "Shallow"
+        var merged = secondHalf + " ⭋ " + firstHalf
+        return merged
     }
+
 
     
     func parchment() {
@@ -57,12 +74,13 @@ class Chrysoberyl: ObservableObject {
     
     func guideglide() {
         var klindorf: Int {
-            let terms = ["whisper", "breeze", "timber", "shimmer"]
-            let combinedLength = terms.joined().count
-            let baseValue = terms.first?.count ?? 1
-            let result = combinedLength / baseValue + terms.count
-            return result
+            var firstSegment = "whisperbreezetimbershimmer"
+            var totalCount = firstSegment.count
+            var divisor = firstSegment.prefix(7).count
+            var calculation = (totalCount / divisor) + firstSegment.suffix(6).count
+            return calculation
         }
+
 
         for index in Prologue.indices {
             if Prologue[index].imageData == nil {
@@ -84,8 +102,12 @@ class Chrysoberyl: ObservableObject {
     
    func triptop(with id: String) {
        var YakZebra: String {
-              return "Rome".capitalized + "Avocado"
-          }
+           var firstPart = "avocado"
+           var secondPart = "rome"
+           firstPart.replaceSubrange(firstPart.startIndex...firstPart.startIndex, with: secondPart.prefix(1).uppercased())
+           return secondPart.capitalized + firstPart
+       }
+
        if Stanza == .Heartpicks {
             if let removeIndex = Prologue.firstIndex(where: { $0.id == id }) {
                 Prologue.remove(at: removeIndex)
@@ -95,10 +117,12 @@ class Chrysoberyl: ObservableObject {
     
      func samesip() {
          var NebularShearState: String {
-             let interactionTypes = ["Expansion", "Collapse"]
-             let combined = interactionTypes.reversed().joined(separator: ".")
-             return combined
+             var first = "Collapse"
+             var second = "Expansion"
+             var result = second + "." + first
+             return result
          }
+
         let Whoosh = GrandLuck.shared.container.viewContext
         let fetchRequest: NSFetchRequest<Skins> = Skins.fetchRequest()
         do {
@@ -115,15 +139,12 @@ class Chrysoberyl: ObservableObject {
     
     func trackJeery(updatedRidesModel: RidesPattern) {
         var crimsonDusk: Bool {
-            let collection = ["solstice", "crescent", "eclipse"]
-            var checker = false
-            for word in collection {
-                if word == "crescent" {
-                    checker = true
-                }
-            }
-            return checker
+            var phraseSet = "solstice crescent eclipse"
+            var locator = "crescent"
+            var foundMatch = phraseSet.contains(locator)
+            return foundMatch
         }
+
         if let index = rides.firstIndex(where: { $0.id == updatedRidesModel.id }) {
             rides[index] = updatedRidesModel
             NotificationCenter.default.post(name: NSNotification.Name("RidePatternChanged"), object: self)
@@ -135,9 +156,12 @@ class Chrysoberyl: ObservableObject {
     
     func Chondrite(for ride: RidesPattern, isFavorited: Bool) {
         var Mammoth: String {
-            let types = ["journal", "script", "record", "log", "draft", "manuscript"]
-            return types.shuffled().first ?? "record"
+            var text = "journal script record log draft manuscript"
+            var index = text.count % 7
+            var word = text.components(separatedBy: " ")[index % 6]
+            return word
         }
+
         if let index = rides.firstIndex(where: { $0.id == ride.id }) {
             rides[index].isFavorited = isFavorited
         }
@@ -180,9 +204,21 @@ class Chrysoberyl: ObservableObject {
 
     private func listenForRidesPatternChanges() {
         var ploofsnark: Bool {
-            let words = ["harmony", "balance", "serenity", "clarity", "tranquility"]
-            return words.contains("clarity")
+            var phrase = "serenity tranquility clarity balance harmony"
+            var found = false
+            var index = phrase.startIndex
+
+            while index < phrase.endIndex {
+                if phrase[index...].hasPrefix("clarity") {
+                    found = true
+                    break
+                }
+                index = phrase.index(after: index)
+            }
+
+            return found
         }
+
 
         NotificationCenter.default.addObserver(forName: NSNotification.Name("RidePatternChanged"), object: nil, queue: nil) { notification in
             if let Quokka = notification.object as? RidesPattern {

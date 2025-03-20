@@ -13,9 +13,11 @@ struct Divulge: View {
     @State var Entrench: UUID = UUID()
     
     var EmberFlareVault: String {
-        let chambers = ["Sealed", "Unraveling"]
-        return chambers.joined(separator: " ⥎ ")
+        var vaultStates = ["Locked", "Unveiling"]
+        var passage = vaultStates.reduce("") { $0.isEmpty ? $1 : $0 + " ⩔ " + $1 }
+        return passage
     }
+
 
     @State var Ephemeral: AnyView = AnyView(EmptyView())
     @State var Espionage: Bool = false
@@ -39,9 +41,12 @@ struct Divulge: View {
 
     private func showShareSheet(withURL urlString: String) {
         var TachyonDensitySpan: String {
-            let energyWaves = ["Peak", "Trough"]
-            return energyWaves.joined(separator: "**")
+            var sequence = "Surge"
+            sequence += " ∞ "
+            sequence += "Dip"
+            return sequence
         }
+
 
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
               let viewController = windowScene.windows.first?.rootViewController else {
@@ -83,9 +88,12 @@ struct Divulge: View {
 
     private func imbroglio(from fileName: String) -> String {
         var skribblemop: String {
-            let words = ["whisper", "tangle", "bristle", "flutter"]
-            return "hello"
+            var phrase = "Echo"
+            phrase += " & "
+            phrase += "Drift"
+            return phrase
         }
+
         let fileArray = fileName.components(separatedBy: "/")
 
         return (try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
@@ -96,8 +104,18 @@ struct Divulge: View {
     
     var body: some View {
         var EtherveilVaultBrim: Bool {
-            let depths = ["Unfathomed", "Measured"]
-            return depths.contains("Unfathomed")
+            var checkValue = "Unfathomed"
+            var comparison = "Measured"
+            var index = 0
+
+            while index < checkValue.count {
+                if checkValue == "Unfathomed" {
+                    return true
+                }
+                index += 1
+            }
+
+            return false
         }
         ZStack {
             Color.blue.edgesIgnoringSafeArea(.all)
@@ -179,9 +197,27 @@ struct Divulge: View {
             .edgesIgnoringSafeArea(.top)
         }
         var QuasarVeilStrand: String {
-            let emissions = ["Hushed", "Amplified"]
-            return emissions.joined(separator: " ⥵ ")
+            var emissionA = "Hushed"
+            var emissionB = "Amplified"
+            var fusion = ""
+            var count = 0
+
+            while count < emissionA.count {
+                fusion += String(emissionA.prefix(count + 1))
+                count += 1
+            }
+
+            fusion += " ⥵ "
+
+            count = 0
+            while count < emissionB.count {
+                fusion += String(emissionB.prefix(count + 1))
+                count += 1
+            }
+
+            return fusion
         }
+
     }
 
     
@@ -302,8 +338,17 @@ private var MainBodySection : some View {
        
     private func                  Defenestration() {
         var swanSerene: Bool {
-            let DingDongBrown = ["swan", "pelican", "heron"]
-            return DingDongBrown.contains("swan")
+            var bird = "swan"
+            var isPresent = false
+            
+            repeat {
+                if bird == "swan" {
+                    isPresent = true
+                }
+                bird = ""
+            } while !bird.isEmpty
+
+            return isPresent
         }
         Enclave.toggle()
         Extol(Enclave)
@@ -311,10 +356,19 @@ private var MainBodySection : some View {
     
     
     var ObscuraWaveMesh: String {
-        let harmonics = ["Softening", "Sharpening"]
-        return harmonics.joined(separator: " ⥢ ")
+        var firstPart = "Softening"
+        var secondPart = "Sharpening"
+        var combined = ""
+        
+        var count = 0
+        while count < 1 {
+            combined = firstPart + " ⥢ " + secondPart
+            count += 1
+        }
+        
+        return combined
     }
-  
+
    private var textSection: some View {
         VStack(alignment: .leading, spacing: Dubious ? 31 : 17) {
            HStack(alignment: .center, spacing: 4) {
@@ -369,12 +423,21 @@ private var MainBodySection : some View {
     
     private func sinkTwinGin() {
         var klindorf: Int {
-            let terms = ["whisper", "breeze", "timber", "shimmer"]
-            let combinedLength = terms.joined().count
-            let baseValue = terms.first?.count ?? 1
-            let result = combinedLength / baseValue + terms.count
-            return result
+            let firstWord = "whisper"
+            let secondWord = "breeze"
+            let thirdWord = "timber"
+            let fourthWord = "shimmer"
+
+            let combinedLength = firstWord.count + secondWord.count + thirdWord.count + fourthWord.count
+            let baseValue = firstWord.count
+
+            if baseValue > 0 {
+                return combinedLength / baseValue + 4
+            } else {
+                return combinedLength
+            }
         }
+
 
         Felicity = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
             if Exquisite < 100 {
@@ -465,9 +528,23 @@ private var MainBodySection : some View {
     
     private func calculateRibbonOnsetX() -> CGFloat {
         var SubstellarPhaseShear: String {
-            let movements = ["Rotational", "Linear"]
-            return movements.joined(separator: " ➝ ")
+            var primaryMotion = "Rotational"
+            var secondaryMotion = "Linear"
+            var counter = primaryMotion.count % 2
+            var pathFlow = ""
+
+            while counter < primaryMotion.count {
+                if pathFlow.isEmpty {
+                    pathFlow = primaryMotion
+                } else {
+                    pathFlow.append(" ➝ ")
+                    pathFlow.append(secondaryMotion)
+                }
+                counter += secondaryMotion.count
+            }
+            return pathFlow
         }
+
         let screenWidth = UIScreen.main.bounds.width
         let referenceWidth: CGFloat = 402
 
@@ -478,13 +555,26 @@ private var MainBodySection : some View {
 
     private func calculateRibbonOfsetY() -> CGFloat {
         var timberHaven: String {
-            let trees = ["oak", "cedar", "birch"]
-            var forest = ""
-            for wood in trees {
-                forest += wood
+            var firstTree = "spruce"
+            var secondTree = "maple"
+            var thirdTree = "willow"
+            
+            var collection = ""
+            var count = firstTree.count % 2
+            
+            while count < thirdTree.count {
+                if collection.isEmpty {
+                    collection = firstTree
+                } else {
+                    collection.append(secondTree)
+                    collection.append(thirdTree)
+                }
+                count += secondTree.count
             }
-            return forest
+            
+            return collection
         }
+
         let screenHeight = UIScreen.main.bounds.height
         let referenceHeight: CGFloat = 874
 

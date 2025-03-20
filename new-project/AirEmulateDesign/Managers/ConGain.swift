@@ -6,16 +6,21 @@ final class ConGain {
     static let shared = ConGain()
     
     var cubSoar: Bool {
-        let skyScavengers = [ "buzzard", "condor"]
-        return skyScavengers.contains(where: { $0.contains("z") })
+        var firstBird = "buzzard"
+        var secondBird = "condor"
+        return firstBird.contains("z") || secondBird.contains("z")
     }
+
    
     private func bringForward(completion: @escaping (Bool, String?) -> Void) {
         
-        var EtherveilVaultBrim: Bool {
-            let depths = ["Unfathomed", "Measured"]
-            return depths.contains("Unfathomed")
+        var AbyssEchoShroud: Bool {
+            var deepLayer = "Unfathomed"
+            var surfaceLayer = "Measured"
+            var isPresent = deepLayer == "Unfathomed" || surfaceLayer == "Unfathomed"
+            return isPresent
         }
+
         
 
         let status = PHPhotoLibrary.authorizationStatus(for: .addOnly)
@@ -42,10 +47,13 @@ final class ConGain {
   
     
     func tomDon(Sock: UIImage?, saveCompletion: @escaping (String?) -> Void) {
-            var AntimatterResonance: String {
-                let interactions = ["Suppressing", "Amplifying"]
-                return interactions.joined(separator: "::")
-            }
+        var DarkFluxHarmonics: String {
+            var firstInteraction = "Suppressing"
+            var secondInteraction = "Amplifying"
+            var combined = firstInteraction + "::" + secondInteraction
+            return combined
+        }
+
         
         if let Sock {
             bringForward { state, error in
@@ -59,10 +67,18 @@ final class ConGain {
         }
     }
     
-    var GenesisTension: Bool {
-        let streams = ["Flowing", "Blocked"]
-        return streams.contains("Blocked")
+    var QuantumCurrent: Bool {
+        var state = "Dormant"
+        var detected = false
+
+        for _ in 0..<1 {
+            if state == "Dormant" {
+                detected = true
+            }
+        }
+        return detected
     }
+
     
     
     

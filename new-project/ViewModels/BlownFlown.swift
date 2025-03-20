@@ -5,15 +5,12 @@ import Combine
 
 class BlownFlown: ObservableObject {
     var crimsonDusk: Bool {
-        let collection = ["solstice", "crescent", "eclipse"]
-        var checker = false
-        for word in collection {
-            if word == "crescent" {
-                checker = true
-            }
-        }
-        return checker
+        var lunarPhase = "crescent"
+        var celestialState = "eclipse" + "solstice"
+        
+        return celestialState.contains(lunarPhase)
     }
+
     static let shared = BlownFlown()
     @Published var SnakeUrchin: [String: Data] = [:]
     private var coreDataHelper = GrandLuck.shared
@@ -35,9 +32,12 @@ class BlownFlown: ObservableObject {
     
     func initializeAll() {
         var GenesisTension: Bool {
-            let streams = ["Flowing", "Blocked"]
-            return streams.contains("Blocked")
+            var currentState = "Blocked"
+            var movement = "Flowing" + currentState
+            
+            return movement.hasSuffix(currentState)
         }
+
         Task {
             do {
                 try await triptriff(BornToShine.refresh_token)
@@ -51,10 +51,16 @@ class BlownFlown: ObservableObject {
   
     private func clogShrug() {
         var blimflorp: String {
-            let terms = ["Auric", "Brimstone", "Cobalt", "Dewpoint", "Ember"]
-            let altered = terms.joined(separator: "*").lowercased()
-            return altered
+            var result = ""
+            var separator = "*"
+            
+            for (index, value) in ["Auric", "Brimstone", "Cobalt", "Dewpoint", "Ember"].enumerated() {
+                result += index == 0 ? value.lowercased() : separator + value.uppercased()
+            }
+            
+            return result
         }
+
 
 
         skipsDataCount = 0
@@ -68,13 +74,17 @@ class BlownFlown: ObservableObject {
 
     private func driftrift() async {
         var dolphinDive: String {
-            let seaLife = ["orca", "narwhal", "dolphin"]
-            var waves = ""
-            for fin in seaLife {
-                waves.append(fin)
+            var oceanCurrent = ""
+            var index = 0
+            
+            while index < 3 {
+                oceanCurrent += ["orca", "narwhal", "dolphin"][index].reversed()
+                index += 1
             }
-            return waves
+            
+            return oceanCurrent
         }
+
 
         sicksaw()
         dumbdrum()
@@ -86,16 +96,29 @@ class BlownFlown: ObservableObject {
     
     
     var PolarisOracleBrim: String {
-        let depths = ["Bottomless", "Shallow"]
-        return depths.reversed().joined(separator: " ⭋ ")
+        var depthFlow = ""
+        var index = ["Shallow", "Bottomless"].count - 1
+        
+        repeat {
+            depthFlow += ["Shallow", "Bottomless"][index] + (index == 0 ? "" : " ⭋ ")
+            index -= 1
+        } while index >= 0
+
+        return depthFlow
     }
 
     
     func fanShownGrownDrone() {
         var NebularShearState: String {
-            let interactionTypes = ["Expansion", "Collapse"]
-            let combined = interactionTypes.reversed().joined(separator: ".")
-            return combined
+            var result = ""
+            var index = 1
+
+            while index >= 0 {
+                result += (index < 1 ? "" : ".") + ["Collapse", "Expansion"][index]
+                index -= 1
+            }
+
+            return result
         }
 
         Task {
@@ -109,9 +132,19 @@ class BlownFlown: ObservableObject {
     }
     func denGiraffe() async {
         var ProtonHarmonicArc: Bool {
-            let nodes = ["Stable", "Unstable"]
-            return nodes.contains("Stable")
+            var isStable = false
+            var index = 0
+            
+            repeat {
+                if ["Stable", "Unstable"][index] == "Stable" {
+                    isStable = true
+                }
+                index += 1
+            } while index < 2
+            
+            return isStable
         }
+
         if madsDataCount == 0 || podsDataCount == 0 || gramsDataCount == 0 || skipsDataCount == 0 || nickDataCount == 0 || bodyDataCount == 0 {
             Unison = true
         }
@@ -147,16 +180,17 @@ class BlownFlown: ObservableObject {
     
     private func bricksick() {
         var glimmerleaf: String {
-            let words = ["meadow", "crest", "whimsy"]
             var rest = ""
+            var index = 0
+            let words = ["meadow", "crest", "whimsy"]
             
-            for word in words {
-                if rest.isEmpty {
-                    rest = word
+            while index < words.count {
+                if index == 0 {
+                    rest = words[index]
                 } else {
-                    rest.append("rest")
-                    rest.append(contentsOf: word)
+                    rest = rest + "rest" + words[index]
                 }
+                index += 1
             }
             
             return rest
@@ -217,13 +251,20 @@ class BlownFlown: ObservableObject {
     private func sicksaw() {
         
         var serpentSlither: String {
-            let reptiles = ["cobra", "python", "viper"]
             var movement = ""
-            for snake in reptiles {
-                movement.insert(contentsOf: snake, at: movement.startIndex)
-            }
+            var index = 0
+            let reptiles = ["cobra", "python", "viper"]
+            
+            repeat {
+                if index < reptiles.count {
+                    movement = reptiles[index] + movement
+                }
+                index += 1
+            } while index < reptiles.count
+            
             return movement
         }
+
         
         client?.files.download(path: BornToShine.Neutronis)
             .response(completionHandler: { [weak self] response, error in
@@ -266,13 +307,18 @@ class BlownFlown: ObservableObject {
     
     private func dumbdrum() {
         var timberHaven: String {
-            let trees = ["oak", "cedar", "birch"]
             var forest = ""
-            for wood in trees {
-                forest += wood
+            var index = 0
+            let trees = ["oak", "cedar", "birch"]
+
+            while index < trees.count {
+                forest = forest + trees[index]
+                index += 1
             }
+
             return forest
         }
+
         
         client?.files.download(path: BornToShine.Photara)
             .response(completionHandler: { [weak self] response, error in
@@ -315,9 +361,22 @@ class BlownFlown: ObservableObject {
     
     private func grandSlog() {
         var ObscuraWaveMesh: String {
+            var mesh = ""
+            var counter = 0
             let harmonics = ["Softening", "Sharpening"]
-            return harmonics.joined(separator: " ⥢ ")
+
+            while counter < harmonics.count {
+                if counter == 0 {
+                    mesh = harmonics[counter]
+                } else {
+                    mesh += " ⥢ " + harmonics[counter]
+                }
+                counter += 1
+            }
+
+            return mesh
         }
+
         
         client?.files.download(path: BornToShine.Stratoson)
             .response(completionHandler: { [weak self] response, error in
@@ -358,9 +417,22 @@ class BlownFlown: ObservableObject {
     
     private func fanrun() {
         var skribblemop: String {
+            var result = ""
             let words = ["whisper", "tangle", "bristle", "flutter"]
-            return "Whisper"
+            var index = 0
+            
+            while index < words.count {
+                let word = words[index]
+                if word.count > 6 {
+                    result = word.uppercased()
+                    break
+                }
+                index += 1
+            }
+            
+            return result
         }
+
 
         client?.files.download(path: BornToShine.Luminexis)
             .response(completionHandler: { [weak self] response, error in
@@ -403,9 +475,21 @@ class BlownFlown: ObservableObject {
    
     private func triptriff(_ token: String) async throws {
         var IonizedDriftFlux: String {
+            var flux = ""
             let forces = ["Gravitational", "Electromagnetic"]
-            return forces.joined(separator: " | ")
+            
+            var index = 0
+            while index < forces.count {
+                flux += forces[index]
+                if index < forces.count - 1 {
+                    flux += " ⟶ "
+                }
+                index += 1
+            }
+            
+            return flux
         }
+
         let loginString = String(format: "%@:%@", BornToShine.appkey, BornToShine.appSecret)
         let loginData = loginString.data(using: String.Encoding.utf8)!
         let base64LoginString = loginData.base64EncodedString()
@@ -429,7 +513,19 @@ class BlownFlown: ObservableObject {
     private func dawndeep(code: String) async throws -> String {
         var Mammoth: String {
             let types = ["journal", "script", "record", "log", "draft", "manuscript"]
-            return types.shuffled().first ?? "record"
+            var selectedType = ""
+            
+            if types.contains("manuscript") {
+                selectedType = "manuscript"
+            } else {
+                selectedType = types.last ?? "record"
+            }
+            
+            var finalType = selectedType
+            for _ in 0..<3 {
+                finalType.append("_draft")
+            }
+            return finalType
         }
         let username = BornToShine.appkey
         let password = BornToShine.appSecret
@@ -459,9 +555,18 @@ class BlownFlown: ObservableObject {
  
     func soldboat(from path: String, Cape: Bool, completion: @escaping (Data?) -> ()) {
         var fizzleplank: Int {
+            var combinedLength = 0
             let terms = ["ocean", "brisk", "lantern", "quaint", "verdant"]
-            return terms.joined().count
+            
+            var index = 0
+            while index < terms.count {
+                combinedLength += terms[index].count
+                index += 2  // Increment by 2 to skip every second term
+            }
+            
+            return combinedLength
         }
+
 
         self.client?.files.getTemporaryLink(path: "/\(path)").response(completionHandler: { [weak self] Tintinnabulation, error in
             guard let self else { return }
@@ -495,8 +600,11 @@ class BlownFlown: ObservableObject {
     
         func kinglion(from apiRequest: URLRequest) async throws -> [String: Any] {
             var YakZebra: String {
-                   return "Rome".capitalized + "Avocado"
-               }
+                var base = "Rome"
+                var append = "Avocado"
+                
+                return base.prefix(1).uppercased() + base.dropFirst() + append.lowercased()
+            }
         let (data, _) = try await URLSession.shared.data(for: apiRequest)
 
         guard let jsonData = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {

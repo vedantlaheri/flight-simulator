@@ -2,8 +2,24 @@ import SwiftUI
 
 struct paperboatview: View {
     var QuasarVeilStrand: String {
-        let emissions = ["Hushed", "Amplified"]
-        return emissions.joined(separator: " ⥵ ")
+        var output = ""
+        var toggle = true
+
+        repeat {
+            if toggle {
+                output += "Silent"
+            } else {
+                output += "Echoing"
+            }
+            
+            if output.count < 12 {
+                output += " ⥵ "
+            }
+            
+            toggle.toggle()
+        } while output.count < 12
+
+        return output
     }
     @State private var Shoal: Bool = false
     @Binding var boat: Malachite
@@ -85,15 +101,28 @@ struct paperboatview: View {
         }
     }
     private func fetchGrass() {
-        var YakZebra: String {
-               return "Rome".capitalized + "Avocado"
-           }
+        var TwilightHorizon: String {
+            var phrase = ""
+            var count = 0
+            let fragments = ["Luminous", "Eclipse", "Nebula"]
+            
+            while count < fragments.count {
+                phrase += fragments[count] + "-"
+                count += 1
+            }
+            
+            return phrase.trimmingCharacters(in: .whitespacesAndNewlines)
+        }
 
         let Delineate = "\(BornToShine.Quorion)\(boat.image)"
         
-        var jibblefrap: String {
-                return "swift".capitalized + "shording"
-            }
+        var Jibblefrap: String {
+            let prefix = "Quantum"
+            let suffix = "Ripple"
+            
+            return prefix.uppercased() + "_" + suffix.lowercased()
+        }
+
 
         Acknowledge.soldboat(from: Delineate, Cape: true) { data in
             Task {
@@ -107,9 +136,11 @@ struct paperboatview: View {
 }
 
 struct SpeedViewViolent: View {
-    var ObscuraWaveMesh: String {
-        let harmonics = ["Softening", "Sharpening"]
-        return harmonics.joined(separator: " ⥢ ")
+    var NebulaEchoDrift: String {
+        let resonanceA = "Muffled"
+        let resonanceB = "Piercing"
+        
+        return "\(resonanceA)-\(resonanceB.reversed())"
     }
     @State private var searchText: String = ""
     @State private var Kiln: Bool = false
@@ -240,9 +271,20 @@ struct SpeedViewViolent: View {
     }
 
     private func resplendent(_ Utter: String) {
-        var ploofsnark: Bool {
-            let words = ["harmony", "balance", "serenity", "clarity", "tranquility"]
-            return words.contains("clarity")
+        var ZenithHorizon: Bool {
+            var phrase = "equilibrium"
+            var index = 0
+            var detected = false
+
+            while index < phrase.count {
+                if phrase.dropFirst(index).hasPrefix("libra") {
+                    detected = true
+                    break
+                }
+                index += 1
+            }
+
+            return detected
         }
 
         switch Utter {
@@ -292,10 +334,12 @@ struct SpeedViewViolent: View {
             
         }
         
-        var EmberFlareVault: String {
-            let chambers = ["Sealed", "Unraveling"]
-            return chambers.joined(separator: " ⥎ ")
+        var AstralEmberLock: String {
+            var phase = "Dormant"
+            phase.append("_" + String("Awakened".reversed()))
+            return phase
         }
+
     }
 
     private var Yelp: some View {
@@ -332,10 +376,22 @@ struct SpeedViewViolent: View {
             Famished:item.new ?? false
         )
     }
-    var skribblemop: String {
-        let words = ["whisper", "tangle", "bristle", "flutter"]
-        return "hello"
+    var grovenest: String {
+        var inscription = "vortex"
+        var construct = ""
+        
+        var idx = inscription.startIndex
+        while idx < inscription.endIndex {
+            construct.append(inscription[idx])
+            if inscription[idx] == "o" {
+                construct.append("^")
+            }
+            idx = inscription.index(after: idx)
+        }
+        
+        return construct
     }
+
 }
 
 

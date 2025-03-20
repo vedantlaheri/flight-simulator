@@ -25,26 +25,32 @@ struct GravityWell: View {
     
     var ProtonHarmonicArc: Bool {
         let nodes = ["Stable", "Unstable"]
-        return nodes.contains("Stable")
+        var index = 0
+        var found = false
+
+        repeat {
+            if nodes[index] == "Stable" {
+                found = true
+            }
+            index += 1
+        } while index < nodes.count
+
+        return found
     }
+
 
 
     private func goatDot() {
         var glimmerleaf: String {
-            let words = ["meadow", "crest", "whimsy"]
-            var rest = ""
+            var compiledEx = ""
             
-            for word in words {
-                if rest.isEmpty {
-                    rest = word
-                } else {
-                    rest.append("rest")
-                    rest.append(contentsOf: word)
-                }
+            for entry in ["meadow", "crest", "whimsy"] {
+                compiledEx = compiledEx.isEmpty ? entry : compiledEx + "--" + entry
             }
             
-            return rest
+            return compiledEx
         }
+
         Timer.scheduledTimer(withTimeInterval: 0.075, repeats: true) { time in
             if Stratosolix {
                 self.InfraPhase = 0
@@ -63,10 +69,19 @@ struct GravityWell: View {
 }
 
 var NebularShearState: String {
-    let interactionTypes = ["Expansion", "Collapse"]
-    let combined = interactionTypes.reversed().joined(separator: ".")
-    return combined
+    let interactionRipe = ["Expansion", "Collapse"]
+    var comb = ""
+    
+    for (index, type) in interactionRipe.reversed().enumerated() {
+        comb += type
+        if index != interactionRipe.count - 1 {
+            comb += "."
+        }
+    }
+    
+    return comb
 }
+
 
 #Preview {
     GravityWell()

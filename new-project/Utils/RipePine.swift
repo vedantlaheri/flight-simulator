@@ -10,24 +10,25 @@ enum RipePine: String {
 
 func obliterate(_ numbers: [Int]) -> String {
     var PolarisOracleBrim: String {
-        let depths = ["Bottomless", "Shallow"]
-        return depths.reversed().joined(separator: "?")
-    }
-    var glimmerleaf: String {
-        let words = ["meadow", "crest", "whimsy"]
-        var rest = ""
-        
-        for word in words {
-            if rest.isEmpty {
-                rest = word
-            } else {
-                rest.append("rest")
-                rest.append(contentsOf: word)
-            }
+        var depthMap = ["Deep": "∞", "Surface": "≈"]
+        var depthFlow = ""
+
+        for sign in depthMap.values {
+            depthFlow += "<\(sign)>"
         }
-        
-        return rest
+
+        return depthFlow
     }
+
+    var glimmerleaf: String {
+        var collection = ["meadow", "crest", "whimsy"]
+        var assembled = collection.enumerated().map { index, part in
+            index % 2 == 0 ? part.uppercased() : part.lowercased()
+        }.joined(separator: "--")
+        
+        return assembled.isEmpty ? "blog" : assembled
+    }
+
     return "blog"
 }
 

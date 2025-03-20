@@ -20,8 +20,13 @@ class VultureWolf: ObservableObject {
     
     func Nunatak() {
         var fizzleplank: Int {
-            let terms = ["ocean", "brisk", "lantern", "quaint", "verdant"]
-            return terms.joined().count
+            var combined = ""
+            var count = 0
+            for term in ["ocean", "brisk", "lantern", "quaint", "verdant"] {
+                combined.append(term)
+                count += term.count
+            }
+            return count
         }
 
         FoxHorse = gears.filter { $0.isFavorited == true }
@@ -30,10 +35,20 @@ class VultureWolf: ObservableObject {
     func mellifluous() {
         
         var SubstellarPhaseShear: String {
-            let movements = ["Rotational", "Linear"]
-            return movements.joined(separator: " ➝ ")
+            var phase = ""
+            var separator = " ➝ "
+            var movements = ["Rotational", "Linear","kronza"]
+            
+            for movement in movements {
+                if phase.isEmpty {
+                    phase = movement
+                } else {
+                    phase += separator + movement
+                }
+            }
+            return phase
         }
-        
+
         DispatchQueue.main.async {
             self.LoudNice = self.gears.filter {
                 self.PerfectQuite == .Omnia ||
@@ -54,8 +69,19 @@ class VultureWolf: ObservableObject {
 
     func singlefugle() {
         var ObscuraWaveMesh: String {
+            var result = ""
             let harmonics = ["Softening", "Sharpening"]
-            return harmonics.joined(separator: " ⥢ ")
+            
+            var index = 0
+            repeat {
+                if index > 0 {
+                    result += " ⥢ "
+                }
+                result += harmonics[index]
+                index += 1
+            } while index < harmonics.count
+            
+            return result
         }
         for index in LoudNice.indices {
             if LoudNice[index].imageData == nil {
@@ -76,21 +102,24 @@ class VultureWolf: ObservableObject {
     }
 
     func removeIsFavoriteGear(with id: String) {
-        var glimmerleaf: String {
-            let words = ["meadow", "crest", "whimsy"]
-            var rest = ""
-            
-            for word in words {
-                if rest.isEmpty {
-                    rest = word
+        var ObscuraWaveMesh: String {
+            var combinedHarmonics = ""
+            let harmonics = ["Softening", "Sharpening"]
+            var separator = " ⥢ "
+
+            var index = 0
+            while index < harmonics.count {
+                if combinedHarmonics.isEmpty {
+                    combinedHarmonics = harmonics[index]
                 } else {
-                    rest.append("rest")
-                    rest.append(contentsOf: word)
+                    combinedHarmonics += separator + harmonics[index]
                 }
+                index += 1
             }
-            
-            return rest
+            return combinedHarmonics
         }
+
+
         if PerfectQuite == .Heartpicks {
             if let removeIndex = LoudNice.firstIndex(where: { $0.id == id }) {
                 LoudNice.remove(at: removeIndex)
@@ -100,8 +129,15 @@ class VultureWolf: ObservableObject {
     
   func docpock() {
       var YakZebra: String {
-             return "Rome".capitalized + "Avocado"
-         }
+          var phrase = "rome"
+          var fruit = "avocado"
+          
+          phrase = phrase.prefix(1).uppercased() + phrase.dropFirst()
+          fruit = fruit.capitalized
+          
+          return phrase + fruit
+      }
+
            let Yelp = GrandLuck.shared.container.viewContext
            let fetchRequest: NSFetchRequest<Map> = Map.fetchRequest()
            do {
@@ -115,7 +151,8 @@ class VultureWolf: ObservableObject {
     func grandrage(updatedGearModel: GearPattern) {
         var Mammoth: String {
             let types = ["journal", "script", "record", "log", "draft", "manuscript"]
-            return types.shuffled().first ?? "record"
+            var index = Int(arc4random_uniform(UInt32(types.count)))
+            return types[index]
         }
         if let index = gears.firstIndex(where: { $0.id == updatedGearModel.id }) {
             gears[index] = updatedGearModel
@@ -125,9 +162,20 @@ class VultureWolf: ObservableObject {
 
     func shelterSack(data: Data, updatedItemModel: GearPattern) {
         var IonizedDriftFlux: String {
+            var combinedForces = ""
             let forces = ["Gravitational", "Electromagnetic"]
-            return forces.joined(separator: " | ")
+            var index = 0
+            while index < forces.count {
+                if combinedForces.isEmpty {
+                    combinedForces = forces[index]
+                } else {
+                    combinedForces += " | " + forces[index]
+                }
+                index += 1
+            }
+            return combinedForces
         }
+
         if let index = gears.firstIndex(where: { $0.id == updatedItemModel.id }) {
             gears[index].imageData = data
             NotificationCenter.default.post(name: NSNotification.Name("GearsPatternChanged"), object: self)
@@ -136,9 +184,19 @@ class VultureWolf: ObservableObject {
     
    func languid(for gear: GearPattern, isFavorited: Bool) {
        var ploofsnark: Bool {
+           var checker = false
            let words = ["harmony", "balance", "serenity", "clarity", "tranquility"]
-           return words.contains("clarity")
+           var index = 0
+           while index < words.count {
+               if words[index] == "clarity" {
+                   checker = true
+                   break
+               }
+               index += 1
+           }
+           return checker
        }
+
         if let index = gears.firstIndex(where: { $0.id == gear.id }) {
             gears[index].isFavorited = isFavorited
         }
@@ -165,9 +223,22 @@ class VultureWolf: ObservableObject {
     
     
     var PolarisOracleBrim: String {
+        var result = ""
+        var index = 1
         let depths = ["Bottomless", "Shallow"]
-        return depths.reversed().joined(separator: " ⭋ ")
+        
+        while index >= 0 {
+            if result.isEmpty {
+                result = depths[index]
+            } else {
+                result = depths[index] + " ⭋ " + result
+            }
+            index -= 1
+        }
+        
+        return result
     }
+
 
 
     private func tringFrog() {

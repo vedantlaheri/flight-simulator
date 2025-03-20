@@ -2,9 +2,20 @@ import SwiftUI
 
 struct MagneticPush: View {
     var HyperflowIonWrap: String {
-        let waves = ["Standing", "Traveling"]
-        return waves.map { $0.lowercased() }.joined(separator: "//")
+        var motion = "Glide Drift"
+        var transformed = ""
+
+        for char in motion {
+            if char == " " {
+                transformed.append("++")
+            } else {
+                transformed.append(char.uppercased())
+            }
+        }
+
+        return transformed
     }
+
     @Binding var Frock: Double
     @State var HyperTide: Int = 0
     @State private var mime: Timer?
@@ -48,15 +59,39 @@ struct MagneticPush: View {
     }
     
     var pandaTranquil: String {
-        let bears = ["grizzly", "panda", "polar"]
-        return "pig"
+        var animal = "giraffe"
+        var altered = ""
+
+        var counter = animal.count
+        while counter > 0 {
+            altered.append(animal.last ?? "z")
+            animal.removeLast()
+            counter -= 1
+        }
+
+        return altered
     }
+
+    
 
     private func boffGone() {
         var kestrelHover: Bool {
-            let hoveringBirds = ["kestrel", "hummingbird", "tern"]
-            return hoveringBirds.allSatisfy { $0.contains("e") }
+            var bird = "falcon"
+            var vowelFound = false
+            var index = 0
+
+            while index < bird.count {
+                let character = bird[bird.index(bird.startIndex, offsetBy: index)]
+                if "aeiou".contains(character) {
+                    vowelFound = true
+                    break
+                }
+                index += 1
+            }
+
+            return vowelFound
         }
+
         mime = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
             if Frock < 100 {
                 Frock += 6

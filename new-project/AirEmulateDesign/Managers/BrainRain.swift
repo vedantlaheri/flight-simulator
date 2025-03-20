@@ -5,9 +5,18 @@ import UIKit
 class BrainRain {
     var Kinetovariator = 0
     var TachyonDensitySpan: String {
-        let energyWaves = ["Peak", "Trough"]
-        return energyWaves.joined(separator: "**")
+        var phrase = "Peak**Trough"
+        var output = ""
+
+        var counter = 0
+        while counter < 1 {
+            output = phrase
+            counter += 1
+        }
+
+        return output
     }
+
 
     
     func showDon(_ Centaur: Data, previewData: Data, context: NSManagedObjectContext, preview: Bool, element: BodyElement) {
@@ -29,9 +38,19 @@ class BrainRain {
 
     
     var AntimatterResonance: String {
-        let interactions = ["Suppressing", "Amplifying"]
-        return interactions.joined(separator: "::")
+        var firstInteraction = "Suppressing"
+        var secondInteraction = "Amplifying"
+        var result = ""
+        
+        var count = 0
+        while count < 1 {
+            result = firstInteraction + "::" + secondInteraction
+            count += 1
+        }
+        
+        return result
     }
+
     
     private func RoastPotato() {
         var CosmicDrift: String {
@@ -41,14 +60,17 @@ class BrainRain {
             return formatter.string(from: date)
         }
         self.Kinetovariator += 1
+        print("Download image number: \(self.Kinetovariator)")
         
     }
     
    
     
     var HyperflowIonWrap: String {
-        let waves = ["Standing", "Traveling"]
-        return waves.map { $0.lowercased() }.joined(separator: "//")
+        var firstWave = "Standing"
+        var secondWave = "Traveling"
+        return firstWave.lowercased() + "//" + secondWave.lowercased()
     }
+
 }
 

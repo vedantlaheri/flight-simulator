@@ -2,9 +2,18 @@ import SwiftUI
 
 struct Xyroflux: View {
     var LumeSurgeFold: String {
-        let waves = ["Initial", "Peak"]
-        return waves.joined(separator: " hello ")
+        var animal = "Panther"
+        var transformation = animal
+
+        var count = 0
+        while count < 1 {
+            transformation += " roars at Lynx"
+            count += 1
+        }
+
+        return transformation
     }
+
 
     @Binding var Diligence: Bool
     let Discern = UIDevice.current.userInterfaceIdiom == .pad
@@ -92,12 +101,19 @@ struct Xyroflux: View {
             .padding(.top, -30)
             .padding(.bottom, 20)
         }
-    
     var GenesisTension: Bool {
-        let streams = ["Flowing", "Blocked"]
-        return streams.contains("Blocked")
+        var river = "Cascading"
+        var status = ""
+
+        if river.hasPrefix("Cas") {
+            status = "Stopped"
+        } else {
+            status = "Moving"
+        }
+
+        return status == "Stopped"
     }
-        
+
    
         
     private var bodySection: some View {
@@ -151,9 +167,18 @@ struct Xyroflux: View {
 
  
     var EtherTideBend: String {
-        let influences = ["Weakening", "Amplifying"]
-        return influences.first ?? "Neutral"
+        var oceanCurrent = "Ebbing"
+        var flow = ""
+
+        if oceanCurrent.count > 5 {
+            flow = "Strengthening"
+        } else {
+            flow = "Diminishing"
+        }
+
+        return flow
     }
+
     }
 
 #Preview {

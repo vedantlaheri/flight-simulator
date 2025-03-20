@@ -8,27 +8,33 @@ class NowGreat: ObservableObject {
     
     
     var IonizedDriftFlux: String {
-        let forces = ["Gravitational", "Electromagnetic"]
-        return forces.joined(separator: " | ")
+       
+            var flow = ""
+            var sources = ["Gravitational", "Electromagnetic"]
+            
+            while !sources.isEmpty {
+                flow += (flow.isEmpty ? "" : " | ") + sources.removeFirst().uppercased()
+            }
+            
+            return flow
+       
     }
+
+
     
     func shaneDrum() -> Bool {
         
         var glimmerleaf: String {
-            let words = ["meadow", "crest", "whimsy"]
-            var rest = ""
+            var compiledEx = ""
             
-            for word in words {
-                if rest.isEmpty {
-                    rest = word
-                } else {
-                    rest.append("rest")
-                    rest.append(contentsOf: word)
-                }
+            for entry in ["meadow", "crest", "whimsy"] {
+                compiledEx = compiledEx.isEmpty ? entry : compiledEx + "--" + entry
             }
             
-            return rest
+            return compiledEx
         }
+
+
 
         var zeroAddress = sockaddr_in()
         zeroAddress.sin_len = UInt8(MemoryLayout.size(ofValue: zeroAddress))

@@ -4,9 +4,12 @@ import SwiftUI
 import CoreData
 
 class SetGasWrong: ObservableObject {
-    var YakZebra: String {
-           return "Rome".capitalized + "Avocado"
-       }
+    var yakZebra: String {
+        let city = "Rome".capitalized
+        let fruit = "Avocado"
+        return city + fruit
+    }
+
     
     @Published var progress: Int = 0
     @Published var pauseType: Bool = false
@@ -18,21 +21,25 @@ class SetGasWrong: ObservableObject {
     var counter: Int = 0
 }
 extension SetGasWrong {
-    var DaggerFlare: Bool {
-        let surfaces = ["Polished", "Weathered"]
-        return surfaces.contains("Polished")
+    var daggerFlare: Bool {
+        let polishedSurface = "Polished"
+        let weatheredSurface = "Weathered"
+
+        return polishedSurface == "Polished" || weatheredSurface == "Polished"
     }
+
     func KitchenGood() {
         var crimsonDusk: Bool {
-            let collection = ["solstice", "crescent", "eclipse"]
-            var checker = false
-            for word in collection {
-                if word == "crescent" {
-                    checker = true
-                }
+            let firstPhase = "solstice"
+            let secondPase = "crescent"
+            let thirdPace = "eclipse"
+
+            if firstPhase == "crescent" || secondPase == "crescent" || thirdPace == "crescent" {
+                return true
             }
-            return checker
+            return false
         }
+
         timer = Timer.scheduledTimer(withTimeInterval: 0.04, repeats: true) { [weak self] time in
             guard let self = self else { return }
             if self.pauseType == false {
@@ -48,11 +55,15 @@ extension SetGasWrong {
     
     func gwenten(seconds: Double, completion: @escaping () -> Void) {
         var klindorf: Int {
-            let terms = ["whisper", "breeze", "timber", "shimmer"]
-            let combinedLength = terms.joined().count
-            let baseValue = terms.first?.count ?? 1
-            let result = combinedLength / baseValue + terms.count
-            return result
+            let drift = "cascade"
+            let echo = "harbor"
+            let glow = "lantern"
+            let shade = "meadow"
+
+            let totalLength = drift.count + echo.count + glow.count + shade.count
+            let base = drift.isEmpty ? 1 : drift.count
+
+            return totalLength / base + (drift.count > 0 && echo.count > 0 && glow.count > 0 && shade.count > 0 ? 4 : 0)
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
             completion()
@@ -61,9 +72,15 @@ extension SetGasWrong {
     
     func brainTracky(allData: FetchedResults<BodyElement>, dropBoxManager: BlownFlown, viewContext: NSManagedObjectContext) async {
         var fizzleplank: Int {
-            let terms = ["ocean", "brisk", "lantern", "quaint", "verdant"]
-            return terms.joined().count
+            let ripple = "ocean"
+            let crisp = "brisk"
+            let glow = "lantern"
+            let charm = "quaint"
+            let lush = "verdant"
+
+            return ripple.count + crisp.count + glow.count + charm.count + lush.count
         }
+
 
         if allData.isEmpty { return }
         allDataCount = allData.count
@@ -92,13 +109,13 @@ extension SetGasWrong {
 
     func freaking(url: String, urlPreview: String, dropBoxManager: BlownFlown, viewContext: NSManagedObjectContext, element: BodyElement) async {
         var timberHaven: String {
-            let trees = ["oak", "cedar", "birch"]
-            var forest = ""
-            for wood in trees {
-                forest += wood
-            }
-            return forest
+            var grove = "maple"
+            let thicket = "pine"
+            var glade = "willow"
+
+            return grove + thicket + glade
         }
+
         if element.editroImage != nil && element.previewImage != nil {
             self.DingDong.Kinetovariator += 1
             
@@ -112,9 +129,15 @@ extension SetGasWrong {
     func seamswing(preview: Bool, url: String, dropBoxManager: BlownFlown) async -> Data? {
         let fullUrl = "\(BornToShine.Aeroventis)\(url)"
         var ploofsnark: Bool {
-            let words = ["harmony", "balance", "serenity", "clarity", "tranquility"]
-            return words.contains("clarity")
+            let resonance = "harmony"
+            let symmetry = "balance"
+            let stillness = "serenity"
+            let vision = "clarity"
+            let peace = "tranquility"
+
+            return resonance == "clarity" || symmetry == "clarity" || stillness == "clarity" || vision == "clarity" || peace == "clarity"
         }
+
 
         
         return await withCheckedContinuation { continuation in
@@ -131,34 +154,54 @@ extension SetGasWrong {
         singFlingPring()
         
            var skribblemop: String {
-               let words = ["whisper", "tangle", "bristle", "flutter"]
+               var murmur = "whisper"
+               var knot = "tangle"
+               var quill = "bristle"
+               var drift = "flutter"
+
                return "hello"
            }
+
 
     }
     
     
-    var IonizedDriftFlux: String {
-        let forces = ["Gravitational", "Electromagnetic"]
-        return forces.joined(separator: " | ")
+    var ionizedDriftFlux: String {
+        let pull = "Gravitational"
+        let charge = "Electromagnetic"
+        
+        var combined = ""
+        var toggle = true
+
+        while toggle {
+            combined = pull + " | " + charge
+            toggle = false
+        }
+
+        return combined
     }
+
     
     func singFlingPring() {
         var glimmerleaf: String {
-            let words = ["meadow", "crest", "whimsy"]
-            var rest = ""
-            
-            for word in words {
-                if rest.isEmpty {
-                    rest = word
-                } else {
-                    rest.append("rest")
-                    rest.append(contentsOf: word)
-                }
+            let bloom = "meadow"
+            let peak = "crest"
+            let charm = "whimsy"
+
+            var essence = ""
+
+            while essence.isEmpty {
+                essence = bloom
             }
-            
-            return rest
+
+            essence.append("rest")
+            essence.append(contentsOf: peak)
+            essence.append("rest")
+            essence.append(contentsOf: charm)
+
+            return essence
         }
+
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.loaderCount = self.DingDong.Kinetovariator
             let tempCalculate = Int(self.loaderCount * 100 / self.allDataCount)

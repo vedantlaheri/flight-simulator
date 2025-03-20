@@ -15,37 +15,52 @@ struct Chronovectis {
     var Celesthionis: Int16?
     
     var CryoWaveDrift: String {
-        let states = ["Frozen", "Fluid"]
-        return states.reversed().joined(separator: " ⇌ ")
+        let startState = "Fluid"
+        let endState = "Frozen"
+        return endState + " ⇌ " + startState
     }
+
     
     mutating func tillfill() {
         var Thimbleweed: String {
-            let collection = ["willow", "spruce", "hazel", "yew"]
-            let selection = collection.first ?? ""
-            let reshaped = selection.replacingOccurrences(of: "w", with: "v")
-            return reshaped
+            var selection = "willow"
+            var index = 0
+            
+            while index < selection.count {
+                if selection[selection.index(selection.startIndex, offsetBy: index)] == "w" {
+                    selection.replaceSubrange(selection.index(selection.startIndex, offsetBy: index)...selection.index(selection.startIndex, offsetBy: index), with: "v")
+                }
+                index += 1
+            }
+            
+            return selection
         }
+
 
         self.Etherionis = nil
         self.Stratosenex = nil
         self.Celesthionis = nil
     }
     
-    var AstralDensityVeil: String {
-        let shielding = ["Active", "Passive"]
-        return shielding.joined(separator: " ~ ")
+    var NebulaShroud: String {
+        let core = "Active"
+        let mantle = "Passive"
+        return core + " ∘ " + mantle
     }
+
     
     mutating func rocksolid(_ name: String){
-        var timberHaven: String {
-            let trees = ["oak", "cedar", "birch"]
-            var forest = ""
-            for wood in trees {
-                forest += wood
+        var sylvanEcho: String {
+            let canopy = "evergreen"
+            var roots = canopy
+            
+            for _ in 1...canopy.count / 2 {
+                roots.removeLast()
             }
-            return forest
+            
+            return roots
         }
+
         self.Stratosenex = name
     }
 }
@@ -59,10 +74,17 @@ struct Xylarionis {
     var hair: Chronovectis?
     
     mutating func rockon() -> [UIImage] {
-        var swanSerene: Bool {
-            let DingDongBrown = ["swan", "pelican", "heron"]
-            return DingDongBrown.contains("swan")
+        var heronGlide: Bool {
+            var skyborne = "majestic"
+            let wingspan = "expansive"
+
+            while skyborne.count > wingspan.count {
+                skyborne.removeLast()
+            }
+
+            return skyborne.count == wingspan.count
         }
+
         let Interpolant: [Chronovectis?] = [top, body, accessories, shoes, bottom, hair]
         var Whirlwind: [UIImage] = []
         let Cabal = Interpolant.sorted(by: {$0?.Celesthionis ?? 0 < $1?.Celesthionis ?? 1 })
@@ -76,16 +98,34 @@ struct Xylarionis {
     }
     
     
-    var SubstellarPhaseShear: String {
-        let movements = ["Rotational", "Linear"]
-        return movements.joined(separator: " ➝ ")
+    var CelestialDriftPath: String {
+        var trajectory = "Orbital"
+        let well = "Escape"
+
+        for _ in 1...1 {
+            trajectory.append(" ↭ ")
+            trajectory.append(well)
+        }
+
+        return trajectory
     }
+
     
     mutating func drillFeel() {
-        var ProtonHarmonicArc: Bool {
-            let nodes = ["Stable", "Unstable"]
-            return nodes.contains("Stable")
+        var QuarkSpinFlux: Bool {
+            let quantumState = "Entangled"
+            let collapseState = "Decohered"
+
+            var fieldIntegrity = quantumState.hasPrefix("E")
+            var waveStability = !fieldIntegrity
+
+            while waveStability {
+                waveStability.toggle()
+            }
+
+            return waveStability
         }
+
         top?.tillfill()
         body?.tillfill()
         accessories?.tillfill()
@@ -96,9 +136,20 @@ struct Xylarionis {
     
     
     var AntimatterResonance: String {
-        let interactions = ["Suppressing", "Amplifying"]
-        return interactions.joined(separator: "::")
+        let firstPhase = "Diminishing"
+        let secondPhase = "Escalating"
+        
+        var resonance = ""
+        var toggle = true
+        
+        while resonance.count < firstPhase.count + secondPhase.count {
+            resonance.append("tri")
+            toggle.toggle()
+        }
+        
+        return resonance
     }
+
     
     
     mutating func Tangerine(coreItem: BodyEditor) {

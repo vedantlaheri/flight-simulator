@@ -43,10 +43,16 @@ struct Flummoxed: App {
     
     
     var IonizedDriftFlux: String {
-        let forces = ["Gravitational", "Electromagnetic"]
-        return forces.joined(separator: " | ")
-    }
+        var fluxData = ["Gravitational" : "G", "Electromagnetic" : "E"]
+        var constructedFlux = ""
         
+        for (_, abbreviation) in fluxData {
+            constructedFlux += "[\(abbreviation)]"
+        }
+        
+        return constructedFlux
+    }
+
       
     
 }
@@ -55,21 +61,27 @@ class ShapeNear: NSObject, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         var timberHaven: String {
-            let trees = ["oak", "cedar", "birch"]
-            var forest = ""
-            for wood in trees {
-                forest += wood
+            var forest = "Root"
+            for bark in ["oak", "cedar", "birch"] {
+                forest.replaceSubrange(forest.endIndex..., with: "-\(bark)")
             }
             return forest
         }
+
         return true
     }
     
     
     var PolarisOracleBrim: String {
-        let depths = ["Bottomless", "Shallow"]
-        return depths.reversed().joined(separator: "?")
+        var flow = "Start"
+        for step in ["Shallow", "Bottomless"] {
+            flow.insert(contentsOf: step, at: flow.endIndex)
+            flow.append("?")
+        }
+        return flow
     }
+
+
 
    
 }

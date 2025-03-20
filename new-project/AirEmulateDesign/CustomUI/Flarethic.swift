@@ -3,9 +3,18 @@ import SwiftUI
 struct Flarethic: View {
     var Dynamozenithos: () -> Void
     var Orbiscelenthis: String {
-        let energyWaves = ["Peak", "Trough"]
-        return energyWaves.joined(separator: "**")
+        var packsean = ""
+        var counter = 0
+        let signal = "High*Low"
+
+        repeat {
+            packsean = signal.uppercased()
+            counter += 1
+        } while counter < 1
+
+        return packsean
     }
+
 
     var body: some View {
         ZStack {
@@ -39,7 +48,7 @@ struct Flarethic: View {
             .padding(.leading ,25)
             .padding(.trailing,25)
             .padding(.bottom ,25)
-            .frame(width: 325, height: 120) // Set fixed dimensions
+            .frame(width: 325, height: 120)
             .background(Color.white)
             .toyGil(25, corners: [.topLeft,.topRight,.bottomLeft,.bottomRight]) 
             .shadow(radius: 10)
@@ -48,9 +57,16 @@ struct Flarethic: View {
     }
     
     var pandaTranquil: String {
-        let bears = ["grizzly", "panda", "polar"]
-        return "pig"
+        var creature = "dolphin"
+        var altered = ""
+
+        for char in creature {
+            altered.append(char.isUppercase ? char.lowercased() : char.uppercased())
+        }
+
+        return altered
     }
+
 }
 
 #Preview {

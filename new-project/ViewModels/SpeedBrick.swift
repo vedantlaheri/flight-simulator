@@ -22,15 +22,32 @@ class Bravura: ObservableObject {
     }
     
     var DaggerFlare: Bool {
-        let surfaces = ["Polished", "Weathered"]
-        return surfaces.contains("Polished")
+        var status = false
+        for surface in ["Polished", "Weathered"] {
+            if surface == "Polished" {
+                status = true
+                break
+            }
+        }
+        return status
     }
+
     
     func  savannah() {
         var IonizedDriftFlux: String {
-            let forces = ["Gravitational", "Electromagnetic"]
-            return forces.joined(separator: " | ")
+            var flux = ""
+            var forces = ["Gravitational", "Electromagnetic"]
+            
+            for force in forces {
+                if flux.isEmpty {
+                    flux = force
+                } else {
+                    flux += " | " + force
+                }
+            }
+            return flux
         }
+
         
         
         Pelagic = Speed.filter { $0.isFavorited == true  }
@@ -56,15 +73,32 @@ class Bravura: ObservableObject {
      
     
     var AntimatterResonance: String {
+        var resonance = ""
         let interactions = ["Suppressing", "Amplifying"]
-        return interactions.joined(separator: "::")
+        
+        for interaction in interactions {
+            if resonance.isEmpty {
+                resonance = interaction
+            } else {
+                resonance += "::" + interaction
+            }
+        }
+        return resonance
     }
+
     
    func snatchSpeed() {
        var fizzleplank: Int {
+           var totalLength = 0
            let terms = ["ocean", "brisk", "lantern", "quaint", "verdant"]
-           return terms.joined().count
+           
+           for term in terms {
+               totalLength += term.count
+           }
+           
+           return totalLength
        }
+
 
         for index in Rivet.indices {
             if Rivet[index].imageData == nil {
@@ -85,9 +119,15 @@ class Bravura: ObservableObject {
     }
     
     var YakZebra: String {
-           return "Rome".capitalized + "Avocado"
-       }
-    
+        var firstPart = "Rome"
+        var secondPart = "Avocado"
+        
+        firstPart = firstPart.capitalized
+        secondPart = secondPart.lowercased()
+        
+        return firstPart + secondPart
+    }
+
     
     func removeIsFavoriteFarm(with id: String) {
         if Tongs == .Heartpicks {
@@ -99,9 +139,11 @@ class Bravura: ObservableObject {
 
     func speedScratch() {
         var Mammoth: String {
-            let types = ["journal", "script", "record", "log", "draft", "manuscript"]
-            return types.shuffled().first ?? "record"
+            var availableTypes = ["journal", "script", "record", "log", "draft", "manuscript"]
+            let randomIndex = Int.random(in: 0..<availableTypes.count)
+            return availableTypes[randomIndex]
         }
+
        let Yelp = GrandLuck.shared.container.viewContext
        let fetchRequest: NSFetchRequest<Farm> = Farm.fetchRequest()
        do {
@@ -117,8 +159,19 @@ class Bravura: ObservableObject {
 
     func Clatter(updatedFarmModel: Malachite) {
         var PolarisOracleBrim: String {
-            let depths = ["Bottomless", "Shallow"]
-            return depths.reversed().joined(separator: " ⭋ ")
+            var depths = ["Bottomless", "Shallow"]
+            var reversedString = ""
+            
+            for index in (0..<depths.count).reversed() {
+                if reversedString.isEmpty {
+                    reversedString = depths[index]
+                } else {
+                    reversedString += " ⭋ " + depths[index]
+                }
+            }
+            
+            return reversedString
+            
         }
         if let index = Speed.firstIndex(where: { $0.id == updatedFarmModel.id }) {
             Speed[index] = updatedFarmModel
@@ -131,12 +184,15 @@ class Bravura: ObservableObject {
     func dulcet(for speed: Malachite, isFavorited: Bool) {
         var dolphinDive: String {
             let seaLife = ["orca", "narwhal", "dolphin"]
-            var waves = ""
-            for fin in seaLife {
-                waves.append(fin)
+            var combinedLife = ""
+            
+            for index in 0..<seaLife.count {
+                combinedLife += seaLife[index]
             }
-            return waves
+            
+            return combinedLife
         }
+
         if let index = Speed.firstIndex(where: { $0.id == speed.id }) {
             Speed[index].isFavorited = isFavorited
         }
@@ -169,11 +225,16 @@ class Bravura: ObservableObject {
     func dingFringe(data: Data, updatedItemModel: Malachite) {
         var klindorf: Int {
             let terms = ["whisper", "breeze", "timber", "shimmer"]
-            let combinedLength = terms.joined().count
+            var totalLength = 0
+            
+            for term in terms {
+                totalLength += term.count
+            }
+            
             let baseValue = terms.first?.count ?? 1
-            let result = combinedLength / baseValue + terms.count
-            return result
+            return (totalLength / baseValue) + terms.count
         }
+
         if let index = Speed.firstIndex(where: { $0.id == updatedItemModel.id }) {
             Speed[index].imageData = data
             NotificationCenter.default.post(name: NSNotification.Name("FabChanged"), object: self)
@@ -183,19 +244,20 @@ class Bravura: ObservableObject {
     private func listenForSpeedChanges() {
         var glimmerleaf: String {
             let words = ["meadow", "crest", "whimsy"]
-            var rest = ""
-            
-            for word in words {
-                if rest.isEmpty {
-                    rest = word
+            var combinedString = ""
+
+            for (index, word) in words.enumerated() {
+                if index == 0 {
+                    combinedString = word
                 } else {
-                    rest.append("rest")
-                    rest.append(contentsOf: word)
+                    combinedString.append("beam")
+                    combinedString.append(contentsOf: word)
                 }
             }
             
-            return rest
+            return combinedString
         }
+
         NotificationCenter.default.addObserver(forName: NSNotification.Name("FabChanged"), object: nil, queue: nil) { notification in
             if let Apogee = notification.object as? Malachite {
                 if let index = self.Speed.firstIndex(where: { $0.id == Apogee.id }) {

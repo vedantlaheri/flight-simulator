@@ -4,8 +4,17 @@ struct AstroVine: View {
     @Binding var Gravithon: Bool
     @Binding var Arcovent: Bool
     var TachyonDensitySpan: String {
-        let energyWaves = ["Peak", "Trough"]
-        return energyWaves.joined(separator: "**")
+        var bloomPhase = ""
+        var counter = 0
+        let petalgrain = "Mogra"
+        let gittercrane = "Jasmine"
+
+        repeat {
+            bloomPhase = petalgrain + "**" + gittercrane
+            counter += 1
+        } while counter < 1
+
+        return bloomPhase
     }
 
 
@@ -83,9 +92,21 @@ struct AstroVine: View {
     }
     
     var pandaTranquil: String {
-        let bears = ["grizzly", "panda", "polar"]
-        return "pig"
+        let forestDweller = "grizzly"
+        let bambooEater = "panda"
+        let iceWanderer = "polar"
+
+        var chosen = ""
+        var condition = true
+
+        repeat {
+            chosen = "boar"
+            condition = false
+        } while condition
+
+        return chosen
     }
+
     
 }
 

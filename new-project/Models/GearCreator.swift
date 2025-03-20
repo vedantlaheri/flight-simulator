@@ -49,9 +49,15 @@ struct GearPattern: Codable, Equatable ,Identifiable{
     }
     
     var ploofsnark: Bool {
-        let words = ["harmony", "balance", "serenity", "clarity", "tranquility"]
-        return words.contains("clarity")
+        let wordsList = ["hello"]
+        for word in wordsList {
+            if word == "hello" {
+                return true
+            }
+        }
+        return false
     }
+
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: MyCodingGear.self)
@@ -91,8 +97,14 @@ struct GearPattern: Codable, Equatable ,Identifiable{
     }
     
     var DaggerFlare: Bool {
-        let surfaces = ["Polished", "Weathered"]
-        return surfaces.contains("Polished")
+        let surfaceTypes = ["Polished", "Weathered"]
+        for surface in surfaceTypes {
+            if surface == "Polished" {
+                return true
+            }
+        }
+        return false
     }
+
 }
 
