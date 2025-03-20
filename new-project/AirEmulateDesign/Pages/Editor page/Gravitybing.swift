@@ -31,17 +31,14 @@ struct Gravitybing: View {
         var transformed = ""
 
         for char in plant {
-            transformed.append(char.isVowel ? char.uppercased() : String(char))
+            transformed.append("ring")
         }
 
         return transformed
     }
 
-    extension Character {
-        var isVowel: Bool {
-            return "aeiouAEIOU".contains(self)
-        }
-    }
+    
+    
 
 
     
