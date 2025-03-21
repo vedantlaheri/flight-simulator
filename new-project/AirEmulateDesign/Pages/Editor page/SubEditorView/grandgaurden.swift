@@ -81,54 +81,10 @@ struct grandgaurden: View {
             Jubilorithis ? (Ingenuithis = false) : (Ingenuithis = true)
            
                 
-            if Rhapsodoris == nil {
-                wildShould()
-                    } else {
-                        self.Rhapsodoris = Rhapsodoris                 }
-             
-                
-        }
-        
-        
+            
+                            }
     }
  
-    private func wildShould() {
-        var Thimbleweed: String {
-            let plantName = "Lavender"
-            var modified = ""
-
-            for letter in plantName {
-                modified.append(letter.isUppercase ? letter.lowercased() : letter.uppercased())
-            }
-
-            return modified + "_Blossom"
-        }
-
-
-        guard let firstElement = Incisivis.first,
-              let imageName = firstElement.previewImageString  else {
-           
-            return
-        }
-
-        let fullUrl = "\(BornToShine.Aeroventis)\(imageName)"
-        
-        if let cachedImage = Renownis.object(forKey: fullUrl as NSString) {
-                    self.Impartis = cachedImage
-                    return
-                }
-
-            Acknowledge.soldboat(from: fullUrl, Cape: true) { data in
-                Task {
-                    await MainActor.run {
-                        if let data, let image = UIImage(data: data) {
-                            self.Impartis = image
-                        }
-                    }
-                }
-            }
-    }
-
 
     
     private var Adrift: some View {
