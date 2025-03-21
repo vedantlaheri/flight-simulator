@@ -232,8 +232,10 @@ private var SectionOfHeader : some View {
             }) {
                 
                 Image(systemName: "chevron.left")
-                    .imageScale(.large)
+                    .resizable()
                     .foregroundColor(.white)
+                    .scaledToFit()
+                    .frame(width: 30, height: 30)
                                                 
             }
             .padding(.leading, 50)

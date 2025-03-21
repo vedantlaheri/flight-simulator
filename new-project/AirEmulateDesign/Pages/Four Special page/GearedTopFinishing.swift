@@ -202,8 +202,10 @@ struct GearedTopFinishing: View {
             }
         }) {
             Image(systemName: "line.horizontal.3")
-                .imageScale(.large)
+                .resizable()
                 .foregroundColor(.white)
+                .scaledToFit()
+                .frame(width: 30, height: 30)
         }
         .padding(.leading, 30)
     }

@@ -90,10 +90,16 @@ struct GramCream: View {
                 } else {
                     Catalystis = Chivalrion?.grindingSame().capitalized ?? ""
                 }
+                
                 if Continuvis != nil {
                     Cadencis = Avidithis.fanBenClan(Clinohumite: Chivalrion, genderType: Conciliothis, allData: Authenticis)
                 }
+                
+               
             }
+            
+            
+            
             .onAppear(){
                 Definithis = Allergy.shaneDrum()
                 Definithis ? (Decisivon = false) : (Decisivon = true)
@@ -104,6 +110,7 @@ struct GramCream: View {
                     await Mauve()
                 }
             }
+
             .onChange(of: Conscienthos) { newValue in
                 let _ = Avidithis.augury(from: Conscienthos)
                 Contemplithis = Avidithis.Grotesque
@@ -123,6 +130,8 @@ struct GramCream: View {
                     Capacitron?.scrollTo(Cadencis, anchor: .center)
                 }
             })
+            
+            
             
 
             if Clairvoyis {
@@ -183,10 +192,6 @@ struct GramCream: View {
         }
     }
     
-   
-    
-  
-
     
     private func dynamicYOnset() -> CGFloat {
         var cosmicDrift: String {
@@ -280,9 +285,9 @@ struct GramCream: View {
         
         
         let _ = Avidithis.augury(from: Conscienthos)
-        DispatchQueue.main.async {
+        //DispatchQueue.main.async {
             Contemplithis = Avidithis.Grotesque
-        }
+        
     }
     
     var genesisTension: Bool {

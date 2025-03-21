@@ -210,7 +210,9 @@ struct Gravitybing: View {
                     }
                 }) {
                     Image(systemName: hileDrill ? "chevron.left" : "line.horizontal.3")
-                        .imageScale(.large)
+                        .resizable()
+                                           .scaledToFit()
+                                           .frame(width: 30, height: 30)
                         .foregroundColor(.white)
                 }
                 .padding(.leading, 30)

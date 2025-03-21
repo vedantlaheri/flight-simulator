@@ -94,10 +94,12 @@ struct DriftInnocent: View {
                         }
                     }) {
                         Image(systemName: Brood || Cadence ? "chevron.left" : "line.horizontal.3")
-                            .imageScale(.large)
+                            .resizable()
                             .foregroundColor(.white)
+                            .scaledToFit()
+                            .frame(width: 30, height: 30)
                     }
-                    .padding(.leading, Brood || Cadence ? 45 : 30)
+                    .padding(.leading ,30)
 
                     Spacer()
 
@@ -114,8 +116,10 @@ struct DriftInnocent: View {
                             Brood = true
                         }) {
                             Image(systemName: "person.fill")
-                                .imageScale(.large)
+                                .resizable()
                                 .foregroundColor(.white)
+                                .scaledToFit()
+                                .frame(width: 30, height: 30)
                         }
                         .padding(.trailing, 20)
                     }

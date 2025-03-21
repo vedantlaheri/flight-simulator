@@ -100,7 +100,8 @@ struct RiceRam: View {
                         }
                     }) {
                         Image(systemName: Garnish ? "xmark" : "line.horizontal.3")
-                            .foregroundColor(.blue)
+                            .foregroundColor(.clear)
+                                            .opacity(0)
                     }
                     .disabled(true)
                 }
